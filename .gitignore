@@ -1,0 +1,5 @@
+.DS_Store
+error_log
+*.log
+omniflow_errors.log
+debug_connector.log

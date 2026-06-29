@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Cliente Mock</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
+        .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
+        h1 { color: #2c3e50; }
+        .metrics { display: flex; gap: 2em; margin-bottom: 2em; }
+        .metric { background: #eaf6fb; padding: 1em 2em; border-radius: 6px; text-align: center; }
+        table { width: 100%; border-collapse: collapse; background: #fff; }
+        th, td { padding: 10px; border-bottom: 1px solid #eee; }
+        th { background: #f0f8ff; }
+        tr:last-child td { border-bottom: none; }
+        select, button { padding: 5px 10px; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Dashboard Cliente (Mock)</h1>
+    <div id="msg"></div>
+    <section class="metrics" id="metrics"></section>
+    <section>
+        <h2>Gestión de Leads</h2>
+        <table id="leads-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+</div>
+<script>
+async function fetchMetrics() {
+    const res = await fetch('backend_dashboard_mock.php?action=get_metrics');
+    const data = await res.json();
+    document.getElementById('metrics').innerHTML = `
+        <div class="metric"><strong>Total Leads</strong><br>${data.total_leads}</div>
+        <div class="metric"><strong>Leads Nuevos</strong><br>${data.new_leads}</div>
+        <div class="metric"><strong>Contactados</strong><br>${data.contacted_leads}</div>
+    `;
+}
+
+async function fetchLeads() {
+    const res = await fetch('backend_dashboard_mock.php?action=get_leads');
+    const leads = await res.json();
+    const tbody = document.querySelector('#leads-table tbody');
+    tbody.innerHTML = '';
+    leads.forEach(lead => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${lead.id}</td>
+            <td>${lead.nombre}</td>
+            <td>${lead.email}</td>
+            <td>
+                <form onsubmit="return updateLead(event, ${lead.id})">
+                    <select name="nuevo_estado">
+                        <option value="Nuevo" ${lead.estado === 'Nuevo' ? 'selected' : ''}>Nuevo</option>
+                        <option value="Contactado" ${lead.estado === 'Contactado' ? 'selected' : ''}>Contactado</option>
+                        <option value="Cerrado" ${lead.estado === 'Cerrado' ? 'selected' : ''}>Cerrado</option>
+                    </select>
+                    <button type="submit">Actualizar</button>
+                </form>
+            </td>
+            <td></td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+async function updateLead(event, id) {
+    event.preventDefault();
+    const form = event.target;
+    const nuevo_estado = form.nuevo_estado.value;
+    const res = await fetch('backend_dashboard_mock.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `action=update_lead&lead_id=${id}&nuevo_estado=${encodeURIComponent(nuevo_estado)}`
+    });
+    const data = await res.json();
+    if (data.success) {
+        document.getElementById('msg').innerHTML = '<div class="success">Estado actualizado correctamente</div>';
+        fetchLeads();
+    } else {
+        document.getElementById('msg').innerHTML = '<div class="error">Error al actualizar</div>';
+    }
+    setTimeout(() => { document.getElementById('msg').innerHTML = ''; }, 2000);
+    return false;
+}
+
+fetchMetrics();
+fetchLeads();
+</script>
+</body>
+</html>

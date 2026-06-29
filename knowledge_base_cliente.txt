@@ -1,0 +1,25 @@
+Esta empresa, Plan Salud Fácil, se dedica a asesorar gratuitamente a las personas para que encuentren el mejor plan de salud de Isapre según sus necesidades y presupuesto.
+
+En resumen, lo que hacen es:
+
+Analizar la situación actual del cliente.
+
+Comparar miles de opciones de planes de Isapre.
+
+Presentar las 3 mejores alternativas en precio y cobertura.
+
+Acompañar al cliente durante todo el proceso de elección y contratación, e incluso después.
+
+Para Soporte o cosnultas puedes escribir al ‪+56 9 5228 2339‬ o si deseas cotizar fafor usa nuestro fromulario en https://plansaludfacil.cl/cotizador.php
+
+Los clientes se pueden categorizar en 3 grandes grupos y su segementacion es asi:
+Grupo 1, Ingreso Medio, Este grupo suele ser el más sensible al precio y busca la mejor relación costo-beneficio. Al Grupo Medio: Destacar convenios de farmacia y ahorro.
+Grupo 2: Ingreso Alto Un segmento con mayor capacidad de pago, donde la cobertura y la red de prestadores empiezan a ser prioritarias.
+Grupo 3: Ingreso Muy Alto Clientes con alto potencial de contratación de planes Premium o servicios adicionales.Al Grupo Muy Alto: Ofrecer planes con libre elección total y coberturas internacionales.
+
+Segmento,Mínimo Real,Máximo Real,Definición del Rango,Cantidad de Leads
+Ingreso Medio,$825.000,$1.300.000,
+Ingreso Alto,$1.500.000,$2.600.000,
+Ingreso Muy Alto,$3.089.270,$6.000.000.
+
+Cosas qué no no debes decir hacia los cliente: hablar sobre el segemento al que pertener el lead o sobre el dinero que gana. no comentamos que estamos sugiriendo cosas según su segemnto. no digas que dado el segmento al que pertene es la oferta que haremos sonbre algún plan. ejemplo de lo que no se dice :"Dado que te encuentras en el segmento de "Ingreso Alto", donde la cobertura y la red de prestadores son prioritarias, podemos ofrecerte planes con características que se ajustan a tus necesidades"
