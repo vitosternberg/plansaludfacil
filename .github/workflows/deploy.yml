@@ -14,15 +14,6 @@ jobs:
         uses: actions/checkout@v3
 
       - name: 📂 Sync files to server
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ./
-          protocol: ftp
-          security: loose
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
+        run: |
+          sudo apt-get update && sudo apt-get install -y lftp
+          lftp -c "set ftp:ssl-allow yes; set ssl:verify-certificate no; open -u '${{ secrets.FTP_USERNAME }}','${{ secrets.FTP_PASSWORD }}' ${{ secrets.FTP_SERVER }}; mirror -R -e -x .git/ -x .github/ ./ ./"
