@@ -51,7 +51,7 @@ $header_admin_email = 'contacto@plansaludfacil.cl'; // Email estático o pasado 
                     <!-- Espacio para logo - reemplazar con imagen real -->
                     <span class="text-blue-700 font-bold">PSF</span>
                 </div>
-                <span class="text-xl font-bold"><?php echo htmlspecialchars($header_blog_title); ?></span>
+                <span class="text-xl font-bold">Plan Salud Fácil</span>
             </div>
 
             <!-- Menu Desktop (visible en md+) -->
