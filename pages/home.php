@@ -42,7 +42,7 @@ render_component('hero_moderno', [
     'titulo' => 'Elige tu Plan de Isapre en Minutos',
     'subtitulo' => 'Comparamos todas las opciones de Chile por ti. Servicio 100% online, gratuito y sin letra chica.',
     'cta_texto' => 'Comenzar mi Cotización',
-    'cta_link' => '<?= BASE_URL ?>/servicios/cambio-de-isapre#formulario-contacto'
+    'cta_link' => BASE_URL . '/servicios/cambio-de-isapre#formulario-contacto'
 ]);
 
 // 2. SOCIAL PROOF / MARCAS
@@ -66,25 +66,25 @@ render_component('tarjetas_servicios', [
         [
             'titulo' => 'Me quiero cambiar de Isapre', 
             'descripcion' => 'Optimiza tu plan actual y mejora tus coberturas.',
-            'link' => '<?= BASE_URL ?>/servicios/cambio-de-isapre',
+            'link' => BASE_URL . '/servicios/cambio-de-isapre',
             'icono' => '🔄'
         ],
         [
             'titulo' => 'Busco un Plan Familiar', 
             'descripcion' => 'Protege a los que más quieres con cobertura médica ampliada.',
-            'link' => '<?= BASE_URL ?>/servicios/planes-familia',
+            'link' => BASE_URL . '/servicios/planes-familia',
             'icono' => '👨‍👩‍👧‍👦'
         ],
         [
             'titulo' => 'Primer Plan Individual', 
             'descripcion' => 'Pasa de Fonasa a Isapre con el plan que mejor se adapte a tu bolsillo.',
-            'link' => '<?= BASE_URL ?>/servicios/planes-individuales',
+            'link' => BASE_URL . '/servicios/planes-individuales',
             'icono' => '👤'
         ],
         [
             'titulo' => 'Plan Monoparental', 
             'descripcion' => 'Planes diseñados para proteger a tus hijos sin desestabilizar hogares de un solo ingreso.',
-            'link' => '<?= BASE_URL ?>/servicios/planes-monoparental',
+            'link' => BASE_URL . '/servicios/planes-monoparental',
             'icono' => '🦸‍♀️'
         ]
     ]
