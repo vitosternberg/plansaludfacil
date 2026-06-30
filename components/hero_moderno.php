@@ -17,12 +17,12 @@ $cta_link = $cta_link ?? '/servicios/planes-individuales';
 <style>
 /* Estilos modernos tipo Startup Tech / Gradiente Dinámico */
 .hero-section {
-    background: linear-gradient(135deg, #0284c7 0%, #0f172a 100%);
+    background: linear-gradient(135deg, #0f766e 0%, #022c22 100%);
     color: white;
     padding: 140px 20px;
     text-align: center;
     border-radius: 0 0 40px 40px;
-    box-shadow: 0 20px 40px rgba(2, 132, 199, 0.15);
+    box-shadow: 0 20px 40px rgba(15, 118, 110, 0.15);
     font-family: 'Inter', sans-serif;
     position: relative;
     overflow: hidden;
@@ -36,7 +36,7 @@ $cta_link = $cta_link ?? '/servicios/planes-individuales';
     right: -50px;
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, rgba(0,210,255,0.1) 0%, rgba(0,0,0,0) 70%);
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(0,0,0,0) 70%);
     border-radius: 50%;
 }
 
@@ -51,7 +51,7 @@ $cta_link = $cta_link ?? '/servicios/planes-individuales';
     font-weight: 800;
     margin-bottom: 24px;
     line-height: 1.15;
-    background: linear-gradient(to right, #ffffff, #e0f2fe);
+    background: linear-gradient(to right, #ffffff, #a7f3d0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -63,7 +63,7 @@ $cta_link = $cta_link ?? '/servicios/planes-individuales';
     line-height: 1.6;
 }
 .btn-primary {
-    background: linear-gradient(90deg, #00d2ff 0%, #0284c7 100%);
+    background: linear-gradient(90deg, #10b981 0%, #059669 100%);
     color: #fff;
     padding: 18px 45px;
     border-radius: 50px;
@@ -74,11 +74,11 @@ $cta_link = $cta_link ?? '/servicios/planes-individuales';
     display: inline-block;
     border: none;
     cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3);
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
 }
 .btn-primary:hover {
     transform: translateY(-4px);
-    box-shadow: 0 15px 30px rgba(0, 210, 255, 0.5);
+    box-shadow: 0 15px 30px rgba(16, 185, 129, 0.5);
     color: white;
 }
 </style>

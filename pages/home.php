@@ -39,8 +39,8 @@ $page_title = "Plan Salud Fácil - Tu Comparador de Isapres";
 include './layout/plantilla.php'; 
 include './layout/header.php';
 render_component('hero_moderno', [
-    'titulo' => 'Encuentra el Plan de Isapre Perfecto para Ti',
-    'subtitulo' => 'Comparamos todas las opciones del mercado gratis. Ahorra tiempo y dinero con asesores expertos.',
+    'titulo' => 'Elige tu Plan de Isapre en Minutos',
+    'subtitulo' => 'Comparamos todas las opciones de Chile por ti. Servicio 100% online, gratuito y sin letra chica.',
     'cta_texto' => 'Comenzar mi Cotización',
     'cta_link' => '<?= BASE_URL ?>/servicios/planes-individuales'
 ]);
