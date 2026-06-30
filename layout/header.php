@@ -98,6 +98,12 @@ $header_admin_email = 'contacto@plansaludfacil.cl'; // Email estático o pasado 
                     <span>Blog</span>
                 </a>
                 
+                <!-- Botón WhatsApp Modal -->
+                <button onclick="openWspModal()" class="ml-4 flex items-center bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full shadow-md transition-transform transform hover:-translate-y-1 focus:outline-none">
+                    <iconify-icon icon="mdi:whatsapp" width="20" class="mr-2"></iconify-icon>
+                    <span class="text-sm">WhatsApp</span>
+                </button>
+                
                 <!-- Buscador Desktop -->
                 <div class="relative ml-4">
                     <input type="text" placeholder="Buscar..." 
@@ -143,7 +149,12 @@ $header_admin_email = 'contacto@plansaludfacil.cl'; // Email estático o pasado 
                 <a href="<?= BASE_URL ?>/servicios/planes-monoparental" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm">Planes Monoparentales</a>
                 
                 <div class="pt-2 pb-1 px-2 text-sm font-bold text-blue-300 uppercase tracking-wider">Blog</div>
-                <a href="https://plansaludfacil.cl/blog_isapre/" target="_blank" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm">Ir al Blog</a>
+                <a href="https://plansaludfacil.cl/blog_isapre/" target="_blank" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm mb-4">Ir al Blog</a>
+
+                <button onclick="openWspModal()" class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-xl shadow-md transition-transform focus:outline-none">
+                    <iconify-icon icon="mdi:whatsapp" width="24" class="mr-2"></iconify-icon>
+                    <span>Hablar por WhatsApp</span>
+                </button>
             </nav>
             
             <!-- Buscador Movil -->

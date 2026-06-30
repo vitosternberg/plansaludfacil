@@ -1,8 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-require_once 'mi-blog/php/config.php';
-
+require_once 'config.php';
 
 try {
     // Validar datos recibidos
@@ -17,15 +16,22 @@ try {
     }
 
     // Conexión a la base de datos
-    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn = connect_db_simple();
+    if ($conn === null) {
+        throw new Exception('Error de conexión a la base de datos');
+    }
 
     // Insertar en la base de datos
-    $stmt = $conn->prepare("INSERT INTO whatsapp_contacts (phone, name, date_created) VALUES (:phone, :name, :date)");
-    $stmt->bindParam(':phone', $data['phone']);
-    $stmt->bindParam(':name', $data['name']);
-    $stmt->bindParam(':date', $data['date']);
+    $date = date('Y-m-d H:i:s');
+    $stmt = $conn->prepare("INSERT INTO whatsapp_contacts (phone, name, date_created) VALUES (?, ?, ?)");
+    if (!$stmt) {
+        throw new Exception('Error preparando la consulta');
+    }
+    
+    $stmt->bind_param("sss", $data['phone'], $data['name'], $date);
     $stmt->execute();
+    $stmt->close();
+    $conn->close();
 
     echo json_encode([
         'success' => true,
