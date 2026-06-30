@@ -17,12 +17,14 @@ $cta_link = $cta_link ?? '/servicios/planes-individuales';
 <style>
 /* Estilos modernos tipo Startup Tech / Gradiente Dinámico */
 .hero-section {
-    background: linear-gradient(135deg, #0f766e 0%, #022c22 100%);
+    background: linear-gradient(rgba(2, 44, 34, 0.75), rgba(15, 118, 110, 0.85)), url('<?= BASE_URL ?>/img/hero_familia.jpg');
+    background-size: cover;
+    background-position: center;
     color: white;
     padding: 140px 20px;
     text-align: center;
     border-radius: 0 0 40px 40px;
-    box-shadow: 0 20px 40px rgba(15, 118, 110, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
     font-family: 'Inter', sans-serif;
     position: relative;
     overflow: hidden;
