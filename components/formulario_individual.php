@@ -136,7 +136,7 @@ async function submitIndividualForm() {
     msg.className = 'hidden';
 
     try {
-        const response = await fetch('<?= BASE_URL ?>/procesar_contacto.php', { method: 'POST', body: formData });
+        const response = await fetch('<?= BASE_URL ?>/procesar_formularios.php', { method: 'POST', body: formData });
         const data = await response.json();
 
         if (data.success) {
