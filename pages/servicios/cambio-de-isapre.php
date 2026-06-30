@@ -50,7 +50,7 @@ include __DIR__ . '/../../layout/header.php';
         </div>
 
         <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight text-center">
-            Cambio de Isapre: Asesoría Gratuita para Optimizar tu Plan de Salud
+            Cambio de Isapre: Asesoría Gratuita Online
         </h1>
         <h2 class="text-xl md:text-2xl text-gray-600 mb-10 text-center max-w-3xl mx-auto leading-relaxed">
             ¿Sientes que estás pagando de más o que tu cobertura actual no es suficiente? Te ayudamos a cambiarte de Isapre de forma rápida, segura y 100% online.
@@ -69,7 +69,7 @@ include __DIR__ . '/../../layout/header.php';
         <article class="prose prose-lg max-w-none text-gray-700">
             <p class="mb-8 text-lg">El mercado de la salud en Chile cambia constantemente. Lo que ayer era un excelente plan, hoy puede estar obsoleto o desalineado con tus necesidades actuales. Cambiarse de Isapre no tiene por qué ser un dolor de cabeza ni un proceso lleno de burocracia. En <strong>PlanSaludFácil</strong> nos encargamos de analizar todo el mercado por ti para encontrar la opción que realmente maximice el valor de tu 7% de cotización obligatoria.</p>
 
-            <h3 class="text-2xl font-bold text-gray-900 mt-12 mb-6">¿Por qué deberías evaluar un cambio de Isapre hoy?</h3>
+            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">¿Por qué deberías evaluar un cambio de Isapre hoy?</h2>
             <p class="mb-6">La mayoría de las personas se mantienen en su Isapre por costumbre, perdiendo la oportunidad de acceder a mejores beneficios. Las tres razones más comunes para solicitar un cambio incluyen:</p>
             
             <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-12">
@@ -98,7 +98,15 @@ include __DIR__ . '/../../layout/header.php';
                 </ul>
             </div>
 
-            <h3 class="text-2xl font-bold text-gray-900 mt-12 mb-6">¿Cómo te ayudamos en PlanSaludFácil?</h3>
+            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">Requisitos básicos para solicitar el traslado</h2>
+            <p class="mb-6">Para que podamos gestionar tu cambio con éxito, es importante que cumplas con los siguientes requisitos estándar del sistema previsional chileno:</p>
+            <ul class="list-decimal pl-6 space-y-3 mb-12 text-gray-600">
+                <li>Tener al menos un año de permanencia en tu Isapre actual (si eres el cotizante titular).</li>
+                <li>No encontrarte bajo licencia médica vigente al momento de firmar el nuevo contrato.</li>
+                <li>Completar de forma fidedigna la Declaración de Salud requerida por la Superintendencia.</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">¿Cómo te ayudamos en PlanSaludFácil?</h2>
             <p class="mb-8">Hacer el trámite por tu cuenta implica visitar múltiples sitios web, descifrar complejas tablas de factores y arriesgarte a tomar una decisión equivocada. Nuestro servicio simplifica el proceso al mínimo:</p>
             
             <div class="grid md:grid-cols-3 gap-6 mb-12">
@@ -118,14 +126,6 @@ include __DIR__ . '/../../layout/header.php';
                     <p class="text-gray-600 text-sm">No necesitas ir a ninguna sucursal. Validamos la Declaración de Salud y firmamos el nuevo contrato de manera online y 100% legal.</p>
                 </div>
             </div>
-
-            <h3 class="text-2xl font-bold text-gray-900 mt-12 mb-6">Requisitos básicos para solicitar el traslado</h3>
-            <p class="mb-6">Para que podamos gestionar tu cambio con éxito, es importante que cumplas con los siguientes requisitos estándar del sistema previsional chileno:</p>
-            <ul class="list-decimal pl-6 space-y-3 mb-12 text-gray-600">
-                <li>Tener al menos un año de permanencia en tu Isapre actual (si eres el cotizante titular).</li>
-                <li>No encontrarte bajo licencia médica vigente al momento de firmar el nuevo contrato.</li>
-                <li>Completar de forma fidedigna la Declaración de Salud requerida por la Superintendencia.</li>
-            </ul>
 
             <!-- FORMULARIO DE CONTACTO (CTA FINAL) -->
             <?php include __DIR__ . '/../../components/formulario_individual.php'; ?>
