@@ -3,7 +3,7 @@
 ?>
 <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 mt-12 scroll-mt-24" id="formulario-contacto">
     <div class="text-center mb-8">
-        <h3 class="text-3xl font-extrabold text-gray-900 mb-3">Deja de regalar tu 7%</h3>
+        <h3 class="text-3xl font-extrabold text-gray-900 mb-3">Optimiza tu 7%</h3>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">Tú dinos qué necesitas y nosotros hacemos el trabajo por ti en menos de 2 minutos. Encontramos el plan ideal enfocado en lo que realmente utilizas (como kinesiología, telemedicina o generación de excedentes), optimizando tu presupuesto al máximo.</p>
     </div>
 
