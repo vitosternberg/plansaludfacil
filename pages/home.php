@@ -100,11 +100,13 @@ render_component('faq_acordeon', [
     ]
 ]);
 
-// 6. ENLAZADO AL BLOG
+// 6. ENLAZADO AL BLOG (Oculto temporalmente)
+/*
 render_component('ultimos_articulos_blog', [
     'titulo' => 'Guías y Consejos de Salud',
     'limite' => 3
 ]);
+*/
 
 // 7. CTA FINAL
 render_component('cta_footer', [
