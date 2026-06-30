@@ -35,11 +35,11 @@
             <div class="grid grid-cols-2 gap-4">
                 <div>
                     <label class="block text-sm font-semibold text-gray-700 mb-2">Edad</label>
-                    <input type="number" name="age" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] focus:bg-white transition-colors" placeholder="28">
+                    <input type="number" name="age" value="<?php echo isset($_GET['age']) ? htmlspecialchars($_GET['age']) : ''; ?>" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] focus:bg-white transition-colors" placeholder="35">
                 </div>
                 <div>
                     <label class="block text-sm font-semibold text-gray-700 mb-2">Renta Líquida</label>
-                    <input type="number" name="income" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] focus:bg-white transition-colors" placeholder="$1.500.000">
+                    <input type="number" name="income" value="<?php echo isset($_GET['income']) ? htmlspecialchars($_GET['income']) : ''; ?>" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] focus:bg-white transition-colors" placeholder="$2.000.000">
                 </div>
             </div>
             <div class="md:col-span-2">
@@ -47,7 +47,20 @@
                 <input type="text" name="comuna" list="comunas_list_ind" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] focus:bg-white transition-colors" placeholder="Ej. Providencia, Santiago" autocomplete="off">
                 <datalist id="comunas_list_ind">
                     <?php include 'comunas_options.php'; ?>
-                </datalist>            </div>
+                </datalist>
+            </div>
+            <div class="md:col-span-2">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Cantidad de cargas</label>
+                <select name="cargas" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] focus:bg-white transition-colors" required>
+                    <?php $get_cargas = isset($_GET['cargas']) ? $_GET['cargas'] : ''; ?>
+                    <option value="">Selecciona cantidad</option>
+                    <option value="0" <?php echo $get_cargas === '0' ? 'selected' : ''; ?>>Sin cargas</option>
+                    <option value="1" <?php echo $get_cargas === '1' ? 'selected' : ''; ?>>1 carga (Cónyuge o 1 hijo)</option>
+                    <option value="2" <?php echo $get_cargas === '2' ? 'selected' : ''; ?>>2 cargas</option>
+                    <option value="3" <?php echo $get_cargas === '3' ? 'selected' : ''; ?>>3 cargas</option>
+                    <option value="4+" <?php echo $get_cargas === '3+' || $get_cargas === '4+' ? 'selected' : ''; ?>>4 o más cargas</option>
+                </select>
+            </div>
         </div>
 
         <!-- Prioridades -->

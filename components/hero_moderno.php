@@ -17,27 +17,18 @@ $cta_link = $cta_link ?? '/servicios/cambio-de-isapre#formulario-contacto';
                 <?= htmlspecialchars($subtitulo) ?>
             </p>
             
-            <!-- Botón opcional centrado -->
-            <a href="<?= htmlspecialchars($cta_link) ?>" class="inline-block bg-white text-[#0284c7] font-bold px-8 py-3 rounded-full shadow-xl hover:bg-gray-50 hover:scale-105 transition-transform duration-300">
-                <?= htmlspecialchars($cta_texto) ?>
-            </a>
         </div>
     </section>
 
     <!-- Floating Action Bar (Overlapping) -->
     <div class="absolute left-0 right-0 -bottom-16 md:-bottom-12 z-20 px-4">
-        <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] p-4 md:p-6 border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4 transition-all">
+        <form action="<?= BASE_URL ?>/servicios/cambio-de-isapre" method="GET" onsubmit="this.action = this.action + '#formulario-contacto'; return true;" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] p-4 md:p-6 border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4 transition-all">
             
             <div class="flex-1 w-full relative group">
                 <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Renta Líquida</label>
                 <div class="relative">
-                    <select class="w-full appearance-none border-2 border-gray-100 bg-gray-50 text-gray-800 font-semibold rounded-xl px-4 py-3 focus:ring-0 focus:border-[#00d2ff] cursor-pointer transition-colors">
-                        <option value="">¿Cuánto ganas?</option>
-                        <option value="Menos de $1.000.000">Menos de $1.000.000</option>
-                        <option value="$1M - $2M">$1M - $2M</option>
-                        <option value="Más de $2.000.000">Más de $2.000.000</option>
-                    </select>
-                    <iconify-icon icon="mdi:chevron-down" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></iconify-icon>
+                    <input type="number" name="income" placeholder="Ej. 1500000" class="w-full appearance-none border-2 border-gray-100 bg-gray-50 text-gray-800 font-semibold rounded-xl px-4 py-3 focus:ring-0 focus:border-[#00d2ff] transition-colors">
+                    <iconify-icon icon="mdi:cash" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></iconify-icon>
                 </div>
             </div>
             
@@ -45,7 +36,7 @@ $cta_link = $cta_link ?? '/servicios/cambio-de-isapre#formulario-contacto';
             
             <div class="flex-1 w-full relative group">
                 <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Edad</label>
-                <input type="number" placeholder="Ej. 30" class="w-full border-2 border-gray-100 bg-gray-50 text-gray-800 font-semibold rounded-xl px-4 py-3 focus:ring-0 focus:border-[#00d2ff] transition-colors">
+                <input type="number" name="age" placeholder="Ej. 30" class="w-full border-2 border-gray-100 bg-gray-50 text-gray-800 font-semibold rounded-xl px-4 py-3 focus:ring-0 focus:border-[#00d2ff] transition-colors">
             </div>
             
             <div class="hidden md:block w-px h-12 bg-gray-200"></div>
@@ -53,7 +44,7 @@ $cta_link = $cta_link ?? '/servicios/cambio-de-isapre#formulario-contacto';
             <div class="flex-1 w-full relative group">
                 <label class="block text-xs font-bold text-gray-500 uppercase mb-1">¿Tienes Cargas?</label>
                 <div class="relative">
-                    <select class="w-full appearance-none border-2 border-gray-100 bg-gray-50 text-gray-800 font-semibold rounded-xl px-4 py-3 focus:ring-0 focus:border-[#00d2ff] cursor-pointer transition-colors">
+                    <select name="cargas" class="w-full appearance-none border-2 border-gray-100 bg-gray-50 text-gray-800 font-semibold rounded-xl px-4 py-3 focus:ring-0 focus:border-[#00d2ff] cursor-pointer transition-colors">
                         <option value="0">Soy solo yo</option>
                         <option value="1">1 carga</option>
                         <option value="2">2 cargas</option>
@@ -64,11 +55,11 @@ $cta_link = $cta_link ?? '/servicios/cambio-de-isapre#formulario-contacto';
             </div>
 
             <div class="mt-2 md:mt-0 w-full md:w-auto">
-                <a href="<?= htmlspecialchars($cta_link) ?>" class="block w-full text-center bg-gradient-to-r from-[#00d2ff] to-[#0284c7] hover:from-[#0284c7] hover:to-[#00d2ff] text-white font-extrabold py-4 px-8 rounded-xl shadow-lg transition-transform hover:-translate-y-1 whitespace-nowrap">
+                <button type="submit" class="block w-full text-center bg-gradient-to-r from-[#00d2ff] to-[#0284c7] hover:from-[#0284c7] hover:to-[#00d2ff] text-white font-extrabold py-4 px-8 rounded-xl shadow-lg transition-transform hover:-translate-y-1 whitespace-nowrap">
                     Buscar Planes
-                </a>
+                </button>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 
