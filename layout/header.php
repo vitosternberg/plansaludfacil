@@ -103,8 +103,8 @@ $header_admin_email = 'contacto@plansaludfacil.cl'; // Email estático o pasado 
                     <span class="text-sm">WhatsApp</span>
                 </button>
                 
-                <!-- Buscador Desktop -->
-                <div class="relative ml-4">
+                <!-- Buscador Desktop (Oculto temporalmente) -->
+                <div class="relative ml-4 hidden">
                     <input type="text" placeholder="Buscar..." 
                            class="py-2 px-4 pr-10 rounded-full bg-gray-100 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#00d2ff] w-48 transition-all">
                     <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-[#0284c7]">
@@ -156,8 +156,8 @@ $header_admin_email = 'contacto@plansaludfacil.cl'; // Email estático o pasado 
                 </button>
             </nav>
             
-            <!-- Buscador Movil -->
-            <div class="relative">
+            <!-- Buscador Movil (Oculto temporalmente) -->
+            <div class="relative hidden">
                 <input type="text" placeholder="Buscar..." 
                        class="py-2 px-4 pr-10 rounded-full text-gray-800 w-full focus:outline-none focus:ring-2 focus:ring-blue-300">
                 <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-blue-700">
