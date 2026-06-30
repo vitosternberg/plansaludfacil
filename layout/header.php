@@ -42,81 +42,80 @@ $header_admin_email = 'contacto@plansaludfacil.cl'; // Email estático o pasado 
 </div>
 
 <!-- Header Principal -->
-<header class="bg-gradient-to-r from-orange-600 to-orange-800 text-white shadow-md">
+<header class="bg-white text-gray-800 shadow-md sticky top-0 z-40">
     <div class="container mx-auto px-4 py-3">
         <div class="flex justify-between items-center">
             <!-- Logo -->
             <div class="flex items-center">
-                <div class="h-10 w-10 bg-gray-200 rounded flex items-center justify-center mr-2">
-                    <!-- Espacio para logo - reemplazar con imagen real -->
-                    <span class="text-blue-700 font-bold">PSF</span>
+                <div class="h-10 w-10 bg-gradient-to-r from-[#00d2ff] to-[#0284c7] rounded-lg flex items-center justify-center mr-3 shadow-sm">
+                    <span class="text-white font-bold text-sm">PSF</span>
                 </div>
-                <span class="text-xl font-bold">Plan Salud Fácil</span>
+                <span class="text-xl font-extrabold text-gray-900 tracking-tight">Plan Salud Fácil</span>
             </div>
 
             <!-- Menu Desktop (visible en md+) -->
-            <nav class="hidden md:flex items-center space-x-6">
-                <a href="<?= BASE_URL ?>/" class="nav-item transition flex items-center hover:text-orange-200">
+            <nav class="hidden md:flex items-center space-x-6 font-medium">
+                <a href="<?= BASE_URL ?>/" class="nav-item transition flex items-center text-gray-600 hover:text-[#0284c7]">
                     <iconify-icon icon="mdi:home-outline" width="20" class="mr-1"></iconify-icon>
                     <span>Inicio</span>
                 </a>
                 
                 <!-- Silo Nosotros -->
                 <div class="relative group">
-                    <button class="nav-item transition flex items-center hover:text-orange-200 focus:outline-none">
+                    <button class="nav-item transition flex items-center text-gray-600 hover:text-[#0284c7] focus:outline-none">
                         <iconify-icon icon="mdi:account-group-outline" width="20" class="mr-1"></iconify-icon>
                         <span>Nosotros</span>
                         <iconify-icon icon="mdi:chevron-down" width="16" class="ml-1"></iconify-icon>
                     </button>
                     <div class="absolute left-0 pt-4 w-48 z-50 hidden group-hover:block">
-                        <div class="bg-white rounded-md shadow-lg py-1 border border-gray-100">
-                            <a href="<?= BASE_URL ?>/nosotros/empresa" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600">Nuestra Empresa</a>
+                        <div class="bg-white rounded-xl shadow-xl py-2 border border-gray-100">
+                            <a href="<?= BASE_URL ?>/nosotros/empresa" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">Nuestra Empresa</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Silo Servicios -->
                 <div class="relative group">
-                    <button class="nav-item transition flex items-center hover:text-orange-200 focus:outline-none">
+                    <button class="nav-item transition flex items-center text-gray-600 hover:text-[#0284c7] focus:outline-none">
                         <iconify-icon icon="mdi:heart-pulse" width="20" class="mr-1"></iconify-icon>
                         <span>Servicios</span>
                         <iconify-icon icon="mdi:chevron-down" width="16" class="ml-1"></iconify-icon>
                     </button>
                     <div class="absolute left-0 pt-4 w-56 z-50 hidden group-hover:block">
-                        <div class="bg-white rounded-md shadow-lg py-1 border border-gray-100">
-                            <a href="<?= BASE_URL ?>/servicios/cambio-de-isapre" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600">Cambio de Isapre</a>
-                            <a href="<?= BASE_URL ?>/servicios/planes-individuales" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600">Planes Individuales</a>
-                            <a href="<?= BASE_URL ?>/servicios/planes-familia" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600">Planes Familiares</a>
-                            <a href="<?= BASE_URL ?>/servicios/planes-monoparental" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600">Planes Monoparentales</a>
+                        <div class="bg-white rounded-xl shadow-xl py-2 border border-gray-100">
+                            <a href="<?= BASE_URL ?>/servicios/cambio-de-isapre" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">Cambio de Isapre</a>
+                            <a href="<?= BASE_URL ?>/servicios/planes-individuales" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">Planes Individuales</a>
+                            <a href="<?= BASE_URL ?>/servicios/planes-familia" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">Planes Familiares</a>
+                            <a href="<?= BASE_URL ?>/servicios/planes-monoparental" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">Planes Monoparentales</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Link Directo a Blog -->
-                <a href="https://plansaludfacil.cl/blog_isapre/" target="_blank" class="nav-item transition flex items-center hover:text-orange-200">
+                <a href="https://plansaludfacil.cl/blog_isapre/" target="_blank" class="nav-item transition flex items-center text-gray-600 hover:text-[#0284c7]">
                     <iconify-icon icon="mdi:newspaper-variant-outline" width="20" class="mr-1"></iconify-icon>
                     <span>Blog</span>
                 </a>
                 
                 <!-- Botón WhatsApp Modal -->
-                <button onclick="openWspModal()" class="ml-4 flex items-center bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full shadow-md transition-transform transform hover:-translate-y-1 focus:outline-none">
-                    <iconify-icon icon="mdi:whatsapp" width="20" class="mr-2"></iconify-icon>
+                <button onclick="openWspModal()" class="ml-4 flex items-center bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-2.5 px-5 rounded-full shadow-md transition-transform transform hover:-translate-y-1 focus:outline-none">
+                    <iconify-icon icon="mdi:whatsapp" width="22" class="mr-2"></iconify-icon>
                     <span class="text-sm">WhatsApp</span>
                 </button>
                 
                 <!-- Buscador Desktop -->
                 <div class="relative ml-4">
                     <input type="text" placeholder="Buscar..." 
-                           class="py-1 px-3 pr-8 rounded-full text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300 w-40">
-                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-blue-700">
-                        <iconify-icon icon="mdi:magnify" width="16"></iconify-icon>
+                           class="py-2 px-4 pr-10 rounded-full bg-gray-100 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#00d2ff] w-48 transition-all">
+                    <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-[#0284c7]">
+                        <iconify-icon icon="mdi:magnify" width="18"></iconify-icon>
                     </button>
                 </div>
             </nav>
 
             <!-- Boton Hamburguesa (solo movil) -->
-            <button id="menu-toggle" class="md:hidden focus:outline-none hover:text-blue-200">
-                <iconify-icon icon="mdi:menu" width="24"></iconify-icon>
+            <button id="menu-toggle" class="md:hidden focus:outline-none text-gray-600 hover:text-[#0284c7]">
+                <iconify-icon icon="mdi:menu" width="28"></iconify-icon>
             </button>
         </div>
 
