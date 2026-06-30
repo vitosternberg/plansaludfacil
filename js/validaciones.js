@@ -42,7 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
             else if (this.name === 'rut') isValid = Validaciones.rut(val);
             else if (this.name === 'phone') isValid = Validaciones.telefono(val);
             else if (this.name === 'name' || this.name === 'comuna') isValid = Validaciones.texto(val);
-            else if (this.name === 'age' || this.name === 'income' || this.name === 'cargas') isValid = Validaciones.numero(val);
+            else if (this.name === 'age' || this.name === 'income') isValid = Validaciones.numero(val);
+            else if (this.name === 'cargas') isValid = val !== '';
 
             // Tailwind CSS styling para feedback visual
             if (val === '') {
@@ -72,7 +73,8 @@ window.validarFormularioCompleto = function(formElement) {
         else if (input.name === 'rut') isValid = Validaciones.rut(val);
         else if (input.name === 'phone') isValid = Validaciones.telefono(val);
         else if (input.name === 'name' || input.name === 'comuna') isValid = Validaciones.texto(val);
-        else if (input.name === 'age' || input.name === 'income' || input.name === 'cargas') isValid = Validaciones.numero(val);
+        else if (input.name === 'age' || input.name === 'income') isValid = Validaciones.numero(val);
+        else if (input.name === 'cargas') isValid = val !== '';
 
         if (!isValid || val.trim() === '') {
             todosValidos = false;
