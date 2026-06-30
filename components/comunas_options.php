@@ -5,7 +5,6 @@ $comunas_str = "Alto Hospicio;Ancud;Angol;Antofagasta;Arica;Batuco;Calama;Calera
 $comunas = array_filter(array_map('trim', explode(';', $comunas_str)));
 sort($comunas);
 
-echo '<option value="">Selecciona tu comuna</option>';
 foreach ($comunas as $comuna) {
     echo '<option value="' . htmlspecialchars($comuna) . '">' . htmlspecialchars($comuna) . '</option>';
 }

@@ -44,9 +44,10 @@
             </div>
             <div class="md:col-span-2">
                 <label class="block text-sm font-semibold text-gray-700 mb-2">Comuna de Residencia</label>
-                <select name="comuna" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] focus:bg-white transition-colors text-gray-700">
+                <input type="text" name="comuna" list="comunas_list_fam" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] focus:bg-white transition-colors" placeholder="Ej. Providencia, Santiago" autocomplete="off">
+                <datalist id="comunas_list_fam">
                     <?php include 'comunas_options.php'; ?>
-                </select>            </div>
+                </datalist>            </div>
         </div>
 
         <!-- Grupo Familiar -->
