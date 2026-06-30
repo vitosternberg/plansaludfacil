@@ -115,6 +115,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Intenta conectar a la base de datos.
     $conn = connect_db_simple(); 
     if ($conn === null) {
+        if ($_SERVER['HTTP_HOST'] === 'localhost' || $_SERVER['HTTP_HOST'] === '127.0.0.1') {
+            // MOCK PARA LOCALHOST CUANDO NO HAY DB
+            echo json_encode([
+                "success" => true,
+                "message" => "¡Mensaje enviado con éxito! (Simulado en local)",
+                "message_id" => 999
+            ]);
+            exit();
+        }
         http_response_code(500); // Internal Server Error
         echo json_encode(['success' => false, 'message' => 'Error al conectar con la base de datos.']);
         exit();

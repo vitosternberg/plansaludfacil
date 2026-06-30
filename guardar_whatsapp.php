@@ -18,6 +18,13 @@ try {
     // Conexión a la base de datos
     $conn = connect_db_simple();
     if ($conn === null) {
+        if ($_SERVER['HTTP_HOST'] === 'localhost' || $_SERVER['HTTP_HOST'] === '127.0.0.1') {
+            echo json_encode([
+                'success' => true,
+                'message' => 'Contacto guardado correctamente (Simulado en local)'
+            ]);
+            exit();
+        }
         throw new Exception('Error de conexión a la base de datos');
     }
 
