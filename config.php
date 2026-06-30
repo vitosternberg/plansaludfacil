@@ -11,10 +11,17 @@
  */
 
 
-define('DB_HOST', 'localhost');
-define('DB_USER', 'plansalu_blogger'); 
-define('DB_PASS', 'Blog.2025!#');    
-define('DB_NAME', 'plansalu_blog');
+if ($_SERVER['HTTP_HOST'] === 'localhost' || $_SERVER['HTTP_HOST'] === '127.0.0.1') {
+    define('DB_HOST', 'localhost');
+    define('DB_USER', 'root'); 
+    define('DB_PASS', '');    
+    define('DB_NAME', 'plansalu_blog');
+} else {
+    define('DB_HOST', 'localhost');
+    define('DB_USER', 'plansalu_blogger'); 
+    define('DB_PASS', 'Blog.2025!#');    
+    define('DB_NAME', 'plansalu_blog');
+}
 define('API_SECRET_KEY', 'A3kOMUb0MrnX7z8Dh24yoevffKcgFMcOIFedZsn3w5IyxdfXvuSlDfkol4eHOpOoQFoB70ODbaNwyhyLWqVVIaesEXqdxfd3PfBx6GGyRiOsYBWMVjNsufbkDEWZjsiI');
 
 // --- NUEVA CONFIGURACIÓN DE CORREO (SMTP) ---
