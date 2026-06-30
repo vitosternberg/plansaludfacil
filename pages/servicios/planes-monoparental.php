@@ -77,22 +77,22 @@ include __DIR__ . '/../../layout/header.php';
                     <li class="flex items-start">
                         <span class="text-blue-500 mr-4 text-2xl">🛡️</span>
                         <div>
-                            <strong class="text-gray-900 block mb-1">Cero Riesgos Financieros:</strong>
-                            <span class="text-gray-600">Encontramos planes con alta cobertura catastrófica para ti (porque si tú fallas, el hogar colapsa) y copagos bajos para urgencias pediátricas.</span>
+                            <strong class="text-gray-900 block mb-1">Blindaje Financiero para tu Hogar:</strong>
+                            <span class="text-gray-600">Encontramos planes con una robusta cobertura catastrófica para ti (porque si tú fallas, el hogar colapsa) y convenios con copagos fijos mínimos para urgencias pediátricas. Tu bolsillo estará protegido ante cualquier imprevisto.</span>
                         </div>
                     </li>
                     <li class="flex items-start">
                         <span class="text-blue-500 mr-4 text-2xl">⏳</span>
                         <div>
                             <strong class="text-gray-900 block mb-1">Ahorro de Tiempo y Burocracia:</strong>
-                            <span class="text-gray-600">Olvídate de leer contratos engorrosos. Nuestra asesoría es 100% digital, transparente y directa al punto.</span>
+                            <span class="text-gray-600">Olvídate de leer contratos engorrosos o perder mañanas en sucursales. Nuestra asesoría es 100% digital, transparente y directa al punto: tú sigues con tu vida mientras nosotros hacemos el trabajo pesado.</span>
                         </div>
                     </li>
                     <li class="flex items-start">
                         <span class="text-blue-500 mr-4 text-2xl">💰</span>
                         <div>
-                            <strong class="text-gray-900 block mb-1">Precio Justo por Carga:</strong>
-                            <span class="text-gray-600">Analizamos el mercado para evitar que te "castiguen" financieramente por agregar cargas, asegurando que pagues lo estrictamente necesario.</span>
+                            <strong class="text-gray-900 block mb-1">Presupuesto Optimizado por Carga:</strong>
+                            <span class="text-gray-600">Analizamos todo el mercado para encontrar las Isapres con los costos base más competitivos. Así evitamos que el valor total se dispare al agregar a tus hijos, asegurando que pagues solo lo estrictamente necesario por una protección de primer nivel.</span>
                         </div>
                     </li>
                 </ul>
