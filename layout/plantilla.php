@@ -90,4 +90,3 @@
     
 </head>
 <body class="bg-gray-50 min-h-screen font-sans flex flex-col">
-    </body>

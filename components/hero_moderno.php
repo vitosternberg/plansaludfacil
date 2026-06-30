@@ -17,7 +17,7 @@ $cta_link = $cta_link ?? '/servicios/planes-individuales';
 <style>
 /* Estilos modernos tipo Startup Tech / Gradiente Dinámico */
 .hero-section {
-    background: linear-gradient(rgba(2, 44, 34, 0.75), rgba(15, 118, 110, 0.85)), url('<?= BASE_URL ?>/img/hero_familia.jpg');
+    background: linear-gradient(rgba(2, 44, 34, 0.3), rgba(15, 118, 110, 0.5)), url('<?= BASE_URL ?>/img/hero_familia.jpg');
     background-size: cover;
     background-position: center;
     color: white;
