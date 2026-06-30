@@ -50,10 +50,10 @@ include __DIR__ . '/../../layout/header.php';
         </div>
 
         <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight text-center">
-            Protege a tus Hijos sin Desestabilizar tu Presupuesto: Planes para Hogares de un Solo Ingreso
+            Protege a tus Hijos sin Desestabilizar tu Presupuesto: Asesoría Experta para Familias Monoparentales
         </h1>
         <h2 class="text-xl md:text-2xl text-gray-600 mb-10 text-center max-w-3xl mx-auto leading-relaxed">
-            Nos encargamos de toda la burocracia y comparamos los planes por ti. Asesoría 100% digital y transparente, para que no pierdas ni un minuto lejos de los tuyos.
+            Comparamos opciones entre todas las Isapres del mercado para recomendarte el plan que mejor se adapte a ti como contratante único. Asesoría 100% digital y transparente.
         </h2>
 
         <!-- PRIMARY CTA -->
@@ -67,10 +67,10 @@ include __DIR__ . '/../../layout/header.php';
 
         <!-- ARTICLE CONTENT -->
         <article class="prose prose-lg max-w-none text-gray-700">
-            <p class="mb-8 text-lg">Sabemos que cuando eres el <strong>sostén único</strong> del hogar, todo el peso económico y logístico recae sobre ti. Cada decisión financiera debe estar calculada y el tiempo es tu recurso más valioso. Por eso, elegir la cobertura de Isapre no debería ser un dolor de cabeza ni un gasto desproporcionado. Nuestro equipo ha diseñado soluciones que optimizan tu 7% legal para proteger a tus cargas sin que tengas que pagar una fortuna de tu bolsillo.</p>
+            <p class="mb-8 text-lg">Sabemos que cuando eres el <strong>sostén único</strong> del hogar, todo el peso económico y logístico recae sobre ti. Cada decisión financiera debe estar calculada y el tiempo es tu recurso más valioso. Por eso, elegir la cobertura de Isapre no debería ser un dolor de cabeza ni un gasto desproporcionado. Nuestro equipo compara los planes de todas las aseguradoras y te asesora de forma personalizada para que elijas la mejor opción como contratante, optimizando tu 7% legal para proteger a tus cargas sin pagar de más.</p>
 
-            <h3 class="text-2xl font-bold text-gray-900 mt-12 mb-6">¿Por qué este plan es diferente?</h3>
-            <p class="mb-6">Las Isapres tradicionales suelen enfocarse en familias que complementan rentas, pero nosotros ajustamos la oferta a <strong>tu realidad financiera</strong>:</p>
+            <h3 class="text-2xl font-bold text-gray-900 mt-12 mb-6">¿Cómo te ayudamos a elegir?</h3>
+            <p class="mb-6">A diferencia de consultar con una sola Isapre, nosotros analizamos el mercado completo y ajustamos nuestra recomendación a <strong>tu realidad financiera</strong>:</p>
             
             <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-12">
                 <ul class="space-y-6">
