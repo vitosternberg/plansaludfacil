@@ -45,6 +45,7 @@ $cta_link = $cta_link ?? '/servicios/cambio-de-isapre#formulario-contacto';
                 <label class="block text-xs font-bold text-gray-500 uppercase mb-1">¿Tienes Cargas?</label>
                 <div class="relative">
                     <select name="cargas" class="w-full appearance-none border-2 border-gray-100 bg-gray-50 text-gray-800 font-semibold rounded-xl px-4 py-3 focus:ring-0 focus:border-[#00d2ff] cursor-pointer transition-colors">
+                        <option value="">Elige una opción</option>
                         <option value="0">Soy solo yo</option>
                         <option value="1">1 carga</option>
                         <option value="2">2 cargas</option>
