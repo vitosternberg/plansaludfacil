@@ -49,6 +49,15 @@
                 </datalist>
             </div>
             <div class="md:col-span-2">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Tipo de plan que busca</label>
+                <select name="preferencia_plan" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] focus:bg-white transition-colors" required>
+                    <option value="">Seleccione preferencia</option>
+                    <option value="Plan Abierto (Libre Elección)">Plan Abierto (Libre Elección)</option>
+                    <option value="Plan Preferencial (con Clínica)">Plan Preferencial (con Clínica)</option>
+                    <option value="Plan Cerrado (solo red de prestadores)">Plan Cerrado (solo red de prestadores)</option>
+                </select>
+            </div>
+            <div class="md:col-span-2">
                 <label class="block text-sm font-semibold text-gray-700 mb-2">Cantidad de cargas</label>
                 <select name="cargas" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] focus:bg-white transition-colors" required>
                     <?php $get_cargas = isset($_GET['cargas']) ? $_GET['cargas'] : ''; ?>
