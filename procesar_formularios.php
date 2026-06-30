@@ -130,16 +130,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     try {
-        // Prepara la consulta SQL para insertar el mensaje en la tabla `ContactMessages`.
-        $sql = "INSERT INTO ContactMessages (name, email, phone, query_type, message, created_at) VALUES (?, ?, ?, ?, ?, NOW())";
+        // Prepara la consulta SQL para insertar el mensaje en la tabla `procesar_formularios` (schema antiguo).
+        $sql = "INSERT INTO procesar_formularios (id_formulario_tipo, nombre, correo, celular, datos_adicionales) VALUES (?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
         if ($stmt === false) {
-            error_log("Error al preparar la consulta SQL para ContactMessages: " . $conn->error);
+            error_log("Error al preparar la consulta SQL para procesar_formularios: " . $conn->error);
             throw new Exception("Error interno del servidor al guardar el mensaje.");
         }
 
-        // Vincula los parámetros a la consulta preparada.
-        $stmt->bind_param("sssss", $name, $email, $phone, $query_type, $message);
+        $id_formulario_tipo = 1;
+        
+        // Empaquetar query_type, message y otros campos extras en datos_adicionales como JSON
+        $extra_data = ['query_type' => $query_type, 'message' => $message];
+        foreach ($_POST as $key => $value) {
+            if (!in_array($key, ['name', 'email', 'phone', 'query_type', 'message', 'url_website'])) {
+                $extra_data[$key] = $value;
+            }
+        }
+        $datos_adicionales = json_encode($extra_data, JSON_UNESCAPED_UNICODE);
+
+        // Vincula los parámetros a la consulta preparada (i=int, s=string).
+        $stmt->bind_param("issss", $id_formulario_tipo, $name, $email, $phone, $datos_adicionales);
         
         // Ejecuta la consulta de inserción.
         if ($stmt->execute()) {
