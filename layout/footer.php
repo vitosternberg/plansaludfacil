@@ -163,6 +163,6 @@
         }
     }
 </script>
-<script src="<?= BASE_URL ?>/js/validaciones.js"></script>
+<script src="<?= BASE_URL ?>/js/validaciones.js?v=<?= time() ?>"></script>
 </body>
 </html>
