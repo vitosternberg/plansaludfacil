@@ -93,7 +93,7 @@ $header_admin_email = 'contacto@plansaludfacil.cl'; // Email estático o pasado 
                 </div>
 
                 <!-- Link Directo a Blog -->
-                <a href="https://plansaludfacil.cl/blog_isapre/" class="nav-item transition flex items-center hover:text-orange-200">
+                <a href="https://plansaludfacil.cl/blog_isapre/" target="_blank" class="nav-item transition flex items-center hover:text-orange-200">
                     <iconify-icon icon="mdi:newspaper-variant-outline" width="20" class="mr-1"></iconify-icon>
                     <span>Blog</span>
                 </a>
@@ -143,7 +143,7 @@ $header_admin_email = 'contacto@plansaludfacil.cl'; // Email estático o pasado 
                 <a href="<?= BASE_URL ?>/servicios/planes-monoparental" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm">Planes Monoparentales</a>
                 
                 <div class="pt-2 pb-1 px-2 text-sm font-bold text-blue-300 uppercase tracking-wider">Blog</div>
-                <a href="https://plansaludfacil.cl/blog_isapre/" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm">Ir al Blog</a>
+                <a href="https://plansaludfacil.cl/blog_isapre/" target="_blank" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm">Ir al Blog</a>
             </nav>
             
             <!-- Buscador Movil -->

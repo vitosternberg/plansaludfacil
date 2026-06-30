@@ -42,7 +42,7 @@ render_component('hero_moderno', [
     'titulo' => 'Elige tu Plan de Isapre en Minutos',
     'subtitulo' => 'Comparamos todas las opciones de Chile por ti. Servicio 100% online, gratuito y sin letra chica.',
     'cta_texto' => 'Comenzar mi Cotización',
-    'cta_link' => '<?= BASE_URL ?>/servicios/planes-individuales'
+    'cta_link' => '<?= BASE_URL ?>/servicios/cambio-de-isapre#formulario-contacto'
 ]);
 
 // 2. SOCIAL PROOF / MARCAS
