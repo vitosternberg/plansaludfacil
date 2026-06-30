@@ -44,7 +44,7 @@ include __DIR__ . '/../../layout/header.php';
     <!-- HERO ARTICLE HEADER -->
     <div class="max-w-4xl mx-auto px-4 pt-12">
         <div class="mb-10 text-center">
-            <img src="https://images.unsplash.com/photo-1602934585418-f588bea4215c?auto=format&fit=crop&w=1200&q=80" 
+            <img src="<?= BASE_URL ?>/img/madre_orgullosa.jpg" 
                  alt="Plan Isapre Monoparental" 
                  class="w-full h-auto rounded-2xl shadow-xl object-cover max-h-[400px]">
         </div>
