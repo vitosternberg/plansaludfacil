@@ -4,83 +4,79 @@
 $titulo = $titulo ?? 'Encuentra tu Plan de Salud Ideal';
 $subtitulo = $subtitulo ?? 'Asesoría gratuita y experta para elegir la mejor Isapre según tu perfil de salud y familia.';
 $cta_texto = $cta_texto ?? 'Cotizar Ahora';
-$cta_link = $cta_link ?? '/servicios/planes-individuales';
+$cta_link = $cta_link ?? '/servicios/cambio-de-isapre#formulario-contacto';
 ?>
-<section class="hero-section">
-    <div class="hero-content">
-        <h1><?= htmlspecialchars($titulo) ?></h1>
-        <p><?= htmlspecialchars($subtitulo) ?></p>
-        <a href="<?= htmlspecialchars($cta_link) ?>" class="btn-primary"><?= htmlspecialchars($cta_texto) ?></a>
+<div class="relative mb-24 md:mb-32">
+    <!-- Hero Background with Curved Bottom -->
+    <section class="hero-bg relative pt-24 pb-40 md:pb-48 px-4 text-center rounded-b-[50px] md:rounded-b-[100px] shadow-lg">
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight drop-shadow-xl">
+                <?= htmlspecialchars($titulo) ?>
+            </h1>
+            <p class="text-lg md:text-xl text-white mb-10 max-w-2xl mx-auto drop-shadow-md font-medium">
+                <?= htmlspecialchars($subtitulo) ?>
+            </p>
+            
+            <!-- Botón opcional centrado -->
+            <a href="<?= htmlspecialchars($cta_link) ?>" class="inline-block bg-white text-[#0284c7] font-bold px-8 py-3 rounded-full shadow-xl hover:bg-gray-50 hover:scale-105 transition-transform duration-300">
+                <?= htmlspecialchars($cta_texto) ?>
+            </a>
+        </div>
+    </section>
+
+    <!-- Floating Action Bar (Overlapping) -->
+    <div class="absolute left-0 right-0 -bottom-16 md:-bottom-12 z-20 px-4">
+        <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] p-4 md:p-6 border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4 transition-all">
+            
+            <div class="flex-1 w-full relative group">
+                <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Renta Líquida</label>
+                <div class="relative">
+                    <select class="w-full appearance-none border-2 border-gray-100 bg-gray-50 text-gray-800 font-semibold rounded-xl px-4 py-3 focus:ring-0 focus:border-[#00d2ff] cursor-pointer transition-colors">
+                        <option value="">¿Cuánto ganas?</option>
+                        <option value="Menos de $1.000.000">Menos de $1.000.000</option>
+                        <option value="$1M - $2M">$1M - $2M</option>
+                        <option value="Más de $2.000.000">Más de $2.000.000</option>
+                    </select>
+                    <iconify-icon icon="mdi:chevron-down" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></iconify-icon>
+                </div>
+            </div>
+            
+            <div class="hidden md:block w-px h-12 bg-gray-200"></div>
+            
+            <div class="flex-1 w-full relative group">
+                <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Edad</label>
+                <input type="number" placeholder="Ej. 30" class="w-full border-2 border-gray-100 bg-gray-50 text-gray-800 font-semibold rounded-xl px-4 py-3 focus:ring-0 focus:border-[#00d2ff] transition-colors">
+            </div>
+            
+            <div class="hidden md:block w-px h-12 bg-gray-200"></div>
+
+            <div class="flex-1 w-full relative group">
+                <label class="block text-xs font-bold text-gray-500 uppercase mb-1">¿Tienes Cargas?</label>
+                <div class="relative">
+                    <select class="w-full appearance-none border-2 border-gray-100 bg-gray-50 text-gray-800 font-semibold rounded-xl px-4 py-3 focus:ring-0 focus:border-[#00d2ff] cursor-pointer transition-colors">
+                        <option value="0">Soy solo yo</option>
+                        <option value="1">1 carga</option>
+                        <option value="2">2 cargas</option>
+                        <option value="3+">3 o más</option>
+                    </select>
+                    <iconify-icon icon="mdi:chevron-down" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></iconify-icon>
+                </div>
+            </div>
+
+            <div class="mt-2 md:mt-0 w-full md:w-auto">
+                <a href="<?= htmlspecialchars($cta_link) ?>" class="block w-full text-center bg-gradient-to-r from-[#00d2ff] to-[#0284c7] hover:from-[#0284c7] hover:to-[#00d2ff] text-white font-extrabold py-4 px-8 rounded-xl shadow-lg transition-transform hover:-translate-y-1 whitespace-nowrap">
+                    Buscar Planes
+                </a>
+            </div>
+        </div>
     </div>
-</section>
+</div>
 
 <style>
-/* Estilos modernos tipo Startup Tech / Gradiente Dinámico */
-.hero-section {
-    background: linear-gradient(rgba(2, 44, 34, 0.3), rgba(15, 118, 110, 0.5)), url('<?= BASE_URL ?>/img/hero_familia.jpg');
+.hero-bg {
+    /* Mantenemos la imagen original pero le damos un tinte azul moderno alineado a nuestra marca */
+    background: linear-gradient(135deg, rgba(2, 132, 199, 0.85) 0%, rgba(0, 210, 255, 0.6) 100%), url('<?= BASE_URL ?>/img/hero_familia.jpg');
     background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 140px 20px;
-    text-align: center;
-    border-radius: 0 0 40px 40px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-    font-family: 'Inter', sans-serif;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Decoración geométrica sutil */
-.hero-section::after {
-    content: '';
-    position: absolute;
-    bottom: -50px;
-    right: -50px;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(0,0,0,0) 70%);
-    border-radius: 50%;
-}
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-}
-.hero-content h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 24px;
-    line-height: 1.15;
-    background: linear-gradient(to right, #ffffff, #a7f3d0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.hero-content p {
-    font-size: 1.25rem;
-    margin-bottom: 40px;
-    color: #e2e8f0;
-    font-weight: 400;
-    line-height: 1.6;
-}
-.btn-primary {
-    background: linear-gradient(90deg, #10b981 0%, #059669 100%);
-    color: #fff;
-    padding: 18px 45px;
-    border-radius: 50px;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    display: inline-block;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
-}
-.btn-primary:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px rgba(16, 185, 129, 0.5);
-    color: white;
+    background-position: center top;
 }
 </style>
