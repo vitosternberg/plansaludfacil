@@ -9,7 +9,6 @@
 
     <form id="form-individual" class="max-w-3xl mx-auto" onsubmit="event.preventDefault(); submitIndividualForm();">
         <input type="hidden" name="tipo_plan" value="individual">
-        <input type="hidden" name="cargas" value="0">
         
         <!-- Honeypot Field (Antispam) -->
         <div style="opacity: 0; position: absolute; top: -9999px; left: -9999px;" aria-hidden="true">
@@ -140,7 +139,7 @@ async function submitIndividualForm() {
     }
 
     // Preparar el mensaje que llegará a Omniflow
-    let customMessage = `Solicitud Plan Individual:\nComuna: ${formData.get('comuna')}\nEdad: ${formData.get('age')}\nRenta: ${formData.get('income')}\nIntereses: `;
+    let customMessage = `Solicitud Plan Individual:\nComuna: ${formData.get('comuna')}\nEdad: ${formData.get('age')}\nRenta: ${formData.get('income')}\nCargas: ${formData.get('cargas')}\nIntereses: `;
     const interests = formData.getAll('interests[]');
     customMessage += interests.length > 0 ? interests.join(', ') : 'Ninguno específico';
     customMessage += `\nPreexistencias: ${formData.get('preexistence') === 'si' ? formData.get('preexistence_text') : 'No'}`;
