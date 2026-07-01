@@ -138,33 +138,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
         $datos_adicionales = json_encode($extra_data, JSON_UNESCAPED_UNICODE);
-        $tipo_plan = $_POST['tipo_plan'] ?? '';
-        $is_contacto_empresa = $tipo_plan === 'contacto_empresa';
 
-        if ($is_contacto_empresa) {
-            $sql = "INSERT INTO contacto_empresa_mensajes (nombre, correo, celular, tipo_consulta, mensaje, datos_adicionales, url_origen, ip_address, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            $stmt = $conn->prepare($sql);
-            if ($stmt === false) {
-                error_log("Error al preparar la consulta SQL para contacto_empresa_mensajes: " . $conn->error);
-                throw new Exception("Error interno del servidor al guardar el mensaje.");
-            }
-
-            $url_origen = $_SERVER['HTTP_REFERER'] ?? null;
-            $ip_address = $_SERVER['REMOTE_ADDR'] ?? null;
-            $user_agent = $_SERVER['HTTP_USER_AGENT'] ?? null;
-            $stmt->bind_param("sssssssss", $name, $email, $phone, $query_type, $message, $datos_adicionales, $url_origen, $ip_address, $user_agent);
-        } else {
-            // Compatibilidad con los formularios antiguos del sitio.
-            $sql = "INSERT INTO procesar_formularios (id_formulario_tipo, nombre, correo, celular, datos_adicionales) VALUES (?, ?, ?, ?, ?)";
-            $stmt = $conn->prepare($sql);
-            if ($stmt === false) {
-                error_log("Error al preparar la consulta SQL para procesar_formularios: " . $conn->error);
-                throw new Exception("Error interno del servidor al guardar el mensaje.");
-            }
-
-            $id_formulario_tipo = 1;
-            $stmt->bind_param("issss", $id_formulario_tipo, $name, $email, $phone, $datos_adicionales);
+        // Compatibilidad con los formularios antiguos del sitio.
+        $sql = "INSERT INTO procesar_formularios (id_formulario_tipo, nombre, correo, celular, datos_adicionales) VALUES (?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        if ($stmt === false) {
+            error_log("Error al preparar la consulta SQL para procesar_formularios: " . $conn->error);
+            throw new Exception("Error interno del servidor al guardar el mensaje.");
         }
+
+        $id_formulario_tipo = 1;
+        $stmt->bind_param("issss", $id_formulario_tipo, $name, $email, $phone, $datos_adicionales);
         
         // Ejecuta la consulta de inserción.
         if ($stmt->execute()) {
