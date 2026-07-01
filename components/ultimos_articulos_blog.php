@@ -1,9 +1,10 @@
 <?php
 $titulo = $titulo ?? 'Últimos Artículos';
 $limite = $limite ?? 3;
+$categoria_id = $categoria_id ?? null;
 
 // Implementar un caché simple usando archivos
-$cache_file = __DIR__ . '/../tmp_blog_cache.json';
+$cache_file = __DIR__ . '/../tmp_blog_cache' . ($categoria_id ? "_cat_{$categoria_id}" : "") . '.json';
 $cache_time = 3600; // 1 hora de caché
 
 $posts = [];
@@ -22,6 +23,9 @@ if (file_exists($cache_file) && (time() - filemtime($cache_file)) < $cache_time)
 } else {
     // Intentar obtener de la API REST de WordPress
     $url = "https://plansaludfacil.cl/blog_isapre/wp-json/wp/v2/posts?_embed&per_page={$limite}";
+    if ($categoria_id) {
+        $url .= "&categories={$categoria_id}";
+    }
     
     // Usar cURL para mayor robustez
     $ch = curl_init();

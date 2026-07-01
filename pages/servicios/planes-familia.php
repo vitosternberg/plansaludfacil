@@ -130,6 +130,16 @@ include __DIR__ . '/../../layout/header.php';
             </div>
 
             <?php render_component('formulario_familia'); ?>
+            
+            <!-- BLOG CLUSTER: Planes Familiares -->
+            <div class="mt-16">
+                <?php 
+                $titulo = 'Guías y Consejos de Salud Familiar';
+                $limite = 3;
+                $categoria_id = 11; // ID de la categoría "Planes Familiares" en WordPress
+                include __DIR__ . '/../../components/ultimos_articulos_blog.php'; 
+                ?>
+            </div>
         </article>
     </div>
 </main>
