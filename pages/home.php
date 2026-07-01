@@ -40,7 +40,7 @@ include './layout/plantilla.php';
 include './layout/header.php';
 render_component('hero_moderno', [
     'titulo' => 'Elige tu Plan de Isapre en Minutos',
-    'subtitulo' => 'Buscamos las mejores opciones en Isapre. 100% gratuito y sin letra chica.',
+    'subtitulo' => '100% gratuito y sin letra chica.',
     'cta_texto' => 'Comenzar mi Cotización',
     'cta_link' => BASE_URL . '/servicios/cambio-de-isapre#formulario-contacto'
 ]);
