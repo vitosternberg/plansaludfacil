@@ -55,7 +55,7 @@ render_component('carrusel_marcas', [
 // 3. BENEFICIOS
 render_component('grilla_beneficios', [
     'items' => [
-        ['icono' => '🚀', 'titulo' => '100% Rápido y Online', 'texto' => 'Sin papeleos ni trámites engorrosos. Todo desde tu celular.'],
+        ['icono' => '🚀', 'titulo' => '100% Rápido y Online', 'texto' => 'Atención en línea desde tu celular sin trámites complejos.'],
         ['icono' => '🤝', 'titulo' => 'Asesoría Imparcial', 'texto' => 'Buscamos lo mejor para ti y tu familia, no para la Isapre.'],
         ['icono' => '💰', 'titulo' => 'Servicio Gratuito', 'texto' => 'Nuestra asesoría experta no tiene ningún costo extra para ti.']
     ]
