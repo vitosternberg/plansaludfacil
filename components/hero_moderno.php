@@ -8,7 +8,7 @@ $cta_link = $cta_link ?? '/servicios/cambio-de-isapre#formulario-contacto';
 ?>
 <div class="relative mb-12 md:mb-32">
     <!-- Hero Background with Curved Bottom -->
-    <section class="hero-bg relative pt-16 md:pt-24 pb-24 md:pb-48 px-4 text-center rounded-b-[50px] md:rounded-b-[100px] shadow-lg">
+    <section class="hero-bg relative pt-8 md:pt-24 pb-20 md:pb-48 px-4 text-center rounded-b-[50px] md:rounded-b-[100px] shadow-lg">
         <div class="relative z-10 max-w-4xl mx-auto">
             <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight drop-shadow-xl">
                 <?= htmlspecialchars($titulo) ?>
@@ -21,7 +21,7 @@ $cta_link = $cta_link ?? '/servicios/cambio-de-isapre#formulario-contacto';
     </section>
 
     <!-- Floating Action Bar (Overlapping) -->
-    <div class="relative md:absolute left-0 right-0 -mt-20 md:mt-0 md:-bottom-12 z-20 px-4">
+    <div class="relative md:absolute left-0 right-0 -mt-24 md:mt-0 md:-bottom-12 z-20 px-4">
         <form action="<?= BASE_URL ?>/servicios/cambio-de-isapre" method="GET" onsubmit="this.action = this.action + '#formulario-contacto'; return true;" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] p-4 md:p-6 border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4 transition-all relative">
             
             <!-- Mobile Avatar (Only on mobile) -->
