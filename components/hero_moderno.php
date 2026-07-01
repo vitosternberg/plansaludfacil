@@ -4,19 +4,21 @@
 $titulo = $titulo ?? 'Encuentra tu Plan de Salud Ideal';
 $titulo_movil = $titulo_movil ?? $titulo;
 $subtitulo = $subtitulo ?? 'Asesoría gratuita y experta para elegir la mejor Isapre según tu perfil de salud y familia.';
+$subtitulo_movil = $subtitulo_movil ?? $subtitulo;
 $cta_texto = $cta_texto ?? 'Cotizar Ahora';
 $cta_link = $cta_link ?? '/servicios/cambio-de-isapre#formulario-contacto';
 ?>
 <div class="relative mb-12 md:mb-32">
     <!-- Hero Background with Curved Bottom -->
-    <section class="hero-bg relative pt-8 md:pt-24 pb-20 md:pb-48 px-4 text-center rounded-b-[50px] md:rounded-b-[100px] shadow-lg">
+    <section class="hero-bg relative pt-8 md:pt-24 pb-32 md:pb-48 px-4 text-center rounded-b-[50px] md:rounded-b-[100px] shadow-lg">
         <div class="relative z-10 max-w-4xl mx-auto">
             <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-2 md:mb-6 leading-none tracking-tight drop-shadow-xl">
                 <span class="hidden md:inline"><?= htmlspecialchars($titulo) ?></span>
                 <span class="md:hidden"><?= htmlspecialchars($titulo_movil) ?></span>
             </h1>
             <p class="text-lg md:text-xl text-white mb-10 max-w-2xl mx-auto drop-shadow-md font-medium">
-                <?= htmlspecialchars($subtitulo) ?>
+                <span class="hidden md:inline"><?= htmlspecialchars($subtitulo) ?></span>
+                <span class="md:hidden"><?= htmlspecialchars($subtitulo_movil) ?></span>
             </p>
             
         </div>
