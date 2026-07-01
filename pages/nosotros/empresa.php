@@ -104,6 +104,13 @@ include __DIR__ . '/../../layout/header.php';
             </p>
             
             <form id="contact-form" onsubmit="event.preventDefault(); submitContactForm();" class="max-w-2xl mx-auto">
+                <input type="hidden" name="tipo_plan" value="contacto_empresa">
+
+                <div style="opacity: 0; position: absolute; top: -9999px; left: -9999px;" aria-hidden="true">
+                    <label for="contact-url-website">Sitio Web</label>
+                    <input type="text" name="url_website" id="contact-url-website" tabindex="-1" autocomplete="off">
+                </div>
+
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
                         <label for="contact-name" class="block text-sm font-semibold text-gray-700 mb-2">Nombre y Apellido</label>
@@ -235,10 +242,11 @@ include __DIR__ . '/../../layout/header.php';
         }
 
         const formData = new FormData(contactForm);
+        formData.set('query_type', formData.get('query_type') || 'contacto_empresa');
         contactFormMessage.className = 'hidden';
 
         try {
-            const response = await fetch('/procesar_contacto.php', { method: 'POST', body: formData });
+            const response = await fetch('<?= BASE_URL ?>/procesar_formularios.php', { method: 'POST', body: formData });
             const data = await response.json();
 
             if (data.success) {
