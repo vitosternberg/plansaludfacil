@@ -5,13 +5,13 @@ $titulo = $titulo ?? 'Marcas Asociadas';
     <div class="brands-container">
         <h2 class="text-4xl md:text-6xl font-extrabold text-[#64748b] mb-10 leading-none tracking-tight drop-shadow-sm"><?= htmlspecialchars($titulo) ?></h2>
         <div class="brands-carousel">
-            <!-- Simulated Logos -->
-            <div class="brand-item">Colmena</div>
-            <div class="brand-item">CruzBlanca</div>
-            <div class="brand-item">Consalud</div>
-            <div class="brand-item">Banmédica</div>
-            <div class="brand-item">VidaTres</div>
-            <div class="brand-item">Nueva Masvida</div>
+            <!-- Isapre Logos -->
+            <div class="brand-item"><img src="<?= BASE_URL ?>/img/logo_colmena.svg" alt="Colmena"></div>
+            <div class="brand-item"><img src="<?= BASE_URL ?>/img/logo_cruzblanca.svg" alt="CruzBlanca"></div>
+            <div class="brand-item"><img src="<?= BASE_URL ?>/img/logo_consalud.svg" alt="Consalud"></div>
+            <div class="brand-item"><img src="<?= BASE_URL ?>/img/logo_banmedica.svg" alt="Banmédica"></div>
+            <div class="brand-item"><img src="<?= BASE_URL ?>/img/logo_vidatres.svg" alt="VidaTres"></div>
+            <div class="brand-item"><img src="<?= BASE_URL ?>/img/logo_masvida.svg" alt="Nueva Masvida"></div>
         </div>
     </div>
 </section>
@@ -33,14 +33,17 @@ $titulo = $titulo ?? 'Marcas Asociadas';
     margin: 0 auto;
 }
 .brand-item {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #cbd5e1;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(100%) opacity(60%);
+    display: flex;
+    align-items: center;
 }
 .brand-item:hover {
-    color: #00d2ff;
+    transform: scale(1.05);
+    filter: grayscale(0%) opacity(100%);
+}
+.brand-item img {
+    height: 45px;
+    width: auto;
 }
 </style>
