@@ -16,7 +16,7 @@ $cta_link = $cta_link ?? '/servicios/cambio-de-isapre#formulario-contacto';
                 <span class="hidden md:inline"><?= htmlspecialchars($titulo) ?></span>
                 <span class="md:hidden"><?= htmlspecialchars($titulo_movil) ?></span>
             </h1>
-            <p class="text-lg md:text-xl text-white mb-10 max-w-2xl mx-auto drop-shadow-md font-medium">
+            <p class="text-lg md:text-[21px] text-white mb-10 max-w-2xl mx-auto drop-shadow-md font-medium">
                 <span class="hidden md:inline"><?= htmlspecialchars($subtitulo) ?></span>
                 <span class="md:hidden"><?= htmlspecialchars($subtitulo_movil) ?></span>
             </p>
