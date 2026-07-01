@@ -18,12 +18,6 @@ $servicios = $servicios ?? [];
                     <?php if(!empty($servicio['imagen'])): ?>
                     <div class="h-52 w-full relative overflow-hidden">
                         <img src="<?= htmlspecialchars($servicio['imagen']) ?>" alt="<?= htmlspecialchars($servicio['titulo']) ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <!-- Gradiente para que el ícono resalte -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
-                        <!-- Ícono superpuesto -->
-                        <div class="absolute bottom-4 left-5 text-4xl bg-white/20 backdrop-blur-sm p-2 rounded-xl border border-white/30">
-                            <?= $servicio['icono'] ?? '🌟' ?>
-                        </div>
                     </div>
                     <?php else: ?>
                     <div class="h-52 w-full bg-gradient-to-br from-[#00d2ff] to-[#0284c7] flex items-center justify-center text-7xl">
@@ -41,7 +35,7 @@ $servicios = $servicios ?? [];
                         </p>
                         
                         <!-- Botón -->
-                        <a href="<?= htmlspecialchars($servicio['link']) ?>" class="block w-full text-center bg-gray-50 text-gray-800 hover:text-white hover:bg-[#00d2ff] font-bold py-3.5 px-4 rounded-xl transition-colors border border-gray-200 hover:border-transparent shadow-sm hover:shadow-md">
+                        <a href="<?= htmlspecialchars($servicio['link']) ?>" class="block w-full text-center bg-sky-50 text-sky-700 hover:text-white hover:bg-[#00d2ff] font-bold py-3.5 px-4 rounded-xl transition-colors border border-sky-100 hover:border-transparent shadow-sm hover:shadow-md">
                             Cotizar Ahora
                         </a>
                     </div>
