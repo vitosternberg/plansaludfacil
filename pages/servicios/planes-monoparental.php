@@ -118,6 +118,16 @@ include __DIR__ . '/../../layout/header.php';
             </div>
 
             <?php render_component('formulario_familia', ['es_monoparental' => true]); ?>
+            
+            <!-- BLOG CLUSTER: Planes Monoparentales -->
+            <div class="mt-16">
+                <?php 
+                $titulo = 'Guías y Consejos de Salud Monoparental';
+                $limite = 3;
+                $categoria_id = 13; // ID de la categoría "Planes Mono Parentales" en WordPress
+                include __DIR__ . '/../../components/ultimos_articulos_blog.php'; 
+                ?>
+            </div>
         </article>
     </div>
 </main>

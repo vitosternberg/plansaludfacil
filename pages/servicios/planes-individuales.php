@@ -103,6 +103,16 @@ include __DIR__ . '/../../layout/header.php';
             </div>
 
             <?php render_component('formulario_individual'); ?>
+            
+            <!-- BLOG CLUSTER: Planes Individuales -->
+            <div class="mt-16">
+                <?php 
+                $titulo = 'Guías y Consejos para Profesionales y Jóvenes';
+                $limite = 3;
+                $categoria_id = 12; // ID de la categoría "Planes Individuales" en WordPress
+                include __DIR__ . '/../../components/ultimos_articulos_blog.php'; 
+                ?>
+            </div>
         </article>
     </div>
 </main>

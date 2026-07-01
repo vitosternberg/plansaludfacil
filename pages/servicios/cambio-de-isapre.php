@@ -129,6 +129,16 @@ include __DIR__ . '/../../layout/header.php';
 
             <!-- FORMULARIO DE CONTACTO (CTA FINAL) -->
             <?php include __DIR__ . '/../../components/formulario_individual.php'; ?>
+            
+            <!-- BLOG CLUSTER: Cambio de Isapre / General Isapre -->
+            <div class="mt-16">
+                <?php 
+                $titulo = 'Guías y Consejos sobre Isapres';
+                $limite = 3;
+                $categoria_id = 8; // ID de la categoría "Isapre" en WordPress
+                include __DIR__ . '/../../components/ultimos_articulos_blog.php'; 
+                ?>
+            </div>
         </article>
     </div>
 </main>
