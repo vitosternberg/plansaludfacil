@@ -22,9 +22,14 @@ $cta_link = $cta_link ?? '/servicios/cambio-de-isapre#formulario-contacto';
 
     <!-- Floating Action Bar (Overlapping) -->
     <div class="absolute left-0 right-0 -bottom-16 md:-bottom-12 z-20 px-4">
-        <form action="<?= BASE_URL ?>/servicios/cambio-de-isapre" method="GET" onsubmit="this.action = this.action + '#formulario-contacto'; return true;" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] p-4 md:p-6 border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4 transition-all">
+        <form action="<?= BASE_URL ?>/servicios/cambio-de-isapre" method="GET" onsubmit="this.action = this.action + '#formulario-contacto'; return true;" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] p-4 md:p-6 border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4 transition-all relative">
             
-            <div class="flex-1 w-full relative group">
+            <!-- Mobile Avatar (Only on mobile) -->
+            <div class="block md:hidden absolute -top-10 left-1/2 transform -translate-x-1/2 z-30">
+                <img src="<?= BASE_URL ?>/img/asesor_movil.jpg" alt="Asesor Plan Salud Fácil" class="w-20 h-20 rounded-full border-4 border-white shadow-md object-cover">
+            </div>
+            
+            <div class="flex-1 w-full relative group mt-8 md:mt-0">
                 <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Renta Líquida</label>
                 <div class="relative">
                     <input type="number" name="income" placeholder="Ej. 1500000" class="w-full appearance-none border-2 border-gray-100 bg-gray-50 text-gray-800 font-semibold rounded-xl px-4 py-3 focus:ring-0 focus:border-[#00d2ff] transition-colors">
@@ -69,6 +74,6 @@ $cta_link = $cta_link ?? '/servicios/cambio-de-isapre#formulario-contacto';
     /* Mantenemos la imagen original pero le damos un tinte azul moderno alineado a nuestra marca */
     background: linear-gradient(135deg, rgba(2, 132, 199, 0.85) 0%, rgba(0, 210, 255, 0.6) 100%), url('<?= BASE_URL ?>/img/hero_familia.jpg');
     background-size: cover;
-    background-position: center top;
+    background-position: center 35%;
 }
 </style>
