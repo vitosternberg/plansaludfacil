@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
-    <path d="M20 30 l10 -15 l20 0 l10 15 l-10 15 l-20 0 z" fill="#facc15" />
-    <path d="M25 30 l7.5 -11.25 l15 0 l7.5 11.25 l-7.5 11.25 l-15 0 z" fill="#fff" />
-    <text x="70" y="40" font-family="Arial, sans-serif" font-weight="900" font-size="32" fill="#005A9C" letter-spacing="-1">COLMENA</text>
-</svg>
