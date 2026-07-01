@@ -41,12 +41,27 @@
                     <input type="number" name="income" value="<?php echo isset($_GET['income']) ? htmlspecialchars($_GET['income']) : ''; ?>" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] focus:bg-white transition-colors" placeholder="$2.000.000">
                 </div>
             </div>
-            <div class="md:col-span-2">
+            <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">Comuna de Residencia</label>
                 <input type="text" name="comuna" list="comunas_list_ind" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] focus:bg-white transition-colors" placeholder="Ej. Providencia, Santiago" autocomplete="off">
                 <datalist id="comunas_list_ind">
                     <?php include 'comunas_options.php'; ?>
                 </datalist>
+            </div>
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Sistema de Salud Actual</label>
+                <select name="isapre_actual" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] focus:bg-white transition-colors">
+                    <option value="">Seleccione su sistema actual</option>
+                    <option value="Fonasa">Fonasa</option>
+                    <option value="Banmédica">Isapre Banmédica</option>
+                    <option value="Colmena">Isapre Colmena</option>
+                    <option value="Consalud">Isapre Consalud</option>
+                    <option value="Cruz Blanca">Isapre Cruz Blanca</option>
+                    <option value="Nueva Masvida">Isapre Nueva Masvida</option>
+                    <option value="Vida Tres">Isapre Vida Tres</option>
+                    <option value="Esencial">Isapre Esencial</option>
+                    <option value="Sin Previsión">Sin Previsión / Otro</option>
+                </select>
             </div>
             <div class="md:col-span-2">
                 <label class="block text-sm font-semibold text-gray-700 mb-2">Tipo de plan que busca</label>
@@ -148,7 +163,7 @@ async function submitIndividualForm() {
     }
 
     // Preparar el mensaje que llegará a Omniflow
-    let customMessage = `Solicitud Plan Individual:\nComuna: ${formData.get('comuna')}\nEdad: ${formData.get('age')}\nRenta: ${formData.get('income')}\nCargas: ${formData.get('cargas')}\nIntereses: `;
+    let customMessage = `Solicitud Plan Individual:\nComuna: ${formData.get('comuna')}\nSistema Actual: ${formData.get('isapre_actual')}\nEdad: ${formData.get('age')}\nRenta: ${formData.get('income')}\nCargas: ${formData.get('cargas')}\nIntereses: `;
     const interests = formData.getAll('interests[]');
     customMessage += interests.length > 0 ? interests.join(', ') : 'Ninguno específico';
     customMessage += `\nPreexistencias: ${formData.get('preexistence') === 'si' ? formData.get('preexistence_text') : 'No'}`;
