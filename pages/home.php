@@ -69,25 +69,29 @@ render_component('tarjetas_servicios', [
             'titulo' => 'Me quiero cambiar de Isapre', 
             'descripcion' => 'Optimiza tu plan actual y mejora tus coberturas.',
             'link' => BASE_URL . '/servicios/cambio-de-isapre',
-            'icono' => '🔄'
+            'icono' => '🔄',
+            'imagen' => BASE_URL . '/img/card_cambio.jpg'
         ],
         [
             'titulo' => 'Busco un Plan Familiar', 
             'descripcion' => 'Protege a los que más quieres con cobertura médica ampliada.',
             'link' => BASE_URL . '/servicios/planes-familia',
-            'icono' => '👨‍👩‍👧‍👦'
+            'icono' => '👨‍👩‍👧‍👦',
+            'imagen' => BASE_URL . '/img/card_familia.jpg'
         ],
         [
             'titulo' => 'Primer Plan Individual', 
             'descripcion' => 'Pasa de Fonasa a Isapre con el plan que mejor se adapte a tu bolsillo.',
             'link' => BASE_URL . '/servicios/planes-individuales',
-            'icono' => '👤'
+            'icono' => '👤',
+            'imagen' => BASE_URL . '/img/card_individual.jpg'
         ],
         [
             'titulo' => 'Plan Monoparental', 
             'descripcion' => 'Planes diseñados para proteger a tus hijos sin desestabilizar hogares de un solo ingreso.',
             'link' => BASE_URL . '/servicios/planes-monoparental',
-            'icono' => '🦸‍♀️'
+            'icono' => '🦸‍♀️',
+            'imagen' => BASE_URL . '/img/card_monoparental.jpg'
         ]
     ]
 ]);
