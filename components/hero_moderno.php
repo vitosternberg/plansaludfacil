@@ -10,7 +10,7 @@ $cta_link = $cta_link ?? '/servicios/cambio-de-isapre#formulario-contacto';
     <!-- Hero Background with Curved Bottom -->
     <section class="hero-bg relative pt-8 md:pt-24 pb-20 md:pb-48 px-4 text-center rounded-b-[50px] md:rounded-b-[100px] shadow-lg">
         <div class="relative z-10 max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-2 md:mb-6 leading-tight tracking-tight drop-shadow-xl">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-2 md:mb-6 leading-none tracking-tight drop-shadow-xl">
                 <?= htmlspecialchars($titulo) ?>
             </h1>
             <p class="text-lg md:text-xl text-white mb-10 max-w-2xl mx-auto drop-shadow-md font-medium">
