@@ -3,7 +3,7 @@ $titulo = $titulo ?? 'Marcas Asociadas';
 ?>
 <section class="brands-section">
     <div class="brands-container">
-        <h2><?= htmlspecialchars($titulo) ?></h2>
+        <h2 class="text-4xl md:text-6xl font-extrabold text-[#64748b] mb-10 leading-none tracking-tight drop-shadow-sm"><?= htmlspecialchars($titulo) ?></h2>
         <div class="brands-carousel">
             <!-- Simulated Logos -->
             <div class="brand-item">Colmena</div>
@@ -23,12 +23,7 @@ $titulo = $titulo ?? 'Marcas Asociadas';
     text-align: center;
     font-family: 'Inter', sans-serif;
 }
-.brands-container h2 {
-    font-size: 1.5rem;
-    color: #64748b;
-    margin-bottom: 30px;
-    font-weight: 500;
-}
+
 .brands-carousel {
     display: flex;
     justify-content: center;
