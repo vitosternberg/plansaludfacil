@@ -31,7 +31,13 @@ $chatWidgetConfig = [
         aria-expanded="false"
         aria-controls="psl-chat-panel"
     >
-        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-lg">AI</span>
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-lg" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3l1.2 3.3L16.5 7.5l-3.3 1.2L12 12l-1.2-3.3L7.5 7.5l3.3-1.2L12 3z" fill="currentColor" stroke="none"></path>
+                <path d="M18.5 12.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7.7-1.8z" fill="currentColor" stroke="none"></path>
+                <path d="M6 13.5l.9 2.4 2.4.9-2.4.9L6 20.1l-.9-2.4-2.4-.9 2.4-.9.9-2.4z" fill="currentColor" stroke="none"></path>
+            </svg>
+        </span>
         <span>Habla con el Asistente PSL</span>
     </button>
 
@@ -59,7 +65,7 @@ $chatWidgetConfig = [
                     placeholder="Cuéntame tu caso y te orientaré de inmediato..."
                 ></textarea>
                 <div class="flex items-center justify-between gap-3">
-                    <p class="text-xs text-slate-500">Agente hecho por Omnilama.cl &reg;</p>
+                    <p class="text-xs text-slate-500">Agente IA desarrollado por Omnilama.cl &reg;</p>
                     <button
                         id="psl-chat-send"
                         type="submit"
