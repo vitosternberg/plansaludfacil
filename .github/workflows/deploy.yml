@@ -16,4 +16,4 @@ jobs:
       - name: 📂 Sync files to server
         run: |
           sudo apt-get update && sudo apt-get install -y lftp
-          lftp -c "set ftp:ssl-allow yes; set ssl:verify-certificate no; open -u '${{ secrets.FTP_USERNAME }}','${{ secrets.FTP_PASSWORD }}' ${{ secrets.FTP_SERVER }}; mirror -R -e -x .git/ -x .github/ ./ ./"
+          lftp -c "set ftp:ssl-allow yes; set ssl:verify-certificate no; open -u '${{ secrets.FTP_USERNAME }}','${{ secrets.FTP_PASSWORD }}' ${{ secrets.FTP_SERVER }}; mirror -R -e -x .git/ -x .github/ ./ ./public_html/plansaludfacil_new/"
