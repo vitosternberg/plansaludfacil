@@ -187,6 +187,15 @@ document.addEventListener('DOMContentLoaded', () => {
             button.className = 'rounded-full border border-sky-200 bg-sky-50 px-3 py-1.5 text-xs font-semibold text-sky-700 transition hover:bg-sky-100';
             button.textContent = prompt;
             button.addEventListener('click', () => {
+                if (window.psfActivityTracker) {
+                    window.psfActivityTracker.track('chat_prompt_click', {
+                        elementType: 'button',
+                        elementLabel: prompt,
+                        metadata: {
+                            chat_session_id: getSessionId()
+                        }
+                    });
+                }
                 input.value = prompt;
                 input.focus();
             });
@@ -224,6 +233,16 @@ document.addEventListener('DOMContentLoaded', () => {
         appendBubble('assistant', 'Estoy revisando tu caso...', true);
         input.value = '';
         setStatus('Respondiendo...', 'sending');
+        if (window.psfActivityTracker) {
+            window.psfActivityTracker.track('chat_message_sent', {
+                elementType: 'chat',
+                elementLabel: 'manual_message',
+                metadata: {
+                    chat_session_id: getSessionId(),
+                    message_length: trimmed.length
+                }
+            });
+        }
 
         try {
             const response = await fetch(config.apiUrl, {
@@ -259,6 +278,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (data.human_requested) {
                 setStatus('Conectando con asesor', 'human');
+                if (window.psfActivityTracker) {
+                    window.psfActivityTracker.track('chat_handoff_requested', {
+                        elementType: 'chat',
+                        elementLabel: 'human_requested',
+                        metadata: {
+                            chat_session_id: getSessionId()
+                        }
+                    });
+                }
             } else {
                 setStatus('IA activa', 'ai');
             }
@@ -281,6 +309,15 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleButton.setAttribute('aria-expanded', String(!isOpen));
 
         if (!isOpen) {
+            if (window.psfActivityTracker) {
+                window.psfActivityTracker.track('chat_open', {
+                    elementType: 'widget',
+                    elementLabel: 'psl-chat-widget',
+                    metadata: {
+                        chat_session_id: getSessionId()
+                    }
+                });
+            }
             await refreshMessages();
             if (!pollIntervalId) {
                 pollIntervalId = window.setInterval(refreshMessages, 5000);
@@ -294,6 +331,13 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
         await sendMessage(input.value);
+    });
+
+    input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            form.dispatchEvent(new Event('submit'));
+        }
     });
 
     renderWelcomeState();
