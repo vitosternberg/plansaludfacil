@@ -39,6 +39,28 @@ if (empty($api_key_valida) || $api_key_recibida !== $api_key_valida) {
 
 // 3. RECIBIR PAYLOAD
 $accion = $_POST['accion'] ?? '';
+
+// --- ACCIÓN: GUARDAR BASE DE CONOCIMIENTO ---
+if ($accion === 'guardar_conocimiento') {
+    $contenido = $_POST['contenido'] ?? '';
+    if (!defined('KNOWLEDGE_BASE_FILE')) {
+        define('KNOWLEDGE_BASE_FILE', __DIR__ . '/knowledge_base_cliente.txt');
+    }
+    $result = file_put_contents(KNOWLEDGE_BASE_FILE, $contenido);
+    echo json_encode(['status' => $result !== false ? 'success' : 'error', 'data' => ['contenido' => $contenido]]);
+    exit;
+}
+
+// --- ACCIÓN: OBTENER BASE DE CONOCIMIENTO ---
+if ($accion === 'obtener_conocimiento') {
+    if (!defined('KNOWLEDGE_BASE_FILE')) {
+        define('KNOWLEDGE_BASE_FILE', __DIR__ . '/knowledge_base_cliente.txt');
+    }
+    $contenido = file_exists(KNOWLEDGE_BASE_FILE) ? file_get_contents(KNOWLEDGE_BASE_FILE) : '';
+    echo json_encode(['status' => 'success', 'data' => ['contenido' => $contenido]]);
+    exit;
+}
+
 if ($accion !== 'execute_sql' && $accion !== 'send_email') {
     http_response_code(400);
     echo json_encode(['success' => false, 'error' => 'Acción no válida']);
