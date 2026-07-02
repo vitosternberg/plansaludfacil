@@ -1,7 +1,7 @@
 <?php
 $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
 $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
-$isLocalHost = str_contains($host, 'localhost') || str_contains($host, '127.0.0.1');
+$isLocalHost = strpos($host, 'localhost') !== false || strpos($host, '127.0.0.1') !== false;
 $omnilamaBaseUrl = $isLocalHost
     ? $scheme . '://' . $host . '/Omniflow'
     : 'https://www.omnilama.cl';
