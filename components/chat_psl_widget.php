@@ -41,7 +41,7 @@ $chatWidgetConfig = [
             <div class="mt-1 flex items-center justify-between gap-3">
                 <div>
                     <h3 class="text-lg font-bold">Asistente PSL</h3>
-                    <p class="text-sm text-sky-50">Con la potencia de Omnilama y foco 100% PSL.</p>
+                    <p class="text-sm text-sky-50">Orientacion digital para tu plan de salud.</p>
                 </div>
                 <span id="psl-chat-status-badge" class="rounded-full bg-white/15 px-3 py-1 text-xs font-semibold">IA activa</span>
             </div>
@@ -59,7 +59,7 @@ $chatWidgetConfig = [
                     placeholder="Cuéntame tu caso y te orientaré de inmediato..."
                 ></textarea>
                 <div class="flex items-center justify-between gap-3">
-                    <p class="text-xs text-slate-500">Si necesitas, te puedo derivar con un asesor humano.</p>
+                    <p class="text-xs text-slate-500">Agente hecho por Omnilama.cl &reg;</p>
                     <button
                         id="psl-chat-send"
                         type="submit"
