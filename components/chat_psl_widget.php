@@ -13,13 +13,13 @@ $chatWidgetConfig = [
     'apiUrl' => $omnilamaBaseUrl . '/api/chat_assistant.php',
     'messagesUrl' => $omnilamaBaseUrl . '/api/chat/messages.php',
     'sessionStorageKey' => 'psl_chat_session_id',
-    'welcomeMessage' => 'Hola, soy el Asistente PSL. Te puedo orientar sobre cambio de isapre, Fonasa, preexistencias o planes para tu empresa.',
-    'quickPrompts' => [
-        'Quiero cambiarme de isapre',
-        'Vengo desde Fonasa',
-        'Tengo preexistencias',
-        'Necesito un plan para mi empresa',
-    ],
+    'welcomeMessage' => 'Hola, soy el Asistente PSL. Te puedo orientar sobre cambio de isapre, Fonasa, preexistencias y tipos de plan segun tu caso.',
+     'quickPrompts' => [
+         'Quiero cambiarme de isapre',
+         'Vengo desde Fonasa',
+         'Tengo preexistencias',
+         'Quiero hablar con un humano',
+     ],
 ];
 ?>
 
