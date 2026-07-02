@@ -8,6 +8,17 @@
  * - Contiene el footer y las etiquetas de cierre `</body>` y `</html>`.
  * - Incluye el JavaScript global para el men��� m���vil.
  */
+$trackerScheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$trackerHost = $_SERVER['HTTP_HOST'] ?? 'localhost';
+$trackerIsLocalHost = strpos($trackerHost, 'localhost') !== false || strpos($trackerHost, '127.0.0.1') !== false;
+$trackerOmnilamaBaseUrl = $trackerIsLocalHost
+    ? $trackerScheme . '://' . $trackerHost . '/Omniflow'
+    : 'https://www.omnilama.cl';
+$siteActivityTrackerConfig = [
+    'siteKey' => 'plansaludfacil',
+    'endpointUrl' => $trackerOmnilamaBaseUrl . '/api/site_activity/track.php',
+    'sessionStorageKey' => 'psf_tracking_session_id',
+];
 ?>
 <footer class="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-6 mt-auto footer-gradient">
     <div class="container mx-auto px-4 text-center text-sm">
@@ -20,6 +31,199 @@
 </footer>
 
 <script>
+    window.psfActivityTracker = (() => {
+        const config = <?= json_encode($siteActivityTrackerConfig, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP) ?>;
+        const startedForms = new Set();
+
+        const trimValue = (value, maxLength = 255) => {
+            if (typeof value !== 'string') {
+                value = value === null || value === undefined ? '' : String(value);
+            }
+            value = value.trim();
+            return value.length > maxLength ? value.slice(0, maxLength) : value;
+        };
+
+        const getSessionId = () => {
+            try {
+                let sessionId = localStorage.getItem(config.sessionStorageKey);
+                if (!sessionId) {
+                    sessionId = `psf_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`;
+                    localStorage.setItem(config.sessionStorageKey, sessionId);
+                }
+                return sessionId;
+            } catch (error) {
+                return `psf_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`;
+            }
+        };
+
+        const getPageCategory = () => {
+            const path = window.location.pathname;
+            if (path.includes('/servicios/')) return 'servicios';
+            if (path.includes('/nosotros/')) return 'nosotros';
+            if (path.includes('/blog')) return 'blog';
+            if (path === '/' || path.endsWith('/plansaludfacil_new') || path.endsWith('/plansaludfacil_new/')) return 'home';
+            return 'general';
+        };
+
+        const send = async (payload) => {
+            try {
+                await fetch(config.endpointUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(payload),
+                    keepalive: true
+                });
+            } catch (error) {
+                console.error('PSF activity tracking failed:', error);
+            }
+        };
+
+        const track = (eventType, data = {}, options = {}) => {
+            const payload = {
+                site_key: config.siteKey,
+                session_id: getSessionId(),
+                event_type: eventType,
+                page_url: trimValue(data.pageUrl || window.location.href, 2000),
+                page_path: trimValue(data.pagePath || window.location.pathname, 255),
+                referrer_url: trimValue(data.referrerUrl || document.referrer || '', 2000),
+                element_type: trimValue(data.elementType || '', 50),
+                element_label: trimValue(data.elementLabel || '', 255),
+                element_target: trimValue(data.elementTarget || '', 2000),
+                metadata: {
+                    page_category: getPageCategory(),
+                    ...((data.metadata && typeof data.metadata === 'object') ? data.metadata : {})
+                }
+            };
+
+            if (data.leadSource && data.leadReference) {
+                payload.lead_source = trimValue(data.leadSource, 50);
+                payload.lead_reference = trimValue(String(data.leadReference), 100);
+            }
+
+            if (options.associateSessionWithLead) {
+                payload.associate_session_with_lead = true;
+            }
+
+            return send(payload);
+        };
+
+        const identifyLead = (leadSource, leadReference, metadata = {}) => {
+            if (!leadSource || !leadReference) {
+                return Promise.resolve();
+            }
+
+            return track('lead_identified', {
+                leadSource,
+                leadReference: String(leadReference),
+                metadata
+            }, {
+                associateSessionWithLead: true
+            });
+        };
+
+        const trackFormSuccess = (formName, leadSource, leadReference, metadata = {}) => {
+            return track('form_success', {
+                elementType: 'form',
+                elementLabel: formName,
+                leadSource,
+                leadReference: leadReference ? String(leadReference) : '',
+                metadata
+            }, {
+                associateSessionWithLead: !!(leadSource && leadReference)
+            });
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            track('page_view', {
+                metadata: {
+                    page_title: document.title,
+                    query_string: window.location.search || ''
+                }
+            });
+
+            document.addEventListener('click', (event) => {
+                const target = event.target.closest('a,button');
+                if (!target || target.closest('#psl-chat-widget-root')) {
+                    return;
+                }
+
+                const href = target.getAttribute('href') || '';
+                const label = trimValue(
+                    target.dataset.trackLabel ||
+                    target.getAttribute('aria-label') ||
+                    target.getAttribute('title') ||
+                    target.textContent ||
+                    '',
+                    255
+                );
+
+                if (label === '' && href === '') {
+                    return;
+                }
+
+                let eventType = 'cta_click';
+                if (target.closest('nav')) {
+                    eventType = 'nav_click';
+                }
+                if (href.indexOf('wa.me') !== -1 || target.getAttribute('onclick') === 'openWspModal()') {
+                    eventType = 'whatsapp_cta_click';
+                }
+
+                const sectionElement = target.closest('section,[id]');
+
+                track(eventType, {
+                    elementType: target.tagName.toLowerCase(),
+                    elementLabel: label,
+                    elementTarget: href,
+                    metadata: {
+                        section_id: sectionElement ? (sectionElement.id || '') : ''
+                    }
+                });
+            }, true);
+
+            document.addEventListener('focusin', (event) => {
+                const form = event.target.closest('form');
+                if (!form) {
+                    return;
+                }
+
+                const formName = form.id || form.getAttribute('name') || 'formulario';
+                if (startedForms.has(formName)) {
+                    return;
+                }
+
+                startedForms.add(formName);
+                track('form_start', {
+                    elementType: 'form',
+                    elementLabel: formName
+                });
+            });
+
+            document.addEventListener('submit', (event) => {
+                const form = event.target;
+                if (!(form instanceof HTMLFormElement)) {
+                    return;
+                }
+
+                const formName = form.id || form.getAttribute('name') || 'formulario';
+                track('form_submit', {
+                    elementType: 'form',
+                    elementLabel: formName
+                });
+            }, true);
+        });
+
+        return {
+            getSessionId,
+            track,
+            identifyLead,
+            trackFormSuccess
+        };
+    })();
+
     // [VERSION CONTROL] - L���gica JavaScript para el men��� m���vil - 2025-07-06
     // Estas referencias deben coincidir con los IDs en tu `header_content.php`
     const menuToggle = document.getElementById('menu-toggle');
@@ -106,6 +310,12 @@
     function openWspModal() {
         const modal = document.getElementById('wsp-modal');
         modal.classList.remove('hidden');
+        if (window.psfActivityTracker) {
+            window.psfActivityTracker.track('whatsapp_open', {
+                elementType: 'modal',
+                elementLabel: 'wsp-modal'
+            });
+        }
         // Ocultar menú móvil si está abierto
         const mobileMenu = document.getElementById('mobile-menu');
         const menuOverlay = document.getElementById('menu-overlay');
@@ -136,11 +346,20 @@
             const response = await fetch('<?= BASE_URL ?>/guardar_whatsapp.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name: name, phone: phone })
+                body: JSON.stringify({
+                    name: name,
+                    phone: phone,
+                    tracking_session_id: window.psfActivityTracker ? window.psfActivityTracker.getSessionId() : ''
+                })
             });
             const data = await response.json();
 
             if (data.success) {
+                if (window.psfActivityTracker) {
+                    await window.psfActivityTracker.trackFormSuccess('wsp-form', 'whatsapp_contact', data.contact_id || '', {
+                        source: 'footer_modal'
+                    });
+                }
                 // Redirigir a whatsapp real
                 const whatsappNumber = '56952282339'; // El nro de la empresa
                 const text = encodeURIComponent(`Hola, soy ${name}. Quisiera asesoría para cotizar un plan de Isapre.`);
