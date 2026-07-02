@@ -41,26 +41,31 @@ $chatWidgetConfig = [
         <span>Habla con el Asistente PSL</span>
     </button>
 
-    <div id="psl-chat-panel" class="mt-4 hidden w-[min(92vw,380px)] overflow-hidden rounded-3xl border border-sky-100 bg-white shadow-2xl">
-        <div class="bg-gradient-to-r from-sky-600 to-cyan-500 px-5 py-4 text-white">
-            <p class="text-xs font-semibold uppercase tracking-[0.2em] opacity-90">Plan Salud Fácil</p>
+    <div id="psl-chat-panel" class="mt-4 hidden w-[min(92vw,380px)] max-h-[min(85vh,600px)] flex flex-col overflow-hidden rounded-3xl border border-sky-100 bg-white shadow-2xl">
+        <div class="bg-gradient-to-r from-sky-600 to-cyan-500 px-5 py-4 text-white shrink-0">
+            <div class="flex items-center justify-between">
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] opacity-90">Plan Salud Fácil</p>
+                <button id="psl-chat-close" type="button" class="text-white/70 hover:text-white transition" aria-label="Cerrar chat">
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
             <div class="mt-1 flex items-center justify-between gap-3">
                 <div>
                     <h3 class="text-lg font-bold">Asistente PSL</h3>
                     <p class="text-sm text-sky-50">Orientacion digital para tu plan de salud.</p>
                 </div>
-                <span id="psl-chat-status-badge" class="rounded-full bg-white/15 px-3 py-1 text-xs font-semibold">IA activa</span>
+                <span id="psl-chat-status-badge" class="rounded-full bg-white/15 px-3 py-1 text-xs font-semibold shrink-0">IA activa</span>
             </div>
         </div>
 
-        <div id="psl-chat-messages" class="max-h-[420px] space-y-3 overflow-y-auto bg-slate-50 px-4 py-4"></div>
+        <div id="psl-chat-messages" class="flex-1 space-y-3 overflow-y-auto bg-slate-50 px-4 py-4"></div>
 
-        <div class="border-t border-slate-200 bg-white px-4 py-4">
+        <div class="border-t border-slate-200 bg-white px-4 py-4 shrink-0">
             <div id="psl-chat-quick-prompts" class="mb-3 flex flex-wrap gap-2"></div>
             <form id="psl-chat-form" class="space-y-3">
                 <textarea
                     id="psl-chat-input"
-                    rows="3"
+                    rows="2"
                     class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-800 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100"
                     placeholder="Cuéntame tu caso y te orientaré de inmediato..."
                 ></textarea>
@@ -86,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!root) return;
 
     const toggleButton = document.getElementById('psl-chat-toggle');
+    const closeButton = document.getElementById('psl-chat-close');
     const panel = document.getElementById('psl-chat-panel');
     const messagesContainer = document.getElementById('psl-chat-messages');
     const form = document.getElementById('psl-chat-form');
@@ -303,29 +309,42 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    toggleButton.addEventListener('click', async () => {
-        const isOpen = !panel.classList.contains('hidden');
-        panel.classList.toggle('hidden', isOpen);
-        toggleButton.setAttribute('aria-expanded', String(!isOpen));
+    const openPanel = async () => {
+        panel.classList.remove('hidden');
+        toggleButton.setAttribute('aria-expanded', 'true');
+        if (window.psfActivityTracker) {
+            window.psfActivityTracker.track('chat_open', {
+                elementType: 'widget',
+                elementLabel: 'psl-chat-widget',
+                metadata: { chat_session_id: getSessionId() }
+            });
+        }
+        await refreshMessages();
+        if (!pollIntervalId) {
+            pollIntervalId = window.setInterval(refreshMessages, 5000);
+        }
+    };
 
-        if (!isOpen) {
-            if (window.psfActivityTracker) {
-                window.psfActivityTracker.track('chat_open', {
-                    elementType: 'widget',
-                    elementLabel: 'psl-chat-widget',
-                    metadata: {
-                        chat_session_id: getSessionId()
-                    }
-                });
-            }
-            await refreshMessages();
-            if (!pollIntervalId) {
-                pollIntervalId = window.setInterval(refreshMessages, 5000);
-            }
-        } else if (pollIntervalId) {
+    const closePanel = () => {
+        panel.classList.add('hidden');
+        toggleButton.setAttribute('aria-expanded', 'false');
+        if (pollIntervalId) {
             window.clearInterval(pollIntervalId);
             pollIntervalId = null;
         }
+    };
+
+    toggleButton.addEventListener('click', async () => {
+        if (panel.classList.contains('hidden')) {
+            await openPanel();
+        } else {
+            closePanel();
+        }
+    });
+
+    closeButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closePanel();
     });
 
     form.addEventListener('submit', async (event) => {
