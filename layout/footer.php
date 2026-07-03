@@ -24,7 +24,7 @@ $siteActivityTrackerConfig = [
     <div class="container mx-auto px-4 text-center text-sm">
         <p>&copy; 2025 Plan Salud Facil. Todos los derechos reservados.</p>
         <div class="mt-2 space-x-4">
-            <a href="/nosotros/privacidad" class="hover:text-blue-200 transition">Politica de Privacidad</a>
+            <a href="<?= defined('BASE_URL') ? BASE_URL : '' ?>/nosotros/privacidad" class="hover:text-blue-200 transition">Politica de Privacidad</a>
             <a href="#" class="hover:text-blue-200 transition">Terminos de Servicio</a>
         </div>
     </div>
