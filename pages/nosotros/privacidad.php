@@ -1,11 +1,23 @@
 <?php
 $page_title = "Política de Privacidad";
 $page_description = "Política de Privacidad y Protección de Datos Personales - Plan Salud Fácil";
-require_once __DIR__ . '/../../layout/header.php';
+include __DIR__ . '/../../layout/plantilla.php';
+include __DIR__ . '/../../layout/header.php';
+include __DIR__ . '/../../layout/wsp.php';
 ?>
 
+<!-- Hero -->
+<div class="relative h-64 md:h-80 overflow-hidden">
+    <img src="<?= BASE_URL ?>/img/hero_familia.jpg" alt="Protección de datos" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-700/50 flex items-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Política de Privacidad</h1>
+            <p class="text-blue-100 text-sm md:text-base">Cómo protegemos tu información personal</p>
+        </div>
+    </div>
+</div>
+
 <div class="container mx-auto px-4 py-12 max-w-4xl">
-    <h1 class="text-3xl font-bold text-gray-900 mb-2">Política de Privacidad</h1>
     <p class="text-sm text-gray-500 mb-8">Última actualización: 3 de julio de 2026</p>
 
     <!-- 1. Compromiso -->
@@ -182,11 +194,9 @@ require_once __DIR__ . '/../../layout/header.php';
         <h2 class="text-xl font-bold text-gray-800 mb-3">10. Datos del Responsable del Tratamiento</h2>
         <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
             <p class="text-gray-700 leading-relaxed mb-2"><strong>Razón Social:</strong> Plan Salud Fácil</p>
-            <p class="text-gray-700 leading-relaxed mb-2"><strong>RUT:</strong> Se entrega al momento de la cotización formal</p>
             <p class="text-gray-700 leading-relaxed mb-2"><strong>Domicilio:</strong> Santiago, Región Metropolitana, Chile</p>
             <p class="text-gray-700 leading-relaxed mb-2"><strong>Sitio Web:</strong> <a href="https://plansaludfacil.cl" class="text-blue-600 underline">plansaludfacil.cl</a></p>
-            <p class="text-gray-700 leading-relaxed mb-2"><strong>Correo de Privacidad:</strong> <a href="mailto:privacidad@plansaludfacil.cl" class="text-blue-600 underline">privacidad@plansaludfacil.cl</a></p>
-            <p class="text-gray-700 leading-relaxed"><strong>Teléfono:</strong> +56 9 5228 2339</p>
+            <p class="text-gray-700 leading-relaxed"><strong>Correo para ejercer derechos ARCO:</strong> <a href="mailto:privacidad@plansaludfacil.cl" class="text-blue-600 underline">privacidad@plansaludfacil.cl</a></p>
         </div>
     </section>
 
@@ -202,5 +212,5 @@ require_once __DIR__ . '/../../layout/header.php';
 </div>
 
 <?php
-require_once __DIR__ . '/../../layout/footer.php';
+include __DIR__ . '/../../layout/footer.php';
 ?>
