@@ -119,6 +119,7 @@ render_component('cta_footer', [
     'cta_link' => 'https://wa.me/56952282339'
 ]);
 
-render_component('chat_psl_widget');
+// Chatbot desactivado — toggle en Omnilama > Base de Conocimiento
+// render_component('chat_psl_widget');
 
 include './layout/footer.php';
