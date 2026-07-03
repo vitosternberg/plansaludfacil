@@ -14,8 +14,9 @@ $chatWidgetConfig = [
     'messagesUrl' => $omnilamaBaseUrl . '/api/chat/messages.php',
     'sessionStorageKey' => 'psl_chat_session_id',
     'welcomeMessage' => 'Hola, soy el Asistente PSL. Te puedo orientar sobre cambio de isapre, Fonasa, preexistencias y tipos de plan segun tu caso.',
-     'quickPrompts' => [
-         'Quiero cambiarme de isapre',
+    'agentStatusUrl' => $omnilamaBaseUrl . '/api/chat/agent_status.php?tenant=psl',
+    'quickPrompts' => [
+        'Quiero cambiarme de isapre',
          'Vengo desde Fonasa',
          'Tengo preexistencias',
          'Quiero hablar con un humano',
@@ -85,10 +86,23 @@ $chatWidgetConfig = [
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const config = <?= json_encode($chatWidgetConfig, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP) ?>;
     const root = document.getElementById('psl-chat-widget-root');
     if (!root) return;
+
+    // Verificar si el agente IA está activo
+    try {
+        const statusResp = await fetch(config.agentStatusUrl);
+        const statusData = await statusResp.json();
+        if (!statusData.active) {
+            root.style.display = 'none';
+            return;
+        }
+    } catch (e) {
+        // Si no se puede consultar, mostrar igual (fail open)
+        console.warn('No se pudo verificar estado del agente:', e);
+    }
 
     const toggleButton = document.getElementById('psl-chat-toggle');
     const closeButton = document.getElementById('psl-chat-close');
