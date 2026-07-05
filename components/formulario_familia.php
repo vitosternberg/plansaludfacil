@@ -188,6 +188,9 @@ async function submitFamiliaForm() {
     formData.append('message', customMessage);
     formData.append('query_type', 'cotizacion_familiar');
     formData.append('origen_lead', form.querySelector('[name="origen_lead"]').value);
+    if (window.psfActivityTracker) {
+        formData.append('tracking_session_id', window.psfActivityTracker.getSessionId());
+    }
 
     msg.className = 'hidden';
 
@@ -196,6 +199,12 @@ async function submitFamiliaForm() {
         const data = await response.json();
 
         if (data.success) {
+            if (window.psfActivityTracker) {
+                await window.psfActivityTracker.trackFormSuccess('form-familia', 'formulario', data.message_id || '', {
+                    query_type: 'cotizacion_familiar',
+                    origen_lead: form.querySelector('[name="origen_lead"]').value
+                });
+            }
             msg.textContent = '¡Solicitud recibida! Nuestros asesores están buscando el mejor plan para tu familia.';
             msg.className = 'mb-6 text-center text-sm font-medium p-4 rounded-lg bg-green-50 text-green-700';
             form.reset();

@@ -170,6 +170,9 @@ async function submitIndividualForm() {
     
     formData.append('message', customMessage);
     formData.append('query_type', 'cotizacion_individual');
+    if (window.psfActivityTracker) {
+        formData.append('tracking_session_id', window.psfActivityTracker.getSessionId());
+    }
 
     msg.className = 'hidden';
 
@@ -178,6 +181,11 @@ async function submitIndividualForm() {
         const data = await response.json();
 
         if (data.success) {
+            if (window.psfActivityTracker) {
+                await window.psfActivityTracker.trackFormSuccess('form-individual', 'formulario', data.message_id || '', {
+                    query_type: 'cotizacion_individual'
+                });
+            }
             msg.textContent = '¡Excelente! Encontramos opciones para ti. Un experto te contactará en breve.';
             msg.className = 'mb-6 text-center text-sm font-medium p-4 rounded-lg bg-green-50 text-green-700';
             form.reset();
