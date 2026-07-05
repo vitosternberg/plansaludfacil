@@ -205,9 +205,7 @@ async function submitFamiliaForm() {
                     origen_lead: form.querySelector('[name="origen_lead"]').value
                 });
             }
-            msg.textContent = '¡Solicitud recibida! Nuestros asesores están buscando el mejor plan para tu familia.';
-            msg.className = 'mb-6 text-center text-sm font-medium p-4 rounded-lg bg-green-50 text-green-700';
-            form.reset();
+            setTimeout(() => { window.location.href = '/gracias?id=' + data.message_id; }, 500);
         } else {
             msg.textContent = data.message || 'Error al enviar la solicitud.';
             msg.className = 'mb-6 text-center text-sm font-medium p-4 rounded-lg bg-red-50 text-red-700';

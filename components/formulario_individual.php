@@ -186,9 +186,7 @@ async function submitIndividualForm() {
                     query_type: 'cotizacion_individual'
                 });
             }
-            msg.textContent = '¡Excelente! Encontramos opciones para ti. Un experto te contactará en breve.';
-            msg.className = 'mb-6 text-center text-sm font-medium p-4 rounded-lg bg-green-50 text-green-700';
-            form.reset();
+            setTimeout(() => { window.location.href = '/gracias?id=' + data.message_id; }, 500);
         } else {
             msg.textContent = data.message || 'Error al enviar la solicitud.';
             msg.className = 'mb-6 text-center text-sm font-medium p-4 rounded-lg bg-red-50 text-red-700';
