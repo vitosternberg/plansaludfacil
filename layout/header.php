@@ -96,6 +96,11 @@ $header_admin_email = 'contacto@plansaludfacil.cl'; // Email estático o pasado 
                     <iconify-icon icon="mdi:newspaper-variant-outline" width="20" class="mr-1"></iconify-icon>
                     <span>Blog</span>
                 </a>
+                <!-- Link FAQ -->
+                <a href="<?= BASE_URL ?>/preguntas-frecuentes" class="nav-item transition flex items-center text-gray-600 hover:text-[#0284c7]">
+                    <iconify-icon icon="mdi:help-circle-outline" width="20" class="mr-1"></iconify-icon>
+                    <span>FAQ</span>
+                </a>
                 
                 <!-- Botón WhatsApp Modal -->
                 <button onclick="openWspModal()" class="ml-4 flex items-center bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-2.5 px-5 rounded-full shadow-md transition-transform transform hover:-translate-y-1 focus:outline-none">
@@ -147,7 +152,10 @@ $header_admin_email = 'contacto@plansaludfacil.cl'; // Email estático o pasado 
                 <a href="<?= BASE_URL ?>/servicios/planes-familia" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm">Planes Familiares</a>
                 <a href="<?= BASE_URL ?>/servicios/planes-monoparental" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm">Planes Monoparentales</a>
                 
-                <div class="pt-2 pb-1 px-2 text-sm font-bold text-blue-300 uppercase tracking-wider">Blog</div>
+                                <div class="pt-2 pb-1 px-2 text-sm font-bold text-blue-300 uppercase tracking-wider">FAQ</div>
+                <a href="<?= BASE_URL ?>/preguntas-frecuentes" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm">Preguntas Frecuentes</a>
+                
+<div class="pt-2 pb-1 px-2 text-sm font-bold text-blue-300 uppercase tracking-wider">Blog</div>
                 <a href="https://plansaludfacil.cl/blog_isapre/" target="_blank" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm mb-4">Ir al Blog</a>
 
                 <button onclick="openWspModal()" class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-xl shadow-md transition-transform focus:outline-none">
