@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de Isapre: Asesoría Gratuita 100% Online | Plan Salud Fácil</title>
+    <meta name="description" content="Te ayudamos a cambiarte de Isapre gratis y sin trámites. Comparamos todas las Isapres, gestionamos tu Declaración de Salud y firmas online. Asesoría 100% digital.">
+
+    <!-- FAQ Structured Data (Schema.org) para Google AI Overview -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Me conviene cambiarme de Isapre?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, conviene cambiarse si han pasado más de 12 meses desde que contrataste tu plan actual y tu situación de vida o ingresos cambió. Podrías acceder a mejores coberturas por el mismo 7% de cotización."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué necesito para cambiarme de Isapre?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Solo necesitas tener al menos un año de antigüedad en tu Isapre actual, no estar con licencia médica vigente y completar la Declaración de Salud. Nosotros te guiamos en cada paso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo funciona el proceso de cambio de Isapre?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nosotros comparamos todas las Isapres del mercado por ti, gestionamos tu Declaración de Salud y firmas el nuevo contrato 100% online. El proceso completo toma menos de 48 horas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta cambiarse de Isapre?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nuestro servicio de asesoría y gestión de cambio es 100% gratuito. Solo pagas la cotización mensual de tu nuevo plan de salud, que se descuenta de tu 7% legal obligatorio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo cambiarme de Isapre si tengo preexistencias?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, puedes cambiarte aunque tengas preexistencias. Analizamos tu historial médico de forma confidencial antes de postular para asegurar que el cambio sea aprobado sin contratiempos ni rechazos."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+        .aviso-ux-con-fondo {
+            background-image: url('../img/mama_hijas.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .form-step { display: none; animation: fadeIn 0.3s ease-out; }
+        .form-step.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .progress-step { position: relative; }
+        .progress-step:not(:last-child):after {
+            content: ''; position: absolute; top: 50%; left: 100%; width: 50px; height: 2px;
+            background-color: #d1d5db; transform: translateY(-50%);
+        }
+        .progress-step.active:not(:last-child):after { background-color: #3b82f6; }
+        input:invalid, select:invalid { border-color: #ef4444; }
+        input:valid, select:valid { border-color: #10b981; }
+
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .menu-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        .nav-item { display: flex; align-items: center; gap: 0.5rem; color: inherit; }
+        .nav-item:hover { color: #93c5fd; }
+        .nav-item iconify-icon { color: inherit; transition: color 0.2s ease-in-out; }
+        .footer-gradient { background: linear-gradient(90deg, #1e40af 0%, #1e3a8a 100%);}
+        .cta-gradient { background: linear-gradient(90deg, #1e40af 0%, #1e3a8a 100%); transition: all 0.3s ease; }
+        .cta-gradient:hover { transform: translateY(-2px); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+
+        /* Estilo piramidal AIO: respuesta directa destacada */
+        .answer-direct {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-left: 4px solid #2563eb;
+            padding: 1rem 1.25rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #1e3a8a;
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17127470305"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17127470305');
+    </script>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+
+    <!-- TOP BAR -->
+    <div class="bg-blue-900 text-white text-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-2">
+                <div class="flex items-center space-x-4">
+                    <a href="https://wa.me/56952282339" class="flex items-center hover:text-blue-200 transition" target="_blank">
+                        <iconify-icon icon="mdi:whatsapp" width="16" class="mr-1"></iconify-icon>
+                        <span class="hidden sm:inline">+56 9 5228 2339</span>
+                    </a>
+                    <a href="mailto:contacto@plansaludfacil.cl" class="flex items-center hover:text-blue-200 transition">
+                        <iconify-icon icon="mdi:email-outline" width="16" class="mr-1"></iconify-icon>
+                        <span class="hidden sm:inline">contacto@plansaludfacil.cl</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center">
+                    <iconify-icon icon="mdi:clock-outline" width="14" class="mr-1"></iconify-icon>
+                    <span>Lunes a Viernes: 9:00 - 18:00 hrs</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-md sticky top-0 z-30">
+        <div class="max-w-7xl mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="h-10 w-10 bg-gray-200 rounded flex items-center justify-center mr-2">
+                        <span class="text-blue-700 font-bold">PSF</span>
+                    </div>
+                    <a href="/" class="text-xl font-bold hover:text-blue-200 transition">Plan Salud Fácil</a>
+                </div>
+
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="/" class="nav-item transition">
+                        <iconify-icon icon="mdi:home-outline" width="20"></iconify-icon>
+                        <span>Inicio</span>
+                    </a>
+                    <div class="relative group">
+                        <button class="nav-item transition">
+                            <iconify-icon icon="mdi:briefcase-outline" width="20"></iconify-icon>
+                            <span>Nosotros</span>
+                        </button>
+                    </div>
+                    <div class="relative group">
+                        <button class="nav-item transition text-yellow-300 font-semibold">
+                            <iconify-icon icon="mdi:star-outline" width="20"></iconify-icon>
+                            <span>Servicios</span>
+                        </button>
+                    </div>
+                    <a href="/blog-plansaludfacil/" class="nav-item transition">
+                        <iconify-icon icon="mdi:post-outline" width="20"></iconify-icon>
+                        <span>Blog</span>
+                    </a>
+                </nav>
+
+                <button id="menu-toggle" class="md:hidden focus:outline-none hover:text-blue-200">
+                    <iconify-icon icon="mdi:menu" width="24"></iconify-icon>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="mobile-menu fixed inset-y-0 left-0 w-64 bg-gradient-to-b from-blue-800 to-blue-900 z-50 p-4">
+                <div class="flex justify-between items-center mb-8">
+                    <div class="flex items-center">
+                        <div class="h-10 w-10 bg-gray-200 rounded flex items-center justify-center mr-2">
+                            <span class="text-blue-700 font-bold">PSF</span>
+                        </div>
+                        <span class="text-xl font-bold">Plan Salud Fácil</span>
+                    </div>
+                    <button id="menu-close" class="text-white hover:text-blue-200">
+                        <iconify-icon icon="mdi:close" width="24"></iconify-icon>
+                    </button>
+                </div>
+                <nav class="flex flex-col space-y-4 mb-6">
+                    <a href="/" class="nav-item block py-2 transition"><span>Inicio</span></a>
+                    <span class="nav-item block py-2 transition text-yellow-300"><span>Servicios</span></span>
+                    <a href="/servicios/cambio-de-isapre" class="nav-item block py-2 pl-6 transition text-sm text-yellow-300"><span>Cambio de Isapre</span></a>
+                    <a href="/servicios/planes-individuales" class="nav-item block py-2 pl-6 transition text-sm"><span>Planes Individuales</span></a>
+                    <a href="/servicios/planes-familia" class="nav-item block py-2 pl-6 transition text-sm"><span>Planes Familiares</span></a>
+                    <a href="/servicios/planes-monoparental" class="nav-item block py-2 pl-6 transition text-sm"><span>Planes Monoparentales</span></a>
+                    <a href="/blog-plansaludfacil/" class="nav-item block py-2 transition"><span>Blog</span></a>
+                </nav>
+            </div>
+            <div id="menu-overlay" class="menu-overlay fixed inset-0 z-40"></div>
+        </div>
+    </header>
+
+    <!-- SUB-NAV SERVICIOS (desktop) -->
+    <nav class="hidden md:block bg-white border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex space-x-0 overflow-x-auto">
+                <a href="/servicios/cambio-de-isapre" class="px-5 py-3 text-sm font-semibold text-blue-600 border-b-2 border-blue-600 whitespace-nowrap">Cambio de Isapre</a>
+                <a href="/servicios/planes-individuales" class="px-5 py-3 text-sm text-gray-600 hover:text-blue-600 transition whitespace-nowrap">Planes Individuales</a>
+                <a href="/servicios/planes-familia" class="px-5 py-3 text-sm text-gray-600 hover:text-blue-600 transition whitespace-nowrap">Planes Familiares</a>
+                <a href="/servicios/planes-monoparental" class="px-5 py-3 text-sm text-gray-600 hover:text-blue-600 transition whitespace-nowrap">Planes Monoparentales</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- ============================================================ -->
+        <!-- HERO: Respuesta directa a la pregunta principal del usuario   -->
+        <!-- ============================================================ -->
+        <section class="text-center mb-16">
+            <span class="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-4">
+                Servicio 100% Gratuito
+            </span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
+                Te ayudamos a cambiarte de Isapre <span class="text-blue-600">gratis y sin hacer trámites</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                Comparamos todas las Isapres del mercado, gestionamos tu Declaración de Salud
+                y firmas tu nuevo contrato 100% online. En menos de 48 horas.
+            </p>
+            <a href="#cotizar"
+               class="cta-gradient inline-flex items-center text-white font-bold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-xl transition">
+                <iconify-icon icon="mdi:whatsapp" width="24" class="mr-2"></iconify-icon>
+                Quiero Cambiarme de Isapre
+            </a>
+            <p class="text-sm text-gray-400 mt-3">⏱️ Toma menos de 2 minutos · Asesoría 100% gratis</p>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- SECCIÓN 1: ¿Me conviene cambiarme de Isapre?                 -->
+        <!-- ============================================================ -->
+        <section class="mb-16 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                ¿Me conviene cambiarme de Isapre?
+            </h2>
+
+            <!-- RESPUESTA DIRECTA (lo que Google AIO extrae) -->
+            <div class="answer-direct">
+                Sí, conviene cambiarse si han pasado más de 12 meses desde que contrataste tu plan actual
+                y tu situación de vida o ingresos cambió. Podrías acceder a mejores coberturas por el mismo
+                7% de cotización obligatoria, sin pagar ni un peso extra.
+            </div>
+
+            <!-- EXPLICACIÓN DETALLADA -->
+            <p class="text-gray-600 mb-6">
+                La mayoría de las personas se mantienen en su Isapre por costumbre, perdiendo la oportunidad
+                de acceder a mejores beneficios. El mercado de la salud en Chile cambia constantemente: lo que
+                ayer era un excelente plan, hoy puede estar obsoleto. Estas son las tres razones más comunes
+                por las que nuestros clientes deciden cambiarse:
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-blue-50 to-sky-50 p-6 rounded-xl">
+                    <div class="text-3xl mb-3">💰</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Tu sueldo aumentó</h3>
+                    <p class="text-gray-600 text-sm">Si tu 7% legal ahora es mayor, estás generando excedentes
+                    que podrías aprovechar mejor en un plan con coberturas más altas y mejores clínicas.</p>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl">
+                    <div class="text-3xl mb-3">👨‍👩‍👧‍👦</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Cambió tu estructura familiar</h3>
+                    <p class="text-gray-600 text-sm">Si vas a tener un hijo, tus hijos crecieron y salieron del plan,
+                    o te casaste, tu perfil de riesgo cambió y necesitas otra aseguradora.</p>
+                </div>
+                <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-xl">
+                    <div class="text-3xl mb-3">🏥</div>
+                    <h3 class="font-bold text-gray-900 mb-2">No te sirven las clínicas actuales</h3>
+                    <p class="text-gray-600 text-sm">Si tu Isapre actual no tiene buena cobertura en los centros
+                    médicos cercanos a tu hogar o trabajo, estás pagando por un servicio que no usas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- SECCIÓN 2: ¿Qué necesito para cambiarme de Isapre?           -->
+        <!-- ============================================================ -->
+        <section class="mb-16 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                ¿Qué necesito para cambiarme de Isapre?
+            </h2>
+
+            <!-- RESPUESTA DIRECTA -->
+            <div class="answer-direct">
+                Solo necesitas tres cosas: tener al menos un año de antigüedad en tu Isapre actual,
+                no estar con licencia médica vigente, y completar la Declaración de Salud.
+                Nosotros te guiamos en cada paso para que no tengas que descifrar nada por tu cuenta.
+            </div>
+
+            <p class="text-gray-600 mb-6">
+                Estos son los requisitos estándar del sistema previsional chileno. Si cumples con ellos,
+                podemos iniciar tu cambio de inmediato:
+            </p>
+
+            <div class="space-y-4">
+                <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-xl">
+                    <div class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">1</div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Un año de antigüedad como cotizante titular</h3>
+                        <p class="text-gray-600 text-sm mt-1">Este es un requisito legal de la Superintendencia de Salud. Si eres carga y quieres pasar a ser titular, aplican reglas distintas — consúltanos.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-xl">
+                    <div class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">2</div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">No estar con licencia médica al momento de firmar</h3>
+                        <p class="text-gray-600 text-sm mt-1">Si estás con licencia, podemos preparar todo para que el cambio se active apenas finalice. No pierdes la oportunidad.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-xl">
+                    <div class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">3</div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Completar la Declaración de Salud</h3>
+                        <p class="text-gray-600 text-sm mt-1">Revisamos tu historial médico de forma confidencial antes de enviar la declaración. Así nos aseguramos de que no haya rechazos ni sorpresas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- SECCIÓN 3: ¿Cómo funciona el proceso de cambio de Isapre?    -->
+        <!-- ============================================================ -->
+        <section class="mb-16 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                ¿Cómo funciona el proceso de cambio de Isapre?
+            </h2>
+
+            <!-- RESPUESTA DIRECTA -->
+            <div class="answer-direct">
+                Nosotros comparamos todas las Isapres del mercado por ti, gestionamos tu Declaración
+                de Salud y firmas el nuevo contrato 100% online. El proceso completo toma menos de
+                48 horas y tú no tienes que moverte de tu casa.
+            </div>
+
+            <p class="text-gray-600 mb-6">
+                Hacer el trámite por tu cuenta implica visitar múltiples sitios web, descifrar tablas
+                de factores y arriesgarte a elegir mal. Nuestro servicio simplifica todo en tres pasos:
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-lg shadow-blue-200">1</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Comparativa Multi-Isapre</h3>
+                    <p class="text-gray-600 text-sm">Evaluamos simultáneamente las ofertas vigentes de todas las Isapres
+                    para mostrarte solo aquellas que superan las coberturas de tu plan actual.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-purple-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-lg shadow-purple-200">2</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Análisis de Preexistencias</h3>
+                    <p class="text-gray-600 text-sm">Revisamos tu historial médico de forma confidencial antes de postular
+                    para garantizar que el cambio sea seguro y aprobado sin contratiempos.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-green-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-lg shadow-green-200">3</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Firma 100% Digital</h3>
+                    <p class="text-gray-600 text-sm">No necesitas ir a ninguna sucursal. Validamos la Declaración de Salud
+                    y firmas el nuevo contrato de manera online y 100% legal.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- SECCIÓN 4: ¿Cuánto cuesta cambiarse de Isapre?               -->
+        <!-- ============================================================ -->
+        <section class="mb-16 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                ¿Cuánto cuesta cambiarse de Isapre?
+            </h2>
+
+            <!-- RESPUESTA DIRECTA -->
+            <div class="answer-direct">
+                Nuestro servicio de asesoría y gestión de cambio es 100% gratuito. No pagas nada por
+                nuestro trabajo. Solo pagas la cotización mensual de tu nuevo plan de salud, que se
+                descuenta automáticamente de tu 7% legal obligatorio, igual que siempre.
+            </div>
+
+            <p class="text-gray-600 mb-4">
+                Muchas personas creen que cambiarse de Isapre tiene costos ocultos o comisiones. La realidad es que:
+            </p>
+            <ul class="space-y-2 text-gray-600 mb-6">
+                <li class="flex items-start gap-2">
+                    <iconify-icon icon="mdi:check-circle" class="text-green-500 mt-0.5 flex-shrink-0" width="20"></iconify-icon>
+                    <span><strong>No cobramos comisión ni honorarios.</strong> Nos financia la Isapre de destino, no tú.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <iconify-icon icon="mdi:check-circle" class="text-green-500 mt-0.5 flex-shrink-0" width="20"></iconify-icon>
+                    <span><strong>No hay multas por cambio.</strong> La ley chilena te permite cambiarte una vez cumplido el año de antigüedad sin penalización.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <iconify-icon icon="mdi:check-circle" class="text-green-500 mt-0.5 flex-shrink-0" width="20"></iconify-icon>
+                    <span><strong>El nuevo plan puede costar lo mismo o menos.</strong> En muchos casos, encuentras mejores coberturas sin aumentar tu cotización mensual.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- SECCIÓN 5: ¿Puedo cambiarme si tengo preexistencias?         -->
+        <!-- ============================================================ -->
+        <section class="mb-16 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                ¿Puedo cambiarme de Isapre si tengo preexistencias?
+            </h2>
+
+            <!-- RESPUESTA DIRECTA -->
+            <div class="answer-direct">
+                Sí, puedes cambiarte aunque tengas preexistencias. Analizamos tu historial médico de
+                forma confidencial antes de postular para asegurar que el cambio sea aprobado sin
+                contratiempos. No enviamos tu declaración a ciegas: primero evaluamos y luego actuamos.
+            </div>
+
+            <p class="text-gray-600 mb-6">
+                Este es el mayor temor de quienes quieren cambiarse, y es completamente entendible.
+                Así manejamos las preexistencias en Plan Salud Fácil:
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="p-5 bg-amber-50 rounded-xl border border-amber-100">
+                    <h3 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                        <iconify-icon icon="mdi:shield-check" class="text-amber-600" width="20"></iconify-icon>
+                        Evaluación previa confidencial
+                    </h3>
+                    <p class="text-gray-600 text-sm">Revisamos tu caso antes de enviar cualquier documento a las Isapres. Si detectamos riesgo de rechazo, te lo decimos y buscamos alternativas.</p>
+                </div>
+                <div class="p-5 bg-green-50 rounded-xl border border-green-100">
+                    <h3 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                        <iconify-icon icon="mdi:file-document-check" class="text-green-600" width="20"></iconify-icon>
+                        Postulación informada
+                    </h3>
+                    <p class="text-gray-600 text-sm">Solo postulamos a las Isapres donde tus preexistencias tienen mayor probabilidad de ser aceptadas, basándonos en datos reales del mercado.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CTA FINAL + FORMULARIO                                        -->
+        <!-- ============================================================ -->
+        <section id="cotizar" class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-3xl shadow-xl p-6 md:p-12 text-white text-center">
+            <h2 class="text-2xl md:text-4xl font-extrabold mb-4">
+                ¿Quieres que encontremos el mejor plan para ti?
+            </h2>
+            <p class="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+                Tú dinos qué necesitas y nosotros hacemos el trabajo por ti en menos de 2 minutos.
+                Encontramos el plan ideal enfocado en lo que realmente utilizas.
+            </p>
+
+            <!-- FORMULARIO -->
+            <form id="lead-form" class="max-w-xl mx-auto text-left">
+                <div id="form-msg" class="mb-4 text-sm font-medium p-3 rounded-lg text-center hidden"></div>
+
+                <!-- Paso 1 -->
+                <div id="form-step-1" class="form-step active space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-blue-100 mb-1">Nombre completo *</label>
+                        <input type="text" name="nombre" required
+                               class="w-full px-4 py-3 rounded-xl border-0 text-gray-900 focus:ring-2 focus:ring-yellow-300"
+                               placeholder="Tu nombre completo">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-blue-100 mb-1">Email *</label>
+                        <input type="email" name="email" required
+                               class="w-full px-4 py-3 rounded-xl border-0 text-gray-900 focus:ring-2 focus:ring-yellow-300"
+                               placeholder="tu@correo.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-blue-100 mb-1">Teléfono *</label>
+                        <input type="tel" name="telefono" required
+                               class="w-full px-4 py-3 rounded-xl border-0 text-gray-900 focus:ring-2 focus:ring-yellow-300"
+                               placeholder="+56 9 XXXX XXXX">
+                    </div>
+                    <button type="button" id="btn-siguiente"
+                            class="cta-gradient w-full text-white font-bold py-3.5 px-4 rounded-xl text-lg shadow-lg hover:shadow-xl transition flex items-center justify-center">
+                        Siguiente Paso
+                        <iconify-icon icon="mdi:arrow-right" width="20" class="ml-2"></iconify-icon>
+                    </button>
+                </div>
+
+                <!-- Paso 2 -->
+                <div id="form-step-2" class="form-step space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-blue-100 mb-1">Edad *</label>
+                        <input type="number" name="edad" required min="18" max="99"
+                               class="w-full px-4 py-3 rounded-xl border-0 text-gray-900 focus:ring-2 focus:ring-yellow-300"
+                               placeholder="Tu edad">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-blue-100 mb-1">Renta Líquida *</label>
+                        <input type="number" name="renta" required
+                               class="w-full px-4 py-3 rounded-xl border-0 text-gray-900 focus:ring-2 focus:ring-yellow-300"
+                               placeholder="Tu renta líquida mensual en $">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-blue-100 mb-1">Comuna de Residencia *</label>
+                        <input type="text" name="comuna" required
+                               class="w-full px-4 py-3 rounded-xl border-0 text-gray-900 focus:ring-2 focus:ring-yellow-300"
+                               placeholder="Ej: Providencia, Maipú, Viña del Mar">
+                    </div>
+                    <button type="submit" id="btn-enviar"
+                            class="w-full bg-yellow-400 text-blue-900 font-bold py-3.5 px-4 rounded-xl text-lg shadow-lg hover:bg-yellow-300 transition flex items-center justify-center">
+                        <iconify-icon icon="mdi:whatsapp" width="24" class="mr-2"></iconify-icon>
+                        Recibir Asesoría Gratis por WhatsApp
+                    </button>
+                </div>
+            </form>
+
+            <p class="text-blue-200 text-xs mt-4">Tus datos están seguros. Solo los usamos para tu cotización personalizada.</p>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-gradient text-white py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="h-10 w-10 bg-gray-200 rounded flex items-center justify-center mr-2">
+                            <span class="text-blue-700 font-bold">PSF</span>
+                        </div>
+                        <span class="text-xl font-bold">Plan Salud Fácil</span>
+                    </div>
+                    <p class="text-blue-200 text-sm">Comparamos y optimizamos tu plan de Isapre. Asesoría 100% gratuita y digital.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-yellow-300">Servicios</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/servicios/cambio-de-isapre" class="text-blue-200 hover:text-white transition">Cambio de Isapre</a></li>
+                        <li><a href="/servicios/planes-individuales" class="text-blue-200 hover:text-white transition">Planes Individuales</a></li>
+                        <li><a href="/servicios/planes-familia" class="text-blue-200 hover:text-white transition">Planes Familiares</a></li>
+                        <li><a href="/servicios/planes-monoparental" class="text-blue-200 hover:text-white transition">Planes Monoparentales</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-yellow-300">Contacto</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-2 text-blue-200">
+                            <iconify-icon icon="mdi:whatsapp" width="16"></iconify-icon>
+                            +56 9 5228 2339
+                        </li>
+                        <li class="flex items-center gap-2 text-blue-200">
+                            <iconify-icon icon="mdi:email" width="16"></iconify-icon>
+                            contacto@plansaludfacil.cl
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-yellow-300">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-blue-200 hover:text-white transition">Política de Privacidad</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white transition">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-blue-700 mt-8 pt-8 text-center text-blue-300 text-sm">
+                <p>&copy; 2025 Plan Salud Fácil. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/56952282339" target="_blank"
+       class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-xl hover:bg-green-600 transition z-50 flex items-center justify-center"
+       aria-label="Hablar por WhatsApp">
+        <iconify-icon icon="mdi:whatsapp" width="28"></iconify-icon>
+    </a>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Menú móvil
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuClose = document.getElementById('menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuOverlay = document.getElementById('menu-overlay');
+
+            const openMenu = () => {
+                mobileMenu.classList.add('open');
+                menuOverlay.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            };
+            const closeMenu = () => {
+                mobileMenu.classList.remove('open');
+                menuOverlay.classList.remove('open');
+                document.body.style.overflow = '';
+            };
+
+            menuToggle.addEventListener('click', openMenu);
+            menuClose.addEventListener('click', closeMenu);
+            menuOverlay.addEventListener('click', closeMenu);
+        });
+
+        // Formulario multi-step
+        document.addEventListener('DOMContentLoaded', () => {
+            const step1 = document.getElementById('form-step-1');
+            const step2 = document.getElementById('form-step-2');
+            const btnSiguiente = document.getElementById('btn-siguiente');
+            const formMsg = document.getElementById('form-msg');
+
+            if (btnSiguiente) {
+                btnSiguiente.addEventListener('click', () => {
+                    const inputs = step1.querySelectorAll('input[required]');
+                    let valid = true;
+                    inputs.forEach(input => {
+                        if (!input.checkValidity()) {
+                            valid = false;
+                            input.classList.add('border-red-500');
+                        } else {
+                            input.classList.remove('border-red-500');
+                        }
+                    });
+                    if (valid) {
+                        step1.classList.remove('active');
+                        step2.classList.add('active');
+                    }
+                });
+            }
+
+            const form = document.getElementById('lead-form');
+            if (form) {
+                form.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    const btn = document.getElementById('btn-enviar');
+                    btn.disabled = true;
+                    btn.innerHTML = 'Enviando...';
+
+                    const formData = new FormData(form);
+                    const data = Object.fromEntries(formData.entries());
+
+                    try {
+                        const response = await fetch('/api/procesar_form_publico.php', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                ...data,
+                                origen: 'Cambio de Isapre',
+                                cliente_id: 1
+                            })
+                        });
+                        const result = await response.json();
+
+                        if (result.status === 'success') {
+                            formMsg.textContent = '¡Listo! Te redirigiremos a WhatsApp.';
+                            formMsg.className = 'mb-4 text-sm font-medium p-3 rounded-lg text-center bg-green-50 text-green-700';
+                            formMsg.classList.remove('hidden');
+
+                            const whatsappNumber = '56952282339';
+                            const text = encodeURIComponent(`Hola, soy ${data.nombre}. Quisiera asesoría para cambiarme de Isapre.`);
+                            window.location.href = `https://wa.me/${whatsappNumber}?text=${text}`;
+                        } else {
+                            throw new Error(result.message || 'Error al guardar los datos');
+                        }
+                    } catch (error) {
+                        formMsg.textContent = error.message;
+                        formMsg.className = 'mb-4 text-sm font-medium p-3 rounded-lg text-center bg-red-50 text-red-700';
+                        formMsg.classList.remove('hidden');
+                        btn.disabled = false;
+                        btn.innerHTML = '<iconify-icon icon="mdi:whatsapp" width="24" class="mr-2"></iconify-icon> Recibir Asesoría Gratis por WhatsApp';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

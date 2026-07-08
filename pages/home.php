@@ -100,11 +100,23 @@ render_component('tarjetas_servicios', [
 render_component('faq_acordeon', [
     'titulo' => 'Dudas Frecuentes',
     'preguntas' => [
-        '¿Tiene algún costo usar PlanSaludFacil?' => 'No, nuestro servicio es 100% gratuito para el usuario final. Las Isapres cubren nuestros honorarios de gestión.',
-        '¿Puedo cotizar si actualmente estoy en Fonasa?' => '¡Por supuesto! Te ayudamos a evaluar si te conviene dar el salto al sistema privado según tu renta y necesidades de salud.',
-        '¿Qué pasa si tengo preexistencias médicas?' => 'Nuestros asesores expertos buscarán las mejores alternativas legales y planes que puedan aceptar tu declaración de salud.'
+        '¿Qué es una ISAPRE?' => 'Una ISAPRE es una institución privada que administra tu cotización de salud y ofrece planes con distintas coberturas y beneficios.',
+        '¿Cómo comparar planes de ISAPRE?' => 'Compara precio, cobertura, red de clínicas, topes y beneficios adicionales para encontrar el que mejor se adapte a ti.',
+        '¿Cómo puedo cambiarme de ISAPRE?' => 'Solo debes contratar un nuevo plan y la nueva ISAPRE generalmente gestiona el cambio por ti.',
+        '¿Cuánto cuesta un plan de ISAPRE?' => 'Depende del plan, tu cotización, edad, cargas familiares y cobertura elegida.',
+        '¿Qué cubre un plan de ISAPRE?' => 'Dependiendo del plan, cubre consultas, exámenes, hospitalizaciones, cirugías y otros beneficios.',
+        '¿Puedo incorporar a mis hijos?' => 'Sí, puedes agregarlos como beneficiarios del plan.',
+        '¿Qué son las preexistencias?' => 'Son enfermedades o condiciones de salud que existían antes de contratar el plan.',
+        '¿Qué beneficios adicionales ofrecen las ISAPRE?' => 'Algunas incluyen telemedicina, descuentos en farmacias, seguros y programas preventivos.'
     ]
 ]);
+
+echo '<div class="max-w-4xl mx-auto px-4 pb-6 text-center">
+    <a href="' . BASE_URL . '/preguntas-frecuentes" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition">
+        Ver todas las preguntas frecuentes
+        <iconify-icon icon="mdi:arrow-right" width="20" class="ml-1"></iconify-icon>
+    </a>
+</div>';
 
 // 6. ENLAZADO AL BLOG
 render_component('ultimos_articulos_blog', [

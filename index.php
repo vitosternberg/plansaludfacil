@@ -60,6 +60,7 @@ $routes = [
     '/servicios/cambio-de-isapre' => 'pages/servicios/cambio-de-isapre.php',
     '/servicios/planes-familia' => 'pages/servicios/planes-familia.php',
     '/servicios/planes-monoparental' => 'pages/servicios/planes-monoparental.php',
+    '/preguntas-frecuentes' => 'pages/preguntas-frecuentes.php',
     '/gracias' => 'pages/gracias.php'
 ];
 

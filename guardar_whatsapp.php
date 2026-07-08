@@ -37,12 +37,14 @@ try {
     
     $stmt->bind_param("sss", $data['phone'], $data['name'], $date);
     $stmt->execute();
+    $contactId = $conn->insert_id;
     $stmt->close();
     $conn->close();
 
     echo json_encode([
         'success' => true,
-        'message' => 'Contacto guardado correctamente'
+        'message' => 'Contacto guardado correctamente',
+        'contact_id' => $contactId
     ]);
     
 } catch (Exception $e) {

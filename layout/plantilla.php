@@ -61,7 +61,8 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17127470305"></script>
     <script>
       window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date()); gtag('config', 'AW-17127470305');
+      gtag('js', new Date());
+      gtag('config', 'AW-17127470305');
     </script>
     <!-- Event snippet for Envío de formulario para clientes potenciales conversion page -->
     <script>
@@ -82,7 +83,7 @@
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "s9wh7biwjl");
+    })(window, document, "clarity", "script", "xfx87e9kla");
     </script>
     
     <meta name="google-site-verification" content="STeCF3cjAw8N63nEgrCyo6_CifEvabh7KCovktoIKNI" />

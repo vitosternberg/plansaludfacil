@@ -240,6 +240,9 @@ include __DIR__ . '/../../layout/header.php';
         }
 
         const formData = new FormData(contactForm);
+        if (window.psfActivityTracker) {
+            formData.append('tracking_session_id', window.psfActivityTracker.getSessionId());
+        }
         contactFormMessage.className = 'hidden';
 
         try {
@@ -247,6 +250,11 @@ include __DIR__ . '/../../layout/header.php';
             const data = await response.json();
 
             if (data.success) {
+                if (window.psfActivityTracker) {
+                    await window.psfActivityTracker.trackFormSuccess('contact-form-empresa', 'empresa_contacto', data.message_id || '', {
+                        query_type: formData.get('query_type') || 'empresa'
+                    });
+                }
                 contactFormMessage.textContent = data.message;
                 contactFormMessage.className = 'mb-6 text-center text-sm font-medium p-4 rounded-lg bg-green-50 text-green-700';
                 contactForm.reset();
