@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $page_title ?? 'Plan Salud Facil'; ?></title> <!-- Título dinámico -->
     <meta name="description" content="<?php echo htmlspecialchars($meta_description ?? 'Cotiza y compara planes de Isapre. Asesoria 100% gratuita y online. Encuentra el mejor plan para ti y tu familia en Plan Salud Facil.'); ?>">
-    <link rel="canonical" href="<?php echo 'https://plansaludfacil.cl' . ($_SERVER['REQUEST_URI'] ?? '/'); ?>">
+    <link rel="canonical" href="<?php echo 'https://plansaludfacil.cl' . strtok($_SERVER['REQUEST_URI'] ?? '/', '?'); ?>">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <style>
