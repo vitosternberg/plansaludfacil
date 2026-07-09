@@ -124,7 +124,8 @@ try {
 
   <?php
     // Variables que el header necesita para funcionar
-    $page_title = 'Plan Salud Facil';
+    $page_title = 'Planes de Isapre para Profesionales y Trabajadores Independientes | Plan Salud Facil';
+$meta_description = 'Planes de Isapre adaptados a profesionales y trabajadores independientes. Optimiza tu 7% de cotizacion, elige cobertura ambulatoria y las mejores clinicas para tu perfil profesional. Asesoria 100% gratuita.';
     $header_admin_email = 'contacto@plansaludfacil.cl';
   ?>
 

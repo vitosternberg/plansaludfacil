@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /cliente/
+
+Sitemap: https://plansaludfacil.cl/sitemap.xml

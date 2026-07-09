@@ -35,7 +35,8 @@ try {
     error_log("Omniflow Tracking Error: " . $e->getMessage());
 }
 
-$page_title = 'Nuestra Empresa - Plan Salud Fácil';
+$page_title = 'Nuestra Empresa - Plan Salud Facil';
+$meta_description = 'Conoce a Plan Salud Facil, tu comparador de Isapres 100% gratuito. Asesoria imparcial para encontrar el mejor plan de salud segun tus necesidades y presupuesto.';
 $admin_email_display = "contacto@plansaludfacil.cl";
 
 include __DIR__ . '/../../layout/plantilla.php'; 
