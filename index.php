@@ -70,6 +70,13 @@ if ($path === '/sitemap.xml') {
     exit();
 }
 
+// Robots.txt dinámico (respaldo por si no existe el archivo físico)
+if ($path === '/robots.txt') {
+    header('Content-Type: text/plain; charset=utf-8');
+    echo "User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /cliente/\n\nSitemap: https://plansaludfacil.cl/sitemap.xml\n";
+    exit();
+}
+
 // Comprobar si la ruta exacta existe
 if (array_key_exists($path, $routes)) {
     $file = $routes[$path];
