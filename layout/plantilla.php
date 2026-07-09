@@ -89,7 +89,85 @@
     </script>
     
     <meta name="google-site-verification" content="STeCF3cjAw8N63nEgrCyo6_CifEvabh7KCovktoIKNI" />
-    
+
+    <!-- Schema.org: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Plan Salud Facil",
+      "url": "https://plansaludfacil.cl",
+      "logo": "https://plansaludfacil.cl/img/logo.png",
+      "description": "Comparador de planes de Isapre 100% gratuito. Te ayudamos a encontrar el mejor plan de salud segun tus necesidades y presupuesto.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+56 9 5228 2339",
+        "contactType": "customer service",
+        "availableLanguage": "Spanish"
+      },
+      "sameAs": [
+        "https://wa.me/56952282339"
+      ]
+    }
+    </script>
+
+    <!-- Schema.org: WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Plan Salud Facil",
+      "url": "https://plansaludfacil.cl",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://plansaludfacil.cl/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Schema.org: BreadcrumbList dinámico -->
+    <?php
+    $uri = strtok($_SERVER['REQUEST_URI'] ?? '/', '?');
+    $segments = array_values(array_filter(explode('/', $uri)));
+    if (!empty($segments)) {
+        $breadcrumbs = [];
+        $breadcrumbs[] = ['name' => 'Inicio', 'url' => 'https://plansaludfacil.cl/'];
+        $accumulated = '';
+        $nameMap = [
+            'preguntas-frecuentes' => 'Preguntas Frecuentes',
+            'servicios' => 'Servicios',
+            'cambio-de-isapre' => 'Cambio de Isapre',
+            'planes-individuales' => 'Planes Individuales',
+            'planes-familia' => 'Planes Familiares',
+            'planes-monoparental' => 'Planes Monoparentales',
+            'planes-profesionales' => 'Planes Profesionales',
+            'nosotros' => 'Nosotros',
+            'empresa' => 'Nuestra Empresa',
+            'privacidad' => 'Politica de Privacidad',
+            'gracias' => 'Gracias',
+        ];
+        foreach ($segments as $seg) {
+            $accumulated .= '/' . $seg;
+            $name = $nameMap[$seg] ?? ucfirst(str_replace('-', ' ', $seg));
+            $breadcrumbs[] = ['name' => $name, 'url' => 'https://plansaludfacil.cl' . $accumulated];
+        }
+        echo '<script type="application/ld+json">' . "\n";
+        echo json_encode([
+            '@context' => 'https://schema.org',
+            '@type' => 'BreadcrumbList',
+            'itemListElement' => array_map(function($bc, $i) {
+                return [
+                    '@type' => 'ListItem',
+                    'position' => $i + 1,
+                    'name' => $bc['name'],
+                    'item' => $bc['url']
+                ];
+            }, $breadcrumbs, array_keys($breadcrumbs))
+        ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        echo "\n</script>\n";
+    }
+    ?>
     
 </head>
 <body class="bg-gray-50 min-h-screen font-sans flex flex-col">
