@@ -1,0 +1,94 @@
+<?php
+/**
+ * layout/seo-page.php
+ * Template base para páginas de contenido SEO piramidal.
+ *
+ * Uso en cada página hija:
+ *   1. Definir variables: $page_title, $meta_description, $h1, $lead,
+ *      $breadcrumbs, $toc_items, $secciones (html), $faq_preguntas,
+ *      $svc_name, $svc_description.
+ *   2. Incluir este archivo.
+ *
+ * NO incluye tracking Omniflow — cada página debe incluirlo antes.
+ * Se espera que el tracking ya haya corrido antes de llegar aquí.
+ */
+
+// ── Valores por defecto ───────────────────────────────────
+$page_title       = $page_title       ?? 'Plan Salud Fácil';
+$meta_description = $meta_description ?? 'Cotiza y compara planes de Isapre. Asesoría 100% gratuita y online.';
+$h1               = $h1               ?? $page_title;
+$lead             = $lead             ?? '';
+$breadcrumbs      = $breadcrumbs      ?? [];
+$toc_items        = $toc_items        ?? [];
+$secciones_html   = $secciones_html   ?? '';
+$faq_preguntas    = $faq_preguntas    ?? [];
+$faq_titulo       = $faq_titulo       ?? 'Preguntas Frecuentes';
+$svc_name         = $svc_name         ?? $h1;
+$svc_description  = $svc_description  ?? $meta_description;
+$cta_texto        = $cta_texto        ?? 'Cotizar por WhatsApp';
+$cta_link         = $cta_link         ?? 'https://wa.me/56952282339';
+// ───────────────────────────────────────────────────────────
+
+include './layout/plantilla.php';
+include './layout/header.php';
+?>
+
+<main class="bg-gray-50 font-sans">
+
+    <?php
+    // 1. Hero SEO
+    render_component('hero_seo', [
+        'h1'          => $h1,
+        'lead'        => $lead,
+        'breadcrumbs' => $breadcrumbs,
+        'cta_texto'   => $cta_texto,
+        'cta_link'    => $cta_link,
+    ]);
+
+    // 2. Schema Service
+    render_component('schema_service', [
+        'svc_name'        => $svc_name,
+        'svc_description' => $svc_description,
+    ]);
+
+    // 3. Tabla de Contenidos
+    if (!empty($toc_items)) {
+        render_component('indice_contenido', [
+            'toc_items' => $toc_items,
+        ]);
+    }
+
+    // 4. Secciones de contenido (H2 + H3 en HTML directo)
+    if ($secciones_html) {
+        echo $secciones_html;
+    }
+
+    // 5. Mini-FAQ
+    if (!empty($faq_preguntas)) {
+        render_component('faq_seccion', [
+            'faq_preguntas' => $faq_preguntas,
+            'faq_titulo'    => $faq_titulo,
+        ]);
+    }
+
+    // 6. CTA Final
+    ?>
+    <section class="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-12 px-4 mt-12" id="cotizar">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Listo para cotizar tu plan?</h2>
+            <p class="text-blue-100 mb-6">Habla con un asesor sin costo. Te ayudamos a encontrar el mejor plan según tu perfil.</p>
+            <a href="<?= htmlspecialchars($cta_link) ?>" target="_blank"
+               class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition-transform hover:scale-105">
+                <iconify-icon icon="mdi:whatsapp" width="24" class="mr-2"></iconify-icon>
+                <?= htmlspecialchars($cta_texto) ?>
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<?php
+// 7. CTA Flotante
+render_component('cta_flotante');
+
+include './layout/footer.php';

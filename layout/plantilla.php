@@ -146,6 +146,16 @@
             'empresa' => 'Nuestra Empresa',
             'privacidad' => 'Politica de Privacidad',
             'gracias' => 'Gracias',
+            'planes' => 'Planes',
+            'individuales' => 'Individuales',
+            'familiares' => 'Familiares',
+            'jovenes' => 'Jovenes Profesionales',
+            'adulto' => 'Adulto Joven',
+            'deportista' => 'Deportista',
+            'adulto-mayor' => 'Adulto Mayor',
+            'preferencia-natal' => 'Preferencia Natal',
+            'con-cargas' => 'Con Cargas',
+            'monoparentales' => 'Monoparentales',
         ];
         foreach ($segments as $seg) {
             $accumulated .= '/' . $seg;
