@@ -36,7 +36,7 @@ $categorias = [
         '¿Que ISAPRE tiene mejor cobertura?' => 'La mejor cobertura depende del plan y de las prestaciones que necesites.',
         '¿Que ISAPRE tiene las mejores clinicas?' => 'Cada ISAPRE tiene convenios diferentes con clinicas y centros medicos.',
         '¿Que ISAPRE conviene para una familia?' => 'Conviene un plan con buena cobertura para cargas familiares y hospitalizaciones.',
-        '¿Que ISAPRE conviene para trabajadores independientes?' => 'Existen planes especialmente adaptados para trabajadores independientes.',
+        '¿Que ISAPRE conviene para trabajadores independientes?' => 'Los trabajadores independientes acceden a los mismos planes que los dependientes. La diferencia esta en que la cotizacion se calcula sobre la renta declarada anualmente.',
         '¿Que ISAPRE conviene para adultos mayores?' => 'Es recomendable comparar coberturas, costos y beneficios especificos.',
         '¿Que ISAPRE conviene para jovenes?' => 'Muchos jovenes optan por planes con menor costo y buena cobertura ambulatoria.',
         '¿Como comparar planes de ISAPRE?' => 'Compara precio, cobertura, red de clinicas, topes y beneficios adicionales.',
@@ -79,7 +79,7 @@ $categorias = [
     ]],
     ['titulo' => 'Preexistencias y casos especiales', 'icono' => '⚠️', 'preguntas' => [
         '¿Que son las preexistencias?' => 'Son enfermedades o condiciones de salud que existian antes de contratar el plan.',
-        '¿Debo declarar enfermedades preexistentes?' => 'Si, cuando la normativa y el proceso de afiliacion lo requieran.',
+        '¿Debo declarar enfermedades preexistentes?' => 'Si, es obligatorio declarar todas las enfermedades o condiciones de salud que tengas al momento de afiliarte. La ISAPRE usa esta informacion para definir las condiciones de tu plan.',
         '¿Puedo contratar una ISAPRE si tengo una enfermedad?' => 'Dependera de la normativa vigente y de las condiciones aplicables al momento de contratar.',
         '¿Puedo cambiarme de ISAPRE si estoy embarazada?' => 'Si, aunque es importante revisar las condiciones y coberturas antes del cambio.',
         '¿Puedo cambiarme de ISAPRE si estoy con licencia medica?' => 'Depende de la situacion particular y de la normativa vigente.',
