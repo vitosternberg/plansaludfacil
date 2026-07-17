@@ -53,9 +53,13 @@ function connect_db_simple() {
     }
 }
 
-// URL base del sitio — relativa en todos los ambientes
+// URL base del sitio — autodetección de subdirectorio (igual que index.php)
 if (!defined('BASE_URL')) {
-    define('BASE_URL', '');
+    $doc_root = str_replace('\\', '/', rtrim($_SERVER['DOCUMENT_ROOT'], '/'));
+    $dir = str_replace('\\', '/', __DIR__);
+    $base_path = str_replace($doc_root, '', $dir);
+    if ($base_path === '') $base_path = '/';
+    define('BASE_URL', $base_path === '/' ? '' : $base_path);
 }
 
 ?>

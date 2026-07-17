@@ -10,6 +10,15 @@
  * - **No contiene <header> ni <body> ni <html>.**
  */
 
+// Garantizar BASE_URL siempre definida (autodetección de subdirectorio)
+if (!defined('BASE_URL')) {
+    $doc_root = str_replace('\\', '/', rtrim($_SERVER['DOCUMENT_ROOT'], '/'));
+    $dir = str_replace('\\', '/', dirname(__DIR__));
+    $base_path = str_replace($doc_root, '', $dir);
+    if ($base_path === '') $base_path = '/';
+    define('BASE_URL', $base_path === '/' ? '' : $base_path);
+}
+
 // Si necesitas el título del blog o el email del admin para el header,
 // la página principal que incluya este header debe pasarlos como variables PHP.
 $header_blog_title = $page_title ?? 'Plan Salud Facil'; // Asume $page_title viene de la página principal
