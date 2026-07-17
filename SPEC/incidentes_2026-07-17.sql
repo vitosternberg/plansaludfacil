@@ -32,10 +32,12 @@ INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, resp
   NOW()
 );
 
--- INC-4: saveQuote button error (ABIERTO — fix en próximo commit)
-INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen) VALUES (
+-- INC-4: saveQuote button error (CERRADO — fix commit c6f733a)
+INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen, resolucion, fecha_cierre) VALUES (
   'Gracias: botón Guardar Cotización arroja Error (ruta /api/cotizar.php sin BASE_URL)',
   'saveQuote() en gracias.php llama fetch("/api/cotizar.php") con ruta absoluta sin BASE_URL. En subdirectorio debería ser /plansaludfacil_new/api/cotizar.php.',
-  'bug', 'alta', 'abierto', 'CodeWhale',
-  'pages/gracias.php:565'
+  'bug', 'alta', 'cerrado', 'CodeWhale',
+  'pages/gracias.php:565',
+  'Fix: cambiado a fetch(<?= BASE_URL ?>/api/cotizar.php). Commit c6f733a.',
+  NOW()
 );
