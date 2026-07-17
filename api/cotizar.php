@@ -118,7 +118,7 @@ if (!empty($recipient_email) && filter_var($recipient_email, FILTER_VALIDATE_EMA
                 <p style='font-size:14px;color:#6b7280;margin:0 0 20px'>Estos son los mejores planes para tu perfil (edad: " . intval($lead['edad']) . " años, renta: $" . number_format($lead['renta'], 0, ',', '.') . ", 7% legal: $" . number_format($pct7, 0, ',', '.') . "):</p>
                 <table style='width:100%;border-collapse:collapse;margin-bottom:20px'>" . $planes_html . "</table>
                 <p style='font-size:13px;color:#6b7280;margin:0 0 16px'>Estos precios fueron verificados hoy. Las isapres pueden ajustar sus tarifas periódicamente.</p>
-                <a href='https://plansaludfacil.cl' style='display:block;text-align:center;background:#2563eb;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px'>Ver comparador completo</a>
+                <a href='https://wa.me/56952282339?text=Hola%20Plan%20Salud%20F%C3%A1cil%2C%20recib%C3%AD%20mi%20cotizaci%C3%B3n%20y%20quisiera%20que%20me%20asesoraran' style='display:block;text-align:center;background:#16a34a;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px'>💬 Hablar por WhatsApp</a>
                 <p style='font-size:12px;color:#9ca3af;text-align:center;margin-top:16px'>Plan Salud Fácil · Asesoría gratuita · Sin compromiso</p>
             </div>
         </div>
