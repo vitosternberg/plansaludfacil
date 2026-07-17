@@ -38,6 +38,16 @@ INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, resp
   'saveQuote() en gracias.php llama fetch("/api/cotizar.php") con ruta absoluta sin BASE_URL. En subdirectorio debería ser /plansaludfacil_new/api/cotizar.php.',
   'bug', 'alta', 'cerrado', 'CodeWhale',
   'pages/gracias.php:565',
-  'Fix: cambiado a fetch(<?= BASE_URL ?>/api/cotizar.php). Commit c6f733a.',
+   'Fix: cambiado a fetch(<?= BASE_URL ?>/api/cotizar.php). Commit c6f733a.',
+   NOW()
+);
+
+-- INC-5: saveQuote no envía correo real (CERRADO — fix en próximo commit)
+INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen, resolucion, fecha_cierre) VALUES (
+  'Gracias: botón Guardar Cotización no envía correo real (email nunca se manda)',
+  'saveQuote() recolecta el email pero nunca lo incluye en el request a /api/cotizar.php. Además, api/cotizar.php no tiene lógica de envío de correo. El usuario ve "Revisa tu correo" pero nunca recibe nada.',
+  'bug', 'alta', 'cerrado', 'CodeWhale',
+  'pages/gracias.php:565, api/cotizar.php',
+  'Fix: (1) Frontend ahora envía email en el body del fetch. (2) Backend api/cotizar.php carga PHPMailer, arma HTML con los 3 mejores planes y envía correo vía SMTP. Commit pendiente.',
   NOW()
 );

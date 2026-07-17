@@ -566,16 +566,23 @@ include __DIR__ . '/../layout/header.php';
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
+                    nombre: '<?= htmlspecialchars($record['nombre'] ?? 'Usuario', ENT_QUOTES) ?>',
                     edad: <?= intval($ad['age'] ?? 30) ?>,
                     renta: <?= intval($ad['income'] ?? 1000000) ?>,
                     cargas: <?= intval($ad['cargas'] ?? 0) ?>,
                     intereses: <?= json_encode($ad['interests'] ?? ['Hospitalización'], JSON_UNESCAPED_UNICODE) ?>,
+                    email: email
                 })
             });
             const data = await resp.json();
             if (data.recomendaciones) {
-                msgEl.textContent = '✅ ¡Cotización enviada! Revisa tu correo. Válida por 7 días.';
-                msgEl.className = 'text-xs text-green-600 mt-2';
+                if (data.email_sent) {
+                    msgEl.textContent = '✅ ¡Cotización enviada! Revisa tu correo. Válida por 7 días.';
+                    msgEl.className = 'text-xs text-green-600 mt-2';
+                } else {
+                    msgEl.textContent = '✅ Cotización generada, pero no pudimos enviar el correo. Intenta más tarde.';
+                    msgEl.className = 'text-xs text-amber-600 mt-2';
+                }
             }
         } catch(e) {
             msgEl.textContent = 'Error. Intenta más tarde.';
