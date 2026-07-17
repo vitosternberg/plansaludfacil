@@ -125,7 +125,7 @@ if (!empty($recipient_email) && filter_var($recipient_email, FILTER_VALIDATE_EMA
         </body></html>";
 
         try {
-            require_once __DIR__ . '/../config.php';
+            require_once __DIR__ . '/../omniflow_config.php';
             $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
             $mail->isSMTP();
             $mail->Host       = SMTP_HOST;
@@ -135,7 +135,7 @@ if (!empty($recipient_email) && filter_var($recipient_email, FILTER_VALIDATE_EMA
             $mail->SMTPSecure = \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_SMTPS;
             $mail->Port       = SMTP_PORT;
             $mail->CharSet    = 'UTF-8';
-            $mail->setFrom('mailer@plansaludfacil.cl', 'Plan Salud Fácil');
+            $mail->setFrom(SMTP_USER, SMTP_FROM_NAME);
             $mail->addAddress($recipient_email);
             $mail->isHTML(true);
             $mail->Subject = 'Tu cotización de Isapre - Plan Salud Fácil';
