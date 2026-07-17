@@ -562,7 +562,7 @@ include __DIR__ . '/../layout/header.php';
         if (!email) { msgEl.textContent = 'Ingresa tu correo primero'; msgEl.classList.remove('hidden'); return; }
         msgEl.textContent = 'Enviando...'; msgEl.classList.remove('hidden');
         try {
-            const resp = await fetch('/api/cotizar.php', {
+            const resp = await fetch('<?= BASE_URL ?>/api/cotizar.php', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
