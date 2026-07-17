@@ -21,13 +21,16 @@ if (!defined('DEBUG_MODE')) {
 
 // --- CONFIGURACIÓN DE LA BASE DE DATOS DEL CLIENTE ---
 if (!defined('DB_HOST')) {
-	define('DB_HOST', 'localhost');
+	$is_local = ($_SERVER['HTTP_HOST'] ?? '') === 'localhost' || ($_SERVER['HTTP_HOST'] ?? '') === '127.0.0.1';
+	define('DB_HOST', $is_local ? '127.0.0.1' : 'localhost');
 }
 if (!defined('DB_USER')) {
-	define('DB_USER', 'plansalu_blogger');
+	$is_local = ($_SERVER['HTTP_HOST'] ?? '') === 'localhost' || ($_SERVER['HTTP_HOST'] ?? '') === '127.0.0.1';
+	define('DB_USER', $is_local ? 'root' : 'plansalu_blogger');
 }
 if (!defined('DB_PASS')) {
-	define('DB_PASS', 'Blog.2025!#');
+	$is_local = ($_SERVER['HTTP_HOST'] ?? '') === 'localhost' || ($_SERVER['HTTP_HOST'] ?? '') === '127.0.0.1';
+	define('DB_PASS', $is_local ? '' : 'Blog.2025!#');
 }
 if (!defined('DB_NAME')) {
 	define('DB_NAME', 'plansalu_blog');
@@ -61,6 +64,11 @@ if (!defined('SMTP_ENCRYPTION')) {
 // --- NOMBRE DEL REMITENTE ---
 if (!defined('SMTP_FROM_NAME')) {
 	define('SMTP_FROM_NAME', 'Plan salud facil');
+}
+
+// --- URL BASE DEL SITIO ---
+if (!defined('BASE_URL')) {
+    define('BASE_URL', '');
 }
 
 // --- RUTA DEL ARCHIVO DE BASE DE CONOCIMIENTO ---

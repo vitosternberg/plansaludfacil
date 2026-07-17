@@ -74,19 +74,48 @@ $header_admin_email = 'contacto@plansaludfacil.cl'; // Email estático o pasado 
                     </div>
                 </div>
 
-                <!-- Silo Servicios -->
+                <!-- Silo Planes (Transaccional) -->
                 <div class="relative group">
                     <button class="nav-item transition flex items-center text-gray-600 hover:text-[#0284c7] focus:outline-none">
                         <iconify-icon icon="mdi:heart-pulse" width="20" class="mr-1"></iconify-icon>
-                        <span>Servicios</span>
+                        <span>Planes</span>
                         <iconify-icon icon="mdi:chevron-down" width="16" class="ml-1"></iconify-icon>
                     </button>
                     <div class="absolute left-0 pt-4 w-56 z-50 hidden group-hover:block">
                         <div class="bg-white rounded-xl shadow-xl py-2 border border-gray-100">
-                            <a href="<?= BASE_URL ?>/servicios/cambio-de-isapre" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">Cambio de Isapre</a>
-                            <a href="<?= BASE_URL ?>/servicios/planes-individuales" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">Planes Individuales</a>
-                            <a href="<?= BASE_URL ?>/servicios/planes-familia" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">Planes Familiares</a>
-                            <a href="<?= BASE_URL ?>/servicios/planes-monoparental" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">Planes Monoparentales</a>
+                            <a href="<?= BASE_URL ?>/planes/individuales/" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">Planes Individuales</a>
+                            <a href="<?= BASE_URL ?>/planes/familiares/" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">Planes Familiares</a>
+                            <div class="border-t border-gray-100 my-1"></div>
+                            <a href="<?= BASE_URL ?>/isapres/companias/" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">Comparar Compañías</a>
+                            <div class="border-t border-gray-100 my-1"></div>
+                            <a href="<?= BASE_URL ?>/planes/comparador/" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">Comparador de Planes</a>
+                            <a href="<?= BASE_URL ?>/asesoria/cambio-de-isapre/" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">Cambio de Isapre</a>
+                            <a href="<?= BASE_URL ?>/asesoria/optimizar-7-porciento/" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">Optimizar tu 7%</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Silo Isapres (Educativo + Compañías) -->
+                <div class="relative group">
+                    <button class="nav-item transition flex items-center text-gray-600 hover:text-[#0284c7] focus:outline-none">
+                        <iconify-icon icon="mdi:school-outline" width="20" class="mr-1"></iconify-icon>
+                        <span>Isapres</span>
+                        <iconify-icon icon="mdi:chevron-down" width="16" class="ml-1"></iconify-icon>
+                    </button>
+                    <div class="absolute left-0 pt-4 w-60 z-50 hidden group-hover:block">
+                        <div class="bg-white rounded-xl shadow-xl py-2 border border-gray-100">
+                            <div class="px-5 py-1 text-xs font-bold text-gray-400 uppercase tracking-wider">Información</div>
+                            <a href="<?= BASE_URL ?>/isapres/que-es/" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">¿Qué es una Isapre?</a>
+                            <a href="<?= BASE_URL ?>/isapres/como-funciona/" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">¿Cómo funciona?</a>
+                            <a href="<?= BASE_URL ?>/isapres/fonasa-vs-isapre/" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">FONASA vs Isapre</a>
+                            <hr class="my-1 mx-5 border-gray-100">
+                            <div class="px-5 py-1 text-xs font-bold text-gray-400 uppercase tracking-wider">Planes por Isapre</div>
+                            <a href="<?= BASE_URL ?>/isapres/companias/banmedica/" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">Banmédica</a>
+                            <a href="<?= BASE_URL ?>/isapres/companias/colmena/" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">Colmena</a>
+                            <a href="<?= BASE_URL ?>/isapres/companias/cruz-blanca/" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">Cruz Blanca</a>
+                            <a href="<?= BASE_URL ?>/isapres/companias/consalud/" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">Consalud</a>
+                            <a href="<?= BASE_URL ?>/isapres/companias/nueva-masvida/" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">Nueva MasVida</a>
+                            <a href="<?= BASE_URL ?>/isapres/companias/vida-tres/" class="block px-5 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-[#0284c7] transition">Vida Tres</a>
                         </div>
                     </div>
                 </div>
@@ -146,11 +175,23 @@ $header_admin_email = 'contacto@plansaludfacil.cl'; // Email estático o pasado 
                 <div class="pt-2 pb-1 px-2 text-sm font-bold text-blue-300 uppercase tracking-wider">Nosotros</div>
                 <a href="<?= BASE_URL ?>/nosotros/empresa" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm">Empresa</a>
                 
-                <div class="pt-2 pb-1 px-2 text-sm font-bold text-blue-300 uppercase tracking-wider">Servicios</div>
-                <a href="<?= BASE_URL ?>/servicios/cambio-de-isapre" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm">Cambio de Isapre</a>
-                <a href="<?= BASE_URL ?>/servicios/planes-individuales" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm">Planes Individuales</a>
-                <a href="<?= BASE_URL ?>/servicios/planes-familia" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm">Planes Familiares</a>
-                <a href="<?= BASE_URL ?>/servicios/planes-monoparental" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm">Planes Monoparentales</a>
+                <div class="pt-2 pb-1 px-2 text-sm font-bold text-blue-300 uppercase tracking-wider">Planes</div>
+                <a href="<?= BASE_URL ?>/planes/individuales/" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm">Planes Individuales</a>
+                <a href="<?= BASE_URL ?>/planes/familiares/" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm">Planes Familiares</a>
+                <a href="<?= BASE_URL ?>/asesoria/cambio-de-isapre/" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm">Cambio de Isapre</a>
+                <a href="<?= BASE_URL ?>/asesoria/optimizar-7-porciento/" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm">Optimizar tu 7%</a>
+                
+                <div class="pt-2 pb-1 px-2 text-sm font-bold text-blue-300 uppercase tracking-wider">Isapres</div>
+                <a href="<?= BASE_URL ?>/isapres/que-es/" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm">¿Qué es una Isapre?</a>
+                <a href="<?= BASE_URL ?>/isapres/como-funciona/" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm">¿Cómo funciona?</a>
+                <a href="<?= BASE_URL ?>/isapres/fonasa-vs-isapre/" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm">FONASA vs Isapre</a>
+                <div class="pt-1 pb-1 px-2 text-xs font-bold text-blue-400 uppercase tracking-wider">Planes por Isapre</div>
+                <a href="<?= BASE_URL ?>/isapres/companias/banmedica/" class="block py-1 px-10 hover:bg-blue-700 rounded transition text-xs">Banmédica</a>
+                <a href="<?= BASE_URL ?>/isapres/companias/colmena/" class="block py-1 px-10 hover:bg-blue-700 rounded transition text-xs">Colmena</a>
+                <a href="<?= BASE_URL ?>/isapres/companias/cruz-blanca/" class="block py-1 px-10 hover:bg-blue-700 rounded transition text-xs">Cruz Blanca</a>
+                <a href="<?= BASE_URL ?>/isapres/companias/consalud/" class="block py-1 px-10 hover:bg-blue-700 rounded transition text-xs">Consalud</a>
+                <a href="<?= BASE_URL ?>/isapres/companias/nueva-masvida/" class="block py-1 px-10 hover:bg-blue-700 rounded transition text-xs">Nueva MasVida</a>
+                <a href="<?= BASE_URL ?>/isapres/companias/vida-tres/" class="block py-1 px-10 hover:bg-blue-700 rounded transition text-xs">Vida Tres</a>
                 
                                 <div class="pt-2 pb-1 px-2 text-sm font-bold text-blue-300 uppercase tracking-wider">FAQ</div>
                 <a href="<?= BASE_URL ?>/preguntas-frecuentes" class="block py-1 px-6 hover:bg-blue-700 rounded transition text-sm">Preguntas Frecuentes</a>

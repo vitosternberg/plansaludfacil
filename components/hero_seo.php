@@ -30,7 +30,8 @@ $hero_class    = $hero_class ?? 'bg-gradient-to-r from-blue-800 to-blue-900';
                 <?php foreach ($breadcrumbs as $i => $bc): ?>
                     <li class="flex items-center">
                         <?php if ($i < $total - 1): ?>
-                            <a href="<?= htmlspecialchars($bc['url']) ?>" class="hover:text-white transition underline-offset-2 hover:underline">
+                            <?php $bc_url = rtrim($bc['url'], '/'); ?>
+                            <a href="<?= htmlspecialchars($bc_url) ?>" class="hover:text-white transition underline-offset-2 hover:underline">
                                 <?= htmlspecialchars($bc['label']) ?>
                             </a>
                             <span class="mx-2 text-blue-400" aria-hidden="true">›</span>
@@ -41,6 +42,28 @@ $hero_class    = $hero_class ?? 'bg-gradient-to-r from-blue-800 to-blue-900';
                 <?php endforeach; ?>
             </ol>
         </nav>
+
+        <!-- Schema.org BreadcrumbList -->
+        <script type="application/ld+json">
+        <?php
+        $bc_items = [];
+        $pos = 1;
+        foreach ($breadcrumbs as $bc) {
+            $bc_items[] = [
+                '@type' => 'ListItem',
+                'position' => $pos,
+                'name' => $bc['label'],
+                'item' => $bc['url'] !== '#' ? rtrim($bc['url'], '/') : null,
+            ];
+            $pos++;
+        }
+        echo json_encode([
+            '@context' => 'https://schema.org',
+            '@type' => 'BreadcrumbList',
+            'itemListElement' => $bc_items,
+        ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        ?>
+        </script>
         <?php endif; ?>
 
         <h1 id="hero-heading" class="text-3xl md:text-5xl font-bold mb-4 leading-tight">

@@ -5,6 +5,7 @@
  * =======================================================================
  */
 require_once __DIR__ . '/../omniflow_config.php';
+require_once __DIR__ . '/../core/helpers.php';
 try {
     $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     if (!$db->connect_error) {

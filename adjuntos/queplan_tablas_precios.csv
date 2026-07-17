@@ -1,0 +1,85 @@
+id,isapre,categoria,perfil,precio_desde_clp,precio_hasta_clp
+1,Vida Tres,Individual,Hombre 30 años,$81.771,$396.276
+2,Vida Tres,Individual,Hombre 40 años,$97.578,$506.435
+3,Vida Tres,Individual,Hombre 50 años,$102.847,$543.154
+4,Vida Tres,Individual,Mujer 30 años,$81.771,$396.276
+5,Vida Tres,Individual,Mujer 40 años,$97.578,$506.435
+6,Vida Tres,Individual,Mujer 50 años,$102.847,$543.154
+8,Vida Tres,Pareja,Pareja 1 (hombre y mujer 30 años),$163.543,$792.552
+9,Vida Tres,Pareja,Pareja 2 (hombre y mujer 40 años),$195.156,$1.012.869
+10,Vida Tres,Pareja,Pareja 3 (hombre y mujer 50 años),$205.694,$1.086.308
+11,Vida Tres,Familia,Familia 1 (hombre y mujer 30 años + 1 hijo 5 años),$224.238,$1.041.951
+12,Vida Tres,Familia,Familia 2 (hombre y mujer 40 años + 1 hijo 10 años),$255.852,$1.262.267
+13,Vida Tres,Familia,Familia 3 (hombre y mujer 50 años + 1 hijo 20 años),$271.659,$1.372.426
+13,Nueva MasVida,Individual,Hombre 30 años,$79.763,$272.700
+14,Nueva MasVida,Individual,Hombre 40 años,$93.645,$344.463
+15,Nueva MasVida,Individual,Hombre 50 años,$98.272,$368.384
+16,Nueva MasVida,Individual,Mujer 30 años,$79.763,$272.700
+17,Nueva MasVida,Individual,Mujer 40 años,$93.645,$344.463
+18,Nueva MasVida,Individual,Mujer 50 años,$98.272,$368.384
+19,Nueva MasVida,Pareja,Pareja 1 (hombre y mujer 30 años),$159.526,$545.399
+20,Nueva MasVida,Pareja,Pareja 2 (hombre y mujer 40 años),$187.290,$688.926
+21,Nueva MasVida,Pareja,Pareja 3 (hombre y mujer 50 años),$196.545,$736.768
+22,Nueva MasVida,Familia,Familia 1 (hombre y mujer 30 años + 1 hijo 5 años),$220.779,$722.415
+23,Nueva MasVida,Familia,Familia 2 (hombre y mujer 40 años + 1 hijo 10 años),$248.543,$865.941
+24,Nueva MasVida,Familia,Familia 3 (hombre y mujer 50 años + 1 hijo 20 años),$262.425,$937.704
+25,Esencial,Individual,Hombre 30 años,$95.985,$269.984
+26,Esencial,Individual,Hombre 40 años,$113.630,$339.829
+27,Esencial,Individual,Hombre 50 años,$119.512,$363.110
+28,Esencial,Individual,Mujer 30 años,$95.985,$269.984
+29,Esencial,Individual,Mujer 40 años,$113.630,$339.829
+30,Esencial,Individual,Mujer 50 años,$119.512,$363.110
+31,Esencial,Pareja,Pareja 1 (hombre y mujer 30 años),$191.971,$539.968
+32,Esencial,Pareja,Pareja 2 (hombre y mujer 40 años),$227.260,$679.657
+33,Esencial,Pareja,Pareja 3 (hombre y mujer 50 años),$239.024,$726.220
+34,Esencial,Familia,Familia 1 (hombre y mujer 30 años + 1 hijo 5 años),$264.429,$716.826
+35,Esencial,Familia,Familia 2 (hombre y mujer 40 años + 1 hijo 10 años),$299.719,$856.515
+36,Esencial,Familia,Familia 3 (hombre y mujer 50 años + 1 hijo 20 años),$317.364,$926.360
+37,Cruz Blanca,Individual,Hombre 30 años,$84.181,$362.743
+38,Cruz Blanca,Individual,Hombre 40 años,$97.537,$459.667
+39,Cruz Blanca,Individual,Hombre 50 años,$101.989,$491.975
+40,Cruz Blanca,Individual,Mujer 30 años,$84.181,$362.743
+41,Cruz Blanca,Individual,Mujer 40 años,$97.537,$459.667
+42,Cruz Blanca,Individual,Mujer 50 años,$101.989,$491.975
+43,Cruz Blanca,Pareja,Pareja 1 (hombre y mujer 30 años),$168.362,$725.485
+44,Cruz Blanca,Pareja,Pareja 2 (hombre y mujer 40 años),$195.075,$919.334
+45,Cruz Blanca,Pareja,Pareja 3 (hombre y mujer 50 años),$203.979,$983.951
+46,Cruz Blanca,Familia,Familia 1 (hombre y mujer 30 años + 1 hijo 5 años),$234.735,$958.995
+47,Cruz Blanca,Familia,Familia 2 (hombre y mujer 40 años + 1 hijo 10 años),$261.447,$1.152.844
+48,Cruz Blanca,Familia,Familia 3 (hombre y mujer 50 años + 1 hijo 20 años),$274.804,$1.249.769
+49,Consalud,Individual,Hombre 30 años,$77.237,$292.081
+50,Consalud,Individual,Hombre 40 años,$91.451,$370.748
+51,Consalud,Individual,Hombre 50 años,$96.189,$396.971
+52,Consalud,Individual,Mujer 30 años,$77.237,$292.081
+53,Consalud,Individual,Mujer 40 años,$91.451,$370.748
+54,Consalud,Individual,Mujer 50 años,$96.189,$396.971
+55,Consalud,Pareja,Pareja 1 (hombre y mujer 30 años),$154.475,$584.162
+56,Consalud,Pareja,Pareja 2 (hombre y mujer 40 años),$182.903,$741.496
+57,Consalud,Pareja,Pareja 3 (hombre y mujer 50 años),$192.379,$793.941
+58,Consalud,Familia,Familia 1 (hombre y mujer 30 años + 1 hijo 5 años),$212.761,$771.354
+59,Consalud,Familia,Familia 2 (hombre y mujer 40 años + 1 hijo 10 años),$241.188,$928.688
+60,Consalud,Familia,Familia 3 (hombre y mujer 50 años + 1 hijo 20 años),$255.402,$1.007.355
+61,Banmédica,Individual,Hombre 30 años,$67.371,$376.384
+62,Banmédica,Individual,Hombre 40 años,$78.430,$480.146
+63,Banmédica,Individual,Hombre 50 años,$82.116,$514.733
+64,Banmédica,Individual,Mujer 30 años,$67.371,$376.384
+65,Banmédica,Individual,Mujer 40 años,$78.430,$480.146
+66,Banmédica,Individual,Mujer 50 años,$82.116,$514.733
+67,Banmédica,Pareja,Pareja 1 (hombre y mujer 30 años),$134.742,$752.767
+68,Banmédica,Pareja,Pareja 2 (hombre y mujer 40 años),$156.859,$960.292
+69,Banmédica,Pareja,Pareja 3 (hombre y mujer 50 años),$164.232,$1.029.467
+70,Banmédica,Familia,Familia 1 (hombre y mujer 30 años + 1 hijo 5 años),$187.368,$990.801
+71,Banmédica,Familia,Familia 2 (hombre y mujer 40 años + 1 hijo 10 años),$209.485,$1.198.326
+72,Banmédica,Familia,Familia 3 (hombre y mujer 50 años + 1 hijo 20 años),N/A,N/A
+73,Colmena,Individual,Hombre 30 años,$85.724,$249.249
+74,Colmena,Individual,Hombre 40 años,$99.253,$311.836
+75,Colmena,Individual,Hombre 50 años,$103.762,$332.698
+76,Colmena,Individual,Mujer 30 años,$85.724,$249.249
+77,Colmena,Individual,Mujer 40 años,$99.253,$311.836
+78,Colmena,Individual,Mujer 50 años,$103.762,$332.698
+79,Colmena,Pareja,Pareja 1 (hombre y mujer 30 años),$171.447,$498.499
+80,Colmena,Pareja,Pareja 2 (hombre y mujer 40 años),$198.505,$623.672
+81,Colmena,Pareja,Pareja 3 (hombre y mujer 50 años),$207.525,$665.397
+82,Colmena,Familia,Familia 1 (hombre y mujer 30 años + 1 hijo 5 años),$239.132,$664.299
+83,Colmena,Familia,Familia 2 (hombre y mujer 40 años + 1 hijo 10 años),$266.190,$789.472
+84,Colmena,Familia,Familia 3 (hombre y mujer 50 años + 1 hijo 20 años),$279.719,$852.059

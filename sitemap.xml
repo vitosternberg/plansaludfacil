@@ -35,6 +35,91 @@
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+
+    <!-- ═══ Hubs (Fase 2) ═══ -->
+    <url>
+        <loc>https://plansaludfacil.cl/isapre</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://plansaludfacil.cl/planes</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://plansaludfacil.cl/planes/individuales</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://plansaludfacil.cl/planes/familiares</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- ═══ ISAPRE (Fase 3) ═══ -->
+    <url>
+        <loc>https://plansaludfacil.cl/isapre/que-es</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://plansaludfacil.cl/isapre/como-funciona</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://plansaludfacil.cl/isapre/fonasa-vs-isapre</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://plansaludfacil.cl/isapre/mejores-isapres</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- ═══ Planes Individuales (Fase 3) ═══ -->
+    <url>
+        <loc>https://plansaludfacil.cl/planes/individuales/jovenes</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://plansaludfacil.cl/planes/individuales/adulto</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://plansaludfacil.cl/planes/individuales/deportista</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://plansaludfacil.cl/planes/individuales/adulto-mayor</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- ═══ Planes Familiares (Fase 3) ═══ -->
+    <url>
+        <loc>https://plansaludfacil.cl/planes/familiares/preferencia-natal</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://plansaludfacil.cl/planes/familiares/con-cargas</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://plansaludfacil.cl/planes/familiares/monoparentales</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- ═══ Páginas institucionales ═══ -->
     <url>
         <loc>https://plansaludfacil.cl/nosotros/empresa</loc>
         <changefreq>monthly</changefreq>

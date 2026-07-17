@@ -3,3 +3,8 @@ error_log
 *.log
 omniflow_errors.log
 debug_connector.log
+node_modules/
+__pycache__/
+test-results/
+.codewhale/
+.deepseek/

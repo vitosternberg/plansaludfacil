@@ -35,11 +35,11 @@
             <div class="grid grid-cols-2 gap-4">
                 <div>
                     <label class="block text-sm font-semibold text-gray-700 mb-2">Edad</label>
-                    <input type="number" name="age" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] focus:bg-white transition-colors" placeholder="35">
+                    <input type="number" name="age" value="<?= htmlspecialchars($_GET['age'] ?? '') ?>" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] focus:bg-white transition-colors" placeholder="35">
                 </div>
                 <div>
                     <label class="block text-sm font-semibold text-gray-700 mb-2">Renta Líquida</label>
-                    <input type="number" name="income" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] focus:bg-white transition-colors" placeholder="$2.000.000">
+                    <input type="number" name="income" value="<?= htmlspecialchars($_GET['income'] ?? '') ?>" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] focus:bg-white transition-colors" placeholder="$2.000.000">
                 </div>
             </div>
             <div>
@@ -61,7 +61,7 @@
                     <option value="Nueva Masvida">Isapre Nueva Masvida</option>
                     <option value="Vida Tres">Isapre Vida Tres</option>
                     <option value="Esencial">Isapre Esencial</option>
-                    <option value="Sin Previsión">Sin Previsión / Otro</option>
+                    <option value="Sin Previsión">No tengo / Sin Previsión</option>
                 </select>
             </div>
             <div class="md:col-span-2">
@@ -80,21 +80,31 @@
         <div class="grid md:grid-cols-2 gap-6 mb-6">
             <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">¿Cuántas cargas legales incluirás?</label>
-                <select name="cargas" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] focus:bg-white transition-colors" required>
+                <select name="cargas" id="fam-cargas" onchange="updateFamCargaEdades()" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] focus:bg-white transition-colors" required>
                     <option value="">Selecciona cantidad</option>
                     <?php if (isset($es_monoparental) && $es_monoparental): ?>
                         <option value="1">1 carga (Hijo/a)</option>
                         <option value="2">2 cargas (Hijos/as)</option>
                         <option value="3">3 cargas (Hijos/as)</option>
-                        <option value="4+">4 o más cargas (Hijos/as)</option>
+                        <option value="4">4 cargas (Hijos/as)</option>
+                        <option value="5">5 cargas (Hijos/as)</option>
                     <?php else: ?>
                         <option value="1">1 carga (Cónyuge o 1 hijo)</option>
                         <option value="2">2 cargas</option>
                         <option value="3">3 cargas</option>
-                        <option value="4+">4 o más cargas</option>
+                        <option value="4">4 cargas</option>
+                        <option value="5">5 cargas</option>
+                        <option value="6">6 cargas</option>
                     <?php endif; ?>
                 </select>
             </div>
+            </div>
+            <div id="fam-carga-edades" class="space-y-2 mb-6" style="display:none"></div>
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <script>
+            function updateFamCargaEdades(){const n=parseInt(document.getElementById('fam-cargas').value)||0;const g=document.getElementById('fam-carga-edades');if(!n){g.style.display='none';g.innerHTML='';return}g.style.display='block';let h='<label class="block text-sm font-semibold text-gray-700 mb-2">Edad de cada carga</label>';for(let i=1;i<=n;i++){let v=(new URLSearchParams(window.location.search).getAll('carga_edad[]')[i-1]||'').slice(0,2);if(parseInt(v)>80)v='80';h+='<input type="number" maxlength="2" class="fam-carga-edad w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 font-medium outline-none focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] transition-colors" min="0" max="80" value="'+v+'" placeholder="Edad carga '+i+'">'}g.innerHTML=h}
+            document.addEventListener('DOMContentLoaded',function(){const p=new URLSearchParams(window.location.search);const c=p.get('cargas');if(c){const s=document.getElementById('fam-cargas');s.value=c;if(parseInt(c)>0)updateFamCargaEdades()}})
+            </script>
             <?php if (!isset($es_monoparental) || !$es_monoparental): ?>
             <div class="flex items-end pb-3">
                 <label class="flex items-center cursor-pointer">
@@ -205,7 +215,17 @@ async function submitFamiliaForm() {
                     origen_lead: form.querySelector('[name="origen_lead"]').value
                 });
             }
-            setTimeout(() => { window.location.href = '/gracias?id=' + data.message_id; }, 500);
+            setTimeout(() => { 
+                const needs = formData.getAll('needs[]');
+                const params = new URLSearchParams({
+                    id: data.message_id,
+                    age: formData.get('age') || '',
+                    income: formData.get('income') || '',
+                    cargas: formData.get('cargas') || '0',
+                    intereses: needs.join(',')
+                });
+                window.location.href = '/pages/gracias.php?' + params.toString(); 
+            }, 500);
         } else {
             msg.textContent = data.message || 'Error al enviar la solicitud.';
             msg.className = 'mb-6 text-center text-sm font-medium p-4 rounded-lg bg-red-50 text-red-700';

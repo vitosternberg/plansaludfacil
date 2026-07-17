@@ -57,10 +57,10 @@
                     <option value="Colmena">Isapre Colmena</option>
                     <option value="Consalud">Isapre Consalud</option>
                     <option value="Cruz Blanca">Isapre Cruz Blanca</option>
+                    <option value="Esencial">Isapre Esencial</option>
                     <option value="Nueva Masvida">Isapre Nueva Masvida</option>
                     <option value="Vida Tres">Isapre Vida Tres</option>
-                    <option value="Esencial">Isapre Esencial</option>
-                    <option value="Sin Previsión">Sin Previsión / Otro</option>
+                    <option value="Sin Previsión">No tengo / Sin Previsión</option>
                 </select>
             </div>
             <div class="md:col-span-2">
@@ -72,18 +72,7 @@
                     <option value="Plan Cerrado (solo red de prestadores)">Plan Cerrado (solo red de prestadores)</option>
                 </select>
             </div>
-            <div class="md:col-span-2">
-                <label class="block text-sm font-semibold text-gray-700 mb-2">Cantidad de cargas</label>
-                <select name="cargas" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] focus:bg-white transition-colors" required>
-                    <?php $get_cargas = isset($_GET['cargas']) ? $_GET['cargas'] : ''; ?>
-                    <option value="">Selecciona cantidad</option>
-                    <option value="0" <?php echo $get_cargas === '0' ? 'selected' : ''; ?>>Sin cargas</option>
-                    <option value="1" <?php echo $get_cargas === '1' ? 'selected' : ''; ?>>1 carga (Cónyuge o 1 hijo)</option>
-                    <option value="2" <?php echo $get_cargas === '2' ? 'selected' : ''; ?>>2 cargas</option>
-                    <option value="3" <?php echo $get_cargas === '3' ? 'selected' : ''; ?>>3 cargas</option>
-                    <option value="4+" <?php echo $get_cargas === '3+' || $get_cargas === '4+' ? 'selected' : ''; ?>>4 o más cargas</option>
-                </select>
-            </div>
+            <input type="hidden" name="cargas" value="0">
         </div>
 
         <!-- Prioridades -->
@@ -91,24 +80,38 @@
         <p class="text-sm text-gray-500 mb-4">Selecciona las coberturas clave para que busquemos la Isapre que mejor se adapte a tu estilo de vida.</p>
         <div class="grid md:grid-cols-2 gap-4 mb-8">
             <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition group">
-                <input type="checkbox" name="interests[]" value="Salud Mental" class="w-5 h-5 text-blue-600 rounded border-gray-300">
+                <input type="checkbox" name="interests[]" value="Atención Ambulatoria" class="w-5 h-5 text-blue-600 rounded border-gray-300">
                 <span class="ml-3">
-                    <span class="block font-semibold text-gray-800 group-hover:text-blue-600">Salud Mental</span>
-                    <span class="block text-xs text-gray-500">Psicología y Psiquiatría</span>
+                    <span class="block font-semibold text-gray-800 group-hover:text-blue-600">Atención Ambulatoria</span>
+                    <span class="block text-xs text-gray-500">Consultas médicas y especialistas</span>
+                </span>
+            </label>
+            <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition group">
+                <input type="checkbox" name="interests[]" value="Hospitalización" class="w-5 h-5 text-blue-600 rounded border-gray-300">
+                <span class="ml-3">
+                    <span class="block font-semibold text-gray-800 group-hover:text-blue-600">Hospitalización</span>
+                    <span class="block text-xs text-gray-500">Cobertura en clínicas y hospitales</span>
+                </span>
+            </label>
+            <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition group">
+                <input type="checkbox" name="interests[]" value="Maternidad" class="w-5 h-5 text-blue-600 rounded border-gray-300">
+                <span class="ml-3">
+                    <span class="block font-semibold text-gray-800 group-hover:text-blue-600">Maternidad</span>
+                    <span class="block text-xs text-gray-500">Prenatal, parto y postnatal</span>
                 </span>
             </label>
             <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition group">
                 <input type="checkbox" name="interests[]" value="Kinesiología y Deporte" class="w-5 h-5 text-blue-600 rounded border-gray-300">
                 <span class="ml-3">
-                    <span class="block font-semibold text-gray-800 group-hover:text-blue-600">Deporte / Lesiones</span>
+                    <span class="block font-semibold text-gray-800 group-hover:text-blue-600">Kinesiología / Deporte</span>
                     <span class="block text-xs text-gray-500">Kinesiología y Traumatología</span>
                 </span>
             </label>
             <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition group">
                 <input type="checkbox" name="interests[]" value="Telemedicina" class="w-5 h-5 text-blue-600 rounded border-gray-300">
                 <span class="ml-3">
-                    <span class="block font-semibold text-gray-800 group-hover:text-blue-600">Telemedicina Rápida</span>
-                    <span class="block text-xs text-gray-500">Atención online y recetas</span>
+                    <span class="block font-semibold text-gray-800 group-hover:text-blue-600">Telemedicina</span>
+                    <span class="block text-xs text-gray-500">Atención online y recetas digitales</span>
                 </span>
             </label>
             <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition group">
@@ -118,6 +121,37 @@
                     <span class="block text-xs text-gray-500">Para farmacias, óptica o dental</span>
                 </span>
             </label>
+            <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition group">
+                <input type="checkbox" name="interests[]" value="Dental" class="w-5 h-5 text-blue-600 rounded border-gray-300">
+                <span class="ml-3">
+                    <span class="block font-semibold text-gray-800 group-hover:text-blue-600">Cobertura Dental</span>
+                    <span class="block text-xs text-gray-500">Limpiezas, caries y ortodoncia</span>
+                </span>
+            </label>
+            <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition group">
+                <input type="checkbox" name="interests[]" value="Farmacia" class="w-5 h-5 text-blue-600 rounded border-gray-300">
+                <span class="ml-3">
+                    <span class="block font-semibold text-gray-800 group-hover:text-blue-600">Medicamentos / Farmacia</span>
+                    <span class="block text-xs text-gray-500">Descuentos en recetas y medicamentos</span>
+                </span>
+            </label>
+            <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition group">
+                <input type="checkbox" name="interests[]" value="Salud Mental" class="w-5 h-5 text-blue-600 rounded border-gray-300">
+                <span class="ml-3">
+                    <span class="block font-semibold text-gray-800 group-hover:text-blue-600">Salud Mental</span>
+                    <span class="block text-xs text-gray-500">Psicología y Psiquiatría</span>
+                </span>
+            </label>
+            <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition group" id="otro_interes_label">
+                <input type="checkbox" name="interests[]" value="Otra" class="w-5 h-5 text-blue-600 rounded border-gray-300" onchange="document.getElementById('otro_interes_group').classList.toggle('hidden')">
+                <span class="ml-3">
+                    <span class="block font-semibold text-gray-800 group-hover:text-blue-600">Otra</span>
+                    <span class="block text-xs text-gray-500">Especifica otra cobertura</span>
+                </span>
+            </label>
+        </div>
+        <div id="otro_interes_group" class="hidden transition-all mb-8">
+            <input type="text" name="otro_interes_text" placeholder="Indica qué otra cobertura te interesa..." class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff] focus:bg-white text-sm">
         </div>
 
         <!-- Preexistencias -->
@@ -152,6 +186,7 @@
 async function submitIndividualForm() {
     const form = document.getElementById('form-individual');
     const msg = document.getElementById('form-msg-individual');
+    const submitBtn = form.querySelector('button[type="submit"]');
     const formData = new FormData(form);
     
     // Validaciones unificadas
@@ -163,9 +198,14 @@ async function submitIndividualForm() {
     }
 
     // Preparar el mensaje que llegará a Omniflow
-    let customMessage = `Solicitud Plan Individual:\nComuna: ${formData.get('comuna')}\nSistema Actual: ${formData.get('isapre_actual')}\nEdad: ${formData.get('age')}\nRenta: ${formData.get('income')}\nCargas: ${formData.get('cargas')}\nIntereses: `;
+    const isapreActual = formData.get('isapre_actual') || 'No especificado';
+    let customMessage = `Solicitud Plan Individual:\nComuna: ${formData.get('comuna')}\nSistema Actual: ${isapreActual}\nEdad: ${formData.get('age')}\nRenta: ${formData.get('income')}\nCargas: ${formData.get('cargas')}\nIntereses: `;
     const interests = formData.getAll('interests[]');
     customMessage += interests.length > 0 ? interests.join(', ') : 'Ninguno específico';
+    const otroInteres = formData.get('otro_interes_text');
+    if (interests.includes('Otra') && otroInteres) {
+        customMessage += ` (Otra: ${otroInteres})`;
+    }
     customMessage += `\nPreexistencias: ${formData.get('preexistence') === 'si' ? formData.get('preexistence_text') : 'No'}`;
     
     formData.append('message', customMessage);
@@ -175,6 +215,11 @@ async function submitIndividualForm() {
     }
 
     msg.className = 'hidden';
+
+    // Deshabilitar botón y mostrar carga
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="inline-block w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></span> Enviando...';
+    submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
 
     try {
         const response = await fetch('<?= BASE_URL ?>/procesar_formularios.php', { method: 'POST', body: formData });
@@ -186,14 +231,31 @@ async function submitIndividualForm() {
                     query_type: 'cotizacion_individual'
                 });
             }
-            setTimeout(() => { window.location.href = '/gracias?id=' + data.message_id; }, 500);
+            setTimeout(() => { 
+                const params = new URLSearchParams({
+                    id: data.message_id,
+                    age: formData.get('age') || '',
+                    income: formData.get('income') || '',
+                    cargas: formData.get('cargas') || '0',
+                    intereses: interests.join(',')
+                });
+                window.location.href = '/pages/gracias.php?' + params.toString(); 
+            }, 500);
         } else {
             msg.textContent = data.message || 'Error al enviar la solicitud.';
             msg.className = 'mb-6 text-center text-sm font-medium p-4 rounded-lg bg-red-50 text-red-700';
+            // Rehabilitar botón en caso de error
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '🚀 Solicitar Cotización Individual';
+            submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
         }
     } catch (error) {
         msg.textContent = 'Error de conexión. Inténtalo más tarde.';
         msg.className = 'mb-6 text-center text-sm font-medium p-4 rounded-lg bg-red-50 text-red-700';
+        // Rehabilitar botón en caso de error
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '🚀 Solicitar Cotización Individual';
+        submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
     }
 }
 </script>

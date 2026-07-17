@@ -1,0 +1,2232 @@
+isapre,codigo,nombre,uf,tope_anual_uf,prestadores_plan,url
+Banmédica,BPPO26071012,SALUD  PLATINUM ONE 1012/2607 (H),"4,55",11.000,16,https://www.quvi.cl/plan/BPPO26071012
+Banmédica,BPB260656,SALUD  BLACK 56/2606,"8,82",11.000,17,https://www.quvi.cl/plan/BPB260656
+Banmédica,BSCC260100,SALUD CONECTA CLASICO 00/2601 (H),"0,94",5.000,3,https://www.quvi.cl/plan/BSCC260100
+Banmédica,BSS8F260588,SALUD SUPERIOR REG. SUR 8VA FLEX 88/2605,"3,59",7.000,25,https://www.quvi.cl/plan/BSS8F260588
+Colmena,MS22610080,COLMENA MASTER 22610080,"4,52",8.500,13,https://www.quvi.cl/plan/MS22610080
+Colmena,PR32610080,COLMENA PRO 32610080,"5,32",8.500,12,https://www.quvi.cl/plan/PR32610080
+Colmena,ST2264040,COLMENA STAR 2264040,"1,15",5.500,8,https://www.quvi.cl/plan/ST2264040
+Colmena,MX22610050,COLMENA MAX 22610050,"3,20",7.500,63,https://www.quvi.cl/plan/MX22610050
+Consalud,13-SFC157-26,SELECT FULL CENTRO 150 07 26,"6,42",10.000,28,https://www.quvi.cl/plan/13-SFC157-26
+Consalud,13-SF267-26,SELECT FULL 260 07 26,"6,36",9.900,22,https://www.quvi.cl/plan/13-SF267-26
+Consalud,13-CORE101-26,CORE 10 01 26,"1,16",3.900,3,https://www.quvi.cl/plan/13-CORE101-26
+Consalud,13-SFC107-26,SELECT FULL CENTRO 100 07 26,"4,34",10.000,28,https://www.quvi.cl/plan/13-SFC107-26
+Cruz Blanca,SOLR112526,SOLUCION 1 REGIONAL 1200 526,"4,73",8.000,33,https://www.quvi.cl/plan/SOLR112526
+Cruz Blanca,SOLN214526,SOLUCION 2 1400 526,"5,50",8.000,14,https://www.quvi.cl/plan/SOLN214526
+Cruz Blanca,CMBX001D25,CAMPUS BUPA MAX 100 D25,"1,09",1.500,6,https://www.quvi.cl/plan/CMBX001D25
+Cruz Blanca,SOLR201526,SOLUCION 2 REGIONAL 100 526,"4,61",8.000,34,https://www.quvi.cl/plan/SOLR201526
+Esencial,E100700626,ESENCIAL 100H70A-0626,"5,50",12.000,37,https://www.quvi.cl/plan/E100700626
+Esencial,E90800626,ESENCIAL 90H80A-0626,"5,70",12.000,37,https://www.quvi.cl/plan/E90800626
+Esencial,IN60400626,ESENCIAL INICIA 60H40A-0626,"1,44",6.000,9,https://www.quvi.cl/plan/IN60400626
+Esencial,SM70600626,ESENCIAL SANTA MARIA 70H60A-0626,"2,55",8.500,38,https://www.quvi.cl/plan/SM70600626
+Nueva Masvida,PPS23300,PLENO PLUS SUR 23300,"4,81",10.000,18,https://www.quvi.cl/plan/PPS23300
+Nueva Masvida,PM260334,PLAN PLENO MAX 260334,"5,64",10.000,13,https://www.quvi.cl/plan/PM260334
+Nueva Masvida,PS260600,PLAN PLENO SALUD 260600,"1,18",8.000,9,https://www.quvi.cl/plan/PS260600
+Nueva Masvida,PPS23280,PLENO PLUS SUR 23280,"4,23",10.000,18,https://www.quvi.cl/plan/PPS23280
+Vida Tres,VPRPO26071012,VANGUARDIA PREMIUM PLATINUM ONE 1012/2607 (H),"4,68",11.000,16,https://www.quvi.cl/plan/VPRPO26071012
+Vida Tres,VPRB260656,VANGUARDIA PREMIUM BLACK 56/2606,"8,99",11.000,17,https://www.quvi.cl/plan/VPRB260656
+Vida Tres,VPG260500,VANGUARDIA PLUS GOLD 00/2605,"1,29",7.000,6,https://www.quvi.cl/plan/VPG260500
+Vida Tres,VPS8F260588,VANGUARDIA PLUS REG. SUR 8VA FLEX 88/2605,"3,71",7.000,25,https://www.quvi.cl/plan/VPS8F260588
+Consalud,13-CORE201-26,,"1,21",3.900,4,https://www.quvi.cl/plan/13-CORE201-26
+Consalud,13-CORE301-26,,"1,22",3.900,5,https://www.quvi.cl/plan/13-CORE301-26
+Consalud,13-CORE401-26,,"1,25",3.900,7,https://www.quvi.cl/plan/13-CORE401-26
+Consalud,13-CORE501-26,,"1,31",3.900,7,https://www.quvi.cl/plan/13-CORE501-26
+Consalud,13-CORE601-26,,"1,38",3.900,7,https://www.quvi.cl/plan/13-CORE601-26
+Consalud,13-CORE701-26,,"1,42",3.900,7,https://www.quvi.cl/plan/13-CORE701-26
+Consalud,13-CORE801-26,,"1,52",3.900,7,https://www.quvi.cl/plan/13-CORE801-26
+Consalud,13-EF10001-26,,"1,75",5.900,12,https://www.quvi.cl/plan/13-EF10001-26
+Consalud,13-EF1001-26,,"1,50",5.900,11,https://www.quvi.cl/plan/13-EF1001-26
+Consalud,13-EF11001-26,,"1,88",5.900,12,https://www.quvi.cl/plan/13-EF11001-26
+Consalud,13-EF12001-26,,"2,06",5.900,12,https://www.quvi.cl/plan/13-EF12001-26
+Consalud,13-EF13001-26,,"2,22",5.900,12,https://www.quvi.cl/plan/13-EF13001-26
+Consalud,13-EF14001-26,,"1,92",5.900,12,https://www.quvi.cl/plan/13-EF14001-26
+Consalud,13-EF15001-26,,"2,06",5.900,12,https://www.quvi.cl/plan/13-EF15001-26
+Consalud,13-EF16001-26,,"2,22",5.900,12,https://www.quvi.cl/plan/13-EF16001-26
+Consalud,13-EF2001-26,,"1,70",5.900,11,https://www.quvi.cl/plan/13-EF2001-26
+Consalud,13-EF3001-26,,"1,45",5.900,11,https://www.quvi.cl/plan/13-EF3001-26
+Consalud,13-EF4001-26,,"1,57",5.900,11,https://www.quvi.cl/plan/13-EF4001-26
+Consalud,13-EF5001-26,,"1,76",5.900,11,https://www.quvi.cl/plan/13-EF5001-26
+Consalud,13-EF6001-26,,"1,59",5.900,12,https://www.quvi.cl/plan/13-EF6001-26
+Consalud,13-EF7001-26,,"1,72",5.900,12,https://www.quvi.cl/plan/13-EF7001-26
+Consalud,13-EF8001-26,,"1,90",5.900,12,https://www.quvi.cl/plan/13-EF8001-26
+Consalud,13-EF9001-26,,"2,06",5.900,12,https://www.quvi.cl/plan/13-EF9001-26
+Consalud,13-EFC107-26,,"1,98",6.000,18,https://www.quvi.cl/plan/13-EFC107-26
+Consalud,13-EFC117-26,,"2,17",6.000,18,https://www.quvi.cl/plan/13-EFC117-26
+Consalud,13-EFC127-26,,"2,33",6.000,18,https://www.quvi.cl/plan/13-EFC127-26
+Consalud,13-EFC137-26,,"2,34",6.000,18,https://www.quvi.cl/plan/13-EFC137-26
+Consalud,13-EFC147-26,,"2,50",6.000,18,https://www.quvi.cl/plan/13-EFC147-26
+Consalud,13-EFC157-26,,"2,68",6.000,18,https://www.quvi.cl/plan/13-EFC157-26
+Consalud,13-EFC17-26,,"1,58",6.000,16,https://www.quvi.cl/plan/13-EFC17-26
+Consalud,13-EFC27-26,,"1,71",6.000,16,https://www.quvi.cl/plan/13-EFC27-26
+Consalud,13-EFC37-26,,"1,86",6.000,16,https://www.quvi.cl/plan/13-EFC37-26
+Consalud,13-EFC47-26,,"1,88",6.000,16,https://www.quvi.cl/plan/13-EFC47-26
+Consalud,13-EFC57-26,,"1,98",6.000,16,https://www.quvi.cl/plan/13-EFC57-26
+Consalud,13-EFC67-26,,"1,77",6.000,17,https://www.quvi.cl/plan/13-EFC67-26
+Consalud,13-EFC77-26,,"1,91",6.000,17,https://www.quvi.cl/plan/13-EFC77-26
+Consalud,13-EFC87-26,,"2,09",6.000,17,https://www.quvi.cl/plan/13-EFC87-26
+Consalud,13-EFC97-26,,"1,84",6.000,18,https://www.quvi.cl/plan/13-EFC97-26
+Consalud,13-EFCQ107-26,,"2,19",6.000,16,https://www.quvi.cl/plan/13-EFCQ107-26
+Consalud,13-EFCQ117-26,,"2,36",6.000,16,https://www.quvi.cl/plan/13-EFCQ117-26
+Consalud,13-EFCQ127-26,,"2,53",6.000,16,https://www.quvi.cl/plan/13-EFCQ127-26
+Consalud,13-EFCQ137-26,,"2,32",6.000,16,https://www.quvi.cl/plan/13-EFCQ137-26
+Consalud,13-EFCQ147-26,,"2,50",6.000,16,https://www.quvi.cl/plan/13-EFCQ147-26
+Consalud,13-EFCQ157-26,,"2,67",6.000,16,https://www.quvi.cl/plan/13-EFCQ157-26
+Consalud,13-EFCQ17-26,,"1,47",6.000,15,https://www.quvi.cl/plan/13-EFCQ17-26
+Consalud,13-EFCQ27-26,,"1,59",6.000,15,https://www.quvi.cl/plan/13-EFCQ27-26
+Consalud,13-EFCQ37-26,,"1,75",6.000,15,https://www.quvi.cl/plan/13-EFCQ37-26
+Consalud,13-EFCQ47-26,,"1,66",6.000,16,https://www.quvi.cl/plan/13-EFCQ47-26
+Consalud,13-EFCQ57-26,,"1,80",6.000,16,https://www.quvi.cl/plan/13-EFCQ57-26
+Consalud,13-EFCQ67-26,,"1,97",6.000,16,https://www.quvi.cl/plan/13-EFCQ67-26
+Consalud,13-EFCQ77-26,,"1,72",6.000,16,https://www.quvi.cl/plan/13-EFCQ77-26
+Consalud,13-EFCQ87-26,,"1,86",6.000,16,https://www.quvi.cl/plan/13-EFCQ87-26
+Consalud,13-EFCQ97-26,,"2,04",6.000,16,https://www.quvi.cl/plan/13-EFCQ97-26
+Consalud,13-EFN107-26,,"1,73",5.900,15,https://www.quvi.cl/plan/13-EFN107-26
+Consalud,13-EFN117-26,,"1,87",5.900,16,https://www.quvi.cl/plan/13-EFN117-26
+Consalud,13-EFN127-26,,"2,04",5.900,16,https://www.quvi.cl/plan/13-EFN127-26
+Consalud,13-EFN137-26,,"1,79",5.900,15,https://www.quvi.cl/plan/13-EFN137-26
+Consalud,13-EFN147-26,,"1,93",5.900,16,https://www.quvi.cl/plan/13-EFN147-26
+Consalud,13-EFN157-26,,"2,11",5.900,16,https://www.quvi.cl/plan/13-EFN157-26
+Consalud,13-EFN17-26,,"1,50",5.900,13,https://www.quvi.cl/plan/13-EFN17-26
+Consalud,13-EFN27-26,,"1,62",5.900,13,https://www.quvi.cl/plan/13-EFN27-26
+Consalud,13-EFN37-26,,"1,78",5.900,13,https://www.quvi.cl/plan/13-EFN37-26
+Consalud,13-EFN47-26,,"1,59",5.900,15,https://www.quvi.cl/plan/13-EFN47-26
+Consalud,13-EFN57-26,,"1,71",5.900,15,https://www.quvi.cl/plan/13-EFN57-26
+Consalud,13-EFN67-26,,"1,87",5.900,15,https://www.quvi.cl/plan/13-EFN67-26
+Consalud,13-EFN77-26,,"1,69",5.900,16,https://www.quvi.cl/plan/13-EFN77-26
+Consalud,13-EFN87-26,,"1,82",5.900,16,https://www.quvi.cl/plan/13-EFN87-26
+Consalud,13-EFN97-26,,"1,99",5.900,16,https://www.quvi.cl/plan/13-EFN97-26
+Consalud,13-EFO10-26,,"1,80",6.000,10,https://www.quvi.cl/plan/13-EFO10-26
+Consalud,13-EFO100-26,,"2,38",6.000,12,https://www.quvi.cl/plan/13-EFO100-26
+Consalud,13-EFO110-26,,"2,46",6.000,12,https://www.quvi.cl/plan/13-EFO110-26
+Consalud,13-EFO120-26,,"2,61",6.000,12,https://www.quvi.cl/plan/13-EFO120-26
+Consalud,13-EFO20-26,,"1,90",6.000,10,https://www.quvi.cl/plan/13-EFO20-26
+Consalud,13-EFO30-26,,"2,04",6.000,10,https://www.quvi.cl/plan/13-EFO30-26
+Consalud,13-EFO40-26,,"1,90",6.000,10,https://www.quvi.cl/plan/13-EFO40-26
+Consalud,13-EFO50-26,,"2,00",6.000,10,https://www.quvi.cl/plan/13-EFO50-26
+Consalud,13-EFO60-26,,"2,14",6.000,7,https://www.quvi.cl/plan/13-EFO60-26
+Consalud,13-EFO70-26,,"1,94",6.000,11,https://www.quvi.cl/plan/13-EFO70-26
+Consalud,13-EFO80-26,,"2,03",6.000,11,https://www.quvi.cl/plan/13-EFO80-26
+Consalud,13-EFO90-26,,"2,17",6.000,11,https://www.quvi.cl/plan/13-EFO90-26
+Consalud,13-EFS107-26,,"2,04",5.900,11,https://www.quvi.cl/plan/13-EFS107-26
+Consalud,13-EFS117-26,,"1,92",5.900,13,https://www.quvi.cl/plan/13-EFS117-26
+Consalud,13-EFS127-26,,"2,03",5.900,13,https://www.quvi.cl/plan/13-EFS127-26
+Consalud,13-EFS137-26,,"2,18",5.900,13,https://www.quvi.cl/plan/13-EFS137-26
+Consalud,13-EFS147-26,,"2,02",5.900,13,https://www.quvi.cl/plan/13-EFS147-26
+Consalud,13-EFS157-26,,"2,13",5.900,13,https://www.quvi.cl/plan/13-EFS157-26
+Consalud,13-EFS167-26,,"2,28",5.900,13,https://www.quvi.cl/plan/13-EFS167-26
+Consalud,13-EFS17-26,,"1,52",5.900,8,https://www.quvi.cl/plan/13-EFS17-26
+Consalud,13-EFS27-26,,"1,64",5.900,10,https://www.quvi.cl/plan/13-EFS27-26
+Consalud,13-EFS37-26,,"1,75",5.900,10,https://www.quvi.cl/plan/13-EFS37-26
+Consalud,13-EFS47-26,,"1,89",5.900,10,https://www.quvi.cl/plan/13-EFS47-26
+Consalud,13-EFS57-26,,"1,67",5.900,10,https://www.quvi.cl/plan/13-EFS57-26
+Consalud,13-EFS67-26,,"1,79",5.900,10,https://www.quvi.cl/plan/13-EFS67-26
+Consalud,13-EFS77-26,,"1,93",5.900,10,https://www.quvi.cl/plan/13-EFS77-26
+Consalud,13-EFS87-26,,"1,78",5.900,11,https://www.quvi.cl/plan/13-EFS87-26
+Consalud,13-EFS97-26,,"1,89",5.900,11,https://www.quvi.cl/plan/13-EFS97-26
+Consalud,13-EFSA17-26,,"1,86",6.000,8,https://www.quvi.cl/plan/13-EFSA17-26
+Consalud,13-EFSA27-26,,"1,98",6.000,8,https://www.quvi.cl/plan/13-EFSA27-26
+Consalud,13-EFSA37-26,,"2,13",6.000,8,https://www.quvi.cl/plan/13-EFSA37-26
+Consalud,13-EFSA47-26,,"1,97",6.000,8,https://www.quvi.cl/plan/13-EFSA47-26
+Consalud,13-EFSA57-26,,"2,10",6.000,8,https://www.quvi.cl/plan/13-EFSA57-26
+Consalud,13-EFSA67-26,,"2,24",6.000,8,https://www.quvi.cl/plan/13-EFSA67-26
+Consalud,13-EO1002-26,,"1,81",5.500,10,https://www.quvi.cl/plan/13-EO1002-26
+Consalud,13-EO2002-26,,"1,92",5.500,10,https://www.quvi.cl/plan/13-EO2002-26
+Consalud,13-EO3002-26,,"2,04",5.500,10,https://www.quvi.cl/plan/13-EO3002-26
+Consalud,13-EOC17-26,,"1,85",6.000,17,https://www.quvi.cl/plan/13-EOC17-26
+Consalud,13-EOC27-26,,"1,79",6.000,19,https://www.quvi.cl/plan/13-EOC27-26
+Consalud,13-EOC37-26,,"1,91",6.000,19,https://www.quvi.cl/plan/13-EOC37-26
+Consalud,13-EOC47-26,,"2,13",6.000,19,https://www.quvi.cl/plan/13-EOC47-26
+Consalud,13-EOC57-26,,"2,27",6.000,19,https://www.quvi.cl/plan/13-EOC57-26
+Consalud,13-FCE10-26,,"1,36",5.900,10,https://www.quvi.cl/plan/13-FCE10-26
+Consalud,13-FCE100-26,,"2,06",5.900,10,https://www.quvi.cl/plan/13-FCE100-26
+Consalud,13-FCE110-26,,"2,13",5.900,10,https://www.quvi.cl/plan/13-FCE110-26
+Consalud,13-FCE120-26,,"1,97",5.900,10,https://www.quvi.cl/plan/13-FCE120-26
+Consalud,13-FCE130-26,,"2,11",5.900,10,https://www.quvi.cl/plan/13-FCE130-26
+Consalud,13-FCE140-26,,"2,26",5.900,10,https://www.quvi.cl/plan/13-FCE140-26
+Consalud,13-FCE150-26,,"2,32",5.900,10,https://www.quvi.cl/plan/13-FCE150-26
+Consalud,13-FCE20-26,,"1,48",5.900,10,https://www.quvi.cl/plan/13-FCE20-26
+Consalud,13-FCE257-26,,"1,40",5.900,10,https://www.quvi.cl/plan/13-FCE257-26
+Consalud,13-FCE30-26,,"1,62",5.900,10,https://www.quvi.cl/plan/13-FCE30-26
+Consalud,13-FCE40-26,,"1,79",5.900,10,https://www.quvi.cl/plan/13-FCE40-26
+Consalud,13-FCE50-26,,"1,60",5.900,10,https://www.quvi.cl/plan/13-FCE50-26
+Consalud,13-FCE557-26,,"1,52",5.900,10,https://www.quvi.cl/plan/13-FCE557-26
+Consalud,13-FCE60-26,,"1,74",5.900,10,https://www.quvi.cl/plan/13-FCE60-26
+Consalud,13-FCE657-26,,"1,67",5.900,10,https://www.quvi.cl/plan/13-FCE657-26
+Consalud,13-FCE70-26,,"1,91",5.900,10,https://www.quvi.cl/plan/13-FCE70-26
+Consalud,13-FCE757-26,,"1,61",5.900,10,https://www.quvi.cl/plan/13-FCE757-26
+Consalud,13-FCE80-26,,"1,76",5.900,10,https://www.quvi.cl/plan/13-FCE80-26
+Consalud,13-FCE817-26,,"1,64",5.900,10,https://www.quvi.cl/plan/13-FCE817-26
+Consalud,13-FCE827-26,,"1,79",5.900,10,https://www.quvi.cl/plan/13-FCE827-26
+Consalud,13-FCE837-26,,"1,81",5.900,10,https://www.quvi.cl/plan/13-FCE837-26
+Consalud,13-FCE90-26,,"1,91",5.900,10,https://www.quvi.cl/plan/13-FCE90-26
+Consalud,13-FCE957-26,,"1,97",5.900,10,https://www.quvi.cl/plan/13-FCE957-26
+Consalud,13-FCL10-26,,"1,49",5.900,14,https://www.quvi.cl/plan/13-FCL10-26
+Consalud,13-FCL100-26,,"2,44",5.900,14,https://www.quvi.cl/plan/13-FCL100-26
+Consalud,13-FCL110-26,,"2,22",5.900,14,https://www.quvi.cl/plan/13-FCL110-26
+Consalud,13-FCL1105-26,,"2,39",5.900,14,https://www.quvi.cl/plan/13-FCL1105-26
+Consalud,13-FCL1157-26,,"2,16",5.900,10,https://www.quvi.cl/plan/13-FCL1157-26
+Consalud,13-FCL120-26,,"2,43",5.900,14,https://www.quvi.cl/plan/13-FCL120-26
+Consalud,13-FCL130-26,,"2,60",5.900,14,https://www.quvi.cl/plan/13-FCL130-26
+Consalud,13-FCL1317-26,,"2,14",5.900,10,https://www.quvi.cl/plan/13-FCL1317-26
+Consalud,13-FCL1327-26,,"2,25",5.900,10,https://www.quvi.cl/plan/13-FCL1327-26
+Consalud,13-FCL1337-26,,"2,41",5.900,10,https://www.quvi.cl/plan/13-FCL1337-26
+Consalud,13-FCL1347-26,,"2,46",5.900,10,https://www.quvi.cl/plan/13-FCL1347-26
+Consalud,13-FCL140-26,,"1,77",5.900,16,https://www.quvi.cl/plan/13-FCL140-26
+Consalud,13-FCL150-26,,"1,82",5.900,16,https://www.quvi.cl/plan/13-FCL150-26
+Consalud,13-FCL160-26,,"2,14",5.900,16,https://www.quvi.cl/plan/13-FCL160-26
+Consalud,13-FCL1657-26,,"1,80",5.900,18,https://www.quvi.cl/plan/13-FCL1657-26
+Consalud,13-FCL177-26,,"1,94",5.900,19,https://www.quvi.cl/plan/13-FCL177-26
+Consalud,13-FCL187-26,,"2,00",5.900,19,https://www.quvi.cl/plan/13-FCL187-26
+Consalud,13-FCL197-26,,"2,21",5.900,19,https://www.quvi.cl/plan/13-FCL197-26
+Consalud,13-FCL20-26,,"1,65",5.900,14,https://www.quvi.cl/plan/13-FCL20-26
+Consalud,13-FCL207-26,,"2,47",5.900,19,https://www.quvi.cl/plan/13-FCL207-26
+Consalud,13-FCL2157-26,,"2,15",5.900,18,https://www.quvi.cl/plan/13-FCL2157-26
+Consalud,13-FCL217-26,,"2,39",5.900,19,https://www.quvi.cl/plan/13-FCL217-26
+Consalud,13-FCL227-26,,"2,26",5.900,19,https://www.quvi.cl/plan/13-FCL227-26
+Consalud,13-FCL237-26,,"2,45",5.900,19,https://www.quvi.cl/plan/13-FCL237-26
+Consalud,13-FCL247-26,,"2,56",5.900,19,https://www.quvi.cl/plan/13-FCL247-26
+Consalud,13-FCL257-26,,"2,69",5.900,19,https://www.quvi.cl/plan/13-FCL257-26
+Consalud,13-FCL267-26,,"2,47",5.900,19,https://www.quvi.cl/plan/13-FCL267-26
+Consalud,13-FCL2757-26,,"2,57",5.900,18,https://www.quvi.cl/plan/13-FCL2757-26
+Consalud,13-FCL277-26,,"2,62",5.900,19,https://www.quvi.cl/plan/13-FCL277-26
+Consalud,13-FCL287-26,,"2,68",5.900,19,https://www.quvi.cl/plan/13-FCL287-26
+Consalud,13-FCL297-26,,"2,80",5.900,19,https://www.quvi.cl/plan/13-FCL297-26
+Consalud,13-FCL30-26,,"1,84",5.900,14,https://www.quvi.cl/plan/13-FCL30-26
+Consalud,13-FCL307-26,,"3,00",5.900,19,https://www.quvi.cl/plan/13-FCL307-26
+Consalud,13-FCL317-26,,"3,03",5.900,19,https://www.quvi.cl/plan/13-FCL317-26
+Consalud,13-FCL327-26,,"3,09",5.900,19,https://www.quvi.cl/plan/13-FCL327-26
+Consalud,13-FCL3307-26,,"2,69",5.900,18,https://www.quvi.cl/plan/13-FCL3307-26
+Consalud,13-FCL3407-26,,"2,59",5.900,18,https://www.quvi.cl/plan/13-FCL3407-26
+Consalud,13-FCL3507-26,,"2,79",5.900,18,https://www.quvi.cl/plan/13-FCL3507-26
+Consalud,13-FCL3607-26,,"2,80",5.900,18,https://www.quvi.cl/plan/13-FCL3607-26
+Consalud,13-FCL3707-26,,"2,92",5.900,18,https://www.quvi.cl/plan/13-FCL3707-26
+Consalud,13-FCL40-26,,"1,61",5.900,14,https://www.quvi.cl/plan/13-FCL40-26
+Consalud,13-FCL50-26,,"1,96",5.900,14,https://www.quvi.cl/plan/13-FCL50-26
+Consalud,13-FCL505-26,,"1,86",5.900,14,https://www.quvi.cl/plan/13-FCL505-26
+Consalud,13-FCL557-26,,"1,69",5.900,10,https://www.quvi.cl/plan/13-FCL557-26
+Consalud,13-FCL60-26,,"1,92",5.900,14,https://www.quvi.cl/plan/13-FCL60-26
+Consalud,13-FCL605-26,,"1,98",5.900,14,https://www.quvi.cl/plan/13-FCL605-26
+Consalud,13-FCL70-26,,"1,99",5.900,14,https://www.quvi.cl/plan/13-FCL70-26
+Consalud,13-FCL80-26,,"2,18",5.900,14,https://www.quvi.cl/plan/13-FCL80-26
+Consalud,13-FCL904-26,,"2,39",5.900,7,https://www.quvi.cl/plan/13-FCL904-26
+Consalud,13-FCS057-26,,"2,26",5.900,19,https://www.quvi.cl/plan/13-FCS057-26
+Consalud,13-FCS1057-26,,"3,53",7.900,19,https://www.quvi.cl/plan/13-FCS1057-26
+Consalud,13-FCS107-26,,"3,51",7.900,21,https://www.quvi.cl/plan/13-FCS107-26
+Consalud,13-FCS117-26,,"3,86",7.900,21,https://www.quvi.cl/plan/13-FCS117-26
+Consalud,13-FCS127-26,,"4,15",7.900,21,https://www.quvi.cl/plan/13-FCS127-26
+Consalud,13-FCS1307-26,,"3,63",7.900,19,https://www.quvi.cl/plan/13-FCS1307-26
+Consalud,13-FCS1407-26,,"3,65",7.900,19,https://www.quvi.cl/plan/13-FCS1407-26
+Consalud,13-FCS1557-26,,"3,92",7.900,19,https://www.quvi.cl/plan/13-FCS1557-26
+Consalud,13-FCS17-26,,"2,43",5.900,21,https://www.quvi.cl/plan/13-FCS17-26
+Consalud,13-FCS27-26,,"2,60",5.900,21,https://www.quvi.cl/plan/13-FCS27-26
+Consalud,13-FCS37-26,,"3,00",5.900,21,https://www.quvi.cl/plan/13-FCS37-26
+Consalud,13-FCS47-26,,"2,75",7.900,21,https://www.quvi.cl/plan/13-FCS47-26
+Consalud,13-FCS57-26,,"2,88",7.900,21,https://www.quvi.cl/plan/13-FCS57-26
+Consalud,13-FCS657-26,,"3,00",7.900,19,https://www.quvi.cl/plan/13-FCS657-26
+Consalud,13-FCS67-26,,"3,24",7.900,21,https://www.quvi.cl/plan/13-FCS67-26
+Consalud,13-FCS77-26,,"3,17",7.900,21,https://www.quvi.cl/plan/13-FCS77-26
+Consalud,13-FCS857-26,,"3,30",7.900,19,https://www.quvi.cl/plan/13-FCS857-26
+Consalud,13-FCS87-26,,"3,30",7.900,21,https://www.quvi.cl/plan/13-FCS87-26
+Consalud,13-FCS957-26,,"3,28",7.900,19,https://www.quvi.cl/plan/13-FCS957-26
+Consalud,13-FCS97-26,,"3,65",7.900,21,https://www.quvi.cl/plan/13-FCS97-26
+Consalud,13-LF1001-26,,"2,28",7.900,14,https://www.quvi.cl/plan/13-LF1001-26
+Consalud,13-LF107-26,,"2,47",7.900,19,https://www.quvi.cl/plan/13-LF107-26
+Consalud,13-LF117-26,,"2,65",7.900,19,https://www.quvi.cl/plan/13-LF117-26
+Consalud,13-LF127-26,,"2,61",7.900,19,https://www.quvi.cl/plan/13-LF127-26
+Consalud,13-LF137-26,,"2,77",7.900,19,https://www.quvi.cl/plan/13-LF137-26
+Consalud,13-LF147-26,,"2,80",7.900,19,https://www.quvi.cl/plan/13-LF147-26
+Consalud,13-LF157-26,,"2,98",7.900,19,https://www.quvi.cl/plan/13-LF157-26
+Consalud,13-LF167-26,,"2,81",7.900,19,https://www.quvi.cl/plan/13-LF167-26
+Consalud,13-LF177-26,,"3,01",7.900,19,https://www.quvi.cl/plan/13-LF177-26
+Consalud,13-LF187-26,,"3,10",7.900,19,https://www.quvi.cl/plan/13-LF187-26
+Consalud,13-LF197-26,,"2,85",7.900,19,https://www.quvi.cl/plan/13-LF197-26
+Consalud,13-LF2001-26,,"2,39",7.900,14,https://www.quvi.cl/plan/13-LF2001-26
+Consalud,13-LF207-26,,"3,06",7.900,19,https://www.quvi.cl/plan/13-LF207-26
+Consalud,13-LF217-26,,"3,15",7.900,19,https://www.quvi.cl/plan/13-LF217-26
+Consalud,13-LF227-26,,"2,88",7.900,19,https://www.quvi.cl/plan/13-LF227-26
+Consalud,13-LF237-26,,"3,01",7.900,19,https://www.quvi.cl/plan/13-LF237-26
+Consalud,13-LF247-26,,"3,09",7.900,19,https://www.quvi.cl/plan/13-LF247-26
+Consalud,13-LF257-26,,"3,16",7.900,19,https://www.quvi.cl/plan/13-LF257-26
+Consalud,13-LF267-26,,"2,97",7.900,19,https://www.quvi.cl/plan/13-LF267-26
+Consalud,13-LF277-26,,"3,10",7.900,19,https://www.quvi.cl/plan/13-LF277-26
+Consalud,13-LF287-26,,"3,30",7.900,19,https://www.quvi.cl/plan/13-LF287-26
+Consalud,13-LF297-26,,"2,98",7.900,19,https://www.quvi.cl/plan/13-LF297-26
+Consalud,13-LF3001-26,,"2,53",7.900,14,https://www.quvi.cl/plan/13-LF3001-26
+Consalud,13-LF307-26,,"3,14",7.900,19,https://www.quvi.cl/plan/13-LF307-26
+Consalud,13-LF317-26,,"3,34",7.900,19,https://www.quvi.cl/plan/13-LF317-26
+Consalud,13-LF4001-26,,"2,46",7.900,14,https://www.quvi.cl/plan/13-LF4001-26
+Consalud,13-LF5001-26,,"2,42",7.900,14,https://www.quvi.cl/plan/13-LF5001-26
+Consalud,13-LF6001-26,,"2,56",7.900,14,https://www.quvi.cl/plan/13-LF6001-26
+Consalud,13-LF7001-26,,"2,33",7.900,19,https://www.quvi.cl/plan/13-LF7001-26
+Consalud,13-LF8001-26,,"2,46",7.900,19,https://www.quvi.cl/plan/13-LF8001-26
+Consalud,13-LF9001-26,,"2,77",7.900,19,https://www.quvi.cl/plan/13-LF9001-26
+Consalud,13-LFC107-26,,"3,55",8.000,25,https://www.quvi.cl/plan/13-LFC107-26
+Consalud,13-LFC117-26,,"3,29",8.000,25,https://www.quvi.cl/plan/13-LFC117-26
+Consalud,13-LFC127-26,,"3,49",8.000,25,https://www.quvi.cl/plan/13-LFC127-26
+Consalud,13-LFC137-26,,"3,70",8.000,25,https://www.quvi.cl/plan/13-LFC137-26
+Consalud,13-LFC17-26,,"2,39",8.000,20,https://www.quvi.cl/plan/13-LFC17-26
+Consalud,13-LFC27-26,,"2,54",8.000,20,https://www.quvi.cl/plan/13-LFC27-26
+Consalud,13-LFC37-26,,"2,72",8.000,20,https://www.quvi.cl/plan/13-LFC37-26
+Consalud,13-LFC47-26,,"2,90",8.000,20,https://www.quvi.cl/plan/13-LFC47-26
+Consalud,13-LFC57-26,,"2,66",8.000,20,https://www.quvi.cl/plan/13-LFC57-26
+Consalud,13-LFC67-26,,"2,85",8.000,20,https://www.quvi.cl/plan/13-LFC67-26
+Consalud,13-LFC77-26,,"3,03",8.000,20,https://www.quvi.cl/plan/13-LFC77-26
+Consalud,13-LFC87-26,,"3,13",8.000,25,https://www.quvi.cl/plan/13-LFC87-26
+Consalud,13-LFC97-26,,"3,34",8.000,20,https://www.quvi.cl/plan/13-LFC97-26
+Consalud,13-LFCC17-26,,"2,41",8.000,15,https://www.quvi.cl/plan/13-LFCC17-26
+Consalud,13-LFCC27-26,,"2,59",8.000,15,https://www.quvi.cl/plan/13-LFCC27-26
+Consalud,13-LFCC37-26,,"2,77",8.000,15,https://www.quvi.cl/plan/13-LFCC37-26
+Consalud,13-LFCC47-26,,"2,88",8.000,19,https://www.quvi.cl/plan/13-LFCC47-26
+Consalud,13-LFCC57-26,,"3,08",8.000,19,https://www.quvi.cl/plan/13-LFCC57-26
+Consalud,13-LFCC67-26,,"3,26",8.000,19,https://www.quvi.cl/plan/13-LFCC67-26
+Consalud,13-LFCC77-26,,"3,01",8.000,19,https://www.quvi.cl/plan/13-LFCC77-26
+Consalud,13-LFCC87-26,,"3,23",8.000,19,https://www.quvi.cl/plan/13-LFCC87-26
+Consalud,13-LFCC97-26,,"3,40",8.000,19,https://www.quvi.cl/plan/13-LFCC97-26
+Consalud,13-LFCN17-26,,"2,46",7.900,17,https://www.quvi.cl/plan/13-LFCN17-26
+Consalud,13-LFCN27-26,,"2,63",7.900,17,https://www.quvi.cl/plan/13-LFCN27-26
+Consalud,13-LFCN37-26,,"2,80",7.900,17,https://www.quvi.cl/plan/13-LFCN37-26
+Consalud,13-LFCN47-26,,"2,55",7.900,17,https://www.quvi.cl/plan/13-LFCN47-26
+Consalud,13-LFCN57-26,,"2,72",7.900,17,https://www.quvi.cl/plan/13-LFCN57-26
+Consalud,13-LFCN67-26,,"2,89",7.900,17,https://www.quvi.cl/plan/13-LFCN67-26
+Consalud,13-LFCN77-26,,"2,69",7.900,19,https://www.quvi.cl/plan/13-LFCN77-26
+Consalud,13-LFCN87-26,,"2,86",7.900,19,https://www.quvi.cl/plan/13-LFCN87-26
+Consalud,13-LFCN97-26,,"3,08",7.900,19,https://www.quvi.cl/plan/13-LFCN97-26
+Consalud,13-LFCO10-26,,"3,42",8.000,16,https://www.quvi.cl/plan/13-LFCO10-26
+Consalud,13-LFCO20-26,,"3,58",8.000,16,https://www.quvi.cl/plan/13-LFCO20-26
+Consalud,13-LFCO30-26,,"3,76",8.000,16,https://www.quvi.cl/plan/13-LFCO30-26
+Consalud,13-LFCO40-26,,"3,82",8.000,17,https://www.quvi.cl/plan/13-LFCO40-26
+Consalud,13-LFCO50-26,,"3,99",8.000,17,https://www.quvi.cl/plan/13-LFCO50-26
+Consalud,13-LFCO60-26,,"4,17",8.000,14,https://www.quvi.cl/plan/13-LFCO60-26
+Consalud,13-LFCS17-26,,"2,34",7.900,15,https://www.quvi.cl/plan/13-LFCS17-26
+Consalud,13-LFCS27-26,,"2,50",7.900,15,https://www.quvi.cl/plan/13-LFCS27-26
+Consalud,13-LFCS37-26,,"2,66",7.900,15,https://www.quvi.cl/plan/13-LFCS37-26
+Consalud,13-LFCS47-26,,"2,53",7.900,15,https://www.quvi.cl/plan/13-LFCS47-26
+Consalud,13-LFCS57-26,,"2,68",7.900,15,https://www.quvi.cl/plan/13-LFCS57-26
+Consalud,13-LFCS67-26,,"2,86",7.900,15,https://www.quvi.cl/plan/13-LFCS67-26
+Consalud,13-LFCS77-26,,"3,10",7.900,18,https://www.quvi.cl/plan/13-LFCS77-26
+Consalud,13-LFCS87-26,,"3,28",7.900,18,https://www.quvi.cl/plan/13-LFCS87-26
+Consalud,13-LFCS97-26,,"3,39",7.900,18,https://www.quvi.cl/plan/13-LFCS97-26
+Consalud,13-LFN107-26,,"2,95",7.900,22,https://www.quvi.cl/plan/13-LFN107-26
+Consalud,13-LFN117-26,,"2,72",7.900,22,https://www.quvi.cl/plan/13-LFN117-26
+Consalud,13-LFN127-26,,"2,93",7.900,22,https://www.quvi.cl/plan/13-LFN127-26
+Consalud,13-LFN137-26,,"3,17",7.900,22,https://www.quvi.cl/plan/13-LFN137-26
+Consalud,13-LFN17-26,,"2,12",7.900,17,https://www.quvi.cl/plan/13-LFN17-26
+Consalud,13-LFN27-26,,"2,28",7.900,18,https://www.quvi.cl/plan/13-LFN27-26
+Consalud,13-LFN37-26,,"2,45",7.900,18,https://www.quvi.cl/plan/13-LFN37-26
+Consalud,13-LFN47-26,,"2,62",7.900,19,https://www.quvi.cl/plan/13-LFN47-26
+Consalud,13-LFN57-26,,"2,43",7.900,20,https://www.quvi.cl/plan/13-LFN57-26
+Consalud,13-LFN67-26,,"2,60",7.900,20,https://www.quvi.cl/plan/13-LFN67-26
+Consalud,13-LFN77-26,,"2,76",7.900,20,https://www.quvi.cl/plan/13-LFN77-26
+Consalud,13-LFN87-26,,"2,63",7.900,22,https://www.quvi.cl/plan/13-LFN87-26
+Consalud,13-LFN97-26,,"2,77",7.900,22,https://www.quvi.cl/plan/13-LFN97-26
+Consalud,13-LFO10-26,,"2,54",8.000,14,https://www.quvi.cl/plan/13-LFO10-26
+Consalud,13-LFO100-26,,"4,18",8.000,18,https://www.quvi.cl/plan/13-LFO100-26
+Consalud,13-LFO110-26,,"4,16",8.000,18,https://www.quvi.cl/plan/13-LFO110-26
+Consalud,13-LFO120-26,,"4,34",8.000,18,https://www.quvi.cl/plan/13-LFO120-26
+Consalud,13-LFO130-26,,"4,54",8.000,18,https://www.quvi.cl/plan/13-LFO130-26
+Consalud,13-LFO20-26,,"2,64",8.000,17,https://www.quvi.cl/plan/13-LFO20-26
+Consalud,13-LFO30-26,,"2,92",8.000,17,https://www.quvi.cl/plan/13-LFO30-26
+Consalud,13-LFO40-26,,"3,07",8.000,17,https://www.quvi.cl/plan/13-LFO40-26
+Consalud,13-LFO50-26,,"3,14",8.000,18,https://www.quvi.cl/plan/13-LFO50-26
+Consalud,13-LFO60-26,,"3,30",8.000,18,https://www.quvi.cl/plan/13-LFO60-26
+Consalud,13-LFO70-26,,"3,48",8.000,18,https://www.quvi.cl/plan/13-LFO70-26
+Consalud,13-LFO80-26,,"3,81",8.000,18,https://www.quvi.cl/plan/13-LFO80-26
+Consalud,13-LFO90-26,,"3,99",8.000,18,https://www.quvi.cl/plan/13-LFO90-26
+Consalud,13-LFS107-26,,"3,04",7.900,20,https://www.quvi.cl/plan/13-LFS107-26
+Consalud,13-LFS117-26,,"3,22",7.900,20,https://www.quvi.cl/plan/13-LFS117-26
+Consalud,13-LFS127-26,,"3,39",7.900,20,https://www.quvi.cl/plan/13-LFS127-26
+Consalud,13-LFS137-26,,"3,28",7.900,20,https://www.quvi.cl/plan/13-LFS137-26
+Consalud,13-LFS147-26,,"3,47",7.900,20,https://www.quvi.cl/plan/13-LFS147-26
+Consalud,13-LFS157-26,,"3,66",7.900,20,https://www.quvi.cl/plan/13-LFS157-26
+Consalud,13-LFS17-26,,"2,15",7.900,15,https://www.quvi.cl/plan/13-LFS17-26
+Consalud,13-LFS27-26,,"2,30",7.900,15,https://www.quvi.cl/plan/13-LFS27-26
+Consalud,13-LFS37-26,,"2,65",7.900,15,https://www.quvi.cl/plan/13-LFS37-26
+Consalud,13-LFS47-26,,"2,50",7.900,16,https://www.quvi.cl/plan/13-LFS47-26
+Consalud,13-LFS57-26,,"2,67",7.900,16,https://www.quvi.cl/plan/13-LFS57-26
+Consalud,13-LFS67-26,,"2,83",7.900,16,https://www.quvi.cl/plan/13-LFS67-26
+Consalud,13-LFS77-26,,"2,68",7.900,17,https://www.quvi.cl/plan/13-LFS77-26
+Consalud,13-LFS87-26,,"2,86",7.900,17,https://www.quvi.cl/plan/13-LFS87-26
+Consalud,13-LFS97-26,,"3,01",7.900,17,https://www.quvi.cl/plan/13-LFS97-26
+Consalud,13-LFSA107-26,,"3,61",8.000,15,https://www.quvi.cl/plan/13-LFSA107-26
+Consalud,13-LFSA117-26,,"3,72",8.000,15,https://www.quvi.cl/plan/13-LFSA117-26
+Consalud,13-LFSA127-26,,"3,89",8.000,15,https://www.quvi.cl/plan/13-LFSA127-26
+Consalud,13-LFSA17-26,,"2,44",8.000,10,https://www.quvi.cl/plan/13-LFSA17-26
+Consalud,13-LFSA27-26,,"2,56",8.000,10,https://www.quvi.cl/plan/13-LFSA27-26
+Consalud,13-LFSA37-26,,"2,82",8.000,10,https://www.quvi.cl/plan/13-LFSA37-26
+Consalud,13-LFSA47-26,,"2,93",8.000,12,https://www.quvi.cl/plan/13-LFSA47-26
+Consalud,13-LFSA57-26,,"3,05",8.000,12,https://www.quvi.cl/plan/13-LFSA57-26
+Consalud,13-LFSA67-26,,"3,20",8.000,12,https://www.quvi.cl/plan/13-LFSA67-26
+Consalud,13-LFSA77-26,,"3,05",8.000,12,https://www.quvi.cl/plan/13-LFSA77-26
+Consalud,13-LFSA87-26,,"3,16",8.000,12,https://www.quvi.cl/plan/13-LFSA87-26
+Consalud,13-LFSA97-26,,"3,31",8.000,12,https://www.quvi.cl/plan/13-LFSA97-26
+Consalud,13-LO10002-26,,"2,37",6.500,16,https://www.quvi.cl/plan/13-LO10002-26
+Consalud,13-LO1002-26,,"1,94",6.500,13,https://www.quvi.cl/plan/13-LO1002-26
+Consalud,13-LO11002-26,,"2,49",6.500,16,https://www.quvi.cl/plan/13-LO11002-26
+Consalud,13-LO12002-26,,"2,51",6.500,16,https://www.quvi.cl/plan/13-LO12002-26
+Consalud,13-LO13002-26,,"2,61",6.500,16,https://www.quvi.cl/plan/13-LO13002-26
+Consalud,13-LO2002-26,,"1,96",6.500,13,https://www.quvi.cl/plan/13-LO2002-26
+Consalud,13-LO3002-26,,"2,04",6.500,13,https://www.quvi.cl/plan/13-LO3002-26
+Consalud,13-LO4002-26,,"2,14",6.500,13,https://www.quvi.cl/plan/13-LO4002-26
+Consalud,13-LO5002-26,,"2,03",6.500,13,https://www.quvi.cl/plan/13-LO5002-26
+Consalud,13-LO6002-26,,"2,11",6.500,13,https://www.quvi.cl/plan/13-LO6002-26
+Consalud,13-LO7002-26,,"2,19",6.500,13,https://www.quvi.cl/plan/13-LO7002-26
+Consalud,13-LO8002-26,,"2,29",6.500,16,https://www.quvi.cl/plan/13-LO8002-26
+Consalud,13-LO9002-26,,"2,45",6.500,16,https://www.quvi.cl/plan/13-LO9002-26
+Consalud,13-LOC17-26,,"2,38",8.000,8,https://www.quvi.cl/plan/13-LOC17-26
+Consalud,13-LOC27-26,,"2,54",8.000,8,https://www.quvi.cl/plan/13-LOC27-26
+Consalud,13-LOC37-26,,"3,06",8.000,24,https://www.quvi.cl/plan/13-LOC37-26
+Consalud,13-LOC47-26,,"3,20",8.000,24,https://www.quvi.cl/plan/13-LOC47-26
+Consalud,13-SF107-26,,"4,05",9.900,21,https://www.quvi.cl/plan/13-SF107-26
+Consalud,13-SF117-26,,"4,06",9.900,21,https://www.quvi.cl/plan/13-SF117-26
+Consalud,13-SF127-26,,"4,28",9.900,21,https://www.quvi.cl/plan/13-SF127-26
+Consalud,13-SF137-26,,"4,41",9.900,21,https://www.quvi.cl/plan/13-SF137-26
+Consalud,13-SF147-26,,"4,84",9.900,21,https://www.quvi.cl/plan/13-SF147-26
+Consalud,13-SF157-26,,"4,15",9.900,21,https://www.quvi.cl/plan/13-SF157-26
+Consalud,13-SF167-26,,"4,51",9.900,21,https://www.quvi.cl/plan/13-SF167-26
+Consalud,13-SF17-26,,"3,36",7.900,19,https://www.quvi.cl/plan/13-SF17-26
+Consalud,13-SF177-26,,"5,00",9.900,21,https://www.quvi.cl/plan/13-SF177-26
+Consalud,13-SF187-26,,"4,54",9.900,22,https://www.quvi.cl/plan/13-SF187-26
+Consalud,13-SF197-26,,"4,86",9.900,22,https://www.quvi.cl/plan/13-SF197-26
+Consalud,13-SF207-26,,"5,22",9.900,22,https://www.quvi.cl/plan/13-SF207-26
+Consalud,13-SF217-26,,"5,14",9.900,22,https://www.quvi.cl/plan/13-SF217-26
+Consalud,13-SF227-26,,"5,32",9.900,22,https://www.quvi.cl/plan/13-SF227-26
+Consalud,13-SF237-26,,"6,12",9.900,22,https://www.quvi.cl/plan/13-SF237-26
+Consalud,13-SF247-26,,"6,15",9.900,22,https://www.quvi.cl/plan/13-SF247-26
+Consalud,13-SF257-26,,"6,23",9.900,22,https://www.quvi.cl/plan/13-SF257-26
+Consalud,13-SF27-26,,"3,58",7.900,19,https://www.quvi.cl/plan/13-SF27-26
+Consalud,13-SF37-26,,"3,73",7.900,19,https://www.quvi.cl/plan/13-SF37-26
+Consalud,13-SF47-26,,"3,65",7.900,21,https://www.quvi.cl/plan/13-SF47-26
+Consalud,13-SF57-26,,"3,92",7.900,21,https://www.quvi.cl/plan/13-SF57-26
+Consalud,13-SF67-26,,"4,06",7.900,21,https://www.quvi.cl/plan/13-SF67-26
+Consalud,13-SF77-26,,"3,75",7.900,21,https://www.quvi.cl/plan/13-SF77-26
+Consalud,13-SF87-26,,"4,18",7.900,21,https://www.quvi.cl/plan/13-SF87-26
+Consalud,13-SF97-26,,"4,32",7.900,21,https://www.quvi.cl/plan/13-SF97-26
+Consalud,13-SFC117-26,,"4,55",10.000,24,https://www.quvi.cl/plan/13-SFC117-26
+Consalud,13-SFC127-26,,"4,87",10.000,28,https://www.quvi.cl/plan/13-SFC127-26
+Consalud,13-SFC137-26,,"5,14",10.000,28,https://www.quvi.cl/plan/13-SFC137-26
+Consalud,13-SFC147-26,,"6,01",10.000,28,https://www.quvi.cl/plan/13-SFC147-26
+Consalud,13-SFC17-26,,"3,94",10.000,27,https://www.quvi.cl/plan/13-SFC17-26
+Consalud,13-SFC27-26,,"4,23",10.000,27,https://www.quvi.cl/plan/13-SFC27-26
+Consalud,13-SFC37-26,,"4,55",10.000,27,https://www.quvi.cl/plan/13-SFC37-26
+Consalud,13-SFC47-26,,"3,98",10.000,27,https://www.quvi.cl/plan/13-SFC47-26
+Consalud,13-SFC57-26,,"4,26",10.000,27,https://www.quvi.cl/plan/13-SFC57-26
+Consalud,13-SFC67-26,,"4,58",10.000,27,https://www.quvi.cl/plan/13-SFC67-26
+Consalud,13-SFC77-26,,"4,11",10.000,25,https://www.quvi.cl/plan/13-SFC77-26
+Consalud,13-SFC87-26,,"4,42",10.000,25,https://www.quvi.cl/plan/13-SFC87-26
+Consalud,13-SFC97-26,,"4,73",10.000,28,https://www.quvi.cl/plan/13-SFC97-26
+Consalud,13-SFCC17-26,,"3,69",10.000,21,https://www.quvi.cl/plan/13-SFCC17-26
+Consalud,13-SFCC27-26,,"4,01",10.000,21,https://www.quvi.cl/plan/13-SFCC27-26
+Consalud,13-SFCC37-26,,"4,31",10.000,21,https://www.quvi.cl/plan/13-SFCC37-26
+Consalud,13-SFCC47-26,,"3,74",10.000,21,https://www.quvi.cl/plan/13-SFCC47-26
+Consalud,13-SFCC57-26,,"4,03",10.000,21,https://www.quvi.cl/plan/13-SFCC57-26
+Consalud,13-SFCC67-26,,"4,33",10.000,21,https://www.quvi.cl/plan/13-SFCC67-26
+Consalud,13-SFCO10-26,,"4,78",10.000,17,https://www.quvi.cl/plan/13-SFCO10-26
+Consalud,13-SFCO20-26,,"5,03",10.000,17,https://www.quvi.cl/plan/13-SFCO20-26
+Consalud,13-SFCO30-26,,"5,32",10.000,17,https://www.quvi.cl/plan/13-SFCO30-26
+Consalud,13-SFCO40-26,,"4,84",10.000,17,https://www.quvi.cl/plan/13-SFCO40-26
+Consalud,13-SFCO50-26,,"5,10",10.000,17,https://www.quvi.cl/plan/13-SFCO50-26
+Consalud,13-SFCO60-26,,"5,38",10.000,17,https://www.quvi.cl/plan/13-SFCO60-26
+Consalud,13-SFCS17-26,,"3,73",9.900,19,https://www.quvi.cl/plan/13-SFCS17-26
+Consalud,13-SFCS27-26,,"3,94",9.900,19,https://www.quvi.cl/plan/13-SFCS27-26
+Consalud,13-SFCS37-26,,"4,17",9.900,19,https://www.quvi.cl/plan/13-SFCS37-26
+Consalud,13-SFN107-26,,"4,28",9.900,24,https://www.quvi.cl/plan/13-SFN107-26
+Consalud,13-SFN117-26,,"4,62",9.900,24,https://www.quvi.cl/plan/13-SFN117-26
+Consalud,13-SFN127-26,,"5,10",9.900,24,https://www.quvi.cl/plan/13-SFN127-26
+Consalud,13-SFN137-26,,"4,88",9.900,24,https://www.quvi.cl/plan/13-SFN137-26
+Consalud,13-SFN147-26,,"5,33",9.900,24,https://www.quvi.cl/plan/13-SFN147-26
+Consalud,13-SFN157-26,,"5,82",9.900,24,https://www.quvi.cl/plan/13-SFN157-26
+Consalud,13-SFN167-26,,"6,02",9.900,24,https://www.quvi.cl/plan/13-SFN167-26
+Consalud,13-SFN17-26,,"3,39",9.900,23,https://www.quvi.cl/plan/13-SFN17-26
+Consalud,13-SFN177-26,,"6,22",10.000,24,https://www.quvi.cl/plan/13-SFN177-26
+Consalud,13-SFN27-26,,"3,70",9.900,23,https://www.quvi.cl/plan/13-SFN27-26
+Consalud,13-SFN37-26,,"4,04",9.900,23,https://www.quvi.cl/plan/13-SFN37-26
+Consalud,13-SFN47-26,,"3,59",9.900,23,https://www.quvi.cl/plan/13-SFN47-26
+Consalud,13-SFN57-26,,"3,86",9.900,23,https://www.quvi.cl/plan/13-SFN57-26
+Consalud,13-SFN67-26,,"4,20",9.900,23,https://www.quvi.cl/plan/13-SFN67-26
+Consalud,13-SFN77-26,,"4,08",9.900,24,https://www.quvi.cl/plan/13-SFN77-26
+Consalud,13-SFN87-26,,"4,37",9.900,24,https://www.quvi.cl/plan/13-SFN87-26
+Consalud,13-SFN97-26,,"4,71",9.900,24,https://www.quvi.cl/plan/13-SFN97-26
+Consalud,13-SFO10-26,,"5,09",10.000,19,https://www.quvi.cl/plan/13-SFO10-26
+Consalud,13-SFO100-26,,"5,32",10.000,20,https://www.quvi.cl/plan/13-SFO100-26
+Consalud,13-SFO110-26,,"5,61",10.000,20,https://www.quvi.cl/plan/13-SFO110-26
+Consalud,13-SFO120-26,,"5,95",10.000,20,https://www.quvi.cl/plan/13-SFO120-26
+Consalud,13-SFO130-26,,"5,36",10.000,20,https://www.quvi.cl/plan/13-SFO130-26
+Consalud,13-SFO140-26,,"5,65",10.000,20,https://www.quvi.cl/plan/13-SFO140-26
+Consalud,13-SFO150-26,,"6,10",10.000,20,https://www.quvi.cl/plan/13-SFO150-26
+Consalud,13-SFO1603-26,,"6,18",10.000,19,https://www.quvi.cl/plan/13-SFO1603-26
+Consalud,13-SFO20-26,,"5,37",10.000,19,https://www.quvi.cl/plan/13-SFO20-26
+Consalud,13-SFO30-26,,"5,69",10.000,19,https://www.quvi.cl/plan/13-SFO30-26
+Consalud,13-SFO40-26,,"5,14",10.000,19,https://www.quvi.cl/plan/13-SFO40-26
+Consalud,13-SFO50-26,,"5,44",10.000,19,https://www.quvi.cl/plan/13-SFO50-26
+Consalud,13-SFO60-26,,"5,76",10.000,19,https://www.quvi.cl/plan/13-SFO60-26
+Consalud,13-SFO70-26,,"5,28",10.000,20,https://www.quvi.cl/plan/13-SFO70-26
+Consalud,13-SFO80-26,,"5,57",10.000,20,https://www.quvi.cl/plan/13-SFO80-26
+Consalud,13-SFO90-26,,"5,90",10.000,20,https://www.quvi.cl/plan/13-SFO90-26
+Consalud,13-SFS107-26,,"4,26",9.900,22,https://www.quvi.cl/plan/13-SFS107-26
+Consalud,13-SFS117-26,,"4,46",9.900,15,https://www.quvi.cl/plan/13-SFS117-26
+Consalud,13-SFS127-26,,"4,72",9.900,15,https://www.quvi.cl/plan/13-SFS127-26
+Consalud,13-SFS137-26,,"4,38",9.900,22,https://www.quvi.cl/plan/13-SFS137-26
+Consalud,13-SFS147-26,,"4,57",9.900,15,https://www.quvi.cl/plan/13-SFS147-26
+Consalud,13-SFS157-26,,"4,84",9.900,15,https://www.quvi.cl/plan/13-SFS157-26
+Consalud,13-SFS167-26,,"4,47",9.900,22,https://www.quvi.cl/plan/13-SFS167-26
+Consalud,13-SFS17-26,,"3,70",9.900,21,https://www.quvi.cl/plan/13-SFS17-26
+Consalud,13-SFS177-26,,"4,67",9.900,15,https://www.quvi.cl/plan/13-SFS177-26
+Consalud,13-SFS187-26,,"5,15",9.900,15,https://www.quvi.cl/plan/13-SFS187-26
+Consalud,13-SFS197-26,,"5,53",9.900,22,https://www.quvi.cl/plan/13-SFS197-26
+Consalud,13-SFS207-26,,"5,94",9.900,22,https://www.quvi.cl/plan/13-SFS207-26
+Consalud,13-SFS217-26,,"6,12",9.900,22,https://www.quvi.cl/plan/13-SFS217-26
+Consalud,13-SFS227-26,,"6,27",9.900,22,https://www.quvi.cl/plan/13-SFS227-26
+Consalud,13-SFS27-26,,"3,95",9.900,21,https://www.quvi.cl/plan/13-SFS27-26
+Consalud,13-SFS37-26,,"4,20",9.900,21,https://www.quvi.cl/plan/13-SFS37-26
+Consalud,13-SFS47-26,,"3,79",9.900,21,https://www.quvi.cl/plan/13-SFS47-26
+Consalud,13-SFS57-26,,"4,04",9.900,21,https://www.quvi.cl/plan/13-SFS57-26
+Consalud,13-SFS67-26,,"4,30",9.900,21,https://www.quvi.cl/plan/13-SFS67-26
+Consalud,13-SFS77-26,,"3,89",9.900,21,https://www.quvi.cl/plan/13-SFS77-26
+Consalud,13-SFS87-26,,"4,13",9.900,21,https://www.quvi.cl/plan/13-SFS87-26
+Consalud,13-SFS97-26,,"4,40",9.900,21,https://www.quvi.cl/plan/13-SFS97-26
+Consalud,13-SFSA17-26,,"4,25",10.000,16,https://www.quvi.cl/plan/13-SFSA17-26
+Consalud,13-SFSA27-26,,"4,38",10.000,16,https://www.quvi.cl/plan/13-SFSA27-26
+Consalud,13-SFSA37-26,,"4,60",10.000,16,https://www.quvi.cl/plan/13-SFSA37-26
+Consalud,13-SO1002-26,,"2,81",7.500,19,https://www.quvi.cl/plan/13-SO1002-26
+Consalud,13-SO2002-26,,"2,92",7.500,19,https://www.quvi.cl/plan/13-SO2002-26
+Consalud,13-SO3002-26,,"3,10",7.500,19,https://www.quvi.cl/plan/13-SO3002-26
+Consalud,13-SO4002-26,,"3,12",7.500,19,https://www.quvi.cl/plan/13-SO4002-26
+Consalud,13-SO5002-26,,"3,29",7.500,19,https://www.quvi.cl/plan/13-SO5002-26
+Consalud,13-SOC17-26,,"3,67",10.000,27,https://www.quvi.cl/plan/13-SOC17-26
+Consalud,13-SOC27-26,,"3,76",10.000,27,https://www.quvi.cl/plan/13-SOC27-26
+Consalud,13-SOC37-26,,"3,84",10.000,7,https://www.quvi.cl/plan/13-SOC37-26
+Esencial,AI70501225,,"2,60",,1,https://www.quvi.cl/plan/AI70501225
+Esencial,AI80700626,,"3,88",,1,https://www.quvi.cl/plan/AI80700626
+Esencial,AS50500226,,"1,73",6.000,6,https://www.quvi.cl/plan/AS50500226
+Esencial,AS70501125,,"1,95",7.000,6,https://www.quvi.cl/plan/AS70501125
+Esencial,AS70501125B,,"2,08",7.000,6,https://www.quvi.cl/plan/AS70501125B
+Esencial,AS70701125,,"2,23",7.000,6,https://www.quvi.cl/plan/AS70701125
+Esencial,AS70701125B,,"2,39",7.000,6,https://www.quvi.cl/plan/AS70701125B
+Esencial,AS80701125,,"2,31",7.000,6,https://www.quvi.cl/plan/AS80701125
+Esencial,AS80701125B,,"2,47",7.000,6,https://www.quvi.cl/plan/AS80701125B
+Esencial,AS90801125,,"2,55",7.000,6,https://www.quvi.cl/plan/AS90801125
+Esencial,AS90801125B,,"2,73",7.000,6,https://www.quvi.cl/plan/AS90801125B
+Banmédica,B5CH2411A2,,"2,71",5.800,8,https://www.quvi.cl/plan/B5CH2411A2
+Banmédica,B5CH2411B2,,"2,87",5.800,8,https://www.quvi.cl/plan/B5CH2411B2
+Banmédica,B5SLH2411A0,,"3,29",7.500,10,https://www.quvi.cl/plan/B5SLH2411A0
+Banmédica,B5SLH2411C2,,"4,31",7.500,13,https://www.quvi.cl/plan/B5SLH2411C2
+Banmédica,B8SLU2411A0,,"4,17",7.500,11,https://www.quvi.cl/plan/B8SLU2411A0
+Banmédica,B8SLU2411A1,,"4,43",7.800,10,https://www.quvi.cl/plan/B8SLU2411A1
+Banmédica,B8SLU2411A2,,"4,46",7.800,11,https://www.quvi.cl/plan/B8SLU2411A2
+Banmédica,B8SLU2411A3,,"4,53",7.500,11,https://www.quvi.cl/plan/B8SLU2411A3
+Banmédica,B8SLU2411A5,,"4,69",7.500,11,https://www.quvi.cl/plan/B8SLU2411A5
+Banmédica,B8SLU2411AA,,"4,07",7.500,8,https://www.quvi.cl/plan/B8SLU2411AA
+Banmédica,B8SLU2411AB,,"3,81",7.500,9,https://www.quvi.cl/plan/B8SLU2411AB
+Banmédica,B8SLU2411CB,,"4,48",7.500,12,https://www.quvi.cl/plan/B8SLU2411CB
+Banmédica,BCCB260220,,"1,41",5.000,12,https://www.quvi.cl/plan/BCCB260220
+Banmédica,BCCB260222,,"1,56",5.000,13,https://www.quvi.cl/plan/BCCB260222
+Banmédica,BCCB260224,,"1,75",5.000,15,https://www.quvi.cl/plan/BCCB260224
+Banmédica,BCCB260225,,"1,94",5.000,16,https://www.quvi.cl/plan/BCCB260225
+Banmédica,BCCB260242,,"1,68",5.000,17,https://www.quvi.cl/plan/BCCB260242
+Banmédica,BCCB260244,,"1,87",5.000,17,https://www.quvi.cl/plan/BCCB260244
+Banmédica,BCCB260245,,"2,06",5.000,17,https://www.quvi.cl/plan/BCCB260245
+Banmédica,BCCB260255,,"2,20",5.000,17,https://www.quvi.cl/plan/BCCB260255
+Banmédica,BCCF260544,,"1,31",5.000,13,https://www.quvi.cl/plan/BCCF260544
+Banmédica,BCCF260545,,"1,47",5.000,14,https://www.quvi.cl/plan/BCCF260545
+Banmédica,BCCF260546,,"1,67",5.000,15,https://www.quvi.cl/plan/BCCF260546
+Banmédica,BCCF260555,,"1,57",5.000,14,https://www.quvi.cl/plan/BCCF260555
+Banmédica,BCCF260556,,"1,78",5.000,15,https://www.quvi.cl/plan/BCCF260556
+Banmédica,BCCF260566,,"1,81",5.000,17,https://www.quvi.cl/plan/BCCF260566
+Banmédica,BCCF260567,,"2,01",5.000,17,https://www.quvi.cl/plan/BCCF260567
+Banmédica,BCCF260587,,"2,24",5.000,17,https://www.quvi.cl/plan/BCCF260587
+Banmédica,BCCU241102,,"2,41",5.500,8,https://www.quvi.cl/plan/BCCU241102
+Banmédica,BCCU2411A2,,"2,51",5.500,8,https://www.quvi.cl/plan/BCCU2411A2
+Banmédica,BCCU2411A3,,"2,65",5.500,6,https://www.quvi.cl/plan/BCCU2411A3
+Banmédica,BCCU2411B2,,"2,68",5.500,6,https://www.quvi.cl/plan/BCCU2411B2
+Banmédica,BCCU2411B3,,"2,81",5.500,6,https://www.quvi.cl/plan/BCCU2411B3
+Banmédica,BCCU2411C2,,"2,86",5.500,6,https://www.quvi.cl/plan/BCCU2411C2
+Banmédica,BCCU2411C3,,"3,00",5.500,6,https://www.quvi.cl/plan/BCCU2411C3
+Banmédica,BCG260444,,"1,46",5.000,13,https://www.quvi.cl/plan/BCG260444
+Banmédica,BCG260500,,"1,20",5.000,6,https://www.quvi.cl/plan/BCG260500
+Banmédica,BCG260502,,"1,24",5.000,8,https://www.quvi.cl/plan/BCG260502
+Banmédica,BCG260504,,"1,32",5.000,11,https://www.quvi.cl/plan/BCG260504
+Banmédica,BCG260522,,"1,28",5.000,8,https://www.quvi.cl/plan/BCG260522
+Banmédica,BCG260524,,"1,38",5.000,11,https://www.quvi.cl/plan/BCG260524
+Banmédica,BCG260700,,"1,26",5.100,6,https://www.quvi.cl/plan/BCG260700
+Banmédica,BCG260702,,"1,32",5.100,8,https://www.quvi.cl/plan/BCG260702
+Banmédica,BCG260704,,"1,39",5.100,11,https://www.quvi.cl/plan/BCG260704
+Banmédica,BCG260722,,"1,37",5.100,8,https://www.quvi.cl/plan/BCG260722
+Banmédica,BCG260724,,"1,45",5.100,11,https://www.quvi.cl/plan/BCG260724
+Banmédica,BCG260744,,"1,53",5.100,13,https://www.quvi.cl/plan/BCG260744
+Banmédica,BCNB260222,,"1,41",5.000,12,https://www.quvi.cl/plan/BCNB260222
+Banmédica,BCNB260224,,"1,59",5.000,13,https://www.quvi.cl/plan/BCNB260224
+Banmédica,BCNB260225,,"1,77",5.000,14,https://www.quvi.cl/plan/BCNB260225
+Banmédica,BCNB260242,,"1,51",5.000,15,https://www.quvi.cl/plan/BCNB260242
+Banmédica,BCNB260244,,"1,69",5.000,15,https://www.quvi.cl/plan/BCNB260244
+Banmédica,BCNB260245,,"1,87",5.000,15,https://www.quvi.cl/plan/BCNB260245
+Banmédica,BCNB260254,,"1,79",5.000,15,https://www.quvi.cl/plan/BCNB260254
+Banmédica,BCNF260544,,"1,31",5.000,11,https://www.quvi.cl/plan/BCNF260544
+Banmédica,BCNF260545,,"1,38",5.000,12,https://www.quvi.cl/plan/BCNF260545
+Banmédica,BCNF260546,,"1,58",5.000,13,https://www.quvi.cl/plan/BCNF260546
+Banmédica,BCNF260547,,"1,79",5.000,14,https://www.quvi.cl/plan/BCNF260547
+Banmédica,BCNF260554,,"1,41",5.000,12,https://www.quvi.cl/plan/BCNF260554
+Banmédica,BCNF260555,,"1,50",5.000,12,https://www.quvi.cl/plan/BCNF260555
+Banmédica,BCNF260557,,"1,89",5.000,14,https://www.quvi.cl/plan/BCNF260557
+Banmédica,BCNF260566,,"1,82",5.000,15,https://www.quvi.cl/plan/BCNF260566
+Banmédica,BCNF260567,,"2,03",5.000,15,https://www.quvi.cl/plan/BCNF260567
+Banmédica,BCNF260587,,"2,17",5.000,15,https://www.quvi.cl/plan/BCNF260587
+Banmédica,BCS8B260200,,"2,18",5.000,14,https://www.quvi.cl/plan/BCS8B260200
+Banmédica,BCS8B260222,,"2,38",5.000,16,https://www.quvi.cl/plan/BCS8B260222
+Banmédica,BCS8B260244,,"2,61",5.000,20,https://www.quvi.cl/plan/BCS8B260244
+Banmédica,BCS8B260245,,"2,76",5.000,20,https://www.quvi.cl/plan/BCS8B260245
+Banmédica,BCS8B260255,,"2,85",5.000,20,https://www.quvi.cl/plan/BCS8B260255
+Banmédica,BCS8F260544,,"2,34",5.000,17,https://www.quvi.cl/plan/BCS8F260544
+Banmédica,BCS8F260545,,"2,47",5.000,18,https://www.quvi.cl/plan/BCS8F260545
+Banmédica,BCS8F260555,,"2,54",5.000,18,https://www.quvi.cl/plan/BCS8F260555
+Banmédica,BCS8F260556,,"2,71",5.000,19,https://www.quvi.cl/plan/BCS8F260556
+Banmédica,BCS8F260567,,"3,03",5.000,21,https://www.quvi.cl/plan/BCS8F260567
+Banmédica,BCSB260200,,"1,38",5.000,11,https://www.quvi.cl/plan/BCSB260200
+Banmédica,BCSB260222,,"1,64",5.000,13,https://www.quvi.cl/plan/BCSB260222
+Banmédica,BCSB260244,,"1,94",5.000,17,https://www.quvi.cl/plan/BCSB260244
+Banmédica,BCSB260245,,"2,07",5.000,17,https://www.quvi.cl/plan/BCSB260245
+Banmédica,BCSB260264,,"2,21",5.000,21,https://www.quvi.cl/plan/BCSB260264
+Banmédica,BCSF260544,,"1,63",5.000,14,https://www.quvi.cl/plan/BCSF260544
+Banmédica,BCSF260545,,"1,68",5.000,15,https://www.quvi.cl/plan/BCSF260545
+Banmédica,BCSF260556,,"1,92",5.000,16,https://www.quvi.cl/plan/BCSF260556
+Banmédica,BCSF260567,,"2,25",5.000,18,https://www.quvi.cl/plan/BCSF260567
+Banmédica,BCSLU2411A0,,"2,75",7.500,12,https://www.quvi.cl/plan/BCSLU2411A0
+Banmédica,BCSLU2411A1,,"3,44",7.500,13,https://www.quvi.cl/plan/BCSLU2411A1
+Banmédica,BCSLU2411B0,,"3,03",7.500,14,https://www.quvi.cl/plan/BCSLU2411B0
+Banmédica,BCSLU2411B1,,"3,67",7.500,14,https://www.quvi.cl/plan/BCSLU2411B1
+Banmédica,BCSLU2411B2,,"3,91",7.500,14,https://www.quvi.cl/plan/BCSLU2411B2
+Banmédica,BCSLU2411C0,,"3,44",7.500,14,https://www.quvi.cl/plan/BCSLU2411C0
+Banmédica,BCSLU2411C1,,"4,03",7.500,14,https://www.quvi.cl/plan/BCSLU2411C1
+Banmédica,BCSLU2411C2,,"4,28",7.500,14,https://www.quvi.cl/plan/BCSLU2411C2
+Banmédica,BCSLU2411C3,,"4,45",7.500,14,https://www.quvi.cl/plan/BCSLU2411C3
+Banmédica,BCSLU2411C4,,"4,69",7.500,14,https://www.quvi.cl/plan/BCSLU2411C4
+Banmédica,BCSLU2411C5,,"4,91",7.500,14,https://www.quvi.cl/plan/BCSLU2411C5
+Banmédica,BNCU241102,,"2,34",5.500,6,https://www.quvi.cl/plan/BNCU241102
+Banmédica,BNCU2411A2,,"2,44",5.500,6,https://www.quvi.cl/plan/BNCU2411A2
+Banmédica,BNCU2411A3,,"2,48",5.500,5,https://www.quvi.cl/plan/BNCU2411A3
+Banmédica,BNCU2411C2,,"2,68",5.500,4,https://www.quvi.cl/plan/BNCU2411C2
+Banmédica,BNCU2411C3,,"2,86",5.500,4,https://www.quvi.cl/plan/BNCU2411C3
+Banmédica,BNSLU2411A0,,"2,69",7.500,13,https://www.quvi.cl/plan/BNSLU2411A0
+Banmédica,BNSLU2411A1,,"3,19",7.500,12,https://www.quvi.cl/plan/BNSLU2411A1
+Banmédica,BNSLU2411B0,,"2,99",7.500,11,https://www.quvi.cl/plan/BNSLU2411B0
+Banmédica,BNSLU2411B1,,"3,46",7.700,11,https://www.quvi.cl/plan/BNSLU2411B1
+Banmédica,BNSLU2411B2,,"3,79",7.500,13,https://www.quvi.cl/plan/BNSLU2411B2
+Banmédica,BNSLU2411B4,,"4,47",7.500,13,https://www.quvi.cl/plan/BNSLU2411B4
+Banmédica,BNSLU2411C1,,"3,76",7.500,13,https://www.quvi.cl/plan/BNSLU2411C1
+Banmédica,BNSLU2411C3,,"4,39",7.500,13,https://www.quvi.cl/plan/BNSLU2411C3
+Banmédica,BNSLU2411C5,,"4,91",7.500,13,https://www.quvi.cl/plan/BNSLU2411C5
+Banmédica,BPB260633,,"5,01",11.000,17,https://www.quvi.cl/plan/BPB260633
+Banmédica,BPB260634,,"5,74",11.000,17,https://www.quvi.cl/plan/BPB260634
+Banmédica,BPB260635,,"6,51",11.000,17,https://www.quvi.cl/plan/BPB260635
+Banmédica,BPB260636,,"7,37",11.000,17,https://www.quvi.cl/plan/BPB260636
+Banmédica,BPB260644,,"6,43",11.000,17,https://www.quvi.cl/plan/BPB260644
+Banmédica,BPB260645,,"7,20",11.000,17,https://www.quvi.cl/plan/BPB260645
+Banmédica,BPB260646,,"8,06",11.000,17,https://www.quvi.cl/plan/BPB260646
+Banmédica,BPB260655,,"7,97",11.000,17,https://www.quvi.cl/plan/BPB260655
+Banmédica,BPP26061010,,"4,27",11.000,16,https://www.quvi.cl/plan/BPP26061010
+Banmédica,BPP26061011,,"4,97",11.000,16,https://www.quvi.cl/plan/BPP26061011
+Banmédica,BPP26061012,,"5,20",11.000,16,https://www.quvi.cl/plan/BPP26061012
+Banmédica,BPP260669,,"2,91",11.000,16,https://www.quvi.cl/plan/BPP260669
+Banmédica,BPP2606710,,"3,48",11.000,16,https://www.quvi.cl/plan/BPP2606710
+Banmédica,BPP260679,,"3,07",11.000,16,https://www.quvi.cl/plan/BPP260679
+Banmédica,BPP2606810,,"3,89",11.000,16,https://www.quvi.cl/plan/BPP2606810
+Banmédica,BPP2606811,,"4,31",11.000,16,https://www.quvi.cl/plan/BPP2606811
+Banmédica,BPP2606812,,"4,74",11.000,16,https://www.quvi.cl/plan/BPP2606812
+Banmédica,BPP260689,,"3,41",11.000,16,https://www.quvi.cl/plan/BPP260689
+Banmédica,BPP2606910,,"4,06",11.000,16,https://www.quvi.cl/plan/BPP2606910
+Banmédica,BPP2606911,,"4,52",11.000,16,https://www.quvi.cl/plan/BPP2606911
+Banmédica,BPP2606912,,"4,83",11.000,16,https://www.quvi.cl/plan/BPP2606912
+Banmédica,BPP260699,,"3,55",11.000,16,https://www.quvi.cl/plan/BPP260699
+Banmédica,BPPO26071010,,"3,74",11.000,16,https://www.quvi.cl/plan/BPPO26071010
+Banmédica,BPPO26071011,,"4,08",11.000,16,https://www.quvi.cl/plan/BPPO26071011
+Banmédica,BPPO260779,,"2,65",11.000,16,https://www.quvi.cl/plan/BPPO260779
+Banmédica,BPPO2607810,,"3,24",11.000,16,https://www.quvi.cl/plan/BPPO2607810
+Banmédica,BPPO2607910,,"3,42",11.000,16,https://www.quvi.cl/plan/BPPO2607910
+Banmédica,BPPO2607911,,"3,77",11.000,16,https://www.quvi.cl/plan/BPPO2607911
+Banmédica,BPPO2607912,,"4,22",11.000,16,https://www.quvi.cl/plan/BPPO2607912
+Banmédica,BPPO260799,,"3,10",11.000,16,https://www.quvi.cl/plan/BPPO260799
+Banmédica,BPRCB2602812,,"3,72",11.000,21,https://www.quvi.cl/plan/BPRCB2602812
+Banmédica,BPRNB2602812,,"3,49",11.000,19,https://www.quvi.cl/plan/BPRNB2602812
+Banmédica,BPRPA2603012,,"2,46",11.000,12,https://www.quvi.cl/plan/BPRPA2603012
+Banmédica,BPRPA2603014,,"2,61",11.000,12,https://www.quvi.cl/plan/BPRPA2603014
+Banmédica,BPRPA2603016,,"3,02",11.000,12,https://www.quvi.cl/plan/BPRPA2603016
+Banmédica,BPRPA2603112,,"2,59",11.000,12,https://www.quvi.cl/plan/BPRPA2603112
+Banmédica,BPRPA2603114,,"2,74",11.000,12,https://www.quvi.cl/plan/BPRPA2603114
+Banmédica,BPRPA2603116,,"3,17",11.000,12,https://www.quvi.cl/plan/BPRPA2603116
+Banmédica,BPRPB251214,,"2,26",10.900,15,https://www.quvi.cl/plan/BPRPB251214
+Banmédica,BPRPB251233,,"2,14",10.900,15,https://www.quvi.cl/plan/BPRPB251233
+Banmédica,BPRPB251234,,"2,54",10.900,15,https://www.quvi.cl/plan/BPRPB251234
+Banmédica,BPT26061010,,"5,55",11.000,17,https://www.quvi.cl/plan/BPT26061010
+Banmédica,BPT26061011,,"6,37",11.000,17,https://www.quvi.cl/plan/BPT26061011
+Banmédica,BPT26061012,,"7,18",11.000,17,https://www.quvi.cl/plan/BPT26061012
+Banmédica,BPT26061013,,"8,07",11.000,17,https://www.quvi.cl/plan/BPT26061013
+Banmédica,BPT26061111,,"7,07",11.000,17,https://www.quvi.cl/plan/BPT26061111
+Banmédica,BPT26061112,,"7,87",11.000,17,https://www.quvi.cl/plan/BPT26061112
+Banmédica,BPT26061113,,"8,76",11.000,17,https://www.quvi.cl/plan/BPT26061113
+Banmédica,BPT2606710,,"3,85",11.000,17,https://www.quvi.cl/plan/BPT2606710
+Banmédica,BPT260677,,"2,61",11.000,17,https://www.quvi.cl/plan/BPT260677
+Banmédica,BPT260678,,"2,94",11.000,17,https://www.quvi.cl/plan/BPT260678
+Banmédica,BPT260679,,"3,31",11.000,17,https://www.quvi.cl/plan/BPT260679
+Banmédica,BPT2606810,,"4,35",11.000,17,https://www.quvi.cl/plan/BPT2606810
+Banmédica,BPT2606811,,"5,17",11.000,17,https://www.quvi.cl/plan/BPT2606811
+Banmédica,BPT260688,,"3,26",11.000,17,https://www.quvi.cl/plan/BPT260688
+Banmédica,BPT260689,,"3,70",11.000,17,https://www.quvi.cl/plan/BPT260689
+Banmédica,BPT2606910,,"4,91",11.000,17,https://www.quvi.cl/plan/BPT2606910
+Banmédica,BPT2606911,,"5,74",11.000,17,https://www.quvi.cl/plan/BPT2606911
+Banmédica,BPT2606912,,"6,55",11.000,17,https://www.quvi.cl/plan/BPT2606912
+Banmédica,BPT2606913,,"7,44",11.000,17,https://www.quvi.cl/plan/BPT2606913
+Banmédica,BPT260699,,"4,26",11.000,17,https://www.quvi.cl/plan/BPT260699
+Banmédica,BPTO26071010,,"4,86",11.000,17,https://www.quvi.cl/plan/BPTO26071010
+Banmédica,BPTO26071011,,"5,54",11.000,17,https://www.quvi.cl/plan/BPTO26071011
+Banmédica,BPTO26071012,,"6,24",11.000,17,https://www.quvi.cl/plan/BPTO26071012
+Banmédica,BPTO26071013,,"7,02",11.000,17,https://www.quvi.cl/plan/BPTO26071013
+Banmédica,BPTO26071111,,"6,14",11.000,17,https://www.quvi.cl/plan/BPTO26071111
+Banmédica,BPTO26071112,,"6,85",11.000,17,https://www.quvi.cl/plan/BPTO26071112
+Banmédica,BPTO26071113,,"7,63",11.000,17,https://www.quvi.cl/plan/BPTO26071113
+Banmédica,BPTO2607810,,"3,81",11.000,17,https://www.quvi.cl/plan/BPTO2607810
+Banmédica,BPTO2607911,,"5,01",11.000,17,https://www.quvi.cl/plan/BPTO2607911
+Banmédica,BSCB2602108,,"3,35",7.000,21,https://www.quvi.cl/plan/BSCB2602108
+Banmédica,BSCB260226,,"2,12",7.000,20,https://www.quvi.cl/plan/BSCB260226
+Banmédica,BSCB260246,,"2,26",7.000,21,https://www.quvi.cl/plan/BSCB260246
+Banmédica,BSCB260256,,"2,41",7.000,21,https://www.quvi.cl/plan/BSCB260256
+Banmédica,BSCB260267,,"2,82",7.000,21,https://www.quvi.cl/plan/BSCB260267
+Banmédica,BSCB260268,,"3,11",7.000,21,https://www.quvi.cl/plan/BSCB260268
+Banmédica,BSCB2602810,,"3,45",7.000,21,https://www.quvi.cl/plan/BSCB2602810
+Banmédica,BSCB260287,,"2,95",7.000,21,https://www.quvi.cl/plan/BSCB260287
+Banmédica,BSCB260288,,"3,23",7.000,21,https://www.quvi.cl/plan/BSCB260288
+Banmédica,BSCC260102,,"1,00",5.000,3,https://www.quvi.cl/plan/BSCC260102
+Banmédica,BSCC260104,,"1,11",5.000,3,https://www.quvi.cl/plan/BSCC260104
+Banmédica,BSCC260122,,"1,05",5.000,3,https://www.quvi.cl/plan/BSCC260122
+Banmédica,BSCC260124,,"1,19",5.000,3,https://www.quvi.cl/plan/BSCC260124
+Banmédica,BSCC260125,,"1,33",5.000,3,https://www.quvi.cl/plan/BSCC260125
+Banmédica,BSCC260144,,"1,27",5.000,3,https://www.quvi.cl/plan/BSCC260144
+Banmédica,BSCC260146,,"1,58",5.000,3,https://www.quvi.cl/plan/BSCC260146
+Banmédica,BSCF2605108,,"2,56",7.000,21,https://www.quvi.cl/plan/BSCF2605108
+Banmédica,BSCF26051210,,"3,13",7.000,21,https://www.quvi.cl/plan/BSCF26051210
+Banmédica,BSCF260568,,"2,17",7.000,21,https://www.quvi.cl/plan/BSCF260568
+Banmédica,BSCF2605810,,"2,80",7.000,21,https://www.quvi.cl/plan/BSCF2605810
+Banmédica,BSCF2605812,,"2,82",7.000,21,https://www.quvi.cl/plan/BSCF2605812
+Banmédica,BSCF260588,,"2,41",7.000,21,https://www.quvi.cl/plan/BSCF260588
+Banmédica,BSCU2411A2,,"2,58",5.500,6,https://www.quvi.cl/plan/BSCU2411A2
+Banmédica,BSCU2411A3,,"2,68",5.500,8,https://www.quvi.cl/plan/BSCU2411A3
+Banmédica,BSCU2411B2,,"2,68",5.500,7,https://www.quvi.cl/plan/BSCU2411B2
+Banmédica,BSCU2411B3,,"2,81",5.500,8,https://www.quvi.cl/plan/BSCU2411B3
+Banmédica,BSCU2411C2,,"2,85",5.500,7,https://www.quvi.cl/plan/BSCU2411C2
+Banmédica,BSCU2411C3,,"3,05",5.500,8,https://www.quvi.cl/plan/BSCU2411C3
+Banmédica,BSG260445,,"1,52",7.000,13,https://www.quvi.cl/plan/BSG260445
+Banmédica,BSG260455,,"1,60",7.000,13,https://www.quvi.cl/plan/BSG260455
+Banmédica,BSG260456,,"1,73",7.000,13,https://www.quvi.cl/plan/BSG260456
+Banmédica,BSG260457,,"1,98",7.000,13,https://www.quvi.cl/plan/BSG260457
+Banmédica,BSG260466,,"1,90",7.000,13,https://www.quvi.cl/plan/BSG260466
+Banmédica,BSG260467,,"2,15",7.000,13,https://www.quvi.cl/plan/BSG260467
+Banmédica,BSG260468,,"2,44",7.000,13,https://www.quvi.cl/plan/BSG260468
+Banmédica,BSG260477,,"2,30",7.000,13,https://www.quvi.cl/plan/BSG260477
+Banmédica,BSG260478,,"2,59",7.000,13,https://www.quvi.cl/plan/BSG260478
+Banmédica,BSG260505,,"1,36",7.000,11,https://www.quvi.cl/plan/BSG260505
+Banmédica,BSG260506,,"1,39",7.000,11,https://www.quvi.cl/plan/BSG260506
+Banmédica,BSG260525,,"1,43",7.000,11,https://www.quvi.cl/plan/BSG260525
+Banmédica,BSG260526,,"1,48",7.000,11,https://www.quvi.cl/plan/BSG260526
+Banmédica,BSG260527,,"1,74",7.000,11,https://www.quvi.cl/plan/BSG260527
+Banmédica,BSG260546,,"1,62",7.100,13,https://www.quvi.cl/plan/BSG260546
+Banmédica,BSG260547,,"1,78",7.000,13,https://www.quvi.cl/plan/BSG260547
+Banmédica,BSG260558,,"2,20",7.000,13,https://www.quvi.cl/plan/BSG260558
+Banmédica,BSG2605610,,"3,11",7.000,13,https://www.quvi.cl/plan/BSG2605610
+Banmédica,BSG260569,,"2,77",7.000,13,https://www.quvi.cl/plan/BSG260569
+Banmédica,BSG2605710,,"3,31",7.000,13,https://www.quvi.cl/plan/BSG2605710
+Banmédica,BSG260579,,"2,92",7.000,13,https://www.quvi.cl/plan/BSG260579
+Banmédica,BSG2605810,,"3,70",7.000,13,https://www.quvi.cl/plan/BSG2605810
+Banmédica,BSG260589,,"3,25",7.000,13,https://www.quvi.cl/plan/BSG260589
+Banmédica,BSG260705,,"1,46",7.100,11,https://www.quvi.cl/plan/BSG260705
+Banmédica,BSG260706,,"1,53",7.100,11,https://www.quvi.cl/plan/BSG260706
+Banmédica,BSG260725,,"1,52",7.100,11,https://www.quvi.cl/plan/BSG260725
+Banmédica,BSG260726,,"1,60",7.100,11,https://www.quvi.cl/plan/BSG260726
+Banmédica,BSG260745,,"1,61",7.100,13,https://www.quvi.cl/plan/BSG260745
+Banmédica,BSG260746,,"1,70",7.200,13,https://www.quvi.cl/plan/BSG260746
+Banmédica,BSG260747,,"1,81",7.100,13,https://www.quvi.cl/plan/BSG260747
+Banmédica,BSG260755,,"1,68",7.100,13,https://www.quvi.cl/plan/BSG260755
+Banmédica,BSG260756,,"1,82",7.100,13,https://www.quvi.cl/plan/BSG260756
+Banmédica,BSNB260227,,"1,98",7.000,18,https://www.quvi.cl/plan/BSNB260227
+Banmédica,BSNB260246,,"1,98",7.000,19,https://www.quvi.cl/plan/BSNB260246
+Banmédica,BSNB260247,,"2,08",7.000,19,https://www.quvi.cl/plan/BSNB260247
+Banmédica,BSNB260257,,"2,17",7.000,19,https://www.quvi.cl/plan/BSNB260257
+Banmédica,BSNB2602610,,"2,99",7.000,19,https://www.quvi.cl/plan/BSNB2602610
+Banmédica,BSNB260266,,"2,09",7.000,19,https://www.quvi.cl/plan/BSNB260266
+Banmédica,BSNB260267,,"2,29",7.000,19,https://www.quvi.cl/plan/BSNB260267
+Banmédica,BSNB260268,,"2,52",7.000,19,https://www.quvi.cl/plan/BSNB260268
+Banmédica,BSNB2602810,,"3,12",7.000,19,https://www.quvi.cl/plan/BSNB2602810
+Banmédica,BSNB260288,,"2,75",7.000,19,https://www.quvi.cl/plan/BSNB260288
+Banmédica,BSNF2605108,,"2,35",7.000,19,https://www.quvi.cl/plan/BSNF2605108
+Banmédica,BSNF2605610,,"2,41",7.000,19,https://www.quvi.cl/plan/BSNF2605610
+Banmédica,BSNF260568,,"2,11",7.000,19,https://www.quvi.cl/plan/BSNF260568
+Banmédica,BSNF2605810,,"2,55",7.000,19,https://www.quvi.cl/plan/BSNF2605810
+Banmédica,BSNF2605812,,"2,63",7.000,19,https://www.quvi.cl/plan/BSNF2605812
+Banmédica,BSNF260588,,"2,26",7.000,19,https://www.quvi.cl/plan/BSNF260588
+Banmédica,BSP260666,,"2,00",7.000,16,https://www.quvi.cl/plan/BSP260666
+Banmédica,BSP260667,,"2,26",7.000,16,https://www.quvi.cl/plan/BSP260667
+Banmédica,BSP260668,,"2,56",7.000,16,https://www.quvi.cl/plan/BSP260668
+Banmédica,BSP260677,,"2,42",7.000,16,https://www.quvi.cl/plan/BSP260677
+Banmédica,BSP260678,,"2,72",7.000,16,https://www.quvi.cl/plan/BSP260678
+Banmédica,BSP260688,,"3,02",7.000,16,https://www.quvi.cl/plan/BSP260688
+Banmédica,BSPA2603010,,"2,12",7.000,12,https://www.quvi.cl/plan/BSPA2603010
+Banmédica,BSPA260306,,"1,52",7.000,12,https://www.quvi.cl/plan/BSPA260306
+Banmédica,BSPA260308,,"1,98",7.000,12,https://www.quvi.cl/plan/BSPA260308
+Banmédica,BSPB251211,,"1,72",6.900,15,https://www.quvi.cl/plan/BSPB251211
+Banmédica,BSS8B260256,,"3,10",7.000,24,https://www.quvi.cl/plan/BSS8B260256
+Banmédica,BSS8B260267,,"3,49",7.000,24,https://www.quvi.cl/plan/BSS8B260267
+Banmédica,BSS8B260288,,"4,15",7.000,24,https://www.quvi.cl/plan/BSS8B260288
+Banmédica,BSSB2602107,,"2,82",7.000,21,https://www.quvi.cl/plan/BSSB2602107
+Banmédica,BSSB2602108,,"3,08",7.000,21,https://www.quvi.cl/plan/BSSB2602108
+Banmédica,BSSB260256,,"2,23",7.000,21,https://www.quvi.cl/plan/BSSB260256
+Banmédica,BSSB260258,,"2,72",7.000,21,https://www.quvi.cl/plan/BSSB260258
+Banmédica,BSSB2602610,,"3,02",7.000,21,https://www.quvi.cl/plan/BSSB2602610
+Banmédica,BSSB260267,,"2,60",7.000,21,https://www.quvi.cl/plan/BSSB260267
+Banmédica,BSSF2605108,,"2,81",7.000,22,https://www.quvi.cl/plan/BSSF2605108
+Banmédica,BSSF260558,,"2,05",7.000,21,https://www.quvi.cl/plan/BSSF260558
+Banmédica,BSSF2605610,,"2,39",7.000,22,https://www.quvi.cl/plan/BSSF2605610
+Banmédica,BSSLU2411A0,,"3,24",7.800,13,https://www.quvi.cl/plan/BSSLU2411A0
+Banmédica,BSSLU2411A1,,"3,42",7.500,15,https://www.quvi.cl/plan/BSSLU2411A1
+Banmédica,BSSLU2411B0,,"3,53",7.500,14,https://www.quvi.cl/plan/BSSLU2411B0
+Banmédica,BSSLU2411B1,,"3,66",7.500,16,https://www.quvi.cl/plan/BSSLU2411B1
+Banmédica,BSSLU2411B2,,"3,89",7.500,16,https://www.quvi.cl/plan/BSSLU2411B2
+Banmédica,BSSLU2411C1,,"4,03",7.500,16,https://www.quvi.cl/plan/BSSLU2411C1
+Banmédica,BSSLU2411C2,,"4,25",7.500,16,https://www.quvi.cl/plan/BSSLU2411C2
+Banmédica,BSSLU2411C3,,"4,43",7.500,15,https://www.quvi.cl/plan/BSSLU2411C3
+Banmédica,BSSLU2411C4,,"4,77",7.500,16,https://www.quvi.cl/plan/BSSLU2411C4
+Banmédica,BSSLU2411C5,,"4,90",7.500,16,https://www.quvi.cl/plan/BSSLU2411C5
+Colmena,BU22610050,,"2,15",7.500,12,https://www.quvi.cl/plan/BU22610050
+Colmena,BU22610060,,"2,24",7.500,13,https://www.quvi.cl/plan/BU22610060
+Colmena,BU22610070,,"2,33",7.500,13,https://www.quvi.cl/plan/BU22610070
+Colmena,BU22610080,,"2,45",7.500,13,https://www.quvi.cl/plan/BU22610080
+Colmena,BU2264040,,"1,25",7.500,12,https://www.quvi.cl/plan/BU2264040
+Colmena,BU2264045,,"1,29",7.500,12,https://www.quvi.cl/plan/BU2264045
+Colmena,BU2264540,,"1,28",7.500,12,https://www.quvi.cl/plan/BU2264540
+Colmena,BU2264545,,"1,31",7.500,12,https://www.quvi.cl/plan/BU2264545
+Colmena,BU2265040,,"1,30",7.500,12,https://www.quvi.cl/plan/BU2265040
+Colmena,BU2265050,,"1,37",7.500,12,https://www.quvi.cl/plan/BU2265050
+Colmena,BU2265060,,"1,46",7.500,12,https://www.quvi.cl/plan/BU2265060
+Colmena,BU2265070,,"1,53",7.500,12,https://www.quvi.cl/plan/BU2265070
+Colmena,BU2265080,,"1,60",7.500,12,https://www.quvi.cl/plan/BU2265080
+Colmena,BU2266050,,"1,44",7.500,12,https://www.quvi.cl/plan/BU2266050
+Colmena,BU2266060,,"1,52",7.500,12,https://www.quvi.cl/plan/BU2266060
+Colmena,BU2266070,,"1,61",7.500,12,https://www.quvi.cl/plan/BU2266070
+Colmena,BU2266080,,"1,72",7.500,12,https://www.quvi.cl/plan/BU2266080
+Colmena,BU2267050,,"1,53",7.500,12,https://www.quvi.cl/plan/BU2267050
+Colmena,BU2267060,,"1,57",7.500,13,https://www.quvi.cl/plan/BU2267060
+Colmena,BU2267070,,"1,63",7.500,13,https://www.quvi.cl/plan/BU2267070
+Colmena,BU2267080,,"1,78",7.500,13,https://www.quvi.cl/plan/BU2267080
+Colmena,BU2268050,,"1,67",7.500,12,https://www.quvi.cl/plan/BU2268050
+Colmena,BU2268060,,"1,73",7.500,13,https://www.quvi.cl/plan/BU2268060
+Colmena,BU2268070,,"1,79",7.500,13,https://www.quvi.cl/plan/BU2268070
+Colmena,BU2268080,,"1,88",7.500,13,https://www.quvi.cl/plan/BU2268080
+Colmena,BU2269050,,"1,84",7.500,12,https://www.quvi.cl/plan/BU2269050
+Colmena,BU2269060,,"1,92",7.500,13,https://www.quvi.cl/plan/BU2269060
+Colmena,BU2269070,,"2,15",7.500,13,https://www.quvi.cl/plan/BU2269070
+Colmena,BU2269080,,"2,21",7.500,13,https://www.quvi.cl/plan/BU2269080
+Cruz Blanca,CBMR001526,,"1,52",4.000,11,https://www.quvi.cl/plan/CBMR001526
+Cruz Blanca,CBMR001D25,,"1,40",4.000,11,https://www.quvi.cl/plan/CBMR001D25
+Cruz Blanca,CBMR002526,,"1,54",4.000,11,https://www.quvi.cl/plan/CBMR002526
+Cruz Blanca,CBMR002D25,,"1,44",4.000,11,https://www.quvi.cl/plan/CBMR002D25
+Cruz Blanca,CBMR003526,,"1,57",4.000,11,https://www.quvi.cl/plan/CBMR003526
+Cruz Blanca,CBMR003D25,,"1,47",4.000,11,https://www.quvi.cl/plan/CBMR003D25
+Cruz Blanca,CBMR004526,,"1,62",4.000,11,https://www.quvi.cl/plan/CBMR004526
+Cruz Blanca,CBMR004D25,,"1,51",4.000,11,https://www.quvi.cl/plan/CBMR004D25
+Cruz Blanca,CBMR005526,,"1,64",4.000,11,https://www.quvi.cl/plan/CBMR005526
+Cruz Blanca,CBMR005D25,,"1,55",4.000,11,https://www.quvi.cl/plan/CBMR005D25
+Cruz Blanca,CBMR006526,,"1,67",5.000,11,https://www.quvi.cl/plan/CBMR006526
+Cruz Blanca,CBMR006D25,,"1,59",5.000,11,https://www.quvi.cl/plan/CBMR006D25
+Cruz Blanca,CBMR007526,,"1,73",5.000,11,https://www.quvi.cl/plan/CBMR007526
+Cruz Blanca,CBMR007D25,,"1,63",5.000,11,https://www.quvi.cl/plan/CBMR007D25
+Cruz Blanca,CBMR008526,,"1,75",5.000,11,https://www.quvi.cl/plan/CBMR008526
+Cruz Blanca,CBMR008D25,,"1,67",5.000,11,https://www.quvi.cl/plan/CBMR008D25
+Cruz Blanca,CBMR009526,,"1,78",5.000,11,https://www.quvi.cl/plan/CBMR009526
+Cruz Blanca,CBMR009D25,,"1,71",5.000,11,https://www.quvi.cl/plan/CBMR009D25
+Cruz Blanca,CBMR010526,,"1,82",5.000,16,https://www.quvi.cl/plan/CBMR010526
+Cruz Blanca,CBMR010D25,,"1,75",5.000,13,https://www.quvi.cl/plan/CBMR010D25
+Cruz Blanca,CBMR011526,,"1,87",6.000,16,https://www.quvi.cl/plan/CBMR011526
+Cruz Blanca,CBMR011D25,,"1,78",6.000,13,https://www.quvi.cl/plan/CBMR011D25
+Cruz Blanca,CBMR012526,,"1,92",6.000,16,https://www.quvi.cl/plan/CBMR012526
+Cruz Blanca,CBMR012D25,,"1,83",6.000,13,https://www.quvi.cl/plan/CBMR012D25
+Cruz Blanca,CBMR013526,,"2,02",6.000,16,https://www.quvi.cl/plan/CBMR013526
+Cruz Blanca,CBMR013D25,,"1,87",6.000,13,https://www.quvi.cl/plan/CBMR013D25
+Cruz Blanca,CBMR014526,,"2,03",6.000,16,https://www.quvi.cl/plan/CBMR014526
+Cruz Blanca,CBMR014D25,,"1,91",6.000,13,https://www.quvi.cl/plan/CBMR014D25
+Cruz Blanca,CBMR015526,,"2,13",6.000,16,https://www.quvi.cl/plan/CBMR015526
+Cruz Blanca,CBMR015D25,,"2,02",6.000,13,https://www.quvi.cl/plan/CBMR015D25
+Cruz Blanca,CBMR016526,,"2,29",6.000,16,https://www.quvi.cl/plan/CBMR016526
+Cruz Blanca,CBMR016D25,,"2,11",6.000,13,https://www.quvi.cl/plan/CBMR016D25
+Cruz Blanca,CBMR017526,,"2,41",6.000,16,https://www.quvi.cl/plan/CBMR017526
+Cruz Blanca,CBMR017D25,,"2,25",6.000,13,https://www.quvi.cl/plan/CBMR017D25
+Cruz Blanca,CBMR018526,,"2,54",6.000,16,https://www.quvi.cl/plan/CBMR018526
+Cruz Blanca,CBMR018D25,,"2,41",6.000,13,https://www.quvi.cl/plan/CBMR018D25
+Cruz Blanca,CBMR019526,,"2,62",6.000,16,https://www.quvi.cl/plan/CBMR019526
+Cruz Blanca,CBMR019D25,,"2,37",6.000,13,https://www.quvi.cl/plan/CBMR019D25
+Cruz Blanca,CBMR020526,,"2,69",6.000,16,https://www.quvi.cl/plan/CBMR020526
+Cruz Blanca,CBMR020D25,,"2,53",6.000,13,https://www.quvi.cl/plan/CBMR020D25
+Cruz Blanca,CBMR021526,,"2,94",6.000,16,https://www.quvi.cl/plan/CBMR021526
+Cruz Blanca,CBMR021D25,,"2,74",6.000,13,https://www.quvi.cl/plan/CBMR021D25
+Cruz Blanca,CBMR022526,,"2,91",6.000,16,https://www.quvi.cl/plan/CBMR022526
+Cruz Blanca,CBMR022D25,,"2,75",6.000,13,https://www.quvi.cl/plan/CBMR022D25
+Cruz Blanca,CBMR023526,,"3,02",6.000,16,https://www.quvi.cl/plan/CBMR023526
+Cruz Blanca,CBMR023D25,,"2,83",6.000,13,https://www.quvi.cl/plan/CBMR023D25
+Cruz Blanca,CBMR024526,,"3,11",6.000,16,https://www.quvi.cl/plan/CBMR024526
+Cruz Blanca,CBMR024D25,,"2,96",6.000,13,https://www.quvi.cl/plan/CBMR024D25
+Cruz Blanca,CBMR025526,,"3,27",7.000,19,https://www.quvi.cl/plan/CBMR025526
+Cruz Blanca,CBMR025D25,,"3,10",7.000,16,https://www.quvi.cl/plan/CBMR025D25
+Cruz Blanca,CBMR026526,,"3,52",7.000,19,https://www.quvi.cl/plan/CBMR026526
+Cruz Blanca,CBMR026D25,,"3,28",7.000,16,https://www.quvi.cl/plan/CBMR026D25
+Cruz Blanca,CBMR027526,,"3,75",7.000,19,https://www.quvi.cl/plan/CBMR027526
+Cruz Blanca,CBMR027D25,,"3,46",7.000,16,https://www.quvi.cl/plan/CBMR027D25
+Cruz Blanca,CBMR028526,,"3,51",7.000,19,https://www.quvi.cl/plan/CBMR028526
+Cruz Blanca,CBMR028D25,,"3,23",7.000,16,https://www.quvi.cl/plan/CBMR028D25
+Cruz Blanca,CBMR029526,,"3,64",7.000,19,https://www.quvi.cl/plan/CBMR029526
+Cruz Blanca,CBMR029D25,,"3,42",7.000,16,https://www.quvi.cl/plan/CBMR029D25
+Cruz Blanca,CBMR030526,,"3,75",7.000,19,https://www.quvi.cl/plan/CBMR030526
+Cruz Blanca,CBMR030D25,,"3,60",7.000,16,https://www.quvi.cl/plan/CBMR030D25
+Cruz Blanca,CBMR031526,,"3,63",7.000,19,https://www.quvi.cl/plan/CBMR031526
+Cruz Blanca,CBMR031D25,,"3,36",7.000,16,https://www.quvi.cl/plan/CBMR031D25
+Cruz Blanca,CBMR032526,,"3,76",7.000,19,https://www.quvi.cl/plan/CBMR032526
+Cruz Blanca,CBMR032D25,,"3,54",7.000,16,https://www.quvi.cl/plan/CBMR032D25
+Cruz Blanca,CBMR033526,,"3,87",7.000,19,https://www.quvi.cl/plan/CBMR033526
+Cruz Blanca,CBMR033D25,,"3,72",7.000,16,https://www.quvi.cl/plan/CBMR033D25
+Cruz Blanca,CBMR034526,,"3,84",8.000,20,https://www.quvi.cl/plan/CBMR034526
+Cruz Blanca,CBMR034D25,,"3,61",8.000,17,https://www.quvi.cl/plan/CBMR034D25
+Cruz Blanca,CBMR035526,,"3,98",8.000,20,https://www.quvi.cl/plan/CBMR035526
+Cruz Blanca,CBMR035D25,,"3,80",8.000,17,https://www.quvi.cl/plan/CBMR035D25
+Cruz Blanca,CBMR036526,,"4,23",8.000,20,https://www.quvi.cl/plan/CBMR036526
+Cruz Blanca,CBMR036D25,,"3,96",8.000,17,https://www.quvi.cl/plan/CBMR036D25
+Cruz Blanca,CBMR037526,,"4,08",8.000,20,https://www.quvi.cl/plan/CBMR037526
+Cruz Blanca,CBMR037D25,,"3,82",8.000,17,https://www.quvi.cl/plan/CBMR037D25
+Cruz Blanca,CBMR038526,,"4,23",8.000,20,https://www.quvi.cl/plan/CBMR038526
+Cruz Blanca,CBMR038D25,,"4,00",8.000,17,https://www.quvi.cl/plan/CBMR038D25
+Cruz Blanca,CBMR039526,,"4,49",8.000,20,https://www.quvi.cl/plan/CBMR039526
+Cruz Blanca,CBMR039D25,,"4,19",8.000,17,https://www.quvi.cl/plan/CBMR039D25
+Cruz Blanca,CBMR040526,,"4,32",8.000,20,https://www.quvi.cl/plan/CBMR040526
+Cruz Blanca,CBMR040D25,,"4,04",8.000,17,https://www.quvi.cl/plan/CBMR040D25
+Cruz Blanca,CBMR041526,,"4,48",8.000,20,https://www.quvi.cl/plan/CBMR041526
+Cruz Blanca,CBMR041D25,,"4,21",8.000,17,https://www.quvi.cl/plan/CBMR041D25
+Cruz Blanca,CBMR042526,,"5,13",8.000,20,https://www.quvi.cl/plan/CBMR042526
+Cruz Blanca,CBMR042D25,,"4,87",8.000,17,https://www.quvi.cl/plan/CBMR042D25
+Cruz Blanca,CBMR043526,,"4,80",8.000,20,https://www.quvi.cl/plan/CBMR043526
+Cruz Blanca,CBMR043D25,,"4,60",8.000,17,https://www.quvi.cl/plan/CBMR043D25
+Cruz Blanca,CBMR044526,,"5,24",8.000,20,https://www.quvi.cl/plan/CBMR044526
+Cruz Blanca,CBMR044D25,,"4,84",8.000,17,https://www.quvi.cl/plan/CBMR044D25
+Cruz Blanca,CBMR045526,,"5,52",8.000,20,https://www.quvi.cl/plan/CBMR045526
+Cruz Blanca,CBMR045D25,,"5,08",8.000,17,https://www.quvi.cl/plan/CBMR045D25
+Cruz Blanca,CBMXQ01D25,,"1,27",1.500,6,https://www.quvi.cl/plan/CBMXQ01D25
+Cruz Blanca,CBMXQ02D25,,"1,31",1.500,6,https://www.quvi.cl/plan/CBMXQ02D25
+Cruz Blanca,CBMXQ03D25,,"1,35",1.500,6,https://www.quvi.cl/plan/CBMXQ03D25
+Cruz Blanca,CBMXQ04D25,,"1,36",1.500,6,https://www.quvi.cl/plan/CBMXQ04D25
+Cruz Blanca,CBMXQ05D25,,"1,40",1.500,6,https://www.quvi.cl/plan/CBMXQ05D25
+Cruz Blanca,CBMXQ06D25,,"1,46",1.750,6,https://www.quvi.cl/plan/CBMXQ06D25
+Cruz Blanca,CBMXQ07D25,,"1,48",1.750,6,https://www.quvi.cl/plan/CBMXQ07D25
+Cruz Blanca,CBMXQ08D25,,"1,52",1.750,6,https://www.quvi.cl/plan/CBMXQ08D25
+Cruz Blanca,CBMXQ09D25,,"1,57",1.750,6,https://www.quvi.cl/plan/CBMXQ09D25
+Cruz Blanca,CBMXQ10D25,,"1,57",1.750,6,https://www.quvi.cl/plan/CBMXQ10D25
+Cruz Blanca,CBMXQ11D25,,"1,60",1.750,6,https://www.quvi.cl/plan/CBMXQ11D25
+Cruz Blanca,CBMXQ12D25,,"1,65",2.000,6,https://www.quvi.cl/plan/CBMXQ12D25
+Cruz Blanca,CBMXQ13D25,,"1,64",2.000,6,https://www.quvi.cl/plan/CBMXQ13D25
+Cruz Blanca,CBMXQ14D25,,"1,67",2.000,6,https://www.quvi.cl/plan/CBMXQ14D25
+Cruz Blanca,CBMXQ15D25,,"1,72",2.000,6,https://www.quvi.cl/plan/CBMXQ15D25
+Esencial,CCDM100900226,,"3,45",7.000,12,https://www.quvi.cl/plan/CCDM100900226
+Esencial,CCDM70601125,,"2,29",5.500,11,https://www.quvi.cl/plan/CCDM70601125
+Esencial,CCDM80701125,,"2,44",6.000,11,https://www.quvi.cl/plan/CCDM80701125
+Esencial,CCDM90801125,,"2,95",7.000,11,https://www.quvi.cl/plan/CCDM90801125
+Cruz Blanca,CMBS010526,,"1,27",5.000,5,https://www.quvi.cl/plan/CMBS010526
+Cruz Blanca,CMBS010D25,,"1,28",4.000,5,https://www.quvi.cl/plan/CMBS010D25
+Cruz Blanca,CMBS020526,,"1,31",6.000,5,https://www.quvi.cl/plan/CMBS020526
+Cruz Blanca,CMBS020D25,,"1,31",4.000,5,https://www.quvi.cl/plan/CMBS020D25
+Cruz Blanca,CMBS030526,,"1,34",7.000,5,https://www.quvi.cl/plan/CMBS030526
+Cruz Blanca,CMBS030D25,,"1,35",4.000,5,https://www.quvi.cl/plan/CMBS030D25
+Cruz Blanca,CMBS040526,,"1,33",8.000,5,https://www.quvi.cl/plan/CMBS040526
+Cruz Blanca,CMBS040D25,,"1,36",4.000,5,https://www.quvi.cl/plan/CMBS040D25
+Cruz Blanca,CMBS050526,,"1,36",5.000,5,https://www.quvi.cl/plan/CMBS050526
+Cruz Blanca,CMBS050D25,,"1,40",4.000,5,https://www.quvi.cl/plan/CMBS050D25
+Cruz Blanca,CMBS060526,,"1,40",5.000,5,https://www.quvi.cl/plan/CMBS060526
+Cruz Blanca,CMBS060D25,,"1,44",4.000,5,https://www.quvi.cl/plan/CMBS060D25
+Cruz Blanca,CMBS070526,,"1,43",5.000,5,https://www.quvi.cl/plan/CMBS070526
+Cruz Blanca,CMBS070D25,,"1,45",4.000,5,https://www.quvi.cl/plan/CMBS070D25
+Cruz Blanca,CMBS080526,,"1,47",5.000,5,https://www.quvi.cl/plan/CMBS080526
+Cruz Blanca,CMBS080D25,,"1,49",4.000,5,https://www.quvi.cl/plan/CMBS080D25
+Cruz Blanca,CMBS090526,,"1,51",5.000,5,https://www.quvi.cl/plan/CMBS090526
+Cruz Blanca,CMBS090D25,,"1,53",4.000,5,https://www.quvi.cl/plan/CMBS090D25
+Cruz Blanca,CMBS100526,,"1,58",6.000,12,https://www.quvi.cl/plan/CMBS100526
+Cruz Blanca,CMBS100D25,,"1,61",4.000,9,https://www.quvi.cl/plan/CMBS100D25
+Cruz Blanca,CMBS110526,,"1,62",6.000,12,https://www.quvi.cl/plan/CMBS110526
+Cruz Blanca,CMBS110D25,,"1,66",4.000,9,https://www.quvi.cl/plan/CMBS110D25
+Cruz Blanca,CMBS120526,,"1,70",6.000,12,https://www.quvi.cl/plan/CMBS120526
+Cruz Blanca,CMBS120D25,,"1,69",4.000,9,https://www.quvi.cl/plan/CMBS120D25
+Cruz Blanca,CMBS130526,,"1,64",6.000,12,https://www.quvi.cl/plan/CMBS130526
+Cruz Blanca,CMBS130D25,,"1,70",4.000,9,https://www.quvi.cl/plan/CMBS130D25
+Cruz Blanca,CMBS140526,,"1,72",6.000,12,https://www.quvi.cl/plan/CMBS140526
+Cruz Blanca,CMBS140D25,,"1,75",4.000,9,https://www.quvi.cl/plan/CMBS140D25
+Cruz Blanca,CMBS150526,,"1,76",6.000,12,https://www.quvi.cl/plan/CMBS150526
+Cruz Blanca,CMBS150D25,,"1,79",4.000,9,https://www.quvi.cl/plan/CMBS150D25
+Cruz Blanca,CMBS160526,,"1,85",6.000,12,https://www.quvi.cl/plan/CMBS160526
+Cruz Blanca,CMBS160D25,,"1,91",4.000,9,https://www.quvi.cl/plan/CMBS160D25
+Cruz Blanca,CMBS170526,,"1,96",6.000,12,https://www.quvi.cl/plan/CMBS170526
+Cruz Blanca,CMBS170D25,,"2,08",4.000,9,https://www.quvi.cl/plan/CMBS170D25
+Cruz Blanca,CMBS180526,,"2,07",6.000,12,https://www.quvi.cl/plan/CMBS180526
+Cruz Blanca,CMBS180D25,,"2,19",4.000,9,https://www.quvi.cl/plan/CMBS180D25
+Cruz Blanca,CMBS190526,,"2,03",6.000,12,https://www.quvi.cl/plan/CMBS190526
+Cruz Blanca,CMBS190D25,,"2,12",4.000,9,https://www.quvi.cl/plan/CMBS190D25
+Cruz Blanca,CMBS200526,,"2,16",6.000,12,https://www.quvi.cl/plan/CMBS200526
+Cruz Blanca,CMBS200D25,,"2,29",4.000,9,https://www.quvi.cl/plan/CMBS200D25
+Cruz Blanca,CMBS210526,,"2,28",6.000,12,https://www.quvi.cl/plan/CMBS210526
+Cruz Blanca,CMBS210D25,,"2,48",4.000,9,https://www.quvi.cl/plan/CMBS210D25
+Cruz Blanca,CMBS220526,,"2,23",6.000,12,https://www.quvi.cl/plan/CMBS220526
+Cruz Blanca,CMBS220D25,,"2,39",4.000,9,https://www.quvi.cl/plan/CMBS220D25
+Cruz Blanca,CMBS230526,,"2,36",6.000,12,https://www.quvi.cl/plan/CMBS230526
+Cruz Blanca,CMBS230D25,,"2,51",4.000,9,https://www.quvi.cl/plan/CMBS230D25
+Cruz Blanca,CMBS240526,,"2,48",6.000,12,https://www.quvi.cl/plan/CMBS240526
+Cruz Blanca,CMBS240D25,,"2,70",4.000,9,https://www.quvi.cl/plan/CMBS240D25
+Cruz Blanca,CMBS250526,,"2,68",7.000,15,https://www.quvi.cl/plan/CMBS250526
+Cruz Blanca,CMBS250D25,,"2,77",7.000,12,https://www.quvi.cl/plan/CMBS250D25
+Cruz Blanca,CMBS260526,,"2,76",7.000,15,https://www.quvi.cl/plan/CMBS260526
+Cruz Blanca,CMBS260D25,,"2,93",7.000,12,https://www.quvi.cl/plan/CMBS260D25
+Cruz Blanca,CMBS270526,,"2,97",7.000,15,https://www.quvi.cl/plan/CMBS270526
+Cruz Blanca,CMBS270D25,,"3,09",7.000,12,https://www.quvi.cl/plan/CMBS270D25
+Cruz Blanca,CMBS280526,,"2,81",7.000,15,https://www.quvi.cl/plan/CMBS280526
+Cruz Blanca,CMBS280D25,,"2,88",7.000,12,https://www.quvi.cl/plan/CMBS280D25
+Cruz Blanca,CMBS290526,,"2,89",7.000,15,https://www.quvi.cl/plan/CMBS290526
+Cruz Blanca,CMBS290D25,,"3,05",7.000,12,https://www.quvi.cl/plan/CMBS290D25
+Cruz Blanca,CMBS300526,,"3,10",7.000,15,https://www.quvi.cl/plan/CMBS300526
+Cruz Blanca,CMBS300D25,,"3,21",7.000,12,https://www.quvi.cl/plan/CMBS300D25
+Cruz Blanca,CMBS310526,,"2,98",7.000,15,https://www.quvi.cl/plan/CMBS310526
+Cruz Blanca,CMBS310D25,,"3,00",7.000,12,https://www.quvi.cl/plan/CMBS310D25
+Cruz Blanca,CMBS320526,,"3,07",7.000,15,https://www.quvi.cl/plan/CMBS320526
+Cruz Blanca,CMBS320D25,,"3,16",7.000,12,https://www.quvi.cl/plan/CMBS320D25
+Cruz Blanca,CMBS330526,,"3,28",7.000,15,https://www.quvi.cl/plan/CMBS330526
+Cruz Blanca,CMBS330D25,,"3,32",7.000,12,https://www.quvi.cl/plan/CMBS330D25
+Cruz Blanca,CMBS340526,,"3,20",8.000,16,https://www.quvi.cl/plan/CMBS340526
+Cruz Blanca,CMBS340D25,,"3,22",8.000,13,https://www.quvi.cl/plan/CMBS340D25
+Cruz Blanca,CMBS350526,,"3,29",8.000,16,https://www.quvi.cl/plan/CMBS350526
+Cruz Blanca,CMBS350D25,,"3,39",8.000,13,https://www.quvi.cl/plan/CMBS350D25
+Cruz Blanca,CMBS360526,,"3,52",8.000,16,https://www.quvi.cl/plan/CMBS360526
+Cruz Blanca,CMBS360D25,,"3,54",8.000,13,https://www.quvi.cl/plan/CMBS360D25
+Cruz Blanca,CMBS370526,,"3,35",8.000,16,https://www.quvi.cl/plan/CMBS370526
+Cruz Blanca,CMBS370D25,,"3,41",8.000,13,https://www.quvi.cl/plan/CMBS370D25
+Cruz Blanca,CMBS380526,,"3,45",8.000,16,https://www.quvi.cl/plan/CMBS380526
+Cruz Blanca,CMBS380D25,,"3,57",8.000,13,https://www.quvi.cl/plan/CMBS380D25
+Cruz Blanca,CMBS390526,,"3,81",8.000,16,https://www.quvi.cl/plan/CMBS390526
+Cruz Blanca,CMBS390D25,,"3,74",8.000,13,https://www.quvi.cl/plan/CMBS390D25
+Cruz Blanca,CMBS400526,,"3,64",8.000,16,https://www.quvi.cl/plan/CMBS400526
+Cruz Blanca,CMBS400D25,,"3,61",8.000,13,https://www.quvi.cl/plan/CMBS400D25
+Cruz Blanca,CMBS410526,,"4,01",8.000,16,https://www.quvi.cl/plan/CMBS410526
+Cruz Blanca,CMBS410D25,,"3,76",8.000,13,https://www.quvi.cl/plan/CMBS410D25
+Cruz Blanca,CMBS420526,,"4,38",8.000,16,https://www.quvi.cl/plan/CMBS420526
+Cruz Blanca,CMBS420D25,,"4,35",8.000,13,https://www.quvi.cl/plan/CMBS420D25
+Cruz Blanca,CMBS430526,,"4,18",8.000,16,https://www.quvi.cl/plan/CMBS430526
+Cruz Blanca,CMBS430D25,,"4,11",8.000,13,https://www.quvi.cl/plan/CMBS430D25
+Cruz Blanca,CMBS440526,,"4,31",8.000,16,https://www.quvi.cl/plan/CMBS440526
+Cruz Blanca,CMBS440D25,,"4,32",8.000,13,https://www.quvi.cl/plan/CMBS440D25
+Cruz Blanca,CMBS450526,,"4,42",8.000,16,https://www.quvi.cl/plan/CMBS450526
+Cruz Blanca,CMBS450D25,,"4,54",8.000,13,https://www.quvi.cl/plan/CMBS450D25
+Cruz Blanca,CMBX001526,,"1,12",1.500,7,https://www.quvi.cl/plan/CMBX001526
+Cruz Blanca,CMBX002526,,"1,14",1.500,7,https://www.quvi.cl/plan/CMBX002526
+Cruz Blanca,CMBX002D25,,"1,14",1.500,6,https://www.quvi.cl/plan/CMBX002D25
+Cruz Blanca,CMBX003526,,"1,16",1.500,7,https://www.quvi.cl/plan/CMBX003526
+Cruz Blanca,CMBX003D25,,"1,17",1.500,6,https://www.quvi.cl/plan/CMBX003D25
+Cruz Blanca,CMBX004526,,"1,18",1.500,7,https://www.quvi.cl/plan/CMBX004526
+Cruz Blanca,CMBX004D25,,"1,22",1.500,6,https://www.quvi.cl/plan/CMBX004D25
+Cruz Blanca,CMBX005526,,"1,19",1.500,7,https://www.quvi.cl/plan/CMBX005526
+Cruz Blanca,CMBX005D25,,"1,17",1.500,6,https://www.quvi.cl/plan/CMBX005D25
+Cruz Blanca,CMBX006526,,"1,21",1.500,7,https://www.quvi.cl/plan/CMBX006526
+Cruz Blanca,CMBX006D25,,"1,19",1.500,6,https://www.quvi.cl/plan/CMBX006D25
+Cruz Blanca,CMBX007526,,"1,23",1.500,7,https://www.quvi.cl/plan/CMBX007526
+Cruz Blanca,CMBX007D25,,"1,23",1.500,6,https://www.quvi.cl/plan/CMBX007D25
+Cruz Blanca,CMBX008526,,"1,25",1.500,7,https://www.quvi.cl/plan/CMBX008526
+Cruz Blanca,CMBX008D25,,"1,28",1.500,6,https://www.quvi.cl/plan/CMBX008D25
+Cruz Blanca,CMBX009526,,"1,26",1.500,7,https://www.quvi.cl/plan/CMBX009526
+Cruz Blanca,CMBX009D25,,"1,17",1.500,6,https://www.quvi.cl/plan/CMBX009D25
+Cruz Blanca,CMBX010526,,"1,28",1.500,7,https://www.quvi.cl/plan/CMBX010526
+Cruz Blanca,CMBX010D25,,"1,21",1.500,6,https://www.quvi.cl/plan/CMBX010D25
+Cruz Blanca,CMBX011526,,"1,30",1.500,7,https://www.quvi.cl/plan/CMBX011526
+Cruz Blanca,CMBX011D25,,"1,25",1.500,6,https://www.quvi.cl/plan/CMBX011D25
+Cruz Blanca,CMBX012526,,"1,32",1.500,7,https://www.quvi.cl/plan/CMBX012526
+Cruz Blanca,CMBX012D25,,"1,25",1.500,6,https://www.quvi.cl/plan/CMBX012D25
+Cruz Blanca,CMBX013526,,"1,34",1.500,7,https://www.quvi.cl/plan/CMBX013526
+Cruz Blanca,CMBX013D25,,"1,28",1.500,6,https://www.quvi.cl/plan/CMBX013D25
+Cruz Blanca,CMBX014526,,"1,35",1.500,7,https://www.quvi.cl/plan/CMBX014526
+Cruz Blanca,CMBX014D25,,"1,33",1.500,6,https://www.quvi.cl/plan/CMBX014D25
+Cruz Blanca,CMBX015526,,"1,37",1.500,7,https://www.quvi.cl/plan/CMBX015526
+Cruz Blanca,CMBX015D25,,"1,33",1.500,6,https://www.quvi.cl/plan/CMBX015D25
+Cruz Blanca,CMBX016D25,,"1,36",1.500,6,https://www.quvi.cl/plan/CMBX016D25
+Cruz Blanca,CMBX017D25,,"1,41",1.500,6,https://www.quvi.cl/plan/CMBX017D25
+Cruz Blanca,CMBX018D25,,"1,41",1.500,6,https://www.quvi.cl/plan/CMBX018D25
+Cruz Blanca,CMBX019D25,,"1,44",1.500,6,https://www.quvi.cl/plan/CMBX019D25
+Cruz Blanca,CMBX020D25,,"1,49",1.500,6,https://www.quvi.cl/plan/CMBX020D25
+Cruz Blanca,CMBX021D25,,"1,49",1.500,6,https://www.quvi.cl/plan/CMBX021D25
+Cruz Blanca,CMBX022D25,,"1,53",1.500,6,https://www.quvi.cl/plan/CMBX022D25
+Cruz Blanca,CMBX023D25,,"1,57",1.500,6,https://www.quvi.cl/plan/CMBX023D25
+Colmena,CP12610050,,"3,14",7.500,14,https://www.quvi.cl/plan/CP12610050
+Colmena,CP1261005A,,"3,14",7.500,15,https://www.quvi.cl/plan/CP1261005A
+Colmena,CP1261005B,,"3,34",7.500,15,https://www.quvi.cl/plan/CP1261005B
+Colmena,CP1261005C,,"3,64",7.500,15,https://www.quvi.cl/plan/CP1261005C
+Colmena,CP1261005D,,"3,99",7.500,15,https://www.quvi.cl/plan/CP1261005D
+Colmena,CP12610060,,"3,34",7.500,14,https://www.quvi.cl/plan/CP12610060
+Colmena,CP1261006A,,"3,34",7.500,15,https://www.quvi.cl/plan/CP1261006A
+Colmena,CP1261006B,,"3,54",7.500,15,https://www.quvi.cl/plan/CP1261006B
+Colmena,CP1261006C,,"3,84",7.500,15,https://www.quvi.cl/plan/CP1261006C
+Colmena,CP1261006D,,"4,19",7.500,15,https://www.quvi.cl/plan/CP1261006D
+Colmena,CP12610070,,"3,54",7.500,14,https://www.quvi.cl/plan/CP12610070
+Colmena,CP1261007A,,"3,54",7.500,15,https://www.quvi.cl/plan/CP1261007A
+Colmena,CP1261007B,,"3,74",7.500,15,https://www.quvi.cl/plan/CP1261007B
+Colmena,CP1261007C,,"4,04",7.500,15,https://www.quvi.cl/plan/CP1261007C
+Colmena,CP1261007D,,"4,39",7.500,15,https://www.quvi.cl/plan/CP1261007D
+Colmena,CP12610080,,"3,69",7.500,14,https://www.quvi.cl/plan/CP12610080
+Colmena,CP1261008A,,"3,69",7.500,15,https://www.quvi.cl/plan/CP1261008A
+Colmena,CP1261008B,,"3,89",7.500,15,https://www.quvi.cl/plan/CP1261008B
+Colmena,CP1261008C,,"4,19",7.500,15,https://www.quvi.cl/plan/CP1261008C
+Colmena,CP1261008D,,"4,54",7.500,15,https://www.quvi.cl/plan/CP1261008D
+Colmena,CP1264040,,"1,72",7.500,14,https://www.quvi.cl/plan/CP1264040
+Colmena,CP1264050,,"1,79",7.500,14,https://www.quvi.cl/plan/CP1264050
+Colmena,CP1264060,,"1,89",7.500,14,https://www.quvi.cl/plan/CP1264060
+Colmena,CP1264070,,"2,02",7.500,14,https://www.quvi.cl/plan/CP1264070
+Colmena,CP1264080,,"2,24",7.500,14,https://www.quvi.cl/plan/CP1264080
+Colmena,CP1265050,,"1,92",7.500,14,https://www.quvi.cl/plan/CP1265050
+Colmena,CP1265060,,"2,04",7.500,14,https://www.quvi.cl/plan/CP1265060
+Colmena,CP1265070,,"2,14",7.500,14,https://www.quvi.cl/plan/CP1265070
+Colmena,CP1265080,,"2,35",7.500,14,https://www.quvi.cl/plan/CP1265080
+Colmena,CP1266050,,"2,05",7.500,14,https://www.quvi.cl/plan/CP1266050
+Colmena,CP1266060,,"2,13",7.500,14,https://www.quvi.cl/plan/CP1266060
+Colmena,CP1266070,,"2,27",7.500,14,https://www.quvi.cl/plan/CP1266070
+Colmena,CP1266080,,"2,46",7.500,14,https://www.quvi.cl/plan/CP1266080
+Colmena,CP1267050,,"2,18",7.500,14,https://www.quvi.cl/plan/CP1267050
+Colmena,CP1267060,,"2,31",7.500,14,https://www.quvi.cl/plan/CP1267060
+Colmena,CP1267070,,"2,44",7.500,14,https://www.quvi.cl/plan/CP1267070
+Colmena,CP1267080,,"2,56",7.500,14,https://www.quvi.cl/plan/CP1267080
+Colmena,CP1268050,,"2,29",7.500,14,https://www.quvi.cl/plan/CP1268050
+Colmena,CP1268060,,"2,42",7.500,14,https://www.quvi.cl/plan/CP1268060
+Colmena,CP1268070,,"2,55",7.500,14,https://www.quvi.cl/plan/CP1268070
+Colmena,CP1268080,,"2,67",7.500,14,https://www.quvi.cl/plan/CP1268080
+Colmena,CP1269050,,"2,42",7.500,14,https://www.quvi.cl/plan/CP1269050
+Colmena,CP1269060,,"2,55",7.500,14,https://www.quvi.cl/plan/CP1269060
+Colmena,CP1269070,,"2,69",7.500,14,https://www.quvi.cl/plan/CP1269070
+Colmena,CP1269080,,"3,02",7.500,14,https://www.quvi.cl/plan/CP1269080
+Colmena,CS12610050,,"2,25",7.500,11,https://www.quvi.cl/plan/CS12610050
+Colmena,CS12610060,,"2,36",7.500,11,https://www.quvi.cl/plan/CS12610060
+Colmena,CS12610070,,"2,45",7.500,11,https://www.quvi.cl/plan/CS12610070
+Colmena,CS12610080,,"2,54",7.500,11,https://www.quvi.cl/plan/CS12610080
+Colmena,CS1264040,,"1,56",7.500,11,https://www.quvi.cl/plan/CS1264040
+Colmena,CS1264040A,,"1,54",7.500,11,https://www.quvi.cl/plan/CS1264040A
+Colmena,CS1264050,,"1,61",7.500,11,https://www.quvi.cl/plan/CS1264050
+Colmena,CS1264060,,"1,66",7.500,11,https://www.quvi.cl/plan/CS1264060
+Colmena,CS1264070,,"1,70",7.500,11,https://www.quvi.cl/plan/CS1264070
+Colmena,CS1264080,,"2,00",7.500,11,https://www.quvi.cl/plan/CS1264080
+Colmena,CS1265050,,"1,85",7.500,11,https://www.quvi.cl/plan/CS1265050
+Colmena,CS1265060,,"1,94",7.500,11,https://www.quvi.cl/plan/CS1265060
+Colmena,CS1265070,,"2,03",7.500,11,https://www.quvi.cl/plan/CS1265070
+Colmena,CS1265080,,"2,10",7.500,11,https://www.quvi.cl/plan/CS1265080
+Colmena,CS1266050,,"1,93",7.500,11,https://www.quvi.cl/plan/CS1266050
+Colmena,CS1266060,,"2,02",7.500,11,https://www.quvi.cl/plan/CS1266060
+Colmena,CS1266070,,"2,11",7.500,11,https://www.quvi.cl/plan/CS1266070
+Colmena,CS1266080,,"2,19",7.500,11,https://www.quvi.cl/plan/CS1266080
+Colmena,CS1267050,,"2,01",7.500,11,https://www.quvi.cl/plan/CS1267050
+Colmena,CS1267060,,"2,11",7.500,11,https://www.quvi.cl/plan/CS1267060
+Colmena,CS1267070,,"2,21",7.500,11,https://www.quvi.cl/plan/CS1267070
+Colmena,CS1267080,,"2,28",7.500,11,https://www.quvi.cl/plan/CS1267080
+Colmena,CS1268050,,"2,10",7.500,11,https://www.quvi.cl/plan/CS1268050
+Colmena,CS1268060,,"2,20",7.500,11,https://www.quvi.cl/plan/CS1268060
+Colmena,CS1268070,,"2,30",7.500,11,https://www.quvi.cl/plan/CS1268070
+Colmena,CS1268080,,"2,38",7.500,11,https://www.quvi.cl/plan/CS1268080
+Colmena,CS1269050,,"2,21",7.500,11,https://www.quvi.cl/plan/CS1269050
+Colmena,CS1269060,,"2,32",7.500,11,https://www.quvi.cl/plan/CS1269060
+Colmena,CS1269070,,"2,42",7.500,11,https://www.quvi.cl/plan/CS1269070
+Colmena,CS1269080,,"2,51",7.500,11,https://www.quvi.cl/plan/CS1269080
+Colmena,DU12610050,,"3,05",7.500,9,https://www.quvi.cl/plan/DU12610050
+Colmena,DU12610060,,"3,26",7.500,9,https://www.quvi.cl/plan/DU12610060
+Colmena,DU12610070,,"3,45",7.500,9,https://www.quvi.cl/plan/DU12610070
+Colmena,DU12610080,,"3,62",7.500,9,https://www.quvi.cl/plan/DU12610080
+Colmena,DU1264040,,"1,82",7.500,9,https://www.quvi.cl/plan/DU1264040
+Colmena,DU1264050,,"2,00",7.500,9,https://www.quvi.cl/plan/DU1264050
+Colmena,DU1264060,,"2,19",7.500,9,https://www.quvi.cl/plan/DU1264060
+Colmena,DU1264070,,"2,37",7.500,9,https://www.quvi.cl/plan/DU1264070
+Colmena,DU1264080,,"2,53",7.500,9,https://www.quvi.cl/plan/DU1264080
+Colmena,DU1265050,,"2,18",7.500,9,https://www.quvi.cl/plan/DU1265050
+Colmena,DU1265060,,"2,38",7.500,9,https://www.quvi.cl/plan/DU1265060
+Colmena,DU1265070,,"2,56",7.500,9,https://www.quvi.cl/plan/DU1265070
+Colmena,DU1265080,,"2,72",7.500,9,https://www.quvi.cl/plan/DU1265080
+Colmena,DU1266050,,"2,37",7.500,9,https://www.quvi.cl/plan/DU1266050
+Colmena,DU1266060,,"2,56",7.500,9,https://www.quvi.cl/plan/DU1266060
+Colmena,DU1266070,,"2,74",7.500,9,https://www.quvi.cl/plan/DU1266070
+Colmena,DU1266080,,"2,91",7.500,9,https://www.quvi.cl/plan/DU1266080
+Colmena,DU1267050,,"2,55",7.500,9,https://www.quvi.cl/plan/DU1267050
+Colmena,DU1267060,,"2,75",7.500,9,https://www.quvi.cl/plan/DU1267060
+Colmena,DU1267070,,"2,93",7.500,9,https://www.quvi.cl/plan/DU1267070
+Colmena,DU1267080,,"3,10",7.500,9,https://www.quvi.cl/plan/DU1267080
+Colmena,DU1268050,,"2,73",7.500,9,https://www.quvi.cl/plan/DU1268050
+Colmena,DU1268060,,"2,93",7.500,9,https://www.quvi.cl/plan/DU1268060
+Colmena,DU1268070,,"3,12",7.500,9,https://www.quvi.cl/plan/DU1268070
+Colmena,DU1268080,,"3,29",7.500,9,https://www.quvi.cl/plan/DU1268080
+Colmena,DU1269050,,"2,91",7.500,9,https://www.quvi.cl/plan/DU1269050
+Colmena,DU1269060,,"3,11",7.500,9,https://www.quvi.cl/plan/DU1269060
+Colmena,DU1269070,,"3,30",7.500,9,https://www.quvi.cl/plan/DU1269070
+Colmena,DU1269080,,"3,47",7.500,9,https://www.quvi.cl/plan/DU1269080
+Esencial,E50400626,,"2,96",12.000,37,https://www.quvi.cl/plan/E50400626
+Esencial,E50500626,,"3,26",12.000,37,https://www.quvi.cl/plan/E50500626
+Esencial,E50600626,,"3,57",12.000,37,https://www.quvi.cl/plan/E50600626
+Esencial,E50700626,,"3,96",12.000,37,https://www.quvi.cl/plan/E50700626
+Esencial,E60400626,,"3,11",12.000,37,https://www.quvi.cl/plan/E60400626
+Esencial,E60500626,,"3,41",12.000,37,https://www.quvi.cl/plan/E60500626
+Esencial,E60600626,,"3,72",12.000,37,https://www.quvi.cl/plan/E60600626
+Esencial,E60700626,,"4,11",12.000,37,https://www.quvi.cl/plan/E60700626
+Esencial,E70400626,,"3,34",12.000,37,https://www.quvi.cl/plan/E70400626
+Esencial,E70500626,,"3,65",12.000,37,https://www.quvi.cl/plan/E70500626
+Esencial,E70600626,,"4,00",12.000,37,https://www.quvi.cl/plan/E70600626
+Esencial,E70700626,,"4,37",12.000,37,https://www.quvi.cl/plan/E70700626
+Esencial,E80600626,,"4,60",12.000,37,https://www.quvi.cl/plan/E80600626
+Esencial,E80700626,,"5,00",12.000,37,https://www.quvi.cl/plan/E80700626
+Esencial,E80800626,,"5,45",12.000,37,https://www.quvi.cl/plan/E80800626
+Esencial,E90600626,,"4,90",12.000,37,https://www.quvi.cl/plan/E90600626
+Esencial,E90700626,,"5,36",12.000,37,https://www.quvi.cl/plan/E90700626
+Esencial,EI100700326,,"2,80",8.000,26,https://www.quvi.cl/plan/EI100700326
+Esencial,EI100800625,,"3,30",8.000,30,https://www.quvi.cl/plan/EI100800625
+Esencial,EI80500625,,"2,42",8.000,27,https://www.quvi.cl/plan/EI80500625
+Esencial,EI80600625,,"2,54",8.000,27,https://www.quvi.cl/plan/EI80600625
+Esencial,EI80700625,,"2,72",8.000,27,https://www.quvi.cl/plan/EI80700625
+Esencial,EI90700625,,"2,83",8.000,27,https://www.quvi.cl/plan/EI90700625
+Esencial,EI90800326,,"2,70",8.000,25,https://www.quvi.cl/plan/EI90800326
+Colmena,EL12610050,,"2,97",7.500,10,https://www.quvi.cl/plan/EL12610050
+Colmena,EL12610060,,"3,18",7.500,10,https://www.quvi.cl/plan/EL12610060
+Colmena,EL12610070,,"3,37",7.500,10,https://www.quvi.cl/plan/EL12610070
+Colmena,EL12610080,,"3,53",7.500,10,https://www.quvi.cl/plan/EL12610080
+Colmena,EL1264040,,"1,76",7.500,10,https://www.quvi.cl/plan/EL1264040
+Colmena,EL1264050,,"1,93",7.500,10,https://www.quvi.cl/plan/EL1264050
+Colmena,EL1264060,,"2,11",7.500,10,https://www.quvi.cl/plan/EL1264060
+Colmena,EL1264070,,"2,28",7.500,10,https://www.quvi.cl/plan/EL1264070
+Colmena,EL1264080,,"2,43",7.500,10,https://www.quvi.cl/plan/EL1264080
+Colmena,EL1265050,,"2,10",7.500,10,https://www.quvi.cl/plan/EL1265050
+Colmena,EL1265060,,"2,28",7.500,10,https://www.quvi.cl/plan/EL1265060
+Colmena,EL1265070,,"2,45",7.500,10,https://www.quvi.cl/plan/EL1265070
+Colmena,EL1265080,,"2,60",7.500,10,https://www.quvi.cl/plan/EL1265080
+Colmena,EL1266050,,"2,27",7.500,10,https://www.quvi.cl/plan/EL1266050
+Colmena,EL1266060,,"2,45",7.500,10,https://www.quvi.cl/plan/EL1266060
+Colmena,EL1266070,,"2,62",7.500,10,https://www.quvi.cl/plan/EL1266070
+Colmena,EL1266080,,"2,77",7.500,10,https://www.quvi.cl/plan/EL1266080
+Colmena,EL1267050,,"2,43",7.500,10,https://www.quvi.cl/plan/EL1267050
+Colmena,EL1267060,,"2,62",7.500,10,https://www.quvi.cl/plan/EL1267060
+Colmena,EL1267070,,"2,79",7.500,10,https://www.quvi.cl/plan/EL1267070
+Colmena,EL1267080,,"2,94",7.500,10,https://www.quvi.cl/plan/EL1267080
+Colmena,EL1268050,,"2,69",7.500,10,https://www.quvi.cl/plan/EL1268050
+Colmena,EL1268060,,"2,88",7.500,10,https://www.quvi.cl/plan/EL1268060
+Colmena,EL1268070,,"3,06",7.500,10,https://www.quvi.cl/plan/EL1268070
+Colmena,EL1268080,,"3,21",7.500,10,https://www.quvi.cl/plan/EL1268080
+Colmena,EL1269050,,"2,85",7.500,10,https://www.quvi.cl/plan/EL1269050
+Colmena,EL1269060,,"3,05",7.500,10,https://www.quvi.cl/plan/EL1269060
+Colmena,EL1269070,,"3,22",7.500,10,https://www.quvi.cl/plan/EL1269070
+Colmena,EL1269080,,"3,39",7.500,10,https://www.quvi.cl/plan/EL1269080
+Esencial,IN60500626,,"1,52",6.000,9,https://www.quvi.cl/plan/IN60500626
+Esencial,IN60600626,,"1,64",6.000,9,https://www.quvi.cl/plan/IN60600626
+Esencial,IN60700626,,"1,76",6.000,9,https://www.quvi.cl/plan/IN60700626
+Esencial,IN70400626,,"1,52",6.000,9,https://www.quvi.cl/plan/IN70400626
+Esencial,IN70500626,,"1,60",6.000,9,https://www.quvi.cl/plan/IN70500626
+Esencial,IN70600626,,"1,72",6.000,9,https://www.quvi.cl/plan/IN70600626
+Esencial,IN70700626,,"1,90",6.000,13,https://www.quvi.cl/plan/IN70700626
+Esencial,IN80600626,,"1,80",6.000,13,https://www.quvi.cl/plan/IN80600626
+Esencial,IN80700626,,"2,05",6.000,13,https://www.quvi.cl/plan/IN80700626
+Esencial,IN80800626,,"2,23",6.000,13,https://www.quvi.cl/plan/IN80800626
+Esencial,IN90600626,,"1,95",6.000,13,https://www.quvi.cl/plan/IN90600626
+Esencial,IN90700626,,"2,19",6.000,13,https://www.quvi.cl/plan/IN90700626
+Esencial,IN90800626,,"2,30",6.000,13,https://www.quvi.cl/plan/IN90800626
+Colmena,LP12610040,,"3,81",8.500,11,https://www.quvi.cl/plan/LP12610040
+Colmena,LP12610050,,"4,20",8.500,11,https://www.quvi.cl/plan/LP12610050
+Colmena,LP1266040,,"2,77",8.500,11,https://www.quvi.cl/plan/LP1266040
+Colmena,LP1266050,,"3,11",8.500,11,https://www.quvi.cl/plan/LP1266050
+Colmena,LP1266060,,"3,44",8.500,11,https://www.quvi.cl/plan/LP1266060
+Colmena,LP1266070,,"3,99",8.500,11,https://www.quvi.cl/plan/LP1266070
+Colmena,LP1266080,,"4,35",8.500,11,https://www.quvi.cl/plan/LP1266080
+Colmena,LP1267040,,"3,12",8.500,11,https://www.quvi.cl/plan/LP1267040
+Colmena,LP1267050,,"3,50",8.500,11,https://www.quvi.cl/plan/LP1267050
+Colmena,LP1268040,,"3,36",8.500,11,https://www.quvi.cl/plan/LP1268040
+Colmena,LP1268050,,"3,75",8.500,11,https://www.quvi.cl/plan/LP1268050
+Colmena,LP1269040,,"3,60",8.500,11,https://www.quvi.cl/plan/LP1269040
+Colmena,LP1269050,,"3,99",8.500,11,https://www.quvi.cl/plan/LP1269050
+Colmena,MS22610050,,"3,67",8.500,13,https://www.quvi.cl/plan/MS22610050
+Colmena,MS22610060,,"3,94",8.500,13,https://www.quvi.cl/plan/MS22610060
+Colmena,MS22610070,,"4,24",8.500,13,https://www.quvi.cl/plan/MS22610070
+Colmena,MS2261007A,,"4,24",8.500,13,https://www.quvi.cl/plan/MS2261007A
+Colmena,MS2261007B,,"4,25",8.500,13,https://www.quvi.cl/plan/MS2261007B
+Colmena,MS2264040,,"2,11",8.500,13,https://www.quvi.cl/plan/MS2264040
+Colmena,MS2264045,,"2,23",8.500,13,https://www.quvi.cl/plan/MS2264045
+Colmena,MS2264540,,"2,21",8.500,13,https://www.quvi.cl/plan/MS2264540
+Colmena,MS2265040,,"2,31",8.500,13,https://www.quvi.cl/plan/MS2265040
+Colmena,MS2265050,,"2,57",8.500,13,https://www.quvi.cl/plan/MS2265050
+Colmena,MS2265070,,"3,13",8.500,13,https://www.quvi.cl/plan/MS2265070
+Colmena,MS2265080,,"3,40",8.500,13,https://www.quvi.cl/plan/MS2265080
+Colmena,MS2266050,,"2,77",8.500,13,https://www.quvi.cl/plan/MS2266050
+Colmena,MS2266060,,"3,09",8.500,13,https://www.quvi.cl/plan/MS2266060
+Colmena,MS2266080,,"3,67",8.500,13,https://www.quvi.cl/plan/MS2266080
+Colmena,MS2267050,,"3,05",8.500,13,https://www.quvi.cl/plan/MS2267050
+Colmena,MS2267060,,"3,32",8.500,13,https://www.quvi.cl/plan/MS2267060
+Colmena,MS2267070,,"3,62",8.500,13,https://www.quvi.cl/plan/MS2267070
+Colmena,MS2267080,,"3,90",8.500,13,https://www.quvi.cl/plan/MS2267080
+Colmena,MS2268050,,"3,28",8.500,13,https://www.quvi.cl/plan/MS2268050
+Colmena,MS2268060,,"3,55",8.500,13,https://www.quvi.cl/plan/MS2268060
+Colmena,MS2268070,,"3,85",8.500,13,https://www.quvi.cl/plan/MS2268070
+Colmena,MS2268080,,"4,13",8.500,13,https://www.quvi.cl/plan/MS2268080
+Colmena,MS2269050,,"3,48",8.500,13,https://www.quvi.cl/plan/MS2269050
+Colmena,MS2269060,,"3,75",8.500,13,https://www.quvi.cl/plan/MS2269060
+Colmena,MS2269070,,"4,03",8.500,13,https://www.quvi.cl/plan/MS2269070
+Colmena,MS2269080,,"4,31",8.500,13,https://www.quvi.cl/plan/MS2269080
+Colmena,MX22610060,,"3,33",7.500,63,https://www.quvi.cl/plan/MX22610060
+Colmena,MX22610070,,"3,44",7.500,63,https://www.quvi.cl/plan/MX22610070
+Colmena,MX2261007A,,"3,84",7.500,63,https://www.quvi.cl/plan/MX2261007A
+Colmena,MX2261007B,,"4,24",7.500,63,https://www.quvi.cl/plan/MX2261007B
+Colmena,MX2261007C,,"4,64",7.500,63,https://www.quvi.cl/plan/MX2261007C
+Colmena,MX2261007D,,"5,04",7.500,63,https://www.quvi.cl/plan/MX2261007D
+Colmena,MX2265050,,"1,67",7.500,63,https://www.quvi.cl/plan/MX2265050
+Colmena,MX2266050,,"1,81",7.500,63,https://www.quvi.cl/plan/MX2266050
+Colmena,MX2266060,,"1,92",7.500,63,https://www.quvi.cl/plan/MX2266060
+Colmena,MX2267050,,"1,97",7.500,63,https://www.quvi.cl/plan/MX2267050
+Colmena,MX2267060,,"2,08",7.500,63,https://www.quvi.cl/plan/MX2267060
+Colmena,MX2267070,,"2,17",7.500,63,https://www.quvi.cl/plan/MX2267070
+Colmena,MX2268050,,"2,12",7.500,63,https://www.quvi.cl/plan/MX2268050
+Colmena,MX2268060,,"2,24",7.500,63,https://www.quvi.cl/plan/MX2268060
+Colmena,MX2268070,,"2,34",7.500,63,https://www.quvi.cl/plan/MX2268070
+Colmena,MX2269050,,"2,28",7.500,63,https://www.quvi.cl/plan/MX2269050
+Colmena,MX2269060,,"2,51",7.500,63,https://www.quvi.cl/plan/MX2269060
+Colmena,MX2269070,,"3,12",7.500,63,https://www.quvi.cl/plan/MX2269070
+Colmena,NP32610050,,"2,22",7.500,15,https://www.quvi.cl/plan/NP32610050
+Colmena,NP3261005A,,"2,86",7.500,16,https://www.quvi.cl/plan/NP3261005A
+Colmena,NP3261005B,,"3,26",7.500,16,https://www.quvi.cl/plan/NP3261005B
+Colmena,NP3261005C,,"3,71",7.500,16,https://www.quvi.cl/plan/NP3261005C
+Colmena,NP3261005D,,"4,21",7.500,16,https://www.quvi.cl/plan/NP3261005D
+Colmena,NP32610060,,"2,33",7.500,15,https://www.quvi.cl/plan/NP32610060
+Colmena,NP3261006A,,"2,94",7.500,16,https://www.quvi.cl/plan/NP3261006A
+Colmena,NP3261006B,,"3,34",7.500,16,https://www.quvi.cl/plan/NP3261006B
+Colmena,NP3261006C,,"3,79",7.500,16,https://www.quvi.cl/plan/NP3261006C
+Colmena,NP3261006D,,"4,29",7.500,16,https://www.quvi.cl/plan/NP3261006D
+Colmena,NP32610070,,"2,44",7.500,15,https://www.quvi.cl/plan/NP32610070
+Colmena,NP3261007A,,"3,07",7.500,16,https://www.quvi.cl/plan/NP3261007A
+Colmena,NP3261007B,,"3,47",7.500,16,https://www.quvi.cl/plan/NP3261007B
+Colmena,NP3261007C,,"3,92",7.500,16,https://www.quvi.cl/plan/NP3261007C
+Colmena,NP3261007D,,"4,42",7.500,16,https://www.quvi.cl/plan/NP3261007D
+Colmena,NP32610080,,"2,52",7.500,15,https://www.quvi.cl/plan/NP32610080
+Colmena,NP3261008A,,"3,18",7.500,16,https://www.quvi.cl/plan/NP3261008A
+Colmena,NP3261008B,,"3,63",7.500,16,https://www.quvi.cl/plan/NP3261008B
+Colmena,NP3261008C,,"4,13",7.500,16,https://www.quvi.cl/plan/NP3261008C
+Colmena,NP3261008D,,"4,68",7.500,16,https://www.quvi.cl/plan/NP3261008D
+Colmena,NP3264040,,"1,53",7.500,15,https://www.quvi.cl/plan/NP3264040
+Colmena,NP3264040A,,"1,49",7.500,15,https://www.quvi.cl/plan/NP3264040A
+Colmena,NP3264050,,"1,59",7.500,15,https://www.quvi.cl/plan/NP3264050
+Colmena,NP3264060,,"1,66",7.500,15,https://www.quvi.cl/plan/NP3264060
+Colmena,NP3264070,,"1,72",7.500,15,https://www.quvi.cl/plan/NP3264070
+Colmena,NP3264080,,"1,76",7.500,15,https://www.quvi.cl/plan/NP3264080
+Colmena,NP3265050,,"1,82",7.500,15,https://www.quvi.cl/plan/NP3265050
+Colmena,NP3265060,,"1,92",7.500,15,https://www.quvi.cl/plan/NP3265060
+Colmena,NP3265070,,"2,02",7.500,15,https://www.quvi.cl/plan/NP3265070
+Colmena,NP3265080,,"2,08",7.500,15,https://www.quvi.cl/plan/NP3265080
+Colmena,NP3266050,,"1,90",7.500,15,https://www.quvi.cl/plan/NP3266050
+Colmena,NP3266060,,"2,01",7.500,15,https://www.quvi.cl/plan/NP3266060
+Colmena,NP3266070,,"2,11",7.500,15,https://www.quvi.cl/plan/NP3266070
+Colmena,NP3266080,,"2,18",7.500,15,https://www.quvi.cl/plan/NP3266080
+Colmena,NP3267050,,"1,99",7.500,15,https://www.quvi.cl/plan/NP3267050
+Colmena,NP3267060,,"2,10",7.500,15,https://www.quvi.cl/plan/NP3267060
+Colmena,NP3267070,,"2,20",7.500,15,https://www.quvi.cl/plan/NP3267070
+Colmena,NP3267080,,"2,27",7.500,15,https://www.quvi.cl/plan/NP3267080
+Colmena,NP3268050,,"2,07",7.500,15,https://www.quvi.cl/plan/NP3268050
+Colmena,NP3268060,,"2,18",7.500,15,https://www.quvi.cl/plan/NP3268060
+Colmena,NP3268070,,"2,29",7.500,15,https://www.quvi.cl/plan/NP3268070
+Colmena,NP3268080,,"2,36",7.500,15,https://www.quvi.cl/plan/NP3268080
+Colmena,NP3269050,,"2,18",7.500,15,https://www.quvi.cl/plan/NP3269050
+Colmena,NP3269060,,"2,30",7.500,15,https://www.quvi.cl/plan/NP3269060
+Colmena,NP3269070,,"2,41",7.500,15,https://www.quvi.cl/plan/NP3269070
+Colmena,NP3269080,,"2,48",7.500,15,https://www.quvi.cl/plan/NP3269080
+Cruz Blanca,ONPR101D25,,"1,53",5.000,7,https://www.quvi.cl/plan/ONPR101D25
+Cruz Blanca,ONPR102D25,,"1,56",5.000,7,https://www.quvi.cl/plan/ONPR102D25
+Cruz Blanca,ONPR103D25,,"1,60",5.000,7,https://www.quvi.cl/plan/ONPR103D25
+Cruz Blanca,ONPR104D25,,"1,64",5.000,7,https://www.quvi.cl/plan/ONPR104D25
+Cruz Blanca,ONPR105D25,,"1,67",5.000,7,https://www.quvi.cl/plan/ONPR105D25
+Cruz Blanca,ONPR106D25,,"1,71",5.000,7,https://www.quvi.cl/plan/ONPR106D25
+Cruz Blanca,ONPR107D25,,"1,77",5.000,7,https://www.quvi.cl/plan/ONPR107D25
+Cruz Blanca,ONPR108D25,,"1,80",5.000,7,https://www.quvi.cl/plan/ONPR108D25
+Cruz Blanca,ONPR109D25,,"1,85",5.000,7,https://www.quvi.cl/plan/ONPR109D25
+Cruz Blanca,ONPR110D25,,"1,87",5.000,7,https://www.quvi.cl/plan/ONPR110D25
+Cruz Blanca,ONPR111D25,,"1,95",5.000,7,https://www.quvi.cl/plan/ONPR111D25
+Cruz Blanca,ONPR112D25,,"1,96",5.000,7,https://www.quvi.cl/plan/ONPR112D25
+Cruz Blanca,ONPR113D25,,"2,03",5.000,7,https://www.quvi.cl/plan/ONPR113D25
+Cruz Blanca,ONPR114D25,,"2,06",5.000,7,https://www.quvi.cl/plan/ONPR114D25
+Cruz Blanca,ONPR115D25,,"2,10",5.000,7,https://www.quvi.cl/plan/ONPR115D25
+Cruz Blanca,ONPR201D25,,"2,12",7.000,10,https://www.quvi.cl/plan/ONPR201D25
+Cruz Blanca,ONPR202D25,,"2,24",7.000,10,https://www.quvi.cl/plan/ONPR202D25
+Cruz Blanca,ONPR203D25,,"2,31",7.000,10,https://www.quvi.cl/plan/ONPR203D25
+Cruz Blanca,ONPR204D25,,"2,41",7.000,10,https://www.quvi.cl/plan/ONPR204D25
+Cruz Blanca,ONPR205D25,,"2,56",7.000,10,https://www.quvi.cl/plan/ONPR205D25
+Cruz Blanca,ONPR206D25,,"2,64",7.000,10,https://www.quvi.cl/plan/ONPR206D25
+Cruz Blanca,ONPR207D25,,"2,73",7.000,10,https://www.quvi.cl/plan/ONPR207D25
+Cruz Blanca,ONPR208D25,,"2,80",7.000,10,https://www.quvi.cl/plan/ONPR208D25
+Cruz Blanca,ONPR209D25,,"2,89",7.000,10,https://www.quvi.cl/plan/ONPR209D25
+Cruz Blanca,ONPR210D25,,"2,97",7.000,10,https://www.quvi.cl/plan/ONPR210D25
+Cruz Blanca,ONPR211D25,,"3,06",7.000,10,https://www.quvi.cl/plan/ONPR211D25
+Cruz Blanca,ONPR212D25,,"3,20",7.000,10,https://www.quvi.cl/plan/ONPR212D25
+Cruz Blanca,ONSL101D25,,"2,87",8.000,11,https://www.quvi.cl/plan/ONSL101D25
+Cruz Blanca,ONSL102D25,,"2,96",8.000,11,https://www.quvi.cl/plan/ONSL102D25
+Cruz Blanca,ONSL103D25,,"3,06",8.000,11,https://www.quvi.cl/plan/ONSL103D25
+Cruz Blanca,ONSL104D25,,"3,12",8.000,11,https://www.quvi.cl/plan/ONSL104D25
+Cruz Blanca,ONSL105D25,,"3,20",8.000,11,https://www.quvi.cl/plan/ONSL105D25
+Cruz Blanca,ONSL106D25,,"3,30",8.000,11,https://www.quvi.cl/plan/ONSL106D25
+Cruz Blanca,ONSL107D25,,"3,35",8.000,11,https://www.quvi.cl/plan/ONSL107D25
+Cruz Blanca,ONSL108D25,,"3,46",8.000,11,https://www.quvi.cl/plan/ONSL108D25
+Cruz Blanca,ONSL109D25,,"3,54",8.000,11,https://www.quvi.cl/plan/ONSL109D25
+Cruz Blanca,ONSL110D25,,"3,59",8.000,11,https://www.quvi.cl/plan/ONSL110D25
+Cruz Blanca,ONSL111D25,,"3,70",8.000,11,https://www.quvi.cl/plan/ONSL111D25
+Cruz Blanca,ONSL112D25,,"3,79",8.000,11,https://www.quvi.cl/plan/ONSL112D25
+Cruz Blanca,ONSL201D25,,"3,68",8.000,12,https://www.quvi.cl/plan/ONSL201D25
+Cruz Blanca,ONSL202D25,,"3,75",8.000,12,https://www.quvi.cl/plan/ONSL202D25
+Cruz Blanca,ONSL203D25,,"3,83",8.000,12,https://www.quvi.cl/plan/ONSL203D25
+Cruz Blanca,ONSL205D25,,"3,97",8.000,12,https://www.quvi.cl/plan/ONSL205D25
+Cruz Blanca,ONSL206D25,,"4,08",8.000,12,https://www.quvi.cl/plan/ONSL206D25
+Cruz Blanca,ONSL207D25,,"4,01",8.000,12,https://www.quvi.cl/plan/ONSL207D25
+Cruz Blanca,ONSL208D25,,"4,05",8.000,12,https://www.quvi.cl/plan/ONSL208D25
+Cruz Blanca,ONSL210D25,,"4,46",8.000,12,https://www.quvi.cl/plan/ONSL210D25
+Cruz Blanca,ONSL211D25,,"4,76",8.000,12,https://www.quvi.cl/plan/ONSL211D25
+Cruz Blanca,ONSL213D25,,"4,72",8.000,12,https://www.quvi.cl/plan/ONSL213D25
+Cruz Blanca,ONSL214D25,,"4,77",8.000,12,https://www.quvi.cl/plan/ONSL214D25
+Cruz Blanca,ONSL215D25,,"5,09",8.000,12,https://www.quvi.cl/plan/ONSL215D25
+Cruz Blanca,ONSL217D25,,"5,00",8.000,12,https://www.quvi.cl/plan/ONSL217D25
+Cruz Blanca,ONSL218D25,,"5,07",8.000,12,https://www.quvi.cl/plan/ONSL218D25
+Cruz Blanca,ONSL219D25,,"5,40",8.000,12,https://www.quvi.cl/plan/ONSL219D25
+Cruz Blanca,OPR1101D25,,"1,70",5.000,23,https://www.quvi.cl/plan/OPR1101D25
+Cruz Blanca,OPR1102D25,,"1,72",5.000,20,https://www.quvi.cl/plan/OPR1102D25
+Cruz Blanca,OPR1103D25,,"1,74",5.000,20,https://www.quvi.cl/plan/OPR1103D25
+Cruz Blanca,OPR1104D25,,"1,78",5.000,20,https://www.quvi.cl/plan/OPR1104D25
+Cruz Blanca,OPR1105D25,,"1,83",5.000,20,https://www.quvi.cl/plan/OPR1105D25
+Cruz Blanca,OPR1106D25,,"1,88",5.000,20,https://www.quvi.cl/plan/OPR1106D25
+Cruz Blanca,OPR1107D25,,"1,92",5.000,20,https://www.quvi.cl/plan/OPR1107D25
+Cruz Blanca,OPR1108D25,,"1,96",5.000,20,https://www.quvi.cl/plan/OPR1108D25
+Cruz Blanca,OPR1109D25,,"2,04",5.000,20,https://www.quvi.cl/plan/OPR1109D25
+Cruz Blanca,OPR1110D25,,"2,11",5.000,23,https://www.quvi.cl/plan/OPR1110D25
+Cruz Blanca,OPR1111D25,,"2,20",5.000,20,https://www.quvi.cl/plan/OPR1111D25
+Cruz Blanca,OPR1112D25,,"2,21",5.000,20,https://www.quvi.cl/plan/OPR1112D25
+Cruz Blanca,OPR1113D25,,"2,30",5.000,20,https://www.quvi.cl/plan/OPR1113D25
+Cruz Blanca,OPR1114D25,,"2,33",5.000,20,https://www.quvi.cl/plan/OPR1114D25
+Cruz Blanca,OPR1115D25,,"2,38",5.000,20,https://www.quvi.cl/plan/OPR1115D25
+Cruz Blanca,OPR1201D25,,"2,47",7.000,24,https://www.quvi.cl/plan/OPR1201D25
+Cruz Blanca,OPR1202D25,,"2,56",7.000,24,https://www.quvi.cl/plan/OPR1202D25
+Cruz Blanca,OPR1203D25,,"2,65",7.000,24,https://www.quvi.cl/plan/OPR1203D25
+Cruz Blanca,OPR1204D25,,"2,67",7.000,24,https://www.quvi.cl/plan/OPR1204D25
+Cruz Blanca,OPR1205D25,,"2,85",7.000,24,https://www.quvi.cl/plan/OPR1205D25
+Cruz Blanca,OPR1206D25,,"2,98",7.000,24,https://www.quvi.cl/plan/OPR1206D25
+Cruz Blanca,OPR1207D25,,"3,07",7.000,24,https://www.quvi.cl/plan/OPR1207D25
+Cruz Blanca,OPR1208D25,,"3,20",7.000,24,https://www.quvi.cl/plan/OPR1208D25
+Cruz Blanca,OPR1209D25,,"3,27",7.000,24,https://www.quvi.cl/plan/OPR1209D25
+Cruz Blanca,OPR1210D25,,"3,42",7.000,24,https://www.quvi.cl/plan/OPR1210D25
+Cruz Blanca,OPR1211D25,,"3,52",7.000,24,https://www.quvi.cl/plan/OPR1211D25
+Cruz Blanca,OPR1212D25,,"3,69",7.000,24,https://www.quvi.cl/plan/OPR1212D25
+Cruz Blanca,OSLR101D25,,"3,29",8.000,28,https://www.quvi.cl/plan/OSLR101D25
+Cruz Blanca,OSLR102D25,,"3,42",8.000,28,https://www.quvi.cl/plan/OSLR102D25
+Cruz Blanca,OSLR103D25,,"3,52",8.000,28,https://www.quvi.cl/plan/OSLR103D25
+Cruz Blanca,OSLR104D25,,"3,59",8.000,28,https://www.quvi.cl/plan/OSLR104D25
+Cruz Blanca,OSLR105D25,,"3,70",8.000,28,https://www.quvi.cl/plan/OSLR105D25
+Cruz Blanca,OSLR106D25,,"3,81",8.000,28,https://www.quvi.cl/plan/OSLR106D25
+Cruz Blanca,OSLR107D25,,"3,88",8.000,28,https://www.quvi.cl/plan/OSLR107D25
+Cruz Blanca,OSLR108D25,,"4,00",8.000,28,https://www.quvi.cl/plan/OSLR108D25
+Cruz Blanca,OSLR109D25,,"4,11",8.000,28,https://www.quvi.cl/plan/OSLR109D25
+Cruz Blanca,OSLR110D25,,"4,15",8.000,28,https://www.quvi.cl/plan/OSLR110D25
+Cruz Blanca,OSLR111D25,,"4,28",8.000,28,https://www.quvi.cl/plan/OSLR111D25
+Cruz Blanca,OSLR112D25,,"4,39",8.000,28,https://www.quvi.cl/plan/OSLR112D25
+Cruz Blanca,OSLR201D25,,"4,34",8.000,30,https://www.quvi.cl/plan/OSLR201D25
+Cruz Blanca,OSLR202D25,,"4,55",8.000,30,https://www.quvi.cl/plan/OSLR202D25
+Cruz Blanca,OSLR203D25,,"4,83",8.000,30,https://www.quvi.cl/plan/OSLR203D25
+Cruz Blanca,OSLR204D25,,"5,15",8.000,30,https://www.quvi.cl/plan/OSLR204D25
+Cruz Blanca,OSLR205D25,,"5,44",8.000,30,https://www.quvi.cl/plan/OSLR205D25
+Cruz Blanca,OSLR206D25,,"5,55",8.000,30,https://www.quvi.cl/plan/OSLR206D25
+Cruz Blanca,OSLR207D25,,"5,53",8.000,30,https://www.quvi.cl/plan/OSLR207D25
+Cruz Blanca,OSLR208D25,,"5,68",8.000,30,https://www.quvi.cl/plan/OSLR208D25
+Cruz Blanca,OSLR209D25,,"5,85",8.000,30,https://www.quvi.cl/plan/OSLR209D25
+Cruz Blanca,OSLR210D25,,"5,78",8.000,30,https://www.quvi.cl/plan/OSLR210D25
+Cruz Blanca,OSLR211D25,,"6,16",8.000,30,https://www.quvi.cl/plan/OSLR211D25
+Cruz Blanca,OSLR212D25,,"6,24",8.000,30,https://www.quvi.cl/plan/OSLR212D25
+Cruz Blanca,OSLR213D25,,"6,28",8.000,30,https://www.quvi.cl/plan/OSLR213D25
+Cruz Blanca,OSLR214D25,,"6,46",8.000,30,https://www.quvi.cl/plan/OSLR214D25
+Cruz Blanca,OSLR215D25,,"6,62",8.000,30,https://www.quvi.cl/plan/OSLR215D25
+Cruz Blanca,OSLR216D25,,"6,73",8.000,30,https://www.quvi.cl/plan/OSLR216D25
+Cruz Blanca,OSLR217D25,,"6,97",8.000,30,https://www.quvi.cl/plan/OSLR217D25
+Cruz Blanca,OSLR218D25,,"7,22",8.000,30,https://www.quvi.cl/plan/OSLR218D25
+Colmena,PL22610050,,"3,35",7.500,63,https://www.quvi.cl/plan/PL22610050
+Colmena,PL22610060,,"3,45",7.500,63,https://www.quvi.cl/plan/PL22610060
+Colmena,PL22610070,,"3,55",7.500,63,https://www.quvi.cl/plan/PL22610070
+Colmena,PL2261007A,,"3,79",7.500,63,https://www.quvi.cl/plan/PL2261007A
+Colmena,PL2261007B,,"3,97",7.500,63,https://www.quvi.cl/plan/PL2261007B
+Colmena,PL2261007C,,"4,15",7.500,63,https://www.quvi.cl/plan/PL2261007C
+Colmena,PL2261007D,,"4,33",7.500,63,https://www.quvi.cl/plan/PL2261007D
+Colmena,PL2261007E,,"4,51",7.500,63,https://www.quvi.cl/plan/PL2261007E
+Colmena,PL2261007F,,"4,69",7.500,63,https://www.quvi.cl/plan/PL2261007F
+Colmena,PL2261007G,,"4,78",7.500,63,https://www.quvi.cl/plan/PL2261007G
+Colmena,PL2261007H,,"4,87",7.500,63,https://www.quvi.cl/plan/PL2261007H
+Colmena,PL2261007I,,"4,96",7.500,63,https://www.quvi.cl/plan/PL2261007I
+Colmena,PL22610080,,"3,70",7.500,63,https://www.quvi.cl/plan/PL22610080
+Colmena,PL2261008A,,"3,88",7.500,63,https://www.quvi.cl/plan/PL2261008A
+Colmena,PL2261008B,,"4,06",7.500,63,https://www.quvi.cl/plan/PL2261008B
+Colmena,PL2261008C,,"4,24",7.500,63,https://www.quvi.cl/plan/PL2261008C
+Colmena,PL2261008D,,"4,42",7.500,63,https://www.quvi.cl/plan/PL2261008D
+Colmena,PL2261008E,,"4,60",7.500,63,https://www.quvi.cl/plan/PL2261008E
+Colmena,PL2264040,,"1,29",7.500,63,https://www.quvi.cl/plan/PL2264040
+Colmena,PL2264050,,"1,33",7.500,63,https://www.quvi.cl/plan/PL2264050
+Colmena,PL2265040,,"1,40",7.500,63,https://www.quvi.cl/plan/PL2265040
+Colmena,PL2265050,,"1,44",7.500,63,https://www.quvi.cl/plan/PL2265050
+Colmena,PL2265060,,"1,48",7.500,63,https://www.quvi.cl/plan/PL2265060
+Colmena,PL2265070,,"1,52",7.500,63,https://www.quvi.cl/plan/PL2265070
+Colmena,PL2265080,,"1,54",7.500,63,https://www.quvi.cl/plan/PL2265080
+Colmena,PL2266050,,"1,59",7.500,63,https://www.quvi.cl/plan/PL2266050
+Colmena,PL2266060,,"1,64",7.500,63,https://www.quvi.cl/plan/PL2266060
+Colmena,PL2266070,,"1,70",7.500,63,https://www.quvi.cl/plan/PL2266070
+Colmena,PL2266080,,"1,72",7.500,63,https://www.quvi.cl/plan/PL2266080
+Colmena,PL2267050,,"1,76",7.500,63,https://www.quvi.cl/plan/PL2267050
+Colmena,PL2267060,,"2,07",7.500,63,https://www.quvi.cl/plan/PL2267060
+Colmena,PL2267070,,"2,25",7.500,63,https://www.quvi.cl/plan/PL2267070
+Colmena,PL2267080,,"2,32",7.500,63,https://www.quvi.cl/plan/PL2267080
+Colmena,PL2268050,,"2,16",7.500,63,https://www.quvi.cl/plan/PL2268050
+Colmena,PL2268060,,"2,35",7.500,63,https://www.quvi.cl/plan/PL2268060
+Colmena,PL2268070,,"2,50",7.500,63,https://www.quvi.cl/plan/PL2268070
+Colmena,PL2268080,,"2,56",7.500,63,https://www.quvi.cl/plan/PL2268080
+Colmena,PL2269050,,"2,74",7.500,63,https://www.quvi.cl/plan/PL2269050
+Colmena,PL2269060,,"3,10",7.500,63,https://www.quvi.cl/plan/PL2269060
+Colmena,PL2269070,,"3,25",7.500,63,https://www.quvi.cl/plan/PL2269070
+Colmena,PL2269080,,"3,40",7.500,63,https://www.quvi.cl/plan/PL2269080
+Nueva Masvida,PM260301,,"1,42",8.500,8,https://www.quvi.cl/plan/PM260301
+Nueva Masvida,PM260302,,"1,50",8.500,8,https://www.quvi.cl/plan/PM260302
+Nueva Masvida,PM260303,,"1,58",8.500,8,https://www.quvi.cl/plan/PM260303
+Nueva Masvida,PM260304,,"1,65",8.500,10,https://www.quvi.cl/plan/PM260304
+Nueva Masvida,PM260305,,"1,72",8.500,10,https://www.quvi.cl/plan/PM260305
+Nueva Masvida,PM260306,,"1,80",8.500,10,https://www.quvi.cl/plan/PM260306
+Nueva Masvida,PM260307,,"1,89",8.500,10,https://www.quvi.cl/plan/PM260307
+Nueva Masvida,PM260308,,"1,97",8.500,11,https://www.quvi.cl/plan/PM260308
+Nueva Masvida,PM260309,,"2,09",8.500,11,https://www.quvi.cl/plan/PM260309
+Nueva Masvida,PM260310,,"2,18",8.500,11,https://www.quvi.cl/plan/PM260310
+Nueva Masvida,PM260311,,"2,25",8.500,13,https://www.quvi.cl/plan/PM260311
+Nueva Masvida,PM260312,,"2,35",8.500,13,https://www.quvi.cl/plan/PM260312
+Nueva Masvida,PM260313,,"2,44",8.500,13,https://www.quvi.cl/plan/PM260313
+Nueva Masvida,PM260314,,"2,50",8.500,13,https://www.quvi.cl/plan/PM260314
+Nueva Masvida,PM260315,,"2,55",8.500,13,https://www.quvi.cl/plan/PM260315
+Nueva Masvida,PM260316,,"2,60",8.500,13,https://www.quvi.cl/plan/PM260316
+Nueva Masvida,PM260317,,"2,61",8.500,13,https://www.quvi.cl/plan/PM260317
+Nueva Masvida,PM260318,,"2,71",8.500,13,https://www.quvi.cl/plan/PM260318
+Nueva Masvida,PM260319,,"2,91",8.500,13,https://www.quvi.cl/plan/PM260319
+Nueva Masvida,PM260320,,"3,15",8.500,13,https://www.quvi.cl/plan/PM260320
+Nueva Masvida,PM260321,,"3,45",8.500,13,https://www.quvi.cl/plan/PM260321
+Nueva Masvida,PM260322,,"3,65",8.500,13,https://www.quvi.cl/plan/PM260322
+Nueva Masvida,PM260323,,"3,83",8.500,13,https://www.quvi.cl/plan/PM260323
+Nueva Masvida,PM260324,,"4,02",8.500,13,https://www.quvi.cl/plan/PM260324
+Nueva Masvida,PM260325,,"4,19",8.500,13,https://www.quvi.cl/plan/PM260325
+Nueva Masvida,PM260326,,"4,36",8.500,13,https://www.quvi.cl/plan/PM260326
+Nueva Masvida,PM260327,,"4,45",8.500,13,https://www.quvi.cl/plan/PM260327
+Nueva Masvida,PM260328,,"4,58",8.500,13,https://www.quvi.cl/plan/PM260328
+Nueva Masvida,PM260329,,"4,75",8.500,13,https://www.quvi.cl/plan/PM260329
+Nueva Masvida,PM260330,,"4,93",8.500,13,https://www.quvi.cl/plan/PM260330
+Nueva Masvida,PM260331,,"5,13",10.000,13,https://www.quvi.cl/plan/PM260331
+Nueva Masvida,PM260332,,"5,32",10.000,13,https://www.quvi.cl/plan/PM260332
+Nueva Masvida,PM260333,,"5,45",10.000,13,https://www.quvi.cl/plan/PM260333
+Nueva Masvida,PM260335,,"5,80",10.000,13,https://www.quvi.cl/plan/PM260335
+Nueva Masvida,PM260336,,"6,05",10.000,13,https://www.quvi.cl/plan/PM260336
+Nueva Masvida,PPR24180,,"2,55",7.000,9,https://www.quvi.cl/plan/PPR24180
+Nueva Masvida,PPR24190,,"2,64",7.000,9,https://www.quvi.cl/plan/PPR24190
+Nueva Masvida,PPR24200,,"2,80",8.000,9,https://www.quvi.cl/plan/PPR24200
+Nueva Masvida,PPR24210,,"2,95",8.000,9,https://www.quvi.cl/plan/PPR24210
+Nueva Masvida,PPR24220,,"3,03",8.000,9,https://www.quvi.cl/plan/PPR24220
+Nueva Masvida,PPR24230,,"3,18",8.000,12,https://www.quvi.cl/plan/PPR24230
+Nueva Masvida,PPR24240,,"3,33",8.000,15,https://www.quvi.cl/plan/PPR24240
+Nueva Masvida,PPR24250,,"3,48",8.000,15,https://www.quvi.cl/plan/PPR24250
+Nueva Masvida,PPR24260,,"3,63",8.000,15,https://www.quvi.cl/plan/PPR24260
+Nueva Masvida,PPR24270,,"3,78",8.000,15,https://www.quvi.cl/plan/PPR24270
+Nueva Masvida,PPR24280,,"3,93",8.000,15,https://www.quvi.cl/plan/PPR24280
+Nueva Masvida,PPR24290,,"4,08",8.000,15,https://www.quvi.cl/plan/PPR24290
+Nueva Masvida,PPR24300,,"4,24",10.000,15,https://www.quvi.cl/plan/PPR24300
+Nueva Masvida,PPR24310,,"4,39",10.000,15,https://www.quvi.cl/plan/PPR24310
+Nueva Masvida,PPR24320,,"4,54",10.000,15,https://www.quvi.cl/plan/PPR24320
+Nueva Masvida,PPR24330,,"4,69",10.000,15,https://www.quvi.cl/plan/PPR24330
+Nueva Masvida,PPR24340,,"4,84",10.000,15,https://www.quvi.cl/plan/PPR24340
+Nueva Masvida,PPR24350,,"5,09",10.000,15,https://www.quvi.cl/plan/PPR24350
+Nueva Masvida,PPR24360,,"5,24",10.000,15,https://www.quvi.cl/plan/PPR24360
+Nueva Masvida,PPR25100,,"1,74",7.000,7,https://www.quvi.cl/plan/PPR25100
+Nueva Masvida,PPR25110,,"1,85",7.000,7,https://www.quvi.cl/plan/PPR25110
+Nueva Masvida,PPR25120,,"1,95",7.000,7,https://www.quvi.cl/plan/PPR25120
+Nueva Masvida,PPR25130,,"2,05",7.000,7,https://www.quvi.cl/plan/PPR25130
+Nueva Masvida,PPR25140,,"2,15",7.000,7,https://www.quvi.cl/plan/PPR25140
+Nueva Masvida,PPR25150,,"2,25",7.000,7,https://www.quvi.cl/plan/PPR25150
+Nueva Masvida,PPR25160,,"2,35",7.000,9,https://www.quvi.cl/plan/PPR25160
+Nueva Masvida,PPR25170,,"2,45",7.000,9,https://www.quvi.cl/plan/PPR25170
+Nueva Masvida,PPS23110,,"1,73",7.500,10,https://www.quvi.cl/plan/PPS23110
+Nueva Masvida,PPS23120,,"1,79",7.500,10,https://www.quvi.cl/plan/PPS23120
+Nueva Masvida,PPS23130,,"1,89",7.500,10,https://www.quvi.cl/plan/PPS23130
+Nueva Masvida,PPS23140,,"2,03",7.500,10,https://www.quvi.cl/plan/PPS23140
+Nueva Masvida,PPS23150,,"2,14",7.500,10,https://www.quvi.cl/plan/PPS23150
+Nueva Masvida,PPS23160,,"2,25",7.500,10,https://www.quvi.cl/plan/PPS23160
+Nueva Masvida,PPS23170,,"2,32",7.500,15,https://www.quvi.cl/plan/PPS23170
+Nueva Masvida,PPS23180,,"2,41",7.500,15,https://www.quvi.cl/plan/PPS23180
+Nueva Masvida,PPS23190,,"2,51",7.500,15,https://www.quvi.cl/plan/PPS23190
+Nueva Masvida,PPS23200,,"2,60",7.500,15,https://www.quvi.cl/plan/PPS23200
+Nueva Masvida,PPS23210,,"2,67",7.500,15,https://www.quvi.cl/plan/PPS23210
+Nueva Masvida,PPS23220,,"2,88",7.500,15,https://www.quvi.cl/plan/PPS23220
+Nueva Masvida,PPS23230,,"3,05",10.000,17,https://www.quvi.cl/plan/PPS23230
+Nueva Masvida,PPS23240,,"3,29",10.000,17,https://www.quvi.cl/plan/PPS23240
+Nueva Masvida,PPS23250,,"3,35",10.000,17,https://www.quvi.cl/plan/PPS23250
+Nueva Masvida,PPS23260,,"3,39",10.000,17,https://www.quvi.cl/plan/PPS23260
+Nueva Masvida,PPS23270,,"3,84",10.000,17,https://www.quvi.cl/plan/PPS23270
+Nueva Masvida,PPS23290,,"4,54",10.000,18,https://www.quvi.cl/plan/PPS23290
+Nueva Masvida,PPS23310,,"5,29",10.000,18,https://www.quvi.cl/plan/PPS23310
+Nueva Masvida,PPV24180,,"2,53",7.000,9,https://www.quvi.cl/plan/PPV24180
+Nueva Masvida,PPV24190,,"2,62",7.000,9,https://www.quvi.cl/plan/PPV24190
+Nueva Masvida,PPV24200,,"2,77",7.000,9,https://www.quvi.cl/plan/PPV24200
+Nueva Masvida,PPV24210,,"2,92",7.000,9,https://www.quvi.cl/plan/PPV24210
+Nueva Masvida,PPV24220,,"3,00",8.000,9,https://www.quvi.cl/plan/PPV24220
+Nueva Masvida,PPV24230,,"3,15",8.000,12,https://www.quvi.cl/plan/PPV24230
+Nueva Masvida,PPV24240,,"3,30",8.000,15,https://www.quvi.cl/plan/PPV24240
+Nueva Masvida,PPV24250,,"3,45",8.000,15,https://www.quvi.cl/plan/PPV24250
+Nueva Masvida,PPV24260,,"3,60",8.000,15,https://www.quvi.cl/plan/PPV24260
+Nueva Masvida,PPV24270,,"3,75",8.000,15,https://www.quvi.cl/plan/PPV24270
+Nueva Masvida,PPV24280,,"3,90",8.000,15,https://www.quvi.cl/plan/PPV24280
+Nueva Masvida,PPV24290,,"4,05",10.000,15,https://www.quvi.cl/plan/PPV24290
+Nueva Masvida,PPV24300,,"4,20",10.000,15,https://www.quvi.cl/plan/PPV24300
+Nueva Masvida,PPV24310,,"4,35",10.000,15,https://www.quvi.cl/plan/PPV24310
+Nueva Masvida,PPV24320,,"4,50",10.000,15,https://www.quvi.cl/plan/PPV24320
+Nueva Masvida,PPV24330,,"4,65",10.000,15,https://www.quvi.cl/plan/PPV24330
+Nueva Masvida,PPV24340,,"4,80",10.000,15,https://www.quvi.cl/plan/PPV24340
+Nueva Masvida,PPV24350,,"5,05",10.000,15,https://www.quvi.cl/plan/PPV24350
+Nueva Masvida,PPV24360,,"5,20",10.000,15,https://www.quvi.cl/plan/PPV24360
+Nueva Masvida,PPV25100,,"1,72",7.000,8,https://www.quvi.cl/plan/PPV25100
+Nueva Masvida,PPV25110,,"1,83",7.000,8,https://www.quvi.cl/plan/PPV25110
+Nueva Masvida,PPV25120,,"1,93",7.000,8,https://www.quvi.cl/plan/PPV25120
+Nueva Masvida,PPV25130,,"2,03",7.000,8,https://www.quvi.cl/plan/PPV25130
+Nueva Masvida,PPV25140,,"2,13",7.000,8,https://www.quvi.cl/plan/PPV25140
+Nueva Masvida,PPV25150,,"2,23",7.000,8,https://www.quvi.cl/plan/PPV25150
+Nueva Masvida,PPV25160,,"2,33",7.000,9,https://www.quvi.cl/plan/PPV25160
+Nueva Masvida,PPV25170,,"2,43",7.000,9,https://www.quvi.cl/plan/PPV25170
+Colmena,PR32610060,,"4,58",8.500,12,https://www.quvi.cl/plan/PR32610060
+Colmena,PR32610070,,"4,94",8.500,12,https://www.quvi.cl/plan/PR32610070
+Colmena,PR3267060,,"3,87",8.500,12,https://www.quvi.cl/plan/PR3267060
+Colmena,PR3267070,,"4,23",8.500,12,https://www.quvi.cl/plan/PR3267070
+Colmena,PR3267080,,"4,60",8.500,12,https://www.quvi.cl/plan/PR3267080
+Colmena,PR3268060,,"4,12",8.500,12,https://www.quvi.cl/plan/PR3268060
+Colmena,PR3268070,,"4,48",8.500,12,https://www.quvi.cl/plan/PR3268070
+Colmena,PR3268080,,"4,86",8.500,12,https://www.quvi.cl/plan/PR3268080
+Colmena,PR3269060,,"4,36",8.500,12,https://www.quvi.cl/plan/PR3269060
+Colmena,PR3269070,,"4,73",8.500,12,https://www.quvi.cl/plan/PR3269070
+Colmena,PR3269080,,"5,10",8.500,12,https://www.quvi.cl/plan/PR3269080
+Cruz Blanca,PROO101526,,"1,95",5.000,6,https://www.quvi.cl/plan/PROO101526
+Cruz Blanca,PROO102526,,"1,96",5.000,6,https://www.quvi.cl/plan/PROO102526
+Cruz Blanca,PROO103526,,"1,97",5.000,6,https://www.quvi.cl/plan/PROO103526
+Cruz Blanca,PROO104526,,"1,96",5.000,6,https://www.quvi.cl/plan/PROO104526
+Cruz Blanca,PROO105526,,"2,10",5.000,6,https://www.quvi.cl/plan/PROO105526
+Cruz Blanca,PROO106526,,"2,13",5.000,6,https://www.quvi.cl/plan/PROO106526
+Cruz Blanca,PROO107526,,"2,18",5.000,6,https://www.quvi.cl/plan/PROO107526
+Cruz Blanca,PROO108526,,"2,21",5.000,6,https://www.quvi.cl/plan/PROO108526
+Cruz Blanca,PROO109526,,"2,29",5.000,6,https://www.quvi.cl/plan/PROO109526
+Cruz Blanca,PROO110526,,"2,42",5.000,6,https://www.quvi.cl/plan/PROO110526
+Cruz Blanca,PROO111526,,"2,44",5.000,6,https://www.quvi.cl/plan/PROO111526
+Cruz Blanca,PROO112526,,"2,52",5.000,6,https://www.quvi.cl/plan/PROO112526
+Cruz Blanca,PROO113526,,"2,52",5.000,6,https://www.quvi.cl/plan/PROO113526
+Cruz Blanca,PROO114526,,"2,54",5.000,6,https://www.quvi.cl/plan/PROO114526
+Cruz Blanca,PROO115526,,"2,63",5.000,6,https://www.quvi.cl/plan/PROO115526
+Cruz Blanca,PROO201526,,"2,79",7.000,12,https://www.quvi.cl/plan/PROO201526
+Cruz Blanca,PROO202526,,"2,94",7.000,12,https://www.quvi.cl/plan/PROO202526
+Cruz Blanca,PROO203526,,"3,05",7.000,12,https://www.quvi.cl/plan/PROO203526
+Cruz Blanca,PROO204526,,"3,02",7.000,12,https://www.quvi.cl/plan/PROO204526
+Cruz Blanca,PROO205526,,"3,18",7.000,12,https://www.quvi.cl/plan/PROO205526
+Cruz Blanca,PROO206526,,"3,29",7.000,12,https://www.quvi.cl/plan/PROO206526
+Cruz Blanca,PROO207526,,"3,41",7.000,15,https://www.quvi.cl/plan/PROO207526
+Cruz Blanca,PROO208526,,"3,58",7.000,15,https://www.quvi.cl/plan/PROO208526
+Cruz Blanca,PROO209526,,"3,69",7.000,15,https://www.quvi.cl/plan/PROO209526
+Cruz Blanca,PROO210526,,"3,64",7.000,15,https://www.quvi.cl/plan/PROO210526
+Cruz Blanca,PROO211526,,"3,81",7.000,15,https://www.quvi.cl/plan/PROO211526
+Cruz Blanca,PROO212526,,"3,93",7.000,15,https://www.quvi.cl/plan/PROO212526
+Cruz Blanca,PROR101526,,"1,81",5.000,21,https://www.quvi.cl/plan/PROR101526
+Cruz Blanca,PROR102526,,"1,85",5.000,21,https://www.quvi.cl/plan/PROR102526
+Cruz Blanca,PROR103526,,"1,89",5.000,21,https://www.quvi.cl/plan/PROR103526
+Cruz Blanca,PROR104526,,"1,91",5.000,21,https://www.quvi.cl/plan/PROR104526
+Cruz Blanca,PROR105526,,"1,97",5.000,21,https://www.quvi.cl/plan/PROR105526
+Cruz Blanca,PROR106526,,"1,98",5.000,21,https://www.quvi.cl/plan/PROR106526
+Cruz Blanca,PROR107526,,"2,04",5.000,21,https://www.quvi.cl/plan/PROR107526
+Cruz Blanca,PROR108526,,"2,06",5.000,21,https://www.quvi.cl/plan/PROR108526
+Cruz Blanca,PROR109526,,"2,14",5.000,21,https://www.quvi.cl/plan/PROR109526
+Cruz Blanca,PROR110526,,"2,26",5.000,21,https://www.quvi.cl/plan/PROR110526
+Cruz Blanca,PROR111526,,"2,28",5.000,21,https://www.quvi.cl/plan/PROR111526
+Cruz Blanca,PROR112526,,"2,36",5.000,21,https://www.quvi.cl/plan/PROR112526
+Cruz Blanca,PROR113526,,"2,36",5.000,21,https://www.quvi.cl/plan/PROR113526
+Cruz Blanca,PROR114526,,"2,37",5.000,21,https://www.quvi.cl/plan/PROR114526
+Cruz Blanca,PROR115526,,"2,46",5.000,21,https://www.quvi.cl/plan/PROR115526
+Cruz Blanca,PROR201526,,"2,62",7.000,27,https://www.quvi.cl/plan/PROR201526
+Cruz Blanca,PROR202526,,"2,76",7.000,27,https://www.quvi.cl/plan/PROR202526
+Cruz Blanca,PROR203526,,"2,85",7.000,27,https://www.quvi.cl/plan/PROR203526
+Cruz Blanca,PROR204526,,"2,84",7.000,27,https://www.quvi.cl/plan/PROR204526
+Cruz Blanca,PROR205526,,"2,98",7.000,27,https://www.quvi.cl/plan/PROR205526
+Cruz Blanca,PROR206526,,"3,08",7.000,27,https://www.quvi.cl/plan/PROR206526
+Cruz Blanca,PROR207526,,"3,21",7.000,30,https://www.quvi.cl/plan/PROR207526
+Cruz Blanca,PROR208526,,"3,36",7.000,30,https://www.quvi.cl/plan/PROR208526
+Cruz Blanca,PROR209526,,"3,46",7.000,30,https://www.quvi.cl/plan/PROR209526
+Cruz Blanca,PROR210526,,"3,43",7.000,30,https://www.quvi.cl/plan/PROR210526
+Cruz Blanca,PROR211526,,"3,59",7.000,30,https://www.quvi.cl/plan/PROR211526
+Cruz Blanca,PROR212526,,"3,69",7.000,30,https://www.quvi.cl/plan/PROR212526
+Cruz Blanca,PROT101526,,"1,63",5.000,6,https://www.quvi.cl/plan/PROT101526
+Cruz Blanca,PROT102526,,"1,69",5.000,6,https://www.quvi.cl/plan/PROT102526
+Cruz Blanca,PROT103526,,"1,73",5.000,6,https://www.quvi.cl/plan/PROT103526
+Cruz Blanca,PROT104526,,"1,75",5.000,6,https://www.quvi.cl/plan/PROT104526
+Cruz Blanca,PROT105526,,"1,80",5.000,6,https://www.quvi.cl/plan/PROT105526
+Cruz Blanca,PROT106526,,"1,81",5.000,6,https://www.quvi.cl/plan/PROT106526
+Cruz Blanca,PROT107526,,"1,83",5.000,6,https://www.quvi.cl/plan/PROT107526
+Cruz Blanca,PROT108526,,"1,89",5.000,6,https://www.quvi.cl/plan/PROT108526
+Cruz Blanca,PROT109526,,"1,90",5.000,6,https://www.quvi.cl/plan/PROT109526
+Cruz Blanca,PROT110526,,"1,93",5.000,6,https://www.quvi.cl/plan/PROT110526
+Cruz Blanca,PROT111526,,"1,94",5.000,6,https://www.quvi.cl/plan/PROT111526
+Cruz Blanca,PROT112526,,"2,04",5.000,6,https://www.quvi.cl/plan/PROT112526
+Cruz Blanca,PROT113526,,"2,07",5.000,6,https://www.quvi.cl/plan/PROT113526
+Cruz Blanca,PROT114526,,"2,08",5.000,6,https://www.quvi.cl/plan/PROT114526
+Cruz Blanca,PROT115526,,"2,09",5.000,6,https://www.quvi.cl/plan/PROT115526
+Cruz Blanca,PROT201526,,"2,34",7.000,12,https://www.quvi.cl/plan/PROT201526
+Cruz Blanca,PROT202526,,"2,43",7.000,12,https://www.quvi.cl/plan/PROT202526
+Cruz Blanca,PROT203526,,"2,51",7.000,12,https://www.quvi.cl/plan/PROT203526
+Cruz Blanca,PROT204526,,"2,60",7.000,12,https://www.quvi.cl/plan/PROT204526
+Cruz Blanca,PROT205526,,"2,69",7.000,12,https://www.quvi.cl/plan/PROT205526
+Cruz Blanca,PROT206526,,"2,78",7.000,12,https://www.quvi.cl/plan/PROT206526
+Cruz Blanca,PROT207526,,"2,90",7.000,12,https://www.quvi.cl/plan/PROT207526
+Cruz Blanca,PROT208526,,"2,99",7.000,12,https://www.quvi.cl/plan/PROT208526
+Cruz Blanca,PROT209526,,"3,08",7.000,12,https://www.quvi.cl/plan/PROT209526
+Cruz Blanca,PROT210526,,"3,16",7.000,12,https://www.quvi.cl/plan/PROT210526
+Cruz Blanca,PROT211526,,"3,25",7.000,12,https://www.quvi.cl/plan/PROT211526
+Cruz Blanca,PROT212526,,"3,34",7.000,12,https://www.quvi.cl/plan/PROT212526
+Cruz Blanca,PROT301626,,"1,43",5.000,7,https://www.quvi.cl/plan/PROT301626
+Cruz Blanca,PROT302626,,"1,49",5.000,7,https://www.quvi.cl/plan/PROT302626
+Cruz Blanca,PROT303626,,"1,55",5.000,7,https://www.quvi.cl/plan/PROT303626
+Cruz Blanca,PROT304626,,"1,59",5.000,7,https://www.quvi.cl/plan/PROT304626
+Cruz Blanca,PROT305626,,"1,63",5.000,7,https://www.quvi.cl/plan/PROT305626
+Cruz Blanca,PROT306626,,"1,69",5.000,7,https://www.quvi.cl/plan/PROT306626
+Cruz Blanca,PROT307626,,"1,73",5.000,10,https://www.quvi.cl/plan/PROT307626
+Cruz Blanca,PROT308626,,"1,93",5.000,10,https://www.quvi.cl/plan/PROT308626
+Cruz Blanca,PROT309626,,"2,07",5.000,8,https://www.quvi.cl/plan/PROT309626
+Cruz Blanca,PROT310626,,"2,22",5.000,8,https://www.quvi.cl/plan/PROT310626
+Cruz Blanca,PROT311626,,"2,36",5.000,8,https://www.quvi.cl/plan/PROT311626
+Cruz Blanca,PROT312626,,"2,52",5.000,8,https://www.quvi.cl/plan/PROT312626
+Cruz Blanca,PROT313626,,"2,68",5.000,8,https://www.quvi.cl/plan/PROT313626
+Cruz Blanca,PROT314626,,"2,85",5.000,8,https://www.quvi.cl/plan/PROT314626
+Nueva Masvida,PS260601,,"1,25",8.000,9,https://www.quvi.cl/plan/PS260601
+Nueva Masvida,PS260602,,"1,28",8.000,9,https://www.quvi.cl/plan/PS260602
+Nueva Masvida,PS260603,,"1,32",8.000,11,https://www.quvi.cl/plan/PS260603
+Nueva Masvida,PS260604,,"1,37",8.000,11,https://www.quvi.cl/plan/PS260604
+Nueva Masvida,PS260605,,"1,43",8.000,11,https://www.quvi.cl/plan/PS260605
+Nueva Masvida,PS260606,,"1,53",8.000,11,https://www.quvi.cl/plan/PS260606
+Nueva Masvida,PS260607,,"1,58",8.000,11,https://www.quvi.cl/plan/PS260607
+Nueva Masvida,PS260608,,"1,65",8.000,13,https://www.quvi.cl/plan/PS260608
+Nueva Masvida,PS260609,,"1,69",8.000,15,https://www.quvi.cl/plan/PS260609
+Nueva Masvida,PS260610,,"1,75",8.000,15,https://www.quvi.cl/plan/PS260610
+Nueva Masvida,PS260611,,"1,82",8.000,15,https://www.quvi.cl/plan/PS260611
+Nueva Masvida,PS260612,,"1,89",8.000,15,https://www.quvi.cl/plan/PS260612
+Nueva Masvida,PS260613,,"1,96",8.000,16,https://www.quvi.cl/plan/PS260613
+Nueva Masvida,PS260614,,"2,02",8.000,16,https://www.quvi.cl/plan/PS260614
+Nueva Masvida,PS260615,,"2,10",8.000,16,https://www.quvi.cl/plan/PS260615
+Nueva Masvida,PS260616,,"2,18",8.000,16,https://www.quvi.cl/plan/PS260616
+Nueva Masvida,PS260617,,"2,25",8.000,16,https://www.quvi.cl/plan/PS260617
+Nueva Masvida,PS260618,,"2,32",8.000,18,https://www.quvi.cl/plan/PS260618
+Nueva Masvida,PS260619,,"2,39",8.000,18,https://www.quvi.cl/plan/PS260619
+Nueva Masvida,PS260620,,"2,46",8.000,18,https://www.quvi.cl/plan/PS260620
+Nueva Masvida,PS260621,,"2,54",8.000,18,https://www.quvi.cl/plan/PS260621
+Nueva Masvida,PS260622,,"2,60",8.000,18,https://www.quvi.cl/plan/PS260622
+Nueva Masvida,PS260623,,"2,67",8.000,18,https://www.quvi.cl/plan/PS260623
+Nueva Masvida,PS260624,,"2,74",8.000,18,https://www.quvi.cl/plan/PS260624
+Nueva Masvida,PS260625,,"2,81",8.000,18,https://www.quvi.cl/plan/PS260625
+Nueva Masvida,PS260626,,"2,90",8.000,18,https://www.quvi.cl/plan/PS260626
+Nueva Masvida,PS260627,,"2,98",8.000,18,https://www.quvi.cl/plan/PS260627
+Nueva Masvida,PS260628,,"3,07",8.000,18,https://www.quvi.cl/plan/PS260628
+Nueva Masvida,PS260629,,"3,13",8.000,18,https://www.quvi.cl/plan/PS260629
+Nueva Masvida,PS260630,,"3,19",8.000,18,https://www.quvi.cl/plan/PS260630
+Nueva Masvida,PS260631,,"3,28",8.000,18,https://www.quvi.cl/plan/PS260631
+Nueva Masvida,PS260632,,"3,35",8.000,18,https://www.quvi.cl/plan/PS260632
+Nueva Masvida,PS260633,,"3,41",8.000,18,https://www.quvi.cl/plan/PS260633
+Nueva Masvida,PS260634,,"3,49",8.000,18,https://www.quvi.cl/plan/PS260634
+Nueva Masvida,PS260635,,"3,58",8.000,18,https://www.quvi.cl/plan/PS260635
+Nueva Masvida,PS260636,,"3,67",8.000,18,https://www.quvi.cl/plan/PS260636
+Nueva Masvida,PS260637,,"3,75",8.000,18,https://www.quvi.cl/plan/PS260637
+Nueva Masvida,PS260638,,"3,84",8.000,15,https://www.quvi.cl/plan/PS260638
+Nueva Masvida,PS260639,,"3,94",8.000,15,https://www.quvi.cl/plan/PS260639
+Nueva Masvida,PS260640,,"4,03",8.000,15,https://www.quvi.cl/plan/PS260640
+Nueva Masvida,PS260641,,"4,11",8.000,15,https://www.quvi.cl/plan/PS260641
+Nueva Masvida,PS260642,,"4,20",8.000,15,https://www.quvi.cl/plan/PS260642
+Nueva Masvida,PS260643,,"4,28",8.000,15,https://www.quvi.cl/plan/PS260643
+Nueva Masvida,PS260644,,"4,35",8.000,15,https://www.quvi.cl/plan/PS260644
+Nueva Masvida,PS260645,,"4,43",8.000,15,https://www.quvi.cl/plan/PS260645
+Nueva Masvida,PS260646,,"4,51",8.000,15,https://www.quvi.cl/plan/PS260646
+Nueva Masvida,PS260647,,"4,60",8.000,15,https://www.quvi.cl/plan/PS260647
+Nueva Masvida,PS260648,,"4,70",8.000,15,https://www.quvi.cl/plan/PS260648
+Nueva Masvida,PS260649,,"4,80",8.000,15,https://www.quvi.cl/plan/PS260649
+Nueva Masvida,PS260650,,"4,91",8.000,15,https://www.quvi.cl/plan/PS260650
+Nueva Masvida,PS260651,,"5,00",8.000,15,https://www.quvi.cl/plan/PS260651
+Nueva Masvida,PS260652,,"5,10",8.000,15,https://www.quvi.cl/plan/PS260652
+Nueva Masvida,PS260653,,"5,20",8.000,15,https://www.quvi.cl/plan/PS260653
+Nueva Masvida,PS260654,,"5,30",8.000,15,https://www.quvi.cl/plan/PS260654
+Nueva Masvida,PS260655,,"5,40",8.000,15,https://www.quvi.cl/plan/PS260655
+Nueva Masvida,PS260656,,"5,51",8.000,15,https://www.quvi.cl/plan/PS260656
+Nueva Masvida,PS260657,,"5,60",8.000,15,https://www.quvi.cl/plan/PS260657
+Nueva Masvida,PS260658,,"5,70",8.000,15,https://www.quvi.cl/plan/PS260658
+Nueva Masvida,PS260659,,"5,80",8.000,15,https://www.quvi.cl/plan/PS260659
+Nueva Masvida,PS260660,,"5,91",8.000,15,https://www.quvi.cl/plan/PS260660
+Nueva Masvida,PS260661,,"6,00",8.000,15,https://www.quvi.cl/plan/PS260661
+Nueva Masvida,PS260662,,"6,10",8.000,15,https://www.quvi.cl/plan/PS260662
+Colmena,QP12610050,,"2,17",7.500,13,https://www.quvi.cl/plan/QP12610050
+Colmena,QP12610060,,"2,23",7.500,13,https://www.quvi.cl/plan/QP12610060
+Colmena,QP12610070,,"2,29",7.500,13,https://www.quvi.cl/plan/QP12610070
+Colmena,QP12610080,,"2,34",7.500,13,https://www.quvi.cl/plan/QP12610080
+Colmena,QP1264040,,"1,82",7.500,13,https://www.quvi.cl/plan/QP1264040
+Colmena,QP1264050,,"1,89",7.500,13,https://www.quvi.cl/plan/QP1264050
+Colmena,QP1264060,,"1,95",7.500,13,https://www.quvi.cl/plan/QP1264060
+Colmena,QP1264070,,"2,01",7.500,13,https://www.quvi.cl/plan/QP1264070
+Colmena,QP1264080,,"2,05",7.500,13,https://www.quvi.cl/plan/QP1264080
+Colmena,QP1265050,,"1,94",7.500,13,https://www.quvi.cl/plan/QP1265050
+Colmena,QP1265060,,"2,00",7.500,13,https://www.quvi.cl/plan/QP1265060
+Colmena,QP1265070,,"2,06",7.500,13,https://www.quvi.cl/plan/QP1265070
+Colmena,QP1265080,,"2,10",7.500,13,https://www.quvi.cl/plan/QP1265080
+Colmena,QP1266050,,"1,98",7.500,13,https://www.quvi.cl/plan/QP1266050
+Colmena,QP1266060,,"2,04",7.500,13,https://www.quvi.cl/plan/QP1266060
+Colmena,QP1266070,,"2,10",7.500,13,https://www.quvi.cl/plan/QP1266070
+Colmena,QP1266080,,"2,15",7.500,13,https://www.quvi.cl/plan/QP1266080
+Colmena,QP1267050,,"2,03",7.500,13,https://www.quvi.cl/plan/QP1267050
+Colmena,QP1267060,,"2,09",7.500,13,https://www.quvi.cl/plan/QP1267060
+Colmena,QP1267070,,"2,15",7.500,13,https://www.quvi.cl/plan/QP1267070
+Colmena,QP1267080,,"2,20",7.500,13,https://www.quvi.cl/plan/QP1267080
+Colmena,QP1268050,,"2,08",7.500,13,https://www.quvi.cl/plan/QP1268050
+Colmena,QP1268060,,"2,14",7.500,13,https://www.quvi.cl/plan/QP1268060
+Colmena,QP1268070,,"2,20",7.500,13,https://www.quvi.cl/plan/QP1268070
+Colmena,QP1268080,,"2,25",7.500,13,https://www.quvi.cl/plan/QP1268080
+Colmena,QP1269050,,"2,13",7.500,13,https://www.quvi.cl/plan/QP1269050
+Colmena,QP1269060,,"2,19",7.500,13,https://www.quvi.cl/plan/QP1269060
+Colmena,QP1269070,,"2,25",7.500,13,https://www.quvi.cl/plan/QP1269070
+Colmena,QP1269080,,"2,29",7.500,13,https://www.quvi.cl/plan/QP1269080
+Esencial,S100800625,,"3,95",6.500,12,https://www.quvi.cl/plan/S100800625
+Esencial,S100900625,,"4,50",6.500,12,https://www.quvi.cl/plan/S100900625
+Esencial,S70500625,,"2,65",6.500,12,https://www.quvi.cl/plan/S70500625
+Esencial,S70600625,,"2,86",6.500,12,https://www.quvi.cl/plan/S70600625
+Esencial,S80700625,,"3,22",6.500,12,https://www.quvi.cl/plan/S80700625
+Esencial,S90800625,,"3,58",6.500,12,https://www.quvi.cl/plan/S90800625
+Esencial,S90900625,,"3,77",6.500,12,https://www.quvi.cl/plan/S90900625
+Colmena,SL22610050,,"1,82",6.500,11,https://www.quvi.cl/plan/SL22610050
+Colmena,SL22610060,,"1,94",6.500,11,https://www.quvi.cl/plan/SL22610060
+Colmena,SL22610070,,"2,03",6.500,11,https://www.quvi.cl/plan/SL22610070
+Colmena,SL22610080,,"2,12",6.500,11,https://www.quvi.cl/plan/SL22610080
+Colmena,SL2264040,,"1,20",6.500,11,https://www.quvi.cl/plan/SL2264040
+Colmena,SL2264045,,"1,22",6.500,11,https://www.quvi.cl/plan/SL2264045
+Colmena,SL2264050,,"1,24",6.500,11,https://www.quvi.cl/plan/SL2264050
+Colmena,SL2264540,,"1,22",6.500,11,https://www.quvi.cl/plan/SL2264540
+Colmena,SL2264545,,"1,24",6.500,11,https://www.quvi.cl/plan/SL2264545
+Colmena,SL2264550,,"1,26",6.500,11,https://www.quvi.cl/plan/SL2264550
+Colmena,SL2265040,,"1,23",6.500,11,https://www.quvi.cl/plan/SL2265040
+Colmena,SL2265045,,"1,25",6.500,11,https://www.quvi.cl/plan/SL2265045
+Colmena,SL2265050,,"1,30",6.500,11,https://www.quvi.cl/plan/SL2265050
+Colmena,SL2265060,,"1,38",6.500,11,https://www.quvi.cl/plan/SL2265060
+Colmena,SL2265070,,"1,48",6.500,11,https://www.quvi.cl/plan/SL2265070
+Colmena,SL2265080,,"1,53",6.500,11,https://www.quvi.cl/plan/SL2265080
+Colmena,SL2266050,,"1,38",6.500,11,https://www.quvi.cl/plan/SL2266050
+Colmena,SL2266060,,"1,47",6.500,11,https://www.quvi.cl/plan/SL2266060
+Colmena,SL2266070,,"1,55",6.500,11,https://www.quvi.cl/plan/SL2266070
+Colmena,SL2266080,,"1,60",6.500,11,https://www.quvi.cl/plan/SL2266080
+Colmena,SL2267050,,"1,45",6.500,11,https://www.quvi.cl/plan/SL2267050
+Colmena,SL2267060,,"1,54",6.500,11,https://www.quvi.cl/plan/SL2267060
+Colmena,SL2267070,,"1,62",6.500,11,https://www.quvi.cl/plan/SL2267070
+Colmena,SL2267080,,"1,68",6.500,11,https://www.quvi.cl/plan/SL2267080
+Colmena,SL2268050,,"1,52",6.500,11,https://www.quvi.cl/plan/SL2268050
+Colmena,SL2268060,,"1,61",6.500,11,https://www.quvi.cl/plan/SL2268060
+Colmena,SL2268070,,"1,93",6.500,11,https://www.quvi.cl/plan/SL2268070
+Colmena,SL2268080,,"1,98",6.500,11,https://www.quvi.cl/plan/SL2268080
+Colmena,SL2269050,,"1,76",6.500,11,https://www.quvi.cl/plan/SL2269050
+Colmena,SL2269060,,"1,88",6.500,11,https://www.quvi.cl/plan/SL2269060
+Colmena,SL2269070,,"1,98",6.500,11,https://www.quvi.cl/plan/SL2269070
+Colmena,SL2269080,,"2,03",6.500,11,https://www.quvi.cl/plan/SL2269080
+Esencial,SL70500925,,"2,36",12.000,16,https://www.quvi.cl/plan/SL70500925
+Esencial,SL80700725,,"2,62",7.000,16,https://www.quvi.cl/plan/SL80700725
+Esencial,SL90800925,,"2,98",7.000,16,https://www.quvi.cl/plan/SL90800925
+Cruz Blanca,SLRO101526,,"3,78",8.000,16,https://www.quvi.cl/plan/SLRO101526
+Cruz Blanca,SLRO102526,,"3,92",8.000,16,https://www.quvi.cl/plan/SLRO102526
+Cruz Blanca,SLRO103526,,"4,02",8.000,16,https://www.quvi.cl/plan/SLRO103526
+Cruz Blanca,SLRO104526,,"3,95",8.000,16,https://www.quvi.cl/plan/SLRO104526
+Cruz Blanca,SLRO105526,,"4,26",8.000,16,https://www.quvi.cl/plan/SLRO105526
+Cruz Blanca,SLRO106526,,"4,39",8.000,16,https://www.quvi.cl/plan/SLRO106526
+Cruz Blanca,SLRO107526,,"4,37",8.000,16,https://www.quvi.cl/plan/SLRO107526
+Cruz Blanca,SLRO108526,,"4,53",8.000,16,https://www.quvi.cl/plan/SLRO108526
+Cruz Blanca,SLRO109526,,"4,66",8.000,16,https://www.quvi.cl/plan/SLRO109526
+Cruz Blanca,SLRO110526,,"4,71",8.000,16,https://www.quvi.cl/plan/SLRO110526
+Cruz Blanca,SLRO111526,,"4,88",8.000,16,https://www.quvi.cl/plan/SLRO111526
+Cruz Blanca,SLRO112526,,"5,02",8.000,16,https://www.quvi.cl/plan/SLRO112526
+Cruz Blanca,SLRO201526,,"4,98",8.000,17,https://www.quvi.cl/plan/SLRO201526
+Cruz Blanca,SLRO202526,,"5,34",8.000,17,https://www.quvi.cl/plan/SLRO202526
+Cruz Blanca,SLRO203526,,"5,67",8.000,17,https://www.quvi.cl/plan/SLRO203526
+Cruz Blanca,SLRO204526,,"5,57",8.000,17,https://www.quvi.cl/plan/SLRO204526
+Cruz Blanca,SLRO205526,,"5,78",8.000,17,https://www.quvi.cl/plan/SLRO205526
+Cruz Blanca,SLRO206526,,"5,94",8.000,17,https://www.quvi.cl/plan/SLRO206526
+Cruz Blanca,SLRO207526,,"6,27",8.000,17,https://www.quvi.cl/plan/SLRO207526
+Cruz Blanca,SLRO208526,,"6,49",8.000,17,https://www.quvi.cl/plan/SLRO208526
+Cruz Blanca,SLRO209526,,"6,68",8.000,17,https://www.quvi.cl/plan/SLRO209526
+Cruz Blanca,SLRO210526,,"6,27",8.000,17,https://www.quvi.cl/plan/SLRO210526
+Cruz Blanca,SLRO211526,,"6,49",8.000,17,https://www.quvi.cl/plan/SLRO211526
+Cruz Blanca,SLRO212526,,"7,23",8.000,17,https://www.quvi.cl/plan/SLRO212526
+Cruz Blanca,SLRO213526,,"6,89",8.000,17,https://www.quvi.cl/plan/SLRO213526
+Cruz Blanca,SLRO214526,,"7,14",8.000,17,https://www.quvi.cl/plan/SLRO214526
+Cruz Blanca,SLRO215526,,"7,35",8.000,17,https://www.quvi.cl/plan/SLRO215526
+Cruz Blanca,SLRO216526,,"7,41",8.000,17,https://www.quvi.cl/plan/SLRO216526
+Cruz Blanca,SLRO217526,,"7,69",8.000,17,https://www.quvi.cl/plan/SLRO217526
+Cruz Blanca,SLRO218526,,"7,91",8.000,17,https://www.quvi.cl/plan/SLRO218526
+Esencial,SM50400626,,"1,98",8.500,35,https://www.quvi.cl/plan/SM50400626
+Esencial,SM50500626,,"2,18",8.500,35,https://www.quvi.cl/plan/SM50500626
+Esencial,SM50600626,,"2,37",8.500,35,https://www.quvi.cl/plan/SM50600626
+Esencial,SM50700626,,"2,60",8.500,35,https://www.quvi.cl/plan/SM50700626
+Esencial,SM60400626,,"2,06",8.500,35,https://www.quvi.cl/plan/SM60400626
+Esencial,SM60500626,,"2,25",8.500,35,https://www.quvi.cl/plan/SM60500626
+Esencial,SM60600626,,"2,44",8.500,35,https://www.quvi.cl/plan/SM60600626
+Esencial,SM60700626,,"2,68",8.500,35,https://www.quvi.cl/plan/SM60700626
+Esencial,SM70400626,,"2,13",8.500,35,https://www.quvi.cl/plan/SM70400626
+Esencial,SM70500626,,"2,32",8.500,35,https://www.quvi.cl/plan/SM70500626
+Esencial,SM70700626,,"2,73",8.500,38,https://www.quvi.cl/plan/SM70700626
+Esencial,SM80600626,,"2,75",8.500,38,https://www.quvi.cl/plan/SM80600626
+Esencial,SM80700626,,"2,80",8.500,38,https://www.quvi.cl/plan/SM80700626
+Esencial,SM80800626,,"2,99",8.500,38,https://www.quvi.cl/plan/SM80800626
+Esencial,SM90600626,,"3,05",8.500,38,https://www.quvi.cl/plan/SM90600626
+Esencial,SM90700626,,"3,15",8.500,38,https://www.quvi.cl/plan/SM90700626
+Esencial,SM90800626,,"3,30",8.500,38,https://www.quvi.cl/plan/SM90800626
+Cruz Blanca,SOLN101526,,"3,07",8.000,13,https://www.quvi.cl/plan/SOLN101526
+Cruz Blanca,SOLN102526,,"3,26",8.000,13,https://www.quvi.cl/plan/SOLN102526
+Cruz Blanca,SOLN103526,,"3,38",8.000,13,https://www.quvi.cl/plan/SOLN103526
+Cruz Blanca,SOLN104526,,"3,37",8.000,13,https://www.quvi.cl/plan/SOLN104526
+Cruz Blanca,SOLN105526,,"3,49",8.000,13,https://www.quvi.cl/plan/SOLN105526
+Cruz Blanca,SOLN106526,,"3,58",8.000,13,https://www.quvi.cl/plan/SOLN106526
+Cruz Blanca,SOLN107526,,"3,69",8.000,13,https://www.quvi.cl/plan/SOLN107526
+Cruz Blanca,SOLN108526,,"3,81",8.000,13,https://www.quvi.cl/plan/SOLN108526
+Cruz Blanca,SOLN109526,,"4,00",8.000,13,https://www.quvi.cl/plan/SOLN109526
+Cruz Blanca,SOLN110526,,"3,95",8.000,13,https://www.quvi.cl/plan/SOLN110526
+Cruz Blanca,SOLN111526,,"4,08",8.000,13,https://www.quvi.cl/plan/SOLN111526
+Cruz Blanca,SOLN112526,,"4,19",8.000,13,https://www.quvi.cl/plan/SOLN112526
+Cruz Blanca,SOLN201526,,"3,97",8.000,14,https://www.quvi.cl/plan/SOLN201526
+Cruz Blanca,SOLN202526,,"4,13",8.000,14,https://www.quvi.cl/plan/SOLN202526
+Cruz Blanca,SOLN203526,,"4,45",8.000,14,https://www.quvi.cl/plan/SOLN203526
+Cruz Blanca,SOLN204526,,"4,05",8.000,14,https://www.quvi.cl/plan/SOLN204526
+Cruz Blanca,SOLN205526,,"4,21",8.000,14,https://www.quvi.cl/plan/SOLN205526
+Cruz Blanca,SOLN206526,,"4,58",8.000,14,https://www.quvi.cl/plan/SOLN206526
+Cruz Blanca,SOLN207526,,"4,33",8.000,14,https://www.quvi.cl/plan/SOLN207526
+Cruz Blanca,SOLN208526,,"4,82",8.000,14,https://www.quvi.cl/plan/SOLN208526
+Cruz Blanca,SOLN209526,,"5,00",8.000,14,https://www.quvi.cl/plan/SOLN209526
+Cruz Blanca,SOLN210526,,"5,22",8.000,14,https://www.quvi.cl/plan/SOLN210526
+Cruz Blanca,SOLN211526,,"5,41",8.000,14,https://www.quvi.cl/plan/SOLN211526
+Cruz Blanca,SOLN212526,,"5,61",8.000,14,https://www.quvi.cl/plan/SOLN212526
+Cruz Blanca,SOLN213526,,"5,31",8.000,14,https://www.quvi.cl/plan/SOLN213526
+Cruz Blanca,SOLN215526,,"5,70",8.000,14,https://www.quvi.cl/plan/SOLN215526
+Cruz Blanca,SOLR101526,,"3,55",8.000,33,https://www.quvi.cl/plan/SOLR101526
+Cruz Blanca,SOLR102526,,"3,67",8.000,33,https://www.quvi.cl/plan/SOLR102526
+Cruz Blanca,SOLR103526,,"3,78",8.000,33,https://www.quvi.cl/plan/SOLR103526
+Cruz Blanca,SOLR104526,,"3,71",8.000,33,https://www.quvi.cl/plan/SOLR104526
+Cruz Blanca,SOLR105526,,"4,01",8.000,33,https://www.quvi.cl/plan/SOLR105526
+Cruz Blanca,SOLR106526,,"4,12",8.000,33,https://www.quvi.cl/plan/SOLR106526
+Cruz Blanca,SOLR107526,,"4,18",8.000,33,https://www.quvi.cl/plan/SOLR107526
+Cruz Blanca,SOLR108526,,"4,26",8.000,33,https://www.quvi.cl/plan/SOLR108526
+Cruz Blanca,SOLR109526,,"4,38",8.000,33,https://www.quvi.cl/plan/SOLR109526
+Cruz Blanca,SOLR110526,,"4,49",8.000,33,https://www.quvi.cl/plan/SOLR110526
+Cruz Blanca,SOLR111526,,"4,60",8.000,33,https://www.quvi.cl/plan/SOLR111526
+Cruz Blanca,SOLR202526,,"4,95",8.000,34,https://www.quvi.cl/plan/SOLR202526
+Cruz Blanca,SOLR203526,,"5,27",8.000,34,https://www.quvi.cl/plan/SOLR203526
+Cruz Blanca,SOLR204526,,"5,25",8.000,34,https://www.quvi.cl/plan/SOLR204526
+Cruz Blanca,SOLR205526,,"5,78",8.000,34,https://www.quvi.cl/plan/SOLR205526
+Cruz Blanca,SOLR206526,,"5,95",8.000,34,https://www.quvi.cl/plan/SOLR206526
+Cruz Blanca,SOLR207526,,"5,92",8.000,34,https://www.quvi.cl/plan/SOLR207526
+Cruz Blanca,SOLR208526,,"6,13",8.000,34,https://www.quvi.cl/plan/SOLR208526
+Cruz Blanca,SOLR209526,,"6,31",8.000,34,https://www.quvi.cl/plan/SOLR209526
+Cruz Blanca,SOLR210526,,"5,92",8.000,34,https://www.quvi.cl/plan/SOLR210526
+Cruz Blanca,SOLR211526,,"6,13",8.000,34,https://www.quvi.cl/plan/SOLR211526
+Cruz Blanca,SOLR212526,,"6,83",8.000,34,https://www.quvi.cl/plan/SOLR212526
+Cruz Blanca,SOLR213526,,"6,51",8.000,34,https://www.quvi.cl/plan/SOLR213526
+Cruz Blanca,SOLR214526,,"6,75",8.000,34,https://www.quvi.cl/plan/SOLR214526
+Cruz Blanca,SOLR215526,,"6,94",8.000,34,https://www.quvi.cl/plan/SOLR215526
+Cruz Blanca,SOLR216526,,"7,01",8.000,34,https://www.quvi.cl/plan/SOLR216526
+Cruz Blanca,SOLR217526,,"7,27",8.000,34,https://www.quvi.cl/plan/SOLR217526
+Cruz Blanca,SOLR218526,,"7,48",8.000,34,https://www.quvi.cl/plan/SOLR218526
+Colmena,SP12610050,,"2,40",7.500,13,https://www.quvi.cl/plan/SP12610050
+Colmena,SP1261005A,,"3,01",7.500,14,https://www.quvi.cl/plan/SP1261005A
+Colmena,SP1261005B,,"3,34",7.500,14,https://www.quvi.cl/plan/SP1261005B
+Colmena,SP1261005C,,"3,64",7.500,14,https://www.quvi.cl/plan/SP1261005C
+Colmena,SP1261005D,,"3,99",7.500,14,https://www.quvi.cl/plan/SP1261005D
+Colmena,SP12610060,,"2,52",7.500,13,https://www.quvi.cl/plan/SP12610060
+Colmena,SP1261006A,,"3,14",7.500,14,https://www.quvi.cl/plan/SP1261006A
+Colmena,SP1261006B,,"3,49",7.500,14,https://www.quvi.cl/plan/SP1261006B
+Colmena,SP1261006C,,"3,84",7.500,14,https://www.quvi.cl/plan/SP1261006C
+Colmena,SP1261006D,,"4,19",7.500,14,https://www.quvi.cl/plan/SP1261006D
+Colmena,SP12610070,,"2,64",7.500,13,https://www.quvi.cl/plan/SP12610070
+Colmena,SP1261007A,,"3,27",7.500,14,https://www.quvi.cl/plan/SP1261007A
+Colmena,SP1261007B,,"3,62",7.500,14,https://www.quvi.cl/plan/SP1261007B
+Colmena,SP1261007C,,"3,97",7.500,14,https://www.quvi.cl/plan/SP1261007C
+Colmena,SP1261007D,,"4,32",7.500,14,https://www.quvi.cl/plan/SP1261007D
+Colmena,SP12610080,,"2,74",7.500,13,https://www.quvi.cl/plan/SP12610080
+Colmena,SP1261008A,,"3,38",7.500,14,https://www.quvi.cl/plan/SP1261008A
+Colmena,SP1261008B,,"3,78",7.500,14,https://www.quvi.cl/plan/SP1261008B
+Colmena,SP1261008C,,"4,18",7.500,14,https://www.quvi.cl/plan/SP1261008C
+Colmena,SP1261008D,,"4,54",7.500,14,https://www.quvi.cl/plan/SP1261008D
+Colmena,SP1264040,,"1,67",7.500,13,https://www.quvi.cl/plan/SP1264040
+Colmena,SP1264040A,,"1,61",7.500,13,https://www.quvi.cl/plan/SP1264040A
+Colmena,SP1264040B,,"1,63",7.500,13,https://www.quvi.cl/plan/SP1264040B
+Colmena,SP1264050,,"1,75",7.500,13,https://www.quvi.cl/plan/SP1264050
+Colmena,SP1264060,,"1,84",7.500,13,https://www.quvi.cl/plan/SP1264060
+Colmena,SP1264070,,"1,92",7.500,13,https://www.quvi.cl/plan/SP1264070
+Colmena,SP1264080,,"1,98",7.500,13,https://www.quvi.cl/plan/SP1264080
+Colmena,SP1265050,,"1,97",7.500,13,https://www.quvi.cl/plan/SP1265050
+Colmena,SP1265060,,"2,09",7.500,13,https://www.quvi.cl/plan/SP1265060
+Colmena,SP1265070,,"2,20",7.500,13,https://www.quvi.cl/plan/SP1265070
+Colmena,SP1265080,,"2,29",7.500,13,https://www.quvi.cl/plan/SP1265080
+Colmena,SP1266050,,"2,07",7.500,13,https://www.quvi.cl/plan/SP1266050
+Colmena,SP1266060,,"2,19",7.500,13,https://www.quvi.cl/plan/SP1266060
+Colmena,SP1266070,,"2,30",7.500,13,https://www.quvi.cl/plan/SP1266070
+Colmena,SP1266080,,"2,39",7.500,13,https://www.quvi.cl/plan/SP1266080
+Colmena,SP1267050,,"2,16",7.500,13,https://www.quvi.cl/plan/SP1267050
+Colmena,SP1267060,,"2,29",7.500,13,https://www.quvi.cl/plan/SP1267060
+Colmena,SP1267070,,"2,40",7.500,13,https://www.quvi.cl/plan/SP1267070
+Colmena,SP1267080,,"2,49",7.500,13,https://www.quvi.cl/plan/SP1267080
+Colmena,SP1268050,,"2,26",7.500,13,https://www.quvi.cl/plan/SP1268050
+Colmena,SP1268060,,"2,39",7.500,13,https://www.quvi.cl/plan/SP1268060
+Colmena,SP1268070,,"2,50",7.500,13,https://www.quvi.cl/plan/SP1268070
+Colmena,SP1268080,,"2,59",7.500,13,https://www.quvi.cl/plan/SP1268080
+Colmena,SP1269050,,"2,35",7.500,13,https://www.quvi.cl/plan/SP1269050
+Colmena,SP1269060,,"2,48",7.500,13,https://www.quvi.cl/plan/SP1269060
+Colmena,SP1269070,,"2,60",7.500,13,https://www.quvi.cl/plan/SP1269070
+Colmena,SP1269080,,"2,70",7.500,13,https://www.quvi.cl/plan/SP1269080
+Colmena,ST22610050,,"1,47",5.500,8,https://www.quvi.cl/plan/ST22610050
+Colmena,ST22610060,,"1,51",5.500,8,https://www.quvi.cl/plan/ST22610060
+Colmena,ST22610070,,"1,54",5.500,8,https://www.quvi.cl/plan/ST22610070
+Colmena,ST22610080,,"1,57",5.500,8,https://www.quvi.cl/plan/ST22610080
+Colmena,ST2264050,,"1,18",5.500,8,https://www.quvi.cl/plan/ST2264050
+Colmena,ST2264060,,"1,22",5.500,8,https://www.quvi.cl/plan/ST2264060
+Colmena,ST2264070,,"1,25",5.500,8,https://www.quvi.cl/plan/ST2264070
+Colmena,ST2264080,,"1,28",5.500,8,https://www.quvi.cl/plan/ST2264080
+Colmena,ST2265050,,"1,23",5.500,8,https://www.quvi.cl/plan/ST2265050
+Colmena,ST2265060,,"1,27",5.500,8,https://www.quvi.cl/plan/ST2265060
+Colmena,ST2265070,,"1,31",5.500,8,https://www.quvi.cl/plan/ST2265070
+Colmena,ST2265080,,"1,34",5.500,8,https://www.quvi.cl/plan/ST2265080
+Colmena,ST2266050,,"1,29",5.500,8,https://www.quvi.cl/plan/ST2266050
+Colmena,ST2266060,,"1,32",5.500,8,https://www.quvi.cl/plan/ST2266060
+Colmena,ST2266070,,"1,36",5.500,8,https://www.quvi.cl/plan/ST2266070
+Colmena,ST2266080,,"1,39",5.500,8,https://www.quvi.cl/plan/ST2266080
+Colmena,ST2267050,,"1,34",5.500,8,https://www.quvi.cl/plan/ST2267050
+Colmena,ST2267060,,"1,37",5.500,8,https://www.quvi.cl/plan/ST2267060
+Colmena,ST2267070,,"1,41",5.500,8,https://www.quvi.cl/plan/ST2267070
+Colmena,ST2267080,,"1,44",5.500,8,https://www.quvi.cl/plan/ST2267080
+Colmena,ST2268060,,"1,42",5.500,8,https://www.quvi.cl/plan/ST2268060
+Colmena,ST2268070,,"1,46",5.500,8,https://www.quvi.cl/plan/ST2268070
+Colmena,ST2268080,,"1,49",5.500,8,https://www.quvi.cl/plan/ST2268080
+Colmena,ST2269060,,"1,47",5.500,8,https://www.quvi.cl/plan/ST2269060
+Colmena,ST2269070,,"1,51",5.500,8,https://www.quvi.cl/plan/ST2269070
+Colmena,ST2269080,,"1,54",5.500,8,https://www.quvi.cl/plan/ST2269080
+Vida Tres,V5PLH2411A0,,"3,32",7.500,10,https://www.quvi.cl/plan/V5PLH2411A0
+Vida Tres,V5PLH2411C2,,"4,35",7.500,13,https://www.quvi.cl/plan/V5PLH2411C2
+Vida Tres,VCPLU2411A1,,"3,47",7.800,13,https://www.quvi.cl/plan/VCPLU2411A1
+Vida Tres,VCPLU2411B0,,"3,09",7.500,14,https://www.quvi.cl/plan/VCPLU2411B0
+Vida Tres,VCPLU2411B1,,"3,70",7.500,14,https://www.quvi.cl/plan/VCPLU2411B1
+Vida Tres,VCPLU2411B2,,"3,95",7.500,14,https://www.quvi.cl/plan/VCPLU2411B2
+Vida Tres,VCPLU2411C0,,"3,47",7.500,14,https://www.quvi.cl/plan/VCPLU2411C0
+Vida Tres,VCPLU2411C1,,"4,07",7.500,14,https://www.quvi.cl/plan/VCPLU2411C1
+Vida Tres,VCPLU2411C2,,"4,33",7.500,14,https://www.quvi.cl/plan/VCPLU2411C2
+Vida Tres,VCPLU2411C3,,"4,49",7.500,14,https://www.quvi.cl/plan/VCPLU2411C3
+Vida Tres,VCPLU2411C4,,"4,73",7.500,14,https://www.quvi.cl/plan/VCPLU2411C4
+Vida Tres,VCPLU2411C5,,"4,96",11.200,14,https://www.quvi.cl/plan/VCPLU2411C5
+Vida Tres,VNPLU2411A0,,"2,82",7.000,10,https://www.quvi.cl/plan/VNPLU2411A0
+Vida Tres,VNPLU2411A1,,"3,22",7.500,12,https://www.quvi.cl/plan/VNPLU2411A1
+Vida Tres,VNPLU2411B0,,"3,02",7.500,11,https://www.quvi.cl/plan/VNPLU2411B0
+Vida Tres,VNPLU2411B1,,"3,49",7.500,13,https://www.quvi.cl/plan/VNPLU2411B1
+Vida Tres,VNPLU2411B2,,"3,83",7.500,13,https://www.quvi.cl/plan/VNPLU2411B2
+Vida Tres,VNPLU2411B4,,"4,51",7.500,13,https://www.quvi.cl/plan/VNPLU2411B4
+Vida Tres,VNPLU2411C1,,"3,80",7.500,13,https://www.quvi.cl/plan/VNPLU2411C1
+Vida Tres,VNPLU2411C3,,"4,43",7.500,11,https://www.quvi.cl/plan/VNPLU2411C3
+Vida Tres,VNPLU2411C5,,"4,96",7.500,11,https://www.quvi.cl/plan/VNPLU2411C5
+Vida Tres,VPCB2602108,,"3,47",7.000,21,https://www.quvi.cl/plan/VPCB2602108
+Vida Tres,VPCB260220,,"1,50",7.000,12,https://www.quvi.cl/plan/VPCB260220
+Vida Tres,VPCB260222,,"1,65",7.000,13,https://www.quvi.cl/plan/VPCB260222
+Vida Tres,VPCB260224,,"1,85",7.000,15,https://www.quvi.cl/plan/VPCB260224
+Vida Tres,VPCB260225,,"2,04",7.000,16,https://www.quvi.cl/plan/VPCB260225
+Vida Tres,VPCB260226,,"2,22",7.000,19,https://www.quvi.cl/plan/VPCB260226
+Vida Tres,VPCB260242,,"1,78",7.000,17,https://www.quvi.cl/plan/VPCB260242
+Vida Tres,VPCB260244,,"1,97",7.000,17,https://www.quvi.cl/plan/VPCB260244
+Vida Tres,VPCB260245,,"2,16",7.000,17,https://www.quvi.cl/plan/VPCB260245
+Vida Tres,VPCB260246,,"2,36",7.000,21,https://www.quvi.cl/plan/VPCB260246
+Vida Tres,VPCB260255,,"2,31",7.000,17,https://www.quvi.cl/plan/VPCB260255
+Vida Tres,VPCB260256,,"2,52",7.000,21,https://www.quvi.cl/plan/VPCB260256
+Vida Tres,VPCB260267,,"2,93",7.000,21,https://www.quvi.cl/plan/VPCB260267
+Vida Tres,VPCB260268,,"3,22",7.000,21,https://www.quvi.cl/plan/VPCB260268
+Vida Tres,VPCB2602810,,"3,56",7.000,21,https://www.quvi.cl/plan/VPCB2602810
+Vida Tres,VPCB260287,,"3,05",7.000,21,https://www.quvi.cl/plan/VPCB260287
+Vida Tres,VPCB260288,,"3,34",7.000,21,https://www.quvi.cl/plan/VPCB260288
+Vida Tres,VPCF2605108,,"2,67",7.000,21,https://www.quvi.cl/plan/VPCF2605108
+Vida Tres,VPCF26051210,,"3,24",7.000,21,https://www.quvi.cl/plan/VPCF26051210
+Vida Tres,VPCF260544,,"1,40",7.000,13,https://www.quvi.cl/plan/VPCF260544
+Vida Tres,VPCF260545,,"1,56",7.000,14,https://www.quvi.cl/plan/VPCF260545
+Vida Tres,VPCF260546,,"1,77",7.000,15,https://www.quvi.cl/plan/VPCF260546
+Vida Tres,VPCF260555,,"1,67",7.000,14,https://www.quvi.cl/plan/VPCF260555
+Vida Tres,VPCF260556,,"1,88",7.000,15,https://www.quvi.cl/plan/VPCF260556
+Vida Tres,VPCF260566,,"1,91",7.000,17,https://www.quvi.cl/plan/VPCF260566
+Vida Tres,VPCF260567,,"2,11",7.000,17,https://www.quvi.cl/plan/VPCF260567
+Vida Tres,VPCF260568,,"2,27",7.000,21,https://www.quvi.cl/plan/VPCF260568
+Vida Tres,VPCF2605810,,"2,91",7.000,21,https://www.quvi.cl/plan/VPCF2605810
+Vida Tres,VPCF2605812,,"2,93",7.000,21,https://www.quvi.cl/plan/VPCF2605812
+Vida Tres,VPCF260587,,"2,34",7.000,17,https://www.quvi.cl/plan/VPCF260587
+Vida Tres,VPCF260588,,"2,51",7.000,21,https://www.quvi.cl/plan/VPCF260588
+Vida Tres,VPG260444,,"1,55",7.000,13,https://www.quvi.cl/plan/VPG260444
+Vida Tres,VPG260445,,"1,62",7.000,13,https://www.quvi.cl/plan/VPG260445
+Vida Tres,VPG260455,,"1,70",7.000,13,https://www.quvi.cl/plan/VPG260455
+Vida Tres,VPG260456,,"1,83",7.000,13,https://www.quvi.cl/plan/VPG260456
+Vida Tres,VPG260457,,"2,08",7.000,13,https://www.quvi.cl/plan/VPG260457
+Vida Tres,VPG260466,,"2,00",7.000,13,https://www.quvi.cl/plan/VPG260466
+Vida Tres,VPG260467,,"2,25",7.000,13,https://www.quvi.cl/plan/VPG260467
+Vida Tres,VPG260468,,"2,54",7.000,13,https://www.quvi.cl/plan/VPG260468
+Vida Tres,VPG260477,,"2,40",7.000,13,https://www.quvi.cl/plan/VPG260477
+Vida Tres,VPG260478,,"2,70",7.000,13,https://www.quvi.cl/plan/VPG260478
+Vida Tres,VPG260502,,"1,33",7.000,8,https://www.quvi.cl/plan/VPG260502
+Vida Tres,VPG260504,,"1,41",7.000,11,https://www.quvi.cl/plan/VPG260504
+Vida Tres,VPG260505,,"1,45",7.000,11,https://www.quvi.cl/plan/VPG260505
+Vida Tres,VPG260506,,"1,48",7.000,11,https://www.quvi.cl/plan/VPG260506
+Vida Tres,VPG260522,,"1,37",7.000,8,https://www.quvi.cl/plan/VPG260522
+Vida Tres,VPG260524,,"1,47",7.000,11,https://www.quvi.cl/plan/VPG260524
+Vida Tres,VPG260525,,"1,53",7.000,11,https://www.quvi.cl/plan/VPG260525
+Vida Tres,VPG260526,,"1,58",7.000,11,https://www.quvi.cl/plan/VPG260526
+Vida Tres,VPG260527,,"1,84",7.000,11,https://www.quvi.cl/plan/VPG260527
+Vida Tres,VPG260546,,"1,72",7.100,13,https://www.quvi.cl/plan/VPG260546
+Vida Tres,VPG260547,,"1,88",7.000,13,https://www.quvi.cl/plan/VPG260547
+Vida Tres,VPG260558,,"2,30",7.000,13,https://www.quvi.cl/plan/VPG260558
+Vida Tres,VPG2605610,,"3,22",7.000,13,https://www.quvi.cl/plan/VPG2605610
+Vida Tres,VPG260569,,"2,88",7.000,13,https://www.quvi.cl/plan/VPG260569
+Vida Tres,VPG2605710,,"3,42",7.000,13,https://www.quvi.cl/plan/VPG2605710
+Vida Tres,VPG260579,,"3,03",7.000,13,https://www.quvi.cl/plan/VPG260579
+Vida Tres,VPG2605810,,"3,82",7.000,13,https://www.quvi.cl/plan/VPG2605810
+Vida Tres,VPG260589,,"3,36",7.000,13,https://www.quvi.cl/plan/VPG260589
+Vida Tres,VPG260700,,"1,35",7.100,6,https://www.quvi.cl/plan/VPG260700
+Vida Tres,VPG260702,,"1,42",7.100,8,https://www.quvi.cl/plan/VPG260702
+Vida Tres,VPG260704,,"1,48",7.100,11,https://www.quvi.cl/plan/VPG260704
+Vida Tres,VPG260705,,"1,56",7.100,11,https://www.quvi.cl/plan/VPG260705
+Vida Tres,VPG260706,,"1,63",7.100,11,https://www.quvi.cl/plan/VPG260706
+Vida Tres,VPG260722,,"1,47",7.100,8,https://www.quvi.cl/plan/VPG260722
+Vida Tres,VPG260724,,"1,54",7.100,11,https://www.quvi.cl/plan/VPG260724
+Vida Tres,VPG260725,,"1,63",7.100,11,https://www.quvi.cl/plan/VPG260725
+Vida Tres,VPG260726,,"1,71",7.100,11,https://www.quvi.cl/plan/VPG260726
+Vida Tres,VPG260744,,"1,63",7.100,13,https://www.quvi.cl/plan/VPG260744
+Vida Tres,VPG260745,,"1,72",7.100,13,https://www.quvi.cl/plan/VPG260745
+Vida Tres,VPG260746,,"1,81",7.200,13,https://www.quvi.cl/plan/VPG260746
+Vida Tres,VPG260747,,"1,91",7.100,13,https://www.quvi.cl/plan/VPG260747
+Vida Tres,VPG260755,,"1,79",7.100,13,https://www.quvi.cl/plan/VPG260755
+Vida Tres,VPG260756,,"1,92",7.100,13,https://www.quvi.cl/plan/VPG260756
+Vida Tres,VPLPA2603010,,"2,22",7.000,12,https://www.quvi.cl/plan/VPLPA2603010
+Vida Tres,VPLPA260306,,"1,62",7.000,12,https://www.quvi.cl/plan/VPLPA260306
+Vida Tres,VPLPB250611,,"1,83",7.000,15,https://www.quvi.cl/plan/VPLPB250611
+Vida Tres,VPNB260222,,"1,51",7.000,12,https://www.quvi.cl/plan/VPNB260222
+Vida Tres,VPNB260224,,"1,69",7.000,13,https://www.quvi.cl/plan/VPNB260224
+Vida Tres,VPNB260225,,"1,86",7.000,14,https://www.quvi.cl/plan/VPNB260225
+Vida Tres,VPNB260242,,"1,61",7.000,15,https://www.quvi.cl/plan/VPNB260242
+Vida Tres,VPNB260244,,"1,79",7.000,15,https://www.quvi.cl/plan/VPNB260244
+Vida Tres,VPNB260245,,"1,96",7.000,15,https://www.quvi.cl/plan/VPNB260245
+Vida Tres,VPNB2602610,,"3,10",7.000,19,https://www.quvi.cl/plan/VPNB2602610
+Vida Tres,VPNB260266,,"2,19",7.000,19,https://www.quvi.cl/plan/VPNB260266
+Vida Tres,VPNB260268,,"2,62",7.000,19,https://www.quvi.cl/plan/VPNB260268
+Vida Tres,VPNB2602810,,"3,24",7.000,19,https://www.quvi.cl/plan/VPNB2602810
+Vida Tres,VPNF2605108,,"2,45",7.000,19,https://www.quvi.cl/plan/VPNF2605108
+Vida Tres,VPNF260544,,"1,40",7.000,11,https://www.quvi.cl/plan/VPNF260544
+Vida Tres,VPNF260545,,"1,47",7.000,12,https://www.quvi.cl/plan/VPNF260545
+Vida Tres,VPNF260555,,"1,60",7.000,12,https://www.quvi.cl/plan/VPNF260555
+Vida Tres,VPNF2605610,,"2,51",7.000,19,https://www.quvi.cl/plan/VPNF2605610
+Vida Tres,VPNF260566,,"1,92",7.000,15,https://www.quvi.cl/plan/VPNF260566
+Vida Tres,VPNF260568,,"2,21",7.000,19,https://www.quvi.cl/plan/VPNF260568
+Vida Tres,VPNF2605810,,"2,66",7.000,19,https://www.quvi.cl/plan/VPNF2605810
+Vida Tres,VPNF260587,,"2,27",7.000,15,https://www.quvi.cl/plan/VPNF260587
+Vida Tres,VPP260666,,"2,10",7.000,16,https://www.quvi.cl/plan/VPP260666
+Vida Tres,VPP260667,,"2,36",7.000,16,https://www.quvi.cl/plan/VPP260667
+Vida Tres,VPP260668,,"2,67",7.000,16,https://www.quvi.cl/plan/VPP260668
+Vida Tres,VPP260677,,"2,52",7.000,16,https://www.quvi.cl/plan/VPP260677
+Vida Tres,VPP260678,,"2,83",7.000,16,https://www.quvi.cl/plan/VPP260678
+Vida Tres,VPP260688,,"3,13",7.000,16,https://www.quvi.cl/plan/VPP260688
+Vida Tres,VPRB260633,,"5,14",11.000,17,https://www.quvi.cl/plan/VPRB260633
+Vida Tres,VPRB260634,,"5,88",11.000,17,https://www.quvi.cl/plan/VPRB260634
+Vida Tres,VPRB260635,,"6,66",11.000,17,https://www.quvi.cl/plan/VPRB260635
+Vida Tres,VPRB260636,,"7,52",11.000,17,https://www.quvi.cl/plan/VPRB260636
+Vida Tres,VPRB260644,,"6,57",11.000,17,https://www.quvi.cl/plan/VPRB260644
+Vida Tres,VPRB260645,,"7,35",11.000,17,https://www.quvi.cl/plan/VPRB260645
+Vida Tres,VPRB260646,,"8,22",11.000,17,https://www.quvi.cl/plan/VPRB260646
+Vida Tres,VPRB260655,,"8,13",11.000,17,https://www.quvi.cl/plan/VPRB260655
+Vida Tres,VPRCB2602812,,"3,84",11.000,21,https://www.quvi.cl/plan/VPRCB2602812
+Vida Tres,VPRP26061010,,"4,39",11.000,16,https://www.quvi.cl/plan/VPRP26061010
+Vida Tres,VPRP26061011,,"5,10",11.000,16,https://www.quvi.cl/plan/VPRP26061011
+Vida Tres,VPRP26061012,,"5,33",11.000,16,https://www.quvi.cl/plan/VPRP26061012
+Vida Tres,VPRP260669,,"3,02",11.000,16,https://www.quvi.cl/plan/VPRP260669
+Vida Tres,VPRP2606710,,"3,59",11.000,16,https://www.quvi.cl/plan/VPRP2606710
+Vida Tres,VPRP260679,,"3,18",11.000,16,https://www.quvi.cl/plan/VPRP260679
+Vida Tres,VPRP2606810,,"4,01",11.000,16,https://www.quvi.cl/plan/VPRP2606810
+Vida Tres,VPRP2606811,,"4,43",11.000,16,https://www.quvi.cl/plan/VPRP2606811
+Vida Tres,VPRP2606812,,"4,87",11.000,16,https://www.quvi.cl/plan/VPRP2606812
+Vida Tres,VPRP260689,,"3,52",11.000,16,https://www.quvi.cl/plan/VPRP260689
+Vida Tres,VPRP2606910,,"4,18",11.000,16,https://www.quvi.cl/plan/VPRP2606910
+Vida Tres,VPRP2606911,,"4,65",11.000,16,https://www.quvi.cl/plan/VPRP2606911
+Vida Tres,VPRP2606912,,"4,96",11.000,16,https://www.quvi.cl/plan/VPRP2606912
+Vida Tres,VPRP260699,,"3,67",11.000,16,https://www.quvi.cl/plan/VPRP260699
+Vida Tres,VPRPA2603012,,"2,56",11.000,12,https://www.quvi.cl/plan/VPRPA2603012
+Vida Tres,VPRPA2603014,,"2,72",11.000,12,https://www.quvi.cl/plan/VPRPA2603014
+Vida Tres,VPRPA2603016,,"3,13",11.000,12,https://www.quvi.cl/plan/VPRPA2603016
+Vida Tres,VPRPA2603112,,"2,70",11.000,12,https://www.quvi.cl/plan/VPRPA2603112
+Vida Tres,VPRPA2603114,,"2,85",11.000,12,https://www.quvi.cl/plan/VPRPA2603114
+Vida Tres,VPRPA2603116,,"3,28",11.000,12,https://www.quvi.cl/plan/VPRPA2603116
+Vida Tres,VPRPB250633,,"2,25",11.000,15,https://www.quvi.cl/plan/VPRPB250633
+Vida Tres,VPRPB250634,,"2,63",11.000,15,https://www.quvi.cl/plan/VPRPB250634
+Vida Tres,VPRPB250814,,"2,36",11.000,15,https://www.quvi.cl/plan/VPRPB250814
+Vida Tres,VPRPO26071010,,"3,86",11.000,16,https://www.quvi.cl/plan/VPRPO26071010
+Vida Tres,VPRPO26071011,,"4,20",11.000,16,https://www.quvi.cl/plan/VPRPO26071011
+Vida Tres,VPRPO260779,,"2,76",11.000,16,https://www.quvi.cl/plan/VPRPO260779
+Vida Tres,VPRPO2607810,,"3,35",11.000,16,https://www.quvi.cl/plan/VPRPO2607810
+Vida Tres,VPRPO2607910,,"3,53",11.000,16,https://www.quvi.cl/plan/VPRPO2607910
+Vida Tres,VPRPO2607911,,"3,89",11.000,16,https://www.quvi.cl/plan/VPRPO2607911
+Vida Tres,VPRPO2607912,,"4,34",11.000,16,https://www.quvi.cl/plan/VPRPO2607912
+Vida Tres,VPRPO260799,,"3,21",11.000,16,https://www.quvi.cl/plan/VPRPO260799
+Vida Tres,VPRT26061010,,"5,69",11.000,17,https://www.quvi.cl/plan/VPRT26061010
+Vida Tres,VPRT26061011,,"6,51",11.000,17,https://www.quvi.cl/plan/VPRT26061011
+Vida Tres,VPRT26061012,,"7,33",11.000,17,https://www.quvi.cl/plan/VPRT26061012
+Vida Tres,VPRT26061013,,"8,23",11.000,17,https://www.quvi.cl/plan/VPRT26061013
+Vida Tres,VPRT26061111,,"7,22",11.000,17,https://www.quvi.cl/plan/VPRT26061111
+Vida Tres,VPRT26061112,,"8,03",11.000,17,https://www.quvi.cl/plan/VPRT26061112
+Vida Tres,VPRT26061113,,"8,93",11.000,17,https://www.quvi.cl/plan/VPRT26061113
+Vida Tres,VPRT2606710,,"3,97",11.000,17,https://www.quvi.cl/plan/VPRT2606710
+Vida Tres,VPRT260677,,"2,72",11.000,17,https://www.quvi.cl/plan/VPRT260677
+Vida Tres,VPRT260678,,"3,05",11.000,17,https://www.quvi.cl/plan/VPRT260678
+Vida Tres,VPRT260679,,"3,42",11.000,17,https://www.quvi.cl/plan/VPRT260679
+Vida Tres,VPRT2606810,,"4,47",11.000,17,https://www.quvi.cl/plan/VPRT2606810
+Vida Tres,VPRT2606811,,"5,30",11.000,17,https://www.quvi.cl/plan/VPRT2606811
+Vida Tres,VPRT260688,,"3,37",11.000,17,https://www.quvi.cl/plan/VPRT260688
+Vida Tres,VPRT260689,,"3,82",11.000,17,https://www.quvi.cl/plan/VPRT260689
+Vida Tres,VPRT2606910,,"5,04",11.000,17,https://www.quvi.cl/plan/VPRT2606910
+Vida Tres,VPRT2606911,,"5,88",11.000,17,https://www.quvi.cl/plan/VPRT2606911
+Vida Tres,VPRT2606912,,"6,70",11.000,17,https://www.quvi.cl/plan/VPRT2606912
+Vida Tres,VPRT2606913,,"7,59",11.000,17,https://www.quvi.cl/plan/VPRT2606913
+Vida Tres,VPRT260699,,"4,38",11.000,17,https://www.quvi.cl/plan/VPRT260699
+Vida Tres,VPRTO26071010,,"4,99",11.000,17,https://www.quvi.cl/plan/VPRTO26071010
+Vida Tres,VPRTO26071011,,"5,68",11.000,17,https://www.quvi.cl/plan/VPRTO26071011
+Vida Tres,VPRTO26071012,,"6,38",11.000,17,https://www.quvi.cl/plan/VPRTO26071012
+Vida Tres,VPRTO26071013,,"7,17",11.000,17,https://www.quvi.cl/plan/VPRTO26071013
+Vida Tres,VPRTO26071111,,"6,28",11.000,17,https://www.quvi.cl/plan/VPRTO26071111
+Vida Tres,VPRTO26071112,,"7,00",11.000,17,https://www.quvi.cl/plan/VPRTO26071112
+Vida Tres,VPRTO26071113,,"7,79",11.000,17,https://www.quvi.cl/plan/VPRTO26071113
+Vida Tres,VPRTO2607810,,"3,93",11.000,17,https://www.quvi.cl/plan/VPRTO2607810
+Vida Tres,VPRTO2607911,,"5,14",11.000,17,https://www.quvi.cl/plan/VPRTO2607911
+Vida Tres,VPS8B260200,,"2,28",7.000,14,https://www.quvi.cl/plan/VPS8B260200
+Vida Tres,VPS8B260222,,"2,49",7.000,16,https://www.quvi.cl/plan/VPS8B260222
+Vida Tres,VPS8B260245,,"2,87",7.000,20,https://www.quvi.cl/plan/VPS8B260245
+Vida Tres,VPS8B260256,,"3,21",7.000,24,https://www.quvi.cl/plan/VPS8B260256
+Vida Tres,VPS8B260267,,"3,60",7.000,24,https://www.quvi.cl/plan/VPS8B260267
+Vida Tres,VPS8B260288,,"4,27",7.000,24,https://www.quvi.cl/plan/VPS8B260288
+Vida Tres,VPS8F260545,,"2,57",7.000,18,https://www.quvi.cl/plan/VPS8F260545
+Vida Tres,VPS8F260556,,"2,82",7.000,19,https://www.quvi.cl/plan/VPS8F260556
+Vida Tres,VPS8F260567,,"3,14",7.000,21,https://www.quvi.cl/plan/VPS8F260567
+Vida Tres,VPSB260200,,"1,47",7.000,11,https://www.quvi.cl/plan/VPSB260200
+Vida Tres,VPSB260222,,"1,73",7.000,13,https://www.quvi.cl/plan/VPSB260222
+Vida Tres,VPSB260244,,"2,04",7.000,17,https://www.quvi.cl/plan/VPSB260244
+Vida Tres,VPSB260245,,"2,17",7.000,17,https://www.quvi.cl/plan/VPSB260245
+Vida Tres,VPSB260256,,"2,33",7.000,21,https://www.quvi.cl/plan/VPSB260256
+Vida Tres,VPSB260258,,"2,83",7.000,21,https://www.quvi.cl/plan/VPSB260258
+Vida Tres,VPSB260264,,"2,31",7.000,21,https://www.quvi.cl/plan/VPSB260264
+Vida Tres,VPSB260267,,"2,71",7.000,21,https://www.quvi.cl/plan/VPSB260267
+Vida Tres,VPSB2604107,,"2,92",7.100,21,https://www.quvi.cl/plan/VPSB2604107
+Vida Tres,VPSB2604108,,"3,19",7.100,21,https://www.quvi.cl/plan/VPSB2604108
+Vida Tres,VPSF2605108,,"2,92",7.000,22,https://www.quvi.cl/plan/VPSF2605108
+Vida Tres,VPSF260544,,"1,73",7.000,14,https://www.quvi.cl/plan/VPSF260544
+Vida Tres,VPSF260545,,"1,78",7.000,15,https://www.quvi.cl/plan/VPSF260545
+Vida Tres,VPSF260556,,"2,02",7.000,16,https://www.quvi.cl/plan/VPSF260556
+Vida Tres,VPSF260558,,"2,15",7.000,21,https://www.quvi.cl/plan/VPSF260558
+Vida Tres,VPSF260567,,"2,35",7.000,18,https://www.quvi.cl/plan/VPSF260567
+Vida Tres,VSPLU2411A0,,"3,28",7.800,13,https://www.quvi.cl/plan/VSPLU2411A0
+Vida Tres,VSPLU2411A1,,"3,45",7.500,15,https://www.quvi.cl/plan/VSPLU2411A1
+Vida Tres,VSPLU2411B1,,"3,69",7.500,16,https://www.quvi.cl/plan/VSPLU2411B1
+Vida Tres,VSPLU2411B2,,"3,93",7.500,16,https://www.quvi.cl/plan/VSPLU2411B2
+Vida Tres,VSPLU2411C1,,"4,07",7.500,16,https://www.quvi.cl/plan/VSPLU2411C1
+Vida Tres,VSPLU2411C2,,"4,30",7.500,16,https://www.quvi.cl/plan/VSPLU2411C2
+Vida Tres,VSPLU2411C3,,"4,47",7.500,16,https://www.quvi.cl/plan/VSPLU2411C3
+Vida Tres,VSPLU2411C4,,"4,82",7.500,16,https://www.quvi.cl/plan/VSPLU2411C4
+Vida Tres,VSPLU2411C5,,"4,95",7.500,16,https://www.quvi.cl/plan/VSPLU2411C5

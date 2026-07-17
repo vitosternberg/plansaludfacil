@@ -115,7 +115,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Intenta conectar a la base de datos.
     $conn = connect_db_simple(); 
     if ($conn === null) {
-        if ($_SERVER['HTTP_HOST'] === 'localhost' || $_SERVER['HTTP_HOST'] === '127.0.0.1') {
+        $is_local = (strpos($_SERVER['HTTP_HOST'] ?? '', 'localhost') !== false || strpos($_SERVER['HTTP_HOST'] ?? '', '127.0.0.1') !== false);
+        if ($is_local) {
             // MOCK PARA LOCALHOST CUANDO NO HAY DB
             echo json_encode([
                 "success" => true,
@@ -161,6 +162,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 "message" => "¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.",
                 "message_id" => $message_id
             ]);
+            
+            // No enviar correo en entorno local (evita timeout por SMTP inaccesible)
+            if (($_SERVER['HTTP_HOST'] ?? '') === 'localhost' || ($_SERVER['HTTP_HOST'] ?? '') === '127.0.0.1') {
+                $stmt->close();
+                $conn->close();
+                exit();
+            }
             
             // --- Inicia el proceso de envío de correo electrónico con PHPMailer ---
             $mail = new PHPMailer(true);

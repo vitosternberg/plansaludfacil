@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $page_title ?? 'Plan Salud Facil'; ?></title> <!-- Título dinámico -->
     <meta name="description" content="<?php echo htmlspecialchars($meta_description ?? 'Cotiza y compara planes de Isapre. Asesoria 100% gratuita y online. Encuentra el mejor plan para ti y tu familia en Plan Salud Facil.'); ?>">
-    <link rel="canonical" href="<?php echo 'https://plansaludfacil.cl' . strtok($_SERVER['REQUEST_URI'] ?? '/', '?'); ?>">
+    <link rel="canonical" href="<?php 
+        $canonical_path = strtok($_SERVER['REQUEST_URI'] ?? '/', '?');  // quitar query string
+        $canonical_path = rtrim($canonical_path, '/') ?: '/';            // normalizar slash
+        $host = $_SERVER['HTTP_HOST'] ?? 'plansaludfacil.cl';
+        $proto = !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 'http';
+        echo $proto . '://' . $host . htmlspecialchars($canonical_path);
+    ?>">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <style>
@@ -96,8 +102,8 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Plan Salud Facil",
-      "url": "https://plansaludfacil.cl",
-      "logo": "https://plansaludfacil.cl/img/logo.png",
+      "url": "/",
+      "logo": "/img/logo.png",
       "description": "Comparador de planes de Isapre 100% gratuito. Te ayudamos a encontrar el mejor plan de salud segun tus necesidades y presupuesto.",
       "contactPoint": {
         "@type": "ContactPoint",
@@ -117,10 +123,10 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Plan Salud Facil",
-      "url": "https://plansaludfacil.cl",
+      "url": "/",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://plansaludfacil.cl/?s={search_term_string}",
+        "target": "/?s={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     }
@@ -131,8 +137,8 @@
     $uri = strtok($_SERVER['REQUEST_URI'] ?? '/', '?');
     $segments = array_values(array_filter(explode('/', $uri)));
     if (!empty($segments)) {
-        $breadcrumbs = [];
-        $breadcrumbs[] = ['name' => 'Inicio', 'url' => 'https://plansaludfacil.cl/'];
+        $bcrumbs = [];
+        $bcrumbs[] = ['name' => 'Inicio', 'url' => '/'];
         $accumulated = '';
         $nameMap = [
             'preguntas-frecuentes' => 'Preguntas Frecuentes',
@@ -160,7 +166,7 @@
         foreach ($segments as $seg) {
             $accumulated .= '/' . $seg;
             $name = $nameMap[$seg] ?? ucfirst(str_replace('-', ' ', $seg));
-            $breadcrumbs[] = ['name' => $name, 'url' => 'https://plansaludfacil.cl' . $accumulated];
+            $bcrumbs[] = ['name' => $name, 'url' => '' . $accumulated];
         }
         echo '<script type="application/ld+json">' . "\n";
         echo json_encode([
@@ -173,7 +179,7 @@
                     'name' => $bc['name'],
                     'item' => $bc['url']
                 ];
-            }, $breadcrumbs, array_keys($breadcrumbs))
+            }, $bcrumbs, array_keys($bcrumbs))
         ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         echo "\n</script>\n";
     }

@@ -26,6 +26,7 @@ $siteActivityTrackerConfig = [
         <div class="mt-2 space-x-4">
             <a href="<?= defined('BASE_URL') ? BASE_URL : '' ?>/nosotros/privacidad" class="hover:text-blue-200 transition">Politica de Privacidad</a>
             <a href="#" class="hover:text-blue-200 transition">Terminos de Servicio</a>
+            <a href="<?= defined('BASE_URL') ? BASE_URL : '' ?>/incidentes" class="text-blue-400/50 hover:text-blue-200 transition text-xs">Incidentes</a>
         </div>
     </div>
 </footer>

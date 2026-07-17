@@ -12,7 +12,7 @@
 
 
 if ($_SERVER['HTTP_HOST'] === 'localhost' || $_SERVER['HTTP_HOST'] === '127.0.0.1') {
-    define('DB_HOST', 'localhost');
+    define('DB_HOST', '127.0.0.1'); // TCP para compatibilidad con php -S
     define('DB_USER', 'root'); 
     define('DB_PASS', '');    
     define('DB_NAME', 'plansalu_blog');
@@ -40,17 +40,22 @@ define('SMTP_PORT', 465);                     // Puerto SMTP (587 para TLS, 465 
  */
 function connect_db_simple() {
     try {
-        $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, 3306);
         if ($conn->connect_error) {
             error_log("Error de conexión a la base de datos: " . $conn->connect_error);
             return null;
         }
-        $conn->set_charset("utf8mb4"); // Asegura el soporte de caracteres especiales
+        $conn->set_charset("utf8mb4");
         return $conn;
     } catch (Exception $e) {
         error_log("Excepción en connect_db_simple(): " . $e->getMessage());
         return null;
     }
+}
+
+// URL base del sitio — relativa en todos los ambientes
+if (!defined('BASE_URL')) {
+    define('BASE_URL', '');
 }
 
 ?>
