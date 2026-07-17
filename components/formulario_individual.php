@@ -183,6 +183,7 @@
 </div>
 
 <script>
+const BASE_URL = '<?= BASE_URL ?>';
 async function submitIndividualForm() {
     const form = document.getElementById('form-individual');
     const msg = document.getElementById('form-msg-individual');
@@ -239,7 +240,7 @@ async function submitIndividualForm() {
                     cargas: formData.get('cargas') || '0',
                     intereses: interests.join(',')
                 });
-                window.location.href = '/pages/gracias.php?' + params.toString(); 
+                window.location.href = BASE_URL + '/pages/gracias.php?' + params.toString(); 
             }, 500);
         } else {
             msg.textContent = data.message || 'Error al enviar la solicitud.';

@@ -55,7 +55,7 @@ ob_start();
         <label class="block font-semibold text-gray-700 mb-2">2. ¿Qué edad tienes? (18–65)</label>
         <input type="number" id="edad-input" min="18" max="65" maxlength="2" placeholder="Ej: 30"
                class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 font-medium text-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-               oninput="if(this.value<18)this.value=18;if(this.value>65)this.value=65">
+               onchange="if(this.value<18)this.value=18;if(this.value>65)this.value=65">
     </div>
     <!-- P3: Cargas -->
     <div>

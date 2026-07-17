@@ -516,7 +516,7 @@ include __DIR__ . '/../layout/header.php';
 
             <!-- CTAs finales -->
             <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                <a href="/planes/comparador/" class="inline-flex items-center px-5 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition shadow-md">
+                <a href="<?= BASE_URL ?>/planes/comparador/" class="inline-flex items-center px-5 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition shadow-md">
                     <iconify-icon icon="mdi:refresh" class="mr-2" width="18"></iconify-icon>
                     Volver a cotizar
                 </a>

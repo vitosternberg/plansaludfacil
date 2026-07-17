@@ -68,8 +68,9 @@ $cta_link = $cta_link ?? '/servicios/cambio-de-isapre#formulario-contacto';
             </div>
         </form>
         <script>
+        const BASE_URL = '<?= BASE_URL ?>';
         function updateCargaEdadInputs(){const n=parseInt(document.getElementById('hero-cargas').value)||0;const g=document.getElementById('hero-carga-edad-group');if(n===0){g.style.display='none';g.innerHTML='';return}g.style.display='block';let h='';for(let i=1;i<=n;i++)h+='<input type=number maxlength=2 class=hero-carga-edad name=carga_edad[] min=0 max=80 placeholder=\"Edad carga '+i+'\" style=\"width:100%;border:2px solid #f3f4f6;background:#f9fafb;border-radius:12px;padding:8px 12px;font-size:13px;font-weight:600;color:#1f2937;margin-bottom:4px\">';g.innerHTML=h}
-        function heroCotizar(){const r=document.getElementById('hero-renta').value||'0';const e=document.getElementById('hero-edad').value||'';const c=document.getElementById('hero-cargas').value||'0';const p=new URLSearchParams({age:e,income:r,cargas:c});if(c>0){document.querySelectorAll('.hero-carga-edad').forEach((el,i)=>{if(el.value)p.append('carga_edad[]',el.value)})};const d=c>0?'/planes/familiares/con-cargas/':'/planes/individuales/adultos/';window.location.href=d+'?'+p.toString()+'#formulario'}
+        function heroCotizar(){const r=document.getElementById('hero-renta').value||'0';const e=document.getElementById('hero-edad').value||'';const c=document.getElementById('hero-cargas').value||'0';const p=new URLSearchParams({age:e,income:r,cargas:c});if(c>0){document.querySelectorAll('.hero-carga-edad').forEach((el,i)=>{if(el.value)p.append('carga_edad[]',el.value)})};const d=c>0?BASE_URL+'/planes/familiares/con-cargas/':BASE_URL+'/planes/individuales/adultos/';window.location.href=d+'?'+p.toString()+'#formulario'}
         </script>
     </div>
 </div>

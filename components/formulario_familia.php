@@ -177,6 +177,7 @@
 </div>
 
 <script>
+const BASE_URL = '<?= BASE_URL ?>';
 async function submitFamiliaForm() {
     const form = document.getElementById('form-familia');
     const msg = document.getElementById('form-msg-familia');
@@ -224,7 +225,7 @@ async function submitFamiliaForm() {
                     cargas: formData.get('cargas') || '0',
                     intereses: needs.join(',')
                 });
-                window.location.href = '/pages/gracias.php?' + params.toString(); 
+                window.location.href = BASE_URL + '/pages/gracias.php?' + params.toString(); 
             }, 500);
         } else {
             msg.textContent = data.message || 'Error al enviar la solicitud.';
