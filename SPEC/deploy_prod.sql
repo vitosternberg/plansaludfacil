@@ -104,6 +104,16 @@ INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, resp
   'saveQuote() recolectaba email pero no lo enviaba al backend. api/cotizar.php no tenía lógica de envío.',
   'bug', 'alta', 'cerrado', 'CodeWhale',
   'pages/gracias.php:565, api/cotizar.php',
-  'Fix: Frontend envía nombre+email. Backend usa PHPMailer vía omniflow_config.php con top 3 planes y botón WhatsApp verde. Commits 94c46f3 + b1877be.',
+   'Fix: Frontend envía nombre+email. Backend usa PHPMailer vía omniflow_config.php con top 3 planes y botón WhatsApp verde. Commits 94c46f3 + b1877be.',
+   NOW()
+);
+
+-- INC-6: FAQ respuestas imprecisas (commit 92e376c)
+INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen, resolucion, fecha_cierre) VALUES (
+  'FAQ: respuestas imprecisas sobre trabajadores independientes y declaración de preexistencias',
+  '1) "¿Qué ISAPRE conviene para trabajadores independientes?" decía que existen planes especiales para independientes (falso en Chile: todos acceden a los mismos planes). 2) "¿Debo declarar enfermedades preexistentes?" era ambiguo, sugería que podía ser opcional (es obligatorio por ley).',
+  'bug', 'media', 'cerrado', 'CodeWhale',
+  'pages/preguntas-frecuentes.php',
+  'Fix: corregidas ambas respuestas con información precisa. Commit 92e376c.',
   NOW()
 );
