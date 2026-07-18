@@ -135,6 +135,7 @@ $page_title = '¡Gracias por tu ' . $tipo_plan . '! | Plan Salud Fácil';
 include __DIR__ . '/../layout/plantilla.php';
 include __DIR__ . '/../layout/header.php';
 ?>
+<!-- deploy:v2026-07-17-02 -->
 
 <style>
     .confetti-piece {
