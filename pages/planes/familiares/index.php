@@ -76,6 +76,8 @@ ob_start();
 .answer-direct{background:linear-gradient(135deg,#eff6ff,#f0fdf4);border-left:4px solid #2563eb;padding:16px 20px;border-radius:0 12px 12px 0;margin-bottom:16px;font-size:15px;color:#374151;line-height:1.7}
 </style>
 
+<div class="max-w-3xl mx-auto px-4">
+
 <!-- ====== SECCIÓN 1: ¿Qué es un plan familiar? ====== -->
 <section id="que-es" class="mb-8 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-10 scroll-mt-28">
     <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">¿Qué es un plan de salud familiar?</h2>
@@ -250,6 +252,8 @@ ob_start();
         </div>
     </div>
 </section>
+
+</div>
 
 <!-- ====== FORMULARIO ====== -->
 <div id="formulario" class="max-w-3xl mx-auto py-10">

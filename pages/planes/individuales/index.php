@@ -77,6 +77,8 @@ ob_start();
 .answer-direct{background:linear-gradient(135deg,#eff6ff,#f0fdf4);border-left:4px solid #2563eb;padding:16px 20px;border-radius:0 12px 12px 0;margin-bottom:16px;font-size:15px;color:#374151;line-height:1.7}
 </style>
 
+<div class="max-w-3xl mx-auto px-4">
+
 <!-- ====== SECCIÓN 1: ¿Qué es? ====== -->
 <section id="que-es" class="mb-8 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-10 scroll-mt-28">
     <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">¿Qué es un plan de salud individual?</h2>
@@ -148,6 +150,8 @@ ob_start();
         <div class="bg-gradient-to-b from-white to-indigo-50 rounded-xl p-6 border border-indigo-100 text-center"><div class="w-14 h-14 bg-indigo-600 text-white rounded-xl flex items-center justify-center mx-auto mb-4 text-lg font-bold">CB</div><h3 class="font-bold text-gray-900 mb-2">Cruz Blanca</h3><p class="text-gray-600 text-sm">Equilibrio precio-cobertura. Telemedicina y salud mental destacadas.</p></div>
     </div>
 </section>
+
+</div>
 
 <!-- ====== FORMULARIO ====== -->
 <div id="formulario" class="max-w-3xl mx-auto py-10">
