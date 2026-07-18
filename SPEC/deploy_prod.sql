@@ -154,6 +154,14 @@ INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, resp
   '1) "¿Qué ISAPRE conviene para trabajadores independientes?" decía que existen planes especiales para independientes (falso en Chile: todos acceden a los mismos planes). 2) "¿Debo declarar enfermedades preexistentes?" era ambiguo, sugería que podía ser opcional (es obligatorio por ley).',
   'bug', 'media', 'cerrado', 'CodeWhale',
   'pages/preguntas-frecuentes.php',
-  'Fix: corregidas ambas respuestas con información precisa. Commit 92e376c.',
-  NOW()
+   'Fix: corregidas ambas respuestas con información precisa. Commit 92e376c.',
+   NOW()
+);
+
+-- INC-11: Adoptar estética de planes-individuales.php (servicios) en el index fusionado (ABIERTO)
+INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen) VALUES (
+  'UX: adoptar estética y estructura visual de /servicios/planes-individuales.php en el index fusionado de /planes/individuales/',
+  'La página /servicios/planes-individuales.php (25.9 KB) tiene un diseño visual superior al index fusionado actual: Schema.org FAQ JSON-LD para Google AI Overviews, grid de 3 situaciones con tarjetas numeradas y colores, secciones con "respuesta directa" destacada, FAQ extenso con markup estructurado, y una jerarquía visual más rica. El index fusionado de /planes/individuales/ (9.4 KB) debería heredar esta estética manteniendo el contenido de coberturas/prevención/futuro de adulto.php.',
+  'mejora', 'media', 'abierto', 'CodeWhale',
+  'pages/planes/individuales/index.php → heredar estilo de pages/servicios/planes-individuales.php'
 );
