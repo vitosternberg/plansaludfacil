@@ -158,10 +158,12 @@ INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, resp
    NOW()
 );
 
--- INC-11: Adoptar estética de planes-individuales.php (servicios) en el index fusionado (ABIERTO)
-INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen) VALUES (
-  'UX: adoptar estética y estructura visual de /servicios/planes-individuales.php en el index fusionado de /planes/individuales/',
-  'La página /servicios/planes-individuales.php (25.9 KB) tiene un diseño visual superior al index fusionado actual: Schema.org FAQ JSON-LD para Google AI Overviews, grid de 3 situaciones con tarjetas numeradas y colores, secciones con "respuesta directa" destacada, FAQ extenso con markup estructurado, y una jerarquía visual más rica. El index fusionado de /planes/individuales/ (9.4 KB) debería heredar esta estética manteniendo el contenido de coberturas/prevención/futuro de adulto.php.',
-  'mejora', 'media', 'abierto', 'CodeWhale',
-  'pages/planes/individuales/index.php → heredar estilo de pages/servicios/planes-individuales.php'
+-- INC-11: Estética aplicada al index fusionado (CERRADO — commit 0b0eb97)
+INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen, resolucion, fecha_cierre) VALUES (
+  'UX: adoptar estética de /servicios/planes-individuales.php en el index fusionado de /planes/individuales/',
+  'El index fusionado ahora tiene: Schema.org FAQPage JSON-LD, secciones con tarjetas numeradas, answer-direct destacado, grid cards con íconos y degradados, y la jerarquía visual rica del original.',
+  'mejora', 'media', 'cerrado', 'CodeWhale',
+  'pages/planes/individuales/index.php',
+  'Fix: reconstruido con 5 secciones card, Schema.org FAQ, answer-direct styling, grid de perfiles, coberturas detalladas y footer vía seo-page.php. Commit 0b0eb97.',
+  NOW()
 );
