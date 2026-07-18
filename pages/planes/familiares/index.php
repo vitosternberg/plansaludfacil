@@ -1,9 +1,10 @@
 <?php
 /**
- * planes/familiares/index.php — Planes Familiares (hub unificado)
+ * planes/familiares/index.php — Planes Familiares
  * 
- * Fusión de index.php (hub con 3 perfiles) + con-cargas.php (contenido detallado).
- * Punto de retorno: git revert <este_commit> para volver a la versión anterior.
+ * Fusión con estética visual (Schema.org FAQ, answer-direct, grid cards).
+ * Contenido: index.php (hub 3 perfiles) + con-cargas.php (coberturas detalladas).
+ * Punto de retorno: git revert <este_commit>
  */
 
 // ── Tracking Omniflow ────────────────────────────────────
@@ -27,10 +28,10 @@ try {
 } catch (Exception $e) { error_log("Omniflow Tracking Error: " . $e->getMessage()); }
 
 // ── Variables SEO ────────────────────────────────────────
-$page_title       = 'Planes de ISAPRE Familiares con Cargas: Cobertura para tu Familia | Plan Salud Fácil';
+$page_title       = 'Planes de ISAPRE Familiares: Cobertura para toda tu Familia | Plan Salud Fácil';
 $meta_description = 'Planes de ISAPRE para familias con cargas. Protege a tu pareja e hijos con la mejor cobertura. Pediatría, maternidad y beneficios grupales. Cotiza gratis.';
 $h1               = 'Planes de ISAPRE Familiares';
-$lead             = 'Tu familia merece la mejor cobertura. Los planes familiares te permiten proteger a tu pareja e hijos bajo un mismo plan, optimizando el 7% de cada uno y accediendo a beneficios grupales que un plan individual no ofrece.';
+$lead             = 'Protege a toda tu familia con un plan que se adapte a su composición y necesidades. Desde planes con cobertura reforzada para embarazos hasta opciones para familias monoparentales.';
 $svc_name         = 'Planes Familiares de ISAPRE';
 $svc_description  = 'Planes de ISAPRE para familias: cobertura para cónyuge, hijos y otras cargas legales. Cotiza gratis.';
 $cta_texto        = 'Cotizar por WhatsApp';
@@ -45,87 +46,229 @@ unset($bc);
 
 // ── ToC ──────────────────────────────────────────────────
 $toc_items = [
-    ['id' => 'preferencia-natal', 'label' => 'Preferencia Natal'],
-    ['id' => 'con-cargas', 'label' => 'Plan con Cargas'],
-    ['id' => 'monoparentales', 'label' => 'Plan Monoparental'],
+    ['id' => 'que-es',      'label' => '¿Qué es?'],
+    ['id' => 'coberturas',  'label' => 'Coberturas'],
+    ['id' => 'precios',     'label' => 'Precios'],
+    ['id' => 'beneficios',  'label' => 'Beneficios'],
+    ['id' => 'isapres',     'label' => 'Mejores isapres'],
 ];
 
-// ── Secciones de contenido ───────────────────────────────
+// ── Contenido ────────────────────────────────────────────
 ob_start();
 ?>
 
-<!-- ====== Preferencia Natal (del index original) ====== -->
-<section id="preferencia-natal" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28" aria-labelledby="s1-heading">
-    <h2 id="s1-heading" class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Preferencia Natal</h2>
-    <p class="text-gray-700 leading-relaxed mb-6">Planes familiares con cobertura reforzada para embarazo, parto, control prenatal y el primer año de vida del bebé. Incluye programas de acompañamiento, salas cuna y cobertura pediátrica prioritaria. Ideal para parejas que están planificando o esperando un hijo.</p>
+<!-- FAQ Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"¿A quiénes puedo incluir como carga familiar?","acceptedAnswer":{"@type":"Answer","text":"Cónyuge, hijos hasta 25 años si estudian, y en algunos casos padres adultos mayores que dependan económicamente de ti."}},
+    {"@type":"Question","name":"¿Los planes familiares cubren embarazos?","acceptedAnswer":{"@type":"Answer","text":"Sí, todos los planes cubren embarazo. Los planes con preferencia natal ofrecen coberturas adicionales y mejores condiciones para mamá y bebé."}},
+    {"@type":"Question","name":"¿Puedo agregar a mi pareja si no estamos casados?","acceptedAnswer":{"@type":"Answer","text":"Sí, puedes agregar a tu conviviente como carga acreditando la convivencia ante la Isapre."}},
+    {"@type":"Question","name":"¿Qué pasa si me separo?","acceptedAnswer":{"@type":"Answer","text":"Cada adulto puede tomar un plan individual conservando su antigüedad. Los hijos quedan como cargas de uno de los padres."}},
+    {"@type":"Question","name":"¿Cuánto cuesta un plan familiar?","acceptedAnswer":{"@type":"Answer","text":"Depende de la cantidad de cargas. Familia de 3 desde $120.000/mes, familia de 4 desde $150.000/mes. Cada adulto aporta su 7% y se suman las cotizaciones."}}
+  ]
+}
+</script>
+
+<style>
+.answer-direct{background:linear-gradient(135deg,#eff6ff,#f0fdf4);border-left:4px solid #2563eb;padding:16px 20px;border-radius:0 12px 12px 0;margin-bottom:16px;font-size:15px;color:#374151;line-height:1.7}
+</style>
+
+<!-- ====== SECCIÓN 1: ¿Qué es un plan familiar? ====== -->
+<section id="que-es" class="mb-8 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-10 scroll-mt-28">
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">¿Qué es un plan de salud familiar?</h2>
+    <div class="answer-direct">
+        Un plan familiar te permite proteger a tu pareja e hijos bajo un mismo contrato de Isapre, optimizando el 7% de cada adulto y accediendo a beneficios grupales que un plan individual no ofrece. Todos bajo la misma cobertura, sin planes separados.
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mt-6">
+        <div class="text-center p-6">
+            <div class="w-16 h-16 bg-pink-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-lg shadow-pink-200">👶</div>
+            <h3 class="font-bold text-gray-900 mb-2">Familia en crecimiento</h3>
+            <p class="text-gray-600 text-sm">Están esperando un hijo o planean hacerlo. Necesitan la mejor cobertura de maternidad y pediatría desde el día uno.</p>
+        </div>
+        <div class="text-center p-6">
+            <div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-lg shadow-blue-200">👨‍👩‍👧</div>
+            <h3 class="font-bold text-gray-900 mb-2">Familia constituida</h3>
+            <p class="text-gray-600 text-sm">Pareja con hijos que necesitan cobertura integral. Consultas pediátricas, controles de adulto y programas preventivos para todos.</p>
+        </div>
+        <div class="text-center p-6">
+            <div class="w-16 h-16 bg-purple-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-lg shadow-purple-200">👩‍👦</div>
+            <h3 class="font-bold text-gray-900 mb-2">Familia monoparental</h3>
+            <p class="text-gray-600 text-sm">Un solo adulto a cargo. Cobertura equilibrada con precios accesibles, priorizando la protección de los niños.</p>
+        </div>
+    </div>
 </section>
 
-<!-- ====== Plan con Cargas (fusionado: contenido completo de con-cargas.php) ====== -->
-<section id="con-cargas" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28">
-
-    <!-- Coberturas para toda la familia -->
+<!-- ====== SECCIÓN 2: Coberturas (de con-cargas.php) ====== -->
+<section id="coberturas" class="mb-8 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-10 scroll-mt-28">
     <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Coberturas para toda la familia</h2>
-    <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-8">
-        <li><strong>Pediatría:</strong> Controles de niño sano, vacunas y urgencias pediátricas cubiertas.</li>
-        <li><strong>Maternidad:</strong> Parto, cesárea, prenatal y postnatal. Cobertura completa para mamá y bebé.</li>
-        <li><strong>Hospitalización:</strong> Cobertura para todos los integrantes, incluyendo UCI y cirugías.</li>
-        <li><strong>Ambulatorio:</strong> Consultas médicas, especialistas y exámenes con copago familiar reducido.</li>
-        <li><strong>Dental:</strong> Limpieza gratis para cada integrante una vez al año.</li>
-    </ul>
+    <div class="answer-direct">
+        Los planes familiares cubren desde el control del niño sano hasta cirugías complejas. La clave está en elegir uno que equilibre las necesidades de todos los integrantes sin pagar de más.
+    </div>
 
-    <!-- ¿Cuánto cuesta un plan familiar? -->
+    <div class="grid md:grid-cols-2 gap-4 mt-6">
+        <div class="p-5 bg-pink-50 rounded-xl border border-pink-100">
+            <h3 class="font-bold text-gray-900 mb-2">👶 Pediatría</h3>
+            <p class="text-gray-600 text-sm">Controles de niño sano, vacunas, urgencias pediátricas. Todo cubierto sin letra chica.</p>
+        </div>
+        <div class="p-5 bg-purple-50 rounded-xl border border-purple-100">
+            <h3 class="font-bold text-gray-900 mb-2">🤰 Maternidad</h3>
+            <p class="text-gray-600 text-sm">Parto, cesárea, prenatal y postnatal. Cobertura completa para mamá y bebé desde la primera ecografía.</p>
+        </div>
+        <div class="p-5 bg-blue-50 rounded-xl border border-blue-100">
+            <h3 class="font-bold text-gray-900 mb-2">🏥 Hospitalización</h3>
+            <p class="text-gray-600 text-sm">Cobertura para todos los integrantes, incluyendo UCI pediátrica y cirugías de alta complejidad.</p>
+        </div>
+        <div class="p-5 bg-green-50 rounded-xl border border-green-100">
+            <h3 class="font-bold text-gray-900 mb-2">🦷 Dental</h3>
+            <p class="text-gray-600 text-sm">Limpieza gratis para cada integrante una vez al año. Ortodoncia y tratamientos con copago reducido.</p>
+        </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4 mt-4">
+        <div class="p-5 bg-amber-50 rounded-xl border border-amber-100">
+            <h3 class="font-bold text-gray-900 mb-2">🩺 Ambulatorio</h3>
+            <p class="text-gray-600 text-sm">Consultas médicas, especialistas y exámenes con copago familiar reducido para todos.</p>
+        </div>
+        <div class="p-5 bg-indigo-50 rounded-xl border border-indigo-100">
+            <h3 class="font-bold text-gray-900 mb-2">📱 Telemedicina</h3>
+            <p class="text-gray-600 text-sm">Consultas rápidas sin salir de casa. Ideal cuando hay niños chicos y cada salida es una odisea.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ====== SECCIÓN 3: Precios ====== -->
+<section id="precios" class="mb-8 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-10 scroll-mt-28">
     <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">¿Cuánto cuesta un plan familiar?</h2>
-    <p class="text-gray-700 mb-4">El precio depende de la cantidad de cargas, las edades y la isapre. Como referencia:</p>
-    <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-2">
-        <li>Familia de 3 (2 adultos + 1 hijo): desde $120.000/mes.</li>
-        <li>Familia de 4 (2 adultos + 2 hijos): desde $150.000/mes.</li>
-        <li>Familia de 5 o más: desde $180.000/mes.</li>
-    </ul>
-    <p class="text-sm text-gray-500 mb-8">*Cada adulto aporta su 7%. Si ambos trabajan, se suman las cotizaciones.</p>
+    <div class="answer-direct">
+        Cada adulto aporta su 7% legal. Si ambos trabajan, se suman las cotizaciones y pueden acceder a un mejor plan sin esfuerzo adicional. El precio final depende de la cantidad de cargas y sus edades.
+    </div>
 
-    <!-- Beneficios de un plan familiar -->
+    <div class="grid md:grid-cols-3 gap-6 mt-6">
+        <div class="bg-gradient-to-b from-white to-blue-50 rounded-xl p-6 border border-blue-100 text-center">
+            <div class="text-3xl mb-3">👨‍👩‍👧</div>
+            <div class="text-2xl font-bold text-blue-700 mb-1">$120.000</div>
+            <p class="text-gray-500 text-xs mb-1">desde / mes</p>
+            <p class="text-gray-600 text-sm font-medium">Familia de 3</p>
+            <p class="text-gray-500 text-xs mt-1">2 adultos + 1 hijo</p>
+        </div>
+        <div class="bg-gradient-to-b from-white to-emerald-50 rounded-xl p-6 border border-emerald-100 text-center">
+            <div class="text-3xl mb-3">👨‍👩‍👧‍👦</div>
+            <div class="text-2xl font-bold text-emerald-700 mb-1">$150.000</div>
+            <p class="text-gray-500 text-xs mb-1">desde / mes</p>
+            <p class="text-gray-600 text-sm font-medium">Familia de 4</p>
+            <p class="text-gray-500 text-xs mt-1">2 adultos + 2 hijos</p>
+        </div>
+        <div class="bg-gradient-to-b from-white to-violet-50 rounded-xl p-6 border border-violet-100 text-center">
+            <div class="text-3xl mb-3">👨‍👩‍👧‍👦➕</div>
+            <div class="text-2xl font-bold text-violet-700 mb-1">$180.000</div>
+            <p class="text-gray-500 text-xs mb-1">desde / mes</p>
+            <p class="text-gray-600 text-sm font-medium">Familia de 5+</p>
+            <p class="text-gray-500 text-xs mt-1">2 adultos + 3+ hijos</p>
+        </div>
+    </div>
+
+    <div class="p-5 bg-blue-50 rounded-xl border border-blue-100 mt-6">
+        <p class="text-gray-700 font-medium">💡 <strong>Dato clave:</strong> Si ambos trabajan y cada uno gana $1.500.000, entre los dos suman $210.000 mensuales de cotización (7% × 2). Eso les permite acceder a planes familiares de primer nivel.</p>
+    </div>
+</section>
+
+<!-- ====== SECCIÓN 4: Beneficios ====== -->
+<section id="beneficios" class="mb-8 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-10 scroll-mt-28">
     <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Beneficios de un plan familiar</h2>
-    <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-8">
-        <li><strong>Un solo plan:</strong> Todos bajo la misma cobertura. Sin planes separados que complican.</li>
-        <li><strong>Copago familiar:</strong> Topes de gasto anual por grupo, no por persona.</li>
-        <li><strong>Excedentes compartidos:</strong> Si generas, los usan todos los integrantes.</li>
-        <li><strong>Antigüedad conjunta:</strong> Si luego te separas, cada uno conserva su antigüedad.</li>
-    </ul>
+    <div class="answer-direct">
+        Un solo plan para todos significa: sin papeles separados, un solo copago familiar, excedentes que se comparten, y antigüedad que se conserva si algún día necesitan separar los planes.
+    </div>
 
-    <!-- Mejores isapres para familias -->
+    <div class="grid md:grid-cols-2 gap-4 mt-6">
+        <div class="flex items-start gap-4 p-4 bg-white rounded-xl border border-gray-100">
+            <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center flex-shrink-0 text-xl">📋</div>
+            <div><h3 class="font-bold text-gray-900 mb-1">Un solo plan</h3><p class="text-gray-600 text-sm">Todos bajo la misma cobertura. Sin planes separados que complican la administración.</p></div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-white rounded-xl border border-gray-100">
+            <div class="w-12 h-12 bg-green-600 text-white rounded-xl flex items-center justify-center flex-shrink-0 text-xl">🛡️</div>
+            <div><h3 class="font-bold text-gray-900 mb-1">Copago familiar</h3><p class="text-gray-600 text-sm">Topes de gasto anual por grupo familiar, no por persona. Más económico para todos.</p></div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-white rounded-xl border border-gray-100">
+            <div class="w-12 h-12 bg-purple-600 text-white rounded-xl flex items-center justify-center flex-shrink-0 text-xl">💰</div>
+            <div><h3 class="font-bold text-gray-900 mb-1">Excedentes compartidos</h3><p class="text-gray-600 text-sm">Si generas excedentes, los usan todos los integrantes. Nadie pierde plata.</p></div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-white rounded-xl border border-gray-100">
+            <div class="w-12 h-12 bg-amber-600 text-white rounded-xl flex items-center justify-center flex-shrink-0 text-xl">🔒</div>
+            <div><h3 class="font-bold text-gray-900 mb-1">Antigüedad conjunta</h3><p class="text-gray-600 text-sm">Si luego te separas, cada uno conserva su antigüedad. No empezás de cero.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== SECCIÓN 5: Mejores isapres para familias ====== -->
+<section id="isapres" class="mb-8 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-10 scroll-mt-28">
     <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Mejores isapres para familias</h2>
-    <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-8">
-        <li><strong>Colmena:</strong> Excelente cobertura de maternidad y pediatría. Ideal para familias en crecimiento.</li>
-        <li><strong>Banmédica:</strong> La red más grande. Ideal si quieres elegir dónde atenderte.</li>
-        <li><strong>Cruz Blanca:</strong> Buen balance precio-cobertura con foco en prevención.</li>
-    </ul>
+    <div class="answer-direct">
+        La mejor Isapre para tu familia depende de la etapa en la que estén: ¿están esperando un bebé? ¿tienen hijos chicos? ¿o ya son adolescentes? Cada Isapre tiene fortalezas en distintas etapas.
+    </div>
 
+    <div class="grid md:grid-cols-3 gap-6 mt-6">
+        <div class="bg-gradient-to-b from-white to-yellow-50 rounded-xl p-6 border border-yellow-100 text-center">
+            <div class="w-14 h-14 bg-yellow-500 text-white rounded-xl flex items-center justify-center mx-auto mb-4 text-lg font-bold">C</div>
+            <h3 class="font-bold text-gray-900 mb-2">Colmena</h3>
+            <p class="text-gray-600 text-sm">Excelente maternidad y pediatría. La mejor opción si están planificando o esperando un hijo. Cobertura top en parto y postnatal.</p>
+        </div>
+        <div class="bg-gradient-to-b from-white to-blue-50 rounded-xl p-6 border border-blue-100 text-center">
+            <div class="w-14 h-14 bg-blue-600 text-white rounded-xl flex items-center justify-center mx-auto mb-4 text-lg font-bold">B</div>
+            <h3 class="font-bold text-gray-900 mb-2">Banmédica</h3>
+            <p class="text-gray-600 text-sm">La red más grande de clínicas. Ideal si querés elegir dónde atenderte sin restricciones. Clínica Alemana y Santa María en convenio.</p>
+        </div>
+        <div class="bg-gradient-to-b from-white to-indigo-50 rounded-xl p-6 border border-indigo-100 text-center">
+            <div class="w-14 h-14 bg-indigo-600 text-white rounded-xl flex items-center justify-center mx-auto mb-4 text-lg font-bold">CB</div>
+            <h3 class="font-bold text-gray-900 mb-2">Cruz Blanca</h3>
+            <p class="text-gray-600 text-sm">Buen equilibrio precio-cobertura. Programas preventivos familiares y telemedicina que ahorran tiempo y traslados.</p>
+        </div>
+    </div>
 </section>
 
-<!-- ====== Plan Monoparental (del index original) ====== -->
-<section id="monoparentales" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28">
-    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Plan Monoparental</h2>
-    <p class="text-gray-700 leading-relaxed mb-6">Planes adaptados a padres o madres solteros con hijos como cargas. Cobertura equilibrada con precios accesibles, priorizando la protección de los niños sin descuidar la salud del titular. Ideal para familias con un solo adulto a cargo.</p>
+<!-- ====== Tipos de planes familiares ====== -->
+<section class="mb-8 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-10 scroll-mt-28">
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">El plan según tu momento familiar</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-gradient-to-br from-pink-50 to-white rounded-xl p-6 border border-pink-100 text-center">
+            <div class="text-4xl mb-3">🤰</div>
+            <h3 class="font-bold text-gray-900 mb-2">Preferencia Natal</h3>
+            <p class="text-gray-600 text-sm">Máxima cobertura para embarazo, parto y primer año del bebé. Salas cuna y controles priorizados.</p>
+        </div>
+        <div class="bg-gradient-to-br from-blue-50 to-white rounded-xl p-6 border border-blue-100 text-center">
+            <div class="text-4xl mb-3">👨‍👩‍👧‍👦</div>
+            <h3 class="font-bold text-gray-900 mb-2">Con Cargas</h3>
+            <p class="text-gray-600 text-sm">Para familias ya constituidas. Cobertura integral para todos los miembros con beneficios grupales.</p>
+        </div>
+        <div class="bg-gradient-to-br from-purple-50 to-white rounded-xl p-6 border border-purple-100 text-center">
+            <div class="text-4xl mb-3">👩‍👦</div>
+            <h3 class="font-bold text-gray-900 mb-2">Monoparental</h3>
+            <p class="text-gray-600 text-sm">Para un solo adulto con hijos. Precios accesibles sin sacrificar la protección de los niños.</p>
+        </div>
+    </div>
 </section>
 
-<!-- ====== Formulario de cotización (heredado de con-cargas.php) ====== -->
-<div id="formulario" class="max-w-4xl mx-auto px-4 py-10">
+<!-- ====== FORMULARIO ====== -->
+<div id="formulario" class="max-w-4xl mx-auto py-10">
     <?php render_component('formulario_familia'); ?>
 </div>
 
 <?php
 $secciones_html = ob_get_clean();
 
-// ── FAQ fusionado ────────────────────────────────────────
+// ── FAQ ──────────────────────────────────────────────────
 $faq_preguntas = [
-    '¿A quiénes puedo incluir como carga familiar?' => 'Cónyuge, hijos hasta 18 años (25 si estudian), y en algunos casos padres adultos mayores que dependan económicamente de ti.',
+    '¿A quiénes puedo incluir como carga familiar?' => 'Cónyuge, hijos hasta 25 años si estudian, y en algunos casos padres adultos mayores que dependan económicamente de ti.',
     '¿Los planes familiares cubren embarazos?' => 'Sí, todos los planes cubren embarazo. Los planes con preferencia natal ofrecen coberturas adicionales y mejores condiciones.',
     '¿Puedo agregar a mi pareja si no estamos casados?' => 'Sí, puedes agregar a tu conviviente como carga acreditando la convivencia.',
-    '¿Mis hijos están cubiertos hasta qué edad?' => 'Hasta los 25 años si están estudiando, o de por vida si tienen una discapacidad.',
     '¿Qué pasa si me separo?' => 'Cada adulto puede tomar un plan individual conservando su antigüedad. Los hijos quedan como cargas de uno de los padres.',
+    '¿Mis hijos están cubiertos hasta qué edad?' => 'Hasta los 25 años si están estudiando, o de por vida si tienen una discapacidad.',
     '¿Puedo agregar una carga después de contratar el plan?' => 'Sí, puedes agregar cargas en cualquier momento presentando la documentación correspondiente.',
 ];
-$faq_titulo = 'Preguntas Frecuentes sobre Planes Familiares';
+$faq_titulo = 'Preguntas Frecuentes';
 
 // ── Renderizar template ─────────────────────────────────
 include __DIR__ . '/../../../layout/seo-page.php';
