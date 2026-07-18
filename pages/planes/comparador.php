@@ -183,8 +183,8 @@ function renderResultados(data, renta, pct7, edadLabel, categoria, edad, cargas)
     // CTA links (antes del loop para que las cards los usen)
     const esFamiliar = cargas > 0;
     const formUrl = esFamiliar 
-        ? '<?php echo rtrim(BASE_URL, '/'); ?>/planes/familiares/con-cargas/?age=' + edad + '&income=' + renta + '&cargas=' + cargas
-        : '<?php echo rtrim(BASE_URL, '/'); ?>/planes/individuales/adulto/?age=' + edad + '&income=' + renta + '&cargas=0';
+        ? '<?php echo rtrim(BASE_URL, '/'); ?>/planes/familiares/?age=' + edad + '&income=' + renta + '&cargas=' + cargas + '#formulario'
+        : '<?php echo rtrim(BASE_URL, '/'); ?>/planes/individuales/?age=' + edad + '&income=' + renta + '&cargas=0#formulario';
     const formLabel = esFamiliar ? 'Plan Familiar' : 'Plan Individual';
 
     let html = '';

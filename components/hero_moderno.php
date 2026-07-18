@@ -61,16 +61,20 @@ $cta_link = $cta_link ?? '/servicios/cambio-de-isapre#formulario-contacto';
                 <div id="hero-carga-edad-group" style="display:none" class="mt-2 space-y-1"></div>
             </div>
 
-            <div class="mt-2 md:mt-0 w-full md:w-auto">
+            <div class="mt-2 md:mt-0 w-full md:w-auto flex flex-col gap-2">
                 <button type="button" onclick="heroCotizar()" class="block w-full text-center bg-gradient-to-r from-[#00d2ff] to-[#0284c7] hover:from-[#0284c7] hover:to-[#00d2ff] text-white font-extrabold py-4 px-8 rounded-xl shadow-lg transition-transform hover:-translate-y-1 whitespace-nowrap">
                     Buscar Planes
+                </button>
+                <button type="button" onclick="heroCotizarExpress()" class="block w-full text-center bg-white/20 hover:bg-white/30 text-white font-semibold py-2.5 px-8 rounded-xl border border-white/30 transition whitespace-nowrap text-sm">
+                    ⚡ Cotizar Express
                 </button>
             </div>
         </form>
         <script>
         const BASE_URL = '<?= BASE_URL ?>';
         function updateCargaEdadInputs(){const n=parseInt(document.getElementById('hero-cargas').value)||0;const g=document.getElementById('hero-carga-edad-group');if(n===0){g.style.display='none';g.innerHTML='';return}g.style.display='block';let h='';for(let i=1;i<=n;i++)h+='<input type=number maxlength=2 class=hero-carga-edad name=carga_edad[] min=0 max=80 placeholder=\"Edad carga '+i+'\" style=\"width:100%;border:2px solid #f3f4f6;background:#f9fafb;border-radius:12px;padding:8px 12px;font-size:13px;font-weight:600;color:#1f2937;margin-bottom:4px\">';g.innerHTML=h}
-        function heroCotizar(){const r=document.getElementById('hero-renta').value||'0';const e=document.getElementById('hero-edad').value||'';const c=document.getElementById('hero-cargas').value||'0';const p=new URLSearchParams({age:e,income:r,cargas:c});if(c>0){document.querySelectorAll('.hero-carga-edad').forEach((el,i)=>{if(el.value)p.append('carga_edad[]',el.value)})};const d=c>0?BASE_URL+'/planes/familiares/con-cargas/':BASE_URL+'/planes/individuales/adultos/';window.location.href=d+'?'+p.toString()+'#formulario'}
+        function heroCotizar(){const r=document.getElementById('hero-renta').value||'0';const e=document.getElementById('hero-edad').value||'';const c=document.getElementById('hero-cargas').value||'0';const p=new URLSearchParams({age:e,income:r,cargas:c});if(c>0){document.querySelectorAll('.hero-carga-edad').forEach((el,i)=>{if(el.value)p.append('carga_edad[]',el.value)})};const d=c>0?BASE_URL+'/planes/familiares/':BASE_URL+'/planes/individuales/';window.location.href=d+'?'+p.toString()+'#formulario'}
+        function heroCotizarExpress(){const r=document.getElementById('hero-renta').value||'0';const e=document.getElementById('hero-edad').value||'';const c=document.getElementById('hero-cargas').value||'0';const p=new URLSearchParams({age:e,income:r,cargas:c});window.location.href=BASE_URL+'/planes/comparador/?'+p.toString()}
         </script>
     </div>
 </div>
