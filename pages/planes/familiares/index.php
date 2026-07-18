@@ -252,7 +252,7 @@ ob_start();
 </section>
 
 <!-- ====== FORMULARIO ====== -->
-<div id="formulario" class="max-w-4xl mx-auto py-10">
+<div id="formulario" class="max-w-3xl mx-auto py-10">
     <?php render_component('formulario_familia'); ?>
 </div>
 
