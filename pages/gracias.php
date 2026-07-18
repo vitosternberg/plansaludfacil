@@ -347,7 +347,7 @@ include __DIR__ . '/../layout/header.php';
                         </div>
                         <div class="flex items-start gap-2 text-sm">
                             <iconify-icon icon="mdi:database-check" class="text-green-500 flex-shrink-0 mt-0.5" width="16"></iconify-icon>
-                            <span class="text-gray-600">Más de <strong class="text-gray-800">1.000</strong> cotizaciones realizadas este año</span>
+                            <span class="text-gray-600">Más de <strong class="text-gray-800">2.000</strong> evaluaciones cerradas en 15 años de experiencia de nuestros asesores</span>
                         </div>
                     </div>
                 </div>

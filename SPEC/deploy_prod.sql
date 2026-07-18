@@ -108,12 +108,24 @@ INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, resp
    NOW()
 );
 
--- INC-7: WhatsApp sin captura de datos (ABIERTO)
-INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen) VALUES (
+-- INC-7: WhatsApp sin captura de datos (CERRADO — commit b24d9d1)
+INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen, resolucion, fecha_cierre) VALUES (
   'Gracias: botón WhatsApp no captura nombre y teléfono antes de redirigir',
-  'El botón de WhatsApp en gracias.php abre directamente wa.me sin pedir confirmación ni capturar datos del usuario. Debe mostrar un modal pidiendo nombre y teléfono, guardar en BD, y luego abrir WhatsApp.',
-  'bug', 'alta', 'abierto', 'CodeWhale',
-  'pages/gracias.php:523,593'
+  'El botón de WhatsApp en gracias.php abría directamente wa.me sin pedir confirmación ni capturar datos del usuario.',
+  'bug', 'alta', 'cerrado', 'CodeWhale',
+  'pages/gracias.php:523,593',
+  'Fix: agregado modal con campos nombre + teléfono, validación, guardado en BD y tracking antes de abrir WhatsApp. Commit b24d9d1.',
+  NOW()
+);
+
+-- INC-8: Sección confianza — texto desactualizado (CERRADO — commit pendiente)
+INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen, resolucion, fecha_cierre) VALUES (
+  'Gracias: sección "¿Por qué confiar?" dice 1.000 cotizaciones este año',
+  'La sección de confianza mostraba "Más de 1.000 cotizaciones realizadas este año".',
+  'mejora', 'baja', 'cerrado', 'CodeWhale',
+  'pages/gracias.php:350',
+  'Fix: cambiado a "Más de 2.000 evaluaciones cerradas en 15 años de experiencia de nuestros asesores". Commit pendiente.',
+  NOW()
 );
 
 -- INC-6: FAQ respuestas imprecisas (commit 92e376c)
