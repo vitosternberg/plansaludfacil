@@ -164,6 +164,22 @@ INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, resp
   'El index fusionado ahora tiene: Schema.org FAQPage JSON-LD, secciones con tarjetas numeradas, answer-direct destacado, grid cards con íconos y degradados, y la jerarquía visual rica del original.',
   'mejora', 'media', 'cerrado', 'CodeWhale',
   'pages/planes/individuales/index.php',
-  'Fix: reconstruido con 5 secciones card, Schema.org FAQ, answer-direct styling, grid de perfiles, coberturas detalladas y footer vía seo-page.php. Commit 0b0eb97.',
-  NOW()
+   'Fix: reconstruido con 5 secciones card, Schema.org FAQ, answer-direct styling, grid de perfiles, coberturas detalladas y footer vía seo-page.php. Commit 0b0eb97.',
+   NOW()
+);
+
+-- INC-12: Comparador — botones aterrizan sin #formulario ni datos (ABIERTO)
+INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen) VALUES (
+  'Comparador: botones "Completar datos" aterrizan al inicio de la página sin datos del cotizador',
+  'Los botones del comparador enlazaban a /individuales/adulto/ y /familiares/con-cargas/ (rutas viejas) sin ancla #formulario ni query params. Fix: cambiado a /individuales/ y /familiares/ con #formulario y datos (age, income, cargas).',
+  'bug', 'alta', 'abierto', 'CodeWhale',
+  'pages/planes/comparador.php:185-187'
+);
+
+-- INC-13: Hero — falta botón "Cotizar Express" (ABIERTO)
+INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen) VALUES (
+  'Hero: agregar botón "Cotizar Express" que lleve directo al comparador con datos pre-cargados',
+  'El hero solo tenía "Buscar Planes" (→ individuales/familiares). Se agregó "⚡ Cotizar Express" que redirige a /planes/comparador/ con age, income y cargas. Mantiene simplicidad: usuario elige entre página informativa o comparador directo.',
+  'mejora', 'media', 'abierto', 'CodeWhale',
+  'components/hero_moderno.php:64-74'
 );
