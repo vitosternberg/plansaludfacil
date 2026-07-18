@@ -138,12 +138,14 @@ INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, resp
   NOW()
 );
 
--- INC-10: Breadcrumb "Adultos" en página de planes individuales (ABIERTO)
-INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen) VALUES (
-  'SEO: breadcrumb "Adultos" en planes/individuales/adulto.php debe cambiarse — "planes adultos" no existe como categoría',
-  'El breadcrumb dice Inicio > Planes > Individuales > Adultos. "Adultos" no es una categoría real de isapre. La taxonomía correcta es individual vs familiar. Los segmentos por edad (joven, adulto, adulto mayor) son contenido informativo, no categorías de navegación. Recomendación: breadcrumb de 3 niveles Inicio > Planes > Planes Individuales, y la segmentación por edad va dentro del contenido.',
-  'mejora', 'media', 'abierto', 'CodeWhale',
-  'pages/planes/individuales/adulto.php:17, pages/planes/individuales/index.php'
+-- INC-10: Fusión index.php + adulto.php (CERRADO — commit pendiente)
+INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen, resolucion, fecha_cierre) VALUES (
+  'SEO: fusión de index.php + adulto.php — eliminado breadcrumb "Adultos" y página duplicada',
+  'Breadcrumb decía "Adultos" (inexistente). Se fusionó contenido detallado de adulto.php dentro de index.php. Ruta /planes/individuales/adultos/ redirige a /planes/individuales/.',
+  'mejora', 'media', 'cerrado', 'CodeWhale',
+  'pages/planes/individuales/index.php, pages/planes/individuales/adulto.php, index.php',
+  'Fix: index.php ahora contiene todo adulto.php + formulario + FAQ fusionado. Breadcrumb 3 niveles. Commit pendiente.',
+  NOW()
 );
 
 -- INC-6: FAQ respuestas imprecisas (commit 92e376c)

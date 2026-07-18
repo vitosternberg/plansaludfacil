@@ -78,7 +78,8 @@ $redirects = [
     '/isapre/cambio-de-isapre-preexistencia' => '/asesoria/evaluacion-preexistencias/',
     // Planes (antiguo)
     '/isapre/cambio-de-isapre-embarazada' => '/planes/familiares/maternidad/',
-    '/planes/individuales/adulto' => '/planes/individuales/adultos/',
+    '/planes/individuales/adulto' => '/planes/individuales/',
+    '/planes/individuales/adultos' => '/planes/individuales/',
     '/planes/individuales/deportista' => '/planes/individuales/deportistas/',
     '/planes/familiares/preferencia-natal' => '/planes/familiares/maternidad/',
     // Rutas con # → rutas / (corrección SEO)
@@ -118,9 +119,9 @@ $routes = [
 
     // ── PLANES ISAPRE (Hub transaccional) ──
     '/planes' => 'pages/planes/index.php',
-    '/planes/individuales' => 'pages/servicios/planes-individuales.php',
+    '/planes/individuales' => 'pages/planes/individuales/index.php',
     '/planes/individuales/jovenes' => 'pages/planes/individuales/jovenes.php',
-    '/planes/individuales/adultos' => 'pages/planes/individuales/adulto.php',
+    '/planes/individuales/adultos' => 'pages/planes/individuales/index.php',
     '/planes/individuales/deportistas' => 'pages/planes/individuales/deportista.php',
     '/planes/individuales/adulto-mayor' => 'pages/planes/individuales/adulto-mayor.php',
     '/planes/familiares' => 'pages/servicios/planes-familia.php',
