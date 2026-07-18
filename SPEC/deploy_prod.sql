@@ -128,6 +128,16 @@ INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, resp
   NOW()
 );
 
+-- INC-9: Botones "Completar datos" 404 por falta de BASE_URL (CERRADO — commit pendiente)
+INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen, resolucion, fecha_cierre) VALUES (
+  'Gracias: botones "Completar datos para Plan Individual" enlazan a /planes/individuales/adultos/ sin BASE_URL',
+  'Los botones verdes debajo de cada plan recomendado en gracias.php usaban rutas absolutas sin prefijo BASE_URL, causando 404 en el subdirectorio /plansaludfacil_new/.',
+  'bug', 'alta', 'cerrado', 'CodeWhale',
+  'pages/gracias.php:227',
+  'Fix: prefijado $formUrl con BASE_URL. Commit pendiente.',
+  NOW()
+);
+
 -- INC-6: FAQ respuestas imprecisas (commit 92e376c)
 INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen, resolucion, fecha_cierre) VALUES (
   'FAQ: respuestas imprecisas sobre trabajadores independientes y declaración de preexistencias',

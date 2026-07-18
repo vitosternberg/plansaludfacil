@@ -224,7 +224,7 @@ include __DIR__ . '/../layout/header.php';
                     $labels = ['🥇 Más Afín', '🥈', '🥉'];
                     $cargas_lead = intval($ad['cargas'] ?? 0);
                     $esFamiliar = $cargas_lead > 0;
-                    $formUrl = $esFamiliar ? '/planes/familiares/con-cargas/' : '/planes/individuales/adultos/';
+                    $formUrl = BASE_URL . ($esFamiliar ? '/planes/familiares/con-cargas/' : '/planes/individuales/adultos/');
                     $formUrl .= '?age=' . intval($ad['age'] ?? 30) . '&income=' . intval($ad['income'] ?? 1000000) . '&cargas=' . $cargas_lead;
                     $formLabel = $esFamiliar ? 'Plan Familiar' : 'Plan Individual';
                 ?>
