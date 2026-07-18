@@ -1,6 +1,6 @@
 <?php
 /**
- * gracias.php — Página de Agradecimiento Post-Formulario
+ * gracias.php — Página de Agradecimiento Post-Formulario (v2026-07-17)
  * Plan Salud Fácil
  * 
  * Recibe ?id=XXX, consulta la BD y muestra los datos del registro recién creado.
