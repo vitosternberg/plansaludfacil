@@ -16,4 +16,4 @@ jobs:
       - name: 📂 Sync files to server
         run: |
           sudo apt-get update && sudo apt-get install -y lftp
-          lftp -c "set ftp:ssl-allow yes; set ssl:verify-certificate no; set xfer:clobber on; set mirror:ignore-time true; open -u '${{ secrets.FTP_USERNAME }}','${{ secrets.FTP_PASSWORD }}' ${{ secrets.FTP_SERVER }}; mirror -R -e -x .git/ -x .github/ -x node_modules/ -x playwright-report/ -x test-results/ ./ ./public_html/plansaludfacil_new/"
+          lftp -c "set ftp:ssl-allow yes; set ssl:verify-certificate no; set xfer:clobber on; open -u '${{ secrets.FTP_USERNAME }}','${{ secrets.FTP_PASSWORD }}' ${{ secrets.FTP_SERVER }}; put ./pages/gracias.php -o ./public_html/plansaludfacil_new/pages/gracias.php; put ./components/hero_moderno.php -o ./public_html/plansaludfacil_new/components/hero_moderno.php; mirror -R -e -x .git/ -x .github/ -x node_modules/ -x playwright-report/ -x test-results/ ./ ./public_html/plansaludfacil_new/"
