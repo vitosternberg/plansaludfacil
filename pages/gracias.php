@@ -590,29 +590,38 @@ include __DIR__ . '/../layout/header.php';
         }
     }
 
-    // WhatsApp click — guarda en BD + trackea + redirige
-    async function trackWhatsApp(e) {
+    // Abrir modal de WhatsApp
+    function trackWhatsApp(e) {
         e.preventDefault();
+        document.getElementById('wsp-modal').classList.remove('hidden');
+        document.getElementById('wsp-nombre').focus();
+    }
+
+    // Enviar desde el modal de WhatsApp
+    async function sendWhatsApp() {
+        const nombre = document.getElementById('wsp-nombre').value.trim();
+        const telefono = document.getElementById('wsp-telefono').value.trim();
+        const errEl = document.getElementById('wsp-error');
         
-        const phone = '<?= htmlspecialchars(($record['celular'] ?? '')) ?>';
+        if (!nombre) { errEl.textContent = 'Ingresa tu nombre'; errEl.classList.remove('hidden'); return; }
+        if (!telefono || telefono.length < 9) { errEl.textContent = 'Ingresa un teléfono válido (9 dígitos)'; errEl.classList.remove('hidden'); return; }
+        errEl.classList.add('hidden');
         
-        // 1. Guardar en BD solo si hay teléfono real
-        if (phone && phone.length === 9) {
-            try {
-                await fetch('<?= BASE_URL ?>/guardar_whatsapp.php', {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({
-                        name: '<?= htmlspecialchars(($record['nombre'] ?? 'Usuario')) ?>',
-                        phone: phone,
-                        source: 'gracias_cotizacion',
-                        record_id: <?= $record_id ?>
-                    })
-                });
-            } catch(e) { /* no bloquear */ }
-        }
+        // Guardar en BD
+        try {
+            await fetch('<?= BASE_URL ?>/guardar_whatsapp.php', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    name: nombre,
+                    phone: telefono,
+                    source: 'gracias_cotizacion',
+                    record_id: <?= $record_id ?>
+                })
+            });
+        } catch(e) { /* no bloquear */ }
         
-        // 2. Track conversión
+        // Track conversión
         if (window.psfActivityTracker) {
             window.psfActivityTracker.trackConversion('whatsapp_click', {
                 record_id: <?= $record_id ?>,
@@ -627,7 +636,8 @@ include __DIR__ . '/../layout/header.php';
             });
         }
         
-        // 3. Abrir WhatsApp
+        // Cerrar modal y abrir WhatsApp
+        document.getElementById('wsp-modal').classList.add('hidden');
         window.open('https://wa.me/56952282339?text=<?= urlencode('Hola, mi número de cotización es #' . $record_id . '. Quisiera más información sobre los planes recomendados.') ?>', '_blank');
     }
 
@@ -648,6 +658,28 @@ include __DIR__ . '/../layout/header.php';
             container.appendChild(piece);
         }
     })();
+
+    // Modal WhatsApp
+    const wspModal = document.getElementById('wsp-modal');
+    wspModal.addEventListener('click', function(e) { if (e.target === wspModal) wspModal.classList.add('hidden'); });
 </script>
+
+<!-- Modal WhatsApp -->
+<div id="wsp-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60" style="z-index:9999">
+    <div class="relative bg-white rounded-2xl shadow-2xl p-6 w-[min(92vw,400px)]">
+        <button onclick="document.getElementById('wsp-modal').classList.add('hidden')" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 text-xl leading-none">&times;</button>
+        <h3 class="text-lg font-bold text-gray-800 mb-1">¿Hablamos por WhatsApp?</h3>
+        <p class="text-sm text-gray-500 mb-4">Déjanos tu nombre y teléfono para enviarte los planes recomendados.</p>
+        <div class="space-y-3">
+            <input id="wsp-nombre" type="text" placeholder="Tu nombre" value="<?= htmlspecialchars($record['nombre'] ?? '') ?>" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none">
+            <input id="wsp-telefono" type="tel" placeholder="Teléfono (9 dígitos)" value="<?= htmlspecialchars($record['celular'] ?? '') ?>" maxlength="9" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none">
+            <p id="wsp-error" class="hidden text-xs text-red-600"></p>
+            <button onclick="sendWhatsApp()" class="w-full py-3 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition flex items-center justify-center gap-2">
+                <iconify-icon icon="mdi:whatsapp" width="20"></iconify-icon>
+                Enviar y abrir WhatsApp
+            </button>
+        </div>
+    </div>
+</div>
 
 <?php include __DIR__ . '/../layout/footer.php'; ?>

@@ -108,6 +108,14 @@ INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, resp
    NOW()
 );
 
+-- INC-7: WhatsApp sin captura de datos (ABIERTO)
+INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen) VALUES (
+  'Gracias: botón WhatsApp no captura nombre y teléfono antes de redirigir',
+  'El botón de WhatsApp en gracias.php abre directamente wa.me sin pedir confirmación ni capturar datos del usuario. Debe mostrar un modal pidiendo nombre y teléfono, guardar en BD, y luego abrir WhatsApp.',
+  'bug', 'alta', 'abierto', 'CodeWhale',
+  'pages/gracias.php:523,593'
+);
+
 -- INC-6: FAQ respuestas imprecisas (commit 92e376c)
 INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen, resolucion, fecha_cierre) VALUES (
   'FAQ: respuestas imprecisas sobre trabajadores independientes y declaración de preexistencias',
