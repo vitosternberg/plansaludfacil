@@ -224,10 +224,6 @@ include __DIR__ . '/../layout/header.php';
                     $isapre_colors = ['Banmédica'=>'bg-blue-600','Colmena'=>'bg-yellow-500','Consalud'=>'bg-green-600','Cruz Blanca'=>'bg-indigo-600','Esencial'=>'bg-purple-600','Nueva Masvida'=>'bg-pink-600','Vida Tres'=>'bg-red-600'];
                     $labels = ['🥇 Más Afín', '🥈', '🥉'];
                     $cargas_lead = intval($ad['cargas'] ?? 0);
-                    $esFamiliar = $cargas_lead > 0;
-                    $formUrl = BASE_URL . ($esFamiliar ? '/planes/familiares/con-cargas/' : '/planes/individuales/adultos/');
-                    $formUrl .= '?age=' . intval($ad['age'] ?? 30) . '&income=' . intval($ad['income'] ?? 1000000) . '&cargas=' . $cargas_lead;
-                    $formLabel = $esFamiliar ? 'Plan Familiar' : 'Plan Individual';
                 ?>
                 <?php foreach ($resultados_cotizacion as $i => $alt): 
                     $ap = $alt['plan']; $as = $alt['score']; $ar = $alt['razones'];
@@ -257,9 +253,6 @@ include __DIR__ . '/../layout/header.php';
                                 <?php endforeach; ?>
                             </div>
                             <?php endif; ?>
-                            <a href="<?= $formUrl ?>" class="inline-flex items-center gap-1 mt-2 px-3 py-1.5 bg-green-600 text-white text-xs font-semibold rounded-lg hover:bg-green-700 transition">
-                                📋 Completar datos para <?= $formLabel ?>
-                            </a>
                         </div>
                         <div class="flex items-center gap-4 md:block md:text-right">
                             <div class="relative" style="width:58px;height:58px">
