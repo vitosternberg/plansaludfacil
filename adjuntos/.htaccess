@@ -1,3 +1,15 @@
 # Bloquear acceso HTTP directo a archivos de datos
 # PHP puede seguir leyéndolos vía filesystem (file_get_contents, fopen)
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule \.(csv|pdf|dat)$ - [F,L]
+</IfModule>
+
+<IfModule mod_authz_core.c>
 Require all denied
+</IfModule>
+
+<IfModule !mod_authz_core.c>
+Deny from all
+</IfModule>
