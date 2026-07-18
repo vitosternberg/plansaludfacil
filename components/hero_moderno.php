@@ -1,5 +1,5 @@
 <?php
-// components/hero_moderno.php
+// components/hero_moderno.php — v2026-07-18b
 // Variables esperadas (opcionales porque tienen default): $titulo, $subtitulo, $cta_texto, $cta_link
 $titulo = $titulo ?? 'Encuentra tu Plan de Salud Ideal';
 $titulo_movil = $titulo_movil ?? $titulo;
