@@ -1,0 +1,3 @@
+# Bloquear acceso HTTP directo a archivos de datos
+# PHP puede seguir leyéndolos vía filesystem (file_get_contents, fopen)
+Require all denied
