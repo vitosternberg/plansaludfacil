@@ -65,7 +65,7 @@ $cta_link = $cta_link ?? '/servicios/cambio-de-isapre#formulario-contacto';
                 <button type="button" onclick="heroCotizar()" class="block w-full text-center bg-gradient-to-r from-[#00d2ff] to-[#0284c7] hover:from-[#0284c7] hover:to-[#00d2ff] text-white font-extrabold py-4 px-8 rounded-xl shadow-lg transition-transform hover:-translate-y-1 whitespace-nowrap">
                     Buscar Planes
                 </button>
-                <button type="button" onclick="heroCotizarExpress()" class="block w-full text-center bg-white/20 hover:bg-white/30 text-white font-semibold py-2.5 px-8 rounded-xl border border-white/30 transition whitespace-nowrap text-sm">
+                <button type="button" onclick="heroCotizarExpress()" class="block w-full text-center bg-green-500 hover:bg-green-600 text-white font-bold py-2.5 px-8 rounded-xl shadow transition whitespace-nowrap text-sm">
                     ⚡ Cotizar Express
                 </button>
             </div>
