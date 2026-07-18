@@ -128,14 +128,22 @@ INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, resp
   NOW()
 );
 
--- INC-9: Botones "Completar datos" 404 por falta de BASE_URL (CERRADO — commit pendiente)
+-- INC-9: Botones "Completar datos" eliminados por redundantes (CERRADO — commit 2ebb793)
 INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen, resolucion, fecha_cierre) VALUES (
-  'Gracias: botones "Completar datos para Plan Individual" enlazan a /planes/individuales/adultos/ sin BASE_URL',
-  'Los botones verdes debajo de cada plan recomendado en gracias.php usaban rutas absolutas sin prefijo BASE_URL, causando 404 en el subdirectorio /plansaludfacil_new/.',
-  'bug', 'alta', 'cerrado', 'CodeWhale',
-  'pages/gracias.php:227',
-  'Fix: prefijado $formUrl con BASE_URL. Commit pendiente.',
+  'Gracias: botones "Completar datos para Plan Individual" redundantes — el usuario ya viene de completar sus datos',
+  'Los botones debajo de cada plan en gracias.php no tenían sentido porque el lead ya completó sus datos. Solo tendrían sentido en el comparador.',
+  'mejora', 'baja', 'cerrado', 'CodeWhale',
+  'pages/gracias.php:260-262',
+  'Fix: eliminados los botones y las variables $formUrl/$formLabel. Commit 2ebb793.',
   NOW()
+);
+
+-- INC-10: Breadcrumb "Adultos" en página de planes individuales (ABIERTO)
+INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen) VALUES (
+  'SEO: breadcrumb "Adultos" en planes/individuales/adulto.php debe cambiarse — "planes adultos" no existe como categoría',
+  'El breadcrumb dice Inicio > Planes > Individuales > Adultos. "Adultos" no es una categoría real de isapre. La taxonomía correcta es individual vs familiar. Los segmentos por edad (joven, adulto, adulto mayor) son contenido informativo, no categorías de navegación. Recomendación: breadcrumb de 3 niveles Inicio > Planes > Planes Individuales, y la segmentación por edad va dentro del contenido.',
+  'mejora', 'media', 'abierto', 'CodeWhale',
+  'pages/planes/individuales/adulto.php:17, pages/planes/individuales/index.php'
 );
 
 -- INC-6: FAQ respuestas imprecisas (commit 92e376c)
