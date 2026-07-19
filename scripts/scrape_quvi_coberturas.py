@@ -46,7 +46,7 @@ with sync_playwright() as p:
         try:
             page.goto(url, wait_until='networkidle', timeout=15000)
             time.sleep(1.0)
-            coberturas = page.evaluate("""() => {
+            coberturas = page.evaluate(r"""() => {
                 const result = {};
                 const section = document.getElementById('pdViewCobertura');
                 if (!section) return result;
