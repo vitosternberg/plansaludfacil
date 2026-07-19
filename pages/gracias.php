@@ -305,6 +305,23 @@ include __DIR__ . '/../layout/header.php';
                     </ol>
                 </div>
 
+                <!-- Guarda tu cotización para después -->
+                <div class="bg-gray-50 rounded-xl p-5 mb-6 text-left border border-gray-100">
+                    <h3 class="font-semibold text-gray-800 mb-2 flex items-center gap-2">
+                        <iconify-icon icon="mdi:content-save" class="text-blue-600" width="20"></iconify-icon>
+                        Guarda tu cotización para después
+                    </h3>
+                    <p class="text-sm text-gray-500 mb-3">Te enviaremos un enlace único a tu correo para que puedas revisar tu cotización cuando quieras.</p>
+                    <div class="flex flex-col sm:flex-row gap-2">
+                        <input type="email" id="save-email" value="<?= htmlspecialchars($record['correo'] ?? '') ?>" placeholder="tu@email.com" class="flex-1 px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff]">
+                        <button onclick="saveQuote()" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg transition text-sm flex items-center justify-center gap-1">
+                            <iconify-icon icon="mdi:send" width="16"></iconify-icon>
+                            Enviar a mi correo
+                        </button>
+                    </div>
+                    <p id="save-msg" class="text-xs text-green-600 mt-2 hidden">¡Listo! Revisa tu bandeja de entrada. La cotización es válida por 7 días.</p>
+                </div>
+
                 <!-- Ejecutivo Asignado (CA-06) -->
                 <div class="bg-amber-50 rounded-xl p-5 mb-6 text-left border border-amber-100">
                     <h3 class="font-semibold text-gray-800 mb-3 flex items-center gap-2">
@@ -392,23 +409,6 @@ include __DIR__ . '/../layout/header.php';
                     <p class="text-green-200 text-xs mt-3">Sin compromiso. Recibirás asesoría personalizada antes de cualquier decisión.</p>
                 </div>
 
-                <!-- Guardar Cotización por Email (CA-15) -->
-                <div class="bg-gray-50 rounded-xl p-5 mb-6 text-left border border-gray-100">
-                    <h3 class="font-semibold text-gray-800 mb-2 flex items-center gap-2">
-                        <iconify-icon icon="mdi:content-save" class="text-blue-600" width="20"></iconify-icon>
-                        Guarda tu cotización para después
-                    </h3>
-                    <p class="text-sm text-gray-500 mb-3">Te enviaremos un enlace único a tu correo para que puedas revisar tu cotización cuando quieras.</p>
-                    <div class="flex flex-col sm:flex-row gap-2">
-                        <input type="email" id="save-email" value="<?= htmlspecialchars($record['correo'] ?? '') ?>" placeholder="tu@email.com" class="flex-1 px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff]">
-                        <button onclick="saveQuote()" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg transition text-sm flex items-center justify-center gap-1">
-                            <iconify-icon icon="mdi:send" width="16"></iconify-icon>
-                            Enviar a mi correo
-                        </button>
-                    </div>
-                    <p id="save-msg" class="text-xs text-green-600 mt-2 hidden">¡Listo! Revisa tu bandeja de entrada. La cotización es válida por 7 días.</p>
-                </div>
-
                 <!-- Validez de la Cotización (CA-16) -->
                 <div class="flex items-center gap-2 text-xs text-amber-600 bg-amber-50 rounded-lg px-3 py-2 mb-6 justify-center">
                     <iconify-icon icon="mdi:information-outline" width="14"></iconify-icon>
@@ -490,35 +490,13 @@ include __DIR__ . '/../layout/header.php';
                 <?php endif; ?>
             <?php endif; ?>
 
-            <!-- Contacto directo -->
-            <div class="bg-blue-50 rounded-xl p-5 mb-8 text-left border border-blue-100">
-                <h3 class="font-semibold text-gray-800 mb-3 flex items-center gap-2">
-                    <iconify-icon icon="mdi:headset" class="text-blue-600" width="20"></iconify-icon>
-                    ¿Prefieres hablar ahora?
-                </h3>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="https://wa.me/56952282339?text=<?= urlencode('Hola, mi número de cotización es #' . $record_id . '. Quisiera más información sobre mi plan.') ?>" target="_blank" class="flex items-center gap-2 text-green-700 bg-green-100 hover:bg-green-200 px-4 py-2 rounded-lg transition font-medium">
-                        <iconify-icon icon="mdi:whatsapp" width="20"></iconify-icon>
-                        +56 9 5228 2339
-                    </a>
-                    <a href="mailto:contacto@plansaludfacil.cl?subject=<?= urlencode('Consulta cotización #' . $record_id) ?>" class="flex items-center gap-2 text-blue-700 bg-blue-100 hover:bg-blue-200 px-4 py-2 rounded-lg transition font-medium">
-                        <iconify-icon icon="mdi:email" width="20"></iconify-icon>
-                        contacto@plansaludfacil.cl
-                    </a>
-                </div>
-            </div>
-
             <!-- CTAs finales -->
             <div class="flex flex-col sm:flex-row gap-3 justify-center">
                 <a href="<?= BASE_URL ?>/planes/comparador/" class="inline-flex items-center px-5 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition shadow-md">
                     <iconify-icon icon="mdi:refresh" class="mr-2" width="18"></iconify-icon>
                     Volver a cotizar
                 </a>
-                <a href="#" onclick="trackWhatsApp(event)" class="inline-flex items-center px-5 py-3 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition shadow-md">
-                    <iconify-icon icon="mdi:whatsapp" class="mr-2" width="18"></iconify-icon>
-                    Hablar por WhatsApp
-                </a>
-                <a href="/" class="inline-flex items-center px-5 py-3 bg-white text-gray-700 font-semibold rounded-xl hover:bg-gray-50 transition border border-gray-200">
+                <a href="<?= BASE_URL ?>/" class="inline-flex items-center px-5 py-3 bg-white text-gray-700 font-semibold rounded-xl hover:bg-gray-50 transition border border-gray-200">
                     <iconify-icon icon="mdi:home" class="mr-2" width="18"></iconify-icon>
                     Ir al inicio
                 </a>
