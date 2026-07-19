@@ -63,6 +63,7 @@ $result['total_planes_evaluados'] = 2231;
 // ─── ENVÍO DE COTIZACIÓN POR CORREO ───
 $email_sent = false;
 $recipient_email = trim($input['email'] ?? '');
+$record_id = (int)($input['record_id'] ?? 0);
 
 if (!empty($recipient_email) && filter_var($recipient_email, FILTER_VALIDATE_EMAIL)) {
     // Cargar PHPMailer
@@ -114,7 +115,9 @@ if (!empty($recipient_email) && filter_var($recipient_email, FILTER_VALIDATE_EMA
                 <p style='color:#bfdbfe;font-size:13px;margin:0'>Plan Salud Fácil · Válida por 7 días</p>
             </div>
             <div style='padding:24px'>
-                <p style='font-size:15px;color:#374151;margin:0 0 8px'>Hola <strong>" . $nombre . "</strong>,</p>
+                <p style='font-size:15px;color:#374151;margin:0 0 8px'>Hola <strong>" . $nombre . "</strong>,</p>" . 
+                ($record_id > 0 ? "
+                <p style='font-size:13px;color:#6b7280;margin:0 0 12px'>📋 Cotización #<strong>" . $record_id . "</strong></p>" : "") . "
                 <p style='font-size:14px;color:#6b7280;margin:0 0 20px'>Estos son los mejores planes para tu perfil (edad: " . intval($lead['edad']) . " años, renta: $" . number_format($lead['renta'], 0, ',', '.') . ", 7% legal: $" . number_format($pct7, 0, ',', '.') . "):</p>
                 <table style='width:100%;border-collapse:collapse;margin-bottom:20px'>" . $planes_html . "</table>
                 <p style='font-size:13px;color:#6b7280;margin:0 0 16px'>Estos precios fueron verificados hoy. Las isapres pueden ajustar sus tarifas periódicamente.</p>

@@ -557,7 +557,8 @@ include __DIR__ . '/../layout/header.php';
                     renta: <?= intval($ad['income'] ?? 1000000) ?>,
                     cargas: <?= intval($ad['cargas'] ?? 0) ?>,
                     intereses: <?= json_encode($ad['interests'] ?? ['Hospitalización'], JSON_UNESCAPED_UNICODE) ?>,
-                    email: email
+                    email: email,
+                    record_id: <?= $record_id ?? 0 ?>
                 })
             });
             const data = await resp.json();
