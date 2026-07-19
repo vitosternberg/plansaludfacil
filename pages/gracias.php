@@ -321,7 +321,7 @@ include __DIR__ . '/../layout/header.php';
                         <iconify-icon icon="mdi:account-tie-voice" width="22"></iconify-icon>
                         Cotiza con Experto
                     </h3>
-                    <p class="text-blue-100 text-sm mb-4 relative z-10">Un asesor revisará tu caso y te enviará la mejor opción a tu correo. También recibiremos una copia para darte seguimiento personalizado.</p>
+                    <p class="text-blue-100 text-sm mb-4 relative z-10">¿Quieres una cotización 100% precisa? Un asesor revisará tu perfil, te contactará y te entregará la mejor opción ajustada a tu situación real.</p>
                     <div class="flex flex-col sm:flex-row gap-2 relative z-10">
                         <input type="email" id="save-email" value="<?= htmlspecialchars($record['correo'] ?? '') ?>" placeholder="tu@email.com" class="flex-1 px-4 py-2.5 bg-white/90 border border-white/20 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400">
                         <button onclick="saveQuote()" class="btn-glow bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-white font-bold px-5 py-2.5 rounded-lg transition text-sm flex items-center justify-center gap-1.5 shadow-lg shadow-cyan-500/30">
