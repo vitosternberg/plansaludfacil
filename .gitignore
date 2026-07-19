@@ -9,5 +9,7 @@ test-results/
 playwright-report/
 playwright/.cache/
 adjuntos/*.pdf
+SPEC/
+HU/
 .codewhale/
 .deepseek/
