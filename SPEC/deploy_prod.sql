@@ -168,26 +168,32 @@ INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, resp
    NOW()
 );
 
--- INC-12: Comparador — botones aterrizan sin #formulario ni datos (ABIERTO)
-INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen) VALUES (
-  'Comparador: botones "Completar datos" aterrizan al inicio de la página sin datos del cotizador',
-  'Los botones del comparador enlazaban a /individuales/adulto/ y /familiares/con-cargas/ (rutas viejas) sin ancla #formulario ni query params. Fix: cambiado a /individuales/ y /familiares/ con #formulario y datos (age, income, cargas).',
-  'bug', 'alta', 'abierto', 'CodeWhale',
-  'pages/planes/comparador.php:185-187'
+-- INC-12: Comparador — botones a #formulario con datos (CERRADO — commits a91f29f + b238211)
+INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen, resolucion, fecha_cierre) VALUES (
+  'Comparador: botones "Completar datos" aterrizan en #formulario con datos del cotizador',
+  'Los botones del comparador ahora enlazan a /individuales/ y /familiares/ con #formulario y query params (age, income, cargas). Probado y funcionando en producción.',
+  'bug', 'alta', 'cerrado', 'CodeWhale',
+  'pages/planes/comparador.php:185-187',
+  'Fix: cambiado a rutas fusionadas con #formulario y datos. Commits a91f29f + b238211.',
+  NOW()
 );
 
--- INC-13: Hero — falta botón "Cotizar Express" (ABIERTO)
-INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen) VALUES (
-  'Hero: agregar botón "Cotizar Express" que lleve directo al comparador con datos pre-cargados',
-  'El hero solo tenía "Buscar Planes" (→ individuales/familiares). Se agregó "⚡ Cotizar Express" que redirige a /planes/comparador/ con age, income y cargas. Mantiene simplicidad: usuario elige entre página informativa o comparador directo.',
-  'mejora', 'media', 'abierto', 'CodeWhale',
-   'components/hero_moderno.php:64-74'
+-- INC-13: Hero — botón "Cotizar Express" (CERRADO — commits a91f29f + 190fed6 + 0eb7e3f + 39b0b87 + 5641f10 + 816fe48 + 1c30ef4)
+INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen, resolucion, fecha_cierre) VALUES (
+  'Hero: botón verde "Cotizar Express" con validación, datos y scroll al formulario',
+  'Hero ahora tiene 2 botones: "Buscar Planes" y "Cotizar Express". Con validación de campos, recolección de carga_edad[], params edad/renta, y #comparador al aterrizar.',
+  'mejora', 'media', 'cerrado', 'CodeWhale',
+  'components/hero_moderno.php:64-74',
+  'Fix: 6 commits acumulados en hero_moderno.php. Validación, params, carga_edad[], scroll #comparador.',
+  NOW()
 );
 
--- INC-14: CTAs de páginas isapre apuntan a WhatsApp en vez de formulario/comparador (ABIERTO)
-INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen) VALUES (
-  'UX: CTAs de páginas isapre deben redirigir al formulario o comparador, no a WhatsApp',
-  'Actualmente ~24 páginas (individuales, familiares, isapre/*, companias/*) tienen $cta_link apuntando a WhatsApp. El usuario quiere: (a) En planes/individuales y planes/familiares: el botón debe hacer scroll al #formulario de la misma página. (b) En isapre/*, companias/* y resto: botón "Cotiza Express" que lleve al comparador.',
-  'mejora', 'media', 'abierto', 'CodeWhale',
-  'pages/planes/individuales/index.php, pages/planes/familiares/index.php, ~20 páginas isapre/companias'
+-- INC-14: CTAs isapre → formulario/comparador (CERRADO — commit 139f00c)
+INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen, resolucion, fecha_cierre) VALUES (
+  'UX: CTAs redirigen a formulario/comparador + WhatsApp oculto en desktop',
+  'Planes individuales/familiares: "Cotizar ahora" → #formulario. 22 páginas isapre/companias: "Cotiza Express" → /planes/comparador/. WhatsApp flotante con md:hidden.',
+  'mejora', 'media', 'cerrado', 'CodeWhale',
+  'pages/planes/individuales/index.php, pages/planes/familiares/index.php, ~22 páginas isapre/companias, components/cta_flotante.php',
+  'Fix: 25 archivos modificados. CTAs estandarizados, WhatsApp solo mobile. Commit 139f00c.',
+  NOW()
 );
