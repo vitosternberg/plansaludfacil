@@ -12,8 +12,8 @@ $h1               = 'Cambio de Isapre con Preexistencia';
 $lead             = 'Tener una condición de salud preexistente no te impide cambiarte de isapre. Con la estrategia correcta, puedes encontrar un plan que te acepte sin restricciones o con las mínimas posibles.';
 $svc_name         = 'Cambio de Isapre con Preexistencia';
 $svc_description  = 'Guía para cambiarte de isapre teniendo preexistencias: qué isapres son más flexibles, cómo completar la Declaración de Salud y qué esperar del proceso.';
-$cta_texto        = 'Cotizar por WhatsApp';
-$cta_link         = 'https://wa.me/56952282339';
+$cta_texto = 'Cotiza Express';
+$cta_link         = BASE_URL.'/planes/comparador/';
 
 $breadcrumbs = [
     ['label' => 'Inicio', 'url' => 'BASE_URL/'],

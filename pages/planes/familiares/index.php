@@ -34,8 +34,8 @@ $h1               = 'Planes de ISAPRE Familiares';
 $lead             = 'Protege a toda tu familia con un plan que se adapte a su composición y necesidades. Desde planes con cobertura reforzada para embarazos hasta opciones para familias monoparentales.';
 $svc_name         = 'Planes Familiares de ISAPRE';
 $svc_description  = 'Planes de ISAPRE para familias: cobertura para cónyuge, hijos y otras cargas legales. Cotiza gratis.';
-$cta_texto        = 'Cotizar por WhatsApp';
-$cta_link         = 'https://wa.me/56952282339';
+$cta_texto        = 'Cotizar ahora';
+$cta_link         = '#formulario';
 
 // ── Breadcrumbs (3 niveles) ──────────────────────────────
 $breadcrumbs = [['label' => 'Inicio', 'url' => 'BASE_URL/'], ['label' => 'Planes', 'url' => 'BASE_URL/planes/'], ['label' => 'Familiares', 'url' => '#']];

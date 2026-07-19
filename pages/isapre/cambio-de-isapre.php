@@ -31,8 +31,8 @@ $h1               = 'Te ayudamos a cambiarte de Isapre gratis y sin hacer trámi
 $lead             = 'Comparamos todas las Isapres del mercado, gestionamos tu Declaración de Salud y firmas tu nuevo contrato 100% online. En menos de 48 horas.';
 $svc_name         = 'Cambio de Isapre';
 $svc_description  = 'Asesoría gratuita para cambiarte de Isapre: comparamos planes, gestionamos tu Declaración de Salud y firmas online.';
-$cta_texto        = 'Quiero Cambiarme de Isapre';
-$cta_link         = 'https://wa.me/56952282339';
+$cta_texto = 'Cotiza Express';
+$cta_link         = BASE_URL.'/planes/comparador/';
 
 // ── Breadcrumbs ──────────────────────────────────────────
 $breadcrumbs = [['label' => 'Inicio', 'url' => 'BASE_URL/'], ['label' => 'Cambio de Isapre', 'url' => '#']];

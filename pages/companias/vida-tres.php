@@ -4,7 +4,7 @@ $page_title='Planes Isapre Vida Tres: Premium, Personalizado y Copagos Bajos | P
 $meta_description='Planes de Isapre Vida Tres para profesionales de alta renta. Atención personalizada, copagos bajos y acceso a las mejores clínicas. Precios 2026.';
 $h1='Planes Isapre Vida Tres';
 $lead='Vida Tres es una isapre de nicho enfocada en la excelencia de atención. Con planes premium, copagos bajos y una red de clínicas de primer nivel, es la opción ideal para profesionales que valoran la calidad por sobre el precio.';
-$svc_name='Planes Vida Tres';$cta_texto='Cotizar Vida Tres';$cta_link='https://wa.me/56952282339';
+$svc_name='Planes Vida Tres';$cta_texto = 'Cotiza Express';$cta_link = BASE_URL.'/planes/comparador/';
 $breadcrumbs=[['label'=>'Inicio','url'=>'BASE_URL/'],['label'=>'Isapres','url'=>'BASE_URL/isapres/'],['label'=>'Compañías','url'=>'BASE_URL/isapres/companias/'],['label'=>'Vida Tres','url'=>'#']];
 foreach($breadcrumbs as &$bc){$bc['url']=str_replace('BASE_URL/',BASE_URL.'/',$bc['url']);}unset($bc);
 $toc_items=[['id'=>'coberturas','label'=>'Coberturas'],['id'=>'precios','label'=>'Precios 2026'],['id'=>'experiencia','label'=>'Experiencia VIP'],['id'=>'ideal','label'=>'¿Es para ti?']];

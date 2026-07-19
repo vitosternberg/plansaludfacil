@@ -13,7 +13,7 @@ $page_title='Planes Familiares con Cargas: Isapre para tu Familia | Plan Salud F
 $meta_description='Planes de Isapre familiares con cargas. Protege a tu pareja e hijos con la mejor cobertura. Compara precios y beneficios para tu grupo familiar.';
 $h1='Planes de Isapre Familiares con Cargas';
 $lead='Tu familia merece la mejor cobertura. Los planes familiares te permiten proteger a tu pareja e hijos bajo un mismo plan, optimizando el 7% de cada uno y accediendo a beneficios grupales que un plan individual no ofrece.';
-$svc_name='Planes Familiares con Cargas';$svc_description='Planes de Isapre para familias con cargas. Cobertura para pareja e hijos, pediatría, maternidad y beneficios grupales. Cotiza gratis.';$cta_texto='Cotizar Plan Familiar';$cta_link='https://wa.me/56952282339';
+$svc_name='Planes Familiares con Cargas';$svc_description='Planes de Isapre para familias con cargas. Cobertura para pareja e hijos, pediatría, maternidad y beneficios grupales. Cotiza gratis.';$cta_texto = 'Cotiza Express';$cta_link = BASE_URL.'/planes/comparador/';
 $breadcrumbs=[['label'=>'Inicio','url'=>'BASE_URL/'],['label'=>'Planes','url'=>'BASE_URL/planes/'],['label'=>'Familiares','url'=>'BASE_URL/planes/familiares/'],['label'=>'Con Cargas','url'=>'#']];
 foreach($breadcrumbs as &$bc){$bc['url']=str_replace('BASE_URL/',BASE_URL.'/',$bc['url']);}unset($bc);
 $toc_items=[['id'=>'coberturas','label'=>'Coberturas'],['id'=>'precios','label'=>'Precios'],['id'=>'beneficios','label'=>'Beneficios familiares'],['id'=>'isapres','label'=>'Mejores isapres']];

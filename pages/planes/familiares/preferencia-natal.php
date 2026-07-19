@@ -14,7 +14,7 @@ $page_title='Planes de Isapre Maternidad: Cobertura de Embarazo y Parto | Plan S
 $meta_description='Planes de Isapre con cobertura de maternidad: prenatal, parto, cesárea, neonatología y primer año del bebé. Cotiza gratis el mejor plan para tu embarazo.';
 $h1='Planes de Isapre con Cobertura de Maternidad';
 $lead='Si estás planificando un embarazo o ya estás embarazada, la cobertura de maternidad es probablemente tu prioridad número uno. Un parto en clínica privada puede costar entre $1.000.000 y $3.000.000. Con el plan adecuado, pagas una fracción de eso.';
-$svc_name='Planes Maternidad';$svc_description='Planes de Isapre con la mejor cobertura de maternidad: parto, cesárea, prenatal, postnatal y primer año del bebé. Compara y cotiza gratis.';$cta_texto='Cotizar Plan Maternidad';$cta_link='https://wa.me/56952282339';
+$svc_name='Planes Maternidad';$svc_description='Planes de Isapre con la mejor cobertura de maternidad: parto, cesárea, prenatal, postnatal y primer año del bebé. Compara y cotiza gratis.';$cta_texto = 'Cotiza Express';$cta_link = BASE_URL.'/planes/comparador/';
 $breadcrumbs=[['label'=>'Inicio','url'=>'BASE_URL/'],['label'=>'Planes','url'=>'BASE_URL/planes/'],['label'=>'Familiares','url'=>'BASE_URL/planes/familiares/'],['label'=>'Maternidad','url'=>'#']];
 foreach($breadcrumbs as &$bc){$bc['url']=str_replace('BASE_URL/',BASE_URL.'/',$bc['url']);}unset($bc);
 $toc_items=[['id'=>'cobertura','label'=>'Qué cubre'],['id'=>'precios','label'=>'Precios y copagos'],['id'=>'isapres','label'=>'Mejores isapres'],['id'=>'tips','label'=>'Consejos']];

@@ -12,8 +12,8 @@ $h1               = 'Cambio de Isapre Estando Embarazada';
 $lead             = 'El embarazo es una de las etapas donde más necesitas una buena cobertura de salud. Si estás evaluando cambiarte de isapre estando embarazada, aquí te explicamos todas las consideraciones especiales.';
 $svc_name         = 'Cambio de Isapre Embarazada';
 $svc_description  = '¿Embarazada y quieres cambiarte de isapre? Guía completa sobre condiciones, plazos, cobertura de parto y cómo obtener el mejor plan para tu embarazo y postparto.';
-$cta_texto        = 'Cotizar por WhatsApp';
-$cta_link         = 'https://wa.me/56952282339';
+$cta_texto = 'Cotiza Express';
+$cta_link         = BASE_URL.'/planes/comparador/';
 
 $breadcrumbs = [
     ['label' => 'Inicio', 'url' => 'BASE_URL/'],

@@ -30,8 +30,8 @@ $h1               = '¿Qué es una ISAPRE?';
 $lead             = 'Una ISAPRE (Institución de Salud Previsional) es una entidad privada que administra tu cotización obligatoria de salud del 7% y te ofrece planes con distintas coberturas médicas.';
 $svc_name         = 'Información sobre ISAPREs';
 $svc_description  = 'Guía completa sobre qué es una ISAPRE y cómo funciona.';
-$cta_texto        = 'Cotizar por WhatsApp';
-$cta_link         = 'https://wa.me/56952282339';
+$cta_texto = 'Cotiza Express';
+$cta_link         = BASE_URL.'/planes/comparador/';
 
 // ── Breadcrumbs ──────────────────────────────────────────
 $breadcrumbs = [['label' => 'Inicio', 'url' => 'BASE_URL/'], ['label' => 'ISAPRE', 'url' => 'BASE_URL/isapres/'], ['label' => '¿Qué es?', 'url' => '#']];

@@ -35,8 +35,8 @@ $h1               = 'Planes de ISAPRE Individuales';
 $lead             = 'Un plan de salud pensado para ti, sin cargas. Desde el profesional joven que empieza hasta el adulto mayor que busca la mejor protección.';
 $svc_name         = 'Planes Individuales de ISAPRE';
 $svc_description  = 'Planes de ISAPRE para personas sin cargas: jóvenes, adultos, deportistas y adultos mayores. Cotiza gratis.';
-$cta_texto        = 'Cotizar por WhatsApp';
-$cta_link         = 'https://wa.me/56952282339';
+$cta_texto        = 'Cotizar ahora';
+$cta_link         = '#formulario';
 
 // ── Breadcrumbs (3 niveles) ──────────────────────────────
 $breadcrumbs = [['label' => 'Inicio', 'url' => 'BASE_URL/'], ['label' => 'Planes', 'url' => 'BASE_URL/planes/'], ['label' => 'Individuales', 'url' => '#']];

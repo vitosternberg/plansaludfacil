@@ -13,7 +13,7 @@ $page_title='Planes de Isapre Individuales: Cobertura a tu Medida | Plan Salud F
 $meta_description='Planes de Isapre individuales sin cargas. Cobertura equilibrada en hospitalización, ambulatorio y prevención. Cotiza gratis.';
 $h1='Planes de Isapre Individuales';
 $lead='Un plan de salud pensado para ti, sin cargas. Cobertura equilibrada entre consultas, hospitalización y prevención.';
-$svc_name='Planes Individuales';$svc_description='Planes de Isapre individuales sin cargas. Cobertura en hospitalización, ambulatorio y prevención.';$cta_texto='Cotizar Plan Individual';$cta_link='https://wa.me/56952282339';
+$svc_name='Planes Individuales';$svc_description='Planes de Isapre individuales sin cargas. Cobertura en hospitalización, ambulatorio y prevención.';$cta_texto = 'Cotiza Express';$cta_link = BASE_URL.'/planes/comparador/';
 $breadcrumbs=[['label'=>'Inicio','url'=>'BASE_URL/'],['label'=>'Planes','url'=>'BASE_URL/planes/'],['label'=>'Individuales','url'=>'BASE_URL/planes/individuales/'],['label'=>'Adultos','url'=>'#']];
 foreach($breadcrumbs as &$bc){$bc['url']=str_replace('BASE_URL/',BASE_URL.'/',$bc['url']);}unset($bc);
 $toc_items=[['id'=>'coberturas','label'=>'Cobertura equilibrada'],['id'=>'prevencion','label'=>'Medicina preventiva'],['id'=>'futuro','label'=>'Proyección familiar'],['id'=>'isapres','label'=>'Mejores isapres']];

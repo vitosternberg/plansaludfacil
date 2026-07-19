@@ -4,7 +4,7 @@ $page_title='Planes Isapre Banmédica: Cotiza, Compara y Contrata | Plan Salud F
 $meta_description='Planes de Isapre Banmédica para individuales y familias. Compara precios reales 2026, coberturas y red de prestadores. Asesoría gratuita.';
 $h1='Planes Isapre Banmédica';
 $lead='Banmédica es la isapre más grande de Chile, con la red de clínicas más extensa del país. Si valoras la libertad de elección y el acceso a los mejores centros médicos, aquí encontrarás el plan perfecto para ti.';
-$svc_name='Planes Banmédica';$cta_texto='Cotizar Banmédica';$cta_link='https://wa.me/56952282339';
+$svc_name='Planes Banmédica';$cta_texto = 'Cotiza Express';$cta_link = BASE_URL.'/planes/comparador/';
 $breadcrumbs=[['label'=>'Inicio','url'=>'BASE_URL/'],['label'=>'Isapres','url'=>'BASE_URL/isapres/'],['label'=>'Compañías','url'=>'BASE_URL/isapres/companias/'],['label'=>'Banmédica','url'=>'#']];
 foreach($breadcrumbs as &$bc){$bc['url']=str_replace('BASE_URL/',BASE_URL.'/',$bc['url']);}unset($bc);
 $toc_items=[['id'=>'coberturas','label'=>'Coberturas'],['id'=>'precios','label'=>'Precios 2026'],['id'=>'red','label'=>'Red de prestadores'],['id'=>'ideal','label'=>'¿Es para ti?']];

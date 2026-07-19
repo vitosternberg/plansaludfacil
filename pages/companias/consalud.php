@@ -4,7 +4,7 @@ $page_title='Planes Isapre Consalud: Jóvenes, Regiones y Precios Competitivos |
 $meta_description='Planes de Isapre Consalud con precios reales 2026. La mejor opción para jóvenes profesionales y trabajadores en regiones. Cotiza gratis.';
 $h1='Planes Isapre Consalud';
 $lead='Consalud tiene fuerte presencia en regiones y destaca por sus precios competitivos en planes individuales, especialmente para jóvenes profesionales. Si buscas buena cobertura ambulatoria sin pagar de más, Consalud es una excelente opción.';
-$svc_name='Planes Consalud';$cta_texto='Cotizar Consalud';$cta_link='https://wa.me/56952282339';
+$svc_name='Planes Consalud';$cta_texto = 'Cotiza Express';$cta_link = BASE_URL.'/planes/comparador/';
 $breadcrumbs=[['label'=>'Inicio','url'=>'BASE_URL/'],['label'=>'Isapres','url'=>'BASE_URL/isapres/'],['label'=>'Compañías','url'=>'BASE_URL/isapres/companias/'],['label'=>'Consalud','url'=>'#']];
 foreach($breadcrumbs as &$bc){$bc['url']=str_replace('BASE_URL/',BASE_URL.'/',$bc['url']);}unset($bc);
 $toc_items=[['id'=>'coberturas','label'=>'Coberturas'],['id'=>'precios','label'=>'Precios 2026'],['id'=>'regiones','label'=>'Presencia en regiones'],['id'=>'ideal','label'=>'¿Es para ti?']];

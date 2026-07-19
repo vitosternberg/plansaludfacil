@@ -4,7 +4,7 @@ $page_title='Planes Isapre Cruz Blanca: Deporte, Kinesiología y Salud Mental | 
 $meta_description='Planes de Isapre Cruz Blanca con foco en kinesiología, deporte y salud mental. Precios reales 2026 calculados con tabla oficial. Cotiza gratis.';
 $h1='Planes Isapre Cruz Blanca';
 $lead='Cruz Blanca destaca por sus planes con fuerte cobertura en kinesiología, medicina deportiva y salud mental. Si eres una persona activa que valora la prevención y el bienestar integral, Cruz Blanca es para ti.';
-$svc_name='Planes Cruz Blanca';$cta_texto='Cotizar Cruz Blanca';$cta_link='https://wa.me/56952282339';
+$svc_name='Planes Cruz Blanca';$cta_texto = 'Cotiza Express';$cta_link = BASE_URL.'/planes/comparador/';
 $breadcrumbs=[['label'=>'Inicio','url'=>'BASE_URL/'],['label'=>'Isapres','url'=>'BASE_URL/isapres/'],['label'=>'Compañías','url'=>'BASE_URL/isapres/companias/'],['label'=>'Cruz Blanca','url'=>'#']];
 foreach($breadcrumbs as &$bc){$bc['url']=str_replace('BASE_URL/',BASE_URL.'/',$bc['url']);}unset($bc);
 $toc_items=[['id'=>'coberturas','label'=>'Coberturas'],['id'=>'coberturas-reales','label'=>'Coberturas Reales'],['id'=>'precios-reales','label'=>'Precios Reales'],['id'=>'ideal','label'=>'¿Es para ti?']];

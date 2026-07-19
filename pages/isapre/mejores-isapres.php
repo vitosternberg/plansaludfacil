@@ -30,8 +30,8 @@ $h1               = 'Las Mejores ISAPREs de Chile';
 $lead             = 'Comparativa de las principales ISAPREs: analizamos coberturas, precios, redes de prestadores y satisfacción de afiliados.';
 $svc_name         = 'Comparativa ISAPREs Chile';
 $svc_description  = 'Ranking y comparativa de ISAPREs en Chile.';
-$cta_texto        = 'Cotizar por WhatsApp';
-$cta_link         = 'https://wa.me/56952282339';
+$cta_texto = 'Cotiza Express';
+$cta_link         = BASE_URL.'/planes/comparador/';
 
 // ── Breadcrumbs ──────────────────────────────────────────
 $breadcrumbs = [['label' => 'Inicio', 'url' => 'BASE_URL/'], ['label' => 'ISAPRE', 'url' => 'BASE_URL/isapre/'], ['label' => 'Mejores', 'url' => '#']];

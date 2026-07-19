@@ -4,7 +4,7 @@ $page_title='Planes Isapre Nueva MasVida: Adultos Mayores y Planes Accesibles | 
 $meta_description='Planes de Isapre Nueva MasVida para adultos mayores y familias. Precios reales 2026. Cobertura accesible y buena aceptación de preexistencias.';
 $h1='Planes Isapre Nueva MasVida';
 $lead='Nueva MasVida se enfoca en planes accesibles con buena cobertura base. Destaca especialmente para adultos mayores por su política flexible de aceptación de preexistencias. Si buscas un plan sin complicaciones, es para ti.';
-$svc_name='Planes Nueva MasVida';$cta_texto='Cotizar Nueva MasVida';$cta_link='https://wa.me/56952282339';
+$svc_name='Planes Nueva MasVida';$cta_texto = 'Cotiza Express';$cta_link = BASE_URL.'/planes/comparador/';
 $breadcrumbs=[['label'=>'Inicio','url'=>'BASE_URL/'],['label'=>'Isapres','url'=>'BASE_URL/isapres/'],['label'=>'Compañías','url'=>'BASE_URL/isapres/companias/'],['label'=>'Nueva MasVida','url'=>'#']];
 foreach($breadcrumbs as &$bc){$bc['url']=str_replace('BASE_URL/',BASE_URL.'/',$bc['url']);}unset($bc);
 $toc_items=[['id'=>'coberturas','label'=>'Coberturas'],['id'=>'precios','label'=>'Precios 2026'],['id'=>'adulto-mayor','label'=>'Adulto Mayor'],['id'=>'ideal','label'=>'¿Es para ti?']];

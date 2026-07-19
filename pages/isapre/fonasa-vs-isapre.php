@@ -30,8 +30,8 @@ $h1               = 'FONASA vs ISAPRE: ¿Cuál te conviene más?';
 $lead             = 'Comparativa detallada entre el sistema público (FONASA) y el privado (ISAPRE): costos, cobertura, calidad de atención y tiempos de espera.';
 $svc_name         = 'Comparativa FONASA vs ISAPRE';
 $svc_description  = 'Comparación FONASA e ISAPRE: costos, coberturas y recomendación según perfil.';
-$cta_texto        = 'Cotizar por WhatsApp';
-$cta_link         = 'https://wa.me/56952282339';
+$cta_texto = 'Cotiza Express';
+$cta_link         = BASE_URL.'/planes/comparador/';
 
 // ── Breadcrumbs ──────────────────────────────────────────
 $breadcrumbs = [['label' => 'Inicio', 'url' => 'BASE_URL/'], ['label' => 'ISAPRE', 'url' => 'BASE_URL/isapre/'], ['label' => 'FONASA vs ISAPRE', 'url' => '#']];

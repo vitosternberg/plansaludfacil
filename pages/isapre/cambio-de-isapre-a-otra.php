@@ -12,8 +12,8 @@ $h1               = 'Cambio de Isapre a Otra Isapre';
 $lead             = 'Si ya estás en una isapre pero quieres cambiarte a otra con mejores coberturas, menor precio o beneficios que se ajusten mejor a tu perfil, aquí te explicamos todo lo que necesitas saber.';
 $svc_name         = 'Cambio de Isapre a Otra Isapre';
 $svc_description  = 'Guía completa para cambiarte de una isapre a otra: requisitos, plazos, documentación y acompañamiento personalizado sin costo.';
-$cta_texto        = 'Cotizar por WhatsApp';
-$cta_link         = 'https://wa.me/56952282339';
+$cta_texto = 'Cotiza Express';
+$cta_link         = BASE_URL.'/planes/comparador/';
 
 $breadcrumbs = [
     ['label' => 'Inicio', 'url' => 'BASE_URL/'],

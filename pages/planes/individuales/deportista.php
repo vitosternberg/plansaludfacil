@@ -22,8 +22,8 @@ $h1               = 'Planes de Isapre para Deportistas';
 $lead             = 'Corres, pedaleas, juegas pádel, haces crossfit... y tu cuerpo lo sabe. Las lesiones deportivas no avisan. Necesitas un plan que cubra kinesiología sin límite, resonancias cuando hagan falta y traumatólogos que entiendan que quieres volver a moverte rápido.';
 $svc_name         = 'Planes Isapre Deportistas';
 $svc_description  = 'Planes de Isapre con la mejor cobertura en kinesiología, traumatología, resonancias y medicina deportiva. Para personas activas que no pueden parar.';
-$cta_texto        = 'Cotizar Plan Deportista';
-$cta_link         = 'https://wa.me/56952282339';
+$cta_texto = 'Cotiza Express';
+$cta_link         = BASE_URL.'/planes/comparador/';
 
 $breadcrumbs = [['label'=>'Inicio','url'=>'BASE_URL/'],['label'=>'Planes','url'=>'BASE_URL/planes/'],['label'=>'Individuales','url'=>'BASE_URL/planes/individuales/'],['label'=>'Deportistas','url'=>'#']];
 foreach($breadcrumbs as &$bc){$bc['url']=str_replace('BASE_URL/',BASE_URL.'/',$bc['url']);}unset($bc);

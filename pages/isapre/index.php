@@ -30,8 +30,8 @@ $h1               = 'ISAPREs en Chile: Todo lo que necesitas saber';
 $lead             = 'Encuentra información clara y actualizada sobre el sistema de salud privado chileno. Desde los conceptos básicos hasta la ISAPREs disponibles en Chile.';
 $svc_name         = 'Guía de ISAPREs';
 $svc_description  = 'Información completa sobre ISAPREs en Chile: definición, funcionamiento, comparativas y recomendaciones.';
-$cta_texto        = 'Cotizar por WhatsApp';
-$cta_link         = 'https://wa.me/56952282339';
+$cta_texto = 'Cotiza Express';
+$cta_link         = BASE_URL.'/planes/comparador/';
 
 // ── Breadcrumbs ──────────────────────────────────────────
 $breadcrumbs = [['label' => 'Inicio', 'url' => 'BASE_URL/'], ['label' => 'ISAPRE', 'url' => '#']];

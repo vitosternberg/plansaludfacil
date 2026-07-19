@@ -23,8 +23,8 @@ $h1               = 'Planes de Isapre para Jóvenes Profesionales';
 $lead             = 'Tienes entre 18 y 30 años, te enfermas poco y quieres que tu 7% de cotización legal realmente te sirva. La estrategia es simple: un plan con baja cobertura hospitalaria (no la necesitas) pero 100% ambulatoria para consultas, dental, psicólogo y telemedicina. Así aprovechas tu plata mes a mes.';
 $svc_name         = 'Planes Isapre Jóvenes';
 $svc_description  = 'Encuentra el mejor plan de Isapre para jóvenes profesionales. Maximiza tu 7% con cobertura ambulatoria, telemedicina y salud mental.';
-$cta_texto        = 'Cotizar Plan Joven';
-$cta_link         = 'https://wa.me/56952282339';
+$cta_texto = 'Cotiza Express';
+$cta_link         = BASE_URL.'/planes/comparador/';
 
 $breadcrumbs = [['label' => 'Inicio', 'url' => 'BASE_URL/'], ['label' => 'Planes', 'url' => 'BASE_URL/planes/'], ['label' => 'Individuales', 'url' => 'BASE_URL/planes/individuales/'], ['label' => 'Jóvenes', 'url' => '#']];
 foreach ($breadcrumbs as &$bc) { $bc['url'] = str_replace('BASE_URL/', BASE_URL . '/', $bc['url']); } unset($bc);

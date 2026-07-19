@@ -13,7 +13,7 @@ $page_title='Planes de Isapre para Adulto Mayor (60+): Sin Rechazo | Plan Salud 
 $meta_description='Planes de Isapre para adultos mayores. Evaluación confidencial de preexistencias, sin rechazo asegurado. Te ayudamos con la Declaración de Salud. Cotiza gratis.';
 $h1='Planes de Isapre para Adulto Mayor';
 $lead='El mayor miedo al cotizar un plan de isapre después de los 60 es el rechazo. En Plan Salud Fácil lo entendemos. Por eso evaluamos tu caso primero de forma confidencial, y solo postulamos a las isapres donde tengas altas probabilidades de aceptación. Sin sorpresas, sin rechazos innecesarios.';
-$svc_name='Planes Isapre Adulto Mayor';$svc_description='Planes de Isapre para adultos mayores de 60 años. Evaluación confidencial de preexistencias y acompañamiento personalizado en tu Declaración de Salud.';$cta_texto='Cotizar Plan Adulto Mayor';$cta_link='https://wa.me/56952282339';
+$svc_name='Planes Isapre Adulto Mayor';$svc_description='Planes de Isapre para adultos mayores de 60 años. Evaluación confidencial de preexistencias y acompañamiento personalizado en tu Declaración de Salud.';$cta_texto = 'Cotiza Express';$cta_link = BASE_URL.'/planes/comparador/';
 $breadcrumbs=[['label'=>'Inicio','url'=>'BASE_URL/'],['label'=>'Planes','url'=>'BASE_URL/planes/'],['label'=>'Individuales','url'=>'BASE_URL/planes/individuales/'],['label'=>'Adulto Mayor','url'=>'#']];
 foreach($breadcrumbs as &$bc){$bc['url']=str_replace('BASE_URL/',BASE_URL.'/',$bc['url']);}unset($bc);
 $toc_items=[['id'=>'coberturas','label'=>'Coberturas prioritarias'],['id'=>'preexistencias','label'=>'Preexistencias y aceptación'],['id'=>'filtro','label'=>'Nuestro filtro previo'],['id'=>'isapres','label'=>'Mejores isapres']];

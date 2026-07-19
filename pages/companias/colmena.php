@@ -4,7 +4,7 @@ $page_title='Planes Isapre Colmena: Familiares, Individuales y Maternidad | Plan
 $meta_description='Planes de Isapre Colmena para familias e individuales. Precios reales 2026, cobertura de maternidad y red de prestadores. Cotiza gratis.';
 $h1='Planes Isapre Colmena';
 $lead='Colmena es una de las isapres más sólidas de Chile, con foco en planes familiares y la mejor cobertura de maternidad del mercado. Si buscas balance entre precio y calidad, Colmena es una excelente opción.';
-$svc_name='Planes Colmena';$cta_texto='Cotizar Colmena';$cta_link='https://wa.me/56952282339';
+$svc_name='Planes Colmena';$cta_texto = 'Cotiza Express';$cta_link = BASE_URL.'/planes/comparador/';
 $breadcrumbs=[['label'=>'Inicio','url'=>'BASE_URL/'],['label'=>'Isapres','url'=>'BASE_URL/isapres/'],['label'=>'Compañías','url'=>'BASE_URL/isapres/companias/'],['label'=>'Colmena','url'=>'#']];
 foreach($breadcrumbs as &$bc){$bc['url']=str_replace('BASE_URL/',BASE_URL.'/',$bc['url']);}unset($bc);
 $toc_items=[['id'=>'coberturas','label'=>'Coberturas'],['id'=>'precios','label'=>'Precios 2026'],['id'=>'maternidad','label'=>'Maternidad'],['id'=>'ideal','label'=>'¿Es para ti?']];

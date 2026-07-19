@@ -30,8 +30,8 @@ $h1               = '¿Cómo funciona una ISAPRE?';
 $lead             = 'El sistema ISAPRE funciona con tu cotización mensual del 7% que se transforma en un plan de salud con coberturas, bonificaciones y acceso a clínicas de tu red.';
 $svc_name         = 'Funcionamiento de ISAPRE';
 $svc_description  = 'Explicación del sistema ISAPRE: cotización, contratación, coberturas y beneficios.';
-$cta_texto        = 'Cotizar por WhatsApp';
-$cta_link         = 'https://wa.me/56952282339';
+$cta_texto = 'Cotiza Express';
+$cta_link         = BASE_URL.'/planes/comparador/';
 
 // ── Breadcrumbs ──────────────────────────────────────────
 $breadcrumbs = [['label' => 'Inicio', 'url' => 'BASE_URL/'], ['label' => 'ISAPRE', 'url' => 'BASE_URL/isapres/'], ['label' => 'Cómo funciona', 'url' => '#']];

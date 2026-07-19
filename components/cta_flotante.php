@@ -16,7 +16,7 @@ $cta_url     = 'https://wa.me/' . $cta_numero . '?text=' . urlencode($cta_mensaj
 <a href="<?= htmlspecialchars($cta_url) ?>"
    target="_blank"
    rel="noopener"
-   class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-5 rounded-full shadow-xl transition-transform hover:scale-110"
+   class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-5 rounded-full shadow-xl transition-transform hover:scale-110 md:hidden"
    aria-label="Hablar por WhatsApp">
     <iconify-icon icon="mdi:whatsapp" width="24"></iconify-icon>
     <span class="hidden sm:inline text-sm">WhatsApp</span>

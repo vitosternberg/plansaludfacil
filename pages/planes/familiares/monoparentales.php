@@ -30,8 +30,8 @@ $h1               = 'Planes Monoparentales';
 $lead             = 'Planes para hogares con un solo ingreso. Cobertura para el titular y sus hijos a precios pensados en tu realidad.';
 $svc_name         = 'Plan Monoparental';
 $svc_description  = 'Planes para familias monoparentales: un titular con hijos.';
-$cta_texto        = 'Cotizar por WhatsApp';
-$cta_link         = 'https://wa.me/56952282339';
+$cta_texto = 'Cotiza Express';
+$cta_link         = BASE_URL.'/planes/comparador/';
 
 // ── Breadcrumbs ──────────────────────────────────────────
 $breadcrumbs = [['label' => 'Inicio', 'url' => 'BASE_URL/'], ['label' => 'Planes', 'url' => 'BASE_URL/planes/'], ['label' => 'Familiares', 'url' => 'BASE_URL/planes/familiares/'], ['label' => 'Monoparentales', 'url' => '#']];
