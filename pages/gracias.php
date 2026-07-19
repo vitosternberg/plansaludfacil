@@ -363,6 +363,20 @@ include __DIR__ . '/../layout/header.php';
                     </div>
                 </div>
 
+                <!-- CTA Principal - Quiero Contratar (CA-17) -->
+                <div class="bg-gradient-to-r from-green-600 to-emerald-500 rounded-xl p-6 mb-6 text-center text-white">
+                    <h3 class="font-bold text-lg mb-2 flex items-center justify-center gap-2">
+                        <iconify-icon icon="mdi:handshake" width="22"></iconify-icon>
+                        ¿Listo para contratar el plan más afín a ti?
+                    </h3>
+                    <p class="text-green-100 text-sm mb-4">Un ejecutivo especializado tomará tu caso hoy mismo y te guiará en cada paso sin costo adicional.</p>
+                    <a href="https://wa.me/56952282339?text=<?= urlencode('Hola, mi número de cotización es #' . $record_id . '. Quiero contratar el plan más afín a mi perfil.') ?>" target="_blank" class="inline-flex items-center px-6 py-3 bg-white text-green-700 font-bold rounded-xl hover:bg-green-50 transition shadow-lg text-base">
+                        <iconify-icon icon="mdi:whatsapp" width="20" class="mr-2"></iconify-icon>
+                        Quiero contratar este plan
+                    </a>
+                    <p class="text-green-200 text-xs mt-3">Sin compromiso. Recibirás asesoría personalizada antes de cualquier decisión.</p>
+                </div>
+
                 <!-- Testimonios (CA-08) -->
                 <div class="bg-white rounded-xl p-5 mb-6 text-left border border-gray-200">
                     <h3 class="font-semibold text-gray-800 mb-3 flex items-center gap-2">
@@ -393,20 +407,6 @@ include __DIR__ . '/../layout/header.php';
                             <p class="text-xs text-gray-400">— Andrés G., La Florida · Plan Familiar</p>
                         </div>
                     </div>
-                </div>
-
-                <!-- CTA Principal - Quiero Contratar (CA-17) -->
-                <div class="bg-gradient-to-r from-green-600 to-emerald-500 rounded-xl p-6 mb-6 text-center text-white">
-                    <h3 class="font-bold text-lg mb-2 flex items-center justify-center gap-2">
-                        <iconify-icon icon="mdi:handshake" width="22"></iconify-icon>
-                        ¿Listo para contratar el plan más afín a ti?
-                    </h3>
-                    <p class="text-green-100 text-sm mb-4">Un ejecutivo especializado tomará tu caso hoy mismo y te guiará en cada paso sin costo adicional.</p>
-                    <a href="https://wa.me/56952282339?text=<?= urlencode('Hola, mi número de cotización es #' . $record_id . '. Quiero contratar el plan más afín a mi perfil.') ?>" target="_blank" class="inline-flex items-center px-6 py-3 bg-white text-green-700 font-bold rounded-xl hover:bg-green-50 transition shadow-lg text-base">
-                        <iconify-icon icon="mdi:whatsapp" width="20" class="mr-2"></iconify-icon>
-                        Quiero contratar este plan
-                    </a>
-                    <p class="text-green-200 text-xs mt-3">Sin compromiso. Recibirás asesoría personalizada antes de cualquier decisión.</p>
                 </div>
 
                 <!-- Validez de la Cotización (CA-16) -->
