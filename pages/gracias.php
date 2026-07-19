@@ -564,13 +564,13 @@ include __DIR__ . '/../layout/header.php';
                     msgEl.classList.remove('hidden');
                 } else {
                     msgEl.textContent = '⚠️ No pudimos enviar el correo. ¿Puedes intentar de nuevo?';
-                    msgEl.className = 'text-xs text-amber-200 mt-3';
+                    msgEl.className = 'text-xs text-white mt-3';
                     msgEl.classList.remove('hidden');
                 }
             }
         } catch(e) {
             msgEl.textContent = 'Error de conexión. Intenta más tarde.';
-            msgEl.className = 'text-xs text-red-300 mt-3';
+            msgEl.className = 'text-xs text-white mt-3';
             msgEl.classList.remove('hidden');
         }
     }
