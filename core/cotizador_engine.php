@@ -17,9 +17,12 @@ define('COBERTURAS_CSV', __DIR__ . '/../adjuntos/revision_IA_Planes_isapre.csv')
 define('INTERES_MAP', [
     'salud mental'               => 'consulta_pref_max',
     'kinesiología y deporte'     => 'consulta_pref_max',
+    'kinesiologia y deporte'     => 'consulta_pref_max',
     'telemedicina'               => 'consulta_libre_max',
     'atención ambulatoria'       => 'consulta_pref_max',
+    'atencion ambulatoria'       => 'consulta_pref_max',
     'hospitalización'            => 'hospitalaria_pref_max',
+    'hospitalizacion'            => 'hospitalaria_pref_max',
     'maternidad'                 => 'hospitalaria_pref_max',
     'dental'                     => 'consulta_pref_max',
     'farmacia'                   => 'consulta_pref_max',
