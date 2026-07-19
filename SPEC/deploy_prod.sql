@@ -181,5 +181,13 @@ INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, resp
   'Hero: agregar botón "Cotizar Express" que lleve directo al comparador con datos pre-cargados',
   'El hero solo tenía "Buscar Planes" (→ individuales/familiares). Se agregó "⚡ Cotizar Express" que redirige a /planes/comparador/ con age, income y cargas. Mantiene simplicidad: usuario elige entre página informativa o comparador directo.',
   'mejora', 'media', 'abierto', 'CodeWhale',
-  'components/hero_moderno.php:64-74'
+   'components/hero_moderno.php:64-74'
+);
+
+-- INC-14: CTAs de páginas isapre apuntan a WhatsApp en vez de formulario/comparador (ABIERTO)
+INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen) VALUES (
+  'UX: CTAs de páginas isapre deben redirigir al formulario o comparador, no a WhatsApp',
+  'Actualmente ~24 páginas (individuales, familiares, isapre/*, companias/*) tienen $cta_link apuntando a WhatsApp. El usuario quiere: (a) En planes/individuales y planes/familiares: el botón debe hacer scroll al #formulario de la misma página. (b) En isapre/*, companias/* y resto: botón "Cotiza Express" que lleve al comparador.',
+  'mejora', 'media', 'abierto', 'CodeWhale',
+  'pages/planes/individuales/index.php, pages/planes/familiares/index.php, ~20 páginas isapre/companias'
 );
