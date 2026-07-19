@@ -194,6 +194,16 @@ INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, resp
   'Planes individuales/familiares: "Cotizar ahora" → #formulario. 22 páginas isapre/companias: "Cotiza Express" → /planes/comparador/. WhatsApp flotante con md:hidden.',
   'mejora', 'media', 'cerrado', 'CodeWhale',
   'pages/planes/individuales/index.php, pages/planes/familiares/index.php, ~22 páginas isapre/companias, components/cta_flotante.php',
-  'Fix: 25 archivos modificados. CTAs estandarizados, WhatsApp solo mobile. Commit 139f00c.',
+   'Fix: 25 archivos modificados. CTAs estandarizados, WhatsApp solo mobile. Commit 139f00c.',
+   NOW()
+);
+
+-- INC-15: Filtro regional en cotizador (CERRADO — commit 7939101)
+INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, responsable, origen, resolucion, fecha_cierre) VALUES (
+  'Cotizador: filtrar planes por región del usuario (17% de planes son regionales)',
+  '385 de 2,231 planes tienen restricción regional (SUR: 83, NORTE: 76, CENTRO: 226). Un usuario de Santiago no debería ver planes del Norte o Sur. Se implementó: (1) Taggeo de planes por región en el CSV, (2) Mapeo comuna→región con 90+ comunas, (3) Filtro en motor_cotizar.',
+  'mejora', 'media', 'cerrado', 'CodeWhale',
+  'core/cotizador_engine.php, adjuntos/planes_isapre.csv, scripts/enrich_planes.py',
+  'Fix: columna region en CSV + función comuna_to_region() + filtro en motor_cotizar(). Commit 7939101.',
   NOW()
 );
