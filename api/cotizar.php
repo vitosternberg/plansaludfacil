@@ -137,7 +137,6 @@ if (!empty($recipient_email) && filter_var($recipient_email, FILTER_VALIDATE_EMA
             $mail->CharSet    = 'UTF-8';
             $mail->setFrom(SMTP_USER, SMTP_FROM_NAME);
             $mail->addAddress($recipient_email);
-            $mail->addAddress('primagen@gmail.com', 'Plan Salud Fácil');
             $mail->isHTML(true);
             $mail->Subject = 'Tu cotización de Isapre - Plan Salud Fácil';
             $mail->Body    = $email_body;
