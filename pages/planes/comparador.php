@@ -82,7 +82,7 @@ ob_start();
             g.style.display = 'block';
             let h = '';
             for (let i = 1; i <= n; i++) {
-                h += '<input type="number" maxlength="2" class="carga-edad-val w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 font-medium text-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" min="0" max="80" placeholder="Edad carga ' + i + '">';
+                h += '<input type="number" required maxlength="2" class="carga-edad-val w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 font-medium text-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" min="0" max="80" placeholder="Edad carga ' + i + '">';
             }
             c.innerHTML = h;
         }
@@ -125,6 +125,10 @@ async function calcular() {
     if (renta < 100000 || edad < 18 || edad > 65 || isNaN(cargas) || cargas < 0) {
         alert('Completa los campos: renta (mín $100.000), edad (18–65) y cargas');
         return;
+    }
+    if (cargas > 0) {
+        const faltan = Array.from(document.querySelectorAll('.carga-edad-val')).some(el => !el.value.trim());
+        if (faltan) { alert('Ingresa la edad de todas las cargas'); return; }
     }
     if (cotizando) return;
     cotizando = true;
