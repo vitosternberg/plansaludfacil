@@ -326,7 +326,7 @@ include __DIR__ . '/../layout/header.php';
                         <input type="email" id="save-email" value="<?= htmlspecialchars($record['correo'] ?? '') ?>" placeholder="tu@email.com" class="flex-1 px-4 py-2.5 bg-white/90 border border-white/20 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400">
                         <button onclick="saveQuote()" class="btn-glow bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-white font-bold px-5 py-2.5 rounded-lg transition text-sm flex items-center justify-center gap-1.5 shadow-lg shadow-cyan-500/30">
                             <iconify-icon icon="mdi:rocket-launch" width="18"></iconify-icon>
-                            Quiero que me contacten
+                            Cotizar con Experto
                         </button>
                     </div>
                     <p id="save-msg" class="text-xs text-cyan-200 mt-3 hidden relative z-10">✅ ¡Listo! Un experto revisará tu caso. Recibirás un correo de confirmación en breve.</p>
