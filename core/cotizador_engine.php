@@ -169,12 +169,9 @@ function score_plan($plan, $lead, $cobertura, $defaults) {
         $a = $plan['cobertura_amb_pct'] ?? 0;
         if ($h > 0 || $a > 0) {
             $cobertura = [
-                'hospitalizacion_max' => $h, 'hospitalizacion_min' => $h,
-                'consulta_pref_max'   => $a, 'consulta_pref_min'   => $a,
-                'consulta_libre_max'  => $a, 'consulta_libre_min'  => $a,
-                'examenes_max'       => $a, 'examenes_min'        => $a,
-                'urgencia_max'       => $a, 'urgencia_min'        => $a,
-                'medicamentos_max'   => $a, 'medicamentos_min'    => $a,
+                'hospitalaria_pref_max' => $h, 'hospitalaria_pref_min' => $h,
+                'consulta_pref_max'     => $a, 'consulta_pref_min'     => $a,
+                'consulta_libre_max'    => $a, 'consulta_libre_min'    => $a,
             ];
         }
     }
