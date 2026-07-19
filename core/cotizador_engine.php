@@ -39,19 +39,21 @@ function load_catalog() {
     
     $headers = fgetcsv($handle, 0, ',', '"', '');
     while (($row = fgetcsv($handle, 0, ',', '"', '')) !== false) {
-        if (count($row) < 7) continue;
+        if (count($row) < 9) continue;
         $nombre = trim($row[2] ?? '');
         $uf = trim($row[3] ?? '');
         if (empty($nombre) || empty($uf)) continue;
         
         $planes[] = [
-            'isapre'          => trim($row[0] ?? ''),
-            'codigo'          => trim($row[1] ?? ''),
-            'nombre'          => $nombre,
-            'uf'              => _parse_num($uf),
-            'tope_anual_uf'   => _parse_num($row[4] ?? '0'),
-            'prestadores'     => (int)($row[5] ?? 0),
-            'url'             => trim($row[6] ?? ''),
+            'isapre'             => trim($row[0] ?? ''),
+            'codigo'             => trim($row[1] ?? ''),
+            'nombre'             => $nombre,
+            'uf'                 => _parse_num($uf),
+            'tope_anual_uf'      => _parse_num($row[4] ?? '0'),
+            'prestadores'        => (int)($row[5] ?? 0),
+            'cobertura_hosp_pct' => (int)($row[6] ?? 0),
+            'cobertura_amb_pct'  => (int)($row[7] ?? 0),
+            'url'                => trim($row[8] ?? ''),
         ];
     }
     fclose($handle);
@@ -161,6 +163,21 @@ function score_plan($plan, $lead, $cobertura, $defaults) {
     $score = 0.0;
     $reasons = [];
     
+    // Si no hay cobertura externa, usar los datos del plan mismo
+    if ($cobertura === null) {
+        $h = $plan['cobertura_hosp_pct'] ?? 0;
+        $a = $plan['cobertura_amb_pct'] ?? 0;
+        if ($h > 0 || $a > 0) {
+            $cobertura = [
+                'hospitalizacion_max' => $h, 'hospitalizacion_min' => $h,
+                'consulta_pref_max'   => $a, 'consulta_pref_min'   => $a,
+                'consulta_libre_max'  => $a, 'consulta_libre_min'  => $a,
+                'examenes_max'       => $a, 'examenes_min'        => $a,
+                'urgencia_max'       => $a, 'urgencia_min'        => $a,
+                'medicamentos_max'   => $a, 'medicamentos_min'    => $a,
+            ];
+        }
+    }
     $cov = ($cobertura !== null) ? $cobertura : $defaults;
     $renta = (int)($lead['renta'] ?? 500000);
     $edad = (int)($lead['edad'] ?? 30);
