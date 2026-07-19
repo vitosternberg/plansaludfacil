@@ -154,6 +154,14 @@ include __DIR__ . '/../layout/header.php';
         50% { box-shadow: 0 0 0 15px rgba(37, 99, 235, 0); }
     }
     .pulse-glow { animation: pulse-glow 2s infinite; }
+    @keyframes btn-shine {
+        0% { background-position: 200% center; }
+        100% { background-position: -200% center; }
+    }
+    .btn-glow {
+        background-size: 200% auto;
+        animation: btn-shine 3s linear infinite;
+    }
 </style>
 
 <div class="min-h-screen bg-gradient-to-b from-blue-50 to-white flex items-center justify-center p-4">
@@ -305,21 +313,23 @@ include __DIR__ . '/../layout/header.php';
                     </ol>
                 </div>
 
-                <!-- Guarda tu cotización para después -->
-                <div class="bg-gray-50 rounded-xl p-5 mb-6 text-left border border-gray-100">
-                    <h3 class="font-semibold text-gray-800 mb-2 flex items-center gap-2">
-                        <iconify-icon icon="mdi:content-save" class="text-blue-600" width="20"></iconify-icon>
-                        Guarda tu cotización para después
+                <!-- Cotiza con Experto -->
+                <div class="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 rounded-xl p-6 mb-6 text-left shadow-xl overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                    <div class="absolute bottom-0 left-0 w-24 h-24 bg-cyan-400/20 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+                    <h3 class="font-bold text-white text-lg mb-1 flex items-center gap-2 relative z-10">
+                        <iconify-icon icon="mdi:account-tie-voice" width="22"></iconify-icon>
+                        Cotiza con Experto
                     </h3>
-                    <p class="text-sm text-gray-500 mb-3">Te enviaremos un enlace único a tu correo para que puedas revisar tu cotización cuando quieras.</p>
-                    <div class="flex flex-col sm:flex-row gap-2">
-                        <input type="email" id="save-email" value="<?= htmlspecialchars($record['correo'] ?? '') ?>" placeholder="tu@email.com" class="flex-1 px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-[#00d2ff] focus:border-[#00d2ff]">
-                        <button onclick="saveQuote()" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg transition text-sm flex items-center justify-center gap-1">
-                            <iconify-icon icon="mdi:send" width="16"></iconify-icon>
-                            Enviar a mi correo
+                    <p class="text-blue-100 text-sm mb-4 relative z-10">Un asesor revisará tu caso y te enviará la mejor opción a tu correo. También recibiremos una copia para darte seguimiento personalizado.</p>
+                    <div class="flex flex-col sm:flex-row gap-2 relative z-10">
+                        <input type="email" id="save-email" value="<?= htmlspecialchars($record['correo'] ?? '') ?>" placeholder="tu@email.com" class="flex-1 px-4 py-2.5 bg-white/90 border border-white/20 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400">
+                        <button onclick="saveQuote()" class="btn-glow bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-white font-bold px-5 py-2.5 rounded-lg transition text-sm flex items-center justify-center gap-1.5 shadow-lg shadow-cyan-500/30">
+                            <iconify-icon icon="mdi:rocket-launch" width="18"></iconify-icon>
+                            Quiero que me contacten
                         </button>
                     </div>
-                    <p id="save-msg" class="text-xs text-green-600 mt-2 hidden">¡Listo! Revisa tu bandeja de entrada. La cotización es válida por 7 días.</p>
+                    <p id="save-msg" class="text-xs text-cyan-200 mt-3 hidden relative z-10">✅ ¡Listo! Un experto revisará tu caso. Recibirás un correo de confirmación en breve.</p>
                 </div>
 
                 <!-- Ejecutivo Asignado (CA-06) -->
