@@ -559,16 +559,19 @@ include __DIR__ . '/../layout/header.php';
             const data = await resp.json();
             if (data.recomendaciones) {
                 if (data.email_sent) {
-                    msgEl.textContent = '✅ ¡Cotización enviada! Revisa tu correo. Válida por 7 días.';
-                    msgEl.className = 'text-xs text-green-600 mt-2';
+                    msgEl.textContent = '✅ ¡Listo! Un experto revisará tu caso. Recibirás un correo de confirmación en breve.';
+                    msgEl.className = 'text-xs text-cyan-200 mt-3';
+                    msgEl.classList.remove('hidden');
                 } else {
-                    msgEl.textContent = '✅ Cotización generada, pero no pudimos enviar el correo. Intenta más tarde.';
-                    msgEl.className = 'text-xs text-amber-600 mt-2';
+                    msgEl.textContent = '⚠️ No pudimos enviar el correo. ¿Puedes intentar de nuevo?';
+                    msgEl.className = 'text-xs text-amber-200 mt-3';
+                    msgEl.classList.remove('hidden');
                 }
             }
         } catch(e) {
-            msgEl.textContent = 'Error. Intenta más tarde.';
-            msgEl.className = 'text-xs text-red-600 mt-2';
+            msgEl.textContent = 'Error de conexión. Intenta más tarde.';
+            msgEl.className = 'text-xs text-red-300 mt-3';
+            msgEl.classList.remove('hidden');
         }
     }
 
