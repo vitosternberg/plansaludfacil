@@ -432,11 +432,15 @@ include __DIR__ . '/../layout/header.php';
                 $cargas = intval($_GET['cargas'] ?? -1);
                 $intereses_raw = $_GET['intereses'] ?? '';
                 $intereses = !empty($intereses_raw) ? array_map('trim', explode(',', $intereses_raw)) : [];
+                // Edades de cargas
+                $carga_edades_raw = $_GET['carga_edad'] ?? [];
+                if (!is_array($carga_edades_raw)) $carga_edades_raw = [$carga_edades_raw];
+                $carga_edades = array_values(array_map('intval', array_filter($carga_edades_raw, function($v) { return $v !== ''; })));
                 $has_real_data = ($age > 0 && $income > 0 && $cargas >= 0);
                 if ($has_real_data) {
-                    $cot_record = ['datos_adicionales' => ['age' => $age, 'income' => $income, 'cargas' => $cargas, 'interests' => $intereses], 'fecha_creacion' => date('Y-m-d H:i:s')];
+                    $cot_record = ['datos_adicionales' => ['age' => $age, 'income' => $income, 'cargas' => $cargas, 'interests' => $intereses, 'edad_cargas' => $carga_edades], 'fecha_creacion' => date('Y-m-d H:i:s')];
                 } else {
-                    $cot_record = ['datos_adicionales' => ['age' => 30, 'income' => 1500000, 'cargas' => 0, 'interests' => ['Hospitalización', 'Atención Ambulatoria']], 'fecha_creacion' => date('Y-m-d H:i:s')];
+                    $cot_record = ['datos_adicionales' => ['age' => 30, 'income' => 1500000, 'cargas' => 0, 'interests' => ['Hospitalización', 'Atención Ambulatoria'], 'edad_cargas' => []], 'fecha_creacion' => date('Y-m-d H:i:s')];
                 }
                 $resultados_cotizacion = motor_cotizacion_real($cot_record);
                 ?>
