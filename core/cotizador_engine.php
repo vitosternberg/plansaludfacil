@@ -39,7 +39,7 @@ function load_catalog() {
     
     $headers = fgetcsv($handle, 0, ',', '"', '');
     while (($row = fgetcsv($handle, 0, ',', '"', '')) !== false) {
-        if (count($row) < 9) continue;
+        if (count($row) < 10) continue;
         $nombre = trim($row[2] ?? '');
         $uf = trim($row[3] ?? '');
         if (empty($nombre) || empty($uf)) continue;
@@ -54,6 +54,7 @@ function load_catalog() {
             'cobertura_hosp_pct' => (int)($row[6] ?? 0),
             'cobertura_amb_pct'  => (int)($row[7] ?? 0),
             'url'                => trim($row[8] ?? ''),
+            'region'             => trim($row[9] ?? 'todas'),
         ];
     }
     fclose($handle);
@@ -338,12 +339,61 @@ function rank_plans($planes, $lead, $coberturas, $defaults, $top_n = 5) {
 
 // ─── 4. MAIN ──────────────────────────────────────────
 
+// ─── MAPEO COMUNA → MACRO-ZONA ──────────────────────
+function comuna_to_region($comuna) {
+    $comuna = trim(mb_strtolower($comuna, 'UTF-8'));
+    $map = [
+        // Norte (Arica a Coquimbo)
+        'arica','iquique','alto hospicio','antofagasta','calama','tocopilla','mejillones',
+        'copiapo','vallenar','caldera','la serena','coquimbo','ovalle','illapel','vicuña',
+        // Centro (Valparaíso a Maule)
+        'valparaiso','viña del mar','quilpue','villa alemana','san antonio','los andes',
+        'quillota','la calera','limache','concon','santiago','providencia','las condes',
+        'ñuñoa','la florida','maipu','puente alto','san bernardo','la reina','vitacura',
+        'lo barnechea','peñalolen','macul','san miguel','la cisterna','el bosque',
+        'recoleta','independencia','estacion central','quilicura','huechuraba','renca',
+        'cerro navia','lo prado','pudahuel','conchali','pedro aguirre cerda','san joaquin',
+        'la granja','san ramon','lo espejo','quinta normal','rancagua','machali',
+        'talca','curico','linares','constitucion','san fernando','santa cruz','pichilemu',
+        // Sur (Ñuble a Magallanes)
+        'chillan','concepcion','talcahuano','san pedro de la paz','coronel','los angeles',
+        'tome','penco','chiguayante','lebu','arauco','temuco','padre las casas','villarríca',
+        'pucon','valdivia','la union','osorno','puerto montt','puerto varas','castro',
+        'ancud','quellon','coyhaique','punta arenas',
+    ];
+    if (in_array($comuna, $map)) {
+        // Check which zone
+        $norte_limit = array_search('vicuña', $map);
+        $sur_start = array_search('chillan', $map);
+        $idx = array_search($comuna, $map);
+        if ($idx <= $norte_limit) return 'norte';
+        if ($idx >= $sur_start) return 'sur';
+        return 'centro';
+    }
+    return 'centro'; // default: Santiago
+}
+
 function motor_cotizar($lead_json) {
     $lead = is_string($lead_json) ? json_decode($lead_json, true) : $lead_json;
     if (!$lead || empty($lead['renta'])) return ['error' => 'Datos del lead inválidos'];
     
     $planes = load_catalog();
     list($coberturas, $defaults) = load_coberturas();
+    
+    // Filtrar por región si se proporcionó comuna
+    $region_lead = null;
+    if (!empty($lead['comuna'])) {
+        $region_lead = comuna_to_region($lead['comuna']);
+    }
+    if ($region_lead && $region_lead !== 'centro') {
+        $planes_before = count($planes);
+        $planes = array_filter($planes, function($p) use ($region_lead) {
+            $r = $p['region'] ?? 'todas';
+            return $r === 'todas' || $r === $region_lead;
+        });
+        $planes = array_values($planes); // re-index
+        error_log("motor_cotizar: filtro región $region_lead → " . count($planes) . " de $planes_before planes");
+    }
     
     $top = rank_plans($planes, $lead, $coberturas, $defaults, 5);
     

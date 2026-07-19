@@ -1,62 +1,43 @@
 #!/usr/bin/env python3
-"""Cruzamos planes_isapre.csv con queplan_isapres_datos.csv para agregar coberturas."""
-import csv
+"""Taggear planes con región basado en nombre y agregar columna al CSV."""
+import csv, re
 
-# Cargar coberturas por isapre
-coberturas = {}
-with open('adjuntos/queplan_isapres_datos.csv') as f:
-    reader = csv.DictReader(f)
-    for row in reader:
-        isapre = row['isapre'].strip()
-        coberturas[isapre] = {
-            'cobertura_hosp_pct': int(row['cobertura_hosp_pct']),
-            'cobertura_amb_pct': int(row['cobertura_amb_pct']),
-        }
+def detect_region(name, isapre):
+    """Detecta la región de un plan por su nombre."""
+    name_upper = name.upper()
+    
+    # Sur
+    if re.search(r'REG[.\s]*SUR|REGIONAL.*SUR|\bSUR\b', name_upper):
+        return 'sur'
+    # Norte
+    if re.search(r'REG[.\s]*NORTE|REGIONAL.*NORTE|\bNORTE\b', name_upper):
+        return 'norte'
+    # Centro (selectivo: no confundir con "CONCENTRA" o similares)
+    if re.search(r'\bCENTRO\b', name_upper) and not re.search(r'CONCENTR', name_upper):
+        return 'centro'
+    # Disponible en todas las regiones
+    return 'todas'
 
-# Mapeo de nombres de isapre (planes_isapre.csv → queplan_isapres_datos.csv)
-map_nombres = {
-    'Banmédica': 'Banmédica',
-    'Colmena': 'Colmena',
-    'Consalud': 'Consalud',
-    'Cruz Blanca': 'Cruz Blanca',
-    'Esencial': 'Esencial',
-    'Nueva Masvida': 'Nueva MasVida',
-    'Vida Tres': 'Vida Tres',
-}
-
-# Enriquecer planes_isapre.csv
-enriched = []
-sin_cobertura = []
+rows = []
 with open('adjuntos/planes_isapre.csv') as f:
     reader = csv.DictReader(f)
     for row in reader:
-        isapre_orig = row['isapre'].strip()
-        isapre_map = map_nombres.get(isapre_orig, isapre_orig)
-        cov = coberturas.get(isapre_map, {})
-        
-        row['cobertura_hosp_pct'] = cov.get('cobertura_hosp_pct', '')
-        row['cobertura_amb_pct'] = cov.get('cobertura_amb_pct', '')
-        
-        if not cov:
-            sin_cobertura.append(isapre_orig)
-        
-        enriched.append(row)
+        region = detect_region(row['nombre'], row['isapre'])
+        row['region'] = region
+        rows.append(row)
 
-# Guardar
-fieldnames = ['isapre', 'codigo', 'nombre', 'uf', 'tope_anual_uf', 'prestadores_plan',
-              'cobertura_hosp_pct', 'cobertura_amb_pct', 'url']
-
+# Guardar con nueva columna
+fieldnames = list(rows[0].keys())
 with open('adjuntos/planes_isapre.csv', 'w', newline='') as f:
-    writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction='ignore')
+    writer = csv.DictWriter(f, fieldnames=fieldnames)
     writer.writeheader()
-    writer.writerows(enriched)
+    writer.writerows(rows)
 
-print(f'Enriquecidos: {len(enriched)} planes')
-print(f'Sin cobertura: {len(sin_cobertura)} ({set(sin_cobertura)})')
-print(f'Muestra Banmédica:')
-for r in enriched[:3]:
-    print(f"  {r['codigo']}: {r['nombre'][:50]} | H={r['cobertura_hosp_pct']}% A={r['cobertura_amb_pct']}% UF={r['uf']}")
+# Estadísticas
+from collections import Counter
+counts = Counter(r['region'] for r in rows)
+for k, v in counts.most_common():
+    print(f'{k}: {v} planes ({round(v*100/len(rows),1)}%)')
 
-# Backup
-import shutil
-shutil.copy('adjuntos/planes_isapre.csv', 'adjuntos/planes_isapre.csv.bak')
+print(f'\nTotal: {len(rows)} planes')
+print('Columna "region" agregada al CSV.')
