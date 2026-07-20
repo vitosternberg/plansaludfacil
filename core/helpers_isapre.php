@@ -143,7 +143,7 @@ function render_isapre_hero_stats($isapre_name) {
                 'isapre' => $isapre,
                 'codigo' => trim($r[1] ?? ''),
                 'nombre' => trim($r[2] ?? ''),
-                'uf' => (float)($r[3] ?? 0),
+                'uf' => (float) str_replace(',', '.', $r[3] ?? '0'),
                 'prestadores' => (int)($r[5] ?? 0),
                 'hosp' => (int)($r[6] ?? 0),
                 'amb' => (int)($r[7] ?? 0),
