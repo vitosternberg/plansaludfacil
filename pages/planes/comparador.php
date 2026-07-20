@@ -223,7 +223,7 @@ function renderResultados(data, renta, pct7, edadLabel, categoria, edad, cargas)
                         ${plan.razones.slice(0, 2).map(r => `<p class="text-xs text-gray-500">✓ ${escHtml(r)}</p>`).join('')}
                     </div>` : ''}
                     <a href="${formUrl}" class="inline-flex items-center gap-1 mt-2 px-3 py-1.5 bg-green-600 text-white text-xs font-semibold rounded-lg hover:bg-green-700 transition">
-                        📋 Completar datos para ${formLabel}
+                        📋 Mejorar evaluación
                     </a>
                 </div>
                 <div class="flex items-center gap-4 md:block md:text-right">
@@ -320,7 +320,7 @@ function renderResultados(data, renta, pct7, edadLabel, categoria, edad, cargas)
         <p class="text-green-100 text-sm mb-4">Completá el formulario de ${formLabel} y un ejecutivo te contactará con los planes exactos para tu perfil.</p>
         <a href="${formUrl}" class="inline-flex items-center gap-2 bg-white text-green-700 font-bold px-6 py-3 rounded-xl hover:bg-green-50 transition shadow text-base">
             <iconify-icon icon="mdi:clipboard-text-outline" width="20"></iconify-icon>
-            Completar datos para ${formLabel}
+            Mejorar evaluación
         </a>
         <p class="text-green-200 text-xs mt-2">Sin compromiso · Tus datos están seguros</p>
     </div>`;
