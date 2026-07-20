@@ -1,126 +1,153 @@
 #!/usr/bin/env node
 /**
- * Scrape coberturas de quvi.cl — extracción por texto completo + regex.
- * 2,231 planes ≈ 25-35 min. Guarda progreso cada 100.
- * Uso: node scripts/scrape_quvi_coberturas.js
+ * Scrape coberturas reales de quvi.cl — vía modal #planDetailPanel.
+ * Estrategia: visitar 7 páginas isapre, click "Ver Plan", extraer modal.
+ * Mucho más rápido que 2,231 visitas individuales.
  */
-
 const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
 
-const URLS_FILE = path.join(__dirname, '..', 'adjuntos', 'quvi_plan_urls.txt');
-const OUT_FILE  = path.join(__dirname, '..', 'adjuntos', 'quvi_coberturas.csv');
-const FAIL_FILE = path.join(__dirname, '..', 'adjuntos', 'quvi_cobertura_failed.txt');
+const OUT = path.join(__dirname, '..', 'adjuntos', 'quvi_coberturas.csv');
+const FAIL = path.join(__dirname, '..', 'adjuntos', 'quvi_cobertura_failed.txt');
 
-// Load URLs
-const raw = fs.readFileSync(URLS_FILE, 'utf8');
-const urls = raw.split('\n')
-    .map(line => line.trim())
-    .filter(line => line.includes('quvi.cl/plan/'))
-    .map(line => {
-        const parts = line.split(',');
-        const code = parts.length > 1 ? parts[0].trim() : '';
-        const url = parts.length > 1 ? parts[parts.length - 1].trim() : line;
-        return { code, url: url.startsWith('http') ? url : `https://www.quvi.cl/plan/${code}` };
-    });
-
-console.log(`Total plans: ${urls.length}`);
+const ISAPRES = [
+    { slug: 'banmedica', name: 'Banmédica' },
+    { slug: 'colmena', name: 'Colmena' },
+    { slug: 'consalud', name: 'Consalud' },
+    { slug: 'cruz-blanca', name: 'Cruz Blanca' },
+    { slug: 'esencial', name: 'Esencial' },
+    { slug: 'nueva-masvida', name: 'Nueva Masvida' },
+    { slug: 'vida-tres', name: 'Vida Tres' },
+];
 
 const results = [];
 const failed = [];
 
-function saveProgress() {
-    if (results.length === 0) return;
-    const keys = ['codigo', 'url', 'isapre', 'nombre', 'linea', 'cobertura_hospitalaria',
-                  'cobertura_ambulatoria', 'tope_anual', 'nota_global', 'costo_uf', 'costo_clp', 'prestadores'];
-    const header = keys.join(',');
-    const rows = results.map(r => keys.map(k => r[k] || '').join(','));
-    fs.writeFileSync(OUT_FILE, [header, ...rows].join('\n'));
-    fs.writeFileSync(FAIL_FILE, failed.join('\n'));
+function save() {
+    if (!results.length) return;
+    const keys = Object.keys(results[0]);
+    fs.writeFileSync(OUT, [keys.join(','), ...results.map(r => keys.map(k => r[k]||'').join(','))].join('\n'));
+    fs.writeFileSync(FAIL, failed.join('\n'));
 }
 
 (async () => {
     const browser = await chromium.launch({ headless: true });
-    const context = await browser.newContext({
-        userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-        viewport: { width: 1440, height: 900 }
-    });
-    const page = await context.newPage();
+    const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+    const page = await ctx.newPage();
 
-    for (let i = 0; i < urls.length; i++) {
-        const { code, url } = urls[i];
-        const planCode = code || url.split('/plan/')[1]?.split('?')[0] || url.split('/').pop();
-        
-        try {
-            await page.goto(url, { waitUntil: 'networkidle', timeout: 15000 });
-            await page.waitForTimeout(2000);
+    for (const { slug, name } of ISAPRES) {
+        console.log(`\n=== ${name.toUpperCase()} ===`);
+        const url = `https://www.quvi.cl/isapres/${slug}`;
+        await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
+        await page.waitForTimeout(3000);
 
-            // Extract using regex from full body text
-            const data = await page.evaluate(() => {
-                const text = document.body?.innerText || '';
-                const result = {};
+        // Find all "Ver Plan" buttons/links
+        const planLinks = await page.evaluate(() => {
+            const links = [];
+            document.querySelectorAll('a').forEach(a => {
+                const h = a.getAttribute('href') || '';
+                const t = a.textContent?.trim() || '';
+                if (h.includes('/plan/') && (t === 'Ver Plan' || t === 'Explorar plan' || t === 'Ver plan')) {
+                    const code = h.split('/plan/')[1]?.split('?')[0];
+                    if (code) links.push({ code, href: h });
+                }
+            });
+            // Also try buttons
+            document.querySelectorAll('button').forEach(b => {
+                const t = b.textContent?.trim() || '';
+                if (t === 'Ver Plan' || t === 'Explorar plan') {
+                    const card = b.closest('[class*="plan"], [class*="card"]');
+                    const a = card?.querySelector('a[href*="/plan/"]');
+                    const h = a?.getAttribute('href') || '';
+                    const code = h.split('/plan/')[1]?.split('?')[0];
+                    if (code) links.push({ code, href: h });
+                }
+            });
+            return links;
+        });
 
-                // Helper: extract value by label pattern
-                const extract = (label) => {
-                    const re = new RegExp(label + '[:\s]*([^\n]{2,60})', 'i');
-                    const m = text.match(re);
-                    return m ? m[1].trim() : '';
-                };
+        console.log(`  Found ${planLinks.length} plans`);
 
-                result.isapre = extract('Isapre');
-                result.nombre = extract('Con Prestadores') || extract('Preferente') || '';
-                result.linea = extract('Línea');
-                result.cobertura_hospitalaria = extract('Cobertura hospitalaria');
-                result.cobertura_ambulatoria = extract('Cobertura ambulatoria');
-                result.tope_anual = extract('Tope anual');
-                result.nota_global = extract('Nota Global');
+        for (let i = 0; i < planLinks.length; i++) {
+            const { code } = planLinks[i];
+            try {
+                // Click the link/button to open modal
+                const clicked = await page.evaluate((c) => {
+                    // Try link first
+                    const link = document.querySelector(`a[href*="/plan/${c}"]`);
+                    if (link) { link.click(); return 'link'; }
+                    // Try button
+                    const btn = document.querySelector(`button:has-text("Ver Plan")`);
+                    if (btn) { btn.click(); return 'button'; }
+                    return null;
+                }, code);
 
-                // Prestadores: search for "N prestadores" pattern
-                const presMatch = text.match(/(\d+)\s*prestadores/);
-                if (presMatch) result.prestadores = presMatch[1];
-
-                // Costo: search for "X,XX UF · $XXX.XXX" or "X,XX UF"
-                const costMatch = text.match(/(\d+[,.]\d{2})\s*UF\s*[·]\s*\$?([\d.]+)/);
-                if (costMatch) {
-                    result.costo_uf = costMatch[1];
-                    result.costo_clp = costMatch[2];
-                } else {
-                    const ufMatch = text.match(/(\d+[,.]\d{2})\s*UF/);
-                    if (ufMatch) result.costo_uf = ufMatch[1];
+                if (!clicked) {
+                    failed.push(code);
+                    console.log(`  [${i+1}/${planLinks.length}] ${code}: no clickable`);
+                    continue;
                 }
 
-                return result;
-            });
+                // Wait for modal
+                await page.waitForTimeout(1500);
 
-            // Determine success: at least one coverage value found
-            const hasData = data.cobertura_hospitalaria || data.cobertura_ambulatoria;
-            
-            if (hasData) {
-                data.codigo = planCode;
-                data.url = url;
-                results.push(data);
-                console.log(`[${i+1}/${urls.length}] ${planCode}: H=${data.cobertura_hospitalaria?.slice(0,10)} A=${data.cobertura_ambulatoria?.slice(0,10)}`);
-            } else {
-                failed.push(planCode);
-                console.log(`[${i+1}/${urls.length}] ${planCode}: sin datos de cobertura`);
+                // Try to extract from modal
+                const data = await page.evaluate(() => {
+                    const panel = document.getElementById('planDetailPanel');
+                    if (!panel || panel.offsetParent === null) return null;
+                    
+                    const t = panel.textContent || '';
+                    const result = {};
+
+                    const extract = (label) => {
+                        const re = new RegExp(label + '[:\\s]*([^\\n]{2,60})', 'i');
+                        const m = t.match(re);
+                        return m ? m[1].trim() : '';
+                    };
+
+                    result.nombre = extract('Con Prestadores') || extract('Plan');
+                    result.isapre = extract('Isapre');
+                    result.linea = extract('Línea');
+                    result.cobertura_hospitalaria = extract('Cobertura hospitalaria');
+                    result.cobertura_ambulatoria = extract('Cobertura ambulatoria');
+                    result.tope_anual = extract('Tope anual');
+                    result.nota_global = extract('Nota Global');
+                    
+                    const prest = t.match(/(\\d+)\\s*prestadores/);
+                    if (prest) result.prestadores = prest[1];
+                    
+                    const costo = t.match(/(\\d+[,.]\\d{2})\\s*UF\\s*[·]\\s*\\$?([\\d.]+)/);
+                    if (costo) { result.costo_uf = costo[1]; result.costo_clp = costo[2]; }
+
+                    return result;
+                });
+
+                if (data && (data.cobertura_hospitalaria || data.cobertura_ambulatoria)) {
+                    data.codigo = code;
+                    data.url = `https://www.quvi.cl/plan/${code}`;
+                    results.push(data);
+                    console.log(`  [${i+1}/${planLinks.length}] ${code}: H=${data.cobertura_hospitalaria?.slice(0,10)} A=${data.cobertura_ambulatoria?.slice(0,10)}`);
+                } else {
+                    failed.push(code);
+                    console.log(`  [${i+1}/${planLinks.length}] ${code}: modal sin datos`);
+                }
+
+                // Close modal: press Escape or click outside
+                await page.keyboard.press('Escape');
+                await page.waitForTimeout(500);
+
+            } catch (e) {
+                failed.push(code);
+                console.log(`  [${i+1}/${planLinks.length}] ${code}: ${e.message?.slice(0,40)}`);
             }
 
-        } catch (e) {
-            failed.push(planCode);
-            console.log(`[${i+1}/${urls.length}] ${planCode}: error - ${e.message?.slice(0,50)}`);
+            if (results.length % 30 === 0) save();
         }
-
-        if ((i + 1) % 100 === 0) {
-            saveProgress();
-            console.log(`  → ${results.length} con datos, ${failed.length} fallidos. Guardado.`);
-        }
+        save();
     }
 
     await browser.close();
-    saveProgress();
-    console.log(`\n=== FINAL ===`);
-    console.log(`Planes con cobertura: ${results.length}/${urls.length}`);
-    console.log(`Fallidos: ${failed.length}`);
-    console.log(`CSV: ${OUT_FILE}`);
+    save();
+    console.log(`\nDone. ${results.length} with data, ${failed.length} failed.`);
 })();
