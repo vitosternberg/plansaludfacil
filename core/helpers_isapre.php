@@ -107,7 +107,7 @@ function render_isapre_plans_jsonld($isapre_name) {
             '@type' => 'ListItem',
             'position' => $i + 1,
             'name' => $p['nombre'],
-            'url' => BASE_URL . '/planes/comparador/?codigo=' . $p['codigo'],
+            'url' => 'https://plansaludfacil.cl' . BASE_URL . '/planes/comparador/?codigo=' . $p['codigo'],
         ];
     }
 
