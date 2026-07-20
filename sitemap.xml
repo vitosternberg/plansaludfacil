@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- ═══ HOME ═══ -->
     <url>
         <loc>https://plansaludfacil.cl/</loc>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
+    </url>
+
+    <!-- ═══ PÁGINAS PRINCIPALES ═══ -->
+    <url>
+        <loc>https://plansaludfacil.cl/planes/individuales/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://plansaludfacil.cl/planes/familiares/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://plansaludfacil.cl/planes/comparador/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
     </url>
     <url>
         <loc>https://plansaludfacil.cl/preguntas-frecuentes</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+
+    <!-- ═══ SERVICIOS ═══ -->
     <url>
         <loc>https://plansaludfacil.cl/servicios/cambio-de-isapre</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
-    <url>
-        <loc>https://plansaludfacil.cl/servicios/planes-individuales</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://plansaludfacil.cl/servicios/planes-familia</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://plansaludfacil.cl/servicios/planes-monoparental</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://plansaludfacil.cl/servicios/planes-profesionales</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
 
-    <!-- ═══ Hubs (Fase 2) ═══ -->
+    <!-- ═══ HUBS ═══ -->
     <url>
         <loc>https://plansaludfacil.cl/isapre</loc>
         <changefreq>weekly</changefreq>
@@ -47,18 +47,8 @@
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
-    <url>
-        <loc>https://plansaludfacil.cl/planes/individuales</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://plansaludfacil.cl/planes/familiares</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
 
-    <!-- ═══ ISAPRE (Fase 3) ═══ -->
+    <!-- ═══ ISAPRE ═══ -->
     <url>
         <loc>https://plansaludfacil.cl/isapre/que-es</loc>
         <changefreq>monthly</changefreq>
@@ -80,14 +70,9 @@
         <priority>0.6</priority>
     </url>
 
-    <!-- ═══ Planes Individuales (Fase 3) ═══ -->
+    <!-- ═══ PLANES INDIVIDUALES ═══ -->
     <url>
         <loc>https://plansaludfacil.cl/planes/individuales/jovenes</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://plansaludfacil.cl/planes/individuales/adulto</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -102,14 +87,9 @@
         <priority>0.6</priority>
     </url>
 
-    <!-- ═══ Planes Familiares (Fase 3) ═══ -->
+    <!-- ═══ PLANES FAMILIARES ═══ -->
     <url>
         <loc>https://plansaludfacil.cl/planes/familiares/preferencia-natal</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://plansaludfacil.cl/planes/familiares/con-cargas</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -119,7 +99,7 @@
         <priority>0.6</priority>
     </url>
 
-    <!-- ═══ Páginas institucionales ═══ -->
+    <!-- ═══ INSTITUCIONAL ═══ -->
     <url>
         <loc>https://plansaludfacil.cl/nosotros/empresa</loc>
         <changefreq>monthly</changefreq>
