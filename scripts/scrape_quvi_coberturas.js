@@ -78,7 +78,7 @@ function save() {
                     const link = document.querySelector(`a[href*="/plan/${c}"]`);
                     if (link) { link.click(); return 'link'; }
                     // Try button
-                    const btn = document.querySelector(`button:has-text("Ver Plan")`);
+                    const btn = Array.from(document.querySelectorAll('button')).find(b => b.textContent?.trim() === 'Ver Plan');
                     if (btn) { btn.click(); return 'button'; }
                     return null;
                 }, code);
@@ -101,7 +101,7 @@ function save() {
                     const result = {};
 
                     const extract = (label) => {
-                        const re = new RegExp(label + '[:\\s]*([^\\n]{2,60})', 'i');
+                        const re = new RegExp(label + '[: \t]*([^\n]{2,60})', 'i');
                         const m = t.match(re);
                         return m ? m[1].trim() : '';
                     };
@@ -114,10 +114,10 @@ function save() {
                     result.tope_anual = extract('Tope anual');
                     result.nota_global = extract('Nota Global');
                     
-                    const prest = t.match(/(\\d+)\\s*prestadores/);
+                    const prest = t.match(/([0-9]+)\s*prestadores/);
                     if (prest) result.prestadores = prest[1];
                     
-                    const costo = t.match(/(\\d+[,.]\\d{2})\\s*UF\\s*[·]\\s*\\$?([\\d.]+)/);
+                    const costo = t.match(/([0-9]+[,.][0-9]{2})\s*UF\s*[·]\s*\$?([0-9.]+)/);
                     if (costo) { result.costo_uf = costo[1]; result.costo_clp = costo[2]; }
 
                     return result;
