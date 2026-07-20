@@ -50,7 +50,7 @@ render_component('hero_moderno', [
 
 // 2. SOCIAL PROOF / MARCAS
 render_component('carrusel_marcas', [
-    'titulo' => 'Trabajamos con todas las Isapres'
+    'titulo' => 'Cotizamos todas las Isapres'
 ]);
 
 // 3. BENEFICIOS
