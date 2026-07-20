@@ -16,7 +16,7 @@ ob_start();?>
 <li><strong>Medicina preventiva:</strong> Chequeos ejecutivos anuales incluidos.</li></ul></section>
 
 <?php require_once __DIR__.'/../../core/helpers_isapre.php';
-$itemlist_jsonld = render_isapre_plans_jsonld('Vida Tres'); render_isapre_data('Vida Tres'); ?><section id="experiencia" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28"><h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Experiencia VIP</h2><ul class="list-disc pl-6 text-gray-700 space-y-2"><li>Atención personalizada con ejecutivo dedicado 24/7.</li><li>Acceso a las mejores clínicas: Alemana, Las Condes, UC Christus.</li><li>Reembolso express (24-48 horas).</li></ul></section>
+$itemlist_jsonld = render_isapre_plans_jsonld('Vida Tres'); render_isapre_hero_stats('Vida Tres'); render_isapre_data('Vida Tres'); ?><section id="experiencia" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28"><h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Experiencia VIP</h2><ul class="list-disc pl-6 text-gray-700 space-y-2"><li>Atención personalizada con ejecutivo dedicado 24/7.</li><li>Acceso a las mejores clínicas: Alemana, Las Condes, UC Christus.</li><li>Reembolso express (24-48 horas).</li></ul></section>
 
 <section id="ideal" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28"><h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">¿Vida Tres es para ti?</h2><p class="text-gray-700">Vida Tres es ideal para <strong>profesionales de alta renta</strong> que buscan la mejor experiencia de atención posible. Si valoras la rapidez, la personalización y el acceso a las mejores clínicas sin filas, es tu opción premium.</p></section>
 <?php $secciones_html=ob_get_clean();
