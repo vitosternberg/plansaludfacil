@@ -106,7 +106,8 @@ $routes = [
     '/' => 'pages/home.php',
 
     // Corporativo
-    '/nosotros/empresa' => 'pages/nosotros/empresa.php',
+    '/nosotros' => 'pages/nosotros.php',
+    '/nosotros/empresa' => 'pages/nosotros.php',
     '/privacidad' => 'pages/nosotros/privacidad.php',
     '/preguntas-frecuentes' => 'pages/preguntas-frecuentes.php',
     '/gracias' => 'pages/gracias.php',
