@@ -55,12 +55,12 @@ $header_admin_email = 'contacto@plansaludfacil.cl'; // Email estático o pasado 
     <div class="container mx-auto px-4 py-3">
         <div class="flex justify-between items-center">
             <!-- Logo -->
-            <div class="flex items-center">
+            <a href="<?= BASE_URL ?>/" class="flex items-center hover:opacity-90 transition">
                 <div class="h-10 w-10 bg-gradient-to-r from-[#00d2ff] to-[#0284c7] rounded-lg flex items-center justify-center mr-3 shadow-sm">
                     <span class="text-white font-bold text-sm">PSF</span>
                 </div>
                 <span class="text-xl font-extrabold text-gray-900 tracking-tight">Plan Salud Fácil</span>
-            </div>
+            </a>
 
             <!-- Menu Desktop (visible en md+) -->
             <nav class="hidden md:flex items-center space-x-6 font-medium">
@@ -165,12 +165,12 @@ $header_admin_email = 'contacto@plansaludfacil.cl'; // Email estático o pasado 
         <!-- menu movil (oculto por defecto, se despliega con JS) -->
         <div id="mobile-menu" class="mobile-menu fixed inset-y-0 left-0 w-64 bg-gradient-to-b from-blue-800 to-blue-900 z-50 p-4">
             <div class="flex justify-between items-center mb-8">
-                <div class="flex items-center">
+                <a href="<?= BASE_URL ?>/" class="flex items-center">
                     <div class="h-10 w-10 bg-gray-200 rounded flex items-center justify-center mr-2">
                         <span class="text-blue-700 font-bold">PSF</span>
                     </div>
-                    <span class="text-xl font-bold">Plan Salud Fácil</span>
-                </div>
+                    <span class="text-xl font-bold text-white">Plan Salud Fácil</span>
+                </a>
                 <button id="menu-close" class="text-white hover:text-blue-200">
                     <iconify-icon icon="mdi:close" width="24"></iconify-icon>
                 </button>
