@@ -75,3 +75,53 @@ function render_isapre_data($isapre) {
     </section>
     <?php
 }
+
+/**
+ * Genera Schema.org JSON-LD ItemList con todos los planes de una isapre.
+ * Datos desde planes_isapre.csv (2,231 planes).
+ */
+function render_isapre_plans_jsonld($isapre_name) {
+    static $cache = null;
+    if ($cache === null) {
+        $cache = []; // [isapre_normalizada] => [planes]
+        $path = __DIR__ . '/../adjuntos/planes_isapre.csv';
+        if (($h = fopen($path, 'r')) === false) return;
+        fgetcsv($h, 0, ',', '"', '');
+        while (($r = fgetcsv($h, 0, ',', '"', '')) !== false) {
+            if (count($r) < 10) continue;
+            $isapre = trim($r[0] ?? '');
+            $codigo = trim($r[1] ?? '');
+            $nombre = trim($r[2] ?? '');
+            if (empty($isapre) || empty($codigo)) continue;
+            $cache[$isapre][] = ['codigo' => $codigo, 'nombre' => $nombre];
+        }
+        fclose($h);
+    }
+
+    $plans = $cache[$isapre_name] ?? [];
+    if (empty($plans)) return;
+
+    $item_list = [];
+    foreach ($plans as $i => $p) {
+        $item_list[] = [
+            '@type' => 'ListItem',
+            'position' => $i + 1,
+            'name' => $p['nombre'],
+            'url' => BASE_URL . '/planes/comparador/?codigo=' . $p['codigo'],
+        ];
+    }
+
+    $json_ld = [
+        '@context' => 'https://schema.org',
+        '@type' => 'ItemList',
+        'name' => 'Planes Isapre ' . $isapre_name,
+        'description' => 'Catálogo de planes de salud de Isapre ' . $isapre_name . ' vigentes. Fuente: Superintendencia de Salud.',
+        'numberOfItems' => count($item_list),
+        'itemListElement' => $item_list,
+    ];
+    ?>
+<script type="application/ld+json">
+<?= json_encode($json_ld, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) ?>
+</script>
+    <?php
+}

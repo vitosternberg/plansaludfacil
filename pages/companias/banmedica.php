@@ -17,7 +17,8 @@ ob_start();?>
 <li><strong>Maternidad:</strong> Cobertura completa de parto, cesárea y controles prenatales.</li>
 </ul></section>
 
-<?php require_once __DIR__.'/../../core/helpers_isapre.php'; render_isapre_data('Banmédica'); ?><section id="red" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28"><h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Red de prestadores</h2><p class="text-gray-700 mb-4">Banmédica tiene la red de prestadores <strong>más grande de Chile</strong>:</p><ul class="list-disc pl-6 text-gray-700 space-y-2"><li>Clínicas propias: Santa María, Dávila, Vespucio.</li><li>Clínicas en regiones: Concepción, Viña del Mar, Antofagasta.</li><li>Más de 40.000 prestadores médicos a nivel nacional.</li></ul></section>
+<?php require_once __DIR__.'/../../core/helpers_isapre.php';
+render_isapre_plans_jsonld('Banmédica'); render_isapre_data('Banmédica'); ?><section id="red" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28"><h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Red de prestadores</h2><p class="text-gray-700 mb-4">Banmédica tiene la red de prestadores <strong>más grande de Chile</strong>:</p><ul class="list-disc pl-6 text-gray-700 space-y-2"><li>Clínicas propias: Santa María, Dávila, Vespucio.</li><li>Clínicas en regiones: Concepción, Viña del Mar, Antofagasta.</li><li>Más de 40.000 prestadores médicos a nivel nacional.</li></ul></section>
 
 <section id="ideal" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28"><h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">¿Banmédica es para ti?</h2><p class="text-gray-700">Banmédica es ideal si valoras <strong>acceso rápido a especialistas</strong> y una <strong>red de clínicas de primer nivel</strong>. Es la mejor opción para profesionales urbanos y familias que priorizan la calidad por sobre el precio.</p></section>
 <?php $secciones_html=ob_get_clean();
