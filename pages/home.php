@@ -53,6 +53,9 @@ render_component('carrusel_marcas', [
     'titulo' => 'Cotizamos todas las Isapres'
 ]);
 
+// 2.5 PLANES DESTACADOS
+render_component('planes_destacados');
+
 // 3. BENEFICIOS
 render_component('grilla_beneficios', [
     'items' => [
