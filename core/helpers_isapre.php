@@ -119,9 +119,7 @@ function render_isapre_plans_jsonld($isapre_name) {
         'numberOfItems' => count($item_list),
         'itemListElement' => $item_list,
     ];
-    ?>
-<script type="application/ld+json">
-<?= json_encode($json_ld, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) ?>
-</script>
-    <?php
+    return '<script type="application/ld+json">' . "\n" .
+           json_encode($json_ld, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) .
+           "\n</script>";
 }

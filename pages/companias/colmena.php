@@ -16,7 +16,7 @@ ob_start();?>
 <li><strong>Dental:</strong> Planes con limpieza gratis anual y descuentos.</li></ul></section>
 
 <?php require_once __DIR__.'/../../core/helpers_isapre.php';
-render_isapre_plans_jsonld('Colmena'); render_isapre_data('Colmena'); ?><section id="maternidad" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28"><h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Maternidad en Colmena</h2><p class="text-gray-700 mb-4">Colmena es reconocida por <strong>la mejor cobertura de maternidad</strong>. Sus planes incluyen: parto y cesárea con copago mínimo, controles prenatales cubiertos, postnatal con visitas domiciliarias incluidas, y el programa "Colmena Mamá" de acompañamiento integral.</p></section>
+$itemlist_jsonld = render_isapre_plans_jsonld('Colmena'); render_isapre_data('Colmena'); ?><section id="maternidad" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28"><h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Maternidad en Colmena</h2><p class="text-gray-700 mb-4">Colmena es reconocida por <strong>la mejor cobertura de maternidad</strong>. Sus planes incluyen: parto y cesárea con copago mínimo, controles prenatales cubiertos, postnatal con visitas domiciliarias incluidas, y el programa "Colmena Mamá" de acompañamiento integral.</p></section>
 
 <section id="ideal" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28"><h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">¿Colmena es para ti?</h2><p class="text-gray-700">Colmena es ideal para <strong>familias jóvenes que están creciendo</strong>, parejas que planean tener hijos y padres solteros. Si la maternidad y la cobertura pediátrica son prioridad, es la mejor opción.</p></section>
 <?php $secciones_html=ob_get_clean();

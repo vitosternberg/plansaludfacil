@@ -190,6 +190,7 @@
         echo "\n</script>\n";
     }
     ?>
-    
-</head>
+    <?php if (!empty($itemlist_jsonld)) echo $itemlist_jsonld; ?>
+
+ </head>
 <body class="bg-gray-50 min-h-screen font-sans flex flex-col">
