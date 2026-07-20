@@ -72,7 +72,7 @@ ob_start();
         <label class="block font-semibold text-gray-700 mb-2">Edad de cada carga</label>
         <div id="carga-edad-inputs" class="space-y-2"></div>
     </div>
-    <button onclick="calcular()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-xl transition text-lg">Comparar precios reales</button>
+    <button onclick="calcular()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-xl transition text-lg">Mejorar evaluación Comercial</button>
     <script>
         function toggleCargaEdad() {
             const n = parseInt(document.getElementById('cargas-input').value) || 0;
@@ -164,7 +164,7 @@ async function calcular() {
         document.getElementById('resultados').classList.remove('hidden');
     } finally {
         cotizando = false;
-        if (btn) { btn.disabled = false; btn.textContent = 'Comparar precios reales'; }
+        if (btn) { btn.disabled = false; btn.textContent = 'Mejorar evaluación Comercial'; }
     }
 }
 
