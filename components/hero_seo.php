@@ -48,12 +48,19 @@ $hero_class    = $hero_class ?? 'bg-gradient-to-r from-blue-800 to-blue-900';
         <?php
         $bc_items = [];
         $pos = 1;
+        $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         foreach ($breadcrumbs as $bc) {
+            $item_url = $bc['url'];
+            if ($item_url === '#') {
+                $item_url = $current_url;
+            } elseif (!preg_match('#^https?://#', $item_url)) {
+                $item_url = rtrim((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]", '/') . '/' . ltrim($item_url, '/');
+            }
             $bc_items[] = [
                 '@type' => 'ListItem',
                 'position' => $pos,
                 'name' => $bc['label'],
-                'item' => $bc['url'] !== '#' ? rtrim($bc['url'], '/') : null,
+                'item' => rtrim($item_url, '/'),
             ];
             $pos++;
         }

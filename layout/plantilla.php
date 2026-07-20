@@ -173,11 +173,17 @@
             '@context' => 'https://schema.org',
             '@type' => 'BreadcrumbList',
             'itemListElement' => array_map(function($bc, $i) {
+                $item_url = $bc['url'];
+                if ($item_url === '#') {
+                    $item_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                } elseif (!preg_match('#^https?://#', $item_url)) {
+                    $item_url = rtrim((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]", '/') . '/' . ltrim($item_url, '/');
+                }
                 return [
                     '@type' => 'ListItem',
                     'position' => $i + 1,
                     'name' => $bc['name'],
-                    'item' => $bc['url']
+                    'item' => rtrim($item_url, '/')
                 ];
             }, $bcrumbs, array_keys($bcrumbs))
         ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
