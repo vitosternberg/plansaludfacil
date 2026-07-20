@@ -65,8 +65,8 @@ $colors = [
             </div>
             <div class="text-2xl font-extrabold <?= $c['text_color'] ?> mb-1"><?= number_format($plan['uf'], 2, ',', '.') ?> UF</div>
             <div class="text-xs text-gray-400 mb-4">/mes · precio base</div>
-            <a href="<?= BASE_URL ?>/planes/comparador/?plan=<?= urlencode($plan['codigo']) ?>#comparador" class="inline-block w-full <?= $c['badge'] ?> hover:opacity-90 text-white font-semibold py-2.5 px-4 rounded-xl transition text-sm">
-                Ver plan →
+            <a href="https://www.quvi.cl/plan/<?= urlencode($plan['codigo']) ?>" target="_blank" rel="nofollow noopener" class="inline-block w-full <?= $c['badge'] ?> hover:opacity-90 text-white font-semibold py-2.5 px-4 rounded-xl transition text-sm">
+                Ver ficha del plan →
             </a>
         </div>
         <?php endforeach; ?>
