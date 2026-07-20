@@ -1,4 +1,4 @@
-<?php // companias/consalud.php — Landing Isapre Consalud
+<?php // companias/consalud.php — Landing Isapre Planes de salud Consalud
 require_once __DIR__.'/../../omniflow_config.php';
 $page_title='Planes Isapre Consalud: Jóvenes, Regiones y Precios Competitivos | Plan Salud Fácil';
 $meta_description='Planes de Isapre Consalud con precios reales 2026. La mejor opción para jóvenes profesionales y trabajadores en regiones. Cotiza gratis.';

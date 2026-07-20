@@ -26,11 +26,11 @@ try {
 
 // ── Variables SEO ────────────────────────────────────────
 $page_title       = 'Cambio de Isapre: Asesoría Gratuita 100% Online | Plan Salud Fácil';
-$meta_description = 'Te ayudamos a cambiarte de Isapre gratis y sin trámites. Comparamos todas las Isapres, gestionamos tu Declaración de Salud y firmas online. Asesoría 100% digital.';
-$h1               = 'Te ayudamos a cambiarte de Isapre gratis y sin hacer trámites';
+$meta_description = 'Te ayudamos a cambiarse de isapre de Isapre gratis y sin trámites. Comparamos todas las Isapres, gestionamos tu Declaración de Salud y firmas online. Asesoría 100% digital.';
+$h1               = 'Te ayudamos a cambiarse de isapre de Isapre gratis y sin hacer trámites';
 $lead             = 'Comparamos todas las Isapres del mercado, gestionamos tu Declaración de Salud y firmas tu nuevo contrato 100% online. En menos de 48 horas.';
 $svc_name         = 'Cambio de Isapre';
-$svc_description  = 'Asesoría gratuita para cambiarte de Isapre: comparamos planes, gestionamos tu Declaración de Salud y firmas online.';
+$svc_description  = 'Asesoría gratuita para cambiarse de isapre de Isapre: comparamos planes, gestionamos tu Declaración de Salud y firmas online.';
 $cta_texto = 'Cotiza Express';
 $cta_link         = BASE_URL.'/planes/comparador/';
 
@@ -45,7 +45,7 @@ unset($bc);
 $toc_items = [
     ['id' => 'conviene', 'label' => '¿Me conviene cambiarme?'],
     ['id' => 'proceso', 'label' => '¿Cómo funciona el proceso?'],
-    ['id' => 'requisitos', 'label' => 'Requisitos para cambiarte'],
+    ['id' => 'requisitos', 'label' => 'Requisitos para cambiarse de isapre'],
     ['id' => 'comparativa', 'label' => '¿A qué Isapre cambiarme?'],
     ['id' => 'preexistencias', 'label' => '¿Qué pasa con las preexistencias?'],
 ];
@@ -111,13 +111,13 @@ ob_start();
 </section>
 
 <section id="requisitos" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28">
-    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Requisitos para cambiarte de Isapre</h2>
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Requisitos para cambiarse de isapre de Isapre</h2>
 
     <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
         <ul class="space-y-3">
             <li class="flex items-start gap-3">
                 <iconify-icon icon="mdi:check-circle" width="22" class="text-green-500 flex-shrink-0 mt-0.5"></iconify-icon>
-                <span class="text-gray-700"><strong>Antigüedad mínima de 12 meses</strong> en tu Isapre actual. Es el requisito legal para poder cambiarte.</span>
+                <span class="text-gray-700"><strong>Antigüedad mínima de 12 meses</strong> en tu Isapre actual. Es el requisito legal para poder cambiarse de isapre.</span>
             </li>
             <li class="flex items-start gap-3">
                 <iconify-icon icon="mdi:check-circle" width="22" class="text-green-500 flex-shrink-0 mt-0.5"></iconify-icon>
@@ -142,7 +142,7 @@ ob_start();
 <section id="comparativa" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28">
     <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">¿A qué Isapre me conviene cambiarme?</h2>
 
-    <p class="text-gray-700 leading-relaxed mb-6">La mejor Isapre para ti depende de tu perfil: edad, ingresos, cargas familiares y las clínicas donde prefieres atenderte. Estos son los factores clave que analizamos:</p>
+    <p class="text-gray-700 leading-relaxed mb-6">La mejor plan isapre para ti depende de tu perfil: edad, ingresos, cargas familiares y las clínicas donde prefieres atenderte. Estos son los factores clave que analizamos:</p>
 
     <div class="overflow-x-auto">
         <table class="w-full bg-white rounded-xl border border-gray-100 shadow-sm text-sm">
@@ -183,7 +183,7 @@ ob_start();
 <section id="preexistencias" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28">
     <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">¿Qué pasa si tengo preexistencias?</h2>
 
-    <p class="text-gray-700 leading-relaxed mb-6">Sí, puedes cambiarte de Isapre aunque tengas preexistencias. La clave está en declararlas correctamente y elegir la Isapre adecuada. Así funciona nuestro proceso:</p>
+    <p class="text-gray-700 leading-relaxed mb-6">Sí, puedes cambiarse de isapre de Isapre aunque tengas preexistencias. La clave está en declararlas correctamente y elegir la Isapre adecuada. Así funciona nuestro proceso:</p>
 
     <div class="grid md:grid-cols-2 gap-4">
         <div class="p-5 bg-blue-50 rounded-xl border border-blue-100">
@@ -212,7 +212,7 @@ $faq_preguntas = [
     '¿Qué necesito para cambiarme de Isapre?' => 'Solo necesitas tener al menos un año de antigüedad en tu Isapre actual, no estar con licencia médica vigente y completar la Declaración de Salud. Nosotros te guiamos en cada paso.',
     '¿Cómo funciona el proceso de cambio de Isapre?' => 'Nosotros comparamos todas las Isapres del mercado por ti, gestionamos tu Declaración de Salud y firmas el nuevo contrato 100% online. El proceso completo toma menos de 48 horas.',
     '¿Cuánto cuesta cambiarse de Isapre?' => 'Nuestro servicio de asesoría y gestión de cambio es 100% gratuito. Solo pagas la cotización mensual de tu nuevo plan de salud, que se descuenta de tu 7% legal obligatorio.',
-    '¿Puedo cambiarme de Isapre si tengo preexistencias?' => 'Sí, puedes cambiarte aunque tengas preexistencias. Analizamos tu historial médico de forma confidencial antes de postular para asegurar que el cambio sea aprobado sin contratiempos ni rechazos.',
+    '¿Puedo cambiarme de Isapre si tengo preexistencias?' => 'Sí, puedes cambiarse de isapre aunque tengas preexistencias. Analizamos tu historial médico de forma confidencial antes de postular para asegurar que el cambio sea aprobado sin contratiempos ni rechazos.',
 ];
 $faq_titulo = 'Preguntas Frecuentes sobre Cambio de Isapre';
 

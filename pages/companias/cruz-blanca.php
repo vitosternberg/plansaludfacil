@@ -1,4 +1,4 @@
-<?php // companias/cruz-blanca.php — Landing Isapre Cruz Blanca (datos reales del motor)
+<?php // companias/cruz-blanca.php — Landing Isapre Cruz Blanca — cambio de plan isapre Cruz Blanca (datos reales del motor)
 require_once __DIR__.'/../../omniflow_config.php';
 $page_title='Planes Isapre Cruz Blanca: Deporte, Kinesiología y Salud Mental | Plan Salud Fácil';
 $meta_description='Planes de Isapre Cruz Blanca con foco en kinesiología, deporte y salud mental. Precios reales 2026 calculados con tabla oficial. Cotiza gratis.';

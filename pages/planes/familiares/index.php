@@ -28,12 +28,12 @@ try {
 } catch (Exception $e) { error_log("Omniflow Tracking Error: " . $e->getMessage()); }
 
 // ── Variables SEO ────────────────────────────────────────
-$page_title       = 'Planes de ISAPRE Familiares: Cobertura para toda tu Familia | Plan Salud Fácil';
-$meta_description = 'Planes de ISAPRE para familias con cargas. Protege a tu pareja e hijos con la mejor cobertura. Pediatría, maternidad y beneficios grupales. Cotiza gratis.';
+$page_title       = 'Planes de ISAPRE Familiares | Cotizar Plan de Salud Isapre | Plan Salud Fácil';
+$meta_description = 'Cotiza tu plan de salud isapre familiar. Cotiza tu plan de salud isapre familiar. Planes de ISAPRE para familias con cargas. Protege a tu pareja e hijos con la mejor cobertura. Pediatría, maternidad y beneficios grupales. Cotiza tu plan de isapre y contrata el mejor plan isapre para tu familia.';
 $h1               = 'Planes de ISAPRE Familiares';
 $lead             = 'Protege a toda tu familia con un plan que se adapte a su composición y necesidades. Desde planes con cobertura reforzada para embarazos hasta opciones para familias monoparentales.';
 $svc_name         = 'Planes Familiares de ISAPRE';
-$svc_description  = 'Planes de ISAPRE para familias: cobertura para cónyuge, hijos y otras cargas legales. Cotiza gratis.';
+$svc_description  = 'Planes de ISAPRE para familias: cobertura para cónyuge, hijos y otras cargas legales. Cotiza tu plan de isapre y contrata el mejor plan isapre para tu familia.';
 $cta_texto        = 'Cotizar ahora';
 $cta_link         = '#formulario';
 

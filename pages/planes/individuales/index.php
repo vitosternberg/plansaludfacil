@@ -29,8 +29,8 @@ try {
 } catch (Exception $e) { error_log("Omniflow Tracking Error: " . $e->getMessage()); }
 
 // ── Variables SEO ────────────────────────────────────────
-$page_title       = 'Planes de Salud Individuales: Cobertura a tu Medida | Plan Salud Fácil';
-$meta_description = 'Encuentra el mejor plan de Isapre para ti sin cargas. Cobertura en hospitalización, ambulatorio y prevención. Asesoría 100% gratis y online.';
+$page_title       = 'Planes de Salud Isapre | Cotizar Plan de Salud Isapre | Plan Salud Fácil';
+$meta_description = 'Contratar isapre y cotizar plan de isapre individual. Planes de isapre para independientes. Cobertura en hospitalización y prevención. Asesoría 100% gratis y online.';
 $h1               = 'Planes de ISAPRE Individuales';
 $lead             = 'Un plan de salud pensado para ti, sin cargas. Desde el profesional joven que empieza hasta el adulto mayor que busca la mejor protección.';
 $svc_name         = 'Planes Individuales de ISAPRE';
@@ -164,6 +164,7 @@ $secciones_html = ob_get_clean();
 // ── FAQ ──────────────────────────────────────────────────
 $faq_preguntas = [
     '¿Puedo contratar un plan individual si tengo cargas?' => 'No, los planes individuales son solo para el titular. Si tienes cargas necesitas un plan familiar.',
+    '¿Qué es un plan libre eleccion isapre?' => 'La modalidad de libre eleccion te permite atenderte en cualquier clínica u hospital, no solo en los prestadores en convenio de tu isapre. El copago es mayor pero tienes libertad total de eleccion.',
     '¿Qué plan individual es más barato?' => 'Generalmente el plan joven, diseñado para personas con bajo riesgo de salud y menor uso del sistema.',
     '¿Los planes individuales cubren hospitalización?' => 'Sí, todos los planes incluyen cobertura de hospitalización. El porcentaje varía según el plan (70-90%).',
     '¿Puedo pasar de plan individual a familiar?' => 'Sí. La mayoría de las isapres permiten migrar sin perder antigüedad ni pasar por nueva evaluación de salud.',

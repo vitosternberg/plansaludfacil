@@ -49,7 +49,7 @@ foreach ($companias as $c):
 
 $secciones_html = ob_get_clean();
 $faq_preguntas = [
-    '¿Cuál es la mejor isapre de Chile?' => 'Depende de tu perfil. No existe una isapre universalmente mejor. La ideal para ti depende de tu edad, renta, cargas, comuna e intereses de cobertura.',
+    '¿Cuál es la mejor plan isapre de Chile?' => 'Depende de tu perfil. No existe una isapre universalmente mejor. La ideal para ti depende de tu edad, renta, cargas, comuna e intereses de cobertura.',
     '¿Puedo cambiarme de isapre si no me gusta?' => 'Sí, cada 12 meses puedes cambiarte. Nuestro equipo te ayuda sin costo.',
     '¿Todas las isapres cuestan lo mismo?' => 'No. Cada isapre tiene distintos planes con precios que varían según la cobertura. El precio se descuenta de tu 7% legal.',
 ];

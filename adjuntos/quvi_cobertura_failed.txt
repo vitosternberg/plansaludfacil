@@ -1,0 +1,8 @@
+isapre=banmedica,i=0
+isapre=banmedica,i=1
+isapre=colmena,i=0
+isapre=colmena,i=1
+isapre=consalud,i=0
+isapre=consalud,i=1
+isapre=esencial,i=0
+isapre=esencial,i=1

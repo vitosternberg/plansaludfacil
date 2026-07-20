@@ -1,96 +1,123 @@
 #!/usr/bin/env node
-/**
- * Scrape coberturas reales de quvi.cl usando Playwright (Node.js).
- * Uso: node scripts/scrape_quvi_coberturas.js
- */
-
 const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
 
-const urlsFile = path.join(__dirname, '..', 'adjuntos', 'quvi_plan_urls.txt');
-const outFile  = path.join(__dirname, '..', 'adjuntos', 'quvi_coberturas.csv');
-const failFile = path.join(__dirname, '..', 'adjuntos', 'quvi_cobertura_failed.txt');
+const OUT = path.join(__dirname, '..', 'adjuntos', 'quvi_coberturas.csv');
+const FAILED = path.join(__dirname, '..', 'adjuntos', 'quvi_cobertura_failed.txt');
+const ISAPRES = ['banmedica', 'colmena', 'consalud', 'cruz-blanca', 'esencial', 'nueva-masvida', 'vida-tres'];
 
-const raw = fs.readFileSync(urlsFile, 'utf8');
-const urls = raw.split('\n')
-    .map(line => line.trim())
-    .filter(line => line.includes('quvi.cl/plan/'))
-    .map(line => {
-        const parts = line.split(',');
-        const code = parts.length > 1 ? parts[0].trim() : '';
-        const url = parts.length > 1 ? parts[parts.length - 1].trim() : line;
-        return { code, url: url.startsWith('http') ? url : `https://www.quvi.cl/plan/${code}` };
-    });
-
-console.log(`Total plans: ${urls.length}`);
-
-const results = [];
-const failed = [];
-
-function saveProgress() {
-    if (results.length === 0) return;
-    const keys = ['codigo', 'url', ...new Set(results.flatMap(r => Object.keys(r).filter(k => k !== 'codigo' && k !== 'url')))];
-    const header = keys.join(',');
-    const rows = results.map(r => keys.map(k => r[k] || '').join(','));
-    fs.writeFileSync(outFile, [header, ...rows].join('\n'));
-    fs.writeFileSync(failFile, failed.join('\n'));
-    console.log(`  → Saved ${results.length} results, ${failed.length} failed`);
+function save(data) {
+    if (!data.length) return;
+    const keys = Object.keys(data[0]);
+    fs.writeFileSync(OUT, [keys.join(','), ...data.map(r => keys.map(k => r[k] || '').join(','))].join('\n'));
 }
 
 (async () => {
-    const browser = await chromium.launch({ headless: true, channel: 'chromium' });
-    const context = await browser.newContext({
-        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)',
-        viewport: { width: 1280, height: 800 }
-    });
-    const page = await context.newPage();
+    const browser = await chromium.launch({ headless: true });
+    const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+    const page = await ctx.newPage();
+    const results = [], failed = [];
 
-    for (let i = 0; i < urls.length; i++) {
-        const { code, url } = urls[i];
-        const planCode = code || url.split('/').pop();
-        
-        try {
-            await page.goto(url, { waitUntil: 'networkidle', timeout: 15000 });
-            await page.waitForTimeout(1000);
+    for (const isapre of ISAPRES) {
+        console.log(`\n=== ${isapre.toUpperCase()} ===`);
+        await page.goto(`https://www.quvi.cl/isapres/${isapre}`, { waitUntil: 'networkidle', timeout: 30000 });
+        await page.waitForTimeout(3000);
 
-            const coberturas = await page.evaluate(() => {
-                const result = {};
-                const section = document.getElementById('pdViewCobertura');
-                if (!section) return result;
-                const text = section.textContent;
-                
-                const patterns = {
-                    hospitalaria: /[Hh]ospitalaria[:\s]*(\d{1,3})\s*%/,
-                    ambulatoria: /[Aa]mbulatoria[:\s]*(\d{1,3})\s*%/,
-                    caec: /CAEC[:\s]*(\d{1,3})\s*%/,
-                    urgencia: /[Uu]rgencia[:\s]*(\d{1,3})\s*%/,
-                    medicamentos: /[Mm]edicamentos?[:\s]*(\d{1,3})\s*%/,
-                };
-                
-                for (const [key, ptn] of Object.entries(patterns)) {
-                    const m = text.match(ptn);
-                    if (m) result[key] = parseInt(m[1]);
-                }
-                return result;
+        // Debug: dump page title and all links/buttons
+        const title = await page.title();
+        console.log(`  Page title: ${title}`);
+
+        // Find plan cards — try multiple selectors
+        const cards = await page.evaluate(() => {
+            // Collect all plan links/cards
+            const items = [];
+            // Try data-plan-code
+            document.querySelectorAll('[data-plan-code]').forEach(el => {
+                items.push({ code: el.getAttribute('data-plan-code'), text: el.textContent?.trim().slice(0,40) });
             });
+            if (items.length) return items;
+            // Try links to /plan/
+            document.querySelectorAll('a[href*="/plan/"]').forEach(el => {
+                const href = el.getAttribute('href');
+                const code = href.split('/plan/')[1]?.split('/')[0]?.split('?')[0];
+                if (code && code.length > 2) items.push({ code, text: el.textContent?.trim().slice(0,40) });
+            });
+            return items;
+        });
 
-            if (Object.keys(coberturas).length > 0) {
-                results.push({ codigo: planCode, url, ...coberturas });
-                console.log(`[${i+1}/${urls.length}] ${planCode}: ${JSON.stringify(coberturas)}`);
-            } else {
-                failed.push(planCode);
-                console.log(`[${i+1}/${urls.length}] ${planCode}: sin datos`);
+        console.log(`  Found ${cards.length} plan cards`);
+
+        for (let i = 0; i < cards.length; i++) {
+            const { code } = cards[i];
+            try {
+                // Click the card/link to navigate to plan detail
+                await page.goto(`https://www.quvi.cl/plan/${code}`, { waitUntil: 'networkidle', timeout: 15000 });
+                await page.waitForTimeout(1500);
+
+                // Try to extract coverage from the plan detail page
+                const data = await page.evaluate(() => {
+                    // Method 1: Check for SEO data section
+                    const seo = document.querySelector('.seo-plan-data');
+                    // Method 2: Check for any coverage text in the full page
+                    const body = document.body?.textContent || '';
+                    
+                    const extract = (label) => {
+                        const r = new RegExp(label + '[:\s]*([^\n]{2,50})', 'i');
+                        const m = body.match(r);
+                        return m ? m[1].trim() : '';
+                    };
+
+                    // Method 3: Look for structured coverage elements
+                    let hosp = extract('Cobertura hospitalaria');
+                    let amb = extract('Cobertura ambulatoria');
+                    
+                    // Fallback: try extracting from badge/card elements
+                    if (!hosp) {
+                        const hospEl = document.querySelector('[data-criterio="hospitalaria"]');
+                        if (hospEl) hosp = hospEl.textContent?.trim();
+                    }
+
+                    return {
+                        nombre: document.querySelector('h1')?.textContent?.trim() || '',
+                        cobertura_hospitalaria: hosp,
+                        cobertura_ambulatoria: amb,
+                        nota_global: extract('Nota Global'),
+                        tope_anual: extract('Tope anual'),
+                        prestadores: extract('prestadores'),
+                        costo_uf: extract('UF'),
+                        linea: extract('Línea'),
+                    };
+                });
+
+                if (data.cobertura_hospitalaria || data.cobertura_ambulatoria) {
+                    data.codigo = code;
+                    data.isapre = isapre;
+                    data.url = `https://www.quvi.cl/plan/${code}`;
+                    results.push(data);
+                    console.log(`  [${i+1}/${cards.length}] ${code}: H=${data.cobertura_hospitalaria} A=${data.cobertura_ambulatoria}`);
+                } else {
+                    failed.push(code);
+                    // Debug: dump some page text
+                    const sample = await page.evaluate(() => document.body?.textContent?.slice(0, 200));
+                    console.log(`  [${i+1}/${cards.length}] ${code}: sin datos. Sample: ${sample?.slice(0,80)}`);
+                }
+
+            } catch (e) {
+                failed.push(code);
+                console.log(`  [${i+1}/${cards.length}] ${code}: error`);
             }
-        } catch (e) {
-            failed.push(planCode);
-            console.log(`[${i+1}/${urls.length}] ${planCode}: ${e.message?.slice(0,60)}`);
-        }
 
-        if ((i + 1) % 100 === 0) saveProgress();
+            if (results.length % 20 === 0) {
+                save(results);
+                fs.writeFileSync(FAILED, failed.join('\n'));
+            }
+        }
+        save(results);
+        fs.writeFileSync(FAILED, failed.join('\n'));
     }
 
     await browser.close();
-    saveProgress();
-    console.log(`Done. ${results.length} with data, ${failed.length} failed.`);
+    save(results);
+    console.log(`\nDone. ${results.length} with data, ${failed.length} failed.`);
 })();
