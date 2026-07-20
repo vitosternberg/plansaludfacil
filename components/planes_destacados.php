@@ -26,15 +26,18 @@ while (($r = fgetcsv($h, 0, ',', '"', '')) !== false) {
 fclose($h);
 if (empty($cache)) return;
 
-// Pick 3 featured with balanced score
-usort($cache, fn($a,$b) => ($b['hosp'] + $b['amb'] - $a['uf']*5) <=> ($a['hosp'] + $a['amb'] - $a['uf']*5));
-$featured = array_slice(array_unique(array_map(fn($p) => $p['isapre'].'|'.$p['codigo'], $cache)), 0, 3);
+// Pick 3 featured by different criteria
 $plans = [];
-foreach ($featured as $key) {
-    foreach ($cache as $p) {
-        if (($p['isapre'].'|'.$p['codigo']) === $key) { $plans[] = $p; break; }
-    }
-}
+// 1. Mejor cobertura (hoghest hosp+amb)
+usort($cache, fn($a,$b) => ($b['hosp'] + $b['amb']) <=> ($a['hosp'] + $a['amb']));
+foreach ($cache as $p) { if (!in_array($p['isapre'], array_column($plans, 'isapre'))) { $plans[0] = $p; break; } }
+// 2. Más económico (lowest UF with decent coverage)
+usort($cache, fn($a,$b) => $a['uf'] <=> $b['uf']);
+foreach ($cache as $p) { if ($p['hosp'] >= 60 && $p['amb'] >= 50 && !in_array($p['isapre'], array_column($plans, 'isapre'))) { $plans[1] = $p; break; } }
+// 3. Mejor balance
+usort($cache, fn($a,$b) => ($b['hosp'] + $b['amb'] - $b['uf']*3) <=> ($a['hosp'] + $a['amb'] - $a['uf']*3));
+foreach ($cache as $p) { if (!in_array($p['isapre'], array_column($plans, 'isapre'))) { $plans[2] = $p; break; } }
+$plans = array_values($plans);
 if (count($plans) < 3) return;
 
 $colors = [

@@ -139,12 +139,6 @@ $header_admin_email = 'contacto@plansaludfacil.cl'; // Email estático o pasado 
                     <iconify-icon icon="mdi:help-circle-outline" width="20" class="mr-1"></iconify-icon>
                     <span>FAQ</span>
                 </a>
-                <!-- Link Nosotros -->
-                <a href="<?= BASE_URL ?>/nosotros" class="nav-item transition flex items-center text-gray-600 hover:text-[#0284c7]">
-                    <iconify-icon icon="mdi:information-outline" width="20" class="mr-1"></iconify-icon>
-                    <span>Nosotros</span>
-                </a>
-                
                 <!-- Botón WhatsApp Modal -->
                 <button onclick="openWspModal()" class="ml-4 flex items-center bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-2.5 px-5 rounded-full shadow-md transition-transform transform hover:-translate-y-1 focus:outline-none">
                     <iconify-icon icon="mdi:whatsapp" width="22" class="mr-2"></iconify-icon>
