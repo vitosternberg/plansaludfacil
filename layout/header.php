@@ -4,7 +4,7 @@
  * Contenido del encabezado (barra superior de contacto y navegación principal).
  * Ubicación: tu_proyecto_raiz/layout/header_content.php
  *
- * [VERSION CONTROL] - Nueva Versión: 2025-07-06
+ * [VERSION CONTROL] - Nueva Versión: 2025-07-20
  * - Contiene la barra de contacto superior y el header principal.
  * - Incluye los IDs necesarios para el JavaScript del menú móvil.
  * - **No contiene <header> ni <body> ni <html>.**
