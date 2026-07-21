@@ -17,10 +17,10 @@ $ISAPRES = [
         'historia'        => 'Más de 35 años, 31 sucursales, 8000 convenios, 585K beneficiarios. Parte del Grupo Banmédica.',
         'clinicas'        => ['Clínica Las Condes', 'Clínica Alemana', 'Clínica Santa María', 'Red UC Christus', 'Clínica INDISA', 'Clínica UAndes', 'Vida Integra'],
         'planes_top'      => [
-            ['nombre' => 'Salud Platinum One', 'codigo' => 'BPPO26071012', 'uf' => 4.55, 'tope_anual' => 11000, 'prestadores_plan' => 16, 'hosp' => '100%', 'amb' => '80%', 'url' => 'https://www.quvi.cl/plan/BPPO26071012'],
-            ['nombre' => 'Salud Black',        'codigo' => 'BPB260656', 'uf' => 8.82, 'tope_anual' => 11000, 'prestadores_plan' => 17, 'hosp' => '90-100%', 'amb' => '80-90%', 'url' => 'https://www.quvi.cl/plan/BPB260656'],
-            ['nombre' => 'Salud Conecta Clásico', 'codigo' => 'BSCC260100', 'uf' => 0.94, 'tope_anual' => 5000, 'prestadores_plan' => 3, 'hosp' => '40%', 'amb' => '40%', 'url' => 'https://www.quvi.cl/plan/BSCC260100'],
-            ['nombre' => 'Salud Superior Reg. Sur', 'codigo' => 'BSS8F260588', 'uf' => 3.59, 'tope_anual' => 7000, 'prestadores_plan' => 25, 'hosp' => '80%', 'amb' => '60%', 'url' => 'https://www.quvi.cl/plan/BSS8F260588'],
+            ['nombre' => 'Salud Platinum One', 'codigo' => 'BPPO26071012', 'uf' => 4.55, 'tope_anual' => 11000, 'prestadores_plan' => 16, 'hosp' => '100%', 'amb' => '80%', 'url' => 'planes/detalle/?codigo=BPPO26071012'],
+            ['nombre' => 'Salud Black',        'codigo' => 'BPB260656', 'uf' => 8.82, 'tope_anual' => 11000, 'prestadores_plan' => 17, 'hosp' => '90-100%', 'amb' => '80-90%', 'url' => 'planes/detalle/?codigo=BPB260656'],
+            ['nombre' => 'Salud Conecta Clásico', 'codigo' => 'BSCC260100', 'uf' => 0.94, 'tope_anual' => 5000, 'prestadores_plan' => 3, 'hosp' => '40%', 'amb' => '40%', 'url' => 'planes/detalle/?codigo=BSCC260100'],
+            ['nombre' => 'Salud Superior Reg. Sur', 'codigo' => 'BSS8F260588', 'uf' => 3.59, 'tope_anual' => 7000, 'prestadores_plan' => 25, 'hosp' => '80%', 'amb' => '60%', 'url' => 'planes/detalle/?codigo=BSS8F260588'],
         ],
         'precios'         => [
             'individual' => [
@@ -50,10 +50,10 @@ $ISAPRES = [
         'historia'        => 'Fundada en 1981, pionera en el sistema. Fusión con Nueva MasVida en 2023.',
         'clinicas'        => ['Clínica INDISA', 'Red UC Christus', 'Clínica Alemana', 'Clínica Las Condes', 'Clínica Santa María', 'Clínica UAndes'],
         'planes_top'      => [
-            ['nombre' => 'Colmena Master', 'codigo' => 'MS22610080', 'uf' => 4.52, 'tope_anual' => 8500, 'prestadores_plan' => 13, 'hosp' => '100%', 'amb' => '80%', 'url' => 'https://www.quvi.cl/plan/MS22610080'],
-            ['nombre' => 'Colmena Pro',    'codigo' => 'PR32610080', 'uf' => 5.32, 'tope_anual' => 8500, 'prestadores_plan' => 12, 'hosp' => '100%', 'amb' => '80%', 'url' => 'https://www.quvi.cl/plan/PR32610080'],
-            ['nombre' => 'Colmena Star',   'codigo' => 'ST2264040', 'uf' => 1.15, 'tope_anual' => 5500, 'prestadores_plan' => 8, 'hosp' => '40-50%', 'amb' => '40%', 'url' => 'https://www.quvi.cl/plan/ST2264040'],
-            ['nombre' => 'Colmena Max',    'codigo' => 'MX22610050', 'uf' => 3.20, 'tope_anual' => 7500, 'prestadores_plan' => 63, 'hosp' => '80%', 'amb' => '60%', 'url' => 'https://www.quvi.cl/plan/MX22610050'],
+            ['nombre' => 'Colmena Master', 'codigo' => 'MS22610080', 'uf' => 4.52, 'tope_anual' => 8500, 'prestadores_plan' => 13, 'hosp' => '100%', 'amb' => '80%', 'url' => 'planes/detalle/?codigo=MS22610080'],
+            ['nombre' => 'Colmena Pro',    'codigo' => 'PR32610080', 'uf' => 5.32, 'tope_anual' => 8500, 'prestadores_plan' => 12, 'hosp' => '100%', 'amb' => '80%', 'url' => 'planes/detalle/?codigo=PR32610080'],
+            ['nombre' => 'Colmena Star',   'codigo' => 'ST2264040', 'uf' => 1.15, 'tope_anual' => 5500, 'prestadores_plan' => 8, 'hosp' => '40-50%', 'amb' => '40%', 'url' => 'planes/detalle/?codigo=ST2264040'],
+            ['nombre' => 'Colmena Max',    'codigo' => 'MX22610050', 'uf' => 3.20, 'tope_anual' => 7500, 'prestadores_plan' => 63, 'hosp' => '80%', 'amb' => '60%', 'url' => 'planes/detalle/?codigo=MX22610050'],
         ],
         'precios'         => [
             'individual' => [
@@ -83,10 +83,10 @@ $ISAPRES = [
         'historia'        => 'Fundada en 1983 por la CChC. 40+ años, líder en seguro de cesantía (1989), bonos electrónicos (2000) y oncológico (2013).',
         'clinicas'        => ['Clínica Las Condes', 'Clínica Alemana', 'Red UC Christus', 'Clínica Santa María', 'Clínica INDISA', 'Hospital del Trabajador', 'Clínica UAndes'],
         'planes_top'      => [
-            ['nombre' => 'Select Full Centro 150', 'codigo' => '13-SFC157-26', 'uf' => 6.42, 'tope_anual' => 10000, 'prestadores_plan' => 28, 'hosp' => '80-100%', 'amb' => '60-80%', 'url' => 'https://www.quvi.cl/plan/13-SFC157-26'],
-            ['nombre' => 'Select Full 260',        'codigo' => '13-SF267-26', 'uf' => 6.36, 'tope_anual' => 9900, 'prestadores_plan' => 22, 'hosp' => '80-100%', 'amb' => '80%', 'url' => 'https://www.quvi.cl/plan/13-SF267-26'],
-            ['nombre' => 'Core 10 01',             'codigo' => '13-CORE101-26', 'uf' => 1.16, 'tope_anual' => 3900, 'prestadores_plan' => 3, 'hosp' => '40%', 'amb' => '40%', 'url' => 'https://www.quvi.cl/plan/13-CORE101-26'],
-            ['nombre' => 'Select Full Centro 100', 'codigo' => '13-SFC107-26', 'uf' => 4.34, 'tope_anual' => 10000, 'prestadores_plan' => 28, 'hosp' => '80-100%', 'amb' => '60-80%', 'url' => 'https://www.quvi.cl/plan/13-SFC107-26'],
+            ['nombre' => 'Select Full Centro 150', 'codigo' => '13-SFC157-26', 'uf' => 6.42, 'tope_anual' => 10000, 'prestadores_plan' => 28, 'hosp' => '80-100%', 'amb' => '60-80%', 'url' => 'planes/detalle/?codigo=13-SFC157-26'],
+            ['nombre' => 'Select Full 260',        'codigo' => '13-SF267-26', 'uf' => 6.36, 'tope_anual' => 9900, 'prestadores_plan' => 22, 'hosp' => '80-100%', 'amb' => '80%', 'url' => 'planes/detalle/?codigo=13-SF267-26'],
+            ['nombre' => 'Core 10 01',             'codigo' => '13-CORE101-26', 'uf' => 1.16, 'tope_anual' => 3900, 'prestadores_plan' => 3, 'hosp' => '40%', 'amb' => '40%', 'url' => 'planes/detalle/?codigo=13-CORE101-26'],
+            ['nombre' => 'Select Full Centro 100', 'codigo' => '13-SFC107-26', 'uf' => 4.34, 'tope_anual' => 10000, 'prestadores_plan' => 28, 'hosp' => '80-100%', 'amb' => '60-80%', 'url' => 'planes/detalle/?codigo=13-SFC107-26'],
         ],
         'precios'         => [
             'individual' => [
@@ -116,10 +116,10 @@ $ISAPRES = [
         'historia'        => 'Constituida en 1985. Pertenece a Bupa UK, con clínicas propias en Chile.',
         'clinicas'        => ['Red UC Christus', 'Clínica Alemana', 'Clínica Las Condes', 'Clínica Santa María', 'Clínica INDISA', 'Clínica UAndes', 'Hospital del Trabajador'],
         'planes_top'      => [
-            ['nombre' => 'Solución 1 Regional', 'codigo' => 'SOLR112526', 'uf' => 4.73, 'tope_anual' => 8000, 'prestadores_plan' => 33, 'hosp' => '90-100%', 'amb' => '80-100%', 'url' => 'https://www.quvi.cl/plan/SOLR112526'],
-            ['nombre' => 'Solución 2',          'codigo' => 'SOLN214526', 'uf' => 5.50, 'tope_anual' => 8000, 'prestadores_plan' => 14, 'hosp' => '90-100%', 'amb' => '60-100%', 'url' => 'https://www.quvi.cl/plan/SOLN214526'],
-            ['nombre' => 'Campus Bupa Max',     'codigo' => 'CMBX001D25', 'uf' => 1.09, 'tope_anual' => 1500, 'prestadores_plan' => 6, 'hosp' => '40%', 'amb' => '50%', 'url' => 'https://www.quvi.cl/plan/CMBX001D25'],
-            ['nombre' => 'Solución 2 Regional', 'codigo' => 'SOLR201526', 'uf' => 4.61, 'tope_anual' => 8000, 'prestadores_plan' => 34, 'hosp' => '90-100%', 'amb' => '80-100%', 'url' => 'https://www.quvi.cl/plan/SOLR201526'],
+            ['nombre' => 'Solución 1 Regional', 'codigo' => 'SOLR112526', 'uf' => 4.73, 'tope_anual' => 8000, 'prestadores_plan' => 33, 'hosp' => '90-100%', 'amb' => '80-100%', 'url' => 'planes/detalle/?codigo=SOLR112526'],
+            ['nombre' => 'Solución 2',          'codigo' => 'SOLN214526', 'uf' => 5.50, 'tope_anual' => 8000, 'prestadores_plan' => 14, 'hosp' => '90-100%', 'amb' => '60-100%', 'url' => 'planes/detalle/?codigo=SOLN214526'],
+            ['nombre' => 'Campus Bupa Max',     'codigo' => 'CMBX001D25', 'uf' => 1.09, 'tope_anual' => 1500, 'prestadores_plan' => 6, 'hosp' => '40%', 'amb' => '50%', 'url' => 'planes/detalle/?codigo=CMBX001D25'],
+            ['nombre' => 'Solución 2 Regional', 'codigo' => 'SOLR201526', 'uf' => 4.61, 'tope_anual' => 8000, 'prestadores_plan' => 34, 'hosp' => '90-100%', 'amb' => '80-100%', 'url' => 'planes/detalle/?codigo=SOLR201526'],
         ],
         'precios'         => [
             'individual' => [
@@ -149,10 +149,10 @@ $ISAPRES = [
         'historia'        => 'Respaldo del Grupo Clínica Alemana. Cobertura GES de 90 patologías garantizada.',
         'clinicas'        => ['Clínica Alemana', 'Clínica Santa María', 'Red UC Christus', 'Clínica INDISA (convenio Grupo Alemana)'],
         'planes_top'      => [
-            ['nombre' => 'Esencial 100H70A', 'codigo' => 'E100700626', 'uf' => 5.50, 'tope_anual' => 12000, 'prestadores_plan' => 37, 'hosp' => '100%', 'amb' => '70-90%', 'url' => 'https://www.quvi.cl/plan/E100700626'],
-            ['nombre' => 'Esencial 90H80A',  'codigo' => 'E90800626', 'uf' => 5.70, 'tope_anual' => 12000, 'prestadores_plan' => 37, 'hosp' => '90-100%', 'amb' => '80-90%', 'url' => 'https://www.quvi.cl/plan/E90800626'],
-            ['nombre' => 'Esencial Inicia',  'codigo' => 'IN60400626', 'uf' => 1.44, 'tope_anual' => 6000, 'prestadores_plan' => 9, 'hosp' => '50-60%', 'amb' => '40%', 'url' => 'https://www.quvi.cl/plan/IN60400626'],
-            ['nombre' => 'Esencial Santa María', 'codigo' => 'SM70600626', 'uf' => 2.55, 'tope_anual' => 8500, 'prestadores_plan' => 38, 'hosp' => '70%', 'amb' => '60%', 'url' => 'https://www.quvi.cl/plan/SM70600626'],
+            ['nombre' => 'Esencial 100H70A', 'codigo' => 'E100700626', 'uf' => 5.50, 'tope_anual' => 12000, 'prestadores_plan' => 37, 'hosp' => '100%', 'amb' => '70-90%', 'url' => 'planes/detalle/?codigo=E100700626'],
+            ['nombre' => 'Esencial 90H80A',  'codigo' => 'E90800626', 'uf' => 5.70, 'tope_anual' => 12000, 'prestadores_plan' => 37, 'hosp' => '90-100%', 'amb' => '80-90%', 'url' => 'planes/detalle/?codigo=E90800626'],
+            ['nombre' => 'Esencial Inicia',  'codigo' => 'IN60400626', 'uf' => 1.44, 'tope_anual' => 6000, 'prestadores_plan' => 9, 'hosp' => '50-60%', 'amb' => '40%', 'url' => 'planes/detalle/?codigo=IN60400626'],
+            ['nombre' => 'Esencial Santa María', 'codigo' => 'SM70600626', 'uf' => 2.55, 'tope_anual' => 8500, 'prestadores_plan' => 38, 'hosp' => '70%', 'amb' => '60%', 'url' => 'planes/detalle/?codigo=SM70600626'],
         ],
         'precios'         => [
             'individual' => [
@@ -182,10 +182,10 @@ $ISAPRES = [
         'historia'        => 'Ex Óptima, fusión con Masvida en 2017. Nexus Company (USA). 275K beneficiarios, 33 sucursales.',
         'clinicas'        => ['Clínica INDISA', 'Clínica Dávila', 'Clínica Las Condes', 'Clínica Santa María', 'IntegraMédica', 'Clínica UAndes', 'Hospital del Trabajador'],
         'planes_top'      => [
-            ['nombre' => 'Pleno Plus Sur', 'codigo' => 'PPS23300', 'uf' => 4.81, 'tope_anual' => 10000, 'prestadores_plan' => 18, 'hosp' => '90-100%', 'amb' => '80%', 'url' => 'https://www.quvi.cl/plan/PPS23300'],
-            ['nombre' => 'Pleno Max',      'codigo' => 'PM260334', 'uf' => 5.64, 'tope_anual' => 10000, 'prestadores_plan' => 13, 'hosp' => '100%', 'amb' => '80%', 'url' => 'https://www.quvi.cl/plan/PM260334'],
-            ['nombre' => 'Pleno Salud',    'codigo' => 'PS260600', 'uf' => 1.18, 'tope_anual' => 8000, 'prestadores_plan' => 9, 'hosp' => '50-70%', 'amb' => '50-60%', 'url' => 'https://www.quvi.cl/plan/PS260600'],
-            ['nombre' => 'Pleno Plus Sur 280', 'codigo' => 'PPS23280', 'uf' => 4.23, 'tope_anual' => 10000, 'prestadores_plan' => 18, 'hosp' => '90-100%', 'amb' => '80%', 'url' => 'https://www.quvi.cl/plan/PPS23280'],
+            ['nombre' => 'Pleno Plus Sur', 'codigo' => 'PPS23300', 'uf' => 4.81, 'tope_anual' => 10000, 'prestadores_plan' => 18, 'hosp' => '90-100%', 'amb' => '80%', 'url' => 'planes/detalle/?codigo=PPS23300'],
+            ['nombre' => 'Pleno Max',      'codigo' => 'PM260334', 'uf' => 5.64, 'tope_anual' => 10000, 'prestadores_plan' => 13, 'hosp' => '100%', 'amb' => '80%', 'url' => 'planes/detalle/?codigo=PM260334'],
+            ['nombre' => 'Pleno Salud',    'codigo' => 'PS260600', 'uf' => 1.18, 'tope_anual' => 8000, 'prestadores_plan' => 9, 'hosp' => '50-70%', 'amb' => '50-60%', 'url' => 'planes/detalle/?codigo=PS260600'],
+            ['nombre' => 'Pleno Plus Sur 280', 'codigo' => 'PPS23280', 'uf' => 4.23, 'tope_anual' => 10000, 'prestadores_plan' => 18, 'hosp' => '90-100%', 'amb' => '80%', 'url' => 'planes/detalle/?codigo=PPS23280'],
         ],
         'precios'         => [
             'individual' => [
@@ -215,10 +215,10 @@ $ISAPRES = [
         'historia'        => 'Más de 3 décadas en el mercado. Parte del Grupo Banmédica y UnitedHealth Group.',
         'clinicas'        => ['Red Grupo Banmédica', 'Clínica Las Condes', 'Clínica Alemana', 'Clínica Santa María', 'Red UC Christus', 'Clínica INDISA'],
         'planes_top'      => [
-            ['nombre' => 'Vanguardia Premium Platinum One', 'codigo' => 'VPRPO26071012', 'uf' => 4.68, 'tope_anual' => 11000, 'prestadores_plan' => 16, 'hosp' => '100%', 'amb' => '80%', 'url' => 'https://www.quvi.cl/plan/VPRPO26071012'],
-            ['nombre' => 'Vanguardia Premium Black',        'codigo' => 'VPRB260656', 'uf' => 8.99, 'tope_anual' => 11000, 'prestadores_plan' => 17, 'hosp' => '90-100%', 'amb' => '80-90%', 'url' => 'https://www.quvi.cl/plan/VPRB260656'],
-            ['nombre' => 'Vanguardia Plus Gold',            'codigo' => 'VPG260500', 'uf' => 1.29, 'tope_anual' => 7000, 'prestadores_plan' => 6, 'hosp' => '40%', 'amb' => '40%', 'url' => 'https://www.quvi.cl/plan/VPG260500'],
-            ['nombre' => 'Vanguardia Plus Reg. Sur',        'codigo' => 'VPS8F260588', 'uf' => 3.71, 'tope_anual' => 7000, 'prestadores_plan' => 25, 'hosp' => '80%', 'amb' => '60%', 'url' => 'https://www.quvi.cl/plan/VPS8F260588'],
+            ['nombre' => 'Vanguardia Premium Platinum One', 'codigo' => 'VPRPO26071012', 'uf' => 4.68, 'tope_anual' => 11000, 'prestadores_plan' => 16, 'hosp' => '100%', 'amb' => '80%', 'url' => 'planes/detalle/?codigo=VPRPO26071012'],
+            ['nombre' => 'Vanguardia Premium Black',        'codigo' => 'VPRB260656', 'uf' => 8.99, 'tope_anual' => 11000, 'prestadores_plan' => 17, 'hosp' => '90-100%', 'amb' => '80-90%', 'url' => 'planes/detalle/?codigo=VPRB260656'],
+            ['nombre' => 'Vanguardia Plus Gold',            'codigo' => 'VPG260500', 'uf' => 1.29, 'tope_anual' => 7000, 'prestadores_plan' => 6, 'hosp' => '40%', 'amb' => '40%', 'url' => 'planes/detalle/?codigo=VPG260500'],
+            ['nombre' => 'Vanguardia Plus Reg. Sur',        'codigo' => 'VPS8F260588', 'uf' => 3.71, 'tope_anual' => 7000, 'prestadores_plan' => 25, 'hosp' => '80%', 'amb' => '60%', 'url' => 'planes/detalle/?codigo=VPS8F260588'],
         ],
         'precios'         => [
             'individual' => [
