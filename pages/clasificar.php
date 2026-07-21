@@ -15,6 +15,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['keywords'])) {
         $tipo = clasificar($lower);
         $results[] = ['keyword' => $kw, 'tipo' => $tipo];
     }
+    // Guardar en DB para reportes
+    require_once __DIR__ . '/../omniflow_config.php';
+    try {
+        $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        if (!$db->connect_error) {
+            $trans = count(array_filter($results, fn($r) => $r['tipo'] === 'transaccional'));
+            $info = count(array_filter($results, fn($r) => $r['tipo'] === 'informativa'));
+            $nav = count(array_filter($results, fn($r) => $r['tipo'] === 'navegacion'));
+            $stmt = $db->prepare("INSERT INTO analisis_busquedas (total_keywords, total_transaccional, total_informativa, total_navegacion, keywords_input, resultados_json) VALUES (?, ?, ?, ?, ?, ?)");
+            $json = json_encode($results, JSON_UNESCAPED_UNICODE);
+            $stmt->bind_param("iiiiss", count($results), $trans, $info, $nav, $raw, $json);
+            $stmt->execute();
+            $stmt->close();
+            $db->close();
+        }
+    } catch (Exception $e) { error_log("clasificar DB: ".$e->getMessage()); }
 }
 
 function clasificar($kw) {

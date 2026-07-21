@@ -204,6 +204,23 @@ INSERT INTO incidentes (titulo, descripcion, categoria, criticidad, estado, resp
   '385 de 2,231 planes tienen restricción regional (SUR: 83, NORTE: 76, CENTRO: 226). Un usuario de Santiago no debería ver planes del Norte o Sur. Se implementó: (1) Taggeo de planes por región en el CSV, (2) Mapeo comuna→región con 90+ comunas, (3) Filtro en motor_cotizar.',
   'CHR', 'media', 'cerrado', 'CodeWhale',
   'core/cotizador_engine.php, adjuntos/planes_isapre.csv, scripts/enrich_planes.py',
-  'CHR-07 (antes INC-15). Fix: columna region en CSV + función comuna_to_region() + filtro en motor_cotizar(). Commit 7939101.',
-  NOW()
+   'CHR-07 (antes INC-15). Fix: columna region en CSV + función comuna_to_region() + filtro en motor_cotizar(). Commit 7939101.',
+   NOW()
 );
+
+-- ============================================================
+-- 5. Tabla para análisis de keywords (clasificador + reportes)
+-- ============================================================
+
+CREATE TABLE IF NOT EXISTS `analisis_busquedas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp(),
+  `total_keywords` int(11) NOT NULL DEFAULT 0,
+  `total_transaccional` int(11) NOT NULL DEFAULT 0,
+  `total_informativa` int(11) NOT NULL DEFAULT 0,
+  `total_navegacion` int(11) NOT NULL DEFAULT 0,
+  `keywords_input` text DEFAULT NULL COMMENT 'Keywords originales ingresadas',
+  `resultados_json` longtext DEFAULT NULL COMMENT 'Resultados clasificados en JSON',
+  PRIMARY KEY (`id`),
+  KEY `idx_fecha` (`fecha`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
