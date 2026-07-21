@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['keywords'])) {
         $results[] = ['keyword' => $kw, 'tipo' => $tipo];
     }
     // Guardar en DB (corregido con escape)
-    if (false) {
+    if (true) {
         require_once __DIR__ . '/../omniflow_config.php';
         $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         if (!$db->connect_error) {
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['keywords'])) {
             }
             $json = json_encode($results, JSON_UNESCAPED_UNICODE);
             $stmt = $db->prepare("INSERT INTO analisis_busquedas (total_keywords, total_transaccional, total_informativa, total_navegacion, keywords_input, resultados_json) VALUES (?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("iiiiss", count($results), $trans, $info, $nav, $raw, $json);
+            $count = count($results); $stmt->bind_param("iiiiss", $count, $trans, $info, $nav, $raw, $json);
             $stmt->execute(); $stmt->close(); $db->close();
         }
     }
