@@ -28,14 +28,14 @@ if (empty($cache)) return;
 
 // Pick 3 featured by different criteria
 $plans = [];
-// 1. Mejor cobertura (hoghest hosp+amb)
-usort($cache, fn($a,$b) => ($b['hosp'] + $b['amb']) <=> ($a['hosp'] + $a['amb']));
+// 1. Mejor cobertura (highest hosp+amb)
+usort($cache, function($a,$b) { return ($b['hosp'] + $b['amb']) - ($a['hosp'] + $a['amb']); });
 foreach ($cache as $p) { if (!in_array($p['isapre'], array_column($plans, 'isapre'))) { $plans[0] = $p; break; } }
 // 2. Más económico (lowest UF with decent coverage)
-usort($cache, fn($a,$b) => $a['uf'] <=> $b['uf']);
+usort($cache, function($a,$b) { return $a['uf'] - $b['uf']; });
 foreach ($cache as $p) { if ($p['hosp'] >= 60 && $p['amb'] >= 50 && !in_array($p['isapre'], array_column($plans, 'isapre'))) { $plans[1] = $p; break; } }
 // 3. Mejor balance
-usort($cache, fn($a,$b) => ($b['hosp'] + $b['amb'] - $b['uf']*3) <=> ($a['hosp'] + $a['amb'] - $a['uf']*3));
+usort($cache, function($a,$b) { return ($b['hosp'] + $b['amb'] - $b['uf']*3) - ($a['hosp'] + $a['amb'] - $a['uf']*3); });
 foreach ($cache as $p) { if (!in_array($p['isapre'], array_column($plans, 'isapre'))) { $plans[2] = $p; break; } }
 $plans = array_values($plans);
 if (count($plans) < 3) return;
