@@ -63,12 +63,18 @@ include './layout/header.php';
         echo $secciones_html;
     }
 
-    // 5. Mini-FAQ
+    // 5. Mini-FAQ — con fondo para separar visualmente del formulario
     if (!empty($faq_preguntas)) {
+        ?>
+        <div class="bg-gradient-to-b from-gray-50 to-gray-100 border-t border-gray-200 py-10">
+        <?php
         render_component('faq_seccion', [
             'faq_preguntas' => $faq_preguntas,
             'faq_titulo'    => $faq_titulo,
         ]);
+        ?>
+        </div>
+        <?php
     }
 
     // 6. CTA Final
