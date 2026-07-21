@@ -129,7 +129,6 @@ $routes = [
     '/planes/familiares/con-cargas' => 'pages/planes/familiares/index.php',
     '/planes/familiares/monoparentales' => 'pages/planes/familiares/monoparentales.php',
     '/planes/familiares/maternidad' => 'pages/planes/familiares/preferencia-natal.php',
-    '/planes/detalle' => 'pages/planes/detalle.php',
     '/planes/comparador' => 'pages/planes/comparador.php',
 
     // ── ISAPRES > Compañías (sub-nivel: marcas/empresas) ──
