@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['keywords'])) {
         $results[] = ['keyword' => $kw, 'tipo' => $tipo];
     }
     // Guardar en DB (corregido con escape)
-    if (false) {
+    if (true) {
         require_once __DIR__ . '/../omniflow_config.php';
         $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         if (!$db->connect_error) {
