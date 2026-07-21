@@ -227,3 +227,4 @@ $header_admin_email = 'contacto@plansaludfacil.cl'; // Email estático o pasado 
         <div id="menu-overlay" class="menu-overlay fixed inset-0 bg-black z-40"></div>
     </div>
 </header>
+
