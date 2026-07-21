@@ -65,8 +65,8 @@ $colors = [
             </div>
             <div class="text-2xl font-extrabold <?= $c['text_color'] ?> mb-1"><?= number_format($plan['uf'], 2, ',', '.') ?> UF</div>
             <div class="text-xs text-gray-400 mb-4">/mes · precio base</div>
-            <a href="https://www.planes/detalle/<?= urlencode($plan['codigo']) ?>" class="inline-block w-full <?= $c['badge'] ?> hover:opacity-90 text-white font-semibold py-2.5 px-4 rounded-xl transition text-sm">
-                Ver plan del plan →
+            <a href="<?= BASE_URL ?>/planes/detalle/?codigo=<?= urlencode($plan['codigo']) ?>" class="inline-block w-full <?= $c['badge'] ?> hover:opacity-90 text-white font-semibold py-2.5 px-4 rounded-xl transition text-sm">
+                Ver plan →
             </a>
         </div>
         <?php endforeach; ?>
