@@ -3,6 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Preconnect para dominios externos críticos (reduce LCP) -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://code.iconify.design" crossorigin>
+    <link rel="dns-prefetch" href="https://code.iconify.design">
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://static.hotjar.com">
+    <link rel="dns-prefetch" href="https://www.clarity.ms">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
     <title><?php echo $page_title ?? 'Plan Salud Facil'; ?></title> <!-- Título dinámico -->
     <meta name="description" content="<?php echo htmlspecialchars($meta_description ?? 'Cotiza y compara planes de Isapre. Asesoria 100% gratuita y online. Encuentra el mejor plan para ti y tu familia en Plan Salud Facil.'); ?>">
     <link rel="canonical" href="<?php 
@@ -77,22 +87,9 @@
     <script>
       gtag('event', 'conversion', {'send_to': 'AW-18198702297/NrNnCJSqoMscENnR6OVD'});
     </script>
-    <!-- Hotjar Tracking Code for https://plansaludfacil.cl/ -->
+    <!-- Hotjar + Clarity: diferidos con requestIdleCallback para no bloquear LCP -->
     <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:6455237,hjsv:6};
-            a=o.getElementsByTagName('head')[0]; r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv; a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
-    <!--clarity-->
-    <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xfx87e9kla");
+    (function(){var d=function(){var h='https://static.hotjar.com/c/hotjar-',s='.js?sv=';window.hj=window.hj||function(){(window.hj.q=window.hj.q||[]).push(arguments)};window._hjSettings={hjid:6455237,hjsv:6};var a=document.createElement('script');a.async=1;a.src=h+6455237+s+'6';document.head.appendChild(a);(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,'clarity','script','xfx87e9kla')};if('requestIdleCallback' in window){requestIdleCallback(d)}else{setTimeout(d,2000)}})();
     </script>
     
     <meta name="google-site-verification" content="STeCF3cjAw8N63nEgrCyo6_CifEvabh7KCovktoIKNI" />

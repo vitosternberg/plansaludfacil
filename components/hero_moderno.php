@@ -9,8 +9,10 @@ $cta_texto = $cta_texto ?? 'Cotizar Ahora';
 $cta_link = $cta_link ?? '/servicios/cambio-de-isapre#formulario-contacto';
 ?>
 <div class="relative mb-12 md:mb-32">
-    <!-- Hero Background with Curved Bottom -->
-    <section class="hero-bg relative pt-8 md:pt-24 pb-32 md:pb-48 px-4 text-center rounded-b-[50px] md:rounded-b-[100px] shadow-lg">
+    <!-- Hero Background with Curved Bottom — LCP image as <img> for fetchpriority -->
+    <section class="relative pt-8 md:pt-24 pb-32 md:pb-48 px-4 text-center rounded-b-[50px] md:rounded-b-[100px] shadow-lg overflow-hidden">
+        <img src="<?= BASE_URL ?>/img/hero_familia.jpg" alt="" width="1376" height="768" fetchpriority="high" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;" decoding="sync">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(2,132,199,0.85) 0%, rgba(0,210,255,0.6) 100%);"></div>
         <div class="relative z-10 max-w-4xl mx-auto">
             <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-2 md:mb-6 leading-none tracking-tight drop-shadow-xl">
                 <span class="hidden md:inline"><?= htmlspecialchars($titulo) ?></span>
@@ -81,12 +83,4 @@ $cta_link = $cta_link ?? '/servicios/cambio-de-isapre#formulario-contacto';
     </div>
 </div>
 
-<style>
-.hero-bg {
-    /* Mantenemos la imagen original pero le damos un tinte azul moderno alineado a nuestra marca */
-    background: linear-gradient(135deg, rgba(2, 132, 199, 0.85) 0%, rgba(0, 210, 255, 0.6) 100%), url('<?= BASE_URL ?>/img/hero_familia.jpg');
-    background-size: cover;
-    background-position: center 35%;
-}
-</style>
 
