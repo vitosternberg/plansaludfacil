@@ -72,6 +72,17 @@ $categorias = [
         '¿La ISAPRE cubre maternidad?' => 'Si, aunque las coberturas y beneficios dependen del plan contratado.',
         '¿La ISAPRE cubre odontologia?' => 'Algunos planes incluyen beneficios dentales o convenios especiales.',
     ]],
+    ['titulo' => 'CAEC (Cobertura Catastrofica)', 'icono' => '🛡️', 'preguntas' => [
+        '¿Que es la CAEC?' => 'La CAEC (Cobertura Adicional para Enfermedades Catastroficas) es un beneficio que ofrecen algunas ISAPREs para financiar hasta el 100% de los gastos derivados de enfermedades de alto costo, una vez que pagas un deducible anual.',
+        '¿Como funciona la CAEC?' => 'Funciona con un deducible anual fijo: tu pagas un monto equivalente a 30 cotizaciones pactadas (con tope de 126 UF). Una vez cubierto ese deducible, la ISAPRE financia el 100% de los gastos relacionados con tu condicion catastrofica por el resto del año, sin tope. Si hay mas de una enfermedad catastrofica o mas de un beneficiario, el deducible sube a 43 cotizaciones con tope de 181 UF.',
+        '¿Que ISAPREs ofrecen CAEC?' => 'Banmedica, Vida Tres, Consalud, Colmena Golden Cross, Nueva Masvida, Isalud, Cruz Blanca y Esencial. No todas las ISAPREs la incluyen, por lo que es importante verificarlo al momento de comparar planes.',
+        '¿Cuando debo activar la CAEC?' => 'Debes activarla apenas te diagnostiquen una enfermedad cuyo tratamiento represente un gasto catastrofico (alto costo). La CAEC no es automatica ni retroactiva: tienes que solicitarla formalmente en tu ISAPRE antes de iniciar el tratamiento.',
+        '¿Que cubre la CAEC?' => 'Cubre hospitalizaciones, cirugias y procedimientos ambulatorios de alto costo (como quimioterapia, radioterapia o dialisis) relacionados con la enfermedad catastrofica, siempre que te atiendas en la Red CAEC de tu ISAPRE dentro de Chile.',
+        '¿Que NO cubre la CAEC?' => 'No cubre enfermedades preexistentes no declaradas, patologias GES/AUGE (que tienen su propia garantia de cobertura), procedimientos esteticos, tratamientos experimentales ni atenciones realizadas fuera de la Red CAEC.',
+        '¿Puedo usar la CAEC en cualquier clinica?' => 'No. Cada ISAPRE tiene su propia Red CAEC de prestadores designados. Si te atiendes fuera de esa red, la cobertura no aplica. En caso de urgencia con riesgo vital, puedes activarla y la ISAPRE debe derivarte a un prestador de su red en un plazo de 2 dias habiles.',
+        '¿Cual es la diferencia entre la CAEC y la cobertura normal de mi plan?' => 'La cobertura normal funciona con copagos porcentuales (ej. 80% en clinica, 90% en hospital) y tiene topes anuales. La CAEC, en cambio, tras pagar un deducible fijo, cubre el 100% de los gastos por el resto del año sin tope. Es una proteccion financiera adicional para casos extremos que tu plan base no alcanza a cubrir.',
+        '¿Como se activa la CAEC en caso de hospitalizacion urgente?' => 'Si te hospitalizas de urgencia en un prestador de la Red CAEC, tienes 48 horas para dar aviso a tu ISAPRE. Si ingresas a un establecimiento fuera de la Red CAEC, debes avisar de inmediato para que la ISAPRE gestione tu derivacion a un centro de su red.',
+    ]],
     ['titulo' => 'Cargas familiares', 'icono' => '👨‍👩‍👧‍👦', 'preguntas' => [
         '¿Puedo agregar a mi pareja como carga?' => 'Si, si cumple con los requisitos establecidos por la normativa vigente.',
         '¿Puedo incorporar a mis hijos?' => 'Si, puedes agregarlos como beneficiarios del plan.',
