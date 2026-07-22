@@ -66,15 +66,16 @@
         @media (max-width: 768px) { .benefits-section { background-attachment: scroll; } }
     </style>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17127470305"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18198702297"></script>
     <script>
-      window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'AW-17127470305');
+      gtag('config', 'AW-18198702297');
     </script>
     <!-- Event snippet for Envío de formulario para clientes potenciales conversion page -->
     <script>
-      gtag('event', 'conversion', { 'send_to': 'AW-17127470305/7vjyCJyrss8aEOHpgec_', 'value': 1.0, 'currency': 'CLP' });
+      gtag('event', 'conversion', {'send_to': 'AW-18198702297/NrNnCJSqoMscENnR6OVD'});
     </script>
     <!-- Hotjar Tracking Code for https://plansaludfacil.cl/ -->
     <script>
