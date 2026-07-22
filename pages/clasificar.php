@@ -51,7 +51,8 @@ function _clasificar($kw) {
 
     // ── NIVEL 3: Transaccional directo (comprar, contratar, cotizar) ──
     $trans_words = ['comprar bono','contratar plan','contratar isapre','cotizar plan','cotizar isapre',
-        'cotiza aqui','cotiza ahora','solicitar plan','pedir cotizacion','obtener plan',
+        'cotizador','cotizar ','cotiza aqui','cotiza ahora','cambio de plan',
+        'solicitar plan','pedir cotizacion','obtener plan',
         'donde contratar','dónde contratar','comprar plan'];
     foreach ($trans_words as $w) if (stripos($kw, $w) !== false) return 'transaccional';
 
