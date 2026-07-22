@@ -2,6 +2,7 @@
 /**
  * components/planes_destacados.php
  * Muestra 3 planes destacados del catálogo (mejor cobertura, más económico, mejor red).
+ * Estilo Tesla Model 3: full-bleed background image + dark overlay + white text.
  * Uso: render_component('planes_destacados')
  */
 
@@ -40,42 +41,94 @@ foreach ($cache as $p) { if (!in_array($p['isapre'], array_column($plans, 'isapr
 $plans = array_values($plans);
 if (count($plans) < 3) return;
 
-$colors = [
-    ['bg' => 'from-blue-50 to-white', 'border' => 'border-blue-200', 'badge' => 'bg-blue-600', 'badge_text' => 'Recomendado', 'text_color' => 'text-blue-700'],
-    ['bg' => 'from-emerald-50 to-white', 'border' => 'border-emerald-200', 'badge' => 'bg-emerald-600', 'badge_text' => 'Mejor Precio', 'text_color' => 'text-emerald-700'],
-    ['bg' => 'from-purple-50 to-white', 'border' => 'border-purple-200', 'badge' => 'bg-purple-600', 'badge_text' => 'Mayor Cobertura', 'text_color' => 'text-purple-700'],
+$backgrounds = [
+    '/img/hero_familia.jpg',
+    '/img/madre_orgullosa.jpg',
+    '/img/mama_hijas.jpg',
+];
+
+$badges = [
+    ['text' => 'Recomendado',   'accent' => 'from-blue-500 to-cyan-400'],
+    ['text' => 'Mejor Precio',  'accent' => 'from-emerald-500 to-teal-400'],
+    ['text' => 'Mayor Cobertura','accent' => 'from-purple-500 to-pink-400'],
 ];
 ?>
-<section class="max-w-4xl mx-auto px-4 py-10">
+<section class="max-w-5xl mx-auto px-4 py-10">
     <div class="text-center mb-10">
         <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3">Planes Destacados</h2>
         <p class="text-gray-500 text-sm max-w-lg mx-auto">Seleccionamos los mejores planes por cobertura, precio y prestadores. Datos actualizados de la Superintendencia de Salud.</p>
     </div>
+
     <div class="grid md:grid-cols-3 gap-6">
-        <?php foreach ($plans as $i => $plan): $c = $colors[$i]; ?>
-        <div class="relative bg-gradient-to-b <?= $c['bg'] ?> rounded-2xl p-6 border <?= $c['border'] ?> text-center hover:shadow-lg transition-shadow">
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 <?= $c['badge'] ?> text-white text-xs font-bold px-4 py-1 rounded-full"><?= $c['badge_text'] ?></div>
-            <div class="w-12 h-12 <?= $c['badge'] ?> text-white rounded-xl flex items-center justify-center mx-auto mb-3 mt-2 text-lg font-bold"><?= substr($plan['isapre'], 0, 1) ?></div>
-            <div class="text-xs text-gray-400 font-medium uppercase tracking-wide mb-1"><?= htmlspecialchars($plan['isapre']) ?></div>
-            <h3 class="text-sm font-bold text-gray-800 mb-3 leading-tight"><?= htmlspecialchars($plan['nombre']) ?></h3>
-            <div class="flex justify-center gap-4 text-xs text-gray-500 mb-4">
-                <span>🏥 <?= $plan['hosp'] ?>%</span>
-                <span>🩺 <?= $plan['amb'] ?>%</span>
-                <span>🏢 <?= $plan['prestadores'] ?></span>
+        <?php foreach ($plans as $i => $plan): $bg = $backgrounds[$i]; $badge = $badges[$i]; ?>
+        <div class="group relative rounded-2xl overflow-hidden min-h-[420px] flex flex-col justify-end transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
+             style="background-image: url('<?= BASE_URL . $bg ?>'); background-size: cover; background-position: center;">
+
+            <!-- Dark gradient overlay (darker at bottom for text, lighter at top) -->
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/95 via-gray-900/50 to-gray-900/20 group-hover:from-gray-900/90 group-hover:via-gray-900/45 transition-colors duration-500"></div>
+
+            <!-- Badge flotante -->
+            <div class="absolute top-4 left-1/2 -translate-x-1/2 z-20">
+                <span class="bg-gradient-to-r <?= $badge['accent'] ?> text-white text-xs font-bold px-5 py-1.5 rounded-full shadow-lg">
+                    <?= $badge['text'] ?>
+                </span>
             </div>
-            <div class="text-2xl font-extrabold <?= $c['text_color'] ?> mb-1"><?= number_format($plan['uf'], 2, ',', '.') ?> UF</div>
-            <div class="text-xs text-gray-400 mb-4">/mes · precio base</div>
-            <a href="<?= BASE_URL ?>/planes/detalle/?codigo=<?= urlencode($plan['codigo']) ?>#comparador" class="inline-block w-full <?= $c['badge'] ?> hover:opacity-90 text-white font-semibold py-2.5 px-4 rounded-xl transition text-sm">
-                Ver plan →
-            </a>
+
+            <!-- Contenido -->
+            <div class="relative z-10 p-6 pt-2 text-center text-white">
+                <!-- Logo ISAPRE (si existe) -->
+                <?php
+                $logoPath = '/img/' . strtolower(str_replace(' ', '', $plan['isapre'])) . '.png';
+                $logoFull = __DIR__ . '/..' . $logoPath;
+                ?>
+                <?php if (file_exists($logoFull)): ?>
+                <img src="<?= BASE_URL . $logoPath ?>" alt="<?= htmlspecialchars($plan['isapre']) ?>" class="h-8 mx-auto mb-3 object-contain brightness-0 invert opacity-90">
+                <?php else: ?>
+                <div class="w-10 h-10 bg-white/20 backdrop-blur-sm text-white rounded-xl flex items-center justify-center mx-auto mb-3 text-lg font-bold border border-white/30">
+                    <?= mb_substr($plan['isapre'], 0, 1) ?>
+                </div>
+                <?php endif; ?>
+
+                <div class="text-xs text-white/60 font-medium uppercase tracking-widest mb-1"><?= htmlspecialchars($plan['isapre']) ?></div>
+                <h3 class="text-lg font-bold text-white mb-4 leading-tight"><?= htmlspecialchars($plan['nombre']) ?></h3>
+
+                <!-- Stats -->
+                <div class="flex justify-center gap-5 text-sm text-white/80 mb-5">
+                    <div class="flex flex-col items-center">
+                        <span class="text-xl font-bold text-white"><?= $plan['hosp'] ?>%</span>
+                        <span class="text-[10px] text-white/50 uppercase tracking-wide mt-0.5">Hospital</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-xl font-bold text-white"><?= $plan['amb'] ?>%</span>
+                        <span class="text-[10px] text-white/50 uppercase tracking-wide mt-0.5">Ambulatorio</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-xl font-bold text-white"><?= $plan['prestadores'] ?></span>
+                        <span class="text-[10px] text-white/50 uppercase tracking-wide mt-0.5">Prestadores</span>
+                    </div>
+                </div>
+
+                <!-- Precio -->
+                <div class="mb-5">
+                    <div class="text-3xl font-extrabold text-white"><?= number_format($plan['uf'], 2, ',', '.') ?> <span class="text-lg font-medium text-white/70">UF</span></div>
+                    <div class="text-xs text-white/50 mt-0.5">por mes · precio base</div>
+                </div>
+
+                <!-- CTA -->
+                <a href="<?= BASE_URL ?>/planes/detalle/?codigo=<?= urlencode($plan['codigo']) ?>#comparador"
+                   class="inline-flex items-center justify-center w-full gap-2 bg-white/15 backdrop-blur-sm hover:bg-white/25 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 text-sm border border-white/20 hover:border-white/40 group/btn">
+                    Ver plan
+                    <span class="group-hover/btn:translate-x-1 transition-transform duration-300">→</span>
+                </a>
+            </div>
         </div>
         <?php endforeach; ?>
     </div>
-    <div class="text-center mt-8">
+
+    <div class="text-center mt-10">
         <a href="<?= BASE_URL ?>/planes/comparador/" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition">
             Ver todos los planes en el comparador
             <iconify-icon icon="mdi:arrow-right" width="20" class="ml-1"></iconify-icon>
         </a>
     </div>
 </section>
-
