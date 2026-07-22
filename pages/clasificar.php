@@ -33,12 +33,37 @@ function _clasificar($kw) {
     if ($dots >= 1 && preg_match('/\.cl$|\.com$|\.net$|\.org$/', $kw)) return 'navegacion';
     $nav_words = ['mi ','mis ','acceder','ingresar','portal','sucursal','oficina','fono','telefono','teléfono','llamar','iniciar sesion','login','direccion','dirección','ubicacion','ubicación'];
     foreach ($nav_words as $w) if (stripos($kw, $w) !== false) return 'navegacion';
-    $trans_words = ['comprar','contratar','cotizar','cotiza','precio','cuanto cuesta','cuánto cuesta','valor','costo','presupuesto','tarifa','afiliarse','afiliarme','cambiarse','cambio de','traslado','requisitos para','tramite','trámite','preexistencia','declaracion de salud','declaración de salud','mejor isapre','mejor seguro','mejor plan','cual es mejor','cual elegir','comparador','comparativa','que isapre','cual isapre','conviene','recomiendan','donde contratar','solicitar','pedir plan','obtener plan','como cambiarse','cambio de isapre','cambio de plan','afiliar a mi','inscribir a mi','agregar carga','incluir carga','planes para','plan para','seguro para','isapre para','cuanto sale','cuánto sale'];
+    // ── NIVEL 1: Detección temprana de informativas (cómo X, qué es X, guías) ──
+    $info_patterns = [
+        '/^(como|cómo) (afiliar|comprar|cambiar|cotizar|saber|pagar|desafiliar|obtener|agregar|inscribir|hacer|funciona)/',
+        '/^(que|qué) (es|son|significa|necesito|cubre|isapre|plan)/',
+        '/^(cual|cuál|cuando|cuándo|donde|dónde|por que|por qué) /',
+        '/\?$/',
+        '/\b(requisitos para|certificado|cotizaciones|guia|guía|tutorial|pasos|como hacer|cómo hacer)\b/',
+    ];
+    foreach ($info_patterns as $p) if (preg_match($p, $kw)) return 'informativa';
+
+    // ── NIVEL 2: Investigación comercial (comparar, mejores, precios) → transaccional ──
+    $research_words = ['mejor plan','mejor isapre','mejor seguro','comparador','comparativa','comparar',
+        'precio','precios','valor','costo','cuanto cuesta','cuánto cuesta','cuanto sale','cuánto sale',
+        'tarifa','presupuesto','planes para','plan para','seguro para','isapre para'];
+    foreach ($research_words as $w) if (stripos($kw, $w) !== false) return 'transaccional';
+
+    // ── NIVEL 3: Transaccional directo (comprar, contratar, cotizar) ──
+    $trans_words = ['comprar bono','contratar plan','contratar isapre','cotizar plan','cotizar isapre',
+        'cotiza aqui','cotiza ahora','solicitar plan','pedir cotizacion','obtener plan',
+        'donde contratar','dónde contratar','comprar plan'];
     foreach ($trans_words as $w) if (stripos($kw, $w) !== false) return 'transaccional';
-    $info_words = ['que es','qué es','como funciona','cómo funciona','definicion','definición','concepto','explicacion','explicación','significa','significado','diferencia entre','vs ','versus','ventajas','desventajas','ley','legislacion','legislación','normativa','regulacion','regulación','decreto','reforma','ranking','noticias','tipos de','clases de','categorias','categorías','ejemplo','experiencia','testimonio','opinion','opinión','review','reseña'];
+
+    // ── NIVEL 4: Informativas (definiciones, diferencias, conceptos) ──
+    $info_words = ['que es','qué es','como funciona','cómo funciona','definicion','definición',
+        'concepto','explicacion','explicación','significa','significado','diferencia entre',
+        'vs ','versus','ventajas','desventajas','ley','legislacion','legislación','normativa',
+        'regulacion','regulación','decreto','reforma','ranking','noticias','tipos de',
+        'clases de','categorias','categorías','ejemplo','experiencia','testimonio',
+        'opinion','opinión','review','reseña','conviene','recomiendan',
+        'que isapre','qué isapre','cual isapre','cuál isapre','cual es mejor'];
     foreach ($info_words as $w) if (stripos($kw, $w) !== false) return 'informativa';
-    if (preg_match('/^(como|cómo|que|qué|cual|cuál|cuando|cuándo|donde|dónde|por que|por qué) /', $kw)) return 'informativa';
-    if (substr($kw, -1) === '?') return 'informativa';
     $brands = ['banmedica','banmédica','colmena','consalud','cruz blanca','cruzblanca','esencial','nueva masvida','nuevamasvida','masvida','mas vida','más vida','vida tres','vidatres','fonasa','isapre','isapres'];
     $clean = str_replace(['.','-',' '], '', $kw);
     foreach ($brands as $b) if ($clean === str_replace(' ', '', $b)) return 'navegacion';
