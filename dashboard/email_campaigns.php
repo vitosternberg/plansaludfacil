@@ -98,8 +98,6 @@ function send_one($conn, $row, $template, $asunto, $cid, $BASE_URL, $source = 'c
     }
 }
 
-die('OK - functions defined');
-
 // ═══════════════════════════════════════
 //  ACTIONS (POST)
 // ═══════════════════════════════════════
@@ -292,6 +290,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // ═══════════════════════════════════════
 //  DATOS PARA LA VISTA
 // ═══════════════════════════════════════
+
+die('OK - before data queries');
 
 try {
 
