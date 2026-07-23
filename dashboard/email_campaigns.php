@@ -46,6 +46,7 @@ function send_one($conn, $row, $template, $asunto, $cid, $BASE_URL, $source = 'c
     $fn      = first_name($row['nombre']);
     $uns     = $BASE_URL . '/unsubscribe.php?email=' . urlencode($email) . '&token=' . $row['unsubscribe_token'];
     $body    = str_replace(['{{first_name}}','{{unsubscribe_url}}'], [$fn, $uns], $template);
+    $log_id  = $row['log_id'];
 
     try {
         // ── Tracking pixel: registrar apertura ──
@@ -87,7 +88,6 @@ function send_one($conn, $row, $template, $asunto, $cid, $BASE_URL, $source = 'c
         $mail->AltBody = strip_tags(str_replace(['<br>','</p>'], ["\n","\n\n"], $body));
         $mail->send();
 
-        $log_id = $row['log_id'];
         $conn->query("UPDATE email_log SET enviado=1, sent_at=NOW(), error=NULL WHERE id=$log_id");
         $conn->query("UPDATE email_campaigns SET sent_count=sent_count+1 WHERE id=$cid");
         return ['ok' => true, 'who' => "$fn <$email>"];
