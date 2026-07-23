@@ -331,7 +331,14 @@ if ($res) while ($r = $res->fetch_assoc()) $campaigns[] = $r;
 
 // Últimos envíos
 $logs = [];
-$r2 = @$conn->query("SELECT el.*, c.nombre as campana FROM email_log el JOIN email_campaigns c ON c.id=el.campaign_id ORDER BY el.id DESC LIMIT 30");
+$r2 = @$conn->query("
+    SELECT el.*, c.nombre as campana,
+           (SELECT COUNT(*) FROM email_opens eo WHERE eo.log_id=el.id) as opens,
+           (SELECT COUNT(*) FROM email_clicks ec WHERE ec.log_id=el.id) as clicks
+    FROM email_log el
+    JOIN email_campaigns c ON c.id=el.campaign_id
+    ORDER BY el.id DESC LIMIT 30
+");
 if ($r2) while ($l = $r2->fetch_assoc()) $logs[] = $l;
 
 // Listas externas
@@ -482,7 +489,7 @@ $sources = [
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
                 <h3 class="font-bold text-gray-800 mb-3">📬 Últimos envíos</h3>
                 <div class="overflow-x-auto"><table class="w-full text-xs">
-                    <thead><tr class="text-gray-400 uppercase border-b border-gray-100"><th class="text-left py-2 pr-3">Contacto</th><th class="text-left py-2 pr-3">Campaña</th><th class="text-left py-2 pr-3">Estado</th><th class="text-left py-2">Fecha</th></tr></thead>
+                    <thead><tr class="text-gray-400 uppercase border-b border-gray-100"><th class="text-left py-2 pr-3">Contacto</th><th class="text-left py-2 pr-3">Campaña</th><th class="text-left py-2 pr-3">Estado</th><th class="text-center py-2 pr-3">Abrió</th><th class="text-center py-2">Clics</th><th class="text-left py-2">Fecha</th></tr></thead>
                     <tbody>
                     <?php foreach (array_slice($logs,0,20) as $l): ?>
                     <tr class="border-b border-gray-50">
@@ -492,6 +499,8 @@ $sources = [
                             <?php if ($l['enviado']): ?><span class="text-green-600">✅</span>
                             <?php else: ?><span class="text-red-500">❌</span><?php if (!empty($l['error'])): ?><div class="text-[10px] text-red-400 mt-0.5 max-w-[180px] truncate" title="<?= htmlspecialchars($l['error']) ?>"><?= htmlspecialchars($l['error']) ?></div><?php endif; ?><?php endif; ?>
                         </td>
+                        <td class="py-2 text-center"><?= ($l['enviado'] && ($l['opens'] ?? 0) > 0) ? '👁' : '—' ?></td>
+                        <td class="py-2 text-center"><?= ($l['enviado'] && ($l['clicks'] ?? 0) > 0) ? '👆' : '—' ?></td>
                         <td class="py-2 text-gray-400"><?= $l['sent_at'] ? date('d/m H:i', strtotime($l['sent_at'])) : '—' ?></td>
                     </tr>
                     <?php endforeach; ?>
