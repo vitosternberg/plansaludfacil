@@ -37,17 +37,27 @@ if (!empty($email) && !empty($token)) {
             }
             $conn->set_charset("utf8mb4");
 
-            // Preparar y ejecutar la actualización.
+            // Intentar en procesar_formularios primero
             $stmt = $conn->prepare("UPDATE procesar_formularios SET unsubscribed = 1 WHERE correo = ?");
             $stmt->bind_param("s", $email);
             $stmt->execute();
+            $found = $stmt->affected_rows > 0;
 
-            if ($stmt->affected_rows > 0) {
+            // Si no se encontró, intentar en email_list_contacts
+            if (!$found) {
+                $stmt2 = $conn->prepare("UPDATE email_list_contacts SET unsubscribed = 1 WHERE correo = ?");
+                $stmt2->bind_param("s", $email);
+                $stmt2->execute();
+                $found = $stmt2->affected_rows > 0;
+                $stmt2->close();
+            }
+
+            if ($found) {
                 $message = 'Has sido dado de baja correctamente. No recibirás más comunicaciones.';
                 $is_success = true;
             } else {
                 $message = 'Tu correo no se encontró en nuestra lista o ya habías sido dado de baja anteriormente.';
-                $is_success = true; // Se considera un éxito para el usuario.
+                $is_success = true;
             }
             $conn->close();
 
