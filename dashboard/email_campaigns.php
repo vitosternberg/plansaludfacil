@@ -273,27 +273,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Campañas
 $campaigns = [];
-$res = @$conn->query("
+$res = $conn->query("
     SELECT c.*,
            COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=1),0) as sent,
            COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=0 AND error IS NULL),0) as pending,
-           COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND error IS NOT NULL),0) as failed,
-           COALESCE((SELECT COUNT(DISTINCT log_id) FROM email_opens WHERE campaign_id=c.id),0) as opens,
-           COALESCE((SELECT COUNT(DISTINCT log_id) FROM email_clicks WHERE campaign_id=c.id),0) as clicks
+           COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND error IS NOT NULL),0) as failed
     FROM email_campaigns c ORDER BY c.id DESC LIMIT 20
 ");
-if (!$res) {
-    // Fallback: sin tablas de tracking
-    $res = $conn->query("
-        SELECT c.*,
-               COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=1),0) as sent,
-               COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=0 AND error IS NULL),0) as pending,
-               COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND error IS NOT NULL),0) as failed,
-               0 as opens,
-               0 as clicks
-        FROM email_campaigns c ORDER BY c.id DESC LIMIT 20
-    ");
-}
 while ($r = $res->fetch_assoc()) $campaigns[] = $r;
 
 // Últimos envíos
@@ -423,10 +409,7 @@ $sources = [
                     <div class="flex justify-between text-xs text-gray-500 mb-1"><span><?= $cam['sent'] ?> de <?= $cam['total_contacts'] ?></span><span><?= $pct ?>%</span></div>
                     <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden"><div class="progress-bar h-full rounded-full <?= $cam['estado']==='completada'?'bg-green-500':'bg-blue-500' ?>" style="width:<?= $pct ?>%"></div></div>
                 </div>
-                <?php $open_rate = $cam['sent'] > 0 ? round(($cam['opens'] / $cam['sent']) * 100) : 0; ?>
-                <?php $click_rate = $cam['sent'] > 0 ? round(($cam['clicks'] / $cam['sent']) * 100) : 0; ?>
-                <div class="flex gap-4 text-xs text-gray-500 mb-2"><span>✅ <?= $cam['sent'] ?></span><span>⏳ <?= $cam['pending'] ?></span><span>❌ <?= $cam['failed'] ?></span></div>
-                <div class="flex gap-4 text-xs text-gray-400 mb-4"><span>👁 <?= $cam['opens'] ?> aperturas (<?= $open_rate ?>%)</span><span>👆 <?= $cam['clicks'] ?> clicks (<?= $click_rate ?>%)</span></div>
+                <div class="flex gap-4 text-xs text-gray-500 mb-4"><span>✅ <?= $cam['sent'] ?></span><span>⏳ <?= $cam['pending'] ?></span><span>❌ <?= $cam['failed'] ?></span></div>
                 <?php if ($cam['estado'] !== 'completada'): ?>
                 <div class="flex gap-2 flex-wrap">
                     <form method="post" class="inline"><input type="hidden" name="action" value="send_batch"><input type="hidden" name="campaign_id" value="<?= $cam['id'] ?>"><input type="hidden" name="batch" value="10"><button class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition">▶ Enviar 10</button></form>
