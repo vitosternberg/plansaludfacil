@@ -47,26 +47,6 @@ function send_one($conn, $row, $template, $asunto, $cid, $BASE_URL, $source = 'c
     $uns     = $BASE_URL . '/unsubscribe.php?email=' . urlencode($email) . '&token=' . $row['unsubscribe_token'];
     $body    = str_replace(['{{first_name}}','{{unsubscribe_url}}'], [$fn, $uns], $template);
 
-    // ── Tracking pixel: registrar apertura ──
-    $pixel  = '<img src="' . $BASE_URL . '/pixel_tracker.php?log_id=' . $row['log_id'] . '&campaign_id=' . $cid . '" width="1" height="1" alt="" style="display:none">';
-    if (stripos($body, '</body>') !== false) {
-        $body = str_ireplace('</body>', $pixel . '</body>', $body);
-    } else {
-        $body .= $pixel;
-    }
-
-    // ── Click tracking: envolver links ──
-    $body = preg_replace_callback(
-        '/href="(https?:\/\/[^"]+)"/i',
-        function($m) use ($BASE_URL, $row, $cid) {
-            $url = $m[1];
-            if (stripos($url, 'unsubscribe') !== false) return $m[0];
-            $encoded = strtr(base64_encode($url), '+/', '-_');
-            return 'href="' . $BASE_URL . '/click_tracker.php?log_id=' . $row['log_id'] . '&campaign_id=' . $cid . '&url=' . urlencode($encoded) . '"';
-        },
-        $body
-    );
-
     try {
         $mail = new PHPMailer(true);
         $mail->CharSet = 'UTF-8';
