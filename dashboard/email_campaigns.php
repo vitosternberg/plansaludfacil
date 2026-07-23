@@ -47,6 +47,26 @@ function send_one($conn, $row, $template, $asunto, $cid, $BASE_URL, $source = 'c
     $uns     = $BASE_URL . '/unsubscribe.php?email=' . urlencode($email) . '&token=' . $row['unsubscribe_token'];
     $body    = str_replace(['{{first_name}}','{{unsubscribe_url}}'], [$fn, $uns], $template);
 
+    // ── Tracking pixel: registrar apertura ──
+    $pixel  = '<img src="' . $BASE_URL . '/pixel_tracker.php?log_id=' . $row['log_id'] . '&campaign_id=' . $cid . '" width="1" height="1" alt="" style="display:none">';
+    if (stripos($body, '</body>') !== false) {
+        $body = str_ireplace('</body>', $pixel . '</body>', $body);
+    } else {
+        $body .= $pixel;
+    }
+
+    // ── Click tracking: envolver links ──
+    $body = preg_replace_callback(
+        '/href="(https?:\/\/[^"]+)"/i',
+        function($m) use ($BASE_URL, $row, $cid) {
+            $url = $m[1];
+            if (stripos($url, 'unsubscribe') !== false) return $m[0];
+            $encoded = strtr(base64_encode($url), '+/', '-_');
+            return 'href="' . $BASE_URL . '/click_tracker.php?log_id=' . $row['log_id'] . '&campaign_id=' . $cid . '&url=' . urlencode($encoded) . '"';
+        },
+        $body
+    );
+
     try {
         $mail = new PHPMailer(true);
         $mail->CharSet = 'UTF-8';
@@ -271,29 +291,62 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 //  DATOS PARA LA VISTA
 // ═══════════════════════════════════════
 
+// Helper: verificar si existe una tabla
+function table_exists($conn, $table) {
+    static $cache = [];
+    if (!isset($cache[$table])) {
+        $r = $conn->query("SHOW TABLES LIKE '$table'");
+        $cache[$table] = ($r && $r->num_rows > 0);
+    }
+    return $cache[$table];
+}
+
 // Campañas
 $campaigns = [];
-$res = $conn->query("
-    SELECT c.*,
-           COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=1),0) as sent,
-           COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=0 AND error IS NULL),0) as pending,
-           COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND error IS NOT NULL),0) as failed
-    FROM email_campaigns c ORDER BY c.id DESC LIMIT 20
-");
-while ($r = $res->fetch_assoc()) $campaigns[] = $r;
+if (table_exists($conn, 'email_campaigns')) {
+    $hasTracking = table_exists($conn, 'email_opens') && table_exists($conn, 'email_clicks');
+    if ($hasTracking) {
+        $res = $conn->query("
+            SELECT c.*,
+                   COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=1),0) as sent,
+                   COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=0 AND error IS NULL),0) as pending,
+                   COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND error IS NOT NULL),0) as failed,
+                   COALESCE((SELECT COUNT(DISTINCT log_id) FROM email_opens WHERE campaign_id=c.id),0) as opens,
+                   COALESCE((SELECT COUNT(DISTINCT log_id) FROM email_clicks WHERE campaign_id=c.id),0) as clicks
+            FROM email_campaigns c ORDER BY c.id DESC LIMIT 20
+        ");
+    } else {
+        $res = $conn->query("
+            SELECT c.*,
+                   COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=1),0) as sent,
+                   COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=0 AND error IS NULL),0) as pending,
+                   COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND error IS NOT NULL),0) as failed,
+                   0 as opens,
+                   0 as clicks
+            FROM email_campaigns c ORDER BY c.id DESC LIMIT 20
+        ");
+    }
+    if ($res) while ($r = $res->fetch_assoc()) $campaigns[] = $r;
+}
 
 // Últimos envíos
 $logs = [];
-$r2 = $conn->query("SELECT el.*, c.nombre as campana FROM email_log el JOIN email_campaigns c ON c.id=el.campaign_id ORDER BY el.id DESC LIMIT 30");
-while ($l = $r2->fetch_assoc()) $logs[] = $l;
+if (table_exists($conn, 'email_log')) {
+    $r2 = $conn->query("SELECT el.*, c.nombre as campana FROM email_log el JOIN email_campaigns c ON c.id=el.campaign_id ORDER BY el.id DESC LIMIT 30");
+    if ($r2) while ($l = $r2->fetch_assoc()) $logs[] = $l;
+}
 
 // Listas externas
 $lists = [];
-$r3 = $conn->query("SELECT * FROM email_lists ORDER BY id DESC");
-while ($l = $r3->fetch_assoc()) $lists[] = $l;
+if (table_exists($conn, 'email_lists')) {
+    $r3 = $conn->query("SELECT * FROM email_lists ORDER BY id DESC");
+    if ($r3) while ($l = $r3->fetch_assoc()) $lists[] = $l;
+}
 
 // Contadores
-$totalContacts = $conn->query("SELECT COUNT(*) as n FROM procesar_formularios WHERE unsubscribed=0 AND correo IS NOT NULL AND correo!=''")->fetch_assoc()['n'];
+$totalContacts = table_exists($conn, 'procesar_formularios')
+    ? ($conn->query("SELECT COUNT(*) as n FROM procesar_formularios WHERE unsubscribed=0 AND correo IS NOT NULL AND correo!=''")->fetch_assoc()['n'] ?? 0)
+    : 0;
 
 $sources = [
     'contact' => '📇 BD de contactos (procesar_formularios) — ' . $totalContacts . ' activos',
@@ -409,7 +462,10 @@ $sources = [
                     <div class="flex justify-between text-xs text-gray-500 mb-1"><span><?= $cam['sent'] ?> de <?= $cam['total_contacts'] ?></span><span><?= $pct ?>%</span></div>
                     <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden"><div class="progress-bar h-full rounded-full <?= $cam['estado']==='completada'?'bg-green-500':'bg-blue-500' ?>" style="width:<?= $pct ?>%"></div></div>
                 </div>
-                <div class="flex gap-4 text-xs text-gray-500 mb-4"><span>✅ <?= $cam['sent'] ?></span><span>⏳ <?= $cam['pending'] ?></span><span>❌ <?= $cam['failed'] ?></span></div>
+                <?php $open_rate = $cam['sent'] > 0 ? round(($cam['opens'] / $cam['sent']) * 100) : 0; ?>
+                <?php $click_rate = $cam['sent'] > 0 ? round(($cam['clicks'] / $cam['sent']) * 100) : 0; ?>
+                <div class="flex gap-4 text-xs text-gray-500 mb-2"><span>✅ <?= $cam['sent'] ?></span><span>⏳ <?= $cam['pending'] ?></span><span>❌ <?= $cam['failed'] ?></span></div>
+                <div class="flex gap-4 text-xs text-gray-400 mb-4"><span>👁 <?= $cam['opens'] ?> aperturas (<?= $open_rate ?>%)</span><span>👆 <?= $cam['clicks'] ?> clicks (<?= $click_rate ?>%)</span></div>
                 <?php if ($cam['estado'] !== 'completada'): ?>
                 <div class="flex gap-2 flex-wrap">
                     <form method="post" class="inline"><input type="hidden" name="action" value="send_batch"><input type="hidden" name="campaign_id" value="<?= $cam['id'] ?>"><input type="hidden" name="batch" value="10"><button class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition">▶ Enviar 10</button></form>
