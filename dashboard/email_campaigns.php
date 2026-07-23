@@ -291,23 +291,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 //  DATOS PARA LA VISTA
 // ═══════════════════════════════════════
 
-// Campañas — detectar si existen tablas de tracking
-$hasTracking = false;
-$check = $conn->query("SHOW TABLES LIKE 'email_opens'");
-if ($check && $check->num_rows > 0) $hasTracking = true;
-
+// Campañas
 $campaigns = [];
-if ($hasTracking) {
-    $res = $conn->query("
-        SELECT c.*,
-               COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=1),0) as sent,
-               COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=0 AND error IS NULL),0) as pending,
-               COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND error IS NOT NULL),0) as failed,
-               COALESCE((SELECT COUNT(DISTINCT log_id) FROM email_opens WHERE campaign_id=c.id),0) as opens,
-               COALESCE((SELECT COUNT(DISTINCT log_id) FROM email_clicks WHERE campaign_id=c.id),0) as clicks
-        FROM email_campaigns c ORDER BY c.id DESC LIMIT 20
-    ");
-} else {
+$res = @$conn->query("
+    SELECT c.*,
+           COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=1),0) as sent,
+           COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=0 AND error IS NULL),0) as pending,
+           COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND error IS NOT NULL),0) as failed,
+           COALESCE((SELECT COUNT(DISTINCT log_id) FROM email_opens WHERE campaign_id=c.id),0) as opens,
+           COALESCE((SELECT COUNT(DISTINCT log_id) FROM email_clicks WHERE campaign_id=c.id),0) as clicks
+    FROM email_campaigns c ORDER BY c.id DESC LIMIT 20
+");
+if (!$res) {
+    // Fallback: sin tablas de tracking
     $res = $conn->query("
         SELECT c.*,
                COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=1),0) as sent,
