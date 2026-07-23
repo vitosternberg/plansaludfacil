@@ -179,6 +179,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $n = $conn->affected_rows;
         $msg = "🔄 $n registros fallidos vueltos a encolar. Usá Enviar lote para reintentar.";
     }
+
+    elseif ($action === 'test_smtp') {
+        try {
+            $mail = new PHPMailer(true);
+            $mail->CharSet = 'UTF-8';
+            $mail->isSMTP();
+            $mail->Host       = SMTP_HOST;
+            $mail->SMTPAuth   = true;
+            $mail->Username   = SMTP_USER;
+            $mail->Password   = SMTP_PASS;
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            $mail->Port       = SMTP_PORT;
+            $mail->SMTPDebug  = 3;
+            $mail->Debugoutput = function($str, $level) use (&$debug) { $debug .= "$str\n"; };
+            $mail->setFrom(SMTP_USER, 'Plan Salud Fácil');
+            $mail->addAddress(SMTP_USER, 'Admin');
+            $mail->Subject = 'SMTP Test — ' . date('Y-m-d H:i:s');
+            $mail->Body    = '<p>Si ves este mensaje, el SMTP funciona correctamente.</p>';
+            $mail->send();
+            $msg = "✅ SMTP OK — test enviado a " . SMTP_USER;
+        } catch (Exception $e) {
+            $err = "<strong>Error SMTP:</strong> " . ($mail->ErrorInfo ?: $e->getMessage());
+            if (!empty($debug)) {
+                $err .= "<br><pre style='font-size:11px;max-height:300px;overflow:auto;background:#fef2f2;padding:8px;border-radius:8px;margin-top:8px'>" . htmlspecialchars($debug) . "</pre>";
+            }
+        }
+    }
 }
 
 // ═══════════════════════════════════════
@@ -231,7 +258,13 @@ $totalContacts = $conn->query("SELECT COUNT(*) as n FROM procesar_formularios WH
                 <h1 class="text-2xl font-extrabold text-gray-900">📧 Campañas de Email</h1>
                 <p class="text-sm text-gray-500 mt-1"><?= $totalContacts ?> contactos activos · Paso 1: crear campaña → Paso 2: enviar</p>
             </div>
-            <a href="?key=<?= urlencode($key) ?>" class="text-sm text-blue-600 hover:underline">🔄 Refrescar</a>
+            <div class="flex gap-2">
+                <form method="post" class="inline">
+                    <input type="hidden" name="action" value="test_smtp">
+                    <button type="submit" class="text-xs bg-gray-100 hover:bg-gray-200 text-gray-600 font-medium px-3 py-1.5 rounded-lg transition">🔧 Test SMTP</button>
+                </form>
+                <a href="?key=<?= urlencode($key) ?>" class="text-sm text-blue-600 hover:underline">🔄 Refrescar</a>
+            </div>
         </div>
 
         <?php if ($msg): ?>
@@ -389,7 +422,10 @@ $totalContacts = $conn->query("SELECT COUNT(*) as n FROM procesar_formularios WH
                                         <?php if ($l['enviado']): ?>
                                         <span class="text-green-600">✅ Enviado</span>
                                         <?php else: ?>
-                                        <span class="text-red-500" title="<?= htmlspecialchars($l['error'] ?? '') ?>">❌ Falló</span>
+                                        <span class="text-red-500">❌ Falló</span>
+                                        <?php if (!empty($l['error'])): ?>
+                                        <div class="text-[10px] text-red-400 mt-0.5 max-w-[200px] truncate" title="<?= htmlspecialchars($l['error']) ?>"><?= htmlspecialchars($l['error']) ?></div>
+                                        <?php endif; ?>
                                         <?php endif; ?>
                                     </td>
                                     <td class="py-2 text-gray-400"><?= $l['sent_at'] ? date('d/m H:i', strtotime($l['sent_at'])) : '—' ?></td>
