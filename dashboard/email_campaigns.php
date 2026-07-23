@@ -258,26 +258,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (empty($csv_data)) {
             $err = 'Pegá los datos CSV (nombre, email).';
         } else {
-            $conn->query("INSERT INTO email_lists (nombre) VALUES ('" . $conn->real_escape_string($list_name) . "')");
+            $ok = $conn->query("INSERT INTO email_lists (nombre) VALUES ('" . $conn->real_escape_string($list_name) . "')");
             $lid = $conn->insert_id;
-            $added = 0; $skipped = 0;
-            $lines = explode("\n", $csv_data);
-            $ins = $conn->prepare("INSERT INTO email_list_contacts (list_id, nombre, correo, unsubscribe_token) VALUES (?, ?, ?, ?)");
-
-            foreach ($lines as $line) {
-                $line = trim($line);
-                if (empty($line)) continue;
-                $parts = str_getcsv($line);
-                if (count($parts) < 2) continue;
-                $name  = trim($parts[0]);
-                $email = trim($parts[1]);
-                if (empty($name) || empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) { $skipped++; continue; }
-                $tok = gen_token($email);
-                $ins->bind_param("isss", $lid, $name, $email, $tok);
-                if ($ins->execute()) $added++; else $skipped++;
+            if (!$ok || $lid < 1) {
+                $err = 'Error al crear la lista. ¿Existe la tabla email_lists? Error: ' . $conn->error;
+            } else {
+                $added = 0; $skipped = 0;
+                $lines = explode("\n", $csv_data);
+                $ins = $conn->prepare("INSERT INTO email_list_contacts (list_id, nombre, correo, unsubscribe_token) VALUES (?, ?, ?, ?)");
+                if (!$ins) {
+                    $err = 'Error al preparar INSERT de contactos: ' . $conn->error;
+                } else {
+                    foreach ($lines as $line) {
+                        $line = trim($line);
+                        if (empty($line)) continue;
+                        $parts = str_getcsv($line);
+                        if (count($parts) < 2) continue;
+                        $name  = trim($parts[0]);
+                        $email = trim($parts[1]);
+                        if (empty($name) || empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) { $skipped++; continue; }
+                        $tok = gen_token($email);
+                        $ins->bind_param("isss", $lid, $name, $email, $tok);
+                        if ($ins->execute()) $added++; else $skipped++;
+                    }
+                    $conn->query("UPDATE email_lists SET total_contacts=$added WHERE id=$lid");
+                    $msg = "✅ Lista <strong>$list_name</strong> creada (#$lid). $added contactos agregados, $skipped omitidos.";
+                }
             }
-            $conn->query("UPDATE email_lists SET total_contacts=$added WHERE id=$lid");
-            $msg = "✅ Lista <strong>$list_name</strong> creada (#$lid). $added contactos agregados, $skipped omitidos.";
             $tab = 'lists';
         }
     }
