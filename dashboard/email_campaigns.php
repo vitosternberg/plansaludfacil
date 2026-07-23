@@ -291,63 +291,52 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 //  DATOS PARA LA VISTA
 // ═══════════════════════════════════════
 
-// Helper: verificar si existe una tabla
-function table_exists($conn, $table) {
-    static $cache = [];
-    if (!isset($cache[$table])) {
-        $r = $conn->query("SHOW TABLES LIKE '$table'");
-        $cache[$table] = ($r && $r->num_rows > 0);
-    }
-    return $cache[$table];
-}
+try {
 
 // Campañas
 $campaigns = [];
-if (table_exists($conn, 'email_campaigns')) {
-    $hasTracking = table_exists($conn, 'email_opens') && table_exists($conn, 'email_clicks');
-    if ($hasTracking) {
-        $res = $conn->query("
-            SELECT c.*,
-                   COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=1),0) as sent,
-                   COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=0 AND error IS NULL),0) as pending,
-                   COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND error IS NOT NULL),0) as failed,
-                   COALESCE((SELECT COUNT(DISTINCT log_id) FROM email_opens WHERE campaign_id=c.id),0) as opens,
-                   COALESCE((SELECT COUNT(DISTINCT log_id) FROM email_clicks WHERE campaign_id=c.id),0) as clicks
-            FROM email_campaigns c ORDER BY c.id DESC LIMIT 20
-        ");
-    } else {
-        $res = $conn->query("
-            SELECT c.*,
-                   COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=1),0) as sent,
-                   COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=0 AND error IS NULL),0) as pending,
-                   COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND error IS NOT NULL),0) as failed,
-                   0 as opens,
-                   0 as clicks
-            FROM email_campaigns c ORDER BY c.id DESC LIMIT 20
-        ");
-    }
-    if ($res) while ($r = $res->fetch_assoc()) $campaigns[] = $r;
+$res = @$conn->query("
+    SELECT c.*,
+           COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=1),0) as sent,
+           COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=0 AND error IS NULL),0) as pending,
+           COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND error IS NOT NULL),0) as failed,
+           COALESCE((SELECT COUNT(DISTINCT log_id) FROM email_opens WHERE campaign_id=c.id),0) as opens,
+           COALESCE((SELECT COUNT(DISTINCT log_id) FROM email_clicks WHERE campaign_id=c.id),0) as clicks
+    FROM email_campaigns c ORDER BY c.id DESC LIMIT 20
+");
+if (!$res) {
+    $res = $conn->query("
+        SELECT c.*,
+               COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=1),0) as sent,
+               COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND enviado=0 AND error IS NULL),0) as pending,
+               COALESCE((SELECT COUNT(*) FROM email_log WHERE campaign_id=c.id AND error IS NOT NULL),0) as failed,
+               0 as opens,
+               0 as clicks
+        FROM email_campaigns c ORDER BY c.id DESC LIMIT 20
+    ");
 }
+if ($res) while ($r = $res->fetch_assoc()) $campaigns[] = $r;
 
 // Últimos envíos
 $logs = [];
-if (table_exists($conn, 'email_log')) {
-    $r2 = $conn->query("SELECT el.*, c.nombre as campana FROM email_log el JOIN email_campaigns c ON c.id=el.campaign_id ORDER BY el.id DESC LIMIT 30");
-    if ($r2) while ($l = $r2->fetch_assoc()) $logs[] = $l;
-}
+$r2 = @$conn->query("SELECT el.*, c.nombre as campana FROM email_log el JOIN email_campaigns c ON c.id=el.campaign_id ORDER BY el.id DESC LIMIT 30");
+if ($r2) while ($l = $r2->fetch_assoc()) $logs[] = $l;
 
 // Listas externas
 $lists = [];
-if (table_exists($conn, 'email_lists')) {
-    $r3 = $conn->query("SELECT * FROM email_lists ORDER BY id DESC");
-    if ($r3) while ($l = $r3->fetch_assoc()) $lists[] = $l;
-}
+$r3 = @$conn->query("SELECT * FROM email_lists ORDER BY id DESC");
+if ($r3) while ($l = $r3->fetch_assoc()) $lists[] = $l;
 
 // Contadores
-$totalContacts = table_exists($conn, 'procesar_formularios')
-    ? ($conn->query("SELECT COUNT(*) as n FROM procesar_formularios WHERE unsubscribed=0 AND correo IS NOT NULL AND correo!=''")->fetch_assoc()['n'] ?? 0)
-    : 0;
+$tc = @$conn->query("SELECT COUNT(*) as n FROM procesar_formularios WHERE unsubscribed=0 AND correo IS NOT NULL AND correo!=''");
+$totalContacts = ($tc && $r = $tc->fetch_assoc()) ? ($r['n'] ?? 0) : 0;
 
+} catch (\Throwable $e) {
+    $campaigns = [];
+    $logs = [];
+    $lists = [];
+    $totalContacts = 0;
+}
 $sources = [
     'contact' => '📇 BD de contactos (procesar_formularios) — ' . $totalContacts . ' activos',
     'list'    => '📋 Lista externa (contactos cargados por CSV)',
