@@ -291,8 +291,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 //  DATOS PARA LA VISTA
 // ═══════════════════════════════════════
 
-die('OK - before data queries');
-
 try {
 
 // Campañas
