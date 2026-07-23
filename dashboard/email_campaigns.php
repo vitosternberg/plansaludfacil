@@ -24,8 +24,6 @@ $conn = connect_db_simple();
 if (!$conn) { die('⛔ Error de conexión a BD'); }
 $conn->set_charset("utf8mb4");
 
-die('OK - DB connected, charset set');
-
 $BASE_URL = 'https://plansaludfacil.cl/plansaludfacil_new';
 $msg = ''; $err = '';
 $tab = $_GET['tab'] ?? 'campaigns'; // campaigns | lists
@@ -99,6 +97,8 @@ function send_one($conn, $row, $template, $asunto, $cid, $BASE_URL, $source = 'c
         return ['ok' => false, 'who' => "$fn <$email>", 'error' => $err];
     }
 }
+
+die('OK - functions defined');
 
 // ═══════════════════════════════════════
 //  ACTIONS (POST)
