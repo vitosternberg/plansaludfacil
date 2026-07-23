@@ -171,11 +171,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 SELECT el.id as log_id, el.correo, el.nombre, el.unsubscribe_token, el.source, el.contacto_id, el.list_contact_id
                 FROM email_log el WHERE el.campaign_id=$cid AND el.enviado=0 LIMIT $batch
             ");
-            $sent = 0; $failed = 0;
+            $sent = 0; $failed = 0; $i = 0;
             while ($row = $pending->fetch_assoc()) {
                 $res = send_one($conn, $row, $cam['html_template'], $cam['asunto'], $cid, $BASE_URL, $row['source']);
                 if ($res['ok']) $sent++; else $failed++;
-                usleep(300000);
+                $i++;
+                usleep(800000); // 0.8s entre emails (~75/min)
+                if ($i % 20 === 0) sleep(5); // pausa de 5s cada 20 emails
             }
             $rem = $conn->query("SELECT COUNT(*) as n FROM email_log WHERE campaign_id=$cid AND enviado=0")->fetch_assoc()['n'];
             if ($rem == 0) {
@@ -195,15 +197,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $conn->query("UPDATE email_campaigns SET estado='enviando', started_at=NOW() WHERE id=$cid");
             }
             $sent = 0; $failed = 0;
-            set_time_limit(300);
+            set_time_limit(600);
             while (true) {
                 $pending = $conn->query("SELECT el.id as log_id, el.correo, el.nombre, el.unsubscribe_token, el.source FROM email_log el WHERE el.campaign_id=$cid AND el.enviado=0 LIMIT 10");
                 if ($pending->num_rows === 0) break;
                 while ($row = $pending->fetch_assoc()) {
                     $res = send_one($conn, $row, $cam['html_template'], $cam['asunto'], $cid, $BASE_URL, $row['source']);
                     if ($res['ok']) $sent++; else $failed++;
-                    usleep(400000);
+                    usleep(1000000); // 1s entre emails (~60/min)
                 }
+                sleep(8); // pausa de 8s entre lotes de 10
             }
             $conn->query("UPDATE email_campaigns SET estado='completada', completed_at=NOW() WHERE id=$cid");
             $msg = "✅ Campaña completada. $sent enviados, $failed fallidos.";
