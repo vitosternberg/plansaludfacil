@@ -24,7 +24,7 @@ $conn = connect_db_simple();
 if (!$conn) { die('⛔ Error de conexión a BD'); }
 $conn->set_charset("utf8mb4");
 
-$BASE_URL = 'https://plansaludfacil.cl/plansaludfacil_new';
+$BASE_URL = 'https://plansaludfacil.cl';
 $msg = ''; $err = '';
 $tab = $_GET['tab'] ?? 'campaigns'; // campaigns | lists
 
