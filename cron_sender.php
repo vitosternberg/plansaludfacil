@@ -66,14 +66,14 @@ function cron_send_one($conn, $row, $template, $asunto, $cid, $BASE_URL) {
         if ($tracked !== null) $body = $tracked;
 
         // Enviar
-        $mail = new PHPMailer\PHPMailer\PHPMailer(true);
+        $mail = new PHPMailer(true);
         $mail->CharSet = 'UTF-8';
         $mail->isSMTP();
         $mail->Host       = SMTP_HOST;
         $mail->SMTPAuth   = true;
         $mail->Username   = SMTP_USER;
         $mail->Password   = SMTP_PASS;
-        $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_SMTPS;
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port       = SMTP_PORT;
         $mail->setFrom(SMTP_USER, 'Plan Salud Fácil');
         $mail->isHTML(true);
