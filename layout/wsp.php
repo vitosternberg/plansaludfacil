@@ -64,8 +64,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Abrir modal
+    // Abrir modal (o scroll al comparador si estamos en esa página)
     whatsappButton.addEventListener('click', function() {
+        // Si existe el comparador, hacer scroll al formulario en vez de abrir WhatsApp
+        var formComparador = document.getElementById('comparador');
+        if (formComparador) {
+            formComparador.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setTimeout(function() {
+                var rentaInput = document.getElementById('renta-input');
+                if (rentaInput) rentaInput.focus();
+            }, 500);
+            return;
+        }
         whatsappModal.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
     });
@@ -115,14 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (data.success) {
                 // Redirigir a WhatsApp
                 const message = encodeURIComponent(`Hola soy ${name}, y tengo interés en los planes de Isapre`);
-                // Y cámbiala por (con tu número real):
-                window.open(`https://wa.me/56952282339?text=${message}`, '_blank'); // Reemplaza 56952282339 con tu número de 52282339 WhatsApp
-                //window.open(`https://wa.me/56${phone}?text=${message}`, '_blank');
-                
-                // Busca esta línea:
-// window.open(`https://wa.me/56${phone}?text=${message}`, '_blank');
-
-                
+                window.open(`https://wa.me/56952282339?text=${message}`, '_blank');
                 
                 // Cerrar modal
                 whatsappModal.classList.add('hidden');
