@@ -292,9 +292,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // ── Eliminar lista ──
     elseif ($action === 'delete_list') {
         $lid = (int)($_POST['list_id'] ?? 0);
-        $conn->query("DELETE FROM email_list_contacts WHERE list_id=$lid");
-        $conn->query("DELETE FROM email_lists WHERE id=$lid");
-        $msg = "🗑️ Lista #$lid eliminada.";
+        if ($lid > 0) {
+            $c = $conn->query("DELETE FROM email_list_contacts WHERE list_id=$lid");
+            $l = $conn->query("DELETE FROM email_lists WHERE id=$lid");
+            if ($l && $conn->affected_rows > 0) {
+                $msg = "🗑️ Lista #$lid eliminada (" . ($c ? $conn->affected_rows : '?') . " contactos).";
+            } else {
+                $err = "No se pudo eliminar la lista #$lid. Error: " . $conn->error;
+            }
+        }
         $tab = 'lists';
     }
 }
