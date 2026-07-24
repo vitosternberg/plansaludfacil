@@ -2,5 +2,17 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /cliente/
+Disallow: /dashboard/
+Disallow: /adjuntos/
+Disallow: /core/
+Disallow: /scripts/
+Disallow: /SPEC/
+Disallow: /_email_templates/
+Disallow: /tmp_blog_cache*.json
+Disallow: /px.php
+Disallow: /_test_pixel.php
+Disallow: /_pixel_test.php
+Disallow: /*.sql$
 
 Sitemap: https://plansaludfacil.cl/sitemap.xml
+Sitemap: https://plansaludfacil.cl/blog_isapre/sitemap.xml

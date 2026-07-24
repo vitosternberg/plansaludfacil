@@ -37,6 +37,7 @@ try {
 }
 
 $page_title = "Plan Salud Fácil - Tu Comparador de Isapres";
+$meta_description = "Cotiza y compara planes de ISAPRE en 2026. Asesoría 100% gratuita y online. Comparador con precios reales de la Superintendencia de Salud. Planes individuales, familiares y más.";
 include './layout/plantilla.php'; 
 include './layout/header.php';
 render_component('hero_moderno', [

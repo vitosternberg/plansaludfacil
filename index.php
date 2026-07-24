@@ -162,7 +162,7 @@ if ($path === '/sitemap.xml') {
 // Robots.txt dinámico
 if ($path === '/robots.txt') {
     header('Content-Type: text/plain; charset=utf-8');
-    echo "User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /cliente/\n\nSitemap: https://plansaludfacil.cl/sitemap.xml\n";
+    echo "User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /cliente/\nDisallow: /dashboard/\nDisallow: /adjuntos/\nDisallow: /core/\nDisallow: /scripts/\n\nSitemap: https://plansaludfacil.cl/sitemap.xml\nSitemap: https://plansaludfacil.cl/blog_isapre/sitemap.xml\n";
     exit();
 }
 
