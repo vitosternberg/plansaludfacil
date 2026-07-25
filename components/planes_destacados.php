@@ -1,8 +1,7 @@
 <?php
 /**
  * components/planes_destacados.php
- * Muestra 3 planes destacados del catálogo (mejor cobertura, más económico, mejor red).
- * Estilo Tesla Model 3: full-bleed background image + dark overlay + white text.
+ * Carrusel responsivo con 6 planes destacados (auto-scroll, pausa al hover).
  * Uso: render_component('planes_destacados')
  */
 
@@ -27,103 +26,151 @@ while (($r = fgetcsv($h, 0, ',', '"', '')) !== false) {
 fclose($h);
 if (empty($cache)) return;
 
-// Pick 3 featured by different criteria
+// ── Seleccionar 6 planes (uno por ISAPRE distinta) ──
 $plans = [];
+
 // 1. Mejor cobertura (highest hosp+amb)
 usort($cache, function($a,$b) { return ($b['hosp'] + $b['amb']) - ($a['hosp'] + $a['amb']); });
-foreach ($cache as $p) { if (!in_array($p['isapre'], array_column($plans, 'isapre'))) { $plans[0] = $p; break; } }
-// 2. Más económico (lowest UF with decent coverage)
+foreach ($cache as $p) { if (!in_array($p['isapre'], array_column($plans, 'isapre'))) { $plans[] = $p; break; } }
+
+// 2. Más económico (lowest UF, decent coverage)
 usort($cache, function($a,$b) { return $a['uf'] - $b['uf']; });
-foreach ($cache as $p) { if ($p['hosp'] >= 60 && $p['amb'] >= 50 && !in_array($p['isapre'], array_column($plans, 'isapre'))) { $plans[1] = $p; break; } }
-// 3. Mejor balance
+foreach ($cache as $p) { if ($p['hosp'] >= 60 && $p['amb'] >= 50 && !in_array($p['isapre'], array_column($plans, 'isapre'))) { $plans[] = $p; break; } }
+
+// 3. Mejor balance (relación cobertura/precio)
 usort($cache, function($a,$b) { return ($b['hosp'] + $b['amb'] - $b['uf']*3) - ($a['hosp'] + $a['amb'] - $a['uf']*3); });
-foreach ($cache as $p) { if (!in_array($p['isapre'], array_column($plans, 'isapre'))) { $plans[2] = $p; break; } }
-$plans = array_values($plans);
-if (count($plans) < 3) return;
+foreach ($cache as $p) { if (!in_array($p['isapre'], array_column($plans, 'isapre'))) { $plans[] = $p; break; } }
+
+// 4. Mayor red de prestadores
+usort($cache, function($a,$b) { return $b['prestadores'] - $a['prestadores']; });
+foreach ($cache as $p) { if (!in_array($p['isapre'], array_column($plans, 'isapre'))) { $plans[] = $p; break; } }
+
+// 5. Mejor cobertura hospitalaria
+usort($cache, function($a,$b) { return $b['hosp'] - $a['hosp']; });
+foreach ($cache as $p) { if (!in_array($p['isapre'], array_column($plans, 'isapre'))) { $plans[] = $p; break; } }
+
+// 6. Mejor precio para joven (cobertura ambulatoria alta, UF bajo)
+usort($cache, function($a,$b) { return ($b['amb'] - $b['uf']*5) - ($a['amb'] - $a['uf']*5); });
+foreach ($cache as $p) { if (!in_array($p['isapre'], array_column($plans, 'isapre'))) { $plans[] = $p; break; } }
+
+if (count($plans) < 4) return; // Mínimo 4 para carrusel
 
 $backgrounds = [
     '/img/hero_familia.jpg',
     '/img/madre_orgullosa.jpg',
     '/img/mama_hijas.jpg',
+    '/img/bebe_sueter_rojo.jpg',
+    '/img/madre_orgullosa.jpg',
+    '/img/mama_hijas.jpg',
 ];
 
 $badges = [
-    ['text' => 'Recomendado',   'accent' => 'from-blue-500 to-cyan-400'],
-    ['text' => 'Mejor Precio',  'accent' => 'from-emerald-500 to-teal-400'],
-    ['text' => 'Mayor Cobertura','accent' => 'from-purple-500 to-pink-400'],
+    ['text' => 'Recomendado',      'accent' => 'from-blue-500 to-cyan-400'],
+    ['text' => 'Mejor Precio',     'accent' => 'from-emerald-500 to-teal-400'],
+    ['text' => 'Mayor Cobertura',  'accent' => 'from-purple-500 to-pink-400'],
+    ['text' => 'Más Prestadores',  'accent' => 'from-amber-500 to-orange-400'],
+    ['text' => 'Top Hospitalario', 'accent' => 'from-red-500 to-rose-400'],
+    ['text' => 'Para Jóvenes',     'accent' => 'from-green-500 to-lime-400'],
 ];
 ?>
-<section class="max-w-5xl mx-auto px-4 py-10">
+<section class="max-w-6xl mx-auto px-4 py-10 overflow-hidden">
     <div class="text-center mb-10">
         <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3">Planes Destacados</h2>
         <p class="text-gray-500 text-sm max-w-lg mx-auto">Seleccionamos los mejores planes por cobertura, precio y prestadores. Datos actualizados de la Superintendencia de Salud.</p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6">
-        <?php foreach ($plans as $i => $plan): $bg = $backgrounds[$i]; $badge = $badges[$i]; ?>
-        <div class="group relative rounded-2xl overflow-hidden min-h-[420px] flex flex-col justify-end transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
-             style="background-image: url('<?= BASE_URL . $bg ?>'); background-size: cover; background-position: center;">
+    <!-- Carrusel -->
+    <div class="relative carousel-wrapper group" style="overflow:hidden; mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);">
+        <div class="carousel-track flex gap-5" style="animation: scrollCards 40s linear infinite;">
+            <?php
+            // Renderizar 2 veces para loop seamless
+            for ($lap = 0; $lap < 2; $lap++):
+            foreach ($plans as $i => $plan):
+                $bg = $backgrounds[$i % count($backgrounds)];
+                $badge = $badges[$i % count($badges)];
+            ?>
+            <div class="carousel-card flex-shrink-0 w-[300px] md:w-[340px] group/card relative rounded-2xl overflow-hidden min-h-[400px] flex flex-col justify-end transition-all duration-300 hover:scale-[1.02]"
+                 style="background-image: url('<?= BASE_URL . $bg ?>'); background-size: cover; background-position: center;">
 
-            <!-- Dark gradient overlay (darker at bottom for text, lighter at top) -->
-            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/95 via-gray-900/50 to-gray-900/20 group-hover:from-gray-900/90 group-hover:via-gray-900/45 transition-colors duration-500"></div>
+                <!-- Overlay oscuro -->
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/95 via-gray-900/50 to-gray-900/20 group-hover/card:from-gray-900/90 transition-colors duration-500"></div>
 
-            <!-- Badge flotante -->
-            <div class="absolute top-4 left-1/2 -translate-x-1/2 z-20">
-                <span class="bg-gradient-to-r <?= $badge['accent'] ?> text-white text-xs font-bold px-5 py-1.5 rounded-full shadow-lg">
-                    <?= $badge['text'] ?>
-                </span>
+                <!-- Badge -->
+                <div class="absolute top-4 left-1/2 -translate-x-1/2 z-20">
+                    <span class="bg-gradient-to-r <?= $badge['accent'] ?> text-white text-xs font-bold px-5 py-1.5 rounded-full shadow-lg whitespace-nowrap">
+                        <?= $badge['text'] ?>
+                    </span>
+                </div>
+
+                <!-- Contenido -->
+                <div class="relative z-10 p-6 pt-2 text-center text-white">
+                    <?php
+                    $logoPath = '/img/' . strtolower(str_replace(' ', '', $plan['isapre'])) . '.png';
+                    $logoFull = __DIR__ . '/..' . $logoPath;
+                    ?>
+                    <?php if (file_exists($logoFull)): ?>
+                    <img src="<?= BASE_URL . $logoPath ?>" alt="<?= htmlspecialchars($plan['isapre']) ?>" class="h-8 mx-auto mb-3 object-contain brightness-0 invert opacity-90">
+                    <?php else: ?>
+                    <div class="w-10 h-10 bg-white/20 backdrop-blur-sm text-white rounded-xl flex items-center justify-center mx-auto mb-3 text-lg font-bold border border-white/30">
+                        <?= mb_substr($plan['isapre'], 0, 1) ?>
+                    </div>
+                    <?php endif; ?>
+
+                    <div class="text-xs text-white/60 font-medium uppercase tracking-widest mb-1"><?= htmlspecialchars($plan['isapre']) ?></div>
+                    <h3 class="text-lg font-bold text-white mb-4 leading-tight"><?= htmlspecialchars($plan['nombre']) ?></h3>
+
+                    <!-- Stats -->
+                    <div class="flex justify-center gap-5 text-sm text-white/80 mb-5">
+                        <div class="flex flex-col items-center">
+                            <span class="text-xl font-bold text-white"><?= $plan['hosp'] ?>%</span>
+                            <span class="text-[10px] text-white/50 uppercase tracking-wide mt-0.5">Hospital</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="text-xl font-bold text-white"><?= $plan['amb'] ?>%</span>
+                            <span class="text-[10px] text-white/50 uppercase tracking-wide mt-0.5">Ambulatorio</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="text-xl font-bold text-white"><?= $plan['prestadores'] ?></span>
+                            <span class="text-[10px] text-white/50 uppercase tracking-wide mt-0.5">Prestadores</span>
+                        </div>
+                    </div>
+
+                    <!-- Precio -->
+                    <div class="mb-5">
+                        <div class="text-3xl font-extrabold text-white"><?= number_format($plan['uf'], 2, ',', '.') ?> <span class="text-lg font-medium text-white/70">UF</span></div>
+                        <div class="text-xs text-white/50 mt-0.5">por mes · precio base</div>
+                    </div>
+
+                    <a href="<?= BASE_URL ?>/planes/detalle/?codigo=<?= urlencode($plan['codigo']) ?>#comparador"
+                       class="inline-flex items-center justify-center w-full gap-2 bg-white/15 backdrop-blur-sm hover:bg-white/25 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 text-sm border border-white/20 hover:border-white/40 group/btn">
+                        Ver plan
+                        <span class="group-hover/btn:translate-x-1 transition-transform duration-300">→</span>
+                    </a>
+                </div>
             </div>
-
-            <!-- Contenido -->
-            <div class="relative z-10 p-6 pt-2 text-center text-white">
-                <!-- Logo ISAPRE (si existe) -->
-                <?php
-                $logoPath = '/img/' . strtolower(str_replace(' ', '', $plan['isapre'])) . '.png';
-                $logoFull = __DIR__ . '/..' . $logoPath;
-                ?>
-                <?php if (file_exists($logoFull)): ?>
-                <img src="<?= BASE_URL . $logoPath ?>" alt="<?= htmlspecialchars($plan['isapre']) ?>" class="h-8 mx-auto mb-3 object-contain brightness-0 invert opacity-90">
-                <?php else: ?>
-                <div class="w-10 h-10 bg-white/20 backdrop-blur-sm text-white rounded-xl flex items-center justify-center mx-auto mb-3 text-lg font-bold border border-white/30">
-                    <?= mb_substr($plan['isapre'], 0, 1) ?>
-                </div>
-                <?php endif; ?>
-
-                <div class="text-xs text-white/60 font-medium uppercase tracking-widest mb-1"><?= htmlspecialchars($plan['isapre']) ?></div>
-                <h3 class="text-lg font-bold text-white mb-4 leading-tight"><?= htmlspecialchars($plan['nombre']) ?></h3>
-
-                <!-- Stats -->
-                <div class="flex justify-center gap-5 text-sm text-white/80 mb-5">
-                    <div class="flex flex-col items-center">
-                        <span class="text-xl font-bold text-white"><?= $plan['hosp'] ?>%</span>
-                        <span class="text-[10px] text-white/50 uppercase tracking-wide mt-0.5">Hospital</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <span class="text-xl font-bold text-white"><?= $plan['amb'] ?>%</span>
-                        <span class="text-[10px] text-white/50 uppercase tracking-wide mt-0.5">Ambulatorio</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <span class="text-xl font-bold text-white"><?= $plan['prestadores'] ?></span>
-                        <span class="text-[10px] text-white/50 uppercase tracking-wide mt-0.5">Prestadores</span>
-                    </div>
-                </div>
-
-                <!-- Precio -->
-                <div class="mb-5">
-                    <div class="text-3xl font-extrabold text-white"><?= number_format($plan['uf'], 2, ',', '.') ?> <span class="text-lg font-medium text-white/70">UF</span></div>
-                    <div class="text-xs text-white/50 mt-0.5">por mes · precio base</div>
-                </div>
-
-                <!-- CTA -->
-                <a href="<?= BASE_URL ?>/planes/detalle/?codigo=<?= urlencode($plan['codigo']) ?>#comparador"
-                   class="inline-flex items-center justify-center w-full gap-2 bg-white/15 backdrop-blur-sm hover:bg-white/25 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 text-sm border border-white/20 hover:border-white/40 group/btn">
-                    Ver plan
-                    <span class="group-hover/btn:translate-x-1 transition-transform duration-300">→</span>
-                </a>
-            </div>
+            <?php endforeach; endfor; ?>
         </div>
-        <?php endforeach; ?>
     </div>
+
+    <!-- Pausa al hover -->
+    <style>
+        @keyframes scrollCards {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .carousel-wrapper:hover .carousel-track {
+            animation-play-state: paused;
+        }
+        /* Reducir velocidad en mobile */
+        @media (max-width: 768px) {
+            .carousel-card { width: 260px !important; min-height: 360px !important; }
+            @keyframes scrollCardsMobile {
+                0%   { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+            .carousel-track { animation: scrollCardsMobile 25s linear infinite !important; }
+        }
+    </style>
 
     <div class="text-center mt-10">
         <a href="<?= BASE_URL ?>/planes/comparador/" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition">
