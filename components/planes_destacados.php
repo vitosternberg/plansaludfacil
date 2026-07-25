@@ -131,10 +131,11 @@ $badges = [
             track.style.transform='translateX('+(-idx*W)+'px)';
         }
         track.addEventListener('transitionend',function(){
-            if(idx>=N){ idx-=N; track.style.transition='none'; track.style.transform='translateX('+(-idx*W)+'px)'; track.offsetHeight; }
+            while(idx>=N){ idx-=N; track.style.transition='none'; track.style.transform='translateX('+(-idx*W)+'px)'; track.offsetHeight; }
+            while(idx<0){ idx+=N; track.style.transition='none'; track.style.transform='translateX('+(-idx*W)+'px)'; track.offsetHeight; }
         });
 
-        function next(){ var n=idx+1; if(n>=N)go(n,true); else go(n,true); resume(); }
+        function next(){ go(idx+1,true); resume(); }
         function prev(){
             if(idx<=0){ idx=N; track.style.transition='none'; track.style.transform='translateX('+(-idx*W)+'px)'; track.offsetHeight; }
             go(idx-1,true); resume();
