@@ -64,15 +64,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Abrir modal (o scroll al comparador si estamos en esa página)
+    // Abrir modal (o scroll al formulario si estamos en página con formulario)
     whatsappButton.addEventListener('click', function() {
-        // Si existe el comparador, hacer scroll al formulario en vez de abrir WhatsApp
-        var formComparador = document.getElementById('comparador');
-        if (formComparador) {
-            formComparador.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Buscar formularios por ID — si existe, hacer scroll en vez de abrir WhatsApp
+        var formTarget = document.getElementById('comparador')
+                      || document.getElementById('form-individual')
+                      || document.getElementById('form-familia');
+        if (formTarget) {
+            formTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
             setTimeout(function() {
-                var rentaInput = document.getElementById('renta-input');
-                if (rentaInput) rentaInput.focus();
+                // Focus en el primer campo del formulario
+                var firstInput = formTarget.querySelector('input, select, textarea');
+                if (firstInput) firstInput.focus();
             }, 500);
             return;
         }
