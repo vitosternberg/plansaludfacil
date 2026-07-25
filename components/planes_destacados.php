@@ -56,7 +56,7 @@ foreach ($cache as $p) { if (!in_array($p['isapre'], array_column($plans, 'isapr
 
 if (count($plans) < 4) return;
 
-$backgrounds = ['/img/hero_familia.jpg','/img/madre_orgullosa.jpg','/img/mama_hijas.jpg','/img/bebe_sueter_rojo.jpg','/img/madre_orgullosa.jpg','/img/mama_hijas.jpg'];
+$backgrounds = ['/img/hero_familia.jpg','/img/madre_orgullosa.jpg','/img/mama_hijas.jpg','/img/prestadores_red.jpg','/img/hospitalario_top.jpg','/img/joven_activo.png'];
 $badges = [
     ['text'=>'Recomendado','accent'=>'from-blue-500 to-cyan-400'],
     ['text'=>'Mejor Precio','accent'=>'from-emerald-500 to-teal-400'],
