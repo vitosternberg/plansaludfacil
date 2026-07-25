@@ -141,7 +141,7 @@ $badges = [
         }
         window.carouselNext=next; window.carouselPrev=prev;
 
-        function step(){ next(); timer=setTimeout(step,3500); }
+        function step(){ next(); }
         function resume(){ clearTimeout(timer); timer=setTimeout(step,4000); }
 
         ct.addEventListener('pointerenter',function(){ clearTimeout(timer); });
