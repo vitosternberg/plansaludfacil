@@ -79,8 +79,9 @@ $badges = [
             ‹
         </button>
 
-        <!-- Track -->
-        <div id="carousel-track" class="flex gap-5 transition-transform duration-500 ease-out" style="will-change: transform;">
+        <!-- Track — renderizado 2x para loop infinito suave -->
+        <div id="carousel-track" class="flex gap-5" style="will-change: transform;">
+            <?php for ($dup = 0; $dup < 2; $dup++): ?>
             <?php foreach ($plans as $i => $plan):
                 $bg = $backgrounds[$i % count($backgrounds)];
                 $badge = $badges[$i % count($badges)];
@@ -131,6 +132,7 @@ $badges = [
                 </div>
             </div>
             <?php endforeach; ?>
+            <?php endfor; ?>
         </div>
 
         <!-- Botón Siguiente -->
@@ -147,30 +149,58 @@ $badges = [
         if (!track || !container) return;
 
         var cards = track.querySelectorAll('.carousel-card');
-        var cardWidth = cards[0] ? cards[0].offsetWidth + 20 : 340; // 20 = gap
         var totalCards = cards.length;
+        var realCards = totalCards / 2;      // 6 cards originales
+        var cardWidth = cards[0] ? cards[0].offsetWidth + 20 : 340;
         var currentIndex = 0;
         var autoTimer = null;
         var isPaused = false;
-        var RESUME_DELAY = 4000; // reanudar auto-scroll después de 4s sin interacción
+        var RESUME_DELAY = 4000;
 
         function scrollToIndex(idx, smooth) {
-            // Clamp infinito
-            if (idx < 0) idx = totalCards - 1;
-            if (idx >= totalCards) idx = 0;
             currentIndex = idx;
             track.style.transition = smooth !== false ? 'transform 0.5s ease-out' : 'none';
             track.style.transform = 'translateX(' + (-currentIndex * cardWidth) + 'px)';
         }
 
+        // Al terminar la animación, si estamos en el set duplicado, saltar sin animación
+        track.addEventListener('transitionend', function() {
+            if (currentIndex >= realCards) {
+                currentIndex -= realCards;
+                track.style.transition = 'none';
+                track.style.transform = 'translateX(' + (-currentIndex * cardWidth) + 'px)';
+                // Forzar reflow para que el próximo transition funcione
+                track.offsetHeight;
+            }
+            if (currentIndex < 0) {
+                currentIndex += realCards;
+                track.style.transition = 'none';
+                track.style.transform = 'translateX(' + (-currentIndex * cardWidth) + 'px)';
+                track.offsetHeight;
+            }
+        });
+
         window.carouselScroll = function(dir) {
-            scrollToIndex(currentIndex + dir);
+            var next = currentIndex + dir;
+            if (next >= realCards) {
+                // Avanzar al duplicado con animación, luego reset silencioso
+                scrollToIndex(next, true);
+            } else if (next < 0) {
+                // Ir hacia atrás: saltar al duplicado sin animación, luego retroceder con animación
+                currentIndex = realCards;
+                track.style.transition = 'none';
+                track.style.transform = 'translateX(' + (-currentIndex * cardWidth) + 'px)';
+                track.offsetHeight;
+                scrollToIndex(currentIndex - 1, true);
+            } else {
+                scrollToIndex(next, true);
+            }
             resetAutoTimer();
         };
 
         function autoAdvance() {
             if (isPaused) return;
-            scrollToIndex(currentIndex + 1);
+            window.carouselScroll(1);
             autoTimer = setTimeout(autoAdvance, 3500);
         }
 
@@ -179,27 +209,21 @@ $badges = [
             autoTimer = setTimeout(autoAdvance, RESUME_DELAY);
         }
 
-        // Pausar al hover
         container.addEventListener('mouseenter', function() { isPaused = true; });
         container.addEventListener('mouseleave', function() { isPaused = false; resetAutoTimer(); });
 
-        // Touch swipe
         var touchStartX = 0;
         container.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; });
         container.addEventListener('touchend', function(e) {
             var diff = touchStartX - e.changedTouches[0].clientX;
-            if (Math.abs(diff) > 40) {
-                window.carouselScroll(diff > 0 ? 1 : -1);
-            }
+            if (Math.abs(diff) > 40) window.carouselScroll(diff > 0 ? 1 : -1);
         });
 
-        // Recalcular al redimensionar
         window.addEventListener('resize', function() {
             cardWidth = cards[0] ? cards[0].offsetWidth + 20 : 340;
             scrollToIndex(currentIndex, false);
         });
 
-        // Iniciar
         autoTimer = setTimeout(autoAdvance, 3000);
     })();
     </script>
