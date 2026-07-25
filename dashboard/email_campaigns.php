@@ -81,9 +81,12 @@ function send_one($conn, $row, $template, $asunto, $cid, $BASE_URL, $source = 'c
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port       = SMTP_PORT;
         $mail->setFrom(SMTP_USER, 'Plan Salud Fácil');
+        $mail->addReplyTo('contacto@plansaludfacil.cl', 'Plan Salud Fácil');
         $mail->isHTML(true);
         $mail->addAddress($email, $row['nombre']);
         $mail->Subject = $asunto;
+        $mail->addCustomHeader('List-Unsubscribe', '<' . $BASE_URL . '/unsubscribe.php?email=' . urlencode($email) . '&token=' . $row['unsubscribe_token'] . '>');
+        $mail->addCustomHeader('List-Unsubscribe-Post', 'List-Unsubscribe=One-Click');
         $mail->Body    = $body;
         $mail->AltBody = strip_tags(str_replace(['<br>','</p>'], ["\n","\n\n"], $body));
         $mail->send();
