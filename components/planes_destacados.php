@@ -79,8 +79,16 @@ $badges = [
                     $logoPath = '/img/' . $logoName . '.png';
                     $logoFull = __DIR__ . '/..' . $logoPath;
                     if (file_exists($logoFull)):
+                        $imgInfo = @getimagesize($logoFull);
+                        $isPng = ($imgInfo && $imgInfo[2] === IMAGETYPE_PNG);
                     ?>
+                    <?php if ($isPng): ?>
                     <img src="<?= BASE_URL . $logoPath ?>" alt="<?= htmlspecialchars($plan['isapre']) ?>" class="h-8 mx-auto mb-3 object-contain brightness-0 invert opacity-90">
+                    <?php else: ?>
+                    <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-lg px-3 py-1 mb-3">
+                        <img src="<?= BASE_URL . $logoPath ?>" alt="<?= htmlspecialchars($plan['isapre']) ?>" class="h-7 object-contain">
+                    </div>
+                    <?php endif; ?>
                     <?php else: ?>
                     <div class="w-10 h-10 bg-white/20 backdrop-blur-sm text-white rounded-xl flex items-center justify-center mx-auto mb-3 text-lg font-bold border border-white/30"><?= mb_substr($plan['isapre'], 0, 1) ?></div>
                     <?php endif; ?>
