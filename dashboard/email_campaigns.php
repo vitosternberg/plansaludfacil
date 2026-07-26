@@ -172,7 +172,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             $pending = $conn->query("
                 SELECT el.id as log_id, el.correo, el.nombre, el.unsubscribe_token, el.source, el.contacto_id, el.list_contact_id
-                FROM email_log el WHERE el.campaign_id=$cid AND el.enviado=0 LIMIT $batch
+                FROM email_log el WHERE el.campaign_id=$cid AND el.enviado=0 AND el.error IS NULL ORDER BY el.id ASC LIMIT $batch
             ");
             $sent = 0; $failed = 0; $i = 0;
             while ($row = $pending->fetch_assoc()) {
@@ -202,7 +202,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $sent = 0; $failed = 0;
             set_time_limit(600);
             while (true) {
-                $pending = $conn->query("SELECT el.id as log_id, el.correo, el.nombre, el.unsubscribe_token, el.source FROM email_log el WHERE el.campaign_id=$cid AND el.enviado=0 LIMIT 10");
+                $pending = $conn->query("SELECT el.id as log_id, el.correo, el.nombre, el.unsubscribe_token, el.source FROM email_log el WHERE el.campaign_id=$cid AND el.enviado=0 AND el.error IS NULL ORDER BY el.id ASC LIMIT 10");
                 if ($pending->num_rows === 0) break;
                 while ($row = $pending->fetch_assoc()) {
                     $res = send_one($conn, $row, $cam['html_template'], $cam['asunto'], $cid, $BASE_URL, $row['source']);

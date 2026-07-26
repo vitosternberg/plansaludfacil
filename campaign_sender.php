@@ -179,7 +179,8 @@ elseif ($action === 'send') {
     $pending = $conn->query("
         SELECT el.id as log_id, el.correo, el.nombre, el.unsubscribe_token, el.contacto_id
         FROM email_log el
-        WHERE el.campaign_id = $campaign_id AND el.enviado = 0
+        WHERE el.campaign_id = $campaign_id AND el.enviado = 0 AND el.error IS NULL
+        ORDER BY el.id ASC
         LIMIT $batch
     ");
     
