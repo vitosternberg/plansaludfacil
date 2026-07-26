@@ -99,32 +99,34 @@ $logo_base_path = dirname(__DIR__) . '/img/';
 @media (max-width: 640px) {
     .brands-section {
         padding: 48px 16px;
+        overflow: hidden;
+    }
+
+    .brands-container {
+        overflow: hidden;
     }
 
     .brands-carousel {
         justify-content: flex-start;
         flex-wrap: nowrap;
-        gap: 14px;
-        overflow-x: auto;
-        padding: 4px 2px 12px;
+        gap: 12px;
+        overflow-x: scroll;
+        padding: 4px 16px 12px;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
     }
 
     .brand-item {
-        width: 78%;
-        min-width: 78%;
+        width: 76%;
+        min-width: 76%;
         scroll-snap-align: center;
         flex-shrink: 0;
     }
 
     .brands-carousel::-webkit-scrollbar {
-        height: 6px;
-    }
-
-    .brands-carousel::-webkit-scrollbar-thumb {
-        background: rgba(2, 132, 199, 0.28);
-        border-radius: 999px;
+        display: none;
     }
 }
 </style>
