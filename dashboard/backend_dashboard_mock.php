@@ -42,20 +42,42 @@ function normalizarLead($row) {
     $ad = json_decode($row['datos_adicionales'], true);
     if (!is_array($ad)) return $row;
 
+    // ── Desenvolver wrappers externos (Omniflow / APIs) ──
+    // Algunos sistemas envuelven los datos en un key como "form_data", "data", "lead"
+    foreach (['form_data', 'data', 'lead'] as $wrapper) {
+        if (isset($ad[$wrapper]) && is_array($ad[$wrapper]) && count($ad) === 1) {
+            $ad = $ad[$wrapper];
+            break;
+        }
+    }
+
     // ── Estructura A: Flat (formularios del sitio) ──
     $flatMap = [
-        'age'              => 'edad',
-        'income'           => 'renta',
-        'comuna'           => 'region',
-        'isapre_actual'    => 'prevision_interes',
-        'preferencia_plan' => 'plan_interes',
-        'rut'              => 'rut',
-        'cargas'           => 'cargas',
-        'query_type'       => 'tipo_formulario',
-        'tipo_plan'        => 'tipo_plan',
-        'pais'             => 'pais',
-        'pais_residencia'  => 'pais',
-        'origen_lead'      => 'origen_lead',
+        'name'              => 'nombre',
+        'nombre'            => 'nombre',
+        'age'               => 'edad',
+        'income'            => 'renta',
+        'renta'             => 'renta',
+        'comuna'            => 'region',
+        'region'            => 'region',
+        'telefono'          => 'celular',
+        'phone'             => 'celular',
+        'email'             => 'correo',
+        'isapre_actual'     => 'prevision_interes',
+        'prevision'         => 'prevision_interes',
+        'prevision_actual'  => 'prevision_interes',
+        'preferencia_plan'  => 'plan_interes',
+        'plan_interes'      => 'plan_interes',
+        'rut'               => 'rut',
+        'cargas'            => 'cargas',
+        'cargas_familiares' => 'cargas',
+        'genero'            => 'genero',
+        'query_type'        => 'tipo_formulario',
+        'tipo_formulario'   => 'tipo_formulario',
+        'tipo_plan'         => 'tipo_plan',
+        'pais'              => 'pais',
+        'pais_residencia'   => 'pais',
+        'origen_lead'       => 'origen_lead',
         'tracking_session_id' => 'tracking_session_id',
     ];
 
@@ -65,11 +87,17 @@ function normalizarLead($row) {
         }
     }
 
-    // Intereses (array → string)
+    // Intereses (array → string, o string directo)
     if (!empty($ad['interests']) && is_array($ad['interests'])) {
         $row['intereses'] = implode(', ', $ad['interests']);
+    } elseif (!empty($ad['interests']) && is_string($ad['interests'])) {
+        $row['intereses'] = $ad['interests'];
     } elseif (!empty($ad['needs']) && is_array($ad['needs'])) {
         $row['intereses'] = implode(', ', $ad['needs']);
+    } elseif (!empty($ad['needs']) && is_string($ad['needs'])) {
+        $row['intereses'] = $ad['needs'];
+    } elseif (!empty($ad['intereses']) && is_string($ad['intereses'])) {
+        $row['intereses'] = $ad['intereses'];
     }
 
     // Mensaje del formulario
@@ -103,10 +131,15 @@ function normalizarLead($row) {
     // ── Estructura B: Nested (personal.* / salud.*) ──
     if (isset($ad['personal']) && is_array($ad['personal'])) {
         $p = $ad['personal'];
+        if (empty($row['nombre']))  $row['nombre']  = $p['nombre'] ?? $p['name'] ?? null;
+        if (empty($row['correo']))  $row['correo']  = $p['email'] ?? $p['correo'] ?? null;
+        if (empty($row['celular'])) $row['celular'] = $p['telefono'] ?? $p['phone'] ?? null;
         if (empty($row['rut']))     $row['rut']     = $p['rut'] ?? null;
         if (empty($row['edad']))    $row['edad']    = $p['edad'] ?? null;
         if (empty($row['region']))  $row['region']  = $p['region'] ?? $p['comuna'] ?? null;
         if (empty($row['renta']))   $row['renta']   = $p['renta'] ?? null;
+        if (empty($row['cargas']))  $row['cargas']  = $p['cargas'] ?? null;
+        if (empty($row['genero']))  $row['genero']  = $p['genero'] ?? null;
     }
 
     if (isset($ad['salud']) && is_array($ad['salud'])) {
@@ -118,6 +151,7 @@ function normalizarLead($row) {
         if (empty($row['region']))            $row['region']            = $s['region'] ?? null;
         if (empty($row['renta']))             $row['renta']             = $s['renta'] ?? null;
         if (empty($row['cargas']))            $row['cargas']            = $s['cargas'] ?? null;
+        if (empty($row['tipo_plan']))         $row['tipo_plan']         = $s['tipo_plan'] ?? null;
         $row['salud_genero'] = $s['genero'] ?? null;
     }
 
