@@ -261,24 +261,6 @@ function fmtDate($val) {
 </div>
 <?php endif; ?>
 
-<!-- DEBUG ID 150 -->
-<?php
-$debug150 = null;
-foreach ($leads as $l) { if ($l['id'] == 150) { $debug150 = $l; break; } }
-if ($debug150):
-?>
-<div style="background:#fff3cd;border:1px solid #ffc107;padding:12px 30px;font-family:monospace;font-size:12px;">
-<strong>DEBUG ID 150:</strong><br>
-nombre columna: [<?= htmlspecialchars($debug150['nombre'] ?? 'NULL') ?>]<br>
-correo: <?= htmlspecialchars($debug150['correo'] ?? '-') ?><br>
-celular: <?= htmlspecialchars($debug150['celular'] ?? '-') ?><br>
-datos_adicionales RAW: <pre style="margin:0;max-height:200px;overflow:auto;"><?php
-$raw = $debug150['datos_adicionales'] ?? null;
-echo htmlspecialchars($raw ? (is_string($raw) ? $raw : json_encode($raw, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE)) : 'NULL');
-?></pre>
-</div>
-<?php endif; ?>
-
 <div class="metrics-bar">
     <div class="metric"><div class="num"><?= $total_leads ?></div><div class="label">Total Leads</div></div>
     <div class="metric"><div class="num"><?= $new_leads ?></div><div class="label">🆕 Nuevos</div></div>

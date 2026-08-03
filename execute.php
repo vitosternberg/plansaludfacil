@@ -144,19 +144,37 @@
                                                         $id_form = intval($ctx['id_formulario_tipo'] ?? 1);
                                                         $datos_adicionales = $ctx['datos_adicionales'] ?? '{}';
                                                         
+                                                        // Si nombre/correo/celular vienen vacios, intentar extraer de datos_adicionales
+                                                        if (empty($nombre) || empty($correo) || empty($celular)) {
+                                                            $ad = json_decode($datos_adicionales, true);
+                                                            if (is_array($ad)) {
+                                                                // Flat keys
+                                                                if (empty($nombre))  $nombre  = $ad['name'] ?? $ad['nombre'] ?? '';
+                                                                if (empty($correo))  $correo  = $ad['email'] ?? $ad['correo'] ?? '';
+                                                                if (empty($celular)) $celular = $ad['phone'] ?? $ad['telefono'] ?? $ad['celular'] ?? '';
+                                                                // Nested personal.*
+                                                                if (isset($ad['personal']) && is_array($ad['personal'])) {
+                                                                    $p = $ad['personal'];
+                                                                    if (empty($nombre))  $nombre  = $p['nombre'] ?? $p['name'] ?? '';
+                                                                    if (empty($correo))  $correo  = $p['email'] ?? $p['correo'] ?? '';
+                                                                    if (empty($celular)) $celular = $p['telefono'] ?? $p['phone'] ?? '';
+                                                                }
+                                                            }
+                                                        }
+                                                        
                                                         $stmt = $db->prepare("
                                                             INSERT INTO procesar_formularios 
                                                             (nombre, correo, celular, pais, estado, id_formulario_tipo, datos_adicionales, fecha_creacion) 
                                                             VALUES (?, ?, ?, ?, ?, ?, ?, NOW())
                                                         ");
-                                                        $stmt->bind_param('ssssssi', 
+                                                        $stmt->bind_param('sssssis', 
                                                             $nombre, 
                                                             $correo, 
                                                             $celular, 
                                                             $pais,
                                                             $estado,
-                                                            $datos_adicionales,
-                                                            $id_form
+                                                            $id_form,
+                                                            $datos_adicionales
                                                         );
                                                         break;
                                                         
