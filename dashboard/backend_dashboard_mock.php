@@ -1,7 +1,7 @@
 <?php
 // backend_dashboard_mock.php
-// Dashboard de leads — PlanSaludFácil
-// Versión mejorada: extrae correctamente datos_adicionales de todas las fuentes
+// Dashboard de leads — PlanSaludFácil v2.0
+// Extrae correctamente datos_adicionales de todas las fuentes (flat + nested)
 
 $DB_HOST = 'localhost';
 $DB_USER = 'plansalu_blogger';
