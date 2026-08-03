@@ -16,4 +16,4 @@ jobs:
       - name: 📂 Sync files to server
         run: |
           sudo apt-get update && sudo apt-get install -y lftp
-          lftp -c "set ftp:ssl-allow yes; set ssl:verify-certificate no; set xfer:clobber on; open -u '${{ secrets.FTP_USERNAME }}','${{ secrets.FTP_PASSWORD }}' ${{ secrets.FTP_SERVER }}; mirror -R --ignore-time -x .git/ -x .github/ -x node_modules/ -x playwright-report/ -x test-results/ ./ ./public_html/"
+          lftp -c "set ftp:ssl-allow yes; set ssl:verify-certificate no; set xfer:clobber on; open -u '${{ secrets.FTP_USERNAME }}','${{ secrets.FTP_PASSWORD }}' ${{ secrets.FTP_SERVER }}; mirror -R --ignore-time -x .git/ -x .github/ -x node_modules/ -x playwright-report/ -x test-results/ ./ /home/plansalu/plansaludfacil.cl/github/"
