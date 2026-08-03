@@ -191,6 +191,38 @@
                                                         $stmt->bind_param('si', $estado, $lead_id);
                                                         break;
                                                         
+                                                    case 'UPDATE_LEAD_DATA':
+                                                        // Re-sincronizar datos_adicionales y columnas desde Omniflow
+                                                        $lead_id = intval($ctx['id'] ?? 0);
+                                                        $datos_adicionales = $ctx['datos_adicionales'] ?? null;
+                                                        $nombre = $ctx['nombre'] ?? null;
+                                                        $correo = $ctx['correo'] ?? null;
+                                                        $celular = $ctx['celular'] ?? null;
+                                                        
+                                                        if ($lead_id <= 0) {
+                                                            throw new Exception('Invalid lead ID');
+                                                        }
+                                                        
+                                                        // Si no se envia nombre/correo/celular explicitos, extraer del JSON
+                                                        if (empty($nombre) || empty($correo) || empty($celular)) {
+                                                            $ad = json_decode($datos_adicionales ?? '{}', true);
+                                                            if (is_array($ad)) {
+                                                                if (empty($nombre))  $nombre  = $ad['name'] ?? $ad['nombre'] ?? null;
+                                                                if (empty($correo))  $correo  = $ad['email'] ?? $ad['correo'] ?? null;
+                                                                if (empty($celular)) $celular = $ad['phone'] ?? $ad['telefono'] ?? $ad['celular'] ?? null;
+                                                                if (isset($ad['personal']) && is_array($ad['personal'])) {
+                                                                    $p = $ad['personal'];
+                                                                    if (empty($nombre))  $nombre  = $p['nombre'] ?? $p['name'] ?? null;
+                                                                    if (empty($correo))  $correo  = $p['email'] ?? $p['correo'] ?? null;
+                                                                    if (empty($celular)) $celular = $p['telefono'] ?? $p['phone'] ?? null;
+                                                                }
+                                                            }
+                                                        }
+                                                        
+                                                        $stmt = $db->prepare("UPDATE procesar_formularios SET datos_adicionales = ?, nombre = COALESCE(NULLIF(?, ''), nombre), correo = COALESCE(NULLIF(?, ''), correo), celular = COALESCE(NULLIF(?, ''), celular) WHERE id = ?");
+                                                        $stmt->bind_param('ssssi', $datos_adicionales, $nombre, $correo, $celular, $lead_id);
+                                                        break;
+                                                        
                                                     // ===== COMANDOS FUTUROS (PLACEHOLDER) =====
                                                     
                                                     case 'GET_LEADS_FILTERED':
