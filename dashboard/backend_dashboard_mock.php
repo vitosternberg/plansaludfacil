@@ -105,11 +105,16 @@ function normalizarLead($row) {
         $row['mensaje'] = $ad['message'];
     }
 
-    // Preexistencias
-    if (isset($ad['preexistence'])) {
-        $row['preexistencias'] = ($ad['preexistence'] === 'si') ? 'Sí' : 'No';
-        if (!empty($ad['preexistence_text'])) {
-            $row['preexistencias'] .= ': ' . $ad['preexistence_text'];
+    // Preexistencias (varias claves posibles: preexistence, preexistence_fam, preexistencia)
+    $pre_key = null;
+    foreach (['preexistence', 'preexistence_fam', 'preexistencia'] as $k) {
+        if (isset($ad[$k])) { $pre_key = $k; break; }
+    }
+    if ($pre_key) {
+        $row['preexistencias'] = ($ad[$pre_key] === 'si') ? 'Sí' : 'No';
+        $txt_key = $pre_key . '_text';
+        if (!empty($ad[$txt_key])) {
+            $row['preexistencias'] .= ': ' . $ad[$txt_key];
         }
     }
 
