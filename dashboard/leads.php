@@ -16,6 +16,12 @@ if ($mysqli === null) {
 }
 $mysqli->set_charset("utf8mb4");
 
+// ─── DEBUG: columnas reales de cotizaciones (quitar cuando funcione) ───
+$colsCotizaciones = [];
+$r = $mysqli->query("SHOW COLUMNS FROM cotizaciones");
+if ($r) { while ($row = $r->fetch_assoc()) { $colsCotizaciones[] = $row['Field']; } }
+$debugColsCot = '<pre style="background:#fffbeb;border:1px solid #f59e0b;padding:8px;margin:8px;font-size:12px;border-radius:4px"><strong>Columnas reales de cotizaciones:</strong> ' . implode(', ', $colsCotizaciones) . '</pre>';
+
 // ─── PARÁMETROS ────────────────────────────────────────────────
 $page     = max(1, (int)($_GET['page'] ?? 1));
 $perPage  = 20;
@@ -325,6 +331,8 @@ function selected(string $current, string $value): string {
 </header>
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+
+<?= $debugColsCot ?>
 
 <!-- MÉTRICAS -->
 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
