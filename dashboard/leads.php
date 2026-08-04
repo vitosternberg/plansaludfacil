@@ -212,18 +212,19 @@ $sqlPF = "SELECT
 FROM procesar_formularios";
 
 // Subquery B: cotizaciones (armamos datos_adicionales como JSON)
+// NOTA: cotizaciones no tiene columnas de CRM (first_contact_date, etc.) → usamos NULL
 $sqlCT = "SELECT 
     CONCAT('ct_', id) as uid, id, nombre, email as correo, telefono as celular,
     'Nuevo' as estado, '' as notas,
-    first_contact_date, second_contact_date, sale_closing_date,
+    NULL as first_contact_date, NULL as second_contact_date, NULL as sale_closing_date,
     fecha_creacion,
     JSON_OBJECT(
         'rut', IFNULL(rut,''), 'region', IFNULL(region,''), 
         'genero', IFNULL(genero,''), 'edad', IFNULL(edad,''),
-        'cargas', IFNULL(COALESCE(cargas, cargas_familiares, 0),''), 
+        'cargas', IFNULL(cargas_familiares, ''), 
         'prevision', IFNULL(prevision,''),
-        'renta', IFNULL(COALESCE(renta, renta_imponible, 0),''), 
-        'tipo_plan', IFNULL(COALESCE(tipo_plan, plan_libre_eleccion),'')
+        'renta', IFNULL(renta_imponible, ''), 
+        'tipo_plan', IFNULL(plan_libre_eleccion,'')
     ) as datos_adicionales,
     'cotizacion' as origen, rut
 FROM cotizaciones";
@@ -267,7 +268,9 @@ $sqlFull .= " ORDER BY fecha_creacion DESC LIMIT $perPage OFFSET $offset";
 
 $leads = [];
 $res = $mysqli->query($sqlFull);
-if ($res) {
+if (!$res) {
+    $queryError = $mysqli->error;
+} else {
     while ($row = $res->fetch_assoc()) {
         $leads[] = normalizarLead($row);
     }
@@ -396,9 +399,15 @@ function selected(string $current, string $value): string {
                 <?php if (empty($leads)): ?>
                 <tr>
                     <td colspan="12" class="px-6 py-12 text-center text-slate-400">
+                        <?php if (!empty($queryError)): ?>
+                        <div class="text-4xl mb-2">⚠️</div>
+                        <p class="text-lg font-medium text-red-600">Error en la consulta SQL</p>
+                        <p class="text-sm text-red-500 font-mono mt-2"><?= htmlspecialchars($queryError) ?></p>
+                        <?php else: ?>
                         <div class="text-4xl mb-2">📭</div>
                         <p class="text-lg font-medium">No se encontraron leads</p>
                         <p class="text-sm"><?= $search || $estado || $origen ? 'Probá ajustando los filtros.' : 'Aún no hay datos en la base de datos.' ?></p>
+                        <?php endif; ?>
                     </td>
                 </tr>
                 <?php else: ?>
