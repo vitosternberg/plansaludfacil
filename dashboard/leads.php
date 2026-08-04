@@ -1,7 +1,7 @@
 <?php
 /**
  * dashboard/leads.php
- * Dashboard unificado de leads — PlanSaludFácil
+ * Dashboard unificado de leads — PlanSaludFácil v2
  * 
  * Consolida datos de procesar_formularios + cotizaciones en una sola vista.
  * Incluye métricas, filtros, búsqueda, paginación y detalle expandible.
