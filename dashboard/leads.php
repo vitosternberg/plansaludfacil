@@ -217,20 +217,19 @@ $sqlPF = "SELECT
     'formulario' as origen, '' as rut
 FROM procesar_formularios";
 
-// Subquery B: cotizaciones (armamos datos_adicionales como JSON)
-// NOTA: cotizaciones no tiene columnas de CRM (first_contact_date, etc.) → usamos NULL
+// Subquery B: cotizaciones (columnas reales: cargas, renta, tipo_plan, first_contact_date, etc.)
 $sqlCT = "SELECT 
     CONCAT('ct_', id) as uid, id, nombre, email as correo, telefono as celular,
     'Nuevo' as estado, '' as notas,
-    NULL as first_contact_date, NULL as second_contact_date, NULL as sale_closing_date,
+    first_contact_date, second_contact_date, sale_closing_date,
     fecha_creacion,
     JSON_OBJECT(
         'rut', IFNULL(rut,''), 'region', IFNULL(region,''), 
         'genero', IFNULL(genero,''), 'edad', IFNULL(edad,''),
-        'cargas', IFNULL(cargas_familiares, ''), 
+        'cargas', IFNULL(cargas, ''), 
         'prevision', IFNULL(prevision,''),
-        'renta', IFNULL(renta_imponible, ''), 
-        'tipo_plan', IFNULL(plan_libre_eleccion,'')
+        'renta', IFNULL(renta, ''), 
+        'tipo_plan', IFNULL(tipo_plan,'')
     ) as datos_adicionales,
     'cotizacion' as origen, rut
 FROM cotizaciones";
