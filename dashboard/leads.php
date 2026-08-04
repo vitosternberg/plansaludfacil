@@ -16,12 +16,6 @@ if ($mysqli === null) {
 }
 $mysqli->set_charset("utf8mb4");
 
-// ─── DEBUG: columnas reales de cotizaciones (quitar cuando funcione) ───
-$colsCotizaciones = [];
-$r = $mysqli->query("SHOW COLUMNS FROM cotizaciones");
-if ($r) { while ($row = $r->fetch_assoc()) { $colsCotizaciones[] = $row['Field']; } }
-$debugColsCot = '<pre style="background:#fffbeb;border:1px solid #f59e0b;padding:8px;margin:8px;font-size:12px;border-radius:4px"><strong>Columnas reales de cotizaciones:</strong> ' . implode(', ', $colsCotizaciones) . '</pre>';
-
 // ─── PARÁMETROS ────────────────────────────────────────────────
 $page     = max(1, (int)($_GET['page'] ?? 1));
 $perPage  = 20;
@@ -307,10 +301,56 @@ function selected(string $current, string $value): string {
         }
     </script>
     <style>
-        .detail-row { display: none; }
-        .detail-row.open { display: table-row; }
+        .detail-row { display: none !important; }
+        .detail-row.open { display: table-row !important; }
         .expand-icon { transition: transform 0.2s; display: inline-block; }
         .expand-icon.open { transform: rotate(90deg); }
+
+        /* ─── Mobile card layout (below md breakpoint) ─── */
+        @media (max-width: 767px) {
+            .leads-table thead { display: none; }
+            .leads-table,
+            .leads-table tbody,
+            .leads-table tr,
+            .leads-table td { display: block; }
+
+            .leads-table tr {
+                border: 1px solid #e2e8f0;
+                border-radius: 0.75rem;
+                margin-bottom: 0.75rem;
+                padding: 0.5rem 0;
+                background: #fff;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            }
+            .leads-table tr.border-b { border-bottom: 1px solid #e2e8f0; }
+            .leads-table tr.detail-row {
+                border-top: none;
+                border-radius: 0 0 0.75rem 0.75rem;
+                margin-top: -0.75rem;
+                border-color: #e2e8f0;
+            }
+            .leads-table tr.detail-row.open { display: block !important; }
+
+            .leads-table td {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.4rem 0.75rem;
+                border: none;
+                text-align: right;
+                font-size: 0.8125rem;
+            }
+            .leads-table td::before {
+                content: attr(data-label);
+                font-weight: 600;
+                font-size: 0.6875rem;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                color: #64748b;
+                white-space: nowrap;
+                margin-right: 0.75rem;
+            }
+        }
     </style>
 </head>
 <body class="bg-slate-100 min-h-screen text-slate-800">
@@ -330,8 +370,6 @@ function selected(string $current, string $value): string {
 </header>
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6">
-
-<?= $debugColsCot ?>
 
 <!-- MÉTRICAS -->
 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
@@ -385,7 +423,7 @@ function selected(string $current, string $value): string {
 <!-- TABLA DE LEADS -->
 <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
     <div class="overflow-x-auto">
-        <table class="w-full text-sm">
+        <table class="w-full text-sm leads-table">
             <thead>
                 <tr class="bg-slate-50 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider border-b border-slate-200">
                     <th class="px-3 py-3 w-10"></th>
@@ -428,29 +466,29 @@ function selected(string $current, string $value): string {
                         : ($l['origen'] === 'cotizacion' ? 'cotización' : 'contacto');
                 ?>
                 <tr class="border-b border-slate-100 hover:bg-slate-50/50 transition cursor-pointer" onclick="toggleDetail('<?= $rowId ?>')">
-                    <td class="px-3 py-3">
+                    <td class="px-3 py-3" data-label="">
                         <span class="expand-icon text-slate-400" id="<?= $rowId ?>-icon">▶</span>
                     </td>
-                    <td class="px-3 py-3 font-mono text-xs text-slate-500">#<?= htmlspecialchars($l['uid']) ?></td>
-                    <td class="px-3 py-3 font-medium text-slate-800 max-w-[160px] truncate" title="<?= htmlspecialchars($l['nombre'] ?? '') ?>">
+                    <td class="px-3 py-3 font-mono text-xs text-slate-500" data-label="ID">#<?= htmlspecialchars($l['uid']) ?></td>
+                    <td class="px-3 py-3 font-medium text-slate-800 max-w-[160px] truncate" title="<?= htmlspecialchars($l['nombre'] ?? '') ?>" data-label="Nombre">
                         <?= htmlspecialchars($l['nombre'] ?: '-') ?>
                     </td>
-                    <td class="px-3 py-3">
+                    <td class="px-3 py-3" data-label="Contacto">
                         <div class="text-slate-700 text-xs"><?= htmlspecialchars($l['correo'] ?: '-') ?></div>
                         <div class="text-slate-400 text-xs"><?= fmtTel($l['celular'] ?? '') ?></div>
                     </td>
-                    <td class="px-3 py-3"><?= $origenBadge ?></td>
-                    <td class="px-3 py-3 hidden md:table-cell text-xs"><?= htmlspecialchars($l['edad'] ?? '-') ?></td>
-                    <td class="px-3 py-3 hidden md:table-cell text-xs font-mono"><?= fmtCLP($l['renta'] ?? null) ?></td>
-                    <td class="px-3 py-3 hidden lg:table-cell text-xs max-w-[120px] truncate"><?= htmlspecialchars($l['prevision_interes'] ?? '-') ?></td>
-                    <td class="px-3 py-3 hidden lg:table-cell text-xs max-w-[140px] truncate" title="<?= htmlspecialchars($l['intereses'] ?? '') ?>">
+                    <td class="px-3 py-3" data-label="Origen"><?= $origenBadge ?></td>
+                    <td class="px-3 py-3 hidden md:table-cell text-xs" data-label="Edad"><?= htmlspecialchars($l['edad'] ?? '-') ?></td>
+                    <td class="px-3 py-3 hidden md:table-cell text-xs font-mono" data-label="Renta"><?= fmtCLP($l['renta'] ?? null) ?></td>
+                    <td class="px-3 py-3 hidden lg:table-cell text-xs max-w-[120px] truncate" data-label="Previsión"><?= htmlspecialchars($l['prevision_interes'] ?? '-') ?></td>
+                    <td class="px-3 py-3 hidden lg:table-cell text-xs max-w-[140px] truncate" title="<?= htmlspecialchars($l['intereses'] ?? '') ?>" data-label="Intereses">
                         <?= !empty($l['intereses']) ? htmlspecialchars(mb_substr($l['intereses'], 0, 60)) : '-' ?>
                     </td>
-                    <td class="px-3 py-3"><?= badgeEstado($l['estado']) ?></td>
-                    <td class="px-3 py-3 hidden xl:table-cell text-xs text-slate-500 max-w-[150px] truncate">
+                    <td class="px-3 py-3" data-label="Estado"><?= badgeEstado($l['estado']) ?></td>
+                    <td class="px-3 py-3 hidden xl:table-cell text-xs text-slate-500 max-w-[150px] truncate" data-label="Notas">
                         <?= !empty($l['notas']) ? htmlspecialchars(mb_substr($l['notas'], 0, 60)) : '<span class="text-slate-300">-</span>' ?>
                     </td>
-                    <td class="px-3 py-3 hidden xl:table-cell text-xs text-slate-400 whitespace-nowrap">
+                    <td class="px-3 py-3 hidden xl:table-cell text-xs text-slate-400 whitespace-nowrap" data-label="Fecha">
                         <?= fmtDate($l['fecha_creacion']) ?>
                     </td>
                 </tr>
