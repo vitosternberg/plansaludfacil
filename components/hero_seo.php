@@ -84,11 +84,22 @@ $hero_class    = $hero_class ?? 'bg-gradient-to-r from-blue-800 to-blue-900';
         <?php endif; ?>
 
         <?php if ($cta_texto && $cta_link): ?>
-        <a href="<?= htmlspecialchars($cta_link) ?>"
-           class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition-transform hover:scale-105">
+        <?php $is_wsp = (strpos($cta_link, 'wa.me') !== false); ?>
+        <?php if ($is_wsp): ?>
+        <!-- ⚠️ CAMBIO 2026-08-05: wa.me -> openWspModal() -->
+        <button onclick="openWspModal()"
+           class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition-transform hover:scale-105 border-none cursor-pointer">
             <iconify-icon icon="mdi:whatsapp" width="22" class="mr-2"></iconify-icon>
             <?= htmlspecialchars($cta_texto) ?>
+        </button>
+        <?php else: ?>
+        <!-- ⚠️ CAMBIO 2026-08-05: link interno sin icono WhatsApp -->
+        <a href="<?= htmlspecialchars($cta_link) ?>"
+           class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition-transform hover:scale-105">
+            <iconify-icon icon="mdi:arrow-right" width="22" class="mr-2"></iconify-icon>
+            <?= htmlspecialchars($cta_texto) ?>
         </a>
+        <?php endif; ?>
         <?php endif; ?>
 
     </div>

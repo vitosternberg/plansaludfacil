@@ -130,11 +130,17 @@ render_component('ultimos_articulos_blog', [
 ]);
 
 // 7. CTA FINAL
-render_component('cta_footer', [
-    'titulo' => '¿Listo para mejorar tu cobertura médica?',
-    'cta_texto' => 'Hablar con un Asesor por WhatsApp',
-    'cta_link' => 'https://wa.me/56952282339'
-]);
+// ⚠️ CAMBIO 2026-08-05: wa.me reemplazado por modal openWspModal()
+?>
+<section class="cta-footer-section" style="padding:100px 20px;background:linear-gradient(135deg,#2c5364,#203a43,#0f2027);color:white;text-align:center;font-family:'Inter',sans-serif">
+    <div style="max-width:600px;margin:0 auto">
+        <h2 style="font-size:2.5rem;margin-bottom:40px;font-weight:800">¿Listo para mejorar tu cobertura médica?</h2>
+        <button onclick="openWspModal()" style="background-color:#25D366;color:white;padding:16px 40px;border-radius:30px;font-weight:bold;font-size:1.2rem;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;box-shadow:0 10px 20px rgba(37,211,102,0.3);transition:background-color 0.3s,transform 0.3s">
+            <span style="font-size:1.4rem">💬</span> Hablar con un Asesor por WhatsApp
+        </button>
+    </div>
+</section>
+<?php
 
 // Chatbot desactivado — toggle en Omnilama > Base de Conocimiento
 // render_component('chat_psl_widget');

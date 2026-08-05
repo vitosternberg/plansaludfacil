@@ -31,10 +31,11 @@ $header_admin_email = 'contacto@plansaludfacil.cl'; // Email estático o pasado 
         <div class="flex justify-between items-center py-2">
             <!-- Contacto WhatsApp y Email -->
             <div class="flex items-center space-x-4">
-                <a href="https://wa.me/56952282339" class="flex items-center hover:text-blue-200 transition" target="_blank">
+                <!-- CAMBIO 2026-08-05: wa.me -> openWspModal() -->
+                <button onclick="openWspModal()" class="flex items-center hover:text-blue-200 transition bg-transparent border-none cursor-pointer text-white text-sm">
                     <iconify-icon icon="mdi:whatsapp" width="16" class="mr-1"></iconify-icon>
                     <span class="hidden sm:inline">+56 9 5228 2339</span>
-                </a>
+                </button>
                 <a href="mailto:<?php echo htmlspecialchars($header_admin_email); ?>" class="flex items-center hover:text-blue-200 transition">
                     <iconify-icon icon="mdi:email-outline" width="16" class="mr-1"></iconify-icon>
                     <span class="hidden sm:inline"><?php echo htmlspecialchars($header_admin_email); ?></span>

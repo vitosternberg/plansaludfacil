@@ -25,8 +25,9 @@ $faq_preguntas    = $faq_preguntas    ?? [];
 $faq_titulo       = $faq_titulo       ?? 'Preguntas Frecuentes';
 $svc_name         = $svc_name         ?? $h1;
 $svc_description  = $svc_description  ?? $meta_description;
-$cta_texto        = $cta_texto        ?? 'Cotizar por WhatsApp';
-$cta_link         = $cta_link         ?? 'https://wa.me/56952282339';
+$cta_texto        = $cta_texto        ?? 'Cotizar Ahora';
+// ⚠️ CAMBIO 2026-08-05: default wa.me eliminado. Si no se sobreescribe, se usa modal.
+\$cta_link         = \$cta_link         ?? '';
 // ───────────────────────────────────────────────────────────
 
 include './layout/plantilla.php';
@@ -79,15 +80,33 @@ include './layout/header.php';
 
     // 6. CTA Final
     ?>
+    <?php $is_wsp_cta = $cta_link && (strpos($cta_link, 'wa.me') !== false); ?>
     <section class="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-12 px-4 mt-12" id="cotizar">
         <div class="max-w-2xl mx-auto text-center">
             <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Listo para cotizar tu plan?</h2>
             <p class="text-blue-100 mb-6">Habla con un asesor sin costo. Te ayudamos a encontrar el mejor plan según tu perfil.</p>
-            <a href="<?= htmlspecialchars($cta_link) ?>" target="_blank"
-               class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition-transform hover:scale-105">
+            <?php if ($is_wsp_cta): ?>
+            <!-- ⚠️ CAMBIO 2026-08-05: wa.me -> openWspModal() -->
+            <button onclick="openWspModal()"
+               class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition-transform hover:scale-105 border-none cursor-pointer">
                 <iconify-icon icon="mdi:whatsapp" width="24" class="mr-2"></iconify-icon>
+                <?= htmlspecialchars($cta_texto ?: 'Cotizar por WhatsApp') ?>
+            </button>
+            <?php elseif ($cta_link): ?>
+            <!-- ⚠️ CAMBIO 2026-08-05: link interno sin icono WhatsApp -->
+            <a href="<?= htmlspecialchars($cta_link) ?>"
+               class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition-transform hover:scale-105">
+                <iconify-icon icon="mdi:arrow-right" width="24" class="mr-2"></iconify-icon>
                 <?= htmlspecialchars($cta_texto) ?>
             </a>
+            <?php else: ?>
+            <!-- Sin link definido, mostrar boton modal por defecto -->
+            <button onclick="openWspModal()"
+               class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition-transform hover:scale-105 border-none cursor-pointer">
+                <iconify-icon icon="mdi:whatsapp" width="24" class="mr-2"></iconify-icon>
+                <?= htmlspecialchars($cta_texto ?: 'Cotizar por WhatsApp') ?>
+            </button>
+            <?php endif; ?>
         </div>
     </section>
 
