@@ -27,7 +27,7 @@ $svc_name         = $svc_name         ?? $h1;
 $svc_description  = $svc_description  ?? $meta_description;
 $cta_texto        = $cta_texto        ?? 'Cotizar Ahora';
 // ⚠️ CAMBIO 2026-08-05: default wa.me eliminado. Si no se sobreescribe, se usa modal.
-\$cta_link         = \$cta_link         ?? '';
+$cta_link         = $cta_link         ?? '';
 // ───────────────────────────────────────────────────────────
 
 include './layout/plantilla.php';
