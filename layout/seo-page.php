@@ -26,7 +26,7 @@ $faq_titulo       = $faq_titulo       ?? 'Preguntas Frecuentes';
 $svc_name         = $svc_name         ?? $h1;
 $svc_description  = $svc_description  ?? $meta_description;
 $cta_texto        = $cta_texto        ?? 'Cotizar Ahora';
-// ⚠️ CAMBIO 2026-08-05: default wa.me eliminado. Si no se sobreescribe, se usa modal.
+// ⚠️ CAMBIO 2026-08-05 (v2): default wa.me eliminado. Si no se sobreescribe, se usa modal.
 $cta_link         = $cta_link         ?? '';
 // ───────────────────────────────────────────────────────────
 
