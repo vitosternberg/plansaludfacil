@@ -224,3 +224,8 @@ CREATE TABLE IF NOT EXISTS `analisis_busquedas` (
   PRIMARY KEY (`id`),
   KEY `idx_fecha` (`fecha`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- ============================================================
+-- Dashboard Leads: columna estado en cotizaciones
+-- ============================================================
+ALTER TABLE cotizaciones ADD COLUMN IF NOT EXISTS estado VARCHAR(20) NOT NULL DEFAULT 'Nuevo' AFTER fecha_creacion;

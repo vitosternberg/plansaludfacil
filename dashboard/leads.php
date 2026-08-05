@@ -16,6 +16,43 @@ if ($mysqli === null) {
 }
 $mysqli->set_charset("utf8mb4");
 
+// ─── ASEGURAR COLUMNA estado EN cotizaciones ───────────────────
+@$mysqli->query("ALTER TABLE cotizaciones ADD COLUMN IF NOT EXISTS estado VARCHAR(20) NOT NULL DEFAULT 'Nuevo' AFTER fecha_creacion");
+
+// ─── HANDLER AJAX: actualizar estado ───────────────────────────
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'update_estado') {
+    header('Content-Type: application/json');
+
+    $uid    = $_POST['uid'] ?? '';
+    $nuevo  = $_POST['estado'] ?? '';
+    $validos = ['Nuevo', 'Contactado', 'Cerrado'];
+
+    if (!in_array($nuevo, $validos, true)) {
+        echo json_encode(['ok' => false, 'error' => 'Estado inválido']);
+        exit;
+    }
+
+    // Parsear uid: pf_123 → table=procesar_formularios, id=123
+    if (str_starts_with($uid, 'pf_')) {
+        $tabla = 'procesar_formularios';
+        $id = (int)substr($uid, 3);
+    } elseif (str_starts_with($uid, 'ct_')) {
+        $tabla = 'cotizaciones';
+        $id = (int)substr($uid, 3);
+    } else {
+        echo json_encode(['ok' => false, 'error' => 'UID inválido']);
+        exit;
+    }
+
+    $stmt = $mysqli->prepare("UPDATE $tabla SET estado = ? WHERE id = ?");
+    $stmt->bind_param('si', $nuevo, $id);
+    $ok = $stmt->execute();
+
+    echo json_encode(['ok' => $ok, 'error' => $ok ? null : $mysqli->error]);
+    $mysqli->close();
+    exit;
+}
+
 // ─── PARÁMETROS ────────────────────────────────────────────────
 $page     = max(1, (int)($_GET['page'] ?? 1));
 $perPage  = 20;
@@ -167,6 +204,23 @@ function normalizarLead(array $row): array {
 }
 
 // ─── HELPERS ───────────────────────────────────────────────────
+function selectEstado(string $estado, string $uid): string {
+    $opciones = [
+        'Nuevo'      => ['bg' => 'bg-blue-100', 'fg' => 'text-blue-800', 'icon' => '🆕'],
+        'Contactado' => ['bg' => 'bg-amber-100', 'fg' => 'text-amber-800', 'icon' => '📞'],
+        'Cerrado'    => ['bg' => 'bg-emerald-100', 'fg' => 'text-emerald-800', 'icon' => '✅'],
+    ];
+    $c = $opciones[$estado] ?? ['bg' => 'bg-gray-100', 'fg' => 'text-gray-700', 'icon' => '•'];
+
+    $html = '<select class="estado-select cursor-pointer appearance-none text-center rounded-full text-xs font-semibold py-1 px-2 border-0 outline-none transition ' . $c['bg'] . ' ' . $c['fg'] . '" data-uid="' . htmlspecialchars($uid) . '" onclick="event.stopPropagation()" onchange="cambiarEstado(this)" style="min-width:120px">';
+    foreach ($opciones as $val => $style) {
+        $sel = $val === $estado ? ' selected' : '';
+        $html .= '<option value="' . $val . '"' . $sel . '>' . $style['icon'] . ' ' . $val . '</option>';
+    }
+    $html .= '</select>';
+    return $html;
+}
+
 function badgeEstado(string $estado): string {
     $map = [
         'Nuevo'      => ['bg' => 'bg-blue-100', 'fg' => 'text-blue-800', 'icon' => '🆕'],
@@ -214,7 +268,7 @@ FROM procesar_formularios";
 // Subquery B: cotizaciones (columnas reales: cargas, renta, tipo_plan, first_contact_date, etc.)
 $sqlCT = "SELECT 
     CONCAT('ct_', id) as uid, id, nombre, email as correo, telefono as celular,
-    'Nuevo' as estado, '' as notas,
+    COALESCE(estado, 'Nuevo') as estado, '' as notas,
     first_contact_date, second_contact_date, sale_closing_date,
     fecha_creacion,
     JSON_OBJECT(
@@ -484,7 +538,7 @@ function selected(string $current, string $value): string {
                     <td class="px-3 py-3 hidden lg:table-cell text-xs max-w-[140px] truncate" title="<?= htmlspecialchars($l['intereses'] ?? '') ?>" data-label="Intereses">
                         <?= !empty($l['intereses']) ? htmlspecialchars(mb_substr($l['intereses'], 0, 60)) : '-' ?>
                     </td>
-                    <td class="px-3 py-3" data-label="Estado"><?= badgeEstado($l['estado']) ?></td>
+                    <td class="px-3 py-3" data-label="Estado" onclick="event.stopPropagation()"><?= selectEstado($l['estado'], $l['uid']) ?></td>
                     <td class="px-3 py-3 hidden xl:table-cell text-xs text-slate-500 max-w-[150px] truncate" data-label="Notas">
                         <?= !empty($l['notas']) ? htmlspecialchars(mb_substr($l['notas'], 0, 60)) : '<span class="text-slate-300">-</span>' ?>
                     </td>
@@ -560,7 +614,7 @@ function selected(string $current, string $value): string {
                                     <div class="flex justify-between"><dt class="text-slate-400">1er contacto</dt><dd class="text-slate-700"><?= fmtDate($l['first_contact_date'] ?? null) ?></dd></div>
                                     <div class="flex justify-between"><dt class="text-slate-400">2do contacto</dt><dd class="text-slate-700"><?= fmtDate($l['second_contact_date'] ?? null) ?></dd></div>
                                     <div class="flex justify-between"><dt class="text-slate-400">Cierre</dt><dd class="text-slate-700"><?= fmtDate($l['sale_closing_date'] ?? null) ?></dd></div>
-                                    <div class="flex justify-between"><dt class="text-slate-400">Estado</dt><dd><?= badgeEstado($l['estado']) ?></dd></div>
+                                    <div class="flex justify-between"><dt class="text-slate-400">Estado</dt><dd onclick="event.stopPropagation()"><?= selectEstado($l['estado'], $l['uid']) ?></dd></div>
                                     <?php if (!empty($l['origen_lead'])): ?>
                                     <div class="flex justify-between"><dt class="text-slate-400">Origen lead</dt><dd class="text-slate-700"><?= htmlspecialchars($l['origen_lead']) ?></dd></div>
                                     <?php endif; ?>
@@ -618,6 +672,65 @@ function toggleDetail(rowId) {
     const icon = document.getElementById(rowId + '-icon');
     detail.classList.toggle('open');
     icon.classList.toggle('open');
+}
+
+function cambiarEstado(select) {
+    const uid = select.dataset.uid;
+    const nuevoEstado = select.value;
+    const originalEstado = select.querySelector('option[selected]')?.value || select.dataset.prev;
+
+    // Guardar estado anterior para posible rollback
+    if (!select.dataset.prev) select.dataset.prev = originalEstado || select.value;
+
+    // Feedback visual inmediato
+    const prevColor = select.className;
+    select.className = select.className.replace(/bg-\w+-\d+/g, 'bg-gray-100');
+    select.classList.add('opacity-60');
+    select.disabled = true;
+
+    const formData = new FormData();
+    formData.append('action', 'update_estado');
+    formData.append('uid', uid);
+    formData.append('estado', nuevoEstado);
+
+    fetch('leads.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.ok) {
+            // Actualizar clases según nuevo estado
+            select.className = select.className.replace(/bg-\w+-\d+/g, '');
+            const styles = {
+                'Nuevo':      { bg: 'bg-blue-100', fg: 'text-blue-800' },
+                'Contactado': { bg: 'bg-amber-100', fg: 'text-amber-800' },
+                'Cerrado':    { bg: 'bg-emerald-100', fg: 'text-emerald-800' }
+            };
+            const s = styles[nuevoEstado] || { bg: 'bg-gray-100', fg: 'text-gray-700' };
+            select.className = select.className + ' ' + s.bg + ' ' + s.fg;
+            select.dataset.prev = nuevoEstado;
+            // Actualizar todos los selects del mismo lead en la página
+            document.querySelectorAll('.estado-select[data-uid="' + uid + '"]').forEach(el => {
+                el.value = nuevoEstado;
+                el.className = select.className;
+                el.dataset.prev = nuevoEstado;
+            });
+        } else {
+            console.error('Error al actualizar estado:', data.error);
+            select.value = select.dataset.prev;
+            select.className = prevColor;
+        }
+    })
+    .catch(err => {
+        console.error('Error de red:', err);
+        select.value = select.dataset.prev;
+        select.className = prevColor;
+    })
+    .finally(() => {
+        select.classList.remove('opacity-60');
+        select.disabled = false;
+    });
 }
 </script>
 
