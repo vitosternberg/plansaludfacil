@@ -39,6 +39,24 @@ try {
     $stmt->execute();
     $contactId = $conn->insert_id;
     $stmt->close();
+
+    // CAMBIO 2026-08-05: Insertar tambien en procesar_formularios
+    // para que los datos del modal WhatsApp aparezcan en el dashboard de leads
+    $datos_adicionales = json_encode([
+        'source' => 'whatsapp_modal',
+        'whatsapp_contact_id' => $contactId,
+        'date' => $date,
+    ], JSON_UNESCAPED_UNICODE);
+
+    $stmt2 = $conn->prepare("INSERT INTO procesar_formularios (id_formulario_tipo, nombre, correo, celular, datos_adicionales) VALUES (?, ?, ?, ?, ?)");
+    if ($stmt2) {
+        $id_formulario_tipo = 1;
+        $correo = '';
+        $stmt2->bind_param("issss", $id_formulario_tipo, $data['name'], $correo, $data['phone'], $datos_adicionales);
+        $stmt2->execute();
+        $stmt2->close();
+    }
+
     $conn->close();
 
     echo json_encode([
