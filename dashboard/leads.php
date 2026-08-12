@@ -17,7 +17,22 @@ if ($mysqli === null) {
 $mysqli->set_charset("utf8mb4");
 
 // ─── ASEGURAR COLUMNA estado EN cotizaciones ───────────────────
-@$mysqli->query("ALTER TABLE cotizaciones ADD COLUMN IF NOT EXISTS estado VARCHAR(20) NOT NULL DEFAULT 'Nuevo' AFTER fecha_creacion");
+@$mysqli->query("ALTER TABLE cotizaciones ADD COLUMN IF NOT EXISTS estado VARCHAR(30) NOT NULL DEFAULT 'Nuevo' AFTER fecha_creacion");
+
+// ─── ESTADOS CENTRALIZADOS (fuente única de verdad) ─────────────
+$ESTADOS = [
+    'Nuevo'                   => ['label' => 'Nuevo',                    'icon' => '🆕', 'bg' => 'bg-blue-100',     'fg' => 'text-blue-800'],
+    'Contactado'              => ['label' => 'Contactado',               'icon' => '📞', 'bg' => 'bg-amber-100',    'fg' => 'text-amber-800'],
+    'En Negociación'          => ['label' => 'En Negociación',           'icon' => '💬', 'bg' => 'bg-indigo-100',   'fg' => 'text-indigo-800'],
+    'Cotización Enviada'      => ['label' => 'Cotización Enviada',       'icon' => '📧', 'bg' => 'bg-sky-100',      'fg' => 'text-sky-800'],
+    'En Espera de Respuesta'  => ['label' => 'En Espera de Respuesta',   'icon' => '⏳', 'bg' => 'bg-yellow-100',   'fg' => 'text-yellow-800'],
+    'No Desea Asesoría'       => ['label' => 'No Desea Asesoría',        'icon' => '🚫', 'bg' => 'bg-rose-100',     'fg' => 'text-rose-800'],
+    'Oferta No Corresponde'   => ['label' => 'Oferta No Corresponde',    'icon' => '❌', 'bg' => 'bg-orange-100',   'fg' => 'text-orange-800'],
+    'Cerrado'                 => ['label' => 'Cerrado',                  'icon' => '✅', 'bg' => 'bg-emerald-100',  'fg' => 'text-emerald-800'],
+    'Contacto Cerrado'        => ['label' => 'Contacto Cerrado',         'icon' => '🔒', 'bg' => 'bg-slate-100',    'fg' => 'text-slate-800'],
+    'No Responde'             => ['label' => 'No Responde',              'icon' => '🔇', 'bg' => 'bg-gray-100',     'fg' => 'text-gray-800'],
+    'Facturado'               => ['label' => 'Facturado',                'icon' => '💰', 'bg' => 'bg-lime-100',     'fg' => 'text-lime-800'],
+];
 
 // ─── HANDLER AJAX: actualizar estado ───────────────────────────
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'update_estado') {
@@ -25,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 
     $uid    = $_POST['uid'] ?? '';
     $nuevo  = $_POST['estado'] ?? '';
-    $validos = ['Nuevo', 'Contactado', 'Cerrado'];
+    $validos = array_keys($ESTADOS);
 
     if (!in_array($nuevo, $validos, true)) {
         echo json_encode(['ok' => false, 'error' => 'Estado inválido']);
@@ -65,27 +80,31 @@ $offset   = ($page - 1) * $perPage;
 $metricas = ['total' => 0, 'nuevos' => 0, 'contactados' => 0, 'cerrados' => 0, 'hoy' => 0];
 $hoy = date('Y-m-d');
 
-// procesar_formularios
-$r = $mysqli->query("SELECT COUNT(id) as n FROM procesar_formularios");
-if ($r) $metricas['total'] += (int)$r->fetch_assoc()['n'];
-$r = $mysqli->query("SELECT COUNT(id) as n FROM procesar_formularios WHERE estado='Nuevo'");
-if ($r) $metricas['nuevos'] += (int)$r->fetch_assoc()['n'];
-$r = $mysqli->query("SELECT COUNT(id) as n FROM procesar_formularios WHERE estado='Contactado'");
-if ($r) $metricas['contactados'] += (int)$r->fetch_assoc()['n'];
-$r = $mysqli->query("SELECT COUNT(id) as n FROM procesar_formularios WHERE estado='Cerrado'");
-if ($r) $metricas['cerrados'] += (int)$r->fetch_assoc()['n'];
-$r = $mysqli->query("SELECT COUNT(id) as n FROM procesar_formularios WHERE DATE(fecha_creacion)='$hoy'");
-if ($r) $metricas['hoy'] += (int)$r->fetch_assoc()['n'];
+// Helper: suma conteo de una query a una clave de métrica
+$sumar = function($mysqli, string $sql, string $clave) use (&$metricas) {
+    $r = $mysqli->query($sql);
+    if ($r) $metricas[$clave] += (int)$r->fetch_assoc()['n'];
+};
 
-// cotizaciones (sin columna estado → se consideran "Nuevo" por defecto)
-$r = $mysqli->query("SELECT COUNT(id) as n FROM cotizaciones");
-if ($r) {
-    $n = (int)$r->fetch_assoc()['n'];
-    $metricas['total'] += $n;
-    $metricas['nuevos'] += $n;
-}
-$r = $mysqli->query("SELECT COUNT(id) as n FROM cotizaciones WHERE DATE(fecha_creacion)='$hoy'");
-if ($r) $metricas['hoy'] += (int)$r->fetch_assoc()['n'];
+// Total
+$sumar($mysqli, "SELECT COUNT(id) as n FROM procesar_formularios", 'total');
+$sumar($mysqli, "SELECT COUNT(id) as n FROM cotizaciones", 'total');
+
+// Nuevos
+$sumar($mysqli, "SELECT COUNT(id) as n FROM procesar_formularios WHERE estado='Nuevo'", 'nuevos');
+$sumar($mysqli, "SELECT COUNT(id) as n FROM cotizaciones WHERE COALESCE(estado,'Nuevo')='Nuevo'", 'nuevos');
+
+// Contactados
+$sumar($mysqli, "SELECT COUNT(id) as n FROM procesar_formularios WHERE estado='Contactado'", 'contactados');
+$sumar($mysqli, "SELECT COUNT(id) as n FROM cotizaciones WHERE estado='Contactado'", 'contactados');
+
+// Cerrados
+$sumar($mysqli, "SELECT COUNT(id) as n FROM procesar_formularios WHERE estado='Cerrado'", 'cerrados');
+$sumar($mysqli, "SELECT COUNT(id) as n FROM cotizaciones WHERE estado='Cerrado'", 'cerrados');
+
+// Hoy
+$sumar($mysqli, "SELECT COUNT(id) as n FROM procesar_formularios WHERE DATE(fecha_creacion)='$hoy'", 'hoy');
+$sumar($mysqli, "SELECT COUNT(id) as n FROM cotizaciones WHERE DATE(fecha_creacion)='$hoy'", 'hoy');
 
 // ─── NORMALIZACIÓN ─────────────────────────────────────────────
 function normalizarLead(array $row): array {
@@ -205,29 +224,27 @@ function normalizarLead(array $row): array {
 
 // ─── HELPERS ───────────────────────────────────────────────────
 function selectEstado(string $estado, string $uid): string {
-    $opciones = [
-        'Nuevo'      => ['bg' => 'bg-blue-100', 'fg' => 'text-blue-800', 'icon' => '🆕'],
-        'Contactado' => ['bg' => 'bg-amber-100', 'fg' => 'text-amber-800', 'icon' => '📞'],
-        'Cerrado'    => ['bg' => 'bg-emerald-100', 'fg' => 'text-emerald-800', 'icon' => '✅'],
-    ];
-    $c = $opciones[$estado] ?? ['bg' => 'bg-gray-100', 'fg' => 'text-gray-700', 'icon' => '•'];
+    global $ESTADOS;
 
-    $html = '<select class="estado-select cursor-pointer appearance-none text-center rounded-full text-xs font-semibold py-1 px-2 border-0 outline-none transition ' . $c['bg'] . ' ' . $c['fg'] . '" data-uid="' . htmlspecialchars($uid) . '" onclick="event.stopPropagation()" onchange="cambiarEstado(this)" style="min-width:120px">';
-    foreach ($opciones as $val => $style) {
-        $sel = $val === $estado ? ' selected' : '';
-        $html .= '<option value="' . $val . '"' . $sel . '>' . $style['icon'] . ' ' . $val . '</option>';
+    // Si el estado no coincide con ninguno conocido, mostrar badge neutro
+    $efectivo = isset($ESTADOS[$estado]) ? $estado : null;
+    if ($efectivo === null) {
+        return '<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold whitespace-nowrap bg-gray-100 text-gray-700">• ' . htmlspecialchars($estado ?: 'Nuevo') . '</span>';
+    }
+    $c = $ESTADOS[$efectivo];
+
+    $html = '<select class="estado-select cursor-pointer appearance-none text-center rounded-full text-xs font-semibold py-1 px-2 border-0 outline-none transition ' . $c['bg'] . ' ' . $c['fg'] . '" data-uid="' . htmlspecialchars($uid) . '" onclick="event.stopPropagation()" onchange="cambiarEstado(this)" style="min-width:140px">';
+    foreach ($ESTADOS as $val => $style) {
+        $sel = $val === $efectivo ? ' selected' : '';
+        $html .= '<option value="' . htmlspecialchars($val) . '"' . $sel . '>' . $style['icon'] . ' ' . $style['label'] . '</option>';
     }
     $html .= '</select>';
     return $html;
 }
 
 function badgeEstado(string $estado): string {
-    $map = [
-        'Nuevo'      => ['bg' => 'bg-blue-100', 'fg' => 'text-blue-800', 'icon' => '🆕'],
-        'Contactado' => ['bg' => 'bg-amber-100', 'fg' => 'text-amber-800', 'icon' => '📞'],
-        'Cerrado'    => ['bg' => 'bg-emerald-100', 'fg' => 'text-emerald-800', 'icon' => '✅'],
-    ];
-    $c = $map[$estado] ?? ['bg' => 'bg-gray-100', 'fg' => 'text-gray-700', 'icon' => '•'];
+    global $ESTADOS;
+    $c = $ESTADOS[$estado] ?? ['bg' => 'bg-gray-100', 'fg' => 'text-gray-700', 'icon' => '•'];
     return '<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold whitespace-nowrap ' . $c['bg'] . ' ' . $c['fg'] . '">' . $c['icon'] . ' ' . htmlspecialchars($estado) . '</span>';
 }
 
@@ -458,9 +475,9 @@ function selected(string $current, string $value): string {
         </div>
         <select name="estado" class="border border-slate-300 rounded-lg px-3 py-2.5 text-sm bg-white focus:ring-2 focus:ring-brand-600 outline-none">
             <option value="">Todos los estados</option>
-            <option value="Nuevo" <?= selected($estado, 'Nuevo') ?>>🆕 Nuevo</option>
-            <option value="Contactado" <?= selected($estado, 'Contactado') ?>>📞 Contactado</option>
-            <option value="Cerrado" <?= selected($estado, 'Cerrado') ?>>✅ Cerrado</option>
+            <?php foreach ($ESTADOS as $ek => $ev): ?>
+            <option value="<?= htmlspecialchars($ek) ?>" <?= selected($estado, $ek) ?>><?= $ev['icon'] ?> <?= htmlspecialchars($ev['label']) ?></option>
+            <?php endforeach; ?>
         </select>
         <select name="origen" class="border border-slate-300 rounded-lg px-3 py-2.5 text-sm bg-white focus:ring-2 focus:ring-brand-600 outline-none">
             <option value="">Todos los orígenes</option>
@@ -703,9 +720,17 @@ function cambiarEstado(select) {
             // Actualizar clases según nuevo estado
             select.className = select.className.replace(/bg-\w+-\d+/g, '');
             const styles = {
-                'Nuevo':      { bg: 'bg-blue-100', fg: 'text-blue-800' },
-                'Contactado': { bg: 'bg-amber-100', fg: 'text-amber-800' },
-                'Cerrado':    { bg: 'bg-emerald-100', fg: 'text-emerald-800' }
+                'Nuevo':                   { bg: 'bg-blue-100',     fg: 'text-blue-800' },
+                'Contactado':              { bg: 'bg-amber-100',    fg: 'text-amber-800' },
+                'En Negociación':          { bg: 'bg-indigo-100',   fg: 'text-indigo-800' },
+                'Cotización Enviada':      { bg: 'bg-sky-100',      fg: 'text-sky-800' },
+                'En Espera de Respuesta':  { bg: 'bg-yellow-100',   fg: 'text-yellow-800' },
+                'No Desea Asesoría':       { bg: 'bg-rose-100',     fg: 'text-rose-800' },
+                'Oferta No Corresponde':   { bg: 'bg-orange-100',   fg: 'text-orange-800' },
+                'Cerrado':                 { bg: 'bg-emerald-100',  fg: 'text-emerald-800' },
+                'Contacto Cerrado':        { bg: 'bg-slate-100',    fg: 'text-slate-800' },
+                'No Responde':             { bg: 'bg-gray-100',     fg: 'text-gray-800' },
+                'Facturado':               { bg: 'bg-lime-100',     fg: 'text-lime-800' }
             };
             const s = styles[nuevoEstado] || { bg: 'bg-gray-100', fg: 'text-gray-700' };
             select.className = select.className + ' ' + s.bg + ' ' + s.fg;
