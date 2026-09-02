@@ -1,0 +1,11 @@
+name = "planes-data-proxy"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+# ORIGEN de la API de datos (proveedor). Ajustar si cambia el dominio.
+[vars]
+ORIGIN = "https://plansaludfacil.cl"
+
+# La API key del proveedor NO va acá (no commitear secretos).
+# Configurarla como secret:
+#   wrangler secret put PLANES_API_KEY
