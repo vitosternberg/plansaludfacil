@@ -100,10 +100,10 @@ function motor_cotizacion_real($record) {
     
     $lead['uf_value'] = 38500;
     
-    // Call PHP engine (no Python dependency — shared hosting compatible)
-    require_once __DIR__ . '/../core/cotizador_engine.php';
+    // Call motor de cotización vía capa de datos (local o API remota)
+    require_once __DIR__ . '/../core/planes_data_provider.php';
     
-    $result = motor_cotizar($lead);
+    $result = pd_cotizar($lead);
     if (!$result || isset($result['error']) || empty($result['recomendaciones'])) return [];
     
     // Convert to formato compatible con la vista

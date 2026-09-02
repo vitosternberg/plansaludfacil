@@ -45,10 +45,10 @@ $lead = [
     'edad_cargas' => $input['edad_cargas'] ?? null,
 ];
 
-// Ejecutar motor PHP (sin dependencia de Python — compatible con shared hosting)
-require_once __DIR__ . '/../core/cotizador_engine.php';
+// Ejecutar motor de cotización vía capa de datos (local o API remota)
+require_once __DIR__ . '/../core/planes_data_provider.php';
 
-$result = motor_cotizar($lead);
+$result = pd_cotizar($lead);
 
 if (isset($result['error'])) {
     http_response_code(500);

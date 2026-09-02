@@ -53,6 +53,14 @@ function connect_db_simple() {
     }
 }
 
+// ── Fuente de datos de planes ─────────────────────────────────────────────
+// 'local'  → lee los CSVs/arrays de ESTE servidor (instalación proveedor).
+// 'remote' → consume la API de datos del proveedor (la data no vive acá).
+if (!defined('PLANES_DATA_SOURCE'))   define('PLANES_DATA_SOURCE', 'local');
+if (!defined('PLANES_API_URL'))       define('PLANES_API_URL', 'https://plansaludfacil.cl/api/planes.php');
+if (!defined('PLANES_API_KEY'))       define('PLANES_API_KEY', API_SECRET_KEY);
+if (!defined('PLANES_API_CACHE_TTL')) define('PLANES_API_CACHE_TTL', 60);
+
 // URL base del sitio — autodetección de subdirectorio (igual que index.php)
 if (!defined('BASE_URL')) {
     $doc_root = str_replace('\\', '/', rtrim($_SERVER['DOCUMENT_ROOT'], '/'));

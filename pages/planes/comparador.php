@@ -6,7 +6,6 @@
  * Usa core/data_isapres.php como fuente de verdad.
  */
 require_once __DIR__ . '/../../omniflow_config.php';
-require_once __DIR__ . '/../../core/data_isapres.php';
 
 $page_title       = 'Comparador de Isapres: Precios Reales 2026 | Plan Salud Fácil';
 $meta_description = 'Compara isapres con precios reales de Superintendencia de Salud. Responde 3 preguntas y ve el precio real de cada isapre para tu perfil.';

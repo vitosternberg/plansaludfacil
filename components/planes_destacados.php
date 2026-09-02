@@ -6,40 +6,9 @@
  * Uso: render_component('planes_destacados')
  */
 
-$cache = [];
-$path = __DIR__ . '/../adjuntos/planes_isapre.csv';
-if (($h = fopen($path, 'r')) === false) return;
-fgetcsv($h, 0, ',', '"', '');
-while (($r = fgetcsv($h, 0, ',', '"', '')) !== false) {
-    if (count($r) < 10) continue;
-    $uf = (float) str_replace(',', '.', $r[3] ?? '0');
-    if ($uf < 0.5) continue;
-    $cache[] = [
-        'isapre'      => trim($r[0] ?? ''),
-        'codigo'      => trim($r[1] ?? ''),
-        'nombre'      => trim($r[2] ?? ''),
-        'uf'          => $uf,
-        'prestadores' => (int)($r[5] ?? 0),
-        'hosp'        => (int)($r[6] ?? 0),
-        'amb'         => (int)($r[7] ?? 0),
-    ];
-}
-fclose($h);
-if (empty($cache)) return;
+require_once __DIR__ . '/../core/planes_data_provider.php';
 
-$plans = [];
-usort($cache, function($a,$b) { return ($b['hosp'] + $b['amb']) - ($a['hosp'] + $a['amb']); });
-foreach ($cache as $p) { if (!in_array($p['isapre'], array_column($plans, 'isapre'))) { $plans[] = $p; break; } }
-usort($cache, function($a,$b) { return $a['uf'] - $b['uf']; });
-foreach ($cache as $p) { if ($p['hosp'] >= 60 && $p['amb'] >= 50 && !in_array($p['isapre'], array_column($plans, 'isapre'))) { $plans[] = $p; break; } }
-usort($cache, function($a,$b) { return ($b['hosp'] + $b['amb'] - $b['uf']*3) - ($a['hosp'] + $a['amb'] - $a['uf']*3); });
-foreach ($cache as $p) { if (!in_array($p['isapre'], array_column($plans, 'isapre'))) { $plans[] = $p; break; } }
-usort($cache, function($a,$b) { return $b['prestadores'] - $a['prestadores']; });
-foreach ($cache as $p) { if (!in_array($p['isapre'], array_column($plans, 'isapre'))) { $plans[] = $p; break; } }
-usort($cache, function($a,$b) { return $b['hosp'] - $a['hosp']; });
-foreach ($cache as $p) { if (!in_array($p['isapre'], array_column($plans, 'isapre'))) { $plans[] = $p; break; } }
-usort($cache, function($a,$b) { return ($b['amb'] - $b['uf']*5) - ($a['amb'] - $a['uf']*5); });
-foreach ($cache as $p) { if (!in_array($p['isapre'], array_column($plans, 'isapre'))) { $plans[] = $p; break; } }
+$plans = pd_get_destacados();
 if (count($plans) < 4) return;
 
 $backgrounds = ['/img/hero_familia.jpg','/img/madre_orgullosa.jpg','/img/mama_hijas.jpg','/img/prestadores_red.jpg','/img/hospitalario_top.jpg','/img/joven_activo.png'];
@@ -95,8 +64,8 @@ $badges = [
                     <div class="text-xs text-white/60 font-medium uppercase tracking-widest mb-1"><?= htmlspecialchars($plan['isapre']) ?></div>
                     <h3 class="text-lg font-bold text-white mb-4 leading-tight"><?= htmlspecialchars($plan['nombre']) ?></h3>
                     <div class="flex justify-center gap-5 text-sm text-white/80 mb-5">
-                        <div class="flex flex-col items-center"><span class="text-xl font-bold text-white"><?= $plan['hosp'] ?>%</span><span class="text-[10px] text-white/50 uppercase mt-0.5">Hospital</span></div>
-                        <div class="flex flex-col items-center"><span class="text-xl font-bold text-white"><?= $plan['amb'] ?>%</span><span class="text-[10px] text-white/50 uppercase mt-0.5">Ambulatorio</span></div>
+                        <div class="flex flex-col items-center"><span class="text-xl font-bold text-white"><?= $plan['cobertura_hosp_pct'] ?>%</span><span class="text-[10px] text-white/50 uppercase mt-0.5">Hospital</span></div>
+                        <div class="flex flex-col items-center"><span class="text-xl font-bold text-white"><?= $plan['cobertura_amb_pct'] ?>%</span><span class="text-[10px] text-white/50 uppercase mt-0.5">Ambulatorio</span></div>
                         <div class="flex flex-col items-center"><span class="text-xl font-bold text-white"><?= $plan['prestadores'] ?></span><span class="text-[10px] text-white/50 uppercase mt-0.5">Prestadores</span></div>
                     </div>
                     <div class="mb-5">

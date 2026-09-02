@@ -5,34 +5,13 @@
  * URL: /planes/detalle/?codigo=PPS23300
  */
 require_once __DIR__ . '/../../omniflow_config.php';
+require_once __DIR__ . '/../../core/planes_data_provider.php';
 
 $codigo = trim($_GET['codigo'] ?? '');
 $plan = null;
 
 if (!empty($codigo)) {
-    $csvfile = __DIR__ . '/../../adjuntos/planes_isapre.csv';
-    if (file_exists($csvfile)) {
-        $handle = fopen($csvfile, 'r');
-        $headers = fgetcsv($handle, 0, ',', '"', '');
-        while (($row = fgetcsv($handle, 0, ',', '"', '')) !== false) {
-            if (count($row) >= 5 && trim($row[1] ?? '') === $codigo) {
-                $plan = [
-                    'isapre'             => trim($row[0] ?? ''),
-                    'codigo'             => trim($row[1] ?? ''),
-                    'nombre'             => trim($row[2] ?? ''),
-                    'uf'                 => trim($row[3] ?? ''),
-                    'tope_anual_uf'      => trim($row[4] ?? ''),
-                    'prestadores'        => trim($row[5] ?? ''),
-                    'cobertura_hosp_pct' => trim($row[6] ?? ''),
-                    'cobertura_amb_pct'  => trim($row[7] ?? ''),
-                    'url'                => trim($row[8] ?? ''),
-                    'region'             => trim($row[9] ?? 'todas'),
-                ];
-                break;
-            }
-        }
-        fclose($handle);
-    }
+    $plan = pd_get_plan($codigo);
 }
 
 // Variables para template seo-page

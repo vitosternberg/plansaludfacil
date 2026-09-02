@@ -4,37 +4,14 @@
  * Usa revision_IA_Planes_isapre.csv y el motor de cotización.
  * Requiere: core/cotizador_engine.php
  */
-require_once __DIR__ . '/cotizador_engine.php';
+require_once __DIR__ . '/planes_data_provider.php';
 
 function get_isapre_cobertura($isapre_name) {
-    static $cache = null;
-    if ($cache === null) {
-        $cache = [];
-        $path = __DIR__ . '/../adjuntos/revision_IA_Planes_isapre.csv';
-        if (($h = fopen($path, 'r')) === false) return null;
-        fgetcsv($h, 0, ',', '"', ''); fgetcsv($h, 0, ',', '"', '');
-        while (($r = fgetcsv($h, 0, ',', '"', '')) !== false) {
-            if (count($r) < 13) continue;
-            $n = _norm($r[0]); if (!$n) continue;
-            $cache[$n] = ['hp'=>$r[2]??'-','cp'=>$r[3]??'-','tp'=>$r[4]??'-','hl'=>$r[6]??'-','cl'=>$r[7]??'-','tl'=>$r[8]??'-','urg'=>$r[10]??'-','red'=>$r[12]??''];
-        }
-        fclose($h);
-    }
-    return $cache[$isapre_name] ?? null;
+    return pd_get_isapre_cobertura($isapre_name);
 }
-function _norm($n){$n=trim($n);$m=['cruz blanca'=>'Cruz Blanca','nueva masvida'=>'Nueva Masvida','banmédica'=>'Banmédica','banmedica'=>'Banmédica','vida tres'=>'Vida Tres'];$l=strtolower($n);return $m[$l]??$n;}
 
 function get_isapre_precios($isapre, $edad, $cargas=0) {
-    $planes = load_catalog();
-    $precios = [];
-    foreach ($planes as $p) {
-        if ($p['isapre'] !== $isapre) continue;
-        $pr = calcular_precio($p['uf'], $edad, $cargas, null, null, null, $p['isapre']);
-        $precios[] = $pr['total_clp'];
-    }
-    if (!$precios) return null;
-    sort($precios); $n = count($precios);
-    return ['min'=>$precios[0],'max'=>$precios[$n-1],'mediana'=>$precios[(int)($n/2)],'planes'=>$n];
+    return pd_get_isapre_precios($isapre, $edad, $cargas);
 }
 
 function render_isapre_data($isapre) {
@@ -81,33 +58,18 @@ function render_isapre_data($isapre) {
  * Datos desde planes_isapre.csv (2,231 planes).
  */
 function render_isapre_plans_jsonld($isapre_name) {
-    static $cache = null;
-    if ($cache === null) {
-        $cache = []; // [isapre_normalizada] => [planes]
-        $path = __DIR__ . '/../adjuntos/planes_isapre.csv';
-        if (($h = fopen($path, 'r')) === false) return;
-        fgetcsv($h, 0, ',', '"', '');
-        while (($r = fgetcsv($h, 0, ',', '"', '')) !== false) {
-            if (count($r) < 10) continue;
-            $isapre = trim($r[0] ?? '');
-            $codigo = trim($r[1] ?? '');
-            $nombre = trim($r[2] ?? '');
-            if (empty($isapre) || empty($codigo)) continue;
-            $cache[$isapre][] = ['codigo' => $codigo, 'nombre' => $nombre];
-        }
-        fclose($h);
-    }
-
-    $plans = $cache[$isapre_name] ?? [];
+    $data = pd_search(['isapre' => $isapre_name, 'limit' => 100]);
+    $plans = $data['planes'] ?? [];
     if (empty($plans)) return;
 
+    $host = $_SERVER['HTTP_HOST'] ?? 'plansaludfacil.cl';
     $item_list = [];
     foreach ($plans as $i => $p) {
         $item_list[] = [
             '@type' => 'ListItem',
             'position' => $i + 1,
             'name' => $p['nombre'],
-            'url' => 'https://plansaludfacil.cl' . BASE_URL . '/planes/comparador/?codigo=' . $p['codigo'],
+            'url' => 'https://' . $host . BASE_URL . '/planes/comparador/?codigo=' . $p['codigo'],
         ];
     }
 
@@ -129,62 +91,24 @@ function render_isapre_plans_jsonld($isapre_name) {
  * Datos desde planes_isapre.csv.
  */
 function render_isapre_hero_stats($isapre_name) {
-    static $cache = null;
-    if ($cache === null) {
-        $cache = []; // [isapre] => [planes, stats, global_stats]
-        $path = __DIR__ . '/../adjuntos/planes_isapre.csv';
-        $all_plans = [];
-        if (($h = fopen($path, 'r')) === false) return;
-        fgetcsv($h, 0, ',', '"', '');
-        while (($r = fgetcsv($h, 0, ',', '"', '')) !== false) {
-            if (count($r) < 10) continue;
-            $isapre = trim($r[0] ?? '');
-            $all_plans[] = [
-                'isapre' => $isapre,
-                'codigo' => trim($r[1] ?? ''),
-                'nombre' => trim($r[2] ?? ''),
-                'uf' => (float) str_replace(',', '.', $r[3] ?? '0'),
-                'prestadores' => (int)($r[5] ?? 0),
-                'hosp' => (int)($r[6] ?? 0),
-                'amb' => (int)($r[7] ?? 0),
-            ];
-        }
-        fclose($h);
+    $stats = pd_get_isapre_stats($isapre_name);
+    if (!$stats) return;
 
-        // Group by isapre
-        foreach ($all_plans as $p) {
-            $cache[$p['isapre']][] = $p;
-        }
-        $cache['_all'] = $all_plans;
-    }
+    $count = $stats['count'];
+    $avg_h = $stats['avg_hosp'];
+    $avg_a = $stats['avg_amb'];
+    $avg_uf = $stats['avg_uf'];
+    $avg_prest = $stats['avg_prest'];
 
-    $plans = $cache[$isapre_name] ?? [];
-    $all = $cache['_all'] ?? [];
-    if (empty($plans)) return;
+    $global_h = $stats['global']['avg_hosp'];
+    $global_a = $stats['global']['avg_amb'];
+    $global_uf = $stats['global']['avg_uf'];
+    $global_prest = $stats['global']['avg_prest'];
 
-    // Stats for this isapre
-    $count = count($plans);
-    $avg_h = round(array_sum(array_column($plans, 'hosp')) / $count);
-    $avg_a = round(array_sum(array_column($plans, 'amb')) / $count);
-    $avg_uf = round(array_sum(array_column($plans, 'uf')) / $count, 2);
-    $avg_prest = round(array_sum(array_column($plans, 'prestadores')) / $count);
-
-    // Global averages
-    $all_count = count($all);
-    $global_h = round(array_sum(array_column($all, 'hosp')) / $all_count);
-    $global_a = round(array_sum(array_column($all, 'amb')) / $all_count);
-    $global_uf = round(array_sum(array_column($all, 'uf')) / $all_count, 2);
-    $global_prest = round(array_sum(array_column($all, 'prestadores')) / $all_count);
-
-    // Top 4 plans: cheapest, best coverage, most prestadores, best rated
-    usort($plans, fn($a,$b) => $a['uf'] <=> $b['uf']);
-    $cheapest = $plans[0];
-    usort($plans, fn($a,$b) => ($b['hosp']+$b['amb']) <=> ($a['hosp']+$a['amb']));
-    $best_cov = $plans[0];
-    usort($plans, fn($a,$b) => $b['prestadores'] <=> $a['prestadores']);
-    $best_net = $plans[0];
-    usort($plans, fn($a,$b) => ($b['prestadores']+$b['hosp']+$b['amb']-$a['uf']) <=> ($a['prestadores']+$a['hosp']+$a['amb']-$a['uf']));
-    $balanced = $plans[0];
+    $cheapest = $stats['top']['cheapest'];
+    $best_cov = $stats['top']['best_cov'];
+    $best_net = $stats['top']['best_net'];
+    $balanced = $stats['top']['balanced'];
     ?>
 <section class="max-w-4xl mx-auto px-4 py-6">
     <!-- Stats bar -->
@@ -201,13 +125,13 @@ function render_isapre_hero_stats($isapre_name) {
         <div class="bg-gradient-to-b from-white to-green-50 rounded-2xl p-5 border border-green-200 text-center">
             <div class="text-xs text-green-600 font-bold uppercase mb-2">Más económico</div>
             <div class="text-sm font-bold text-gray-800 mb-1"><?= htmlspecialchars($cheapest['nombre']) ?></div>
-            <div class="flex justify-center gap-3 text-xs text-gray-500 mb-2"><span>Hosp. <?= $cheapest['hosp'] ?>%</span><span>Amb. <?= $cheapest['amb'] ?>%</span></div>
+            <div class="flex justify-center gap-3 text-xs text-gray-500 mb-2"><span>Hosp. <?= $cheapest['cobertura_hosp_pct'] ?>%</span><span>Amb. <?= $cheapest['cobertura_amb_pct'] ?>%</span></div>
             <div class="text-lg font-extrabold text-green-700"><?= number_format($cheapest['uf'],2,',','.') ?> UF</div>
         </div>
         <div class="bg-gradient-to-b from-white to-blue-50 rounded-2xl p-5 border border-blue-200 text-center">
             <div class="text-xs text-blue-600 font-bold uppercase mb-2">Mejor cobertura</div>
             <div class="text-sm font-bold text-gray-800 mb-1"><?= htmlspecialchars($best_cov['nombre']) ?></div>
-            <div class="flex justify-center gap-3 text-xs text-gray-500 mb-2"><span>Hosp. <?= $best_cov['hosp'] ?>%</span><span>Amb. <?= $best_cov['amb'] ?>%</span></div>
+            <div class="flex justify-center gap-3 text-xs text-gray-500 mb-2"><span>Hosp. <?= $best_cov['cobertura_hosp_pct'] ?>%</span><span>Amb. <?= $best_cov['cobertura_amb_pct'] ?>%</span></div>
             <div class="text-lg font-extrabold text-blue-700"><?= number_format($best_cov['uf'],2,',','.') ?> UF</div>
         </div>
         <div class="bg-gradient-to-b from-white to-purple-50 rounded-2xl p-5 border border-purple-200 text-center">
@@ -219,7 +143,7 @@ function render_isapre_hero_stats($isapre_name) {
         <div class="bg-gradient-to-b from-white to-amber-50 rounded-2xl p-5 border border-amber-200 text-center">
             <div class="text-xs text-amber-600 font-bold uppercase mb-2">Más equilibrado</div>
             <div class="text-sm font-bold text-gray-800 mb-1"><?= htmlspecialchars($balanced['nombre']) ?></div>
-            <div class="flex justify-center gap-3 text-xs text-gray-500 mb-2"><span>Hosp. <?= $balanced['hosp'] ?>%</span><span>Amb. <?= $balanced['amb'] ?>%</span></div>
+            <div class="flex justify-center gap-3 text-xs text-gray-500 mb-2"><span>Hosp. <?= $balanced['cobertura_hosp_pct'] ?>%</span><span>Amb. <?= $balanced['cobertura_amb_pct'] ?>%</span></div>
             <div class="text-lg font-extrabold text-amber-700"><?= number_format($balanced['uf'],2,',','.') ?> UF</div>
         </div>
     </div>
