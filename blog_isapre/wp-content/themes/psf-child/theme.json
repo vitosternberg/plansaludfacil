@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+	"version": 3,
+	"settings": {
+		"inherit": true
+	},
+	"customTemplates": [
+		{
+			"name": "page-articulos",
+			"postTypes": ["page"],
+			"title": "Listado de artículos"
+		},
+		{
+			"name": "page-contacto",
+			"postTypes": ["page"],
+			"title": "Contacto"
+		},
+		{
+			"name": "page-sobre-plan-salud-facil",
+			"postTypes": ["page"],
+			"title": "Sobre Plan Salud Fácil"
+		}
+	]
+}

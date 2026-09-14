@@ -1,0 +1,44 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="margin-top:var(--wp--preset--spacing--60);margin-bottom:var(--wp--preset--spacing--60)">
+
+<!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">Artículos</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Todas nuestras guías y consejos sobre Isapres en Chile.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:query {"queryId":10,"query":{"perPage":20,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"className":"ri-blog-articles-list"} -->
+<div class="wp-block-query ri-blog-articles-list is-layout-flow wp-block-query-is-layout-flow">
+<!-- wp:post-template -->
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}},"border":{"bottom":{"color":"var:preset|color|accent-6","width":"1px"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="border-bottom-color:var(--wp--preset--color--accent-6);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40)">
+<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|40"}}}} -->
+<div class="wp-block-columns">
+<!-- wp:column {"width":"28%"} -->
+<div class="wp-block-column" style="flex-basis:28%">
+<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/3","style":{"border":{"radius":"8px"}}} /-->
+</div>
+<!-- /wp:column -->
+<!-- wp:column {"width":"72%"} -->
+<div class="wp-block-column" style="flex-basis:72%">
+<!-- wp:post-title {"level":2,"isLink":true,"fontSize":"large"} /-->
+<!-- wp:post-date {"fontSize":"small"} /-->
+<!-- wp:post-excerpt {"moreText":"Leer artículo →","excerptLength":35} /-->
+</div>
+<!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
+</div>
+<!-- /wp:group -->
+<!-- /wp:post-template -->
+</div>
+<!-- /wp:query -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
