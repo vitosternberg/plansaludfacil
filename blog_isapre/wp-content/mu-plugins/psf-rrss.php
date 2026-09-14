@@ -2,7 +2,7 @@
 /**
  * Plugin Name: PSF RRSS Links
  * Description: Enlaces oficiales de redes sociales en el blog Plan Salud Fácil.
- * Version: 1.1.0
+ * Version: 1.2.0
  */
 
 if (!defined('ABSPATH')) {
@@ -46,7 +46,7 @@ function psf_blog_follow_markup(): string
         );
     }
 
-    return '<div class="ri-blog-follow" aria-label="Sígueme en redes sociales"><span class="ri-blog-follow__label">Sígueme</span>' . $links . '</div>';
+    return '<div class="ri-blog-follow" data-psf-rrss="1" aria-label="Sígueme en redes sociales"><span class="ri-blog-follow__label">Sígueme</span>' . $links . '</div>';
 }
 
 function psf_blog_follow_css(): string
@@ -78,7 +78,7 @@ function psf_blog_replace_follow_blocks(string $html): string
         $html
     ) ?? $html;
 
-    if (strpos($html, 'ri-blog-header-right') !== false && substr_count($html, 'ri-blog-follow') < 1) {
+    if (strpos($html, 'ri-blog-header-right') !== false && substr_count($html, 'data-psf-rrss="1"') < 1) {
         $html = preg_replace(
             '/(<div class="wp-block-group ri-blog-header-right[^"]*"[^>]*>)(\s*)/',
             '$1' . $markup . '$2',
@@ -87,7 +87,7 @@ function psf_blog_replace_follow_blocks(string $html): string
         ) ?? $html;
     }
 
-    if (strpos($html, '<footer') !== false && substr_count($html, 'ri-blog-follow') < 2) {
+    if (strpos($html, '<footer') !== false && substr_count($html, 'data-psf-rrss="1"') < 2) {
         $html = preg_replace(
             '/(<footer[^>]*>)/',
             '$1' . $markup,
@@ -99,14 +99,90 @@ function psf_blog_replace_follow_blocks(string $html): string
     return $html;
 }
 
+function psf_blog_rrss_buffer_start(): void
+{
+    if (is_admin() || wp_doing_ajax() || wp_doing_cron()) {
+        return;
+    }
+
+    ob_start('psf_blog_replace_follow_blocks');
+}
+
+add_action('init', 'psf_blog_rrss_buffer_start', 0);
+
 add_action('wp_head', function (): void {
     echo '<style id="psf-blog-follow-css">' . psf_blog_follow_css() . '</style>';
 }, 20);
 
-add_filter('render_block', function (string $block_content): string {
-    return psf_blog_replace_follow_blocks($block_content);
-}, 100);
+add_filter('render_block', function (string $block_content, array $block = []): string {
+    $block_content = psf_blog_replace_follow_blocks($block_content);
 
-add_action('template_redirect', static function (): void {
-    ob_start('psf_blog_replace_follow_blocks');
-}, PHP_INT_MAX);
+    $class_name = $block['attrs']['className'] ?? '';
+    if ($class_name && strpos($class_name, 'ri-blog-header-right') !== false && strpos($block_content, 'data-psf-rrss="1"') === false) {
+        $block_content = preg_replace(
+            '/(<div class="wp-block-group ri-blog-header-right[^"]*"[^>]*>)/',
+            '$1' . psf_blog_follow_markup(),
+            $block_content,
+            1
+        ) ?? $block_content;
+    }
+
+    if (($block['blockName'] ?? '') === 'core/template-part' && ($block['attrs']['slug'] ?? '') === 'footer' && strpos($block_content, 'data-psf-rrss="1"') === false) {
+        $block_content .= psf_blog_follow_markup();
+    }
+
+    return $block_content;
+}, 100, 2);
+
+add_action('wp_footer', function (): void {
+    $profiles = array_map(
+        static fn(array $profile): array => [
+            'class' => $profile['class'],
+            'url' => $profile['url'],
+            'name' => $profile['name'],
+            'icon' => $profile['icon'],
+        ],
+        psf_blog_social_profiles()
+    );
+    ?>
+    <script id="psf-blog-rrss-fix">
+    (function () {
+        var profiles = <?php echo wp_json_encode($profiles); ?>;
+        function patchFollowBlocks() {
+            document.querySelectorAll('.ri-blog-follow').forEach(function (box) {
+                if (box.getAttribute('data-psf-rrss') === '1') {
+                    return;
+                }
+                var label = box.querySelector('.ri-blog-follow__label');
+                var labelHtml = label ? label.outerHTML : '<span class="ri-blog-follow__label">Sígueme</span>';
+                var links = profiles.map(function (profile) {
+                    return '<a class="ri-blog-follow__icon ri-blog-follow__icon--' + profile.class + '" href="' + profile.url + '" target="_blank" rel="noopener noreferrer" aria-label="' + profile.name + '">' + profile.icon + '</a>';
+                }).join('');
+                box.innerHTML = labelHtml + links;
+                box.setAttribute('data-psf-rrss', '1');
+            });
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', patchFollowBlocks);
+        } else {
+            patchFollowBlocks();
+        }
+    })();
+    </script>
+    <?php
+}, 99);
+
+add_action('init', static function (): void {
+    $option = 'psf_rrss_version';
+    $version = '1.2.0';
+    if (get_option($option) === $version) {
+        return;
+    }
+    update_option($option, $version, false);
+    if (function_exists('litespeed_purge_all')) {
+        litespeed_purge_all();
+    }
+    if (function_exists('wp_cache_flush')) {
+        wp_cache_flush();
+    }
+}, 999);
