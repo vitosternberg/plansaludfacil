@@ -95,24 +95,29 @@
     <meta name="google-site-verification" content="STeCF3cjAw8N63nEgrCyo6_CifEvabh7KCovktoIKNI" />
 
     <!-- Schema.org: Organization -->
+    <?php
+    require_once __DIR__ . '/../core/social_profiles.php';
+    $psf_schema_same_as = array_merge(
+        psf_social_urls(),
+        ['https://wa.me/56952282339']
+    );
+    ?>
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Plan Salud Facil",
-      "url": "/",
-      "logo": "/img/logo.png",
-      "description": "Comparador de planes de Isapre 100% gratuito. Te ayudamos a encontrar el mejor plan de salud segun tus necesidades y presupuesto.",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+56 9 5228 2339",
-        "contactType": "customer service",
-        "availableLanguage": "Spanish"
-      },
-      "sameAs": [
-        "https://wa.me/56952282339"
-      ]
-    }
+    <?= json_encode([
+        '@context' => 'https://schema.org',
+        '@type' => 'Organization',
+        'name' => 'Plan Salud Facil',
+        'url' => '/',
+        'logo' => '/img/logo.png',
+        'description' => 'Comparador de planes de Isapre 100% gratuito. Te ayudamos a encontrar el mejor plan de salud segun tus necesidades y presupuesto.',
+        'contactPoint' => [
+            '@type' => 'ContactPoint',
+            'telephone' => '+56 9 5228 2339',
+            'contactType' => 'customer service',
+            'availableLanguage' => 'Spanish',
+        ],
+        'sameAs' => $psf_schema_same_as,
+    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . "\n" ?>
     </script>
 
     <!-- Schema.org: WebSite -->

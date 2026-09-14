@@ -22,6 +22,9 @@ $siteActivityTrackerConfig = [
 ?>
 <footer class="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-6 mt-auto footer-gradient">
     <div class="container mx-auto px-4 text-center text-sm">
+        <div class="flex justify-center mb-4">
+            <?php $variant = 'footer'; include __DIR__ . '/../components/social_icons.php'; ?>
+        </div>
         <p>&copy; 2025 Plan Salud Facil. Todos los derechos reservados.</p>
         <div class="mt-2 space-x-4">
             <a href="<?= defined('BASE_URL') ? BASE_URL : '' ?>/nosotros/privacidad" class="hover:text-blue-200 transition">Politica de Privacidad</a>

@@ -42,10 +42,12 @@ $header_admin_email = 'contacto@plansaludfacil.cl'; // Email estático o pasado 
                 </a>
             </div>
             
-            <!-- Opcional: Horario de atencion -->
-            <div class="hidden md:flex items-center">
-                <iconify-icon icon="mdi:clock-outline" width="14" class="mr-1"></iconify-icon>
-                <span>Lunes a Viernes: 9:00 - 18:00 hrs</span>
+            <div class="flex items-center gap-4">
+                <?php $variant = 'header'; include __DIR__ . '/../components/social_icons.php'; ?>
+                <div class="hidden md:flex items-center">
+                    <iconify-icon icon="mdi:clock-outline" width="14" class="mr-1"></iconify-icon>
+                    <span>Lunes a Viernes: 9:00 - 18:00 hrs</span>
+                </div>
             </div>
         </div>
     </div>
