@@ -2,6 +2,7 @@
 /**
  * Perfiles oficiales de redes sociales de Plan Salud Fácil.
  */
+if (!function_exists('psf_social_profiles')) {
 function psf_social_profiles(): array
 {
     return [
@@ -22,8 +23,11 @@ function psf_social_profiles(): array
         ],
     ];
 }
+}
 
+if (!function_exists('psf_social_urls')) {
 function psf_social_urls(): array
 {
     return array_column(psf_social_profiles(), 'url');
+}
 }

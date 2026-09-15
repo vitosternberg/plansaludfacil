@@ -2,9 +2,12 @@
 /**
  * JSON-LD @graph único por página.
  */
-require_once __DIR__ . '/geo_facts.php';
-if (is_readable(__DIR__ . '/social_profiles.php')) {
-    require_once __DIR__ . '/social_profiles.php';
+if (!function_exists('psf_site_origin')) {
+    require_once __DIR__ . '/geo_facts.php';
+}
+$social_profiles = __DIR__ . '/social_profiles.php';
+if (is_readable($social_profiles)) {
+    require_once $social_profiles;
 } elseif (!function_exists('psf_social_urls')) {
     function psf_social_urls(): array
     {
@@ -17,8 +20,21 @@ if (is_readable(__DIR__ . '/social_profiles.php')) {
 }
 
 if (!function_exists('psf_schema_emit')) {
-function psf_schema_emit(): void
+function psf_schema_emit()
 {
+    if (!function_exists('psf_site_origin') || !function_exists('psf_canonical_url') || !function_exists('psf_geo_citations') || !function_exists('psf_cite_urls')) {
+        return;
+    }
+    if (!function_exists('psf_social_urls')) {
+        function psf_social_urls(): array
+        {
+            return [
+                'https://www.instagram.com/plansaludfacil/',
+                'https://www.tiktok.com/@plansaludfacil',
+                'https://www.facebook.com/profile.php?id=61594587830939',
+            ];
+        }
+    }
     $origin = psf_site_origin();
     $page_url = psf_canonical_url();
     $org_id = $origin . '/#org';

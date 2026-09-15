@@ -95,14 +95,19 @@
     <meta name="google-site-verification" content="STeCF3cjAw8N63nEgrCyo6_CifEvabh7KCovktoIKNI" />
 
     <?php
-    $schema_graph = __DIR__ . '/../core/schema_graph.php';
-    if (is_readable($schema_graph)) {
-        require_once $schema_graph;
-        if (function_exists('psf_schema_emit')) {
-            psf_schema_emit();
+    try {
+        $schema_graph = __DIR__ . '/../core/schema_graph.php';
+        if (is_readable($schema_graph)) {
+            include_once $schema_graph;
+            if (function_exists('psf_schema_emit')) {
+                psf_schema_emit();
+            }
         }
+    } catch (Throwable $e) {
+        error_log('PSF schema error: ' . $e->getMessage());
     }
     ?>
+    <!-- psf-schema-v3 -->
     <?php if (!empty($itemlist_jsonld)) echo $itemlist_jsonld; ?>
 
  </head>
