@@ -22,18 +22,8 @@ if (is_readable($social_profiles)) {
 if (!function_exists('psf_schema_emit')) {
 function psf_schema_emit()
 {
-    if (!function_exists('psf_site_origin') || !function_exists('psf_canonical_url') || !function_exists('psf_geo_citations') || !function_exists('psf_cite_urls')) {
+    if (!function_exists('psf_site_origin') || !function_exists('psf_canonical_url') || !function_exists('psf_geo_citations') || !function_exists('psf_cite_urls') || !function_exists('psf_social_urls')) {
         return;
-    }
-    if (!function_exists('psf_social_urls')) {
-        function psf_social_urls(): array
-        {
-            return [
-                'https://www.instagram.com/plansaludfacil/',
-                'https://www.tiktok.com/@plansaludfacil',
-                'https://www.facebook.com/profile.php?id=61594587830939',
-            ];
-        }
     }
     $origin = psf_site_origin();
     $page_url = psf_canonical_url();
