@@ -99,6 +99,14 @@ function psf_schema_emit(): void
         unset($page_node['headline']);
     }
 
+    if ($page_type === 'FAQPage') {
+        $faq_entities = $GLOBALS['schema_faq_entities'] ?? [];
+        if (!empty($faq_entities)) {
+            $page_node['mainEntity'] = $faq_entities;
+        }
+        $page_node['citation'] = psf_cite_urls(['supersalud', 'ges_caec']);
+    }
+
     $graph[] = $page_node;
 
     $breadcrumbs = $GLOBALS['breadcrumbs'] ?? [];

@@ -11,29 +11,7 @@ $faq_preguntas = $faq_preguntas ?? [];
 $faq_titulo    = $faq_titulo ?? 'Preguntas Frecuentes';
 
 if (empty($faq_preguntas)) return;
-
-// Construir Schema.org FAQPage
-$schemaFaq = [];
-foreach ($faq_preguntas as $q => $a) {
-    $schemaFaq[] = [
-        '@type'          => 'Question',
-        'name'           => $q,
-        'acceptedAnswer' => [
-            '@type' => 'Answer',
-            'text'  => trim(strip_tags($a)),
-        ],
-    ];
-}
 ?>
-
-<!-- Schema.org FAQPage -->
-<script type="application/ld+json">
-<?= json_encode([
-    '@context'   => 'https://schema.org',
-    '@type'      => 'FAQPage',
-    'mainEntity' => $schemaFaq,
-], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>
-</script>
 
 <section id="preguntas" class="max-w-4xl mx-auto px-4 py-12" aria-labelledby="faq-heading">
     <h2 id="faq-heading" class="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-8">

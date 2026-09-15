@@ -42,21 +42,6 @@ $toc_items = [
 ob_start();
 ?>
 
-<!-- FAQ Schema.org Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type":"Question","name":"¿Qué es un plan de salud individual?","acceptedAnswer":{"@type":"Answer","text":"Es un contrato previsional para un único titular sin beneficiarios. Ideal para profesionales independientes, jóvenes que inician su vida laboral, o adultos sin cargas."}},
-    {"@type":"Question","name":"¿Los planes individuales cubren hospitalización?","acceptedAnswer":{"@type":"Answer","text":"Sí, todos los planes incluyen cobertura de hospitalización (70-90%). Muchos incluyen urgencias en el extranjero."}},
-    {"@type":"Question","name":"¿Puedo pasar de plan individual a familiar?","acceptedAnswer":{"@type":"Answer","text":"Sí. La mayoría de las isapres permiten migrar sin perder antigüedad ni re-evaluar tu Declaración de Salud."}},
-    {"@type":"Question","name":"¿Qué chequeos preventivos cubre?","acceptedAnswer":{"@type":"Answer","text":"Muchos incluyen chequeo ejecutivo anual, dermatología preventiva, evaluación cardiovascular, ginecología/urología."}},
-    {"@type":"Question","name":"¿Conviene un plan más caro entre 30 y 55?","acceptedAnswer":{"@type":"Answer","text":"Generalmente sí. Una hospitalización inesperada puede salir muy cara sin buena cobertura."}}
-  ]
-}
-</script>
-
 <style>
 .answer-direct{background:linear-gradient(135deg,#eff6ff,#f0fdf4);border-left:4px solid #2563eb;padding:16px 20px;border-radius:0 12px 12px 0;margin-bottom:16px;font-size:15px;color:#374151;line-height:1.7}
 </style>

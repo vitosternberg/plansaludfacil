@@ -47,56 +47,6 @@ include __DIR__ . '/../../layout/header.php';
 <!-- GEO WRITING STANDARD: Pyramid structure, direct answers, FAQ  -->
 <!-- ============================================================ -->
 
-<!-- FAQ Structured Data (Schema.org) para Google AI Overview -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Qué es un plan de salud familiar y quiénes lo necesitan?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Es un contrato de salud previsional que agrupa a un titular y sus cargas legales (cónyuge, hijos) bajo una misma póliza. Ideal para familias que quieren unificar su presupuesto de salud, compartir excedentes y acceder a mejores coberturas con un solo contrato."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Conviene unificar las cotizaciones en pareja en un plan familiar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, conviene unificar cuando ambos cotizan y tienen cargas comunes. Permite sumar los ingresos para acceder a un plan de mejor categoría, usar los excedentes de un miembro para cubrir gastos de otro, y simplificar la administración con un solo contrato familiar."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuáles son las mejores coberturas para un plan familiar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Un buen plan familiar debe incluir: alta cobertura hospitalaria (sobre 80%), topes pediátricos amplios para consultas y urgencias, bonificación en clínicas preferentes, y cobertura ambulatoria robusta para exámenes y procedimientos de todos los miembros del grupo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuánto cuesta un plan de salud familiar en Chile?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El costo depende de la renta imponible de los cotizantes y del número de cargas. Se descuenta del 7% legal obligatorio de cada titular. Si los ingresos son altos, generan excedentes que pueden usarse en bonos y atenciones para toda la familia. Nuestra asesoría es 100% gratuita."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo contratar un plan familiar si algún miembro tiene preexistencias?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, puedes contratar un plan familiar aunque algún miembro tenga preexistencias. Analizamos el historial médico del grupo de forma confidencial antes de postular para asegurar que la contratación sea aprobada sin restricciones. No enviamos declaraciones a ciegas."
-      }
-    }
-  ]
-}
-</script>
-
 <style>
 /* Estilo piramidal AIO: respuesta directa destacada */
 .answer-direct {

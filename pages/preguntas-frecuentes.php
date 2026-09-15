@@ -2,16 +2,11 @@
 require_once __DIR__ . '/../core/omniflow_track.php';
 require_once __DIR__ . '/../core/geo_facts.php';
 
-$schema_page_type = 'WebPage';
-$h1 = 'Preguntas Frecuentes sobre ISAPRE';
-$breadcrumbs = [
-    ['label' => 'Inicio', 'url' => (defined('BASE_URL') ? BASE_URL . '/' : '/')],
-    ['label' => 'Preguntas frecuentes', 'url' => '#'],
-];
-$page_title = "Preguntas Frecuentes sobre ISAPRE | Plan Salud Facil";
-$meta_description = "Resuelve todas tus dudas sobre ISAPRE. Costos, coberturas, cambios, cargas, preexistencias y mas.";
-include './layout/plantilla.php';
-include './layout/header.php';
+$facts = psf_geo_facts();
+$citations = psf_geo_citations();
+$ges_caec_url = $citations['ges_caec']['url'];
+$supersalud_url = $citations['supersalud']['url'];
+$isapres_abiertas = psf_isapres_abiertas_texto();
 
 $categorias = [
     ['titulo' => 'Conceptos basicos', 'icono' => '📘', 'preguntas' => [
@@ -64,8 +59,8 @@ $categorias = [
     ]],
     ['titulo' => 'CAEC (Cobertura Catastrofica)', 'icono' => '🛡️', 'preguntas' => [
         '¿Que es la CAEC?' => 'La CAEC (Cobertura Adicional para Enfermedades Catastroficas) es un beneficio que ofrecen algunas ISAPREs para financiar hasta el 100% de los gastos derivados de enfermedades de alto costo, una vez que pagas un deducible anual.',
-        '¿Como funciona la CAEC?' => 'El deducible CAEC equivale a 30 cotizaciones pactadas, con piso 60 UF y tope 126 UF por beneficiario y diagnóstico (norma de Superintendencia). Cubierto el deducible, la isapre financia en su red cerrada el resto del evento. Si hay más de un diagnóstico o beneficiario, aplica 43 cotizaciones con tope 181 UF. Fuente: https://www.superdesalud.gob.cl/consultas-y-orientacion/coberturas-ges-y-caec/',
-        '¿Que ISAPREs ofrecen CAEC?' => 'Las isapres abiertas (Banmédica, Colmena, Consalud, Cruz Blanca, Esencial, Nueva Masvida y Vida Tres) publican red CAEC. Verifica el procedimiento vigente en https://www.superdesalud.gob.cl/ porque la red no es la misma que el prestador preferente del plan diario.',
+        '¿Como funciona la CAEC?' => 'El deducible CAEC equivale a ' . $facts['caec_cotizaciones'] . ' cotizaciones pactadas, con piso ' . $facts['caec_piso_uf'] . ' UF y tope ' . $facts['caec_tope_uf'] . ' UF por beneficiario y diagnóstico (norma de Superintendencia). Cubierto el deducible, la isapre financia en su red cerrada el resto del evento. Si hay más de un diagnóstico o beneficiario, aplica ' . $facts['caec_multiple_cotizaciones'] . ' cotizaciones con tope ' . $facts['caec_multiple_tope_uf'] . ' UF. Fuente: ' . $ges_caec_url,
+        '¿Que ISAPREs ofrecen CAEC?' => 'Las isapres abiertas (' . $isapres_abiertas . ') publican red CAEC. Verifica el procedimiento vigente en ' . $supersalud_url . ' porque la red no es la misma que el prestador preferente del plan diario.',
         '¿Cuando debo activar la CAEC?' => 'Debes activarla apenas te diagnostiquen una enfermedad cuyo tratamiento represente un gasto catastrofico (alto costo). La CAEC no es automatica ni retroactiva: tienes que solicitarla formalmente en tu ISAPRE antes de iniciar el tratamiento.',
         '¿Que cubre la CAEC?' => 'Cubre hospitalizaciones, cirugias y procedimientos ambulatorios de alto costo (como quimioterapia, radioterapia o dialisis) relacionados con la enfermedad catastrofica, siempre que te atiendas en la Red CAEC de tu ISAPRE dentro de Chile.',
         '¿Que NO cubre la CAEC?' => 'No cubre enfermedades preexistentes no declaradas, patologias GES/AUGE (que tienen su propia garantia de cobertura), procedimientos esteticos, tratamientos experimentales ni atenciones realizadas fuera de la Red CAEC.',
@@ -92,17 +87,25 @@ $categorias = [
     ]],
 ];
 
-$schemaEntities = [];
+$faq_pairs = [];
 foreach ($categorias as $cat) {
     foreach ($cat['preguntas'] as $q => $a) {
-        $schemaEntities[] = ['@type' => 'Question', 'name' => $q, 'acceptedAnswer' => ['@type' => 'Answer', 'text' => $a]];
+        $faq_pairs[$q] = $a;
     }
 }
-?>
 
-<script type="application/ld+json">
-<?= json_encode(['@context' => 'https://schema.org', '@type' => 'FAQPage', 'mainEntity' => $schemaEntities], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>
-</script>
+$schema_page_type = 'FAQPage';
+$schema_faq_entities = psf_faq_entities_from_pairs($faq_pairs);
+$h1 = 'Preguntas Frecuentes sobre ISAPRE';
+$breadcrumbs = [
+    ['label' => 'Inicio', 'url' => (defined('BASE_URL') ? BASE_URL . '/' : '/')],
+    ['label' => 'Preguntas frecuentes', 'url' => '#'],
+];
+$page_title = 'Preguntas Frecuentes sobre ISAPRE | Plan Salud Facil';
+$meta_description = 'Resuelve todas tus dudas sobre ISAPRE. Costos, coberturas, cambios, cargas, preexistencias y mas.';
+include './layout/plantilla.php';
+include './layout/header.php';
+?>
 
 <main class="bg-gray-50 font-sans">
     <section class="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-16 px-4">

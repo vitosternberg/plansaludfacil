@@ -46,56 +46,6 @@ include __DIR__ . '/../../layout/header.php';
 <!-- GEO WRITING STANDARD: Pyramid structure, direct answers, FAQ  -->
 <!-- ============================================================ -->
 
-<!-- FAQ Structured Data (Schema.org) para Google AI Overview -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Qué es un plan de salud monoparental y quiénes lo necesitan?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Es un plan de Isapre diseñado para hogares donde un solo adulto es el titular y sostén económico, con hijos u otras cargas legales a su cargo. Ideal para madres y padres solteros, viudos o separados que necesitan maximizar la protección de sus hijos con un solo ingreso."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo elegir la mejor Isapre para una familia monoparental?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Debes priorizar tres factores: copagos fijos y bajos en urgencias pediátricas (porque con niños las urgencias son frecuentes), buena cobertura de licencias médicas (si tú te enfermas, el hogar se queda sin ingresos), y topes de cobertura que no se disparen al agregar cargas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuánto cuesta un plan monoparental en Chile?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El costo depende de tu renta imponible y del número de cargas. Se descuenta de tu 7% legal obligatorio. Al ser un solo cotizante, es clave elegir un plan con primas por carga competitivas para que el valor total no se dispare. Nuestra asesoría es 100% gratuita."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué coberturas son imprescindibles en un plan monoparental?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Las tres coberturas críticas son: red de urgencia pediátrica 24/7 con copago fijo y conocido, buena aprobación de licencias médicas para el titular (porque un mes sin sueldo es catastrófico), y cobertura catastrófica robusta para proteger el patrimonio familiar ante una cirugía mayor."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo contratar un plan monoparental si mi hijo tiene preexistencias?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, puedes contratar un plan monoparental aunque tu hijo tenga preexistencias. Analizamos el historial médico de forma confidencial antes de postular para asegurar que la contratación sea aprobada sin restricciones. No enviamos declaraciones a ciegas: primero evaluamos y luego actuamos."
-      }
-    }
-  ]
-}
-</script>
-
 <style>
 /* Estilo piramidal AIO: respuesta directa destacada */
 .answer-direct {

@@ -112,3 +112,23 @@ if (!function_exists('psf_isapres_abiertas_texto')) {
         return implode(', ', $list) . ' y ' . $last;
     }
 }
+
+if (!function_exists('psf_faq_entities_from_pairs')) {
+    /** @param array<string, string> $pairs */
+    function psf_faq_entities_from_pairs(array $pairs): array
+    {
+        $entities = [];
+        foreach ($pairs as $question => $answer) {
+            $entities[] = [
+                '@type' => 'Question',
+                'name' => $question,
+                'acceptedAnswer' => [
+                    '@type' => 'Answer',
+                    'text' => trim(strip_tags((string) $answer)),
+                ],
+            ];
+        }
+
+        return $entities;
+    }
+}

@@ -41,56 +41,6 @@ include __DIR__ . '/../../layout/plantilla.php';
 include __DIR__ . '/../../layout/header.php';
 ?>
 
-<!-- FAQ Structured Data (Schema.org) para Google AI Overview -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Qué es un plan de salud individual y quiénes lo necesitan?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Es un contrato de salud previsional para un único titular sin beneficiarios. Ideal para profesionales independientes, jóvenes que se independizan de sus padres, o adultos sin cargas familiares. Concentra todo tu 7% en tus propias coberturas, sin promediar riesgos de un grupo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué beneficios tiene un plan de salud individual sin cargas?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Los principales beneficios son: máxima eficiencia de tu 7% (todo se destina a tus coberturas), planes enfocados en tus intereses (deporte, salud mental, telemedicina), y generación rápida de excedentes si tu sueldo es alto. Pagas solo por lo que realmente usas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo elijo la mejor Isapre para un plan individual?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Debes comparar al menos tres factores: la red de clínicas en convenio cercanas a tu hogar o trabajo, los topes anuales de cobertura ambulatoria y hospitalaria, y el porcentaje de bonificación en tus prestaciones más frecuentes. En Plan Salud Fácil hacemos esta comparativa por ti, gratis y en menos de 48 horas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuánto cuesta un plan de salud individual en Chile?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El costo mensual depende de tu renta imponible, ya que se descuenta de tu 7% legal obligatorio. Si tu 7% es mayor que el precio del plan, generas excedentes que puedes usar en bonos y atenciones. Nuestra asesoría para encontrar el mejor plan es 100% gratuita."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo contratar un plan individual si tengo preexistencias?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, puedes contratar un plan individual aunque tengas preexistencias. Analizamos tu historial médico de forma confidencial antes de postular para asegurar que la contratación sea aprobada sin rechazos ni restricciones abusivas. No enviamos tu declaración a ciegas."
-      }
-    }
-  ]
-}
-</script>
-
 <style>
 /* Estilo piramidal AIO: respuesta directa destacada */
 .answer-direct {

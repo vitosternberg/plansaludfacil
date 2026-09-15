@@ -57,21 +57,6 @@ $toc_items = [
 ob_start();
 ?>
 
-<!-- FAQ Schema.org Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type":"Question","name":"¿A quiénes puedo incluir como carga familiar?","acceptedAnswer":{"@type":"Answer","text":"Cónyuge, hijos hasta 25 años si estudian, y en algunos casos padres adultos mayores que dependan económicamente de ti."}},
-    {"@type":"Question","name":"¿Los planes familiares cubren embarazos?","acceptedAnswer":{"@type":"Answer","text":"Sí, todos los planes cubren embarazo. Los planes con preferencia natal ofrecen coberturas adicionales y mejores condiciones para mamá y bebé."}},
-    {"@type":"Question","name":"¿Puedo agregar a mi pareja si no estamos casados?","acceptedAnswer":{"@type":"Answer","text":"Sí, puedes agregar a tu conviviente como carga acreditando la convivencia ante la Isapre."}},
-    {"@type":"Question","name":"¿Qué pasa si me separo?","acceptedAnswer":{"@type":"Answer","text":"Cada adulto puede tomar un plan individual conservando su antigüedad. Los hijos quedan como cargas de uno de los padres."}},
-    {"@type":"Question","name":"¿Cuánto cuesta un plan familiar?","acceptedAnswer":{"@type":"Answer","text":"Depende de la cantidad de cargas. Familia de 3 desde $120.000/mes, familia de 4 desde $150.000/mes. Cada adulto aporta su 7% y se suman las cotizaciones."}}
-  ]
-}
-</script>
-
 <style>
 .answer-direct{background:linear-gradient(135deg,#eff6ff,#f0fdf4);border-left:4px solid #2563eb;padding:16px 20px;border-radius:0 12px 12px 0;margin-bottom:16px;font-size:15px;color:#374151;line-height:1.7}
 </style>
