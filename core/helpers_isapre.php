@@ -5,6 +5,7 @@
  * Requiere: core/cotizador_engine.php
  */
 require_once __DIR__ . '/planes_data_provider.php';
+require_once __DIR__ . '/geo_facts.php';
 
 function get_isapre_cobertura($isapre_name) {
     return pd_get_isapre_cobertura($isapre_name);
@@ -21,7 +22,7 @@ function render_isapre_data($isapre) {
     ?>
     <section id="coberturas-reales" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28">
         <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Coberturas Reales <?= htmlspecialchars($isapre) ?></h2>
-        <p class="text-sm text-gray-500 mb-6">Datos actualizados · planes vigentes comercializados</p>
+        <p class="text-sm text-gray-500 mb-6">Datos actualizados · planes vigentes · fuente <?= psf_cite('supersalud') ?></p>
         <div class="overflow-x-auto bg-white rounded-xl border mb-8">
             <table class="w-full text-sm">
                 <thead class="bg-gray-100 text-gray-600 text-xs"><tr><th class="p-3 text-left">Tipo</th><th class="p-3">Hospitalaria</th><th class="p-3">Consulta</th><th class="p-3">Tope Anual</th><th class="p-3">Urgencia</th></tr></thead>
@@ -77,7 +78,7 @@ function render_isapre_plans_jsonld($isapre_name) {
         '@context' => 'https://schema.org',
         '@type' => 'ItemList',
         'name' => 'Planes Isapre ' . $isapre_name,
-        'description' => 'Catálogo de planes de salud de Isapre ' . $isapre_name . ' vigentes. Fuente: Superintendencia de Salud.',
+        'description' => 'Catálogo de planes de salud de Isapre ' . $isapre_name . ' vigentes. Fuente: https://www.superdesalud.gob.cl/',
         'numberOfItems' => count($item_list),
         'itemListElement' => $item_list,
     ];

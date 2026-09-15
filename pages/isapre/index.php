@@ -4,24 +4,8 @@
  */
 
 // ── Tracking Omniflow ────────────────────────────────────
-require_once __DIR__ . '/../../omniflow_config.php';
-try {
-    $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-    if (!$db->connect_error) {
-        $db->set_charset("utf8mb4");
-        $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
-        $ua = $_SERVER['HTTP_USER_AGENT'] ?? 'unknown';
-        $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        $stmt = $db->prepare("INSERT INTO log_visitas_generales (ip_address, user_agent, url_visitada) VALUES (?, ?, ?)");
-        if ($stmt) { $stmt->bind_param("sss", $ip, $ua, $url); $stmt->execute(); $stmt->close(); }
-        $lead_id = filter_input(INPUT_GET, 'lead_id', FILTER_VALIDATE_INT);
-        if ($lead_id) {
-            $stmt2 = $db->prepare("INSERT INTO lead_visits (lead_id, url_visitada) VALUES (?, ?)");
-            if ($stmt2) { $stmt2->bind_param("is", $lead_id, $url); $stmt2->execute(); $stmt2->close(); }
-        }
-        $db->close();
-    }
-} catch (Exception $e) { error_log("Omniflow Tracking Error: " . $e->getMessage()); }
+require_once __DIR__ . '/../../core/omniflow_track.php';
+require_once __DIR__ . '/../../core/geo_facts.php';
 
 // ── Variables SEO ────────────────────────────────────────
 $page_title       = 'ISAPREs en Chile: Guía Completa 2026 | Plan Salud Fácil';
@@ -52,7 +36,7 @@ ob_start();
 ?>
 <section id="que-es" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28" aria-labelledby="s1-heading">
     <h2 id="s1-heading" class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">¿Qué es una ISAPRE?</h2>
-    <p class="text-gray-700 leading-relaxed mb-6">Las ISAPREs son instituciones privadas que administran tu cotización obligatoria de salud (7% de tu renta) y te ofrecen planes con distintas coberturas, redes de clínicas y beneficios adicionales. Actualmente existen 7 ISAPREs abiertas al público general en Chile.</p>
+    <p class="text-gray-700 leading-relaxed mb-6">Las ISAPREs son instituciones privadas que administran tu cotización obligatoria de salud (7% de tu renta) y te ofrecen planes con distintas coberturas. En el mercado abierto hay <?= count(psf_geo_facts()['isapres_abiertas']) ?> isapres: <?= htmlspecialchars(psf_isapres_abiertas_texto()) ?>. Listado y fiscalización: <?= psf_cite('supersalud') ?>.</p>
     <a href="<?= BASE_URL ?>/isapres/que-es/" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition">
         Leer guía completa
         <iconify-icon icon="mdi:arrow-right" width="20" class="ml-1"></iconify-icon>
@@ -61,7 +45,7 @@ ob_start();
 
 <section id="como-funciona" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28">
     <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">¿Cómo funciona una ISAPRE?</h2>
-    <p class="text-gray-700 leading-relaxed mb-6">Cuando te afilias a una ISAPRE, tu cotización del 7% se aplica al plan que elijas. Si tu cotización del 7% supera el valor base del plan, la Isapre te ofrece beneficios adicionales para optimizar tu cobertura. Los excedentes solo se generan de forma excepcional.</p>
+    <p class="text-gray-700 leading-relaxed mb-6">Cuando te afilias a una ISAPRE, tu cotización del 7% se aplica al plan que elijas. Si el 7% supera el valor del plan, con la <?= psf_cite('ley_corta') ?> la isapre debe destinarlo a cobertura, no acumular excedentes como antes de 2024.</p>
     <a href="<?= BASE_URL ?>/isapres/como-funciona/" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition">
         Leer guía completa
         <iconify-icon icon="mdi:arrow-right" width="20" class="ml-1"></iconify-icon>

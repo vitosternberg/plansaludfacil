@@ -1,23 +1,13 @@
 <?php
-require_once __DIR__ . '/../omniflow_config.php';
-try {
-    $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-    if (!$db->connect_error) {
-        $db->set_charset("utf8mb4");
-        $ip_address = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
-        $user_agent = $_SERVER['HTTP_USER_AGENT'] ?? 'unknown';
-        $visited_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        $stmt = $db->prepare("INSERT INTO log_visitas_generales (ip_address, user_agent, url_visitada) VALUES (?, ?, ?)");
-        if ($stmt) { $stmt->bind_param("sss", $ip_address, $user_agent, $visited_url); $stmt->execute(); $stmt->close(); }
-        $lead_id = filter_input(INPUT_GET, 'lead_id', FILTER_VALIDATE_INT);
-        if ($lead_id) {
-            $stmt2 = $db->prepare("INSERT INTO lead_visits (lead_id, url_visitada) VALUES (?, ?)");
-            if ($stmt2) { $stmt2->bind_param("is", $lead_id, $visited_url); $stmt2->execute(); $stmt2->close(); }
-        }
-        $db->close();
-    }
-} catch (Exception $e) { error_log("Omniflow Tracking Error: " . $e->getMessage()); }
+require_once __DIR__ . '/../core/omniflow_track.php';
+require_once __DIR__ . '/../core/geo_facts.php';
 
+$schema_page_type = 'WebPage';
+$h1 = 'Preguntas Frecuentes sobre ISAPRE';
+$breadcrumbs = [
+    ['label' => 'Inicio', 'url' => (defined('BASE_URL') ? BASE_URL . '/' : '/')],
+    ['label' => 'Preguntas frecuentes', 'url' => '#'],
+];
 $page_title = "Preguntas Frecuentes sobre ISAPRE | Plan Salud Facil";
 $meta_description = "Resuelve todas tus dudas sobre ISAPRE. Costos, coberturas, cambios, cargas, preexistencias y mas.";
 include './layout/plantilla.php';
@@ -74,8 +64,8 @@ $categorias = [
     ]],
     ['titulo' => 'CAEC (Cobertura Catastrofica)', 'icono' => '🛡️', 'preguntas' => [
         '¿Que es la CAEC?' => 'La CAEC (Cobertura Adicional para Enfermedades Catastroficas) es un beneficio que ofrecen algunas ISAPREs para financiar hasta el 100% de los gastos derivados de enfermedades de alto costo, una vez que pagas un deducible anual.',
-        '¿Como funciona la CAEC?' => 'Funciona con un deducible anual fijo: tu pagas un monto equivalente a 30 cotizaciones pactadas (con tope de 126 UF). Una vez cubierto ese deducible, la ISAPRE financia el 100% de los gastos relacionados con tu condicion catastrofica por el resto del año, sin tope. Si hay mas de una enfermedad catastrofica o mas de un beneficiario, el deducible sube a 43 cotizaciones con tope de 181 UF.',
-        '¿Que ISAPREs ofrecen CAEC?' => 'Banmedica, Vida Tres, Consalud, Colmena Golden Cross, Nueva Masvida, Isalud, Cruz Blanca y Esencial. No todas las ISAPREs la incluyen, por lo que es importante verificarlo al momento de comparar planes.',
+        '¿Como funciona la CAEC?' => 'El deducible CAEC equivale a 30 cotizaciones pactadas, con piso 60 UF y tope 126 UF por beneficiario y diagnóstico (norma de Superintendencia). Cubierto el deducible, la isapre financia en su red cerrada el resto del evento. Si hay más de un diagnóstico o beneficiario, aplica 43 cotizaciones con tope 181 UF. Fuente: https://www.superdesalud.gob.cl/consultas-y-orientacion/coberturas-ges-y-caec/',
+        '¿Que ISAPREs ofrecen CAEC?' => 'Las isapres abiertas (Banmédica, Colmena, Consalud, Cruz Blanca, Esencial, Nueva Masvida y Vida Tres) publican red CAEC. Verifica el procedimiento vigente en https://www.superdesalud.gob.cl/ porque la red no es la misma que el prestador preferente del plan diario.',
         '¿Cuando debo activar la CAEC?' => 'Debes activarla apenas te diagnostiquen una enfermedad cuyo tratamiento represente un gasto catastrofico (alto costo). La CAEC no es automatica ni retroactiva: tienes que solicitarla formalmente en tu ISAPRE antes de iniciar el tratamiento.',
         '¿Que cubre la CAEC?' => 'Cubre hospitalizaciones, cirugias y procedimientos ambulatorios de alto costo (como quimioterapia, radioterapia o dialisis) relacionados con la enfermedad catastrofica, siempre que te atiendas en la Red CAEC de tu ISAPRE dentro de Chile.',
         '¿Que NO cubre la CAEC?' => 'No cubre enfermedades preexistentes no declaradas, patologias GES/AUGE (que tienen su propia garantia de cobertura), procedimientos esteticos, tratamientos experimentales ni atenciones realizadas fuera de la Red CAEC.',

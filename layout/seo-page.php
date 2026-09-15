@@ -28,6 +28,7 @@ $svc_description  = $svc_description  ?? $meta_description;
 $cta_texto        = $cta_texto        ?? 'Cotizar Ahora';
 // ⚠️ CAMBIO 2026-08-05 (v2): default wa.me eliminado. Si no se sobreescribe, se usa modal.
 $cta_link         = $cta_link         ?? '';
+$schema_page_type = $schema_page_type ?? 'TechArticle';
 // ───────────────────────────────────────────────────────────
 
 include './layout/plantilla.php';
@@ -46,11 +47,7 @@ include './layout/header.php';
         'cta_link'    => $cta_link,
     ]);
 
-    // 2. Schema Service
-    render_component('schema_service', [
-        'svc_name'        => $svc_name,
-        'svc_description' => $svc_description,
-    ]);
+    // Schema JSON-LD lo emite layout/plantilla.php via @graph (TechArticle o Service).
 
     // 3. Tabla de Contenidos
     if (!empty($toc_items)) {

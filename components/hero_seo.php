@@ -42,35 +42,6 @@ $hero_class    = $hero_class ?? 'bg-gradient-to-r from-blue-800 to-blue-900';
                 <?php endforeach; ?>
             </ol>
         </nav>
-
-        <!-- Schema.org BreadcrumbList -->
-        <script type="application/ld+json">
-        <?php
-        $bc_items = [];
-        $pos = 1;
-        $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        foreach ($breadcrumbs as $bc) {
-            $item_url = $bc['url'];
-            if ($item_url === '#') {
-                $item_url = $current_url;
-            } elseif (!preg_match('#^https?://#', $item_url)) {
-                $item_url = rtrim((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]", '/') . '/' . ltrim($item_url, '/');
-            }
-            $bc_items[] = [
-                '@type' => 'ListItem',
-                'position' => $pos,
-                'name' => $bc['label'],
-                'item' => rtrim($item_url, '/'),
-            ];
-            $pos++;
-        }
-        echo json_encode([
-            '@context' => 'https://schema.org',
-            '@type' => 'BreadcrumbList',
-            'itemListElement' => $bc_items,
-        ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-        ?>
-        </script>
         <?php endif; ?>
 
         <h1 id="hero-heading" class="text-3xl md:text-5xl font-bold mb-4 leading-tight">

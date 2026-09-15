@@ -182,7 +182,7 @@ ob_start();
 <section id="beneficios" class="mb-8 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-10 scroll-mt-28">
     <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Beneficios de un plan familiar</h2>
     <div class="answer-direct">
-        Un solo plan para todos significa: sin papeles separados, un solo copago familiar, excedentes que se comparten, y antigüedad que se conserva si algún día necesitan separar los planes.
+        Un solo plan para todos significa un contrato, copagos de grupo y antigüedad compartida. Los “excedentes que se comparten” del modelo anterior a 2024 ya no operan igual: la Ley Corta destina el 7% a cobertura, no a un saldo familiar tipo billetera.
     </div>
 
     <div class="grid md:grid-cols-2 gap-4 mt-6">
@@ -196,7 +196,7 @@ ob_start();
         </div>
         <div class="flex items-start gap-4 p-4 bg-white rounded-xl border border-gray-100">
             <div class="w-12 h-12 bg-purple-600 text-white rounded-xl flex items-center justify-center flex-shrink-0 text-xl">💰</div>
-            <div><h3 class="font-bold text-gray-900 mb-1">Excedentes compartidos</h3><p class="text-gray-600 text-sm">Si generas excedentes, los usan todos los integrantes. Nadie pierde plata.</p></div>
+            <div><h3 class="font-bold text-gray-900 mb-1">7% del grupo</h3><p class="text-gray-600 text-sm">La cotización de los titulares se aplica al plan familiar. Tras la Ley Corta no se acumulan excedentes como antes de 2024.</p></div>
         </div>
         <div class="flex items-start gap-4 p-4 bg-white rounded-xl border border-gray-100">
             <div class="w-12 h-12 bg-amber-600 text-white rounded-xl flex items-center justify-center flex-shrink-0 text-xl">🔒</div>

@@ -20,7 +20,7 @@ foreach ($faq_preguntas as $q => $a) {
         'name'           => $q,
         'acceptedAnswer' => [
             '@type' => 'Answer',
-            'text'  => $a,
+            'text'  => trim(strip_tags($a)),
         ],
     ];
 }
@@ -51,7 +51,7 @@ foreach ($faq_preguntas as $q => $a) {
                 </span>
             </summary>
             <div class="px-4 md:px-5 pb-4 md:pb-5 text-gray-600 leading-relaxed border-t border-gray-100 mx-4">
-                <p class="text-sm md:text-base"><?= htmlspecialchars($respuesta) ?></p>
+                <p class="text-sm md:text-base"><?= strip_tags($respuesta, '<a>') ?></p>
             </div>
         </details>
         <?php endforeach; ?>

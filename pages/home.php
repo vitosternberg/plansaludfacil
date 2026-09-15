@@ -1,45 +1,16 @@
 <?php
-/**
- * =======================================================================
- * OMNIFLOW - SCRIPT DE SEGUIMIENTO DE VISITAS HÍBRIDO
- * =======================================================================
- */
-require_once __DIR__ . '/../omniflow_config.php';
+require_once __DIR__ . '/../core/omniflow_track.php';
 require_once __DIR__ . '/../core/helpers.php';
-try {
-    $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-    if (!$db->connect_error) {
-        $db->set_charset("utf8mb4");
-        $ip_address = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
-        $user_agent = $_SERVER['HTTP_USER_AGENT'] ?? 'unknown';
-        $visited_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-        $stmt_general = $db->prepare("INSERT INTO log_visitas_generales (ip_address, user_agent, url_visitada) VALUES (?, ?, ?)");
-        if ($stmt_general) {
-            $stmt_general->bind_param("sss", $ip_address, $user_agent, $visited_url);
-            $stmt_general->execute(); 
-            $stmt_general->close();
-        }
-
-        $lead_id = filter_input(INPUT_GET, 'lead_id', FILTER_VALIDATE_INT);
-        if ($lead_id) {
-            $stmt_lead = $db->prepare("INSERT INTO lead_visits (lead_id, url_visitada) VALUES (?, ?)");
-            if ($stmt_lead) {
-                $stmt_lead->bind_param("is", $lead_id, $visited_url);
-                $stmt_lead->execute(); 
-                $stmt_lead->close();
-            }
-        }
-        $db->close();
-    }
-} catch (Exception $e) {
-    error_log("Omniflow Tracking Error: " . $e->getMessage());
-}
-
+$schema_page_type = 'WebPage';
+$h1 = 'Elige tu Plan de Isapre en Minutos';
 $page_title = "Plan Salud Fácil - Tu Comparador de Isapres";
 $meta_description = "Cotiza y compara planes de ISAPRE en 2026. Asesoría 100% gratuita y online. Comparador con precios reales de la Superintendencia de Salud. Planes individuales, familiares y más.";
 include './layout/plantilla.php'; 
 include './layout/header.php';
+?>
+<main id="contenido">
+<?php
 render_component('hero_moderno', [
     'titulo' => 'Elige tu Plan de Isapre en Minutos',
     'titulo_movil' => 'Cotiza Isapre en minutos',
@@ -140,6 +111,7 @@ render_component('ultimos_articulos_blog', [
         </button>
     </div>
 </section>
+</main>
 <?php
 
 // Chatbot desactivado — toggle en Omnilama > Base de Conocimiento

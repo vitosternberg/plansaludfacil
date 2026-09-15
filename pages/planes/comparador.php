@@ -5,7 +5,8 @@
  *
  * Usa core/data_isapres.php como fuente de verdad.
  */
-require_once __DIR__ . '/../../omniflow_config.php';
+require_once __DIR__ . '/../../core/omniflow_track.php';
+require_once __DIR__ . '/../../core/geo_facts.php';
 
 $page_title       = 'Comparador de Isapres: Precios Reales 2026 | Plan Salud Fácil';
 $meta_description = 'Compara isapres con precios reales de Superintendencia de Salud. Responde 3 preguntas y ve el precio real de cada isapre para tu perfil.';
@@ -15,6 +16,7 @@ $svc_name         = 'Comparador de Isapres';
 $svc_description  = 'Compara precios reales de isapre según tu edad y cargas. Datos actualizados de Banmédica, Colmena, Cruz Blanca, Consalud, Esencial, Nueva MasVida y Vida Tres.';
 $cta_texto        = 'Quiero una asesoría';
 $cta_link         = 'https://wa.me/56952282339';
+$schema_page_type = 'Service';
 
 $breadcrumbs = [
     ['label' => 'Inicio', 'url' => 'BASE_URL/'],
@@ -35,7 +37,7 @@ ob_start();
 <section id="comparador" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28">
 <div class="bg-white rounded-2xl shadow-lg p-8 border">
 <h2 class="text-xl font-bold text-gray-900 mb-2">Responde 3 preguntas</h2>
-<p class="text-gray-500 text-sm mb-6">30 segundos. Precios reales de Superintendencia de Salud.</p>
+<p class="text-gray-500 text-sm mb-6">30 segundos. Precios reales de <?= psf_cite('supersalud') ?> (catálogo de planes, julio 2026).</p>
 
 <div class="space-y-6" id="quiz">
     <!-- P1: Renta -->
@@ -357,7 +359,7 @@ function escHtml(s) {
 $secciones_html = ob_get_clean();
 
 $faq_preguntas = [
-    '¿Los precios son reales?' => 'Sí. Los precios provienen de Superintendencia de Salud, actualizados a julio 2026. Son precios referenciales del plan más económico y más caro de cada isapre para el perfil seleccionado.',
+    '¿Los precios son reales?' => 'Sí. Los precios provienen de la Superintendencia de Salud (superdesalud.gob.cl), actualizados a julio 2026. Son referenciales del plan más económico y más caro de cada isapre para el perfil seleccionado.',
     '¿Qué significa "dentro de tu 7%?"' => 'Indica que el plan más barato de esa isapre calza dentro del 7% legal de tu renta. Si sale "extra", necesitarías una cotización adicional mensual para cubrir ese plan.',
     '¿Puedo contratar directamente desde aquí?' => 'El comparador te muestra los precios reales para que compares. Para contratar, agenda una asesoría gratuita con uno de nuestros ejecutivos que te ayudará con el plan exacto.',
     '¿Por qué no se muestran coberturas detalladas?' => 'Las coberturas exactas dependen del plan específico que elijas. Te mostramos el promedio de hospitalización y ambulatorio de cada isapre, y el mejor plan con sus coberturas reales.',

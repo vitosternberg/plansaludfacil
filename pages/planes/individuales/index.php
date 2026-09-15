@@ -9,24 +9,8 @@
  */
 
 // ── Tracking Omniflow ────────────────────────────────────
-require_once __DIR__ . '/../../../omniflow_config.php';
-try {
-    $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-    if (!$db->connect_error) {
-        $db->set_charset("utf8mb4");
-        $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
-        $ua = $_SERVER['HTTP_USER_AGENT'] ?? 'unknown';
-        $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        $stmt = $db->prepare("INSERT INTO log_visitas_generales (ip_address, user_agent, url_visitada) VALUES (?, ?, ?)");
-        if ($stmt) { $stmt->bind_param("sss", $ip, $ua, $url); $stmt->execute(); $stmt->close(); }
-        $lead_id = filter_input(INPUT_GET, 'lead_id', FILTER_VALIDATE_INT);
-        if ($lead_id) {
-            $stmt2 = $db->prepare("INSERT INTO lead_visits (lead_id, url_visitada) VALUES (?, ?)");
-            if ($stmt2) { $stmt2->bind_param("is", $lead_id, $url); $stmt2->execute(); $stmt2->close(); }
-        }
-        $db->close();
-    }
-} catch (Exception $e) { error_log("Omniflow Tracking Error: " . $e->getMessage()); }
+require_once __DIR__ . '/../../../core/omniflow_track.php';
+require_once __DIR__ . '/../../../core/geo_facts.php';
 
 // ── Variables SEO ────────────────────────────────────────
 $page_title       = 'Planes de Salud Isapre | Cotizar Plan de Salud Isapre | Plan Salud Fácil';
@@ -87,7 +71,7 @@ ob_start();
     </div>
     <p class="text-gray-600 mb-6">Sin cargas familiares, tus prioridades son distintas: optimizar tu presupuesto en telemedicina, especialistas, salud mental o medicina deportiva.</p>
     <div class="grid md:grid-cols-3 gap-6">
-        <div class="text-center p-6"><div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-lg shadow-blue-200">1</div><h3 class="font-bold text-gray-900 mb-2">Profesional independiente</h3><p class="text-gray-600 text-sm">Concentras tu 7% en coberturas ambulatorias de alto uso y generas excedentes.</p></div>
+        <div class="text-center p-6"><div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-lg shadow-blue-200">1</div><h3 class="font-bold text-gray-900 mb-2">Profesional independiente</h3><p class="text-gray-600 text-sm">Concentras tu 7% en coberturas ambulatorias de alto uso. Tras la Ley Corta no se acumulan excedentes como antes de 2024.</p></div>
         <div class="text-center p-6"><div class="w-16 h-16 bg-purple-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-lg shadow-purple-200">2</div><h3 class="font-bold text-gray-900 mb-2">Te independizas</h3><p class="text-gray-600 text-sm">Al empezar tu vida laboral, necesitas tu propia protección con coberturas para tu etapa.</p></div>
         <div class="text-center p-6"><div class="w-16 h-16 bg-green-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-lg shadow-green-200">3</div><h3 class="font-bold text-gray-900 mb-2">Adulto sin cargas</h3><p class="text-gray-600 text-sm">Ingresos estables, acceso rápido a especialistas y clínicas sin pagar de más.</p></div>
     </div>
@@ -96,11 +80,11 @@ ob_start();
 <!-- ====== SECCIÓN 2: Beneficios ====== -->
 <section id="beneficios" class="mb-8 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-10 scroll-mt-28">
     <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Beneficios de un plan individual</h2>
-    <div class="answer-direct">Máxima eficiencia de tu 7%, coberturas enfocadas en tus intereses, y generación rápida de excedentes si tu sueldo es alto. Pagas solo por lo que realmente usas.</div>
+    <div class="answer-direct">Máxima eficiencia de tu 7% y coberturas enfocadas en tus intereses. Con la Ley 21.674 el 7% va a cobertura: no elijas plan “para generar excedentes rápidos” como en el régimen anterior.</div>
     <div class="grid md:grid-cols-3 gap-6 mt-6">
         <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center"><div class="w-14 h-14 bg-blue-600 text-white rounded-xl flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-blue-200">⚡</div><strong class="block text-gray-900 mb-2">Eficiencia del 7%</strong><p class="text-gray-600 text-sm">Todo tu 7% va a tus coberturas. Sin promediar con cargas. Mejores topes y menos copagos.</p></div>
         <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center"><div class="w-14 h-14 bg-purple-600 text-white rounded-xl flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-purple-200">🎯</div><strong class="block text-gray-900 mb-2">Enfocado en ti</strong><p class="text-gray-600 text-sm">Kinesiología, telemedicina, salud mental. Los beneficios que realmente necesitas.</p></div>
-        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center"><div class="w-14 h-14 bg-green-600 text-white rounded-xl flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-green-200">💰</div><strong class="block text-gray-900 mb-2">Excedentes rápidos</strong><p class="text-gray-600 text-sm">Sueldo alto = acumulás rápido. Usalos en bonos, lentes, medicamentos o atenciones sin copago.</p></div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center"><div class="w-14 h-14 bg-green-600 text-white rounded-xl flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-green-200">💰</div><strong class="block text-gray-900 mb-2">7% en cobertura</strong><p class="text-gray-600 text-sm">Si tu sueldo es alto, elige un plan cercano a tu 7% o beneficios complementarios. Los excedentes del modelo pre-2024 ya no aplican igual (Ley Corta).</p></div>
     </div>
     <div class="p-5 bg-blue-50 rounded-xl border border-blue-100 mt-6"><p class="text-gray-700 font-medium">💡 <strong>Dato clave:</strong> Los planes individuales tienen primas más bajas que los familiares. Con el mismo 7%, accedés a mejores coberturas.</p></div>
 </section>
@@ -167,7 +151,7 @@ $faq_preguntas = [
     '¿Qué es un plan libre eleccion isapre?' => 'La modalidad de libre eleccion te permite atenderte en cualquier clínica u hospital, no solo en los prestadores en convenio de tu isapre. El copago es mayor pero tienes libertad total de eleccion.',
     '¿Qué plan individual es más barato?' => 'Generalmente el plan joven, diseñado para personas con bajo riesgo de salud y menor uso del sistema.',
     '¿Cuál es la mejor isapre para mujeres?' => 'No hay una única mejor isapre para mujeres. Depende de tus prioridades: si buscas cobertura de maternidad, Colmena es excelente. Si prefieres la red más grande, Banmédica. Si priorizas prevención, Cruz Blanca. Lo ideal es comparar al menos 3 opciones según tu edad, renta y necesidades de cobertura.',
-    '¿Cuánto cuesta el GES en las isapres 2026?' => 'El valor GES 2026 depende de la isapre y del plan. Las isapres deben cubrir las 87 patologías GES con copagos definidos por ley. El precio varía según el tramo de ingreso y el plan contratado. En general, los planes de mayor cobertura tienen copagos GES más bajos.',
+    '¿Cuánto cuesta el GES en las isapres 2026?' => 'El valor GES depende de la isapre. Deben cubrir las 87 patologías GES con copagos definidos por ley. Consulta el listado y primas en Superintendencia de Salud (superdesalud.gob.cl).',
     '¿Los planes individuales cubren hospitalización?' => 'Sí, todos los planes incluyen cobertura de hospitalización. El porcentaje varía según el plan (70-90%).',
     '¿Puedo pasar de plan individual a familiar?' => 'Sí. La mayoría de las isapres permiten migrar sin perder antigüedad ni pasar por nueva evaluación de salud.',
     '¿Qué chequeos preventivos cubre?' => 'Muchos incluyen chequeo ejecutivo anual, dermatología, evaluación cardiovascular y ginecología/urología preventiva.',

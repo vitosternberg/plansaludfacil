@@ -2,60 +2,71 @@
 /**
  * isapre/como-funciona.php
  */
+require_once __DIR__ . '/../../core/omniflow_track.php';
+require_once __DIR__ . '/../../core/geo_facts.php';
 
-// ── Tracking Omniflow ────────────────────────────────────
-require_once __DIR__ . '/../../omniflow_config.php';
-try {
-    $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-    if (!$db->connect_error) {
-        $db->set_charset("utf8mb4");
-        $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
-        $ua = $_SERVER['HTTP_USER_AGENT'] ?? 'unknown';
-        $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        $stmt = $db->prepare("INSERT INTO log_visitas_generales (ip_address, user_agent, url_visitada) VALUES (?, ?, ?)");
-        if ($stmt) { $stmt->bind_param("sss", $ip, $ua, $url); $stmt->execute(); $stmt->close(); }
-        $lead_id = filter_input(INPUT_GET, 'lead_id', FILTER_VALIDATE_INT);
-        if ($lead_id) {
-            $stmt2 = $db->prepare("INSERT INTO lead_visits (lead_id, url_visitada) VALUES (?, ?)");
-            if ($stmt2) { $stmt2->bind_param("is", $lead_id, $url); $stmt2->execute(); $stmt2->close(); }
-        }
-        $db->close();
-    }
-} catch (Exception $e) { error_log("Omniflow Tracking Error: " . $e->getMessage()); }
-
-// ── Variables SEO ────────────────────────────────────────
+$facts = psf_geo_facts();
 $page_title       = '¿Cómo Funciona una ISAPRE? Explicación Simple | Plan Salud Fácil';
-$meta_description = 'Aprende cómo funciona una ISAPRE: cotización, plan de salud, copagos, excedentes y red de prestadores. Todo explicado de forma simple.';
+$meta_description = 'Cómo funciona una ISAPRE: 7% de cotización, plan en UF, copagos, GES, CAEC y qué cambió con la Ley 21.674 (Ley Corta).';
 $h1               = '¿Cómo funciona una ISAPRE?';
-$lead             = 'El sistema ISAPRE funciona con tu cotización mensual del 7% que se transforma en un plan de salud con coberturas, bonificaciones y acceso a clínicas de tu red.';
-$svc_name         = 'Funcionamiento de ISAPRE';
-$svc_description  = 'Explicación del sistema ISAPRE: cotización, contratación, coberturas y beneficios.';
+$lead             = 'Tu empleador (o tú, si eres independiente) destina el 7% de la renta imponible a un plan. Ese plan define copagos, red y topes; GES y CAEC son capas aparte.';
+$schema_page_type = 'TechArticle';
 $cta_texto = 'Cotiza Express';
 $cta_link         = BASE_URL.'/planes/comparador/';
 
-// ── Breadcrumbs ──────────────────────────────────────────
 $breadcrumbs = [['label' => 'Inicio', 'url' => 'BASE_URL/'], ['label' => 'ISAPRE', 'url' => 'BASE_URL/isapres/'], ['label' => 'Cómo funciona', 'url' => '#']];
 foreach ($breadcrumbs as &$bc) {
     $bc['url'] = str_replace('BASE_URL/', BASE_URL . '/', $bc['url']);
 }
 unset($bc);
 
-// ── ToC ──────────────────────────────────────────────────
-$toc_items = [['id' => 'cotizacion', 'label' => 'La cotización del 7%'], ['id' => 'plan', 'label' => 'El plan de salud'], ['id' => 'copagos', 'label' => 'Copagos y deducibles'], ['id' => 'excedentes', 'label' => 'Excedentes']];
+$toc_items = [
+    ['id' => 'cotizacion', 'label' => 'La cotización del 7%'],
+    ['id' => 'plan', 'label' => 'El plan de salud'],
+    ['id' => 'copagos', 'label' => 'Copagos y deducibles'],
+    ['id' => 'excedentes', 'label' => 'Excedentes y Ley Corta'],
+];
 
-// ── Secciones de contenido ───────────────────────────────
 ob_start();
 ?>
-<section id="cotizacion" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28"><h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">La cotización del 7%</h2><p class="text-gray-700 mb-4">Cada mes, tu empleador descuenta el <strong>7% de tu renta imponible</strong> y lo envía a la ISAPRE. Si eres independiente, pagas esta cotización vía declaración de impuestos.</p><div class="bg-blue-50 border border-blue-100 rounded-xl p-5 mb-6"><p class="font-semibold text-blue-900">Ejemplo:</p><p class="text-blue-800">Renta $1.000.000 → 7% = <strong>$70.000 mensuales</strong> para tu plan.</p></div></section>
-<section id="plan" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28"><h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">El plan de salud</h2><p class="text-gray-700 mb-4">La ISAPRE ofrece distintos planes. Cada plan define: <strong>porcentaje de bonificación</strong> (70-90%), <strong>tope anual</strong>, <strong>red de prestadores</strong> y <strong>beneficios adicionales</strong> como telemedicina y descuentos.</p></section>
-<section id="copagos" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28"><h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Copagos y deducibles</h2><p class="text-gray-700 mb-4">Cuando te atiendes, la ISAPRE paga un porcentaje y tú pagas la diferencia (copago). Ej: consulta $30.000 con 80% de bonificación → ISAPRE paga $24.000, tú pagas $6.000.</p></section>
-<section id="excedentes" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28"><h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Excedentes y la Ley Corta</h2><p class="text-gray-700 mb-4">Desde 2024, con la <strong>Ley Corta de Isapres</strong>, los planes deben ajustarse para usar íntegramente tu cotización del 7%. Esto significa que el 7% va completo a tu plan de salud, y los excedentes —que antes se acumulaban cuando había diferencia entre tu cotización y el precio del plan— ya no se generan bajo las mismas condiciones. Si tu cotización es mayor que el precio base del plan, la isapre debe ofrecerte <strong>beneficios complementarios</strong> en lugar de acumular saldo.</p><p class="text-gray-700">Consulta nuestra <a href="<?= BASE_URL ?>/asesoria/optimizar-7-porciento/" class="text-blue-600 hover:underline">guía para optimizar tu 7%</a> con las nuevas reglas.</p></section>
+<article>
+<section id="cotizacion" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28" aria-labelledby="c1">
+    <h2 id="c1" class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">La cotización del 7%</h2>
+    <p class="text-gray-700 leading-relaxed mb-4">Por ley, el <?= htmlspecialchars($facts['cotizacion_legal']) ?> de la renta imponible va a salud. En isapre ese monto se aplica al precio del plan (UF × valor UF del mes). Con renta de $1.000.000 el 7% es <strong>$70.000</strong>. Si el plan sale $85.000, pagas $15.000 extra. Si sale menos que tu 7%, la isapre no te “devuelve la diferencia en efectivo” como en el modelo de excedentes anterior: debe usarla en cobertura, según la <?= psf_cite('ley_corta') ?>.</p>
+    <p class="text-gray-700 leading-relaxed mb-4">El independiente paga el 7% sobre la renta que declara. El tope imponible previsional limita la base de cálculo: no es “el 7% de todo lo que ganas” si superas ese tope. La fiscalización del descuento y de los planes es de <?= psf_cite('supersalud') ?>.</p>
+    <div class="bg-blue-50 border border-blue-100 rounded-xl p-5">
+        <p class="font-semibold text-blue-900">Ejemplo numérico</p>
+        <p class="text-blue-800">Renta $1.000.000 → 7% = <strong>$70.000</strong> al mes. Compara ese número con el precio en pesos del plan (UF × UF del día), no solo con el copago de una consulta.</p>
+    </div>
+</section>
+
+<section id="plan" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28" aria-labelledby="c2">
+    <h2 id="c2" class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">El plan de salud</h2>
+    <p class="text-gray-700 leading-relaxed mb-4">Cada plan fija porcentaje de bonificación (a menudo 70–90% en prestador preferente), tope anual, arancel y red. “Preferente” no es lo mismo que red CAEC: una clínica del día a día puede quedar fuera de la red catastrófica. El GES (<?= (int) $facts['ges_patologias'] ?> patologías) es obligatorio y tiene copago y prestador propios; no sustituye al plan ni a la CAEC.</p>
+    <p class="text-gray-700 leading-relaxed">Los precios de catálogo que usamos en el comparador salen de archivos de <?= psf_cite('supersalud') ?> (miles de códigos de plan). Un plan “barato en UF” puede ser caro en copagos si la red no es la que usas. Por eso el comparador muestra UF y pesos, no solo el ranking de marketing.</p>
+</section>
+
+<section id="copagos" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28" aria-labelledby="c3">
+    <h2 id="c3" class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Copagos y deducibles</h2>
+    <p class="text-gray-700 leading-relaxed mb-4">En una consulta de $30.000 con 80% de bonificación, la isapre cubre $24.000 y tú $6.000, hasta el tope del plan. En hospitalización el copago se dispara si el prestador no es el preferente o si se agota el tope. El deducible CAEC es otra cuenta: <?= (int) $facts['caec_cotizaciones'] ?> cotizaciones pactadas, piso <?= (int) $facts['caec_piso_uf'] ?> UF y techo <?= (int) $facts['caec_tope_uf'] ?> UF por beneficiario y diagnóstico, según la norma que publica <?= psf_cite('ges_caec') ?>.</p>
+    <p class="text-gray-700 leading-relaxed">La CAEC no se activa sola: hay que pedir incorporación a la red cerrada. Urgencia vital (Ley de Urgencia) te estabiliza; no equivale a CAEC al 100% en esa clínica. Si el evento es de alto costo, avisa a la isapre dentro de las 48 horas de práctica normativa.</p>
+</section>
+
+<section id="excedentes" class="max-w-4xl mx-auto px-4 py-10 scroll-mt-28" aria-labelledby="c4">
+    <h2 id="c4" class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Excedentes y la Ley Corta</h2>
+    <p class="text-gray-700 leading-relaxed mb-4">Hasta <?= (int) $facts['ley_corta_anio'] ?>, si el 7% superaba el precio del plan, la diferencia podía acumularse como excedente (bonos, farmacia). Con la <?= psf_cite('ley_corta') ?> los planes deben ajustarse para usar el 7% en cobertura: <strong>no vendas ni compres un plan “para generar excedentes rápidos”</strong> como si el régimen anterior siguiera intacto.</p>
+    <p class="text-gray-700 leading-relaxed mb-4">Si tu cotización supera el plan, la isapre debe ofrecer beneficios complementarios, no un saldo tipo billetera. Si el plan es más caro que el 7%, pagas adicional. Para elegir plan cercano al 7% usa la <a href="<?= BASE_URL ?>/asesoria/optimizar-7-porciento/" class="text-blue-700 underline">guía de optimizar el 7%</a> y el <a href="<?= BASE_URL ?>/planes/comparador/" class="text-blue-700 underline">comparador</a>.</p>
+    <p class="text-sm text-gray-500"><cite><?= psf_cite('ley_corta') ?> · <?= psf_cite('supersalud') ?>.</cite></p>
+</section>
+</article>
 <?php
 $secciones_html = ob_get_clean();
 
-// ── Mini-FAQ ─────────────────────────────────────────────
-$faq_preguntas = ['¿El 7% cubre todo?' => 'Con la Ley Corta de Isapres (2024), tu cotización del 7% va íntegra a tu plan de salud. Si el plan cuesta más que tu 7%, pagas la diferencia como cotización adicional. Si cuesta menos, la isapre debe ofrecerte coberturas complementarias.', '¿Qué son los excedentes?' => 'Saldo que se generaba antes de 2024 cuando tu cotización superaba el precio del plan. Hoy, con la Ley Corta, los excedentes ya no se acumulan de la misma forma y se prioriza usar el 7% en coberturas complementarias.', '¿Puedo cambiarme de plan?' => 'Sí, dentro de la misma ISAPRE generalmente una vez al año.'];
+$faq_preguntas = [
+    '¿El 7% cubre todo?' => 'No. Cubre el precio del plan hasta ese monto. Si el plan es más caro, pagas la diferencia. Si es más barato, la Ley Corta exige usar el 7% en cobertura, no acumular excedentes como antes de 2024.',
+    '¿Qué son los excedentes?' => 'Saldo que se generaba cuando el 7% superaba el plan. Tras la Ley 21.674 ese mecanismo ya no opera igual: prioriza coberturas complementarias.',
+    '¿Puedo cambiarme de plan?' => 'Sí, dentro de la misma isapre suele haber ventanas anuales; el cambio de isapre lo gestiona la nueva institución.',
+];
 $faq_titulo = 'Preguntas Frecuentes';
 
-// ── Renderizar template ─────────────────────────────────
 include __DIR__ . '/../../layout/seo-page.php';
