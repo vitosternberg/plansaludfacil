@@ -16,6 +16,7 @@ if (is_readable(__DIR__ . '/social_profiles.php')) {
     }
 }
 
+if (!function_exists('psf_schema_emit')) {
 function psf_schema_emit(): void
 {
     $origin = psf_site_origin();
@@ -134,4 +135,5 @@ function psf_schema_emit(): void
         JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT
     );
     echo "\n</script>\n";
+}
 }

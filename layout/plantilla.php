@@ -95,8 +95,13 @@
     <meta name="google-site-verification" content="STeCF3cjAw8N63nEgrCyo6_CifEvabh7KCovktoIKNI" />
 
     <?php
-    require_once __DIR__ . '/../core/schema_graph.php';
-    psf_schema_emit();
+    $schema_graph = __DIR__ . '/../core/schema_graph.php';
+    if (is_readable($schema_graph)) {
+        require_once $schema_graph;
+        if (function_exists('psf_schema_emit')) {
+            psf_schema_emit();
+        }
+    }
     ?>
     <?php if (!empty($itemlist_jsonld)) echo $itemlist_jsonld; ?>
 
