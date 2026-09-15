@@ -96,12 +96,12 @@
 
     <?php
     try {
-        $schema_graph = __DIR__ . '/../core/schema_graph.php';
-        if (is_readable($schema_graph)) {
-            include_once $schema_graph;
-            if (function_exists('psf_schema_emit')) {
-                psf_schema_emit();
-            }
+        $geo_facts = __DIR__ . '/../core/geo_facts.php';
+        if (is_readable($geo_facts)) {
+            include_once $geo_facts;
+        }
+        if (function_exists('psf_schema_emit')) {
+            psf_schema_emit();
         }
     } catch (Throwable $e) {
         error_log('PSF schema error: ' . $e->getMessage());
