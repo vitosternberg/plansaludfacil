@@ -3,7 +3,18 @@
  * JSON-LD @graph único por página.
  */
 require_once __DIR__ . '/geo_facts.php';
-require_once __DIR__ . '/social_profiles.php';
+if (is_readable(__DIR__ . '/social_profiles.php')) {
+    require_once __DIR__ . '/social_profiles.php';
+} elseif (!function_exists('psf_social_urls')) {
+    function psf_social_urls(): array
+    {
+        return [
+            'https://www.instagram.com/plansaludfacil/',
+            'https://www.tiktok.com/@plansaludfacil',
+            'https://www.facebook.com/profile.php?id=61594587830939',
+        ];
+    }
+}
 
 function psf_schema_emit(): void
 {
